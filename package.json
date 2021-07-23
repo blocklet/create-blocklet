@@ -1,6 +1,6 @@
 {
   "name": "create-blocklet",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "repository": "git@github.com:blocklet/create-blocklet.git",
   "author": "zhanghan <zhanghan@arcblock.io>",
@@ -10,7 +10,9 @@
   },
   "files": [
     "index.js",
-    "template"
+    "common",
+    "template-dapp",
+    "template-static"
   ],
   "engines": {
     "node": ">=14.0.0"
