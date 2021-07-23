@@ -1,0 +1,31 @@
+{
+  "name": "create-blocklet",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "git@github.com:blocklet/create-blocklet.git",
+  "author": "zhanghan <zhanghan@arcblock.io>",
+  "license": "MIT",
+  "bin": {
+    "create-blocklet": "index.js"
+  },
+  "files": [
+    "index.js",
+    "template"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/blocklet/create-blocklet/issues"
+  },
+  "homepage": "https://github.com/blocklet/create-blocklet/tree/main#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "kolorist": "^1.5.0",
+    "minimist": "^1.2.5",
+    "prompts": "^2.4.1",
+    "shelljs": "^0.8.4",
+    "strip-ansi": "6.0.0",
+    "yaml": "^1.10.2"
+  }
+}

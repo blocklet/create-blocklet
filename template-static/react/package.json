@@ -1,0 +1,46 @@
+{
+  "name": "template-react",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "dev": "react-scripts start",
+    "start": "yarn dev",
+    "clean": "rm -rf .blocklet",
+    "bundle": "yarn clean && PUBLIC_URL='/.blocklet/proxy/<%= did %>' yarn build && blocklet bundle --zip --create-release",
+    "deploy": "yarn bundle && blocklet deploy .blocklet/bundle",
+    "release": "yarn bundle && blocklet publish .blocklet/release/blocklet.json"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3"
+  },
+  "devDependencies": {
+    "@arcblock/eslint-config-arcblock": "0.1.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.31.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-unicorn": "^34.0.1"
+  }
+}
