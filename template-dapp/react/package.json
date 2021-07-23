@@ -10,7 +10,7 @@
     "start:client": "yarn dev",
     "start:server": "NODE_ENV=development nodemon server/index.js -w server",
     "clean": "rm -rf .blocklet",
-    "bundle": "npm-run-all --parallel bundle:*",
+    "bundle": "yarn bundle:client && yarn bundle:server",
     "bundle:client": "PUBLIC_URL='/.blocklet/proxy/<%= did %>' yarn build",
     "bundle:server": "yarn clean && blocklet bundle --zip --create-release",
     "deploy": "yarn bundle && blocklet deploy .blocklet/bundle",
