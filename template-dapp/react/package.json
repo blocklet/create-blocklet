@@ -29,15 +29,12 @@
     ]
   },
   "dependencies": {
-    "@arcblock/did-auth": "^1.11.15",
-    "@arcblock/did-auth-storage-nedb": "^1.6.3",
-    "@blocklet/sdk": "^1.4.0",
-    "@ocap/client": "^1.11.15",
-    "@ocap/mcrypto": "^1.11.15",
-    "@ocap/wallet": "^1.11.15",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.0.0",
-    "@testing-library/user-event": "^13.2.0",
+    "@arcblock/did-auth": "latest",
+    "@arcblock/did-auth-storage-nedb": "latest",
+    "@blocklet/sdk": "latest",
+    "@ocap/client": "latest",
+    "@ocap/mcrypto": "latest",
+    "@ocap/wallet": "latest",
     "axios": "^0.21.1",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.5",
@@ -51,7 +48,10 @@
     "react-scripts": "4.0.3"
   },
   "devDependencies": {
-    "@arcblock/eslint-config-arcblock": "0.1.2",
+    "@arcblock/eslint-config": "latest",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.31.0",
     "eslint-config-airbnb": "^18.2.1",
@@ -62,6 +62,7 @@
     "eslint-plugin-unicorn": "^34.0.1",
     "http-proxy-middleware": "^2.0.1",
     "nodemon": "^2.0.12",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.3.2"
   }
 }
