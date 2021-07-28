@@ -8,7 +8,7 @@
 With NPM:
 
 ```bash
-$ npm init create-blocklet@latest
+$ npm init blocklet@latest [blocklet-name]
 ```
 
 With Yarn:
