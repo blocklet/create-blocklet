@@ -1,14 +1,18 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const ejs = require('ejs');
-const path = require('path');
-const YAML = require('yaml');
-const argv = require('minimist')(process.argv.slice(2));
-const prompts = require('prompts');
-const shell = require('shelljs');
-const stripAnsi = require('strip-ansi');
-const { yellow, red } = require('kolorist');
+import fs from 'fs';
+import ejs from 'ejs';
+import path from 'path';
+import YAML from 'yaml';
+import { fileURLToPath } from 'url';
+import minimist from 'minimist';
+import prompts from 'prompts';
+import shell from 'shelljs';
+import { stripColors, yellow, red } from 'kolorist';
+import { echoBrand, echoDoc } from './lib/arcblock.js';
+
+const argv = minimist(process.argv.slice(2));
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const cwd = process.cwd();
 
@@ -221,6 +225,9 @@ async function init() {
 
   const pkgManager = /yarn/.test(process.env.npm_execpath) ? 'yarn' : 'npm';
 
+  await echoBrand();
+  await echoDoc();
+
   console.log(`\nDone. Now run:\n`);
   if (root !== cwd) {
     console.log(`  cd ${path.relative(cwd, root)}`);
@@ -263,7 +270,7 @@ async function init() {
 
   function getDid() {
     const shellRes = shell.exec(`cd ${root} && blocklet meta`, { silent: true });
-    const output = stripAnsi(shellRes.stdout);
+    const output = stripColors(shellRes.stdout);
 
     const [didStr] = output.match(/did:[\s\S]*?\n/gm) || [];
 
