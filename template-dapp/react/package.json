@@ -7,14 +7,14 @@
     "eject": "react-scripts eject",
     "dev": "react-scripts start",
     "start": "npm-run-all --parallel start:*",
-    "start:client": "yarn dev",
+    "start:client": "npm run dev",
     "start:server": "NODE_ENV=development nodemon server/index.js -w server",
     "clean": "rm -rf .blocklet",
-    "bundle": "yarn bundle:client && yarn bundle:server",
-    "bundle:client": "PUBLIC_URL='/.blocklet/proxy/<%= did %>' yarn build",
-    "bundle:server": "yarn clean && blocklet bundle --zip --create-release",
-    "deploy": "yarn bundle && blocklet deploy .blocklet/bundle",
-    "release": "yarn bundle && blocklet publish .blocklet/release/blocklet.json"
+    "bundle": "npm run bundle:client && npm run bundle:server",
+    "bundle:client": "PUBLIC_URL='/.blocklet/proxy/<%= did %>' npm run build",
+    "bundle:server": "npm run clean && blocklet bundle --zip --create-release",
+    "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
+    "release": "npm run bundle && blocklet publish .blocklet/release/blocklet.json"
   },
   "browserslist": {
     "production": [
@@ -55,8 +55,10 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^7.31.0",
     "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-unicorn": "^34.0.1",

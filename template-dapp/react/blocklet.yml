@@ -1,10 +1,11 @@
 name: template-react
 title: Blocklet Template React
-description: ABT Node blocklet project
+description: An ABT Node blocklet
 keywords:
   - blocklet
   - react
 group: dapp
+did: ''
 main: server/index.js
 author:
   name: zhanghan

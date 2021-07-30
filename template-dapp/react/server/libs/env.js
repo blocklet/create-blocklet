@@ -1,6 +1,6 @@
 const blockletRealDid = process.env.BLOCKLET_REAL_DID || '';
 const blockletDid = process.env.BLOCKLET_DID || '';
-const isComponent = blockletRealDid !== blockletDid;
+const isComponent = blockletRealDid && blockletDid && blockletRealDid !== blockletDid;
 
 module.exports = {
   chainId: process.env.CHAIN_ID || '',

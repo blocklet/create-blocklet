@@ -22,15 +22,34 @@
     "url": "https://github.com/blocklet/create-blocklet/issues"
   },
   "homepage": "https://github.com/blocklet/create-blocklet/tree/main#readme",
+  "scripts": {
+    "lint": "eslint ."
+  },
   "dependencies": {
     "ejs": "^3.1.6",
+    "envfile": "^6.15.0",
     "figlet": "^1.5.0",
     "gradient-string": "^1.2.0",
     "kolorist": "^1.5.0",
     "minimist": "^1.2.5",
     "prompts": "^2.4.1",
+    "rc": "^1.2.8",
     "shelljs": "^0.8.4",
     "terminal-link": "^3.0.0",
     "yaml": "^1.10.2"
+  },
+  "devDependencies": {
+    "@arcblock/eslint-config": "0.1.8",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.31.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-unicorn": "^34.0.1",
+    "prettier": "^2.3.2"
   }
 }

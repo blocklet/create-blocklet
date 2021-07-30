@@ -8,8 +8,11 @@ import { fileURLToPath } from 'url';
 import minimist from 'minimist';
 import prompts from 'prompts';
 import shell from 'shelljs';
-import { stripColors, yellow, red } from 'kolorist';
-import { echoBrand, echoDoc } from './lib/arcblock.js';
+import { stripColors, yellow, red, green, cyan } from 'kolorist';
+import * as envfile from 'envfile';
+
+import { echoBrand, echoDocument } from './lib/arcblock.js';
+import { getAuthor } from './lib/npm.js';
 
 const argv = minimist(process.argv.slice(2));
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -51,6 +54,7 @@ const SERVICES = [
 
 const renameFiles = {
   _gitignore: '.gitignore',
+  '_eslintrc.js': '.eslintrc.js',
 };
 
 async function init() {
@@ -68,19 +72,22 @@ async function init() {
           name: 'projectName',
           message: 'Project name:',
           initial: defaultProjectName,
-          onState: (state) => (targetDir = state.value.trim() || defaultProjectName),
+          onState: (state) => {
+            targetDir = state.value.trim() || defaultProjectName;
+          },
         },
         {
           type: () => (!fs.existsSync(targetDir) || isEmpty(targetDir) ? null : 'confirm'),
           name: 'overwrite',
           message: () =>
-            (targetDir === '.' ? 'Current directory' : `Target directory "${targetDir}"`) +
-            ` is not empty. Remove existing files and continue?`,
+            `${
+              targetDir === '.' ? 'Current directory' : `Target directory "${targetDir}"`
+            } is not empty. Remove existing files and continue?`,
         },
         {
           type: (_, { overwrite } = {}) => {
             if (overwrite === false) {
-              throw new Error(red('✖') + ' Operation cancelled');
+              throw new Error(`${red('✖')} Operation cancelled`);
             }
             return null;
           },
@@ -140,7 +147,7 @@ async function init() {
       ],
       {
         onCancel: () => {
-          throw new Error(red('✖') + ' Operation cancelled');
+          throw new Error(`${red('✖')} Operation cancelled`);
         },
       }
     );
@@ -160,6 +167,9 @@ async function init() {
     fs.mkdirSync(root);
   }
 
+  await echoBrand();
+  await echoDocument();
+
   console.log(`\nScaffolding project in ${root}...`);
 
   const templateDir = path.join(__dirname, `template-${type}/${framework}`);
@@ -167,7 +177,7 @@ async function init() {
 
   // copy common files
   (() => {
-    const commonDir = path.join(__dirname, `common`);
+    const commonDir = path.join(__dirname, 'common');
     const commonFiles = fs.readdirSync(commonDir);
     for (const file of commonFiles) {
       const targetPath = renameFiles[file] ? path.join(root, renameFiles[file]) : path.join(root, file);
@@ -193,8 +203,12 @@ async function init() {
   modifyBlockletMd((md) => {
     return md.replace(/# template-react/g, `# ${name}`);
   });
+  modifyEnv((env) => {
+    env.REACT_APP_TITLE = name;
+    return env;
+  });
 
-  // patch services
+  // patch blocklet services
   modifyBlockletYaml((yamlConfig) => {
     if (services.includes('auth')) {
       yamlConfig.interfaces[0].services = [
@@ -207,6 +221,12 @@ async function init() {
       ];
     }
   });
+  // patch blocklet author
+  modifyBlockletYaml((yamlConfig) => {
+    const { name, email } = getAuthor();
+    name && (yamlConfig.author.name = name);
+    email && (yamlConfig.author.email = email);
+  });
 
   // patch did
   (() => {
@@ -218,23 +238,30 @@ async function init() {
       if (type === 'dapp') {
         pkg.scripts['bundle:client'] = ejs.render(pkg.scripts['bundle:client'], { did });
       } else if (type === 'static') {
-        pkg.scripts['bundle'] = ejs.render(pkg.scripts['bundle'], { did });
+        pkg.scripts.bundle = ejs.render(pkg.scripts.bundle, { did });
       }
     });
   })();
 
   const pkgManager = /yarn/.test(process.env.npm_execpath) ? 'yarn' : 'npm';
 
-  await echoBrand();
-  await echoDoc();
+  console.log(
+    '\n',
+    red('Before you start to development, you might need be sure you have already start a abtnode'),
+    '\n'
+  );
+  console.log(`Read more usage in ${green('README.md')}`, '\n\n');
 
-  console.log(`\nDone. Now run:\n`);
+  console.log('\n✨  Done. Now run:\n');
+
   if (root !== cwd) {
-    console.log(`  cd ${path.relative(cwd, root)}`);
+    console.log(`      ${cyan('cd')} ${path.relative(cwd, root)}`);
   }
-  console.log(`  ${pkgManager === 'yarn' ? `yarn` : `npm install`}`);
-  console.log(`  ${pkgManager === 'yarn' ? `yarn dev` : `npm run dev`}`);
+  console.log(cyan(`     ${pkgManager === 'yarn' ? 'yarn' : 'npm install'}`));
+  console.log(cyan('blocklet dev'));
   console.log();
+
+  console.log(`Find more usage in ${green('README.md')}`, '\n');
 
   // inside functions
   function write(file, content) {
@@ -266,6 +293,11 @@ async function init() {
     const blockletMd = read('blocklet.md', 'utf8');
     const modifyMd = modifyFn(blockletMd);
     write('blocklet.md', modifyMd);
+  }
+  function modifyEnv(modifyFn = (...args) => ({ ...args })) {
+    const env = envfile.parse(read('.env'));
+    modifyFn(env);
+    write('.env', envfile.stringify(env));
   }
 
   function getDid() {
@@ -311,8 +343,8 @@ function copyDir(srcDir, destDir) {
   }
 }
 
-function isEmpty(path) {
-  return fs.readdirSync(path).length === 0;
+function isEmpty(_path) {
+  return fs.readdirSync(_path).length === 0;
 }
 
 function emptyDir(dir) {

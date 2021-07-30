@@ -6,11 +6,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "react-scripts start",
-    "start": "yarn dev",
+    "start": "npm run dev",
     "clean": "rm -rf .blocklet",
-    "bundle": "yarn clean && PUBLIC_URL='/.blocklet/proxy/<%= did %>' yarn build && blocklet bundle --zip --create-release",
-    "deploy": "yarn bundle && blocklet deploy .blocklet/bundle",
-    "release": "yarn bundle && blocklet publish .blocklet/release/blocklet.json"
+    "bundle": "npm run clean && PUBLIC_URL='/.blocklet/proxy/<%= did %>' npm run build && blocklet bundle --zip --create-release",
+    "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
+    "release": "npm run bundle && blocklet publish .blocklet/release/blocklet.json"
   },
   "browserslist": {
     "production": [
@@ -37,8 +37,10 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^7.31.0",
     "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-unicorn": "^34.0.1",
