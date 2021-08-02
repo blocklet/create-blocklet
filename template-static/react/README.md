@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create Blocklet](https://github.com/blocklet/create-blocklet).
 
-This blocklet is a dapp project, which means this is a fullstacked application. It's contained both `server` and `client` code.
+This blocklet is a static project, which means this is a frontend application. It's contained `client` code.
 
 ## File Structure
 
@@ -12,12 +12,6 @@ This blocklet is a dapp project, which means this is a fullstacked application. 
   - favicon.svg - favicon
   - index.html - main html file, template for react
 - screenshots/ - Screenshots
-- server/ - Server side code
-  - hooks/ - `blocklet dev` hooks
-  - libs/ - Server side libraries
-  - middlewares/ - Server side middlewares
-  - routes/ - Server side routes
-  - index.js - Server side entry point
 - src/ - Client side code (A standard react app structure)
 - tools/ - Tools
   - publish.sh - Scripts for github CI
@@ -79,7 +73,7 @@ After development a blocklet, you may need to bundle it. Use `npm run bundle` co
   make bump-version
   ```
 
-  Make sure you have install a `blocklet registry` on your local abtnode. Check it on here: https://registry.arcblock.io/blocklet/z8ia29UsENBg6tLZUKi2HABj38Cw1LmHZocbQ
+  Make sure you have install a `blocklet registry` on your local abtnode. Check it on here: [https://registry.arcblock.io/blocklet/z8ia29UsENBg6tLZUKi2HABj38Cw1LmHZocbQ](https://registry.arcblock.io/blocklet/z8ia29UsENBg6tLZUKi2HABj38Cw1LmHZocbQ)
 
   Then config registry publish url to local `blocklet registry`
 
@@ -139,7 +133,7 @@ After development a blocklet, you may need to bundle it. Use `npm run bundle` co
 
    Run `blocklet meta` command, you will get a `did` config, copy the `did` value.
 
-   Replace this command `"bundle:client": "PUBLIC_URL='/.blocklet/proxy/{did}' npm run build",` in `package.json`
+   Replace this command `"bundle": "PUBLIC_URL='/.blocklet/proxy/{did}' npm run build",` in `package.json`
 
    Replace `did` field in `blocklet.yml`
 

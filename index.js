@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable no-unused-expressions */
 
 import fs from 'fs';
 import ejs from 'ejs';
@@ -199,6 +200,7 @@ async function init() {
   });
   modifyBlockletYaml((yamlConfig) => {
     yamlConfig.name = name;
+    yamlConfig.title = name;
   });
   modifyBlockletMd((md) => {
     return md.replace(/# template-react/g, `# ${name}`);
@@ -223,6 +225,7 @@ async function init() {
   });
   // patch blocklet author
   modifyBlockletYaml((yamlConfig) => {
+    // eslint-disable-next-line no-shadow
     const { name, email } = getAuthor();
     name && (yamlConfig.author.name = name);
     email && (yamlConfig.author.email = email);
