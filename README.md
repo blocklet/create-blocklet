@@ -5,6 +5,12 @@
 > **Compatibility Note:**
 > Blocklet template requires [Node.js](https://nodejs.org/) version >=14.0.0.
 
+## What can i do?
+
+By using `create-blocklet` you can create a new blocklet in a few minutes. You can get a demo blocklet, understand how a blocklet works and how to use them.
+
+## Start
+
 With NPM:
 
 ```bash

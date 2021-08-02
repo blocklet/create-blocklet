@@ -1,3 +1,7 @@
+## 0.1.4 (八月 02, 2021)
+
+- fix: add 'lib' to npm publish files
+
 ## 0.1.3 (八月 02, 2021)
 
 - feat: add react-dom-router
