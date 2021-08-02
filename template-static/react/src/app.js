@@ -1,18 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Switch, Redirect, withRouter } from 'react-router-dom';
+
 import './app.css';
+import Home from './pages/home';
+import About from './pages/about';
 
 function App() {
   return (
     <div className="app">
-      <header className="app-header">
-        <img src={logo} className="app-logo" alt="logo" />
-        <a className="app-link" href="https://docs.arcblock.io/abtnode/" target="_blank" rel="noopener noreferrer">
-          Learn Blocklet
-        </a>
-      </header>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/home" component={Home} />
+        <Redirect to="/" />
+      </Switch>
     </div>
   );
 }
 
-export default App;
+const WrappedApp = withRouter(App);
+
+export default () => {
+  // While the blocklet is deploy to a sub path, this will be work properly.
+  const basename = window?.blocklet?.prefix || '/';
+
+  return (
+    <Router basename={basename}>
+      <WrappedApp />
+    </Router>
+  );
+};

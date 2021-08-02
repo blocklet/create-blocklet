@@ -1,4 +1,0 @@
-## License
-
-The code is licensed under the Apache 2.0 license found in the
-[LICENSE](LICENSE) file.

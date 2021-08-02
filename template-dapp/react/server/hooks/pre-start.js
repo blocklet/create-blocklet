@@ -1,7 +1,6 @@
 require('dotenv-flow').config();
 
 const Client = require('@ocap/client');
-const { fromJSON } = require('@ocap/wallet');
 
 const env = require('../libs/env');
 const { wallet } = require('../libs/auth');
@@ -10,12 +9,9 @@ const { name } = require('../../package.json');
 
 const client = new Client(env.chainHost);
 
-// Check for application account, skip this if we are running as a child component
 const ensureAccountDeclared = async () => {
-  const { BLOCKLET_DID = '', BLOCKLET_REAL_DID = '' } = process.env;
-  if (BLOCKLET_DID && BLOCKLET_REAL_DID && BLOCKLET_REAL_DID !== BLOCKLET_DID) {
-    return;
-  }
+  // Check for application account, skip this if we are running as a child component
+  if (env.isComponent) return;
 
   const { state } = await client.getAccountState({ address: wallet.toAddress() }, { ignoreFields: ['context'] });
   if (!state) {
