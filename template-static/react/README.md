@@ -6,7 +6,6 @@ This blocklet is a static project, which means this is a frontend application. I
 
 ## File Structure
 
-- .blocklet/ - blocklet bundle result
 - public/ - static files
   - favicon.ico - favicon
   - favicon.svg - favicon
@@ -33,13 +32,13 @@ This blocklet is a static project, which means this is a frontend application. I
 
 1. Make sure you have [@abtnode/cli](https://www.npmjs.com/package/@abtnode/cli) installed
 
-   Blocklet need abtnode as a dependency. So you need to install it first.  
+   Blocklet needs abtnode as a dependency. So you need to install it first.  
    `npm install -g @abtnode/cli`  
    See details in [https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#use-the-binary-distribution](https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#use-the-binary-distribution)
 
 2. Init abtnode & start abtnode
 
-   Before start a abtnode, you need to init abtnode.  
+   Before starting an abtnode, you need to init abtnode.  
    `abtnode init`  
    `abtnode start`  
    See details in [https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#configure-abt-node](https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#configure-abt-node)
@@ -50,7 +49,7 @@ This blocklet is a static project, which means this is a frontend application. I
 
 ## Bundle
 
-After development a blocklet, you may need to bundle it. Use `npm run bundle` command.
+After developing a blocklet, you may need to bundle it. Use `npm run bundle` command.
 
 ## Deploy
 
@@ -61,11 +60,11 @@ After development a blocklet, you may need to bundle it. Use `npm run bundle` co
   blocklet deploy .blocklet/bundle --endpoint {your abtnode url} --access-key {abtnode access key} --access-secret {abtnode access secret}
   ```
 
-  > Be sure you have bundle blocklet at first.
+  > Make sure the blocklet is bundled before deployment.
 
 ## Publish
 
-- If you want to publish this blocklet to local registry, you can follow these steps below.
+- If you want to publish the blocklet to any registry for other users to download and use, you can following the following instructions.
 
   Bump version at first.
 
@@ -73,81 +72,66 @@ After development a blocklet, you may need to bundle it. Use `npm run bundle` co
   make bump-version
   ```
 
-  Make sure you have install a `blocklet registry` on your local abtnode. Check it on here: [https://registry.arcblock.io/blocklet/z8ia29UsENBg6tLZUKi2HABj38Cw1LmHZocbQ](https://registry.arcblock.io/blocklet/z8ia29UsENBg6tLZUKi2HABj38Cw1LmHZocbQ)
-
-  Then config registry publish url to local `blocklet registry`
-
-  ```shell
-  blocklet config registry {local registry url}
-  ```
-
-  Realease a new version to registry.
-
-  ```shell
-  npm run release
-  ```
-
-- If you want to publish this blocklet to remote registry by hand, you can use the command below.
-
-  Bump version at first.
-
-  ```shell
-  make bump-version
-  ```
-
-  Get a developer-sk by use this command.
+  Get a `developer-sk` by using this command.
 
   ```shell
   blocklet developer:init
   ```
 
-  Then config registry publish url to remote `blocklet registry`
+  Then config registry publish url to a `blocklet registry`
+
+  You can use those registry url in below.
+
+  1. [https://registry.arcblock.io/](https://registry.arcblock.io/)
+  2. [https://dev.registry.arcblock.io/](https://dev.registry.arcblock.io/)
+  3. A blocklet registry started by yourself.
+     > Make sure you have installed a `blocklet registry` on your own abtnode. Check it on here: [https://registry.arcblock.io/blocklet/z8ia29UsENBg6tLZUKi2HABj38Cw1LmHZocbQ](https://registry.arcblock.io/blocklet/z8ia29UsENBg6tLZUKi2HABj38Cw1LmHZocbQ)
 
   ```shell
-  blocklet config registry {remote registry url}
+  blocklet config registry {registry url}
   ```
 
-  Realease a new version to registry.
+  Release a new version to a registry.
 
   ```shell
-  blocklet publish --developer-sk {developerk-sk}
+  blocklet publish
   ```
 
-- You also can publish a new version to remote registry by github CI.  
+- You also can publish a new version to a registry by Github CI.  
   Bump version at first.
 
   ```shell
   make bump-version
   ```
 
-  Push your code to github main/master branch, or make a pull request to main/master branch.  
-  The CI workflow will automatically publish a new version to remote registry.
+  Push your code to Github main/master branch, or make a pull request to the main/master branch.  
+  The CI workflow will automatically publish a new version to a registry.
 
 ## Q & A
 
 1. Q: How to change a blocklet's name?
 
-   A: Change the `name` field in `package.json` file, change the `name` field in `blocklet.yml` file.
+   A: Change the `name` field in the `package.json` file, change the `name` field in the `blocklet.yml` file.
 
-   You can also change the `title` field and `description` field in `blocklet.yml` file .
+   You can also change the `title` field and `description` field in the `blocklet.yml` file.
 
    Run `blocklet meta` command, you will get a `did` config, copy the `did` value.
 
    Replace this command `"bundle": "PUBLIC_URL='/.blocklet/proxy/{did}' npm run build",` in `package.json`
 
-   Replace `did` field in `blocklet.yml`
+   Replace `did` field in the `blocklet.yml`
 
 2. Q: How to change a blocklet's logo?
 
    Change the `logo.png` file root folder.
 
-   Or you can change the `logo` field in `blocklet.yml` file.
+   Or you can change the `logo` field in the `blocklet.yml` file.
 
-   > Make sure you have add the logo path to `blocklet.yml` file `files` field.
+   > Make sure you have added the logo path to the `blocklet.yml` file `files` field.
 
 ## Learn More
 
-- Full configure of `blocklet.yml`: [https://github.com/blocklet/blocklet-specification/blob/main/docs/meta.md](https://github.com/blocklet/blocklet-specification/blob/main/docs/meta.md)
+- Full specification of `blocklet.yml`: [https://github.com/blocklet/blocklet-specification/blob/main/docs/meta.md](https://github.com/blocklet/blocklet-specification/blob/main/docs/meta.md)
 - Full document of AbtNode & blocklet development: [https://docs.arcblock.io/abtnode/en/introduction](https://docs.arcblock.io/abtnode/en/introduction)
 
 ## License
