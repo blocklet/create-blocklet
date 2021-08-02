@@ -1,28 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect, withRouter } from 'react-router-dom';
+
 import './app.css';
-import api from './libs/api';
+import Home from './pages/home';
+import About from './pages/about';
 
 function App() {
-  const [env, setEnv] = useState({});
-  useEffect(async () => {
-    const { data } = await api.get('/api');
-    setEnv(data);
-  }, []);
-
   return (
     <div className="app">
-      <header className="app-header">
-        <img src={logo} className="app-logo" alt="logo" />
-        <pre style={{ textAlign: 'left' }}>
-          <code>{JSON.stringify(env, null, 2)}</code>
-        </pre>
-        <a className="app-link" href="https://docs.arcblock.io/abtnode/" target="_blank" rel="noopener noreferrer">
-          Learn Blocklet
-        </a>
-      </header>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/home" component={Home} />
+        <Redirect to="/" />
+      </Switch>
     </div>
   );
 }
 
-export default App;
+const WrappedApp = withRouter(App);
+
+export default () => {
+  // While the blocklet is deploy to a sub path, this will be work properly.
+  const basename = window?.blocklet?.prefix || '/';
+
+  return (
+    <Router basename={basename}>
+      <WrappedApp />
+    </Router>
+  );
+};
