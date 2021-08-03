@@ -53,7 +53,8 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
 
 ## Deploy
 
-- If you want to deploy this blocklet to local abtnode, you can use `npm run deploy` command.
+- If you want to deploy this blocklet to local abtnode, you can use `blocklet deploy .blocklet/bundle` command(Make sure the blocklet is bundled before deployment.)
+  > Or you can simply use `npm run deploy` command.
 - If you want to deploy this blocklet to remote abtnode, you can use the command below.
 
   ```shell
@@ -93,9 +94,13 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
 
   Release a new version to a registry.
 
+  > Make sure the blocklet is bundled before publish.
+
   ```shell
   blocklet publish
   ```
+
+  Or you can simply use `npm run release` command.
 
 - You also can publish a new version to a registry by Github CI.  
   Bump version at first.
