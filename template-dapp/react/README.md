@@ -45,7 +45,7 @@ This blocklet is a dapp project, which means this is a full-stack application. I
 2. Init abtnode & start abtnode
 
    Before starting an abtnode, you need to init abtnode.  
-   `abtnode init`  
+   `abtnode init --mode=debug`  
    `abtnode start`  
    See details in [https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#configure-abt-node](https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#configure-abt-node)
 

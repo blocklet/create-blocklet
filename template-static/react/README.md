@@ -39,7 +39,7 @@ This blocklet is a static project, which means this is a frontend application. I
 2. Init abtnode & start abtnode
 
    Before starting an abtnode, you need to init abtnode.  
-   `abtnode init`  
+   `abtnode init --mode=debug`  
    `abtnode start`  
    See details in [https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#configure-abt-node](https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#configure-abt-node)
 
