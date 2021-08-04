@@ -251,12 +251,8 @@ async function init() {
 
   const pkgManager = /yarn/.test(process.env.npm_execpath) ? 'yarn' : 'npm';
 
-  console.log(
-    '\n',
-    red('Before you start to development, you might need be sure you have already start a abtnode'),
-    '\n'
-  );
-  console.log(`Read more usage in ${green('README.md')}`, '\n\n');
+  console.log('\n', red('To run the blocklet, you need a running abtnode instance on local machine.'), '\n');
+  console.log(`Checkout ${green('README.md')} for more usage instructions.`, '\n\n');
 
   console.log('\n✨  Done. Now run:\n');
 
