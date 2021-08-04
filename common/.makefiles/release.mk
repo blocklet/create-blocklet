@@ -1,3 +1,5 @@
+#!/bin/bash
+
 RELEASE_VERSION=v$(VERSION)
 GIT_BRANCH=$(strip $(shell git symbolic-ref --short HEAD))
 GIT_VERSION="$(strip $(shell git rev-parse --short HEAD))"

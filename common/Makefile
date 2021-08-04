@@ -1,3 +1,5 @@
+#!/bin/bash
+
 dep:
 	@echo "Install dependencies required for this repo..."
 	@yarn
