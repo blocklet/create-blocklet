@@ -107,9 +107,12 @@ async function init() {
           message: 'What type blocklet you want to create:',
           initial: 0,
           choices: TYPES.map((type) => {
-            const typeColor = type.color;
+            const TYPE_TITLE = {
+              dapp: 'fullstack: webapp with backend code',
+              static: 'webapp: browser only',
+            };
             return {
-              title: typeColor(type.name),
+              title: TYPE_TITLE[type.name],
               value: type.name,
             };
           }),
