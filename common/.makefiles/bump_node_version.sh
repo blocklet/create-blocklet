@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 cur_ver=$(cat package.json | grep '"version":' |  awk '{print $2}' | sed 's/"//g' | sed 's/,//g')
 new_ver=$(cat version)
