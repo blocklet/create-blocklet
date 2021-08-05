@@ -1,3 +1,7 @@
+## 0.1.6 (八月 06, 2021)\n
+
+- fix: [#8](https://github.com/blocklet/create-blocklet/issues/8)
+
 ## 0.1.5 (八月 03, 2021)
 
 - chore: enhanced use of blocklet command
