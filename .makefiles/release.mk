@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 RELEASE_VERSION=v$(VERSION)
 GIT_BRANCH=$(strip $(shell git symbolic-ref --short HEAD))

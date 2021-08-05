@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 dep:
 	@echo "Install dependencies required for this repo..."
