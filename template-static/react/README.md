@@ -75,6 +75,9 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
 
   Get a `developer-sk` by using this command.
 
+  > Why we need a `developer-sk`?  
+  > A `developer-sk` means we have a self-signed key, which help us publish our blocklet to any registry.
+
   ```shell
   blocklet developer:init
   ```
