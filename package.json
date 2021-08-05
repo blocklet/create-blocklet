@@ -35,6 +35,7 @@
     "minimist": "^1.2.5",
     "prompts": "^2.4.1",
     "rc": "^1.2.8",
+    "semver": "^7.3.5",
     "shelljs": "^0.8.4",
     "terminal-link": "^3.0.0",
     "yaml": "^1.10.2"
