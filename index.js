@@ -8,12 +8,18 @@ import YAML from 'yaml';
 import { fileURLToPath } from 'url';
 import minimist from 'minimist';
 import prompts from 'prompts';
-import shell from 'shelljs';
-import { stripColors, yellow, red, green, cyan } from 'kolorist';
+import { yellow, red, green, cyan } from 'kolorist';
 import * as envfile from 'envfile';
 
 import { echoBrand, echoDocument } from './lib/arcblock.js';
 import { getAuthor } from './lib/npm.js';
+import {
+  checkAbtnodeInstalled,
+  checkAbtnodeRunning,
+  checkSatisfiedVersion,
+  getAbtnodeDirectory,
+} from './lib/abtnode.js';
+import { getOutput } from './lib/index.js';
 
 const argv = minimist(process.argv.slice(2));
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -174,7 +180,46 @@ async function init() {
   await echoBrand();
   await echoDocument();
 
-  console.log(`\nScaffolding project in ${root}...`);
+  console.log('Checking abtnode runtime environment...', '\n');
+
+  const isAbtnodeInstalled = checkAbtnodeInstalled();
+  const isSatisfiedVersion = checkSatisfiedVersion();
+  const isAbtnodeRunning = checkAbtnodeRunning();
+
+  if (!isAbtnodeInstalled) {
+    // 未安装 abtnode
+    console.log(red('To run the blocklet, you need a running abtnode instance on local machine.'), '\n');
+    console.log(`Checkout ${green('README.md')} for more usage instructions.`);
+    console.log('Now you should run:', '\n');
+    console.log(cyan('npm install -g @abtnode/cli'));
+    console.log(cyan('abtnode start -a'));
+  } else if (!isSatisfiedVersion) {
+    // 已安装 abtnode，但版本不满足
+    console.log(red('Your abtnode version is outdate, please update it to the latest version.'));
+    console.log('Now you should run:', '\n');
+    if (isAbtnodeRunning) {
+      // abtnode 已经启动
+      const abtnodePath = getAbtnodeDirectory();
+      console.log(cyan(`cd ${abtnodePath}`));
+      console.log(cyan('abtnode stop'));
+      console.log(cyan('npm install -g @abtnode/cli'));
+      console.log(cyan('abtnode start'));
+      console.log(cyan(`cd ${cwd}`));
+    } else {
+      // abtnode 未启动
+      // TODO: 如何获取未启动的 abtnode 实例目录？
+      console.log(cyan('npm install -g @abtnode/cli'));
+      console.log(cyan('abtnode start -a'));
+    }
+  } else if (!isAbtnodeRunning) {
+    // 已经安装 abtnode，且版本满足，并且 abtnode 未启动
+    console.log(red('You need to start your abtnode before develop this blocklet.'));
+    console.log('Now you should run:', '\n');
+    // TODO: 如何获取未启动的 abtnode 实例目录？
+    console.log(cyan('abtnode start -a'));
+  }
+
+  console.log(`\n\nScaffolding project in ${root}...`);
 
   const templateDir = path.join(__dirname, `template-${type}/${framework}`);
   const name = packageName || targetDir;
@@ -251,14 +296,12 @@ async function init() {
 
   const pkgManager = /yarn/.test(process.env.npm_execpath) ? 'yarn' : 'npm';
 
-  console.log('\n', red('To run the blocklet, you need a running abtnode instance on local machine.'), '\n');
-  console.log(`Checkout ${green('README.md')} for more usage instructions.`, '\n\n');
-
-  console.log('\n✨  Done. Now run:\n');
+  console.log('\n\n✨  Done. Now run:\n');
 
   if (root !== cwd) {
     console.log(`      ${cyan('cd')} ${path.relative(cwd, root)}`);
   }
+
   console.log(cyan(`     ${pkgManager === 'yarn' ? 'yarn' : 'npm install'}`));
   console.log(cyan('blocklet dev'));
   console.log();
@@ -303,8 +346,7 @@ async function init() {
   }
 
   function getDid() {
-    const shellRes = shell.exec(`cd ${root} && blocklet meta`, { silent: true });
-    const output = stripColors(shellRes.stdout);
+    const output = getOutput(`cd ${root} && blocklet meta`);
 
     const [didStr] = output.match(/did:[\s\S]*?\n/gm) || [];
 
