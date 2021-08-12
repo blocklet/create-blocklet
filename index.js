@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-/* eslint-disable no-unused-expressions */
 
 import fs from 'fs';
 import ejs from 'ejs';
@@ -19,7 +18,7 @@ import {
   checkSatisfiedVersion,
   getAbtnodeDirectory,
 } from './lib/abtnode.js';
-import { getOutput } from './lib/index.js';
+import { toBlockletDid } from './lib/did.js';
 
 const argv = minimist(process.argv.slice(2));
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -275,13 +274,13 @@ async function init() {
   modifyBlockletYaml((yamlConfig) => {
     // eslint-disable-next-line no-shadow
     const { name, email } = getAuthor();
-    name && (yamlConfig.author.name = name);
-    email && (yamlConfig.author.email = email);
+    if (name) yamlConfig.author.name = name;
+    if (email) yamlConfig.author.email = email;
   });
 
   // patch did
   (() => {
-    const did = getDid();
+    const did = toBlockletDid(name);
     modifyBlockletYaml((yamlConfig) => {
       yamlConfig.did = did;
     });
@@ -343,15 +342,6 @@ async function init() {
     const env = envfile.parse(read('.env'));
     modifyFn(env);
     write('.env', envfile.stringify(env));
-  }
-
-  function getDid() {
-    const output = getOutput(`cd ${root} && blocklet meta`);
-
-    const [didStr] = output.match(/did:[\s\S]*?\n/gm) || [];
-
-    const did = didStr.replace(/did:[\s]*([\S]+)\n/gm, '$1');
-    return did;
   }
 }
 

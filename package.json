@@ -27,6 +27,9 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@arcblock/did": "^1.12.6",
+    "@ocap/mcrypto": "^1.12.6",
+    "@ocap/util": "^1.12.6",
     "ejs": "^3.1.6",
     "envfile": "^6.15.0",
     "figlet": "^1.5.0",
