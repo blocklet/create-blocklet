@@ -43,7 +43,7 @@ requirements:
   os: '*'
   cpu: '*'
 scripts:
-  dev: yarn start
+  dev: npm run start
 environments: []
 capabilities: {}
 screenshots: []

@@ -46,7 +46,7 @@ requirements:
   cpu: '*'
 scripts:
   preStart: node server/hooks/pre-start.js
-  dev: yarn start
+  dev: npm run start
 environments:
   - name: CHAIN_ID
     description: What's endpoint of the chain id?
