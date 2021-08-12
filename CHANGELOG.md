@@ -1,3 +1,8 @@
+## 0.1.7 (八月 12, 2021)\n
+
+- feat: support generate did
+- fix: remove yarn command
+
 ## 0.1.6 (八月 06, 2021)\n
 
 - fix: [#8](https://github.com/blocklet/create-blocklet/issues/8)
