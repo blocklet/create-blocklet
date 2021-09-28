@@ -32,9 +32,6 @@
   },
   "devDependencies": {
     "@arcblock/eslint-config": "latest",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.0.0",
-    "@testing-library/user-event": "^13.2.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.31.0",
     "eslint-config-airbnb": "^18.2.1",
