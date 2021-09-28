@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "scripts": {
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "lint": "eslint src server",
     "dev": "react-scripts start",
     "start": "npm-run-all --parallel start:*",
     "start:client": "npm run dev",
