@@ -34,11 +34,13 @@
     "envfile": "^6.15.0",
     "figlet": "^1.5.0",
     "gradient-string": "^1.2.0",
+    "jdenticon": "^3.1.1",
     "kolorist": "^1.5.0",
     "minimist": "^1.2.5",
     "prompts": "^2.4.1",
     "rc": "^1.2.8",
     "semver": "^7.3.5",
+    "sharp": "^0.29.1",
     "shelljs": "^0.8.4",
     "terminal-link": "^3.0.0",
     "yaml": "^1.10.2"
