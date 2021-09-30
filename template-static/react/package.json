@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "scripts": {
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "lint": "eslint src",
     "dev": "react-scripts start",
     "start": "npm run dev",
     "clean": "rm -rf .blocklet",
     "bundle": "npm run clean && PUBLIC_URL='/.blocklet/proxy/<%= did %>' npm run build && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
-    "release": "npm run bundle && blocklet publish .blocklet/release/blocklet.json"
+    "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json"
   },
   "browserslist": {
     "production": [
@@ -32,9 +32,6 @@
   },
   "devDependencies": {
     "@arcblock/eslint-config": "latest",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.0.0",
-    "@testing-library/user-event": "^13.2.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.31.0",
     "eslint-config-airbnb": "^18.2.1",

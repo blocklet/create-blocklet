@@ -7,6 +7,7 @@ import YAML from 'yaml';
 import { fileURLToPath } from 'url';
 import minimist from 'minimist';
 import prompts from 'prompts';
+import sharp from 'sharp';
 import { yellow, red, green, cyan } from 'kolorist';
 import * as envfile from 'envfile';
 
@@ -18,7 +19,7 @@ import {
   checkSatisfiedVersion,
   getAbtnodeDirectory,
 } from './lib/abtnode.js';
-import { toBlockletDid } from './lib/did.js';
+import { toBlockletDid, toDidIcon } from './lib/did.js';
 
 const argv = minimist(process.argv.slice(2));
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -291,6 +292,9 @@ async function init() {
         pkg.scripts.bundle = ejs.render(pkg.scripts.bundle, { did });
       }
     });
+    const svgIcon = toDidIcon(did);
+    const iconBuffer = Buffer.from(svgIcon);
+    sharp(iconBuffer).toFile(path.join(root, 'logo.png'));
   })();
 
   const pkgManager = /yarn/.test(process.env.npm_execpath) ? 'yarn' : 'npm';

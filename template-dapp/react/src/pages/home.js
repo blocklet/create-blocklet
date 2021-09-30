@@ -7,7 +7,7 @@ import api from '../libs/api';
 const Home = () => {
   const [env, setEnv] = useState({});
   useEffect(async () => {
-    const { data } = await api.get('/api');
+    const { data } = await api.get('/api/env');
     setEnv(data);
   }, []);
 

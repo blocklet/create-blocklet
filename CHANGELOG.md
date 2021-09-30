@@ -1,3 +1,12 @@
+## 0.2.0 (九月 30, 2021)\n
+
+- feat: add npm script "upload"
+- fix #25
+- fix #22
+- fix #21
+- fix #24
+- fix #23
+
 ## 0.1.7 (八月 12, 2021)\n
 
 - feat: support generate did
