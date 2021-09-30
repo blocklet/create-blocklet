@@ -9,7 +9,7 @@ npm run bundle
 
 echo "publishing to blocklet registry..."
 blocklet config registry ${BLOCKLET_REGISTRY}
-blocklet publish --developer-sk ${BLOCKLET_REGISTRY_SK}
+blocklet upload --access-token ${BLOCKLET_REGISTRY_TOKEN}
 
 make release
 

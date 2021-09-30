@@ -14,7 +14,7 @@
     "bundle:client": "PUBLIC_URL='/.blocklet/proxy/<%= did %>' npm run build",
     "bundle:server": "npm run clean && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
-    "release": "npm run bundle && blocklet publish .blocklet/release/blocklet.json"
+    "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json"
   },
   "browserslist": {
     "production": [
