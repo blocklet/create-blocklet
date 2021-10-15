@@ -15,6 +15,5 @@ bundle:
 	@yarn bundle
 
 github-init: dep
-	@yarn global add @abtnode/cli
 
 include .makefiles/*.mk
