@@ -2,8 +2,7 @@
 
 dep:
 	@echo "Install dependencies required for this repo..."
-	@npm install
-	@npm install -g @abtnode/cli
+	@yarn
 
 test:
 	@echo "Running test suites..."
@@ -13,9 +12,8 @@ build:
 
 bundle:
 	@echo "Bundling the software..."
-	@npm run bundle
+	@yarn bundle
 
-github-init:
-	@make dep
+github-init: dep
 
 include .makefiles/*.mk

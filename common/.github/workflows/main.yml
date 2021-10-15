@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   Deploy:
@@ -15,17 +15,22 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
-      - name: Init
-        run: make github-init
+      - name: Set yarn cache
+        uses: c-hive/gha-yarn-cache@v2
 
-      - name: Deploy
-        env:
-          GIT_HUB_TOKEN: ${{ secrets.GIT_HUB_TOKEN }}
-          BLOCKLET_REGISTRY: ${{ secrets.BLOCKLET_REGISTRY }}
-          BLOCKLET_REGISTRY_SK: ${{ secrets.ABTNODE_DEV_SK }}
-        run: bash ./tools/publish.sh
+      - name: Install dependencies
+        run: yarn
 
-      - name: Release to Github
-        uses: blocklet/action-release-to-github@v1.0.0
+      - name: Blocklet workflow
+        uses: blocklet/action-workflow@v0.2.2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          skip-upload: false
+          skip-deploy: false
+          bundle-command: yarn bundle
+          registry-endpoint: ${{ secrets.STAGING_REGISTRY }}
+          developer-sk: ${{ secrets.ABTNODE_DEV_STAGING_SK }}
+          abtnode-endpoint: ${{ secrets.STAGING_NODE_ENDPOINT }}
+          access-key: ${{ secrets.STAGING_NODE_ACCESS_KEY }}
+          access-secret: ${{ secrets.STAGING_NODE_ACCESS_SECRET }}
+          slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
