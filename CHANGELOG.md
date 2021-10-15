@@ -1,3 +1,7 @@
+## 0.2.1 (十月 15, 2021)\n
+
+- feat: use action-workflow
+
 ## 0.2.0 (九月 30, 2021)\n
 
 - feat: add npm script "upload"
