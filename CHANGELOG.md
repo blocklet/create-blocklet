@@ -1,3 +1,7 @@
+## 0.2.2 (十月 19, 2021)\n
+
+- chore: use blocklet/sdk WalletHandlers
+
 ## 0.2.1 (十月 15, 2021)\n
 
 - feat: use action-workflow

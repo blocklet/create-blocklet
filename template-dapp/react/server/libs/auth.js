@@ -1,9 +1,9 @@
 const path = require('path');
 const AuthStorage = require('@arcblock/did-auth-storage-nedb');
 const WalletAuthenticator = require('@blocklet/sdk/lib/wallet-authenticator');
+const WalletHandlers = require('@blocklet/sdk/lib/wallet-handler');
 const { types } = require('@ocap/mcrypto');
 const { fromSecretKey, WalletType } = require('@ocap/wallet');
-const { WalletHandlers } = require('@arcblock/did-auth');
 const logger = require('./logger');
 
 const appSk = process.env.APP_SK || process.env.BLOCKLET_APP_SK;
