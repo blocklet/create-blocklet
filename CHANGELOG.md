@@ -1,17 +1,21 @@
-## 0.2.3 (十一月 08, 2021)\n
+## 0.2.4 (October 28, 2021)
+
+- chore: bump deps to latest
+
+## 0.2.3 (十一月 08, 2021)
 
 - chore: update README.md
 - chore: remove sharp
 
-## 0.2.2 (十月 19, 2021)\n
+## 0.2.2 (十月 19, 2021)
 
 - chore: use blocklet/sdk WalletHandlers
 
-## 0.2.1 (十月 15, 2021)\n
+## 0.2.1 (十月 15, 2021)
 
 - feat: use action-workflow
 
-## 0.2.0 (九月 30, 2021)\n
+## 0.2.0 (九月 30, 2021)
 
 - feat: add npm script "upload"
 - fix #25
@@ -20,12 +24,12 @@
 - fix #24
 - fix #23
 
-## 0.1.7 (八月 12, 2021)\n
+## 0.1.7 (八月 12, 2021)
 
 - feat: support generate did
 - fix: remove yarn command
 
-## 0.1.6 (八月 06, 2021)\n
+## 0.1.6 (八月 06, 2021)
 
 - fix: [#8](https://github.com/blocklet/create-blocklet/issues/8)
 
