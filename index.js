@@ -292,7 +292,7 @@ async function init() {
       }
     });
     const pngIcon = toDidIcon(did, undefined, true);
-    fs.writeFileSync('logo.png', pngIcon);
+    fs.writeFileSync(path.join(root, 'logo.png'), pngIcon);
   })();
 
   const pkgManager = /yarn/.test(process.env.npm_execpath) ? 'yarn' : 'npm';
