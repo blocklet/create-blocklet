@@ -1,3 +1,8 @@
+## 0.2.3 (十一月 08, 2021)\n
+
+- chore: update README.md
+- chore: remove sharp
+
 ## 0.2.2 (十月 19, 2021)\n
 
 - chore: use blocklet/sdk WalletHandlers
