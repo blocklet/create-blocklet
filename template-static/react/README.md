@@ -12,8 +12,6 @@ This blocklet is a static project, which means this is a frontend application. I
   - index.html - main html file, template for react
 - screenshots/ - Screenshots
 - src/ - Client side code (A standard react app structure)
-- tools/ - Tools
-  - publish.sh - Scripts for github CI
 - .env - Environment variables
 - .env.local - Local environment variables
 - .eslintrc.js - ESLint configuration
@@ -63,9 +61,9 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
 
   > Make sure the blocklet is bundled before deployment.
 
-## Publish
+## Upload to blocklet registry
 
-- If you want to publish the blocklet to any registry for other users to download and use, you can following the following instructions.
+- If you want to upload the blocklet to any registry for other users to download and use, you can following the following instructions.
 
   Bump version at first.
 
@@ -73,17 +71,7 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
   make bump-version
   ```
 
-  Get a `developer-sk` by using this command.
-
-  > Why we need a `developer-sk`?  
-  > A `developer-sk` means we have a self-signed key, which help us publish our blocklet to any registry.
-
-  ```shell
-  blocklet developer:init
-  ```
-
-  Then config registry publish url to a `blocklet registry`
-
+  Then config blocklet registry url.
   You can use those registry url in below.
 
   1. [https://registry.arcblock.io/](https://registry.arcblock.io/)
@@ -92,20 +80,31 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
      > Make sure you have installed a `blocklet registry` on your own abtnode. Check it on here: [https://registry.arcblock.io/blocklet/z8ia29UsENBg6tLZUKi2HABj38Cw1LmHZocbQ](https://registry.arcblock.io/blocklet/z8ia29UsENBg6tLZUKi2HABj38Cw1LmHZocbQ)
 
   ```shell
-  blocklet config registry {registry url}
+  blocklet config set registry {registry url}
   ```
 
-  Release a new version to a registry.
+  Get a `accessToken` from blocklet registry.
 
-  > Make sure the blocklet is bundled before publish.
+  > Why we need a `accessToken`?  
+  > A `accessToken` is genrate by blocklet registry, which help us upload our blocklet to any registry.
+
+  Set `accessToken` to blocklet config
 
   ```shell
-  blocklet publish
+  blocklet config set accessToken {accessToken}
   ```
 
-  Or you can simply use `npm run release` command.
+  Upload a new version to a registry.
 
-- You also can publish a new version to a registry by Github CI.  
+  > Make sure the blocklet is bundled before upload.
+
+  ```shell
+  blocklet upload
+  ```
+
+  Or you can simply use `npm run upload` command.
+
+- You also can upload a new version to blocklet registry by Github CI.  
   Bump version at first.
 
   ```shell
@@ -113,7 +112,7 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
   ```
 
   Push your code to Github main/master branch, or make a pull request to the main/master branch.  
-  The CI workflow will automatically publish a new version to a registry.
+  The CI workflow will automatically upload a new version to a registry.
 
 ## Q & A
 
