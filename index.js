@@ -7,7 +7,6 @@ import YAML from 'yaml';
 import { fileURLToPath } from 'url';
 import minimist from 'minimist';
 import prompts from 'prompts';
-import sharp from 'sharp';
 import { yellow, red, green, cyan } from 'kolorist';
 import * as envfile from 'envfile';
 
@@ -292,9 +291,8 @@ async function init() {
         pkg.scripts.bundle = ejs.render(pkg.scripts.bundle, { did });
       }
     });
-    const svgIcon = toDidIcon(did);
-    const iconBuffer = Buffer.from(svgIcon);
-    sharp(iconBuffer).toFile(path.join(root, 'logo.png'));
+    const pngIcon = toDidIcon(did, undefined, true);
+    fs.writeFileSync('logo.png', pngIcon);
   })();
 
   const pkgManager = /yarn/.test(process.env.npm_execpath) ? 'yarn' : 'npm';
