@@ -88,6 +88,12 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
   > Why we need a `accessToken`?  
   > A `accessToken` is genrate by blocklet registry, which help us upload our blocklet to any registry.
 
+  Set `accessToken` to blocklet config
+
+  ```shell
+  blocklet config set accessToken {accessToken}
+  ```
+
   Upload a new version to a registry.
 
   > Make sure the blocklet is bundled before upload.
