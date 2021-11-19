@@ -35,6 +35,11 @@ const TYPES = [
         display: 'react',
         color: yellow,
       },
+      {
+        name: 'vue',
+        display: 'vue3 + vite',
+        color: green,
+      },
     ],
   },
   {
@@ -45,6 +50,11 @@ const TYPES = [
         name: 'react',
         display: 'react',
         color: yellow,
+      },
+      {
+        name: 'vue',
+        display: 'vue3 + vite',
+        color: green,
       },
     ],
   },
@@ -253,7 +263,11 @@ async function init() {
     return md.replace(/# template-react/g, `# ${name}`);
   });
   modifyEnv((env) => {
-    env.REACT_APP_TITLE = name;
+    if (framework === 'react') {
+      env.REACT_APP_TITLE = name;
+    } else {
+      env.APP_TITLE = name;
+    }
     return env;
   });
 

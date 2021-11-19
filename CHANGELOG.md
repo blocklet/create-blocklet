@@ -1,3 +1,7 @@
+## 0.2.5 (十一月 20, 2021)
+
+- feat: add vite + vue3 template
+
 ## 0.2.4 (October 28, 2021)
 
 - chore: bump deps to latest

@@ -1,0 +1,23 @@
+{
+  "name": "template-vue",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "vite",
+    "start": "vite --host",
+    "build": "vite build",
+    "serve": "vite preview",
+    "clean": "rm -rf .blocklet",
+    "bundle": "npm run clean && vite build --base /.blocklet/proxy/<%= did %> && blocklet bundle --zip --create-release",
+    "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
+    "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json"
+  },
+  "dependencies": {
+    "vite-plugin-html": "^2.1.1",
+    "vue": "^3.2.16"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.9.3",
+    "vite": "^2.6.4",
+    "prettier": "^2.3.2"
+  }
+}
