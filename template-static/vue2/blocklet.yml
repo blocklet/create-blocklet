@@ -1,12 +1,12 @@
-name: template-vue
-title: Blocklet Template Vue
+name: template-vue2
+title: Blocklet Template Vue2
 description: ABT Node blocklet project
 keywords:
   - blocklet
   - vue
-group: dapp
+group: static
 did: ''
-main: server/index.js
+main: dist
 author:
   name: zhanghan
   email: zhanghan@arcblock.io
@@ -17,7 +17,6 @@ specVersion: 1.1.1
 version: 0.1.0
 logo: logo.png
 files:
-  - dist
   - logo.png
   - README.md
   - blocklet.md
@@ -44,19 +43,8 @@ requirements:
   os: '*'
   cpu: '*'
 scripts:
-  preStart: node server/hooks/pre-start.js
   dev: npm run start
-environments:
-  - name: CHAIN_ID
-    description: What's endpoint of the chain id?
-    required: true
-    default: 'beta'
-    secure: false
-  - name: CHAIN_HOST
-    description: What's endpoint of the chain?
-    required: true
-    default: 'https://beta.abtnetwork.io/api/'
-    secure: false
+environments: []
 capabilities: {}
 screenshots: []
 children: []

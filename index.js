@@ -40,6 +40,11 @@ const TYPES = [
         display: 'vue3 + vite',
         color: green,
       },
+      {
+        name: 'vue2',
+        display: 'vue2 + @vue/cli',
+        color: green,
+      },
     ],
   },
   {
@@ -54,6 +59,11 @@ const TYPES = [
       {
         name: 'vue',
         display: 'vue3 + vite',
+        color: green,
+      },
+      {
+        name: 'vue2',
+        display: 'vue2 + @vue/cli',
         color: green,
       },
     ],
@@ -238,6 +248,10 @@ async function init() {
     const commonDir = path.join(__dirname, 'common');
     const commonFiles = fs.readdirSync(commonDir);
     for (const file of commonFiles) {
+      if (framework !== 'react' && file === '_eslintrc.js') {
+        // eslint-disable-next-line no-continue
+        continue;
+      }
       const targetPath = renameFiles[file] ? path.join(root, renameFiles[file]) : path.join(root, file);
       copy(path.join(commonDir, file), targetPath);
     }

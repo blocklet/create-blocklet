@@ -1,0 +1,147 @@
+# Getting Started with Create Blocklet
+
+This project was bootstrapped with [Create Blocklet](https://github.com/blocklet/create-blocklet).
+
+This blocklet is a static project, which means this is a frontend application. It's contained `client` code.
+
+## File Structure
+
+- public/ - static files
+  - favicon.ico - favicon
+  - favicon.svg - favicon
+  - index.html - main html file, template for vue
+- screenshots/ - Screenshots
+- src/ - Client side code (A standard vue app structure)
+- .env - Environment variables
+- .env.local - Local environment variables
+- .eslintrc.js - ESLint configuration
+- .gitignore - Git ignore file
+- .prettierrc - Prettier configuration
+- blocklet.md - Blocklet README
+- blocklet.yml - Blocklet configuration
+- LICENSE - License file
+- logo.png - Blocklet logo file
+- Makefile - Makefile
+- package.json - Npm package file
+- README.md - A guide for this blocklet
+- version - Version file
+
+## Development
+
+1. Make sure you have [@abtnode/cli](https://www.npmjs.com/package/@abtnode/cli) installed
+
+   Blocklet needs abtnode as a dependency. So you need to install it first.  
+   `npm install -g @abtnode/cli`  
+   See details in [https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#use-the-binary-distribution](https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#use-the-binary-distribution)
+
+2. Init abtnode & start abtnode
+
+   Before starting an abtnode, you need to init abtnode.  
+   `abtnode init --mode=debug`  
+   `abtnode start`  
+   See details in [https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#configure-abt-node](https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#configure-abt-node)
+
+3. Go to the project directory `cd [name]`
+4. Install dependencies: `npm install` or `yarn`
+5. Start development server: `blocklet dev`
+
+## Bundle
+
+After developing a blocklet, you may need to bundle it. Use `npm run bundle` command.
+
+## Deploy
+
+- If you want to deploy this blocklet to local abtnode, you can use `blocklet deploy .blocklet/bundle` command(Make sure the blocklet is bundled before deployment.)
+  > Or you can simply use `npm run deploy` command.
+- If you want to deploy this blocklet to remote abtnode, you can use the command below.
+
+  ```shell
+  blocklet deploy .blocklet/bundle --endpoint {your abtnode url} --access-key {abtnode access key} --access-secret {abtnode access secret}
+  ```
+
+  > Make sure the blocklet is bundled before deployment.
+
+## Upload to blocklet registry
+
+- If you want to upload the blocklet to any registry for other users to download and use, you can following the following instructions.
+
+  Bump version at first.
+
+  ```shell
+  make bump-version
+  ```
+
+  Then config blocklet registry url.
+  You can use those registry url in below.
+
+  1. [https://registry.arcblock.io/](https://registry.arcblock.io/)
+  2. [https://dev.registry.arcblock.io/](https://dev.registry.arcblock.io/)
+  3. A blocklet registry started by yourself.
+     > Make sure you have installed a `blocklet registry` on your own abtnode. Check it on here: [https://registry.arcblock.io/blocklet/z8ia29UsENBg6tLZUKi2HABj38Cw1LmHZocbQ](https://registry.arcblock.io/blocklet/z8ia29UsENBg6tLZUKi2HABj38Cw1LmHZocbQ)
+
+  ```shell
+  blocklet config set registry {registry url}
+  ```
+
+  Get a `accessToken` from blocklet registry.
+
+  > Why we need a `accessToken`?  
+  > A `accessToken` is genrate by blocklet registry, which help us upload our blocklet to any registry.
+
+  Set `accessToken` to blocklet config
+
+  ```shell
+  blocklet config set accessToken {accessToken}
+  ```
+
+  Upload a new version to a registry.
+
+  > Make sure the blocklet is bundled before upload.
+
+  ```shell
+  blocklet upload
+  ```
+
+  Or you can simply use `npm run upload` command.
+
+- You also can upload a new version to blocklet registry by Github CI.  
+  Bump version at first.
+
+  ```shell
+  make bump-version
+  ```
+
+  Push your code to Github main/master branch, or make a pull request to the main/master branch.  
+  The CI workflow will automatically upload a new version to a registry.
+
+## Q & A
+
+1. Q: How to change a blocklet's name?
+
+   A: Change the `name` field in the `package.json` file, change the `name` field in the `blocklet.yml` file.
+
+   You can also change the `title` field and `description` field in the `blocklet.yml` file.
+
+   Run `blocklet meta` command, you will get a `did` config, copy the `did` value.
+
+   Replace this command `"bundle": "PUBLIC_PATH=/.blocklet/proxy/<%= did %> npm run build",` in `package.json`
+
+   Replace `did` field in the `blocklet.yml`
+
+2. Q: How to change a blocklet's logo?
+
+   Change the `logo.png` file root folder.
+
+   Or you can change the `logo` field in the `blocklet.yml` file.
+
+   > Make sure you have added the logo path to the `blocklet.yml` file `files` field.
+
+## Learn More
+
+- Full specification of `blocklet.yml`: [https://github.com/blocklet/blocklet-specification/blob/main/docs/meta.md](https://github.com/blocklet/blocklet-specification/blob/main/docs/meta.md)
+- Full document of AbtNode & blocklet development: [https://docs.arcblock.io/abtnode/en/introduction](https://docs.arcblock.io/abtnode/en/introduction)
+
+## License
+
+The code is licensed under the Apache 2.0 license found in the
+[LICENSE](LICENSE) file.
