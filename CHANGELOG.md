@@ -1,3 +1,7 @@
+## 0.2.6 (十一月 20, 2021)
+
+- feat: add vue2 + @vue/cli template
+
 ## 0.2.5 (十一月 20, 2021)
 
 - feat: add vite + vue3 template
