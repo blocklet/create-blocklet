@@ -1,3 +1,7 @@
+## 0.2.7 (十一月 21, 2021)
+
+- chore: prettier default useTabs: false
+
 ## 0.2.6 (十一月 20, 2021)
 
 - feat: add vue2 + @vue/cli template
