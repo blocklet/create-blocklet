@@ -1,3 +1,7 @@
+## 0.2.8 (十一月 26, 2021)
+
+- feat: rebrand blocklet registry -> blocklet store
+
 ## 0.2.7 (十一月 21, 2021)
 
 - chore: prettier default useTabs: false
