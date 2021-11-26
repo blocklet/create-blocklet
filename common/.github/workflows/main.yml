@@ -22,13 +22,13 @@ jobs:
         run: yarn
 
       - name: Blocklet workflow
-        uses: blocklet/action-workflow@v1
+        uses: blocklet/action-workflow@v1.1
         with:
           skip-upload: false
           skip-deploy: false
           bundle-command: yarn bundle
-          registry-endpoint: ${{ secrets.STAGING_REGISTRY }}
-          developer-sk: ${{ secrets.ABTNODE_DEV_STAGING_SK }}
+          store-endpoint: ${{ secrets.STORE_ENDPOINT_STAGING }}
+          store-access-token: ${{ secrets.STORE_ACCESS_TOKEN_STAGING }}
           abtnode-endpoint: ${{ secrets.STAGING_NODE_ENDPOINT }}
           access-key: ${{ secrets.STAGING_NODE_ACCESS_KEY }}
           access-secret: ${{ secrets.STAGING_NODE_ACCESS_SECRET }}
