@@ -61,9 +61,9 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
 
   > Make sure the blocklet is bundled before deployment.
 
-## Upload to blocklet registry
+## Upload to blocklet store
 
-- If you want to upload the blocklet to any registry for other users to download and use, you can following the following instructions.
+- If you want to upload the blocklet to any store for other users to download and use, you can following the following instructions.
 
   Bump version at first.
 
@@ -71,22 +71,22 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
   make bump-version
   ```
 
-  Then config blocklet registry url.
-  You can use those registry url in below.
+  Then config blocklet store url.
+  You can use those store url in below.
 
-  1. [https://registry.arcblock.io/](https://registry.arcblock.io/)
-  2. [https://dev.registry.arcblock.io/](https://dev.registry.arcblock.io/)
-  3. A blocklet registry started by yourself.
-     > Make sure you have installed a `blocklet registry` on your own abtnode. Check it on here: [https://registry.arcblock.io/blocklet/z8ia29UsENBg6tLZUKi2HABj38Cw1LmHZocbQ](https://registry.arcblock.io/blocklet/z8ia29UsENBg6tLZUKi2HABj38Cw1LmHZocbQ)
+  1. [https://store.blocklet.dev/](https://store.blocklet.dev/)
+  2. [https://dev.store.blocklet.dev/](https://dev.store.blocklet.dev/)
+  3. A blocklet store started by yourself.
+     > Make sure you have installed a `blocklet store` on your own abtnode. Check it on here: [https://store.blocklet.dev/blocklet/z8ia29UsENBg6tLZUKi2HABj38Cw1LmHZocbQ](https://store.blocklet.dev/blocklet/z8ia29UsENBg6tLZUKi2HABj38Cw1LmHZocbQ)
 
   ```shell
-  blocklet config set registry {registry url}
+  blocklet config set store {store url}
   ```
 
-  Get a `accessToken` from blocklet registry.
+  Get a `accessToken` from blocklet store.
 
   > Why we need a `accessToken`?  
-  > A `accessToken` is genrate by blocklet registry, which help us upload our blocklet to any registry.
+  > A `accessToken` is genrate by blocklet store, which help us upload our blocklet to any store.
 
   Set `accessToken` to blocklet config
 
@@ -94,7 +94,7 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
   blocklet config set accessToken {accessToken}
   ```
 
-  Upload a new version to a registry.
+  Upload a new version to a store.
 
   > Make sure the blocklet is bundled before upload.
 
@@ -104,7 +104,7 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
 
   Or you can simply use `npm run upload` command.
 
-- You also can upload a new version to blocklet registry by Github CI.  
+- You also can upload a new version to blocklet store by Github CI.  
   Bump version at first.
 
   ```shell
@@ -112,7 +112,7 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
   ```
 
   Push your code to Github main/master branch, or make a pull request to the main/master branch.  
-  The CI workflow will automatically upload a new version to a registry.
+  The CI workflow will automatically upload a new version to a store.
 
 ## Q & A
 
