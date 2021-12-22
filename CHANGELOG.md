@@ -1,3 +1,7 @@
+## 0.2.9 (十二月 22, 2021)
+
+- chore: rebrand abtnode -> blocklet server
+
 ## 0.2.8 (十一月 26, 2021)
 
 - feat: rebrand blocklet registry -> blocklet store
