@@ -3,7 +3,7 @@
 dep:
 	@echo "Install dependencies required for this repo..."
 	@npm install
-	@npm install -g @abtnode/cli
+	@npm install -g @blocklet/cli
 
 test:
 	@echo "Running test suites..."

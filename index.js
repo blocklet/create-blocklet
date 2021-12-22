@@ -199,43 +199,43 @@ async function init() {
   await echoBrand();
   await echoDocument();
 
-  console.log('Checking abtnode runtime environment...', '\n');
+  console.log('Checking blocklet server runtime environment...', '\n');
 
   const isAbtnodeInstalled = checkAbtnodeInstalled();
   const isSatisfiedVersion = checkSatisfiedVersion();
   const isAbtnodeRunning = checkAbtnodeRunning();
 
   if (!isAbtnodeInstalled) {
-    // 未安装 abtnode
-    console.log(red('To run the blocklet, you need a running abtnode instance on local machine.'), '\n');
+    // 未安装 blocklet server
+    console.log(red('To run the blocklet, you need a running blocklet server instance on local machine.'), '\n');
     console.log(`Checkout ${green('README.md')} for more usage instructions.`);
     console.log('Now you should run:', '\n');
-    console.log(cyan('npm install -g @abtnode/cli'));
-    console.log(cyan('abtnode start -a'));
+    console.log(cyan('npm install -g @blocklet/cli'));
+    console.log(cyan('blocklet server start -a'));
   } else if (!isSatisfiedVersion) {
-    // 已安装 abtnode，但版本不满足
-    console.log(red('Your abtnode version is outdate, please update it to the latest version.'));
+    // 已安装 blocklet server，但版本不满足
+    console.log(red('Your blocklet server version is outdate, please update it to the latest version.'));
     console.log('Now you should run:', '\n');
     if (isAbtnodeRunning) {
-      // abtnode 已经启动
-      const abtnodePath = getAbtnodeDirectory();
-      console.log(cyan(`cd ${abtnodePath}`));
-      console.log(cyan('abtnode stop'));
-      console.log(cyan('npm install -g @abtnode/cli'));
-      console.log(cyan('abtnode start'));
+      // blocklet server 已经启动
+      const serverPath = getAbtnodeDirectory();
+      console.log(cyan(`cd ${serverPath}`));
+      console.log(cyan('blocklet server stop'));
+      console.log(cyan('npm install -g @blocklet/cli'));
+      console.log(cyan('blocklet server start'));
       console.log(cyan(`cd ${cwd}`));
     } else {
-      // abtnode 未启动
-      // TODO: 如何获取未启动的 abtnode 实例目录？
-      console.log(cyan('npm install -g @abtnode/cli'));
-      console.log(cyan('abtnode start -a'));
+      // blocklet server 未启动
+      // TODO: 如何获取未启动的 blocklet server 实例目录？
+      console.log(cyan('npm install -g @blocklet/cli'));
+      console.log(cyan('blocklet server start -a'));
     }
   } else if (!isAbtnodeRunning) {
-    // 已经安装 abtnode，且版本满足，并且 abtnode 未启动
-    console.log(red('You need to start your abtnode before develop this blocklet.'));
+    // 已经安装 blocklet server，且版本满足，并且 blocklet server 未启动
+    console.log(red('You need to start your blocklet server before develop this blocklet.'));
     console.log('Now you should run:', '\n');
-    // TODO: 如何获取未启动的 abtnode 实例目录？
-    console.log(cyan('abtnode start -a'));
+    // TODO: 如何获取未启动的 blocklet server 实例目录？
+    console.log(cyan('blocklet server start -a'));
   }
 
   console.log(`\n\nScaffolding project in ${root}...`);
