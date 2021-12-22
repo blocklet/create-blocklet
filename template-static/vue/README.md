@@ -28,17 +28,17 @@ This blocklet is a static project, which means this is a frontend application. I
 
 ## Development
 
-1. Make sure you have [@abtnode/cli](https://www.npmjs.com/package/@abtnode/cli) installed
+1. Make sure you have [@blocklet/cli](https://www.npmjs.com/package/@blocklet/cli) installed
 
-   Blocklet needs abtnode as a dependency. So you need to install it first.  
-   `npm install -g @abtnode/cli`  
+   Blocklet needs blocklet server as a dependency. So you need to install it first.  
+   `npm install -g @blocklet/cli`  
    See details in [https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#use-the-binary-distribution](https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#use-the-binary-distribution)
 
-2. Init abtnode & start abtnode
+2. Init blocklet server & start blocklet server
 
-   Before starting an abtnode, you need to init abtnode.  
-   `abtnode init --mode=debug`  
-   `abtnode start`  
+   Before starting an blocklet server, you need to init blocklet server.  
+   `blocklet server init --mode=debug`  
+   `blocklet server start`  
    See details in [https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#configure-abt-node](https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#configure-abt-node)
 
 3. Go to the project directory `cd [name]`
@@ -51,12 +51,12 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
 
 ## Deploy
 
-- If you want to deploy this blocklet to local abtnode, you can use `blocklet deploy .blocklet/bundle` command(Make sure the blocklet is bundled before deployment.)
+- If you want to deploy this blocklet to local blocklet server, you can use `blocklet deploy .blocklet/bundle` command(Make sure the blocklet is bundled before deployment.)
   > Or you can simply use `npm run deploy` command.
-- If you want to deploy this blocklet to remote abtnode, you can use the command below.
+- If you want to deploy this blocklet to remote blocklet server, you can use the command below.
 
   ```shell
-  blocklet deploy .blocklet/bundle --endpoint {your abtnode url} --access-key {abtnode access key} --access-secret {abtnode access secret}
+  blocklet deploy .blocklet/bundle --endpoint {your blocklet server url} --access-key {blocklet server access key} --access-secret {blocklet server access secret}
   ```
 
   > Make sure the blocklet is bundled before deployment.
@@ -77,7 +77,7 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
   1. [https://store.blocklet.dev/](https://store.blocklet.dev/)
   2. [https://dev.store.blocklet.dev/](https://dev.store.blocklet.dev/)
   3. A blocklet store started by yourself.
-     > Make sure you have installed a `blocklet store` on your own abtnode. Check it on here: [https://store.blocklet.dev/blocklet/z8ia29UsENBg6tLZUKi2HABj38Cw1LmHZocbQ](https://store.blocklet.dev/blocklet/z8ia29UsENBg6tLZUKi2HABj38Cw1LmHZocbQ)
+     > Make sure you have installed a `blocklet store` on your own blocklet server. Check it on here: [https://store.blocklet.dev/blocklet/z8ia29UsENBg6tLZUKi2HABj38Cw1LmHZocbQ](https://store.blocklet.dev/blocklet/z8ia29UsENBg6tLZUKi2HABj38Cw1LmHZocbQ)
 
   ```shell
   blocklet config set store {store url}
