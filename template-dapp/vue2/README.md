@@ -139,7 +139,7 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
 ## Learn More
 
 - Full specification of `blocklet.yml`: [https://github.com/blocklet/blocklet-specification/blob/main/docs/meta.md](https://github.com/blocklet/blocklet-specification/blob/main/docs/meta.md)
-- Full document of AbtNode & blocklet development: [https://docs.arcblock.io/abtnode/en/introduction](https://docs.arcblock.io/abtnode/en/introduction)
+- Full document of Blocklet Server & blocklet development: [https://docs.arcblock.io/abtnode/en/introduction](https://docs.arcblock.io/abtnode/en/introduction)
 
 ## License
 

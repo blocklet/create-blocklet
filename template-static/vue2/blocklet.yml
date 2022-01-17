@@ -1,6 +1,6 @@
 name: template-vue2
 title: Blocklet Template Vue2
-description: ABT Node blocklet project
+description: A Blocklet Server blocklet
 keywords:
   - blocklet
   - vue
