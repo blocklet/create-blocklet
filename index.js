@@ -12,12 +12,7 @@ import * as envfile from 'envfile';
 
 import { echoBrand, echoDocument } from './lib/arcblock.js';
 import { getAuthor } from './lib/npm.js';
-import {
-  checkAbtnodeInstalled,
-  checkAbtnodeRunning,
-  checkSatisfiedVersion,
-  getAbtnodeDirectory,
-} from './lib/abtnode.js';
+import { checkServerInstalled, checkServerRunning, checkSatisfiedVersion, getServerDirectory } from './lib/server.js';
 import { toBlockletDid, toDidIcon } from './lib/did.js';
 
 const argv = minimist(process.argv.slice(2));
@@ -201,11 +196,11 @@ async function init() {
 
   console.log('Checking blocklet server runtime environment...', '\n');
 
-  const isAbtnodeInstalled = checkAbtnodeInstalled();
+  const isServerInstalled = checkServerInstalled();
   const isSatisfiedVersion = checkSatisfiedVersion();
-  const isAbtnodeRunning = checkAbtnodeRunning();
+  const isServerRunning = checkServerRunning();
 
-  if (!isAbtnodeInstalled) {
+  if (!isServerInstalled) {
     // 未安装 blocklet server
     console.log(red('To run the blocklet, you need a running blocklet server instance on local machine.'), '\n');
     console.log(`Checkout ${green('README.md')} for more usage instructions.`);
@@ -216,9 +211,9 @@ async function init() {
     // 已安装 blocklet server，但版本不满足
     console.log(red('Your blocklet server version is outdate, please update it to the latest version.'));
     console.log('Now you should run:', '\n');
-    if (isAbtnodeRunning) {
+    if (isServerRunning) {
       // blocklet server 已经启动
-      const serverPath = getAbtnodeDirectory();
+      const serverPath = getServerDirectory();
       console.log(cyan(`cd ${serverPath}`));
       console.log(cyan('blocklet server stop'));
       console.log(cyan('npm install -g @blocklet/cli'));
@@ -230,7 +225,7 @@ async function init() {
       console.log(cyan('npm install -g @blocklet/cli'));
       console.log(cyan('blocklet server start -a'));
     }
-  } else if (!isAbtnodeRunning) {
+  } else if (!isServerRunning) {
     // 已经安装 blocklet server，且版本满足，并且 blocklet server 未启动
     console.log(red('You need to start your blocklet server before develop this blocklet.'));
     console.log('Now you should run:', '\n');
