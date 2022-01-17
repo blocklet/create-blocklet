@@ -1,3 +1,9 @@
+## 0.2.10 (一月 17, 2022)
+
+- fix(ci): update templates ci variables
+- chore(docs): polish rebrand Abtnode -> Blocklet Server
+- fix(cli): update `getServerStatus` function
+
 ## 0.2.9 (十二月 22, 2021)
 
 - chore: rebrand abtnode -> blocklet server
