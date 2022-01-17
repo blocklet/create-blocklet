@@ -27,8 +27,8 @@ jobs:
           skip-upload: false
           skip-deploy: false
           bundle-command: yarn bundle
-          store-endpoint: ${{ secrets.STORE_ENDPOINT_STAGING }}
-          store-access-token: ${{ secrets.STORE_ACCESS_TOKEN_STAGING }}
+          store-endpoint: ${{ secrets.STORE_ENDPOINT_DEV }}
+          store-access-token: ${{ secrets.STORE_ACCESS_TOKEN_DEV }}
           server-endpoint: ${{ secrets.STAGING_NODE_ENDPOINT }}
           server-access-key: ${{ secrets.STAGING_NODE_ACCESS_KEY }}
           server-access-secret: ${{ secrets.STAGING_NODE_ACCESS_SECRET }}
