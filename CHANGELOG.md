@@ -1,3 +1,7 @@
+## 0.2.11 (January 18, 2022)
+
+- feat: add uncaughtException handler in pre-start hook
+
 ## 0.2.10 (一月 17, 2022)
 
 - fix(ci): update templates ci variables

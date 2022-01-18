@@ -1,3 +1,4 @@
+require('@blocklet/sdk/lib/error-handler');
 require('dotenv-flow').config();
 
 const Client = require('@ocap/client');
