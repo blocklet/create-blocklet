@@ -31,7 +31,7 @@ if (isProduction) {
   app.use(cors());
   app.use(compression());
 
-  const staticDir = path.resolve(__dirname, '../', 'build');
+  const staticDir = path.resolve(__dirname, '../', 'dist');
   app.use(express.static(staticDir, { index: 'index.html' }));
   app.use(router);
   app.use(fallback('index.html', { root: staticDir }));
