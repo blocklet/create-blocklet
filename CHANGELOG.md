@@ -1,3 +1,7 @@
+## 0.2.12 (January 27, 2022)
+
+- chore: polish server template for new blocklet sdk
+
 ## 0.2.11 (January 18, 2022)
 
 - feat: add uncaughtException handler in pre-start hook
