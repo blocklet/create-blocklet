@@ -47,11 +47,6 @@ scripts:
   preStart: node server/hooks/pre-start.js
   dev: npm run start
 environments:
-  - name: CHAIN_ID
-    description: What's endpoint of the chain id?
-    required: true
-    default: 'beta'
-    secure: false
   - name: CHAIN_HOST
     description: What's endpoint of the chain?
     required: true
