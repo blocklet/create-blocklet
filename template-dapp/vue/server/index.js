@@ -47,7 +47,7 @@ if (isProduction) {
   app.use(router);
 }
 
-const port = parseInt(process.env.BLOCKLET_PORT || process.env.APP_PORT, 10) || 3030;
+const port = parseInt(process.env.BLOCKLET_PORT, 10) || 3030;
 
 app.listen(port, (err) => {
   if (err) throw err;
