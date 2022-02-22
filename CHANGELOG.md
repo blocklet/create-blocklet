@@ -1,3 +1,7 @@
+## 0.2.13 (February 22, 2022)
+
+- chore: deprecate window.env, use meta.js instead
+
 ## 0.2.12 (January 27, 2022)
 
 - chore: polish server template for new blocklet sdk
