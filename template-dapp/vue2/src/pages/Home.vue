@@ -7,7 +7,7 @@
     <HelloWorld msg="Welcome to Your Vue.js App" />
     <div :style="{ display: 'flex', justifyContent: 'center' }">
       <pre :style="{ textAlign: 'left' }">
-<code>{{ JSON.stringify(envData, null, 2) }}</code>
+<code>{{ JSON.stringify(window.blocklet, null, 2) }}</code>
     </pre>
     </div>
   </div>
@@ -20,16 +20,6 @@ import api from '../libs/api';
 export default {
   components: {
     HelloWorld,
-  },
-  data() {
-    return {
-      envData: {},
-    };
-  },
-  mounted() {
-    api.get('/api/env').then(({ data }) => {
-      this.envData = data;
-    });
   },
 };
 </script>
