@@ -1,3 +1,7 @@
+## 0.2.14 (February 23, 2022)
+
+- feat: make blocklet bundle work with pnpm
+
 ## 0.2.13 (February 22, 2022)
 
 - chore: deprecate window.env, use meta.js instead
