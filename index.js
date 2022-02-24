@@ -63,7 +63,7 @@ const TYPES = [
       },
       {
         name: 'blocklet-page',
-        display: 'Blocklet Page',
+        display: 'blocklet page',
         color: blue,
       },
     ],

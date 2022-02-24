@@ -17,16 +17,16 @@ With NPM:
 npm init blocklet@latest [blocklet-name]
 ```
 
-With Yarn:
+With Yarn: (recommend)
 
 ```bash
 yarn create blocklet [blocklet-name]
 ```
 
-With PNPM:
+With PNPM: (recommend)
 
 ```bash
-pnpx create-blocklet [blocklet-name]
+pnpm create blocklet [blocklet-name]
 ```
 
 Currently supported template presets include:
@@ -34,10 +34,15 @@ Currently supported template presets include:
 **dapp**
 
 - `react`
+- `vue3 + vite`
+- `vue2 + @vue/cli`
 
 **static**
 
 - `react`
+- `vue3 + vite`
+- `vue2 + @vue/cli`
+- `blocklet page`
 
 ## Community Templates
 
