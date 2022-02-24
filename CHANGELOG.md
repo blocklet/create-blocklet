@@ -1,3 +1,7 @@
+## 0.2.17 (二月 24, 2022)
+
+- chore: update readme
+
 ## 0.2.16 (二月 24, 2022)
 
 - fix: change .npmrc -> \_npmrc to aviod ignore .npmrc file
