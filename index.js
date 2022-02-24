@@ -81,6 +81,7 @@ const SERVICES = [
 const renameFiles = {
   _gitignore: '.gitignore',
   '_eslintrc.js': '.eslintrc.js',
+  _npmrc: '.npmrc',
 };
 
 async function init() {
