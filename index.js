@@ -7,7 +7,7 @@ import YAML from 'yaml';
 import { fileURLToPath } from 'url';
 import minimist from 'minimist';
 import prompts from 'prompts';
-import { yellow, red, green, cyan } from 'kolorist';
+import { yellow, red, green, cyan, blue, lightYellow } from 'kolorist';
 import * as envfile from 'envfile';
 
 import { echoBrand, echoDocument } from './lib/arcblock.js';
@@ -60,6 +60,11 @@ const TYPES = [
         name: 'vue2',
         display: 'vue2 + @vue/cli',
         color: green,
+      },
+      {
+        name: 'blocklet-page',
+        display: 'Blocklet Page',
+        color: blue,
       },
     ],
   },
@@ -364,9 +369,13 @@ async function init() {
     write('blocklet.md', modifyMd);
   }
   function modifyEnv(modifyFn = (...args) => ({ ...args })) {
-    const env = envfile.parse(read('.env'));
-    modifyFn(env);
-    write('.env', envfile.stringify(env));
+    try {
+      const env = envfile.parse(read('.env'));
+      modifyFn(env);
+      write('.env', envfile.stringify(env));
+    } catch {
+      console.warn(`\n${lightYellow('No .env file found, please add one.')}`);
+    }
   }
 }
 

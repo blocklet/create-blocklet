@@ -1,3 +1,7 @@
+## 0.2.15 (二月 24, 2022)
+
+- feat: add blocklet page template (static)
+
 ## 0.2.14 (February 23, 2022)
 
 - feat: make blocklet bundle work with pnpm
