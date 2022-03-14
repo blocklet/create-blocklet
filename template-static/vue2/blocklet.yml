@@ -39,7 +39,7 @@ charging:
 timeout:
   start: 60
 requirements:
-  abtnode: '>=1.4.0'
+  server: '>=1.6.29'
   os: '*'
   cpu: '*'
 scripts:
