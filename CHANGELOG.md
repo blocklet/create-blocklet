@@ -1,3 +1,7 @@
+## 0.2.18 (March 14, 2022)
+
+- chore: remove service selection
+
 ## 0.2.17 (二月 24, 2022)
 
 - chore: update readme

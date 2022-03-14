@@ -70,14 +70,6 @@ const TYPES = [
   },
 ];
 
-const SERVICES = [
-  {
-    name: 'auth',
-    display: 'Auth Service',
-    color: yellow,
-  },
-];
-
 const renameFiles = {
   _gitignore: '.gitignore',
   '_eslintrc.js': '.eslintrc.js',
@@ -161,19 +153,6 @@ async function init() {
             });
           },
         },
-        {
-          type: 'multiselect',
-          name: 'services',
-          message: 'Choose blocklet services:',
-          initial: 0,
-          choices: SERVICES.map((service) => {
-            const serviceColor = service.color;
-            return {
-              title: serviceColor(service.display),
-              value: service.name,
-            };
-          }),
-        },
       ],
       {
         onCancel: () => {
@@ -187,7 +166,7 @@ async function init() {
   }
 
   // user choice associated with prompts
-  const { type, framework, overwrite, packageName, services } = result;
+  const { type, framework, overwrite, packageName } = result;
 
   const root = path.join(cwd, targetDir);
 
@@ -286,19 +265,6 @@ async function init() {
     return env;
   });
 
-  // patch blocklet services
-  modifyBlockletYaml((yamlConfig) => {
-    if (services.includes('auth')) {
-      yamlConfig.interfaces[0].services = [
-        {
-          name: '@abtnode/auth-service',
-          config: {
-            blockUnauthenticated: true,
-          },
-        },
-      ];
-    }
-  });
   // patch blocklet author
   modifyBlockletYaml((yamlConfig) => {
     // eslint-disable-next-line no-shadow
