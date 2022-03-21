@@ -1,21 +1,22 @@
 #!/usr/bin/env node
 
-import fs from 'fs';
 import ejs from 'ejs';
-import path from 'path';
-import YAML from 'yaml';
+import boxen from 'boxen';
 import { fileURLToPath } from 'url';
-import minimist from 'minimist';
+import { execSync } from 'child_process';
+import { cd, argv, fs, YAML, chalk, path } from 'zx';
+import { startSpinner } from 'zx/experimental';
 import prompts from 'prompts';
-import { yellow, red, green, cyan, blue, lightYellow } from 'kolorist';
 import * as envfile from 'envfile';
 
 import { echoBrand, echoDocument } from './lib/arcblock.js';
-import { getAuthor } from './lib/npm.js';
+import { getUser } from './lib/index.js';
 import { checkServerInstalled, checkServerRunning, checkSatisfiedVersion, getServerDirectory } from './lib/server.js';
 import { toBlockletDid } from './lib/did.js';
+import { initGitRepo } from './lib/git.js';
 
-const argv = minimist(process.argv.slice(2));
+const { yellow, red, green, cyan, blue, lightYellow, bold, dim } = chalk;
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const cwd = process.cwd();
@@ -77,7 +78,18 @@ const renameFiles = {
 };
 
 async function init() {
-  let targetDir = argv._[0];
+  const { version } = await fs.readJSONSync(path.resolve(__dirname, 'package.json'));
+
+  console.log(
+    boxen(`${bold('Blocklet') + dim(' Starter')}  ${blue(`v${version}`)}`, {
+      padding: 1,
+      margin: 1,
+      float: 'center',
+      borderStyle: 'double',
+    })
+  );
+
+  let targetDir = argv._[0] ? String(argv._[0]) : undefined;
 
   const defaultProjectName = !targetDir ? 'blocklet-project' : targetDir;
 
@@ -161,12 +173,14 @@ async function init() {
       }
     );
   } catch (cancelled) {
-    console.log(cancelled.message);
+    console.error(cancelled.message);
     return;
   }
 
   // user choice associated with prompts
   const { type, framework, overwrite, packageName } = result;
+
+  const stopSpinner = startSpinner();
 
   const root = path.join(cwd, targetDir);
 
@@ -181,42 +195,9 @@ async function init() {
 
   console.log('Checking blocklet server runtime environment...', '\n');
 
-  const isServerInstalled = checkServerInstalled();
-  const isSatisfiedVersion = checkSatisfiedVersion();
-  const isServerRunning = checkServerRunning();
-
-  if (!isServerInstalled) {
-    // 未安装 blocklet server
-    console.log(red('To run the blocklet, you need a running blocklet server instance on local machine.'), '\n');
-    console.log(`Checkout ${green('README.md')} for more usage instructions.`);
-    console.log('Now you should run:', '\n');
-    console.log(cyan('npm install -g @blocklet/cli'));
-    console.log(cyan('blocklet server start -a'));
-  } else if (!isSatisfiedVersion) {
-    // 已安装 blocklet server，但版本不满足
-    console.log(red('Your blocklet server version is outdate, please update it to the latest version.'));
-    console.log('Now you should run:', '\n');
-    if (isServerRunning) {
-      // blocklet server 已经启动
-      const serverPath = getServerDirectory();
-      console.log(cyan(`cd ${serverPath}`));
-      console.log(cyan('blocklet server stop'));
-      console.log(cyan('npm install -g @blocklet/cli'));
-      console.log(cyan('blocklet server start'));
-      console.log(cyan(`cd ${cwd}`));
-    } else {
-      // blocklet server 未启动
-      // TODO: 如何获取未启动的 blocklet server 实例目录？
-      console.log(cyan('npm install -g @blocklet/cli'));
-      console.log(cyan('blocklet server start -a'));
-    }
-  } else if (!isServerRunning) {
-    // 已经安装 blocklet server，且版本满足，并且 blocklet server 未启动
-    console.log(red('You need to start your blocklet server before develop this blocklet.'));
-    console.log('Now you should run:', '\n');
-    // TODO: 如何获取未启动的 blocklet server 实例目录？
-    console.log(cyan('blocklet server start -a'));
-  }
+  const isServerInstalled = await checkServerInstalled();
+  const isSatisfiedVersion = await checkSatisfiedVersion();
+  const isServerRunning = await checkServerRunning();
 
   console.log(`\n\nScaffolding project in ${root}...`);
 
@@ -266,11 +247,10 @@ async function init() {
   });
 
   // patch blocklet author
-  modifyBlockletYaml((yamlConfig) => {
-    // eslint-disable-next-line no-shadow
-    const { name, email } = getAuthor();
-    if (name) yamlConfig.author.name = name;
-    if (email) yamlConfig.author.email = email;
+  modifyBlockletYaml(async (yamlConfig) => {
+    const authorInfo = await getUser();
+    if (authorInfo.name) yamlConfig.author.name = authorInfo.name;
+    if (authorInfo.email) yamlConfig.author.email = authorInfo.email;
   });
 
   // patch did
@@ -291,19 +271,110 @@ async function init() {
     // fs.writeFileSync(path.join(root, 'logo.png'), pngIcon);
   })();
 
-  const pkgManager = /yarn/.test(process.env.npm_execpath) ? 'yarn' : 'npm';
-
+  const related = path.relative(cwd, root);
   console.log('\n\n✨  Done. Now run:\n');
+  stopSpinner();
 
-  if (root !== cwd) {
-    console.log(`      ${cyan('cd')} ${path.relative(cwd, root)}`);
+  const pkgManager =
+    // eslint-disable-next-line no-nested-ternary
+    /pnpm/.test(process.env.npm_execpath) || /pnpm/.test(process.env.npm_config_user_agent)
+      ? 'pnpm'
+      : /yarn/.test(process.env.npm_execpath)
+      ? 'yarn'
+      : 'npm';
+  try {
+    const { yes } = await prompts(
+      {
+        type: 'confirm',
+        name: 'yes',
+        initial: 'Y',
+        message: 'Install and start it now?',
+      },
+      {
+        onCancel: () => {
+          throw new Error(`${red('✖')} Operation cancelled`);
+        },
+      }
+    );
+    let hasStart = false;
+
+    if (yes) {
+      const { agent } = await prompts({
+        name: 'agent',
+        type: 'select',
+        message: 'Choose the agent',
+        choices: ['npm', 'yarn', 'pnpm'].map((i) => ({ value: i, title: i })),
+      });
+
+      if (!agent) return;
+
+      await cd(root);
+      execSync(`${agent} install`, { stdio: 'inherit' });
+      if (isServerInstalled && isServerRunning && isSatisfiedVersion) {
+        console.log(
+          boxen(bold('blocklet dev'), {
+            padding: 1,
+            margin: 1,
+            float: 'center',
+          })
+        );
+        hasStart = true;
+        execSync('blocklet dev', { stdio: 'inherit' });
+      } else {
+        console.log();
+        console.log();
+      }
+    } else {
+      console.log();
+      console.log();
+    }
+
+    if (!isServerInstalled) {
+      // 未安装 blocklet server
+      console.log(red('To run the blocklet, you need a running blocklet server instance on local machine.'), '\n');
+      console.log(`Checkout ${green('README.md')} for more usage instructions.`);
+      console.log('Now you should run:', '\n');
+      console.log(cyan('npm install -g @blocklet/cli'));
+      console.log(cyan('blocklet server start -a'));
+    } else if (!isSatisfiedVersion) {
+      // 已安装 blocklet server，但版本不满足
+      console.log(red('Your blocklet server version is outdate, please update it to the latest version.'));
+      console.log('Now you should run:', '\n');
+      if (isServerRunning) {
+        // blocklet server 已经启动
+        const serverPath = await getServerDirectory();
+        console.log(cyan(`cd ${serverPath}`));
+        console.log(cyan('blocklet server stop'));
+        console.log(cyan('npm install -g @blocklet/cli'));
+        console.log(cyan('blocklet server start'));
+      } else {
+        // blocklet server 未启动
+        // TODO: 如何获取未启动的 blocklet server 实例目录？
+        console.log(cyan('npm install -g @blocklet/cli'));
+        console.log(cyan('blocklet server start -a'));
+      }
+    } else if (!isServerRunning) {
+      // 已经安装 blocklet server，且版本满足，并且 blocklet server 未启动
+      console.log(red('You need to start your blocklet server before develop this blocklet.'));
+      console.log('Now you should run:', '\n');
+      // TODO: 如何获取未启动的 blocklet server 实例目录？
+      console.log(cyan('blocklet server start -a'));
+    }
+
+    if (!hasStart) {
+      console.log(dim('\n  start it later by:\n'));
+      if (root !== cwd) console.log(blue(`  cd ${bold(related)}`));
+
+      console.log(blue(`  ${pkgManager === 'yarn' ? 'yarn' : `${pkgManager} install`}`));
+      console.log(blue(`  ${pkgManager === 'yarn' ? 'yarn dev' : `${pkgManager} run dev`}`));
+      console.log(cyan('blocklet dev'));
+      console.log('\n', `Find more usage in ${green('README.md')}`, '\n');
+    }
+
+    await initGitRepo(root);
+  } catch (cancelled) {
+    console.error(cancelled.message);
   }
-
-  console.log(cyan(`     ${pkgManager === 'yarn' ? 'yarn' : 'npm install'}`));
-  console.log(cyan('blocklet dev'));
-  console.log();
-
-  console.log(`Find more usage in ${green('README.md')}`, '\n');
 
   // inside functions
   function write(file, content) {

@@ -13,36 +13,37 @@
     "index.js",
     "common",
     "lib",
+    "template-api",
     "template-dapp",
     "template-static"
   ],
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0"
   },
   "bugs": {
     "url": "https://github.com/blocklet/create-blocklet/issues"
   },
   "homepage": "https://github.com/blocklet/create-blocklet/tree/main#readme",
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run"
   },
   "dependencies": {
-    "@arcblock/did": "^1.13.55",
-    "@ocap/mcrypto": "^1.13.55",
-    "@ocap/util": "^1.13.55",
+    "@arcblock/did": "^1.14.25",
+    "@ocap/mcrypto": "^1.14.25",
+    "@ocap/util": "^1.14.25",
+    "boxen": "^6.2.1",
     "ejs": "^3.1.6",
-    "envfile": "^6.15.0",
-    "figlet": "^1.5.0",
-    "gradient-string": "^1.2.0",
+    "envfile": "^6.17.0",
+    "figlet": "^1.5.2",
+    "gradient-string": "^2.0.0",
     "jdenticon": "^3.1.1",
-    "kolorist": "^1.5.0",
-    "minimist": "^1.2.5",
-    "prompts": "^2.4.1",
-    "rc": "^1.2.8",
+    "prompts": "^2.4.2",
     "semver": "^7.3.5",
-    "shelljs": "^0.8.5",
     "terminal-link": "^3.0.0",
-    "yaml": "^1.10.2"
+    "zx": "^6.0.6"
   },
   "devDependencies": {
     "@arcblock/eslint-config": "0.1.8",
@@ -56,6 +57,7 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-unicorn": "^34.0.1",
-    "prettier": "^2.3.2"
+    "prettier": "^2.3.2",
+    "vitest": "^0.7.6"
   }
 }
