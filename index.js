@@ -13,7 +13,7 @@ import * as envfile from 'envfile';
 import { echoBrand, echoDocument } from './lib/arcblock.js';
 import { getAuthor } from './lib/npm.js';
 import { checkServerInstalled, checkServerRunning, checkSatisfiedVersion, getServerDirectory } from './lib/server.js';
-import { toBlockletDid, toDidIcon } from './lib/did.js';
+import { toBlockletDid } from './lib/did.js';
 
 const argv = minimist(process.argv.slice(2));
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -286,8 +286,9 @@ async function init() {
         pkg.scripts.bundle = ejs.render(pkg.scripts.bundle, { did });
       }
     });
-    const pngIcon = toDidIcon(did, undefined, true);
-    fs.writeFileSync(path.join(root, 'logo.png'), pngIcon);
+    // disabled random logo
+    // const pngIcon = toDidIcon(did, undefined, true);
+    // fs.writeFileSync(path.join(root, 'logo.png'), pngIcon);
   })();
 
   const pkgManager = /yarn/.test(process.env.npm_execpath) ? 'yarn' : 'npm';
