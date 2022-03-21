@@ -10,7 +10,7 @@
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json"
   },
   "dependencies": {
-    "@xmark/cli": "^2.0.11"
+    "@xmark/cli": "^2.0.28"
   },
   "name": "blocklet-page"
 }
