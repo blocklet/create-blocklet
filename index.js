@@ -306,10 +306,14 @@ async function init() {
         choices: ['npm', 'yarn', 'pnpm'].map((i) => ({ value: i, title: i })),
       });
 
-      if (!agent) return;
+      if (!agent) {
+        await initGitRepo(root);
+        return;
+      }
 
       await cd(root);
       execSync(`${agent} install`, { stdio: 'inherit' });
+      await initGitRepo(root);
       if (isServerInstalled && isServerRunning && isSatisfiedVersion) {
         console.log(
           boxen(bold('blocklet dev'), {
@@ -325,6 +329,7 @@ async function init() {
         console.log();
       }
     } else {
+      await initGitRepo(root);
       console.log();
       console.log();
     }
@@ -370,8 +375,6 @@ async function init() {
       console.log(cyan('blocklet dev'));
       console.log('\n', `Find more usage in ${green('README.md')}`, '\n');
     }
-
-    await initGitRepo(root);
   } catch (cancelled) {
     console.error(cancelled.message);
   }
