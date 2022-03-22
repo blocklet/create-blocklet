@@ -1,8 +1,9 @@
 {
+  "name": "blocklet-page",
   "private": true,
   "scripts": {
-    "start": "xmark start",
-    "dev": "xmark start --open",
+    "dev": "xmark start",
+    "start": "npm run dev",
     "build": "xmark build",
     "clean": "rm -rf .blocklet",
     "bundle": "npm run clean && npm run build && blocklet bundle --create-release",
@@ -11,6 +12,5 @@
   },
   "dependencies": {
     "@xmark/cli": "^2.0.28"
-  },
-  "name": "blocklet-page"
+  }
 }

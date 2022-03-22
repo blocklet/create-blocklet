@@ -1,6 +1,6 @@
 import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import { minifyHtml, injectHtml } from 'vite-plugin-html';
+import { createHtmlPlugin } from 'vite-plugin-html';
 
 // https://vitejs.dev/config/
 export default ({ mode }) => {
@@ -8,11 +8,13 @@ export default ({ mode }) => {
   return defineConfig({
     plugins: [
       vue(),
-      minifyHtml(),
-      injectHtml({
-        data: {
-          base: process.env.BASE_URL || '/',
-          title: envMap.VITE_APP_TITLE,
+      createHtmlPlugin({
+        minify: true,
+        inject: {
+          data: {
+            base: process.env.BASE_URL || '/',
+            title: envMap.VITE_APP_TITLE,
+          },
         },
       }),
     ],

@@ -11,12 +11,12 @@ This blocklet is a dapp project, which means this is a full-stack application. I
   - favicon.svg - favicon
   - index.html - main html file, template for react
 - screenshots/ - Screenshots
-- server/ - Server side code
+- api/ - Api side code
   - hooks/ - blocklet lifecycle hooks
-  - libs/ - Server side libraries
-  - middlewares/ - Server side middlewares
-  - routes/ - Server side routes
-  - index.js - Server side entry point
+  - libs/ - Api side libraries
+  - middlewares/ - Api side middlewares
+  - routes/ - Api side routes
+  - index.js - Api side entry point
 - src/ - Client side code (A standard react app structure)
 - .env - Environment variables
 - .env.local - Local environment variables

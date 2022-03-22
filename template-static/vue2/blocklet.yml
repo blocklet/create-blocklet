@@ -8,8 +8,8 @@ group: static
 did: ''
 main: dist
 author:
-  name: zhanghan
-  email: zhanghan@arcblock.io
+  name: Blocklet
+  email: blocklet@arcblock.io
 repository:
   type: git
   url: 'git+https://github.com/blocklet/create-blocklet.git'

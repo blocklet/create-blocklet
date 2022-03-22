@@ -1,12 +1,28 @@
 <template>
   <div id="app">
-    <router-view />
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div :style="{ display: 'flex', justifyContent: 'center' }">
+      <pre :style="{ textAlign: 'left' }">
+<code>{{ JSON.stringify(blocklet, null, 2) }}</code>
+    </pre>
+    </div>
   </div>
 </template>
 
 <script>
+import HelloWorld from './components/HelloWorld.vue';
+
 export default {
   name: 'App',
+  components: {
+    HelloWorld,
+  },
+  data() {
+    return {
+      blocklet: window?.blocklet,
+    };
+  },
 };
 </script>
 

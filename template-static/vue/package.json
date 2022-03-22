@@ -2,22 +2,39 @@
   "name": "template-vue",
   "version": "0.1.0",
   "scripts": {
-    "dev": "vite",
-    "start": "vite --host",
+    "dev": "vite --host",
+    "start": "npm run dev",
     "build": "vite build",
+    "lint": "eslint src --ext .mjs,.js,.vue",
     "serve": "vite preview",
     "clean": "rm -rf .blocklet",
     "bundle": "npm run clean && vite build --base /.blocklet/proxy/<%= did %> && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
-    "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json"
+    "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
+    "prepare": "husky install"
   },
   "dependencies": {
-    "vite-plugin-html": "^2.1.1",
-    "vue": "^3.2.16"
+    "vite-plugin-html": "^3.2.0",
+    "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^1.9.3",
-    "vite": "^2.6.4",
-    "prettier": "^2.3.2"
+    "@vitejs/plugin-vue": "^2.2.4",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.5.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
+    "prettier": "^2.6.0",
+    "vite": "^2.8.6"
+  },
+  "lint-staged": {
+    "*.{mjs,js,vue}": [
+      "prettier --write",
+      "eslint --ext .js,.vue,.mjs"
+    ],
+    "*.{css,less,scss,json,graphql}": [
+      "prettier --write"
+    ]
   }
 }

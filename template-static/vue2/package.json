@@ -5,44 +5,39 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
+    "lint": "eslint src --ext .mjs,.js,.vue",
     "start": "npm run serve",
     "clean": "rm -rf .blocklet",
     "bundle": "npm run clean && PUBLIC_PATH=/.blocklet/proxy/<%= did %> npm run build && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
-    "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json"
+    "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
+    "prepare": "husky install"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11",
-    "vue-router": "^3.5.3"
+    "core-js": "^3.21.1",
+    "vue": "^2.6.14"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
+    "@babel/core": "^7.17.8",
+    "@babel/eslint-parser": "^7.17.0",
+    "@vue/cli-plugin-babel": "~5.0.3",
+    "@vue/cli-plugin-eslint": "~5.0.3",
+    "@vue/cli-service": "~5.0.3",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.5.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
+    "vue-template-compiler": "^2.6.14"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
+  "lint-staged": {
+    "*.{mjs,js,vue}": [
+      "prettier --write",
+      "eslint --ext .js,.vue,.mjs"
     ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+    "*.{css,less,scss,json,graphql}": [
+      "prettier --write"
+    ]
+  }
 }

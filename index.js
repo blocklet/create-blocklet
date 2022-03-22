@@ -15,7 +15,7 @@ import { checkServerInstalled, checkServerRunning, checkSatisfiedVersion, getSer
 import { toBlockletDid } from './lib/did.js';
 import { initGitRepo } from './lib/git.js';
 
-const { yellow, red, green, cyan, blue, lightYellow, bold, dim } = chalk;
+const { yellow, red, green, cyan, blue, bold, dim } = chalk;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -74,6 +74,7 @@ const TYPES = [
 const renameFiles = {
   _gitignore: '.gitignore',
   '_eslintrc.js': '.eslintrc.js',
+  _eslintignore: '.eslintignore',
   _npmrc: '.npmrc',
 };
 
@@ -94,6 +95,7 @@ async function init() {
   const defaultProjectName = !targetDir ? 'blocklet-project' : targetDir;
 
   let result = {};
+  const authorInfo = await getUser();
 
   try {
     result = await prompts(
@@ -165,6 +167,18 @@ async function init() {
             });
           },
         },
+        {
+          type: 'text',
+          name: 'authorName',
+          message: 'Author name:',
+          initial: authorInfo?.name || '',
+        },
+        {
+          type: 'text',
+          name: 'authorEmail',
+          message: 'Author email:',
+          initial: authorInfo?.email || '',
+        },
       ],
       {
         onCancel: () => {
@@ -178,7 +192,7 @@ async function init() {
   }
 
   // user choice associated with prompts
-  const { type, framework, overwrite, packageName } = result;
+  const { type, framework, overwrite, packageName, authorName, authorEmail } = result;
 
   const stopSpinner = startSpinner();
 
@@ -213,6 +227,10 @@ async function init() {
         // eslint-disable-next-line no-continue
         continue;
       }
+      if (framework === 'blocklet-page' && ['_eslintignore', '.husky'].includes(file)) {
+        // eslint-disable-next-line no-continue
+        continue;
+      }
       const targetPath = renameFiles[file] ? path.join(root, renameFiles[file]) : path.join(root, file);
       copy(path.join(commonDir, file), targetPath);
     }
@@ -237,20 +255,23 @@ async function init() {
   modifyBlockletMd((md) => {
     return md.replace(/# template-react/g, `# ${name}`);
   });
-  modifyEnv((env) => {
-    if (framework === 'react') {
-      env.REACT_APP_TITLE = name;
-    } else {
-      env.APP_TITLE = name;
-    }
-    return env;
-  });
+  if (!['blocklet-page'].includes(framework)) {
+    modifyEnv((env) => {
+      if (['react'].includes(framework)) {
+        env.REACT_APP_TITLE = name;
+      } else if (['vue', 'blocklet-page'].includes(framework)) {
+        env.VITE_APP_TITLE = name;
+      } else {
+        env.APP_TITLE = name;
+      }
+      return env;
+    });
+  }
 
   // patch blocklet author
   modifyBlockletYaml(async (yamlConfig) => {
-    const authorInfo = await getUser();
-    if (authorInfo.name) yamlConfig.author.name = authorInfo.name;
-    if (authorInfo.email) yamlConfig.author.email = authorInfo.email;
+    yamlConfig.author.name = authorName;
+    yamlConfig.author.email = authorEmail;
   });
 
   // patch did
@@ -275,13 +296,13 @@ async function init() {
   console.log('\n\n✨  Done. Now run:\n');
   stopSpinner();
 
-  const pkgManager =
-    // eslint-disable-next-line no-nested-ternary
-    /pnpm/.test(process.env.npm_execpath) || /pnpm/.test(process.env.npm_config_user_agent)
-      ? 'pnpm'
-      : /yarn/.test(process.env.npm_execpath)
-      ? 'yarn'
-      : 'npm';
+  // const pkgManager =
+  //   // eslint-disable-next-line no-nested-ternary
+  //   /pnpm/.test(process.env.npm_execpath) || /pnpm/.test(process.env.npm_config_user_agent)
+  //     ? 'pnpm'
+  //     : /yarn/.test(process.env.npm_execpath)
+  //     ? 'yarn'
+  //     : 'npm';
   try {
     const { yes } = await prompts(
       {
@@ -298,22 +319,33 @@ async function init() {
     );
     let hasStart = false;
 
+    await initGitRepo(root);
+
+    let defaultAgent = 'npm';
+    let agentList = ['npm', 'yarn', 'pnpm'];
+    switch (framework) {
+      case 'react':
+      case 'blocklet-page':
+        agentList = ['npm', 'yarn'];
+        break;
+      default:
+        break;
+    }
     if (yes) {
       const { agent } = await prompts({
         name: 'agent',
         type: 'select',
         message: 'Choose the agent',
-        choices: ['npm', 'yarn', 'pnpm'].map((i) => ({ value: i, title: i })),
+        choices: agentList.map((i) => ({ value: i, title: i })),
       });
 
       if (!agent) {
-        await initGitRepo(root);
         return;
       }
+      defaultAgent = agent;
 
       await cd(root);
       execSync(`${agent} install`, { stdio: 'inherit' });
-      await initGitRepo(root);
       if (isServerInstalled && isServerRunning && isSatisfiedVersion) {
         console.log(
           boxen(bold('blocklet dev'), {
@@ -329,7 +361,6 @@ async function init() {
         console.log();
       }
     } else {
-      await initGitRepo(root);
       console.log();
       console.log();
     }
@@ -339,7 +370,7 @@ async function init() {
       console.log(red('To run the blocklet, you need a running blocklet server instance on local machine.'), '\n');
       console.log(`Checkout ${green('README.md')} for more usage instructions.`);
       console.log('Now you should run:', '\n');
-      console.log(cyan('npm install -g @blocklet/cli'));
+      console.log(cyan(`${defaultAgent} install -g @blocklet/cli`));
       console.log(cyan('blocklet server start -a'));
     } else if (!isSatisfiedVersion) {
       // 已安装 blocklet server，但版本不满足
@@ -350,12 +381,12 @@ async function init() {
         const serverPath = await getServerDirectory();
         console.log(cyan(`cd ${serverPath}`));
         console.log(cyan('blocklet server stop'));
-        console.log(cyan('npm install -g @blocklet/cli'));
+        console.log(cyan(`${defaultAgent} install -g @blocklet/cli`));
         console.log(cyan('blocklet server start'));
       } else {
         // blocklet server 未启动
         // TODO: 如何获取未启动的 blocklet server 实例目录？
-        console.log(cyan('npm install -g @blocklet/cli'));
+        console.log(cyan(`${defaultAgent} install -g @blocklet/cli`));
         console.log(cyan('blocklet server start -a'));
       }
     } else if (!isServerRunning) {
@@ -370,8 +401,8 @@ async function init() {
       console.log(dim('\n  start it later by:\n'));
       if (root !== cwd) console.log(blue(`  cd ${bold(related)}`));
 
-      console.log(blue(`  ${pkgManager === 'yarn' ? 'yarn' : `${pkgManager} install`}`));
-      console.log(blue(`  ${pkgManager === 'yarn' ? 'yarn dev' : `${pkgManager} run dev`}`));
+      console.log(blue(`  ${defaultAgent === 'yarn' ? 'yarn' : `${defaultAgent} install`}`));
+      console.log(blue(`  ${defaultAgent === 'yarn' ? 'yarn dev' : `${defaultAgent} run dev`}`));
       console.log(cyan('blocklet dev'));
       console.log('\n', `Find more usage in ${green('README.md')}`, '\n');
     }
@@ -416,7 +447,7 @@ async function init() {
       modifyFn(env);
       write('.env', envfile.stringify(env));
     } catch {
-      console.warn(`\n${lightYellow('No .env file found, please add one.')}`);
+      console.warn(`\n${yellow('No .env file found, please add one.')}`);
     }
   }
 }
