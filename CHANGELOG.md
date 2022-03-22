@@ -1,3 +1,13 @@
+## 0.3.0 (三月 22, 2022)
+
+- chore: polish templates closed #34 #35 #38 #50 #56
+- fix: initGitRepo
+- feat: use zx
+- fix: closed #71, polish github action ci default value
+- fix: template dapps return empty object when it's not login
+- fix: closed #70, disabled random logo
+- chore: update template blocklet-page dependencies
+
 ## 0.2.18 (March 14, 2022)
 
 - chore: remove service selection
