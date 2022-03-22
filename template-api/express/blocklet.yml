@@ -1,9 +1,9 @@
-name: template-vue2
-title: Blocklet Template Vue2
-description: A Blocklet DAPP blocklet
+name: template-express
+title: Blocklet Template Express
+description: A Blocklet Api blocklet
 keywords:
   - blocklet
-  - vue
+  - react
 group: dapp
 did: ''
 main: api/index.js
@@ -12,7 +12,7 @@ author:
   email: blocklet@arcblock.io
 repository:
   type: git
-  url: git+https://github.com/blocklet/create-blocklet.git
+  url: 'git+https://github.com/blocklet/create-blocklet.git'
 specVersion: 1.1.1
 version: 0.1.0
 logo: logo.png

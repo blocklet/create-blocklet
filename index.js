@@ -69,6 +69,17 @@ const TYPES = [
       },
     ],
   },
+  {
+    name: 'api',
+    color: yellow,
+    frameworks: [
+      {
+        name: 'express',
+        display: 'express',
+        color: yellow,
+      },
+    ],
+  },
 ];
 
 const renameFiles = {
@@ -142,6 +153,7 @@ async function init() {
             const TYPE_TITLE = {
               dapp: 'fullstack: webapp with backend code',
               static: 'webapp: browser only',
+              api: 'api: backend only',
             };
             return {
               title: TYPE_TITLE[type.name],
@@ -228,6 +240,10 @@ async function init() {
         continue;
       }
       if (framework === 'blocklet-page' && ['_eslintignore', '.husky'].includes(file)) {
+        // eslint-disable-next-line no-continue
+        continue;
+      }
+      if (framework === 'express' && ['_eslintignore', '.husky'].includes(file)) {
         // eslint-disable-next-line no-continue
         continue;
       }
