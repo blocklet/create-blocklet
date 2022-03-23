@@ -92,14 +92,7 @@ const renameFiles = {
 async function init() {
   const { version } = await fs.readJSONSync(path.resolve(__dirname, 'package.json'));
 
-  console.log(
-    boxen(`${bold('Blocklet') + dim(' Starter')}  ${blue(`v${version}`)}`, {
-      padding: 1,
-      margin: 1,
-      float: 'center',
-      borderStyle: 'double',
-    })
-  );
+  await echoBrand({ version });
 
   let targetDir = argv._[0] ? String(argv._[0]) : undefined;
 
@@ -216,7 +209,6 @@ async function init() {
     fs.mkdirSync(root);
   }
 
-  await echoBrand();
   await echoDocument();
 
   console.log('Checking blocklet server runtime environment...', '\n');
@@ -351,7 +343,7 @@ async function init() {
       const { agent } = await prompts({
         name: 'agent',
         type: 'select',
-        message: 'Choose the agent',
+        message: 'Select npm client (package manager)',
         choices: agentList.map((i) => ({ value: i, title: i })),
       });
 
