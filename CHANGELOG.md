@@ -1,3 +1,10 @@
+## 0.3.1 (三月 24, 2022)
+
+- feat: add dapp/nextjs
+- fix: make vite hmr works perfect
+- chore: update create step prompt message
+- feat: add api/express template
+
 ## 0.3.0 (三月 22, 2022)
 
 - chore: polish templates closed #34 #35 #38 #50 #56
