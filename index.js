@@ -41,6 +41,11 @@ const TYPES = [
         display: 'vue2 + @vue/cli',
         color: green,
       },
+      {
+        name: 'nextjs',
+        display: 'next.js',
+        color: blue,
+      },
     ],
   },
   {
@@ -429,7 +434,10 @@ async function init() {
   }
   function read(file) {
     const targetPath = path.join(root, file);
-    return fs.readFileSync(targetPath, 'utf8');
+    if (fs.existsSync(targetPath)) {
+      return fs.readFileSync(targetPath, 'utf8');
+    }
+    return null;
   }
 
   function modifyPackage(modifyFn = () => {}) {
@@ -450,11 +458,12 @@ async function init() {
     write('blocklet.md', modifyMd);
   }
   function modifyEnv(modifyFn = (...args) => ({ ...args })) {
-    try {
-      const env = envfile.parse(read('.env'));
+    const envContent = read('.env');
+    if (envContent) {
+      const env = envfile.parse(envContent);
       modifyFn(env);
       write('.env', envfile.stringify(env));
-    } catch {
+    } else {
       console.warn(`\n${yellow('No .env file found, please add one.')}`);
     }
   }
