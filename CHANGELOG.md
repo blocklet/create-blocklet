@@ -1,3 +1,7 @@
+## 0.3.2 (三月 25, 2022)
+
+- fix: echoBrand version
+
 ## 0.3.1 (三月 24, 2022)
 
 - feat: add dapp/nextjs
