@@ -1,3 +1,7 @@
+## 0.3.3 (三月 26, 2022)
+
+- feat: add `blocklet config` to get name & email
+
 ## 0.3.2 (三月 25, 2022)
 
 - fix: echoBrand version
