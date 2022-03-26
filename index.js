@@ -182,12 +182,14 @@ async function init() {
           name: 'authorName',
           message: 'Author name:',
           initial: authorInfo?.name || '',
+          validate: (name) => (name ? true : 'Author name is required'),
         },
         {
           type: 'text',
           name: 'authorEmail',
           message: 'Author email:',
           initial: authorInfo?.email || '',
+          validate: (email) => (email ? true : 'Author email is required'),
         },
       ],
       {
