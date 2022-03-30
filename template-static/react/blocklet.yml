@@ -32,10 +32,9 @@ community: ''
 documentation: ''
 homepage: ''
 license: ''
-charging:
-  price: 0
-  tokens: []
-  shares: []
+payment:
+  price: []
+  share: []
 timeout:
   start: 60
 requirements:
