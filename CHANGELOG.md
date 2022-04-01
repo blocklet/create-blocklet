@@ -1,3 +1,10 @@
+## 0.3.4 (四月 01, 2022)
+
+-fix: update create blocklet flow fixes #89 #86 #83
+- chore: add test for lib/did
+- fix: change `charging` -> `payment` in blocklet.yml fixes #85
+
+
 ## 0.3.3 (三月 26, 2022)
 
 - feat: add `blocklet config` to get name & email
