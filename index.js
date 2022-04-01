@@ -5,7 +5,7 @@ import boxen from 'boxen';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 import { cd, argv, fs, YAML, chalk, path } from 'zx';
-import { startSpinner } from 'zx/experimental';
+import ora from 'ora';
 import prompts from 'prompts';
 import * as envfile from 'envfile';
 
@@ -206,7 +206,7 @@ async function init() {
   // user choice associated with prompts
   const { type, framework, overwrite, packageName, authorName, authorEmail } = result;
 
-  const stopSpinner = startSpinner();
+  await echoDocument();
 
   const root = path.join(cwd, targetDir);
 
@@ -216,15 +216,18 @@ async function init() {
     fs.mkdirSync(root);
   }
 
-  await echoDocument();
-
-  console.log('Checking blocklet server runtime environment...', '\n');
+  const checkSpinner = ora({
+    text: 'Checking blocklet server runtime environment\n',
+  }).start();
 
   const isServerInstalled = await checkServerInstalled();
   const isSatisfiedVersion = await checkSatisfiedVersion();
   const isServerRunning = await checkServerRunning();
+  checkSpinner.succeed('Done');
 
-  console.log(`\n\nScaffolding project in ${root}...`);
+  console.log(`\nScaffolding project in ${cyan(root)}`);
+
+  const scaffoldSpinner = ora('Creating project...').start();
 
   const templateDir = path.join(__dirname, `template-${type}/${framework}`);
   const name = packageName || targetDir;
@@ -307,9 +310,9 @@ async function init() {
     // fs.writeFileSync(path.join(root, 'logo.png'), pngIcon);
   })();
 
+  scaffoldSpinner.succeed('✨  Done. Now run:\n');
+
   const related = path.relative(cwd, root);
-  console.log('\n\n✨  Done. Now run:\n');
-  stopSpinner();
 
   // const pkgManager =
   //   // eslint-disable-next-line no-nested-ternary
@@ -319,19 +322,20 @@ async function init() {
   //     ? 'yarn'
   //     : 'npm';
   try {
-    const { yes } = await prompts(
-      {
-        type: 'confirm',
-        name: 'yes',
-        initial: 'Y',
-        message: 'Install and start it now?',
-      },
-      {
-        onCancel: () => {
-          throw new Error(`${red('✖')} Operation cancelled`);
-        },
-      }
-    );
+    // const { yes } = await prompts(
+    //   {
+    //     type: 'confirm',
+    //     name: 'yes',
+    //     initial: 'Y',
+    //     message: 'Install and start it now?',
+    //   },
+    //   {
+    //     onCancel: () => {
+    //       throw new Error(`${red('✖')} Operation cancelled`);
+    //     },
+    //   }
+    // );
+    const yes = false;
     let hasStart = false;
 
     await initGitRepo(root);
@@ -465,9 +469,10 @@ async function init() {
       const env = envfile.parse(envContent);
       modifyFn(env);
       write('.env', envfile.stringify(env));
-    } else {
-      console.warn(`\n${yellow('No .env file found, please add one.')}`);
     }
+    // else {
+    //   console.warn(`\n${yellow('No .env file found, please add one.')}`);
+    // }
   }
 }
 
