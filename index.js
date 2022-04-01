@@ -229,7 +229,7 @@ async function init() {
 
   const scaffoldSpinner = ora('Creating project...').start();
 
-  const templateDir = path.join(__dirname, `template-${type}/${framework}`);
+  const templateDir = path.join(__dirname, `templates/${framework}-${type}`);
   const name = packageName || targetDir;
 
   // copy common files
