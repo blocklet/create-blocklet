@@ -13,9 +13,7 @@
     "index.js",
     "common",
     "lib",
-    "template-api",
-    "template-dapp",
-    "template-static"
+    "templates"
   ],
   "engines": {
     "node": ">=16.0.0"
@@ -31,9 +29,9 @@
     "test:run": "vitest run"
   },
   "dependencies": {
-    "@arcblock/did": "^1.14.25",
-    "@ocap/mcrypto": "^1.14.25",
-    "@ocap/util": "^1.14.25",
+    "@arcblock/did": "^1.15.7",
+    "@ocap/mcrypto": "^1.15.7",
+    "@ocap/util": "^1.15.7",
     "boxen": "^6.2.1",
     "ejs": "^3.1.6",
     "envfile": "^6.17.0",
@@ -44,7 +42,7 @@
     "prompts": "^2.4.2",
     "semver": "^7.3.5",
     "terminal-link": "^3.0.0",
-    "zx": "^6.0.6"
+    "zx": "^6.0.7"
   },
   "devDependencies": {
     "@arcblock/eslint-config": "0.1.8",

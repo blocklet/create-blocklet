@@ -1,10 +1,10 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@arcblock/did': ^1.14.25
+  '@arcblock/did': ^1.15.7
   '@arcblock/eslint-config': 0.1.8
-  '@ocap/mcrypto': ^1.14.25
-  '@ocap/util': ^1.14.25
+  '@ocap/mcrypto': ^1.15.7
+  '@ocap/util': ^1.15.7
   babel-eslint: ^10.1.0
   boxen: ^6.2.1
   ejs: ^3.1.6
@@ -27,12 +27,12 @@ specifiers:
   semver: ^7.3.5
   terminal-link: ^3.0.0
   vitest: ^0.7.6
-  zx: ^6.0.6
+  zx: ^6.0.7
 
 dependencies:
-  '@arcblock/did': 1.14.25
-  '@ocap/mcrypto': 1.14.25
-  '@ocap/util': 1.14.25
+  '@arcblock/did': 1.15.7
+  '@ocap/mcrypto': 1.15.7
+  '@ocap/util': 1.15.7
   boxen: 6.2.1
   ejs: 3.1.6
   envfile: 6.17.0
@@ -43,7 +43,7 @@ dependencies:
   prompts: 2.4.2
   semver: 7.3.5
   terminal-link: 3.0.0
-  zx: 6.0.6
+  zx: 6.0.7
 
 devDependencies:
   '@arcblock/eslint-config': 0.1.8_9b9d64e6ce03612b39bd928c6083fd42
@@ -62,11 +62,11 @@ devDependencies:
 
 packages:
 
-  /@arcblock/did/1.14.25:
-    resolution: {integrity: sha512-MzgYe1QmoHR/vS4d189cDZzn2GqwLVvGnplzRd5GJeyfJObgKspxyFIrzHmyEk9C0F5FHzF0J+vZGlk0wJX48w==}
+  /@arcblock/did/1.15.7:
+    resolution: {integrity: sha512-yc0RrVII4yl7R2NRObM4NFAZZCuh5FbnEiaru0bMxuslBASy11SEqc7HnZV+8SMS4HKlu3ANCsEIvTGQaHQaOw==}
     dependencies:
-      '@ocap/mcrypto': 1.14.25
-      '@ocap/util': 1.14.25
+      '@ocap/mcrypto': 1.15.7
+      '@ocap/util': 1.15.7
       bn.js: 5.2.0
       debug: 4.3.4
       lodash: 4.17.21
@@ -405,10 +405,10 @@ packages:
       fastq: 1.13.0
     dev: false
 
-  /@ocap/mcrypto/1.14.25:
-    resolution: {integrity: sha512-56ZveZojMdDBh3S5Cbp5TiHGhGS9A0Sy0aurVCu1yPbaQ0ufQGnOn9rzkq0YWelfmoDe/EIEvTi1/fR7fj+2yg==}
+  /@ocap/mcrypto/1.15.7:
+    resolution: {integrity: sha512-vPjyFXCcs+vD8GQctmhtaReltlZVCobcgek3hC3ZaVR3FnfB/AArxcAJBkfAoiZER5yupF1UXHT9Smc+h6/REw==}
     dependencies:
-      '@ocap/util': 1.14.25
+      '@ocap/util': 1.15.7
       bn.js: 5.2.0
       crypto-js: 4.1.1
       elliptic: 6.5.4
@@ -420,8 +420,8 @@ packages:
       tweetnacl: 1.0.3
     dev: false
 
-  /@ocap/util/1.14.25:
-    resolution: {integrity: sha512-gC3WRiEvDCyEMjvVSvY0slj5bgzlD7nxIFqStlbvqd/RcY52udeQ653HFULiLXexNMQikB7xby3dxMgBYYfGEA==}
+  /@ocap/util/1.15.7:
+    resolution: {integrity: sha512-1klC66Wg63EXTTrgcMH7Mj9Nr+GSSxQ33W+oHYCyMymOPEko6/n+rN2ct+nJZF0yp5S6oP1moeBD+SQ4XN885Q==}
     dependencies:
       base64-url: 2.3.3
       bn.js: 5.2.0
@@ -3361,8 +3361,8 @@ packages:
     engines: {node: '>= 6'}
     dev: false
 
-  /zx/6.0.6:
-    resolution: {integrity: sha512-PDkf1B2cloeBmDNdYJIPLLNlBZVelXZtlXKZg0oMkoX4iLoufFfm//1rW+Uip+LBO4i3jIcmQx9wZZhOSqC+ng==}
+  /zx/6.0.7:
+    resolution: {integrity: sha512-aJTTKN4m9m8wM02yQ4jMOXMp53Ni+r+VDAs0D+bo9l9x9nCMhOocNWeTjoaancHkb7LpNb4oLILp58HzTy0GpQ==}
     engines: {node: '>= 16.0.0'}
     hasBin: true
     dependencies:
