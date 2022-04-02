@@ -1,3 +1,9 @@
+## 0.3.5 (四月 02, 2022)
+
+- fix: Initial user info is 'undefined'
+- fix: polish templates
+- chore: tweak templates folder structure
+
 ## 0.3.4 (四月 01, 2022)
 
 -fix: update create blocklet flow fixes #89 #86 #83
