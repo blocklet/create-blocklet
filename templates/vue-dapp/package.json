@@ -10,7 +10,7 @@
     "start:api": "NODE_ENV=development nodemon api/index.js -w api",
     "clean": "rm -rf .blocklet",
     "bundle": "npm run bundle:client && npm run bundle:api",
-    "bundle:client": "vite build --base /.blocklet/proxy/<%= did %>",
+    "bundle:client": "vite build --base /.blocklet/proxy/<%= did %>/",
     "bundle:api": "npm run clean && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",

@@ -22,6 +22,7 @@ files:
   - blocklet.md
   - screenshots
   - api/hooks/pre-start.js
+  - dist
 interfaces:
   - type: web
     name: publicUrl

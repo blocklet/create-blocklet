@@ -15,7 +15,7 @@ import { checkServerInstalled, checkServerRunning, checkSatisfiedVersion, getSer
 import { toBlockletDid } from './lib/did.js';
 import { initGitRepo } from './lib/git.js';
 
-const { yellow, red, green, cyan, blue, bold, dim } = chalk;
+const { yellow, red, green, cyan, blue, bold } = chalk;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -417,7 +417,7 @@ async function init() {
     }
 
     if (!hasStart) {
-      console.log(dim('\n  start it later by:\n'));
+      // console.log(dim('\n  start it later by:\n'));
       if (root !== cwd) console.log(blue(`  cd ${bold(related)}`));
 
       console.log(blue(`  ${defaultAgent === 'yarn' ? 'yarn' : `${defaultAgent} install`}`));
