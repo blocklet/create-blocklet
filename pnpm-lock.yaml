@@ -1,10 +1,10 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@arcblock/did': ^1.15.7
+  '@arcblock/did': ^1.16.0
   '@arcblock/eslint-config': 0.1.8
-  '@ocap/mcrypto': ^1.15.7
-  '@ocap/util': ^1.15.7
+  '@ocap/mcrypto': ^1.16.0
+  '@ocap/util': ^1.16.0
   babel-eslint: ^10.1.0
   boxen: ^6.2.1
   ejs: ^3.1.6
@@ -30,9 +30,9 @@ specifiers:
   zx: ^6.0.7
 
 dependencies:
-  '@arcblock/did': 1.15.7
-  '@ocap/mcrypto': 1.15.7
-  '@ocap/util': 1.15.7
+  '@arcblock/did': 1.16.0
+  '@ocap/mcrypto': 1.16.0
+  '@ocap/util': 1.16.0
   boxen: 6.2.1
   ejs: 3.1.6
   envfile: 6.17.0
@@ -62,11 +62,11 @@ devDependencies:
 
 packages:
 
-  /@arcblock/did/1.15.7:
-    resolution: {integrity: sha512-yc0RrVII4yl7R2NRObM4NFAZZCuh5FbnEiaru0bMxuslBASy11SEqc7HnZV+8SMS4HKlu3ANCsEIvTGQaHQaOw==}
+  /@arcblock/did/1.16.0:
+    resolution: {integrity: sha512-FK9Dmik98IbFWBJt+cMtSlg5JdE4RViSKPiSzLxv0ygtULumhbeZx8WWRbUlYcgtnaop+e6fs7Xk/3yeEt6GRQ==}
     dependencies:
-      '@ocap/mcrypto': 1.15.7
-      '@ocap/util': 1.15.7
+      '@ocap/mcrypto': 1.16.0
+      '@ocap/util': 1.16.0
       bn.js: 5.2.0
       debug: 4.3.4
       lodash: 4.17.21
@@ -132,7 +132,7 @@ packages:
       '@babel/traverse': 7.16.0
       '@babel/types': 7.16.0
       convert-source-map: 1.8.0
-      debug: 4.3.2
+      debug: 4.3.4
       gensync: 1.0.0-beta.2
       json5: 2.2.0
       semver: 6.3.0
@@ -334,7 +334,7 @@ packages:
       '@babel/helper-split-export-declaration': 7.16.0
       '@babel/parser': 7.16.2
       '@babel/types': 7.16.0
-      debug: 4.3.2
+      debug: 4.3.4
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -405,10 +405,10 @@ packages:
       fastq: 1.13.0
     dev: false
 
-  /@ocap/mcrypto/1.15.7:
-    resolution: {integrity: sha512-vPjyFXCcs+vD8GQctmhtaReltlZVCobcgek3hC3ZaVR3FnfB/AArxcAJBkfAoiZER5yupF1UXHT9Smc+h6/REw==}
+  /@ocap/mcrypto/1.16.0:
+    resolution: {integrity: sha512-jR46F8Q3XFPIijZp4XvEVgNvvD0CLFaZ3lfG49JNhmf1KSPGr/o5hG2pAuKMSJNMootaySD7WH9F9C9iXYOcyw==}
     dependencies:
-      '@ocap/util': 1.15.7
+      '@ocap/util': 1.16.0
       bn.js: 5.2.0
       crypto-js: 4.1.1
       elliptic: 6.5.4
@@ -420,8 +420,8 @@ packages:
       tweetnacl: 1.0.3
     dev: false
 
-  /@ocap/util/1.15.7:
-    resolution: {integrity: sha512-1klC66Wg63EXTTrgcMH7Mj9Nr+GSSxQ33W+oHYCyMymOPEko6/n+rN2ct+nJZF0yp5S6oP1moeBD+SQ4XN885Q==}
+  /@ocap/util/1.16.0:
+    resolution: {integrity: sha512-AUGzjk+hrmXod/+LVNXlG9eHYhxYSq6jcg47PPgAQ1usTwPBRp1Kw4fJFW8Qluuxf9f+w5hwF0zG/PZ6Q7GkZA==}
     dependencies:
       base64-url: 2.3.3
       bn.js: 5.2.0
@@ -922,7 +922,6 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.2
-    dev: false
 
   /decode-uri-component/0.2.0:
     resolution: {integrity: sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=}

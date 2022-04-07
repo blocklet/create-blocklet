@@ -8,7 +8,7 @@ const Home = () => {
     <header className="app-header">
       <img src={logo} className="app-logo" alt="logo" />
       <pre style={{ textAlign: 'left' }}>
-        <code>{JSON.stringify(window.blocklet, null, 2)}</code>
+        <code>window.blocklet = {JSON.stringify(window.blocklet, null, 2)}</code>
       </pre>
       <Link className="app-link" to="/about">
         About
