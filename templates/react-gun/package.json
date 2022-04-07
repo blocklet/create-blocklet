@@ -1,0 +1,81 @@
+{
+  "name": "react-gun",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "craco start",
+    "build": "craco build",
+    "eject": "react-scripts eject",
+    "lint": "eslint src api --ext .mjs,.js,.jsx,.ts,.tsx",
+    "start": "npm-run-all --parallel start:*",
+    "start:client": "npm run dev",
+    "start:api": "NODE_ENV=development nodemon api/index.js -w api",
+    "clean": "rm -rf .blocklet",
+    "bundle": "npm run bundle:client && npm run bundle:api",
+    "bundle:client": "PUBLIC_URL='/.blocklet/proxy/<%= did %>' npm run build",
+    "bundle:api": "npm run clean && blocklet bundle --zip --create-release",
+    "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
+    "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{mjs,js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint"
+    ],
+    "*.{css,less,scss,json,graphql}": [
+      "prettier --write"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@arcblock/did-auth": "^1.16.0",
+    "@arcblock/did-auth-storage-nedb": "^1.6.3",
+    "@blocklet/sdk": "^1.7.6",
+    "@craco/craco": "^6.4.3",
+    "@ocap/client": "^1.16.0",
+    "@ocap/mcrypto": "^1.16.0",
+    "@ocap/wallet": "^1.16.0",
+    "axios": "^0.26.1",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv-flow": "^3.2.0",
+    "express": "^4.17.3",
+    "express-async-errors": "^3.1.1",
+    "express-history-api-fallback": "^2.2.1",
+    "gun": "^0.2020.1236",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.2",
+    "react-scripts": "5.0.0"
+  },
+  "devDependencies": {
+    "@arcblock/eslint-config": "^0.1.8",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-unicorn": "^34.0.1",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
+    "nodemon": "^2.0.15",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.6.0"
+  }
+}
