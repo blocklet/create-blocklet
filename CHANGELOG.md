@@ -1,5 +1,7 @@
 ## 0.3.6 (April 07, 2022)
 
+- fix: get blocklet server user info
+- fix: show react + gunjs in create-blocklet flow
 - chore: add new template for react-gunjs
 - chore: tune react template home page
 
