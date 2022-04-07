@@ -46,6 +46,11 @@ const TYPES = [
         display: 'next.js',
         color: blue,
       },
+      {
+        name: 'react-gun',
+        display: 'react + gunjs',
+        color: blue,
+      },
     ],
   },
   {
