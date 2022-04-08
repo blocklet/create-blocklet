@@ -427,7 +427,6 @@ async function init() {
       if (root !== cwd) console.log(blue(`  cd ${bold(related)}`));
 
       console.log(blue(`  ${defaultAgent === 'yarn' ? 'yarn' : `${defaultAgent} install`}`));
-      console.log(blue(`  ${defaultAgent === 'yarn' ? 'yarn dev' : `${defaultAgent} run dev`}`));
       console.log(cyan('blocklet dev'));
       console.log('\n', `Find more usage in ${green('README.md')}`, '\n');
     }

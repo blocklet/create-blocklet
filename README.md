@@ -36,6 +36,8 @@ Currently supported template presets include:
 - `react`
 - `vue3 + vite`
 - `vue2 + @vue/cli`
+- `next.js`
+- `react + gunjs`
 
 **static**
 
@@ -43,6 +45,9 @@ Currently supported template presets include:
 - `vue3 + vite`
 - `vue2 + @vue/cli`
 - `blocklet page`
+
+**api**
+- `express`
 
 ## Community Templates
 
@@ -61,3 +66,12 @@ If the blocklet uses `main` as the default branch, suffix the blocklet repo with
 ```bash
 npx degit user/blocklet#main my-blocklet
 ```
+
+## Development
+Use `node /pathToCreateBlockletRepo/index.js` to create a blocklet, or you can use
+``` bash
+ln -s /pathToCreateBlockletRepo/index.js /usr/local/bin/cb
+
+cb
+```
+to create a blocklet
