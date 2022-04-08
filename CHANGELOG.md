@@ -1,3 +1,10 @@
+## 0.3.6 (April 07, 2022)
+
+- fix: get blocklet server user info
+- fix: show react + gunjs in create-blocklet flow
+- chore: add new template for react-gunjs
+- chore: tune react template home page
+
 ## 0.3.5 (四月 02, 2022)
 
 - fix: Initial user info is 'undefined'
@@ -6,10 +13,9 @@
 
 ## 0.3.4 (四月 01, 2022)
 
--fix: update create blocklet flow fixes #89 #86 #83
+- fix: update create blocklet flow fixes #89 #86 #83
 - chore: add test for lib/did
 - fix: change `charging` -> `payment` in blocklet.yml fixes #85
-
 
 ## 0.3.3 (三月 26, 2022)
 

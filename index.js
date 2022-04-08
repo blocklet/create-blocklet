@@ -46,6 +46,11 @@ const TYPES = [
         display: 'next.js',
         color: blue,
       },
+      {
+        name: 'react-gun',
+        display: 'react + gunjs',
+        color: blue,
+      },
     ],
   },
   {
@@ -232,12 +237,13 @@ async function init() {
   const templateDir = path.join(__dirname, `templates/${framework}-${type}`);
   const name = packageName || targetDir;
 
+  // TODO: 需要把 common file copy 的逻辑移除，不同的 template 之间的差异越来越多，就会需要越来越多特殊处理的代码，违背了初衷，移除这部分逻辑可能是更好的选择
   // copy common files
   (() => {
     const commonDir = path.join(__dirname, 'common');
     const commonFiles = fs.readdirSync(commonDir);
     for (const file of commonFiles) {
-      if (framework !== 'react' && file === '_eslintrc.js') {
+      if (!['react', 'react-gun'].includes(framework) && file === '_eslintrc.js') {
         // eslint-disable-next-line no-continue
         continue;
       }
@@ -421,7 +427,6 @@ async function init() {
       if (root !== cwd) console.log(blue(`  cd ${bold(related)}`));
 
       console.log(blue(`  ${defaultAgent === 'yarn' ? 'yarn' : `${defaultAgent} install`}`));
-      console.log(blue(`  ${defaultAgent === 'yarn' ? 'yarn dev' : `${defaultAgent} run dev`}`));
       console.log(cyan('blocklet dev'));
       console.log('\n', `Find more usage in ${green('README.md')}`, '\n');
     }

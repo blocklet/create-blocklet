@@ -27,4 +27,15 @@ pre {
 
 .app-link {
   color: #4f6af5;
+  margin-right: 32px;
+}
+
+.input-wrapper {
+  margin: 32px 0;
+  width: 100%;
+}
+
+.input {
+  width: 480px;
+  height: 240px;
 }
