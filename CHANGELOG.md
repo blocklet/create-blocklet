@@ -1,3 +1,7 @@
+## 0.3.8 (四月 15, 2022)
+
+- feat: add ".editorconfig" file
+
 ## 0.3.7 (四月 15, 2022)
 
 - fix: update prettier "jsxBracketSameLine" -> "bracketSameLine"
