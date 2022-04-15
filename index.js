@@ -97,6 +97,8 @@ const renameFiles = {
   '_eslintrc.js': '.eslintrc.js',
   _eslintignore: '.eslintignore',
   _npmrc: '.npmrc',
+  _editorconfig: '.editorconfig',
+  _prettierrc: '.prettierrc',
 };
 
 async function init() {
