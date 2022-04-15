@@ -1,3 +1,7 @@
+## 0.3.7 (四月 15, 2022)
+
+- fix: update prettier "jsxBracketSameLine" -> "bracketSameLine"
+
 ## 0.3.6 (April 07, 2022)
 
 - fix: get blocklet server user info
