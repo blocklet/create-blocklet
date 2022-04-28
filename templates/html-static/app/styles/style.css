@@ -1,0 +1,67 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: initial;
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.logo {
+  font-size: 18px;
+}
+
+.footer {
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  font-size: 18px;
+}
+.card-list {
+  display: flex;
+  margin-top: 30px;
+  gap: 40px;
+  padding: 20px;
+}
+.card {
+  border: 1px solid #e7e7e7;
+  border-radius: 6px;
+  padding: 0 25px;
+  flex: 1;
+  text-decoration: none;
+  color: initial;
+  font-size: 18px;
+}
+.card:hover {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+.card h3 {
+  font-size: 24px;
+}
+.code {
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
+    monospace;
+}
+
+@media (max-width: 768px) {
+  .card-list {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

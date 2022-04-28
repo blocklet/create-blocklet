@@ -45,6 +45,7 @@ Currently supported template presets include:
 - `vue3 + vite`
 - `vue2 + @vue/cli`
 - `blocklet page`
+- `html`
 
 **api**
 - `express`
