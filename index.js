@@ -78,6 +78,11 @@ const TYPES = [
         display: 'blocklet page',
         color: blue,
       },
+      {
+        name: 'html',
+        display: 'html',
+        color: blue,
+      },
     ],
   },
   {
@@ -316,10 +321,14 @@ async function init() {
       yamlConfig.did = did;
     });
     modifyPackage((pkg) => {
-      if (type === 'dapp') {
-        pkg.scripts['bundle:client'] = ejs.render(pkg.scripts['bundle:client'], { did });
-      } else if (type === 'static') {
-        pkg.scripts.bundle = ejs.render(pkg.scripts.bundle, { did });
+      try {
+        if (type === 'dapp') {
+          pkg.scripts['bundle:client'] = ejs.render(pkg.scripts['bundle:client'], { did });
+        } else if (type === 'static') {
+          pkg.scripts.bundle = ejs.render(pkg.scripts.bundle, { did });
+        }
+      } catch {
+        console.info('\nNo need to patch bundle script\n');
       }
     });
     // disabled random logo
@@ -394,10 +403,8 @@ async function init() {
         execSync('blocklet dev', { stdio: 'inherit' });
       } else {
         console.log();
-        console.log();
       }
     } else {
-      console.log();
       console.log();
     }
 
