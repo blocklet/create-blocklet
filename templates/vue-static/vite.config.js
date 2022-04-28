@@ -6,6 +6,8 @@ import { createBlockletPlugin } from 'vite-plugin-blocklet';
 // https://vitejs.dev/config/
 export default ({ mode }) => {
   const envMap = loadEnv(mode, process.cwd());
+  const port = process.env.BLOCKLET_PORT || 3000;
+
   return defineConfig({
     plugins: [
       vue(),
@@ -21,7 +23,7 @@ export default ({ mode }) => {
       createBlockletPlugin(),
     ],
     server: {
-      port: process.env.BLOCKLET_PORT,
+      port,
     },
   });
 };

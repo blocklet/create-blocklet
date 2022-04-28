@@ -1,4 +1,7 @@
-const port = process.env.BLOCKLET_PORT || process.env.PORT || 8080;
+require('dotenv-flow').config();
+
+const port = process.env.BLOCKLET_PORT || process.env.PORT || 3000;
+const apiPort = process.env.API_PORT || 3030;
 
 module.exports = {
   publicPath: process.env.PUBLIC_PATH || '/',
@@ -11,7 +14,7 @@ module.exports = {
     },
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1:3030',
+        target: `http://127.0.0.1:${apiPort}`,
       },
     },
   },

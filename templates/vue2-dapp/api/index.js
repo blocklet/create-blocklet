@@ -20,12 +20,7 @@ app.use(express.urlencoded({ extended: true, limit: '1 mb' }));
 const router = express.Router();
 router.use('/api', require('./routes'));
 
-const isDevelopment = process.env.NODE_ENV === 'development';
 const isProduction = process.env.NODE_ENV === 'production' || process.env.ABT_NODE_SERVICE_ENV === 'production';
-
-if (isDevelopment) {
-  process.env.BLOCKLET_PORT = 3030;
-}
 
 if (isProduction) {
   app.use(cors());
@@ -47,7 +42,7 @@ if (isProduction) {
   app.use(router);
 }
 
-const port = parseInt(process.env.BLOCKLET_PORT, 10) || 3030;
+const port = parseInt(process.env.API_PORT, 10) || 3030;
 
 app.listen(port, (err) => {
   if (err) throw err;
