@@ -33,6 +33,11 @@ const TYPES = [
         color: yellow,
       },
       {
+        name: 'solidjs',
+        display: 'solidjs',
+        color: yellow,
+      },
+      {
         name: 'vue',
         display: 'vue3 + vite',
         color: green,
