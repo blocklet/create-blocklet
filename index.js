@@ -8,6 +8,7 @@ import { cd, argv, fs, YAML, chalk, path } from 'zx';
 import ora from 'ora';
 import prompts from 'prompts';
 import * as envfile from 'envfile';
+import getPort from 'get-port';
 
 import { echoBrand, echoDocument } from './lib/arcblock.js';
 import { getUser } from './lib/index.js';
@@ -281,8 +282,16 @@ async function init() {
   modifyBlockletMd((md) => {
     return md.replace(/# template-react/g, `# ${name}`);
   });
-  if (!['blocklet-page'].includes(framework)) {
-    modifyEnv((env) => {
+
+  let randomPort;
+  if (['dapp'].includes(type)) {
+    randomPort = await getPort();
+  }
+  modifyEnv((env) => {
+    if (randomPort) {
+      env.API_PORT = randomPort;
+    }
+    if (!['blocklet-page'].includes(framework)) {
       if (['react'].includes(framework)) {
         env.REACT_APP_TITLE = name;
       } else if (['vue', 'blocklet-page'].includes(framework)) {
@@ -290,9 +299,9 @@ async function init() {
       } else {
         env.APP_TITLE = name;
       }
-      return env;
-    });
-  }
+    }
+    return env;
+  });
 
   // patch blocklet author
   modifyBlockletYaml(async (yamlConfig) => {

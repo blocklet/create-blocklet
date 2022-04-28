@@ -19,6 +19,7 @@ specifiers:
   eslint-plugin-react-hooks: ^4.2.0
   eslint-plugin-unicorn: ^34.0.1
   figlet: ^1.5.2
+  get-port: ^6.1.2
   gradient-string: ^2.0.0
   jdenticon: ^3.1.1
   ora: ^6.1.0
@@ -37,6 +38,7 @@ dependencies:
   ejs: 3.1.6
   envfile: 6.17.0
   figlet: 1.5.2
+  get-port: 6.1.2
   gradient-string: 2.0.0
   jdenticon: 3.1.1
   ora: 6.1.0
@@ -1782,6 +1784,11 @@ packages:
       function-bind: 1.1.1
       has: 1.0.3
       has-symbols: 1.0.2
+
+  /get-port/6.1.2:
+    resolution: {integrity: sha512-BrGGraKm2uPqurfGVj/z97/zv8dPleC6x9JBNRTrDNtCkkRF4rPwrQXFgL7+I+q8QSdU4ntLQX2D7KIxSy8nGw==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dev: false
 
   /get-symbol-description/1.0.0:
     resolution: {integrity: sha512-2EmdH1YvIQiZpltCNgkuiUnyukzxM/R6NDJX31Ke3BG1Nq5b0S2PhX59UKi9vZpPDQVdqn+1IcaAwnzTT5vCjw==}
