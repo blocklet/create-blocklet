@@ -1,3 +1,16 @@
+## 0.3.9 (四月 30, 2022)
+
+- chore: update template dependencies
+- feat: add svelte-dapp template
+- chore: fix some template error
+- feat: add svelte-static template
+- feat: add solidjs-dapp template
+- feat: add solidjs-static template
+- feat: add html-static template
+- feat: xxx-dapp template will generate random port as api-port
+- feat: add version-check in templates
+- fix: remove bump_version extra '\n'
+
 ## 0.3.8 (四月 15, 2022)
 
 - feat: add ".editorconfig" file
