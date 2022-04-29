@@ -18,7 +18,7 @@ export default ({ mode }) => {
         inject: {
           data: {
             base: process.env.BASE_URL || '/',
-            title: envMap.VITE_APP_TITLE,
+            title: envMap.APP_TITLE,
           },
         },
       }),
