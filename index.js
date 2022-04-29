@@ -48,6 +48,11 @@ const TYPES = [
         color: green,
       },
       {
+        name: 'svelte',
+        display: 'svelte',
+        color: magenta,
+      },
+      {
         name: 'nextjs',
         display: 'next.js',
         color: blue,
