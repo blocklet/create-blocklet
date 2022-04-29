@@ -16,7 +16,7 @@ import { checkServerInstalled, checkServerRunning, checkSatisfiedVersion, getSer
 import { toBlockletDid } from './lib/did.js';
 import { initGitRepo } from './lib/git.js';
 
-const { yellow, red, green, cyan, blue, bold } = chalk;
+const { yellow, red, green, cyan, blue, bold, magenta } = chalk;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -82,6 +82,11 @@ const TYPES = [
         name: 'vue2',
         display: 'vue2 + @vue/cli',
         color: green,
+      },
+      {
+        name: 'svelte',
+        display: 'svelte',
+        color: magenta,
       },
       {
         name: 'blocklet-page',
