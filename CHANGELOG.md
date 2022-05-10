@@ -1,3 +1,7 @@
+## 0.3.10 (五月 10, 2022)
+
+- fix: dapp use `BLOCKLET_PORT` in production mode
+
 ## 0.3.9 (四月 30, 2022)
 
 - chore: update template dependencies
