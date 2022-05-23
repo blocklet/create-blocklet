@@ -1,3 +1,7 @@
+## 0.3.11 (五月 23, 2022)
+
+- chore: update dependencies
+
 ## 0.3.10 (五月 10, 2022)
 
 - fix: dapp use `BLOCKLET_PORT` in production mode
