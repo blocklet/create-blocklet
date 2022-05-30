@@ -20,12 +20,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^8.14.0",
+    "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-solid": "0.5.0",
-    "husky": "^7.0.4",
-    "lint-staged": "^12.4.1",
+    "eslint-plugin-solid": "0.6.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^12.5.0",
     "nodemon": "^2.0.16",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.6.2",
@@ -35,12 +35,12 @@
     "vite-plugin-html": "^3.2.0"
   },
   "dependencies": {
-    "@arcblock/did-auth": "^1.16.9",
+    "@arcblock/did-auth": "^1.16.15",
     "@arcblock/did-auth-storage-nedb": "^1.6.3",
-    "@blocklet/sdk": "^1.7.18",
-    "@ocap/client": "^1.16.9",
-    "@ocap/mcrypto": "^1.16.9",
-    "@ocap/wallet": "^1.16.9",
+    "@blocklet/sdk": "^1.7.20",
+    "@ocap/client": "^1.16.15",
+    "@ocap/mcrypto": "^1.16.15",
+    "@ocap/wallet": "^1.16.15",
     "axios": "^0.27.2",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
@@ -49,7 +49,7 @@
     "express": "^4.18.1",
     "express-async-errors": "^3.1.1",
     "express-history-api-fallback": "^2.2.1",
-    "solid-js": "^1.4.2"
+    "solid-js": "^1.4.3"
   },
   "lint-staged": {
     "*.{mjs,js,vue}": [
