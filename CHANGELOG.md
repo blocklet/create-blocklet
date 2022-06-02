@@ -1,3 +1,7 @@
+## 0.3.13 (六月 03, 2022)
+
+- fix: react-xxx template should remove react-import
+
 ## 0.3.12 (六月 02, 2022)
 
 - chore(deps): update dependencies
