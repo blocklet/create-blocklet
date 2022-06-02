@@ -1,7 +1,6 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
-const About = () => {
+function About() {
   return (
     <div>
       <h1>
@@ -12,6 +11,6 @@ const About = () => {
       <h2>Hello, i'm a static blocklet</h2>
     </div>
   );
-};
+}
 
 export default About;

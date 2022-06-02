@@ -1,9 +1,8 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 import logo from '../logo.svg';
 
-const Home = () => {
+function Home() {
   return (
     <header className="app-header">
       <img src={logo} className="app-logo" alt="logo" />
@@ -18,6 +17,6 @@ const Home = () => {
       </a>
     </header>
   );
-};
+}
 
 export default Home;

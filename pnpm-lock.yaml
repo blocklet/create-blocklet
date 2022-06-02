@@ -19,7 +19,7 @@ specifiers:
   semver: ^7.3.7
   terminal-link: ^3.0.0
   vitest: ^0.13.1
-  zx: ^6.2.0
+  zx: 6.1.0
 
 dependencies:
   '@arcblock/did': 1.16.15
@@ -36,7 +36,7 @@ dependencies:
   prompts: 2.4.2
   semver: 7.3.7
   terminal-link: 3.0.0
-  zx: 6.2.0
+  zx: 6.1.0
 
 devDependencies:
   '@arcblock/eslint-config': 0.2.1_yzlwycfcjzj3trzruaflx2c53m
@@ -231,10 +231,6 @@ packages:
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
     dev: true
-
-  /@types/ps-tree/1.1.2:
-    resolution: {integrity: sha512-ZREFYlpUmPQJ0esjxoG1fMvB2HNaD3z+mjqdSosZvd3RalncI9NEur73P8ZJz4YQdL64CmV1w0RuqoRUlhQRBw==}
-    dev: false
 
   /@types/tinycolor2/1.4.3:
     resolution: {integrity: sha512-Kf1w9NE5HEgGxCRyIcRXR/ZYtDv0V8FVPtYHwLxl0O+maGX0erE77pQlD0gpP+/KByMZ87mOA79SjifhSB3PjQ==}
@@ -3056,20 +3052,18 @@ packages:
     engines: {node: '>= 14'}
     dev: false
 
-  /zx/6.2.0:
-    resolution: {integrity: sha512-g7M/j+Jgw0XVpuX0VyW5vHctU/G7Q2/xb0yysyaTS37Iv39s9Fxn1QvLePVt/QnQSkfNPqeYzsqST1+sRG5Jaw==}
+  /zx/6.1.0:
+    resolution: {integrity: sha512-LcvyN946APdktLPm1ta4wfNiJaDuq1iHOTDwApP69ug5hNYWzMYaVMC5Ek6Ny4nnSLpJ6wdY42feR/2LY5/nVA==}
     engines: {node: '>= 16.0.0'}
     hasBin: true
     dependencies:
       '@types/fs-extra': 9.0.13
       '@types/minimist': 1.2.2
       '@types/node': 17.0.21
-      '@types/ps-tree': 1.1.2
       '@types/which': 2.0.1
       chalk: 5.0.1
       fs-extra: 10.1.0
       globby: 13.1.1
-      ignore: 5.2.0
       minimist: 1.2.6
       node-fetch: 3.2.5
       ps-tree: 1.2.0
