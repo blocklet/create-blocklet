@@ -1,3 +1,8 @@
+## 0.3.12 (六月 02, 2022)
+
+- chore(deps): update dependencies
+- fix: polish html-static
+
 ## 0.3.11 (五月 23, 2022)
 
 - chore: update dependencies

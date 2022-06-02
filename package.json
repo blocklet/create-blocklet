@@ -1,6 +1,6 @@
 {
   "name": "create-blocklet",
-  "version": "0.3.11",
+  "version": "0.3.12",
   "exports": "./index.js",
   "type": "module",
   "repository": "git@github.com:blocklet/create-blocklet.git",
@@ -24,40 +24,31 @@
   "homepage": "https://github.com/blocklet/create-blocklet/tree/main#readme",
   "scripts": {
     "lint": "eslint .",
-    "test": "vitest",
+    "test": "NODE_ENV=development vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run"
   },
   "dependencies": {
-    "@arcblock/did": "^1.16.0",
-    "@ocap/mcrypto": "^1.16.0",
-    "@ocap/util": "^1.16.0",
+    "@arcblock/did": "^1.16.15",
+    "@ocap/mcrypto": "^1.16.15",
+    "@ocap/util": "^1.16.15",
     "boxen": "^6.2.1",
-    "ejs": "^3.1.6",
+    "ejs": "^3.1.8",
     "envfile": "^6.17.0",
     "figlet": "^1.5.2",
     "get-port": "^6.1.2",
-    "gradient-string": "^2.0.0",
+    "gradient-string": "^2.0.1",
     "jdenticon": "^3.1.1",
     "ora": "^6.1.0",
     "prompts": "^2.4.2",
-    "semver": "^7.3.6",
+    "semver": "^7.3.7",
     "terminal-link": "^3.0.0",
-    "zx": "^6.0.7"
+    "zx": "^6.2.0"
   },
   "devDependencies": {
-    "@arcblock/eslint-config": "0.1.8",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.31.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "eslint-plugin-unicorn": "^34.0.1",
-    "prettier": "^2.3.2",
-    "vitest": "^0.9.0"
+    "@arcblock/eslint-config": "0.2.1",
+    "eslint": "^8.16.0",
+    "prettier": "^2.6.2",
+    "vitest": "^0.13.1"
   }
 }
