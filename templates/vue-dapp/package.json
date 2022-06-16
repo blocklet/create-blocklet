@@ -15,6 +15,7 @@
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
     "lint": "eslint src api --ext .mjs,.js,.vue",
+    "lint:fix": "npm run lint -- --fix",
     "prepare": "husky install"
   },
   "dependencies": {
