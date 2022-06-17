@@ -4,6 +4,7 @@
   "description": "",
   "main": "api/index.js",
   "scripts": {
+    "dev": "blocklet dev",
     "start": "NODE_ENV=development nodemon api/index.js -w api",
     "clean": "rm -rf .blocklet",
     "bundle": "npm run clean && blocklet bundle --zip --create-release",
