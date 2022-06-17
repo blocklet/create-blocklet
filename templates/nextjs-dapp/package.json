@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "NODE_ENV=production node api/index.js",
     "lint": "next lint",
+    "lint:fix": "npm run lint -- --fix",
     "clean": "rm -rf .blocklet",
     "bundle": "npm run bundle:client && npm run bundle:api",
     "bundle:client": "PUBLIC_URL='/.blocklet/proxy/<%= did %>' npm run build",

@@ -19,8 +19,6 @@ logo: logo.png
 files:
   - build
   - logo.png
-  - README.md
-  - blocklet.md
   - screenshots
   - api/hooks/pre-start.js
 interfaces:

@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint src --ext .mjs,.js,.svelte",
+    "lint:fix": "npm run lint -- --fix",
     "clean": "rm -rf .blocklet",
     "bundle": "npm run clean && vite build --base /.blocklet/proxy/<%= did %>/ && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",

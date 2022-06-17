@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "eslint src api --ext .mjs,.js,.vue",
+    "lint:fix": "npm run lint -- --fix",
     "start": "npm-run-all --parallel start:*",
     "start:client": "npm run serve",
     "start:api": "NODE_ENV=development nodemon api/index.js -w api",

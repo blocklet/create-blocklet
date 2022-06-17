@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "eslint src --ext .mjs,.js,.vue",
+    "lint:fix": "npm run lint -- --fix",
     "start": "npm run serve",
     "clean": "rm -rf .blocklet",
     "bundle": "npm run clean && PUBLIC_PATH=/.blocklet/proxy/<%= did %> npm run build && blocklet bundle --zip --create-release",
