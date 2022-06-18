@@ -1,3 +1,9 @@
+## 0.3.15 (六月 17, 2022)
+
+- chore: replace the default created logo
+- chore: introduce developers to use blocklet dev
+
+
 ## 0.3.14 (六月 17, 2022)
 
 - chore: turn off react templates to strict mode

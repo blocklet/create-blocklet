@@ -43,7 +43,7 @@ requirements:
   cpu: '*'
 scripts:
   preStart: node api/hooks/pre-start.js
-  dev: npm run dev
+  dev: npm run start
 environments:
   - name: CHAIN_HOST
     description: What's endpoint of the chain?
