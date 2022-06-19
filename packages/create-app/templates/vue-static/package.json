@@ -2,10 +2,10 @@
   "name": "template-vue",
   "version": "0.1.0",
   "scripts": {
-    "dev": "vite --host",
-    "start": "npm run dev",
-    "build": "vite build",
+    "dev": "blocklet dev",
+    "start": "vite --host",
     "lint": "eslint src --ext .mjs,.js,.vue",
+    "lint:fix": "npm run lint -- --fix",
     "serve": "vite preview",
     "clean": "rm -rf .blocklet",
     "bundle": "npm run clean && vite build --base /.blocklet/proxy/<%= did %>/ && blocklet bundle --zip --create-release",

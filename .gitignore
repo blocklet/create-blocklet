@@ -1,2 +1,5 @@
 node_modules
 templates/react-gun/yarn.lock
+
+.idea
+.DS_Store

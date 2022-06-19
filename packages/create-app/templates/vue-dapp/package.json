@@ -2,11 +2,10 @@
   "name": "template-vue",
   "version": "0.1.0",
   "scripts": {
-    "dev": "vite --host",
-    "build": "vite build",
+    "dev": "blocklet dev",
     "serve": "vite preview",
     "start": "npm-run-all --parallel start:*",
-    "start:client": "npm run dev",
+    "start:client": "vite --host",
     "start:api": "NODE_ENV=development nodemon api/index.js -w api",
     "clean": "rm -rf .blocklet",
     "bundle": "npm run bundle:client && npm run bundle:api",
@@ -15,6 +14,7 @@
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
     "lint": "eslint src api --ext .mjs,.js,.vue",
+    "lint:fix": "npm run lint -- --fix",
     "prepare": "husky install"
   },
   "dependencies": {

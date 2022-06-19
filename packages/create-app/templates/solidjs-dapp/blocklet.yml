@@ -18,8 +18,6 @@ version: 0.1.0
 logo: logo.png
 files:
   - logo.png
-  - README.md
-  - blocklet.md
   - screenshots
 interfaces:
   - type: web

@@ -3,11 +3,10 @@
   "version": "0.0.0",
   "description": "",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "blocklet dev",
     "serve": "vite preview",
     "start": "npm-run-all --parallel start:*",
-    "start:client": "npm run dev",
+    "start:client": "vite",
     "start:api": "NODE_ENV=development nodemon api/index.js -w api",
     "clean": "rm -rf .blocklet",
     "bundle": "npm run bundle:client && npm run bundle:api",
@@ -16,6 +15,7 @@
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
     "lint": "eslint src --ext .mjs,.js,.jsx",
+    "lint:fix": "npm run lint -- --fix",
     "prepare": "husky install"
   },
   "license": "MIT",
