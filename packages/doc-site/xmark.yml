@@ -1,0 +1,15 @@
+name: Create Blocklet
+title: Create Blocklet
+description: This is Blocklet Page Demo, powered by Blocklet Page
+siteRoot: site
+theme: ./theme
+themeConfig:
+  sidebar:
+    - text: Intro
+      link: /intro
+    - text: Getting Started
+      link: /getting-started
+    - text: Folder Structure
+      link: /folder-structure
+    - text: Test
+      link: /test

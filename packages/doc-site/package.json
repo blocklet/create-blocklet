@@ -1,0 +1,20 @@
+{
+  "name": "doc-site",
+  "private": true,
+  "scripts": {
+    "dev": "xmark start",
+    "start": "npm run dev",
+    "build": "xmark build",
+    "clean": "rm -rf .blocklet",
+    "bundle": "npm run clean && npm run build && blocklet bundle --create-release",
+    "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
+    "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@mdx-js/react": "^2.1.2",
+    "@xmark/cli": "^2.0.50",
+    "@xmark/client": "^2.0.50",
+    "@xmark/utils": "^2.0.50"
+  }
+}
