@@ -1,0 +1,40 @@
+{
+  "name": "template-svelte",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext .mjs,.js,.svelte",
+    "clean": "rm -rf .blocklet",
+    "bundle": "npm run clean && vite build --base /.blocklet/proxy/<%= did %>/ && blocklet bundle --zip --create-release",
+    "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
+    "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "1.0.0-next.47",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-svelte3": "^4.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^12.5.0",
+    "prettier": "^2.7.0",
+    "svelte": "^3.48.0",
+    "vite": "^2.9.12",
+    "vite-plugin-blocklet": "^0.1.2",
+    "vite-plugin-html": "^3.2.0"
+  },
+  "lint-staged": {
+    "*.{mjs,js,vue}": [
+      "prettier --write",
+      "eslint --ext .js,.mjs,.svelte"
+    ],
+    "*.{css,less,scss,json,graphql}": [
+      "prettier --write"
+    ]
+  }
+}
