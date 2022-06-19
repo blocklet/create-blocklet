@@ -1,0 +1,90 @@
+---
+layout: 'my-layout'
+blocks:
+  - name: SectionBlock
+    background:
+      color: '#fff'
+    className: text-center
+    classes:
+      section: '!xl:py-10'
+    title:
+      - name: Pic
+        className: w-[120px] m-auto mb-8
+        src: /logo.png
+      - name: div
+        className: font-bold text-center
+        children: Create Blocklet
+    description:
+      - name: div
+        className: text-center text-[#333]
+        children: 创建一个 Blocklet 只需要一条命令
+      - name: div
+        className: text-center
+        children:
+          name: Button
+          varaint: border
+          className: mt-8 w-auto m-auto !text-#236FFF !border-#236FFF px-4 py-2 !inline-block
+          size: lg
+          color: primary
+          children:
+            name: SmartLink
+            to: /docs/get-started
+            children: 立即开始
+  - name: ListInfo
+    list:
+      - title: 快速创建 Blocklet
+        description: 你不需要学习和配置与 Blocklet Server 有关的东西，你就能够轻松的创建一个 Blocklet DAPP。
+      - title: 丰富的模板选择
+        description: 你可以选择任意 Starter 模板
+      - title: 与 Blocklet Server 无缝集成
+        description: 内置了 Blocklet Server 各类功能，你可以轻松的集成到你的 Blocklet DAPP 中。
+  - name: SectionBlock
+    left:
+      name: InfoBlock
+      title:
+        name: div
+        className: font-bold text-4xl
+        children: Get started in seconds
+      description:
+        name: div
+        className: text-xl
+        children:
+          - !md |
+            Whether you’re using React or another library, Create React App lets you focus on code, not build tools.
+
+            To create a project called my-app, run this command:
+          - name: CodeBlock
+            language: shell
+            children: npx create-blocklet my-blocklet
+    right:
+      name: Pic
+      src: /images/get-started.png
+  - name: SectionBlock
+    left:
+      name: Pic
+      src: /images/update.png
+    right:
+      name: InfoBlock
+      title:
+        name: div
+        className: font-bold text-4xl
+        children: Easy to Maintain
+      description:
+        name: div
+        className: text-xl
+        children:
+          - !md |
+            Updating your build tooling is typically a daunting and time-consuming task. When new versions of Create React App are released, you can upgrade using a single command:
+---
+
+Updating your build tooling is typically a daunting and time-consuming task. When new versions of Create React App are released, you can upgrade using a single command:
+
+<CodeBlock lang="js">{`console.log('hi')`}</CodeBlock>
+
+Updating your build tooling is typically a daunting and time-consuming task. When new versions of Create React App are released, you can upgrade using a single command:
+
+---
+
+## docs-theme 计划
+
+分阶段实现
