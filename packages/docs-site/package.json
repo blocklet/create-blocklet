@@ -1,5 +1,5 @@
 {
-  "name": "doc-site",
+  "name": "docs-site",
   "private": true,
   "scripts": {
     "dev": "xmark start",
