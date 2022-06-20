@@ -29,9 +29,9 @@
     "test:run": "vitest run"
   },
   "dependencies": {
-    "@arcblock/did": "^1.16.16",
-    "@ocap/mcrypto": "^1.16.16",
-    "@ocap/util": "^1.16.16",
+    "@arcblock/did": "^1.17.0",
+    "@ocap/mcrypto": "^1.17.0",
+    "@ocap/util": "^1.17.0",
     "boxen": "^6.2.1",
     "ejs": "^3.1.8",
     "envfile": "^6.17.0",
@@ -46,9 +46,9 @@
     "zx": "6.1.0"
   },
   "devDependencies": {
-    "@arcblock/eslint-config-base": "0.2.1",
-    "eslint": "^8.17.0",
-    "prettier": "^2.7.0",
-    "vitest": "^0.13.1"
+    "@arcblock/eslint-config-base": "0.2.2",
+    "eslint": "^8.18.0",
+    "prettier": "^2.7.1",
+    "vitest": "^0.15.1"
   }
 }
