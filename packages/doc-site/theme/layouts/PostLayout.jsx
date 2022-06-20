@@ -13,6 +13,7 @@ const rootCss = css`
   }
   .post-page__main {
     padding: 20px;
+    box-shadow: rgb(0 0 0 / 2%) 0px 0px 5px, rgb(0 0 0 / 10%) 0px 5px 22px -8px;
   }
   .post-page__header {
     position: fixed;
@@ -23,7 +24,7 @@ const rootCss = css`
   }
 `;
 
-function PostLayout({ children, sidebar, prev, next }) {
+function PostLayout({ children, sidebar }) {
   return (
     <div className="flex flex-col post-page" css={rootCss}>
       <Header className="post-page__header" />

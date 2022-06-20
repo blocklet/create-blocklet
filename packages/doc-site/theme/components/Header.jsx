@@ -20,6 +20,7 @@ const rootCss = css`
     line-height: 50px;
     justify-content: space-between;
     background-color: #fff;
+    border-bottom: 1px solid #0000001a;
   }
   .post-header__title {
     font-size: 24px;
@@ -72,7 +73,7 @@ function Header({ className, ...rest }) {
 
   useEffect(changeLocation, [locale, changeLocation]);
   return (
-    <header className={clsx('shadow post-header', className)} css={rootCss} {...rest}>
+    <header className={clsx('post-header', className)} css={rootCss} {...rest}>
       <SmartLink className="flex" to="/">
         <img src="/logo.png" />
         <h1 className="post-header__title">{config.title}</h1>

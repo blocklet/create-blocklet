@@ -6,7 +6,9 @@ import SmartLink from '@xmark/client/src/components/SmartLink';
 
 const rootCss = css`
   &.sidebar {
-    border-right: 1px solid #ccc;
+    background-color: #f7f8f8;
+    color: #404040;
+    width: 360px;
   }
   .sidebar__list {
     list-style: none;
@@ -21,15 +23,15 @@ const rootCss = css`
     display: block;
     line-height: 1em;
     padding: 15px 20px;
-    /* margin: 10px 0; */
-    font-size: 18px;
+    font-size: 16px;
     &:hover {
-      background-color: #f5f5f5;
+      color: #4e6af6;
     }
     &.sidebar__link--parent {
       font-weight: bold;
+      font-size: 18px;
       &:hover {
-        background-color: transparent;
+        color: initial;
       }
     }
   }
@@ -38,7 +40,7 @@ const rootCss = css`
 function Sidebar({ menus }) {
   console.log({ menus });
   return (
-    <aside className="w-[240px] sidebar" css={rootCss}>
+    <aside className="sidebar" css={rootCss}>
       <ul className="sidebar__list">
         {menus.map((item) => (
           <li
