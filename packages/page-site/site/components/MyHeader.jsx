@@ -36,7 +36,7 @@ const rootCss = css`
   }
 `;
 
-function Header({ className, ...rest }) {
+function SimpleHeader({ className, ...rest }) {
   const injectData = useInjectContext();
   const { basename } = injectData;
   const { config } = injectData;
@@ -79,7 +79,7 @@ function Header({ className, ...rest }) {
         <h1 className="post-header__title">{config.title}</h1>
       </SmartLink>
       <div className="flex items-center">
-        <SmartLink className="post-header__link" to="/doc">
+        <SmartLink className="post-header__link" to="/docs">
           {locale === 'zh' ? '文档' : 'Docs'}
         </SmartLink>
         <LocaleSelector />
@@ -88,4 +88,4 @@ function Header({ className, ...rest }) {
   );
 }
 
-export default Header;
+export default SimpleHeader;
