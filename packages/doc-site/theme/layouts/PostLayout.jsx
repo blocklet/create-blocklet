@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const rootCss = css`
   min-height: 100vh;
@@ -18,6 +19,7 @@ const rootCss = css`
     top: 0;
     left: 0;
     right: 0;
+    z-index: 1;
   }
 `;
 
@@ -28,7 +30,10 @@ function PostLayout({ children, sidebar, prev, next }) {
       <div className="flex post-page__body">
         {sidebar}
         {/* page */}
-        <main className="flex-1 post-page__main">{children}</main>
+        <main className="flex-1 post-page__main">
+          {children}
+          <Footer />
+        </main>
         {/* prev next button */}
         {/* current */}
         {/* menus */}

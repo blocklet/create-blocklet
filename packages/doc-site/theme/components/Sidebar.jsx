@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import SmartLink from '@xmark/client/src/components/SmartLink';
 
@@ -8,10 +9,6 @@ const rootCss = css`
     border-right: 1px solid #ccc;
     padding: 20px;
   }
-  /* .sidebar__title {
-    line-height: 1;
-    margin: 0;
-  } */
   .sidebar__list {
     list-style: none;
     margin: 0 -20px;
@@ -32,14 +29,34 @@ const rootCss = css`
 `;
 
 function Sidebar({ menus }) {
+  console.log({ menus });
   return (
     <aside className="w-[240px] sidebar" css={rootCss}>
       <ul className="sidebar__list">
         {menus.map((item) => (
-          <li className="sidebar__item" key={item.link}>
-            <SmartLink className="sidebar__link" to={item.link}>
-              {item.text}
-            </SmartLink>
+          <li
+            className={clsx('sidebar__item', item.children ? 'sidebar__item__list' : '')}
+            key={item.link || item.text}>
+            {item.children ? (
+              <>
+                <span className="sidebar__link">{item.text}</span>
+                {Array.isArray(item.children) && (
+                  <ul className="sidebar__list">
+                    {item.children.map((subItem) => (
+                      <li key={subItem.link || subItem.text}>
+                        <SmartLink className="sidebar__link" to={subItem.link}>
+                          {subItem.text}
+                        </SmartLink>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </>
+            ) : (
+              <SmartLink className="sidebar__link" to={item.link}>
+                {item.text}
+              </SmartLink>
+            )}
           </li>
         ))}
       </ul>
