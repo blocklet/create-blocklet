@@ -1,12 +1,18 @@
 ---
 name: Sidebar
 menus:
-  - text: 介绍
-    link: /intro
   - text: 快速上手
-    link: /getting-started
-  - text: 目录结构
-    link: /folder-structure
-  - text: 可用脚本
-    link: /available-scripts
+    children:
+      - text: 介绍
+        link: /intro
+      - text: 快速上手
+        link: /getting-started
+      - text: 目录结构
+        link: /folder-structure
+      - text: 可用脚本
+        link: /available-scripts
+  - text: 功能扩展
+    children:
+      - text: Auth 服务
+        link: /auth-service
 ---

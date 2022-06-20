@@ -26,7 +26,7 @@ export default function Footer() {
       </div>
       <div className="flex items-center whitespace-nowrap">
         Powered by
-        <LogoDark className="pl-4 pr-2" width="auto" height="36px" />
+        <LogoDark className="pl-4 pr-2" width="100%" height="40px" />
       </div>
     </div>
   );

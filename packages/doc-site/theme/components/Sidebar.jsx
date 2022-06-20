@@ -7,12 +7,13 @@ import SmartLink from '@xmark/client/src/components/SmartLink';
 const rootCss = css`
   &.sidebar {
     border-right: 1px solid #ccc;
-    padding: 20px;
   }
   .sidebar__list {
     list-style: none;
-    margin: 0 -20px;
     padding: 0;
+    .sidebar__list {
+      padding-left: 20px;
+    }
   }
   .sidebar__item {
   }
@@ -24,6 +25,12 @@ const rootCss = css`
     font-size: 18px;
     &:hover {
       background-color: #f5f5f5;
+    }
+    &.sidebar__link--parent {
+      font-weight: bold;
+      &:hover {
+        background-color: transparent;
+      }
     }
   }
 `;
@@ -39,7 +46,7 @@ function Sidebar({ menus }) {
             key={item.link || item.text}>
             {item.children ? (
               <>
-                <span className="sidebar__link">{item.text}</span>
+                <span className="sidebar__link sidebar__link--parent">{item.text}</span>
                 {Array.isArray(item.children) && (
                   <ul className="sidebar__list">
                     {item.children.map((subItem) => (
