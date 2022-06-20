@@ -1,12 +1,12 @@
-name: doc-site
-title: doc-site
+name: docs-site
+title: Create Blocklet Docs
 description: A Blocklet Server blocklet
 keywords:
   - blocklet
   - blocklet-page
   - xmark
 group: static
-did: z8iZuUsij9o9iHDcQJ75kHDvZh27tV5duTTaF
+did: z8iZxR98sTfBLymQKPJYE85a95AghSCkLd3bb
 main: dist
 author:
   name: LancelotLewis
@@ -26,22 +26,22 @@ interfaces:
   - type: web
     name: publicUrl
     path: /
-    prefix: "*"
+    prefix: '*'
     port: BLOCKLET_PORT
     protocol: http
-community: ""
-documentation: ""
-homepage: ""
-license: ""
+community: ''
+documentation: ''
+homepage: ''
+license: ''
 payment:
   tokens: []
   shares: []
 timeout:
   start: 60
 requirements:
-  abtnode: ">=1.6.22"
-  os: "*"
-  cpu: "*"
+  abtnode: '>=1.6.22'
+  os: '*'
+  cpu: '*'
 scripts:
   dev: npm run start
 environments: []
