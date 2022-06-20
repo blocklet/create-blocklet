@@ -36,9 +36,6 @@ function Header({ className, ...rest }) {
         <h1 className="post-header__title">{config.title}</h1>
       </SmartLink>
       <div>
-        <SmartLink className="post-header__link" to="/">
-          首页
-        </SmartLink>
         <SmartLink className="post-header__link" to="/doc">
           文档
         </SmartLink>

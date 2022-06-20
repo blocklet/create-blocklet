@@ -8,7 +8,7 @@ Create Blocklet 是一个官方支持的 Blocklet 创建工具，可以快速创
 
 ## 环境准备
 
-首先得有 [node](https://nodejs.org/en/)，并确保 node 版本是 14.0 或以上。（mac 下推荐使用 [nvm](https://github.com/creationix/nvm) 来管理 node 版本）
+首先得有 [node](https://nodejs.org/en/)，并确保 node 版本是 16.0 或以上。（mac 下推荐使用 [nvm](https://github.com/creationix/nvm) 来管理 node 版本）
 
 ## 脚手架
 
@@ -21,8 +21,14 @@ mkdir my-blocklet && cd my-blocklet
 通过官方工具创建项目，
 
 ```shell
-yarn create @umijs/umi-app
-# 或 npx @umijs/create-umi-app
+yarn create blocklet
+# 或 npx create-blocklet
+```
+
+通过 @locklet/cli 工具创建项目
+
+```shell
+blocklet create
 ```
 
 ## 安装依赖
@@ -39,7 +45,7 @@ success Already up-to-date.
 ## 启动项目
 
 ```shell
-blocklet dev
+yarn dev
 ```
 
 打开控制台输出的网址，就能看到当前启动的项目了。

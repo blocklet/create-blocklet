@@ -2,4 +2,106 @@
 layout: 'my-layout'
 ---
 
-文档结构
+# 目录结构
+
+在创建后，你的项目应该像这样：
+
+```
+my-blocklet/
+  README.md
+  blocklet.yml
+  blocklet.md
+  logo.png
+  package.json
+
+  .blocklet
+  .eslintrc.js
+  .prettierrc
+  .npmrc
+  .editorconfig
+  .gitignore
+  .env
+  .github
+  .husky
+  .vscode
+
+  src/
+  dist/
+  screenshots/
+```
+
+## 根目录
+
+### README.md
+
+项目的说明文件，简单介绍项目的一些基本情况。
+
+### blocklet.yml
+
+Blocklet 应用的配置文件，包括项目的名称、版本、作者、项目的描述等。同时包含 Auth Service 和 children components 等配置。
+
+### blocklet.md
+
+专用于描述 Blocklet 应用的文件，在上传 Blocklet 至 Blocklet Store 后，会将该文件作为 Blocklet 应用的描述文件。
+
+如果该文件不存在，则会降级到使用 README.md 文件作为 Blocklet 应用的描述文件。
+
+### logo.png
+
+Blocklet 的图标文件，会在 Blocklet 应用于 DID Wallet 交互时出现在 DID Wallet 中。
+
+### package.json
+
+包含 Blocklet 应用的依赖等信息。
+
+### .blocklet
+
+Blocklet 应用打包后的产物文件夹，里面包含有能够直接运行在 Blocklet Server 中的代码包。
+在执行 `yarn bundle` 命令后会自动产生该文件夹。
+
+### .eslintrc.js
+
+用于配置 ESLint 规则的文件。
+不同的模板中配有不同的规则。
+
+### .prettierrc
+
+用于配置 Prettier 规则的文件。
+
+### .npmrc
+
+用于配置 npm 的文件。
+
+### .editorconfig
+
+用于配置 EditorConfig 规则的文件。
+
+### .gitignore
+
+用于配置 git 忽略的文件。
+
+### .env
+
+包含环境变量的文件。
+
+### .github
+
+用于配置 GitHub 的文件。
+
+### .husky
+
+用于配置 Husky 的文件。
+
+### .vscode
+
+用于配置 VSCode 的文件。
+
+### src/
+
+项目的源文件目录，在不同的模板中，src 中的结构也不同，具体请参考生产的模板中的 README.md 文件
+
+### screenshots/
+
+Blocklet 应用的图片文件夹，用于上传至 Blocklet Store 后，在 Blocklet Store 的详情页中显示。
+
+同时需要在 blocklet.yml 中配置 screenshots 字段，指定 Blocklet 应用的图片文件夹的路径。
