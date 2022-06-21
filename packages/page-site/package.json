@@ -2,17 +2,27 @@
   "name": "page-site",
   "private": true,
   "scripts": {
-    "dev": "xmark start",
-    "start": "npm run dev",
+    "dev": "blocklet dev",
+    "start": "xmark start",
     "build": "xmark build",
     "clean": "rm -rf .blocklet",
-    "bundle": "npm run clean && npm run build -- --base=/.blocklet/proxy/z8iZrWdW8s5t9p6ndZLW8PmHcBtLdxGVyGN3L/ && blocklet bundle --create-release",
+    "bundle": "npm run clean && npm run build && blocklet bundle --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json"
   },
   "dependencies": {
-    "@xmark/cli": "^2.0.51",
-    "@xmark/theme-arcblock": "^2.0.51",
-    "react": "^18.2.0"
+    "@arcblock/ux": "^2.1.36",
+    "@emotion/react": "^11.9.3",
+    "@mdx-js/react": "^2.1.2",
+    "@xmark/cli": "^2.0.52",
+    "@xmark/client": "^2.0.52",
+    "@xmark/theme-arcblock": "^2.0.52",
+    "@xmark/utils": "^2.0.52",
+    "ahooks": "^3.5.0",
+    "clsx": "^1.1.1",
+    "path-browserify": "^1.0.1",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-router-dom": "^6.3.0"
   }
 }

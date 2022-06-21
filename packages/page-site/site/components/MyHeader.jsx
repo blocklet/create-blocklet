@@ -7,10 +7,10 @@ import clsx from 'clsx';
 import SmartLink from '@xmark/client/src/components/SmartLink';
 import path from 'path-browserify';
 import { removeLastSlash } from '@xmark/utils';
-import { useInjectContext } from '@xmark/utils/inject';
 import { DEFAULT_LOCALE } from '@xmark/utils/enum';
 import LocaleSelector from '@arcblock/ux/lib/Locale/selector';
 import { useLocaleContext } from '@arcblock/ux/lib/Locale/context';
+import { useInjectContext } from 'virtual:context';
 
 const rootCss = css`
   &.post-header {
@@ -36,10 +36,9 @@ const rootCss = css`
   }
 `;
 
-function SimpleHeader({ className, ...rest }) {
+function MyHeader({ className, ...rest }) {
   const injectData = useInjectContext();
-  const { basename } = injectData;
-  const { config } = injectData;
+  const { config, basename } = injectData;
   const { locale, changeLocale } = useLocaleContext();
   const location = useLocation();
 
@@ -88,4 +87,4 @@ function SimpleHeader({ className, ...rest }) {
   );
 }
 
-export default SimpleHeader;
+export default MyHeader;
