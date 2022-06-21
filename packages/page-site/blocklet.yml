@@ -1,0 +1,50 @@
+name: page-site
+title: Create Blocklet Page
+description: A Blocklet Server blocklet
+keywords:
+  - blocklet
+  - blocklet-page
+  - xmark
+group: static
+did: z8iZrWdW8s5t9p6ndZLW8PmHcBtLdxGVyGN3L
+main: dist
+author:
+  name: LancelotLewis
+  email: lancelot_lewis@163.com
+repository:
+  type: git
+  url: git+https://github.com/blocklet/create-blocklet.git
+specVersion: 1.1.1
+version: 0.1.0
+logo: logo.png
+files:
+  - logo.png
+  - README.md
+  - blocklet.md
+  - screenshots
+interfaces:
+  - type: web
+    name: publicUrl
+    path: /
+    prefix: '*'
+    port: BLOCKLET_PORT
+    protocol: http
+community: ''
+documentation: ''
+homepage: ''
+license: ''
+payment:
+  tokens: []
+  shares: []
+timeout:
+  start: 60
+requirements:
+  abtnode: '>=1.6.22'
+  os: '*'
+  cpu: '*'
+scripts:
+  dev: npm run start
+environments: []
+capabilities: {}
+screenshots: []
+children: []

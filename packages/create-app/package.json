@@ -1,0 +1,54 @@
+{
+  "name": "create-blocklet",
+  "version": "0.4.0",
+  "exports": "./index.js",
+  "type": "module",
+  "repository": "git@github.com:blocklet/create-blocklet.git",
+  "author": "zhanghan <zhanghan@arcblock.io>",
+  "license": "MIT",
+  "bin": {
+    "create-blocklet": "index.js"
+  },
+  "files": [
+    "index.js",
+    "common",
+    "lib",
+    "templates"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/blocklet/create-blocklet/issues"
+  },
+  "homepage": "https://github.com/blocklet/create-blocklet/tree/main#readme",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "NODE_ENV=development vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run"
+  },
+  "dependencies": {
+    "@arcblock/did": "^1.17.0",
+    "@ocap/mcrypto": "^1.17.0",
+    "@ocap/util": "^1.17.0",
+    "boxen": "^6.2.1",
+    "ejs": "^3.1.8",
+    "envfile": "^6.17.0",
+    "figlet": "^1.5.2",
+    "get-port": "^6.1.2",
+    "gradient-string": "^2.0.1",
+    "jdenticon": "^3.1.1",
+    "ora": "^6.1.0",
+    "prompts": "^2.4.2",
+    "semver": "^7.3.7",
+    "terminal-link": "^3.0.0",
+    "zx": "6.1.0"
+  },
+  "devDependencies": {
+    "@arcblock/eslint-config-base": "0.2.2",
+    "eslint": "^8.18.0",
+    "prettier": "^2.7.1",
+    "vitest": "^0.15.2"
+  }
+}

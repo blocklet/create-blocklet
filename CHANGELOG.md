@@ -1,3 +1,24 @@
+## 0.4.0 (六月 21, 2022)
+
+- chore: add scripts to bump-version
+- fix: header should go to path with basename
+- chore: add deploy staging ci
+- chore: update .npmrc
+- chore: use virtual:context module rather than @xmark/utils/inject
+- chore: change blocklet.yml & docs-site, page-site bundle command
+- chore: rename doc-site -> docs-site
+- chore: adjust Header components
+- chore: polish theme-docs style
+- chore: polish Siderbar style
+- feat: support docs footer
+- feat: support locale change in header
+- feat: support passin custom components to mdx
+- chore(deps): update dependencies
+- Merge branch 'main' into feat-monorepo
+- feat: add create-blocklet doc site
+- feat: add create-blocklet homepage site
+- feat:change repo to monorepo
+
 ## 0.3.15 (六月 17, 2022)
 
 - chore: replace the default created logo

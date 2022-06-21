@@ -1,0 +1,29 @@
+{
+  "name": "page-site",
+  "private": true,
+  "scripts": {
+    "dev": "blocklet dev",
+    "start": "xmark start",
+    "build": "xmark build",
+    "clean": "rm -rf .blocklet",
+    "bundle": "npm run clean && npm run build && blocklet bundle --create-release",
+    "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
+    "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json"
+  },
+  "dependencies": {
+    "@arcblock/ux": "^2.1.37",
+    "@emotion/react": "^11.9.3",
+    "@mdx-js/react": "^2.1.2",
+    "@xmark/cli": "^2.0.54",
+    "@xmark/client": "^2.0.54",
+    "@xmark/theme-arcblock": "^2.0.54",
+    "@xmark/utils": "^2.0.54",
+    "ahooks": "^3.5.0",
+    "clsx": "^1.1.1",
+    "path-browserify": "^1.0.1",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-router-dom": "^6.3.0"
+  },
+  "version": "0.4.0"
+}

@@ -1,54 +1,19 @@
 {
   "name": "create-blocklet",
-  "version": "0.3.15",
-  "exports": "./index.js",
-  "type": "module",
-  "repository": "git@github.com:blocklet/create-blocklet.git",
-  "author": "zhanghan <zhanghan@arcblock.io>",
-  "license": "MIT",
-  "bin": {
-    "create-blocklet": "index.js"
-  },
-  "files": [
-    "index.js",
-    "common",
-    "lib",
-    "templates"
-  ],
-  "engines": {
-    "node": ">=16.0.0"
-  },
-  "bugs": {
-    "url": "https://github.com/blocklet/create-blocklet/issues"
-  },
-  "homepage": "https://github.com/blocklet/create-blocklet/tree/main#readme",
+  "private": true,
+  "version": "0.4.0",
+  "description": "",
   "scripts": {
-    "lint": "eslint .",
-    "test": "NODE_ENV=development vitest",
-    "test:ui": "vitest --ui",
-    "test:run": "vitest run"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update:deps": "npx taze -r",
+    "bump-version": "zx scripts/bump-version.mjs --quiet",
+    "preinstall": "npx only-allow pnpm"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "@arcblock/did": "^1.16.15",
-    "@ocap/mcrypto": "^1.16.15",
-    "@ocap/util": "^1.16.15",
-    "boxen": "^6.2.1",
-    "ejs": "^3.1.8",
-    "envfile": "^6.17.0",
-    "figlet": "^1.5.2",
-    "get-port": "^6.1.2",
-    "gradient-string": "^2.0.1",
-    "jdenticon": "^3.1.1",
-    "ora": "^6.1.0",
-    "prompts": "^2.4.2",
-    "semver": "^7.3.7",
-    "terminal-link": "^3.0.0",
+    "bumpp": "^7.2.0",
     "zx": "6.1.0"
-  },
-  "devDependencies": {
-    "@arcblock/eslint-config": "0.2.1",
-    "eslint": "^8.16.0",
-    "prettier": "^2.6.2",
-    "vitest": "^0.13.1"
   }
 }
