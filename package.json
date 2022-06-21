@@ -1,14 +1,19 @@
 {
   "name": "create-blocklet",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.3.13",
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "update:deps": "npx taze -r",
+    "bump-version": "zx scripts/bump-version.mjs --quiet",
     "preinstall": "npx only-allow pnpm"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bumpp": "^7.2.0",
+    "zx": "6.1.0"
+  }
 }
