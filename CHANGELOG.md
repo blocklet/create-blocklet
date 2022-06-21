@@ -1,3 +1,7 @@
+## 0.4.1 (六月 21, 2022)
+
+- fix: correct page site & docs site link
+
 ## 0.4.0 (六月 21, 2022)
 
 - chore: add scripts to bump-version
