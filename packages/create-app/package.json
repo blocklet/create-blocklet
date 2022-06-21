@@ -49,6 +49,6 @@
     "@arcblock/eslint-config-base": "0.2.2",
     "eslint": "^8.18.0",
     "prettier": "^2.7.1",
-    "vitest": "^0.15.1"
+    "vitest": "^0.15.2"
   }
 }

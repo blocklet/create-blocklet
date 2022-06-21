@@ -48,7 +48,7 @@ function MyHeader({ className, ...rest }) {
       if (!injectData.locale && locale === DEFAULT_LOCALE) {
         urlList.push(removeLastSlash(path.join('/', basename, location.pathname)));
       }
-      urlList.push(removeLastSlash(path.join('/', locale, basename, location.pathname)));
+      urlList.push(removeLastSlash(path.join('/', basename, locale, location.pathname)));
       if (!urlList.includes(removeLastSlash(window.location.pathname))) {
         window.location.replace(`${urlList[0]}${location.search}`);
       }
