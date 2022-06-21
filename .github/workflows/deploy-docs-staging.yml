@@ -1,0 +1,38 @@
+name: Deploy Docs to staging
+
+on: workflow_dispatch
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip actions]')"
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'pnpm'
+
+      - run: npm add -g @antfu/ni
+      - run: nci
+
+      - name: Deploy to Staging
+        uses: blocklet/action-workflow@v1
+        with:
+          skip-deps: false
+          skip-bundle: false
+          skip-upload: true
+          skip-deploy: false
+          skip-release: true
+          bundle-command: nr bundle
+          working-directory: packages/docs-site
+          server-endpoint: ${{ secrets.STAGING_NODE_ENDPOINT }}
+          server-access-key: ${{ secrets.STAGING_NODE_ACCESS_KEY }}
+          server-access-secret: ${{ secrets.STAGING_NODE_ACCESS_SECRET }}
+          slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
