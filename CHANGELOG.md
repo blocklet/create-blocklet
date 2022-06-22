@@ -1,3 +1,6 @@
+## 0.4.2 (六月 22, 2022)
+
+- chore: update default logo size
 ## 0.4.1 (六月 21, 2022)
 
 - fix: correct page site & docs site link
