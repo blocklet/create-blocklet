@@ -11,12 +11,12 @@
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json"
   },
   "dependencies": {
-    "@arcblock/ux": "^2.1.37",
+    "@arcblock/ux": "^2.1.40",
     "@emotion/react": "^11.9.3",
     "@mdx-js/react": "^2.1.2",
-    "@xmark/cli": "^2.0.54",
-    "@xmark/client": "^2.0.54",
-    "@xmark/utils": "^2.0.54",
+    "@xmark/cli": "^2.0.55",
+    "@xmark/client": "^2.0.55",
+    "@xmark/utils": "^2.0.55",
     "ahooks": "^3.5.0",
     "clsx": "^1.1.1",
     "path-browserify": "^1.0.1",
