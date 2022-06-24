@@ -25,7 +25,7 @@ yarn create blocklet
 # 或 npx create-blocklet
 ```
 
-通过 @locklet/cli 工具创建项目
+通过 `@blocklet/cli` 工具创建项目
 
 ```shell
 blocklet create
@@ -58,7 +58,7 @@ yarn dev
 yarn bundle
 ```
 
-构建产物默认生成到 ./blocklet 下
+构建产物默认生成到 `.blocklet` 下
 
 ### 部署
 
@@ -74,3 +74,11 @@ yarn deploy
 ```
 
 运行后会在本地的 Blocklet Server 中的基石程序列表中看到刚刚部署的应用
+
+### 上传
+
+```shell
+yarn upload
+```
+
+你可以使用这个命令将 blocklet 应用上传到 Blocklet Store 中，详细的文档 [在这里](https://docs.arcblock.io/abtnode/zh/store)

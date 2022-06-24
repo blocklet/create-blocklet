@@ -2,31 +2,30 @@
 layout: 'documentation'
 ---
 
-# 可用脚本
+# Available Scripts
 
-在当前的项目中，你可以运行以下的脚本：
+In the current project, you can run the following script:
 
 ## yarn dev
 
-开发模式下运行 blocklet 项目（此命令需要开发环境中有安装 @blocklet/cli 工具），运行命令后，稍等片刻，终端中会打印一个 URL ，你可以通过这个 URL 查看当前运行的项目。
+Run the blocklet project in development mode (this command requires the @blocklet/ cli tool installed in the development environment). After running the command, wait for a moment, the terminal will print a URL. You can view the current project through this URL.
 
 ## yarn bundle
 
-将项目打包为可以部署到 Blocklet Server 的应用包。打包后的产物是压缩的，文件名包含了哈希值。
-至此，你的 Blocklet 项目已经可以部署到 Blocklet Server 中。
+Package the project into an application package that can be deployed to Blocklet Server. The packaged product is compressed and the file name contains the hash value. At this point, your Blocklet project is ready to deploy to Blocklet Server.
 
 ## yarn deploy
 
-通过这个命令，可以轻松将你打包的 Blocklet 应用部署到你本地的 Blocklet Server 中（确保你的 Blocklet Server 当前处于运行状态中）。
+This command allows you to easily deploy your packaged Blocklet application to your local Blocklet Server (make sure your Blocklet Server is currently running).
 
 ## yarn upload
 
-将项目上传至 Blocklet Store 中。可以是官方的 Blocklet Store，也可以是你自己的 Blocklet Store。只要你是 Blocklet Store 的开发者用户，你可以通过这个命令将项目上传至你所拥有权限的 Blocklet Store 中。
+Upload a project to the Blocklet Store. As long as you are a Blocklet Store developer user, you can use this command to upload your project to the Blocklet Store to which you have access.
 
 ## yarn lint
 
-使用 Eslint 对你的代码进行检查。
+Use Eslint to check your code.
 
 ## yarn lint\:fix
 
-使用 Eslint 快速修复你的代码。
+Use Eslint to quickly fix your code.

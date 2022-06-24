@@ -123,10 +123,10 @@ function Header({ sidebar, className, ...rest }) {
             </IconButton>
           </ClickAwayListener>
         )}
-        <SmartLink className="flex h-full" to="/">
+        <a className="flex h-full" href="/">
           <img src="/logo.png" height="100%" />
           <h1 className="post-header__title">{config.title}</h1>
-        </SmartLink>
+        </a>
       </div>
       <div className="flex items-center">
         <SmartLink className="post-header__link" to="/intro">
