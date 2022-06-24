@@ -13,6 +13,7 @@
   "dependencies": {
     "@arcblock/ux": "^2.1.40",
     "@emotion/react": "^11.9.3",
+    "@fontsource/lato": "^4.5.8",
     "@mdx-js/react": "^2.1.2",
     "@xmark/cli": "^2.0.55",
     "@xmark/client": "^2.0.55",

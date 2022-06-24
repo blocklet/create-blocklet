@@ -30,6 +30,7 @@ const rootCss = css`
   .post-header__link {
     margin-left: 20px;
     padding: 0 10px;
+    font-size: 18px;
     &:hover {
       color: #4e6af6;
     }

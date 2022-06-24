@@ -4,6 +4,7 @@ import { MDXProvider } from '@mdx-js/react';
 import PropTypes from 'prop-types';
 import CodeBlock from '@arcblock/ux/lib/CodeBlock';
 import { LocaleProvider } from '@arcblock/ux/lib/Locale/context';
+import '@fontsource/lato';
 
 const h1Css = css`
   border-bottom: 1px solid #eaecef;

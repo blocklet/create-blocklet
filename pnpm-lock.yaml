@@ -57,6 +57,7 @@ importers:
     specifiers:
       '@arcblock/ux': ^2.1.40
       '@emotion/react': ^11.9.3
+      '@fontsource/lato': ^4.5.8
       '@mdx-js/react': ^2.1.2
       '@xmark/cli': ^2.0.55
       '@xmark/client': ^2.0.55
@@ -70,6 +71,7 @@ importers:
     dependencies:
       '@arcblock/ux': 2.1.40_sh5qlbywuemxd2y3xkrw2y2kr4
       '@emotion/react': 11.9.3_react@18.2.0
+      '@fontsource/lato': 4.5.8
       '@mdx-js/react': 2.1.2_react@18.2.0
       '@xmark/cli': 2.0.55_sh5qlbywuemxd2y3xkrw2y2kr4
       '@xmark/client': 2.0.55
@@ -85,13 +87,16 @@ importers:
     specifiers:
       '@arcblock/ux': ^2.1.40
       '@emotion/react': ^11.9.3
+      '@fontsource/lato': ^4.5.8
       '@mdx-js/react': ^2.1.2
       '@xmark/cli': ^2.0.55
       '@xmark/client': ^2.0.55
       '@xmark/theme-arcblock': ^2.0.55
       '@xmark/utils': ^2.0.55
       ahooks: ^3.5.0
+      asciinema-player: ^3.0.1
       clsx: ^1.1.1
+      is-uri: ^1.2.4
       path-browserify: ^1.0.1
       prop-types: ^15.8.1
       react: ^18.2.0
@@ -99,13 +104,16 @@ importers:
     dependencies:
       '@arcblock/ux': 2.1.40_sh5qlbywuemxd2y3xkrw2y2kr4
       '@emotion/react': 11.9.3_react@18.2.0
+      '@fontsource/lato': 4.5.8
       '@mdx-js/react': 2.1.2_react@18.2.0
       '@xmark/cli': 2.0.55_sh5qlbywuemxd2y3xkrw2y2kr4
       '@xmark/client': 2.0.55
       '@xmark/theme-arcblock': 2.0.55
       '@xmark/utils': 2.0.55
       ahooks: 3.5.0_react@18.2.0
+      asciinema-player: 3.0.1
       clsx: 1.1.1
+      is-uri: 1.2.4
       path-browserify: 1.0.1
       prop-types: 15.8.1
       react: 18.2.0
@@ -2258,6 +2266,13 @@ packages:
       es-shim-unscopables: 1.0.0
     dev: true
 
+  /asciinema-player/3.0.1:
+    resolution: {integrity: sha512-plm/C/MhOtZWysrfcT/rzxOuu8vxvvDSvF50pqZS6KpJUDmATedAhO54zktbE/g7RiaaYfzgX8xjRhlQdgISwA==}
+    dependencies:
+      '@babel/runtime': 7.18.3
+      solid-js: 1.4.4
+    dev: false
+
   /assertion-error/1.1.0:
     resolution: {integrity: sha512-jgsaNduz+ndvGyFt3uSuWqvy4lCnIJiovtouQN5JZHOKCS2QuhEdbcQHFhVksz2N2U9hXJo8odG7ETyWlEeuDw==}
     dev: true
@@ -4354,6 +4369,14 @@ packages:
     engines: {node: '>=12'}
     dev: false
 
+  /is-uri/1.2.4:
+    resolution: {integrity: sha512-8sHi5gEARwpMYwJD9uSAkU9Bb7YkSagcM10EYqSe+osqOErXln4VL+EgLSG40e9lVTpcpygpvb9Z6ohZpECDGA==}
+    engines: {node: '>= 4'}
+    dependencies:
+      parse-uri: 1.0.7
+      punycode2: 1.0.1
+    dev: false
+
   /is-weakref/1.0.2:
     resolution: {integrity: sha512-qctsuLZmIQ0+vSSMfoVvyFe2+GSEvnmZ2ezTup1SBse9+twCCeial6EEi3Nc2KFcf6+qz2FBPnjXsk8xhKSaPQ==}
     dependencies:
@@ -5750,6 +5773,11 @@ packages:
       json-parse-even-better-errors: 2.3.1
       lines-and-columns: 1.2.4
 
+  /parse-uri/1.0.7:
+    resolution: {integrity: sha512-eWuZCMKNlVkXrEoANdXxbmqhu2SQO9jUMCSpdbJDObin0JxISn6e400EWsSRbr/czdKvWKkhZnMKEGUwf/Plmg==}
+    engines: {node: '>= 0.10'}
+    dev: false
+
   /pascal-case/3.1.2:
     resolution: {integrity: sha512-uWlGT3YSnK9x3BQJaOdcZwrnV6hPpd8jFH1/ucpiLRPh/2zCVJKS19E4GvYHvaCcACn3foXZ0cLB9Wrx1KGe5g==}
     dependencies:
@@ -5913,6 +5941,11 @@ packages:
     resolution: {integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==}
     engines: {node: '>=6'}
     dev: true
+
+  /punycode2/1.0.1:
+    resolution: {integrity: sha512-+TXpd9YRW4YUZZPoRHJ3DILtWwootGc2DsgvfHmklQ8It1skINAuqSdqizt5nlTaBmwrYACHkHApCXjc9gHk2Q==}
+    engines: {node: '>=0.10'}
+    dev: false
 
   /qrcode-generator/1.4.4:
     resolution: {integrity: sha512-HM7yY8O2ilqhmULxGMpcHSF1EhJJ9yBj8gvDEuZ6M+KGJ0YY2hKpnXvRD+hZPLrDVck3ExIGhmPtSdcjC+guuw==}
@@ -6770,6 +6803,10 @@ packages:
     dependencies:
       dot-case: 3.0.4
       tslib: 2.4.0
+    dev: false
+
+  /solid-js/1.4.4:
+    resolution: {integrity: sha512-nf/cbRzMuhb5UjbRDNfSJPqHKzUxNb9YgCQwijPUbdA3koQ/hWrz/lj0ter3lvThgxinvGPtXofDGy9bsKrXqA==}
     dev: false
 
   /source-map-js/1.0.2:
