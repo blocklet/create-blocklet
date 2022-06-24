@@ -5,20 +5,21 @@ import 'asciinema-player/dist/bundle/asciinema-player.css';
 function Asciinema({ sourcePath }) {
   const refAsciinema = useRef(null);
   useEffect(() => {
+    const parentElement = refAsciinema.current.parentElement;
+    parentElement.style.overflow = 'auto';
+    parentElement.style.width = '90%';
     const player = AsciinemaPlayer.create(sourcePath, refAsciinema.current, {
       autoPlay: true,
       preload: true,
       loop: true,
       speed: 1,
       idleTimeLimit: 1,
-      cols: 100,
-      rows: 30,
     });
     return () => {
       player.dispose();
     };
   }, []);
-  return <div ref={refAsciinema}></div>;
+  return <div className="overflow-auto" ref={refAsciinema}></div>;
 }
 
 export default Asciinema;
