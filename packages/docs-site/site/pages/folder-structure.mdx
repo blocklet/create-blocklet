@@ -2,9 +2,9 @@
 layout: 'documentation'
 ---
 
-# 目录结构
+# Directory Structure
 
-在创建后，你的项目应该像这样：
+After creation, your project should look like this:
 
 ```
 my-blocklet/
@@ -30,78 +30,80 @@ my-blocklet/
   screenshots/
 ```
 
-## 根目录
+## root
 
 ### README.md
 
-项目的说明文件，简单介绍项目的一些基本情况。
+A description document of the project, briefly introducing some basic information about the project.
 
 ### blocklet.yml
 
-Blocklet 应用的配置文件，包括项目的名称、版本、作者、项目的描述等。同时包含 Auth Service 和 children components 等配置。
+The configuration file for the Blocklet application, including the project name, version, author, description of the project, etc. It also contains configuration such as Auth Service and children components.
 
 ### blocklet.md
 
-专用于描述 Blocklet 应用的文件，在上传 Blocklet 至 Blocklet Store 后，会将该文件作为 Blocklet 应用的描述文件。
+A file dedicated to describing the Blocklet application that will be used as the description file for the Blocklet application after uploading the Blocklet to the Blocklet Store.
 
-如果该文件不存在，则会降级到使用 README.md 文件作为 Blocklet 应用的描述文件。
+If this file does not exist, it will be downgraded to use the README.md file as the description file for the Blocklet application.
 
 ### logo.png
 
-Blocklet 的图标文件，会在 Blocklet 应用于 DID Wallet 交互时出现在 DID Wallet 中。
+The Blocklet icon file that will appear in the DID Wallet when the Blocklet application interacts with the DID Wallet.
 
 ### package.json
 
-包含 Blocklet 应用的依赖等信息。
+Contains information such as the Blocklet application's dependencies.
 
 ### .blocklet
 
-Blocklet 应用打包后的产物文件夹，里面包含有能够直接运行在 Blocklet Server 中的代码包。
-在执行 `yarn bundle` 命令后会自动产生该文件夹。
+The product folder of a packaged Blocklet application contains code packages that can be run directly in Blocklet Server.
+
+This folder is automatically generated after the `yarn bundle` command is executed.
 
 ### .eslintrc.js
 
-用于配置 ESLint 规则的文件。
-不同的模板中配有不同的规则。
+A file for configuring ESLint rules.
+
+Different templates come with different rules.
 
 ### .prettierrc
 
-用于配置 Prettier 规则的文件。
+The file used to configure Prettier rules.
 
 ### .npmrc
 
-用于配置 npm 的文件。
+The file used to configure npm.
 
 ### .editorconfig
 
-用于配置 EditorConfig 规则的文件。
+The file used to configure EditorConfig rules.
 
 ### .gitignore
 
-用于配置 git 忽略的文件。
+Used to configure the files that git ignores.
 
 ### .env
 
-包含环境变量的文件。
+The file containing the environment variables.
 
 ### .github
 
-用于配置 GitHub 的文件。
+The file used to configure GitHub.
 
 ### .husky
 
-用于配置 Husky 的文件。
+The file used to configure Husky.
 
 ### .vscode
 
-用于配置 VSCode 的文件。
+The file used to configure the VSCode.
 
 ### src/
 
-项目的源文件目录，在不同的模板中，src 中的结构也不同，具体请参考生产的模板中的 README.md 文件
+The source file directory of the project, the structure in src is different in different templates, please refer to the `README.md` file in the production template for details
 
 ### screenshots/
 
-Blocklet 应用的图片文件夹，用于上传至 Blocklet Store 后，在 Blocklet Store 的详情页中显示。
+The image folder of the Blocklet application is used to display in the Blocklet Store details page after uploading to the Blocklet Store.
 
-同时需要在 blocklet.yml 中配置 screenshots 字段，指定 Blocklet 应用的图片文件夹的路径。
+You also need to configure the screenshots field in blocklet.yml to specify the path to the blocklet application's image folder.

@@ -4,6 +4,9 @@ import { MDXProvider } from '@mdx-js/react';
 import PropTypes from 'prop-types';
 import CodeBlock from '@arcblock/ux/lib/CodeBlock';
 import { LocaleProvider } from '@arcblock/ux/lib/Locale/context';
+import '@fontsource/lato';
+import { configResponsive } from 'ahooks';
+import { create } from '@arcblock/ux/lib/Theme';
 
 const h1Css = css`
   border-bottom: 1px solid #eaecef;
@@ -29,6 +32,8 @@ const components = {
   ),
 };
 function Provider({ children }) {
+  const theme = create({});
+  configResponsive(theme.breakpoints.values);
   return (
     <LocaleProvider translations={{ zh: {}, en: {} }}>
       <MDXProvider components={components}>{children}</MDXProvider>

@@ -3,42 +3,48 @@ import { css } from '@emotion/react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import SmartLink from '@xmark/client/src/components/SmartLink';
+import { create } from '@arcblock/ux/lib/Theme';
 
-const rootCss = css`
-  &.sidebar {
-    background-color: #f7f8f8;
-    color: #404040;
-    width: 360px;
-  }
-  .sidebar__list {
-    list-style: none;
-    padding: 0;
-    .sidebar__list {
-      padding-left: 20px;
-    }
-  }
-  .sidebar__item {
-  }
-  .sidebar__link {
-    display: block;
-    line-height: 1em;
-    padding: 15px 20px;
-    font-size: 16px;
-    &:hover {
-      color: #4e6af6;
-    }
-    &.sidebar__link--parent {
-      font-weight: bold;
-      font-size: 18px;
-      &:hover {
-        color: initial;
+function Sidebar({ menus, onClickItem }) {
+  const theme = create({});
+  const rootCss = css`
+    &.sidebar {
+      background-color: #f7f8f8;
+      color: #404040;
+      width: 360px;
+      overflow: overlay;
+      @media (max-width: ${theme.breakpoints.values.lg}px) {
+        width: 300px;
       }
     }
-  }
-`;
+    .sidebar__list {
+      list-style: none;
+      padding: 0;
+      .sidebar__list {
+        padding-left: 20px;
+      }
+    }
+    .sidebar__item {
+    }
+    .sidebar__link {
+      display: block;
+      line-height: 1em;
+      padding: 15px 20px;
+      font-size: 16px;
+      &:hover,
+      &.active {
+        color: #4e6af6;
+      }
+      &.sidebar__link--parent {
+        font-weight: bold;
+        font-size: 18px;
+        &:hover {
+          color: initial;
+        }
+      }
+    }
+  `;
 
-function Sidebar({ menus }) {
-  console.log({ menus });
   return (
     <aside className="sidebar" css={rootCss}>
       <ul className="sidebar__list">
@@ -53,7 +59,7 @@ function Sidebar({ menus }) {
                   <ul className="sidebar__list">
                     {item.children.map((subItem) => (
                       <li key={subItem.link || subItem.text}>
-                        <SmartLink className="sidebar__link" to={subItem.link}>
+                        <SmartLink className="sidebar__link" to={subItem.link} onClick={onClickItem}>
                           {subItem.text}
                         </SmartLink>
                       </li>
@@ -62,7 +68,7 @@ function Sidebar({ menus }) {
                 )}
               </>
             ) : (
-              <SmartLink className="sidebar__link" to={item.link}>
+              <SmartLink className="sidebar__link" to={item.link} onClick={onClickItem}>
                 {item.text}
               </SmartLink>
             )}

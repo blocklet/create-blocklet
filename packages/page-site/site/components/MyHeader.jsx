@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useDebounceFn } from 'ahooks';
+import { useDebounceFn, useResponsive } from 'ahooks';
 import clsx from 'clsx';
 import SmartLink from '@xmark/client/src/components/SmartLink';
 import path from 'path-browserify';
@@ -11,36 +11,51 @@ import { DEFAULT_LOCALE } from '@xmark/utils/enum';
 import LocaleSelector from '@arcblock/ux/lib/Locale/selector';
 import { useLocaleContext } from '@arcblock/ux/lib/Locale/context';
 import { useInjectContext } from 'virtual:context';
-
-const rootCss = css`
-  &.post-header {
-    height: 70px;
-    display: flex;
-    padding: 10px 20px;
-    line-height: 50px;
-    justify-content: space-between;
-    background-color: #fff;
-    border-bottom: 1px solid #0000001a;
-  }
-  .post-header__title {
-    font-size: 24px;
-    margin: 0;
-    margin-left: 20px;
-  }
-  .post-header__link {
-    margin-left: 20px;
-    padding: 0 10px;
-    &:hover {
-      color: #4e6af6;
-    }
-  }
-`;
+import { create } from '@arcblock/ux/lib/Theme';
 
 function MyHeader({ className, ...rest }) {
   const injectData = useInjectContext();
   const { config, basename } = injectData;
   const { locale, changeLocale } = useLocaleContext();
   const location = useLocation();
+  const responsive = useResponsive();
+  const theme = create({});
+  const rootCss = css`
+    &.post-header {
+      height: 70px;
+      display: flex;
+      padding: 10px 20px;
+      line-height: 50px;
+      justify-content: space-between;
+      background-color: #fff;
+      border-bottom: 1px solid #0000001a;
+    }
+    .post-header__title {
+      font-size: 24px;
+      margin: 0;
+      margin-left: 20px;
+    }
+    .post-header__link {
+      margin-left: 20px;
+      padding: 0 10px;
+      font-size: 18px;
+      &:hover {
+        color: #4e6af6;
+      }
+    }
+    @media (max-width: ${theme.breakpoints.values.md}px) {
+      &.post-header {
+        height: 60px;
+        line-height: 40px;
+      }
+      .post-header__title {
+        font-size: 18px;
+      }
+      .post-header__link {
+        font-size: 16px;
+      }
+    }
+  `;
 
   const { run: changeLocation } = useDebounceFn(
     () => {
@@ -74,14 +89,14 @@ function MyHeader({ className, ...rest }) {
   return (
     <header className={clsx('post-header', className)} css={rootCss} {...rest}>
       <SmartLink className="flex" to="/">
-        <img src="/logo.png" />
+        <img src="/logo.png" height="100%" />
         <h1 className="post-header__title">{config.title}</h1>
       </SmartLink>
       <div className="flex items-center">
         <SmartLink className="post-header__link" to="/docs">
           {locale === 'zh' ? '文档' : 'Docs'}
         </SmartLink>
-        <LocaleSelector />
+        <LocaleSelector showText={responsive.md} />
       </div>
     </header>
   );
