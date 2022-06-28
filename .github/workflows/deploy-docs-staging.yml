@@ -33,7 +33,7 @@ jobs:
           skip-deploy: false
           skip-release: true
           bundle-command: nr bundle
-          deploy-app-id: zNKtcB67ghAa1Vtufpy1v9zfyKJu9AAddZna
+          deploy-app-did: zNKtcB67ghAa1Vtufpy1v9zfyKJu9AAddZna
           deploy-mount-point: docs
           working-directory: packages/docs-site
           server-endpoint: ${{ secrets.STAGING_NODE_ENDPOINT }}

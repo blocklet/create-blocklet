@@ -50,7 +50,7 @@ jobs:
           skip-upload: true
           skip-deploy: false
           skip-release: true
-          deploy-app-id: zNKtcB67ghAa1Vtufpy1v9zfyKJu9AAddZna
+          deploy-app-did: zNKtcB67ghAa1Vtufpy1v9zfyKJu9AAddZna
           deploy-mount-point: docs
           bundle-command: nr bundle
           working-directory: packages/docs-site
