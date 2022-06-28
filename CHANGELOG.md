@@ -1,8 +1,15 @@
+## 0.4.4 (六月 28, 2022)
+
+- fix: use `npm publish` rather than `pnpm publish`
+- feat: support deploy docs-site as child blocklet of page-site
+- chore: change docs-site logo
+
 ## 0.4.3 (六月 24, 2022)
 
 - chore: update docs-site
 - chore: complete page-site
 - chore: update deps
+
 ## 0.4.2 (六月 22, 2022)
 
 - chore: update default logo size
