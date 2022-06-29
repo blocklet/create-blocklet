@@ -1,3 +1,8 @@
+## 0.4.5 (六月 29, 2022)
+
+- chore: update create-app favicon.ico
+- feat: use `@xmark/theme-docs`
+
 ## 0.4.4 (六月 28, 2022)
 
 - fix: use `npm publish` rather than `pnpm publish`
