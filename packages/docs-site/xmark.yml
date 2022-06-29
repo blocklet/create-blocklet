@@ -2,6 +2,4 @@ name: Create Blocklet
 title: Create Blocklet
 description: This is Blocklet Page Demo, powered by Blocklet Page
 siteRoot: site
-theme: ./theme
-mdxOptions:
-  providerImportSource: '@mdx-js/react'
+theme: docs
