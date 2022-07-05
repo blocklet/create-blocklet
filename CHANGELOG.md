@@ -1,3 +1,7 @@
+## 0.4.6 (七月 05, 2022)
+
+- chore: update deps
+
 ## 0.4.5 (六月 29, 2022)
 
 - chore: update create-app favicon.ico
