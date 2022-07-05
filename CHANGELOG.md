@@ -1,3 +1,7 @@
+## 0.4.8 (七月 05, 2022)
+
+- fix: delay ux locale change
+
 ## 0.4.7 (七月 05, 2022)
 
 - fix: safe with AsciinemaPlayer dispose
