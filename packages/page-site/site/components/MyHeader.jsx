@@ -93,7 +93,7 @@ function MyHeader({ className, ...rest }) {
         <h1 className="post-header__title">{config.title}</h1>
       </SmartLink>
       <div className="flex items-center">
-        <SmartLink className="post-header__link" to="/docs">
+        <SmartLink className="post-header__link" base="docs" to="/">
           {locale === 'zh' ? '文档' : 'Docs'}
         </SmartLink>
         <LocaleSelector showText={responsive.md} />
