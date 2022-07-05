@@ -55,7 +55,7 @@ importers:
 
   packages/docs-site:
     specifiers:
-      '@arcblock/ux': ^2.1.51
+      '@arcblock/ux': ^2.1.53
       '@emotion/react': ^11.9.3
       '@fontsource/lato': ^4.5.8
       '@mdx-js/react': ^2.1.2
@@ -71,7 +71,7 @@ importers:
       react: ^18.2.0
       react-router-dom: ^6.3.0
     dependencies:
-      '@arcblock/ux': 2.1.51_sh5qlbywuemxd2y3xkrw2y2kr4
+      '@arcblock/ux': 2.1.53_sh5qlbywuemxd2y3xkrw2y2kr4
       '@emotion/react': 11.9.3_react@18.2.0
       '@fontsource/lato': 4.5.8
       '@mdx-js/react': 2.1.2_react@18.2.0
@@ -89,7 +89,7 @@ importers:
 
   packages/page-site:
     specifiers:
-      '@arcblock/ux': ^2.1.51
+      '@arcblock/ux': ^2.1.53
       '@emotion/react': ^11.9.3
       '@fontsource/lato': ^4.5.8
       '@mdx-js/react': ^2.1.2
@@ -107,7 +107,7 @@ importers:
       react: ^18.2.0
       react-router-dom: ^6.3.0
     dependencies:
-      '@arcblock/ux': 2.1.51_sh5qlbywuemxd2y3xkrw2y2kr4
+      '@arcblock/ux': 2.1.53_sh5qlbywuemxd2y3xkrw2y2kr4
       '@emotion/react': 11.9.3_react@18.2.0
       '@fontsource/lato': 4.5.8
       '@mdx-js/react': 2.1.2_react@18.2.0
@@ -155,7 +155,7 @@ packages:
       '@arcblock/event-client': 1.6.3
       '@arcblock/icons': 2.1.43_react@18.2.0
       '@arcblock/react-hooks': 2.1.43
-      '@arcblock/ux': 2.1.51_sh5qlbywuemxd2y3xkrw2y2kr4
+      '@arcblock/ux': 2.1.53_sh5qlbywuemxd2y3xkrw2y2kr4
       '@fontsource/lato': 4.5.8
       '@fontsource/ubuntu-mono': 4.5.10
       '@mui/icons-material': 5.8.4_2t6qhahjtzgm5ommnqc4ufa6gy
@@ -248,8 +248,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@arcblock/icons/2.1.51_react@18.2.0:
-    resolution: {integrity: sha512-kK1OILQ0r6sVHaz5rhIDTk5LjkyLWo8ZvwwtIP7XPH3k5H6Ou47H87aXFAKmuOOltLAGNp9ruEptf8G8dPacjA==}
+  /@arcblock/icons/2.1.53_react@18.2.0:
+    resolution: {integrity: sha512-7Mrph36m0uUEaPHWeZhbZRY5sdbsFYDjOsQn1g0CG6nGK0Kjn83RBuhLXY5B92NoBbEphbEkDKWdpQpXz/7pwA==}
     peerDependencies:
       react: '>=18.1.0'
     dependencies:
@@ -264,23 +264,23 @@ packages:
       ismobilejs: 1.1.1
     dev: false
 
-  /@arcblock/react-hooks/2.1.51:
-    resolution: {integrity: sha512-xP5QeXIbjWOHnJxoaUPeATHZ5ci0uN0n4DJCKUUxxRrn333GfuATRf8cSbkW5qH8CLBRPpkCgzLdIbpNz7Zjvg==}
+  /@arcblock/react-hooks/2.1.53:
+    resolution: {integrity: sha512-KkfXt2gaU/rb4rszV2ICcuI1qzu0RVRpyECciJD5F61BaWCpCIv+zbEqxp/lNhJyF1Ijw2nGo7Xrg9f3iHTlnw==}
     dependencies:
       core-js: 3.23.1
       event-target-shim: 5.0.1
       ismobilejs: 1.1.1
     dev: false
 
-  /@arcblock/ux/2.1.51_3pmjcye52u32jaup6yq6ds75gq:
-    resolution: {integrity: sha512-cr0MRpMGdADpsd5lEv++Lt1YJHCAjma+rq/IO63QOwgyo6mEHb2ZOrFDQ+EFi4f8qurVX7AAzYBCSInq+st9FQ==}
+  /@arcblock/ux/2.1.53_3pmjcye52u32jaup6yq6ds75gq:
+    resolution: {integrity: sha512-6MTM9nLfn6JIETuO12SwE4Gs9Az83T696FdaoqOziA2XJel05Rwd45FQlpcxK6ZGn0jEYT8PGhBCCKhRPyRL2w==}
     peerDependencies:
       '@sentry/browser': ^5.0.8
       react: '>=18.1.0'
       react-ga: ^2.7.0
     dependencies:
-      '@arcblock/icons': 2.1.51_react@18.2.0
-      '@arcblock/react-hooks': 2.1.51
+      '@arcblock/icons': 2.1.53_react@18.2.0
+      '@arcblock/react-hooks': 2.1.53
       '@babel/plugin-syntax-dynamic-import': 7.8.3
       '@emotion/react': 11.9.3_react@18.2.0
       '@emotion/styled': 11.9.3_jhgplt4fmhans76oq3ok5iox2u
@@ -329,15 +329,15 @@ packages:
       - react-is
     dev: false
 
-  /@arcblock/ux/2.1.51_b4d6a5ueiusxip5jyl3jrxspp4:
-    resolution: {integrity: sha512-cr0MRpMGdADpsd5lEv++Lt1YJHCAjma+rq/IO63QOwgyo6mEHb2ZOrFDQ+EFi4f8qurVX7AAzYBCSInq+st9FQ==}
+  /@arcblock/ux/2.1.53_b4d6a5ueiusxip5jyl3jrxspp4:
+    resolution: {integrity: sha512-6MTM9nLfn6JIETuO12SwE4Gs9Az83T696FdaoqOziA2XJel05Rwd45FQlpcxK6ZGn0jEYT8PGhBCCKhRPyRL2w==}
     peerDependencies:
       '@sentry/browser': ^5.0.8
       react: '>=18.1.0'
       react-ga: ^2.7.0
     dependencies:
-      '@arcblock/icons': 2.1.51_react@18.2.0
-      '@arcblock/react-hooks': 2.1.51
+      '@arcblock/icons': 2.1.53_react@18.2.0
+      '@arcblock/react-hooks': 2.1.53
       '@babel/plugin-syntax-dynamic-import': 7.8.3
       '@emotion/react': 11.9.3_react@18.2.0
       '@emotion/styled': 11.9.3_jhgplt4fmhans76oq3ok5iox2u
@@ -386,15 +386,15 @@ packages:
       - react-is
     dev: false
 
-  /@arcblock/ux/2.1.51_sh5qlbywuemxd2y3xkrw2y2kr4:
-    resolution: {integrity: sha512-cr0MRpMGdADpsd5lEv++Lt1YJHCAjma+rq/IO63QOwgyo6mEHb2ZOrFDQ+EFi4f8qurVX7AAzYBCSInq+st9FQ==}
+  /@arcblock/ux/2.1.53_sh5qlbywuemxd2y3xkrw2y2kr4:
+    resolution: {integrity: sha512-6MTM9nLfn6JIETuO12SwE4Gs9Az83T696FdaoqOziA2XJel05Rwd45FQlpcxK6ZGn0jEYT8PGhBCCKhRPyRL2w==}
     peerDependencies:
       '@sentry/browser': ^5.0.8
       react: '>=18.1.0'
       react-ga: ^2.7.0
     dependencies:
-      '@arcblock/icons': 2.1.51_react@18.2.0
-      '@arcblock/react-hooks': 2.1.51
+      '@arcblock/icons': 2.1.53_react@18.2.0
+      '@arcblock/react-hooks': 2.1.53
       '@babel/plugin-syntax-dynamic-import': 7.8.3
       '@emotion/react': 11.9.3_react@18.2.0
       '@emotion/styled': 11.9.3_jhgplt4fmhans76oq3ok5iox2u
@@ -443,15 +443,15 @@ packages:
       - react-is
     dev: false
 
-  /@arcblock/ux/2.1.51_v2m5e27vhdewzwhryxwfaorcca:
-    resolution: {integrity: sha512-cr0MRpMGdADpsd5lEv++Lt1YJHCAjma+rq/IO63QOwgyo6mEHb2ZOrFDQ+EFi4f8qurVX7AAzYBCSInq+st9FQ==}
+  /@arcblock/ux/2.1.53_v2m5e27vhdewzwhryxwfaorcca:
+    resolution: {integrity: sha512-6MTM9nLfn6JIETuO12SwE4Gs9Az83T696FdaoqOziA2XJel05Rwd45FQlpcxK6ZGn0jEYT8PGhBCCKhRPyRL2w==}
     peerDependencies:
       '@sentry/browser': ^5.0.8
       react: '>=18.1.0'
       react-ga: ^2.7.0
     dependencies:
-      '@arcblock/icons': 2.1.51_react@18.2.0
-      '@arcblock/react-hooks': 2.1.51
+      '@arcblock/icons': 2.1.53_react@18.2.0
+      '@arcblock/react-hooks': 2.1.53
       '@babel/plugin-syntax-dynamic-import': 7.8.3
       '@emotion/react': 11.9.3_react@18.2.0
       '@emotion/styled': 11.9.3_jhgplt4fmhans76oq3ok5iox2u
@@ -806,7 +806,7 @@ packages:
       react: '>=18.1.0'
     dependencies:
       '@arcblock/did-connect': 2.1.43_vly67rmnwml4t6kcauqbn5lca4
-      '@arcblock/ux': 2.1.51_sh5qlbywuemxd2y3xkrw2y2kr4
+      '@arcblock/ux': 2.1.53_sh5qlbywuemxd2y3xkrw2y2kr4
       '@iconify/iconify': 2.2.1
       '@mui/material': 5.8.7_jhgplt4fmhans76oq3ok5iox2u
       core-js: 3.23.1
@@ -1992,7 +1992,7 @@ packages:
     hasBin: true
     dependencies:
       '@antfu/utils': 0.5.2
-      '@arcblock/ux': 2.1.51_3pmjcye52u32jaup6yq6ds75gq
+      '@arcblock/ux': 2.1.53_3pmjcye52u32jaup6yq6ds75gq
       '@mdx-js/react': 2.1.2_react@18.2.0
       '@mdx-js/rollup': 2.1.2
       '@originjs/vite-plugin-commonjs': 1.0.3
@@ -2049,7 +2049,7 @@ packages:
   /@xmark/client/2.0.57:
     resolution: {integrity: sha512-uFDMqqYQccvql8njpghnocjBGNHa//XKP61+B0RyQkNRNAJPFLs4x5q//vXCaYc9UFUqVUYe3GYgcmjs9gVJLQ==}
     dependencies:
-      '@arcblock/ux': 2.1.51_v2m5e27vhdewzwhryxwfaorcca
+      '@arcblock/ux': 2.1.53_v2m5e27vhdewzwhryxwfaorcca
       '@mui/styles': 5.8.6_react@18.2.0
       '@xmark/utils': 2.0.57_react-dom@18.2.0
       clsx: 1.2.0
@@ -2079,7 +2079,7 @@ packages:
   /@xmark/client/2.0.57_debug@4.3.4+vite@2.9.13:
     resolution: {integrity: sha512-uFDMqqYQccvql8njpghnocjBGNHa//XKP61+B0RyQkNRNAJPFLs4x5q//vXCaYc9UFUqVUYe3GYgcmjs9gVJLQ==}
     dependencies:
-      '@arcblock/ux': 2.1.51_b4d6a5ueiusxip5jyl3jrxspp4
+      '@arcblock/ux': 2.1.53_b4d6a5ueiusxip5jyl3jrxspp4
       '@mui/styles': 5.8.6_react@18.2.0
       '@xmark/utils': 2.0.57_react-dom@18.2.0
       clsx: 1.2.0
@@ -2110,7 +2110,7 @@ packages:
     resolution: {integrity: sha512-0XAGuBQ5mEDbzCk9KWpNFnaiskV9xGDb7I4BWpQvOvwAEPrEal5VVlv5o/MUt7vSFtwcypas/8WrU5knlKvB5w==}
     dependencies:
       '@arcblock/did-connect': 2.1.43_vly67rmnwml4t6kcauqbn5lca4
-      '@arcblock/ux': 2.1.51_sh5qlbywuemxd2y3xkrw2y2kr4
+      '@arcblock/ux': 2.1.53_sh5qlbywuemxd2y3xkrw2y2kr4
       '@blocklet/ui-react': 2.1.43_vly67rmnwml4t6kcauqbn5lca4
       '@emotion/react': 11.9.3_react@18.2.0
       '@fontsource/lato': 4.5.8
@@ -2144,7 +2144,7 @@ packages:
   /@xmark/theme-docs/2.0.57:
     resolution: {integrity: sha512-7uytv3DQWhnNBzUeWAwIoyxz0ymToa2yLBX6DECeGMz+EOJg5GYqu9iXdrgj4Bdq8AyDYFK3V1d4Uy3ejIi93w==}
     dependencies:
-      '@arcblock/ux': 2.1.51_sh5qlbywuemxd2y3xkrw2y2kr4
+      '@arcblock/ux': 2.1.53_sh5qlbywuemxd2y3xkrw2y2kr4
       '@emotion/react': 11.9.3_react@18.2.0
       '@fontsource/lato': 4.5.8
       '@mdx-js/react': 2.1.2_react@18.2.0
