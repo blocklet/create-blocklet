@@ -16,7 +16,7 @@ function Asciinema({ sourcePath }) {
       idleTimeLimit: 1,
     });
     return () => {
-      player.dispose();
+      refAsciinema.current && player.dispose();
     };
   }, []);
   return <div className="overflow-auto" ref={refAsciinema}></div>;

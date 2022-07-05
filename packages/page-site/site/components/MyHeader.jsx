@@ -67,7 +67,6 @@ function MyHeader({ className, ...rest }) {
       if (!urlList.includes(removeLastSlash(window.location.pathname))) {
         window.location.replace(`${urlList[0]}${location.search}`);
       }
-      console.log('changeLocation', { locale, urlList });
     },
     {
       wait: 300,
