@@ -1,3 +1,7 @@
+## 0.4.7 (七月 05, 2022)
+
+- fix: safe with AsciinemaPlayer dispose
+
 ## 0.4.6 (七月 05, 2022)
 
 - chore: update deps
