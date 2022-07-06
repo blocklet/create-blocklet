@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "blocklet dev",
-    "start": "xmark start",
+    "start": "xmark start --force",
     "build": "xmark build",
     "clean": "rm -rf .blocklet",
     "bundle": "npm run clean && npm run build && blocklet bundle --create-release",
@@ -11,7 +11,7 @@
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json"
   },
   "dependencies": {
-    "@arcblock/ux": "^2.1.51",
+    "@arcblock/ux": "^2.1.53",
     "@emotion/react": "^11.9.3",
     "@fontsource/lato": "^4.5.8",
     "@mdx-js/react": "^2.1.2",
@@ -29,5 +29,5 @@
     "react": "^18.2.0",
     "react-router-dom": "^6.3.0"
   },
-  "version": "0.4.7"
+  "version": "0.4.8"
 }

@@ -76,11 +76,17 @@ function MyHeader({ className, ...rest }) {
   // 默认语言会跟随浏览器设置
   useEffect(() => {
     if (!injectData.locale) {
-      changeLocale(DEFAULT_LOCALE);
+      // TODO: changeLocale 方法在最近更改过，手动 changeLocale 时，有短暂时间 localeContext 中的 locale 会为空值，需要尽快找时间弄清楚原因
+      setTimeout(() => {
+        changeLocale(DEFAULT_LOCALE);
+      });
       return;
     }
     if (injectData.locale !== locale) {
-      changeLocale(injectData.locale || DEFAULT_LOCALE);
+      console.log('DEFAULT_LOCALE', injectData.locale, DEFAULT_LOCALE);
+      setTimeout(() => {
+        changeLocale(injectData.locale || DEFAULT_LOCALE);
+      });
     }
   }, []);
 
