@@ -1,3 +1,7 @@
+## 0.4.9 (七月 06, 2022)
+
+- feat: support the templates of craco dev in the component mode
+
 ## 0.4.8 (七月 05, 2022)
 
 - fix: delay ux locale change
@@ -60,7 +64,6 @@
 
 - chore: replace the default created logo
 - chore: introduce developers to use blocklet dev
-
 
 ## 0.3.14 (六月 17, 2022)
 
