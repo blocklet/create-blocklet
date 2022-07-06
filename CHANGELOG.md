@@ -1,6 +1,6 @@
 ## 0.4.9 (七月 06, 2022)
 
-- feat: support templates of craco dev in the component mode
+- feat: support the templates of craco dev in the component mode
 
 ## 0.4.8 (七月 05, 2022)
 
