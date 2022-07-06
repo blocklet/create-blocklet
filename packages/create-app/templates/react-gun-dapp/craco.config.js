@@ -1,7 +1,7 @@
 require('dotenv-flow').config();
 
 const port = process.env.BLOCKLET_PORT || process.env.PORT || 3000;
-const apiPort = process.env.API_PORT || 57890;
+const apiPort = process.env.API_PORT || 3030;
 
 const whenDev = process.env.NODE_ENV === 'development';
 
