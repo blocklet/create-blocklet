@@ -3,7 +3,7 @@ import { chalk, fs } from 'zx';
 
 function setDepVersion({ packageObj, key, version, depName, fullPath }) {
   const oldVersion = packageObj?.[key]?.[depName];
-  if (oldVersion) {
+  if (oldVersion && oldVersion !== version) {
     console.log(chalk.whiteBright(`[update]: ${fullPath} [${depName}] version from ${oldVersion} to ${version}`));
     packageObj[key][depName] = version;
   }
