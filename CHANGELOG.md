@@ -1,3 +1,7 @@
+## 0.4.12 (七月 09, 2022)
+
+- feat: polish the github workflows to support publish plugins
+
 ## 0.4.11 (七月 08, 2022)
 
 - feat: bump-version script can update the create-app/templates plugin version

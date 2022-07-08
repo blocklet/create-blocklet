@@ -27,7 +27,7 @@
     "prettier": "^2.7.1",
     "vite": "^2.9.12",
     "vite-plugin-html": "^3.2.0",
-    "vite-plugin-wss-hmr": "^0.4.11"
+    "vite-plugin-wss-hmr": "^0.4.12"
   },
   "lint-staged": {
     "*.{mjs,js,vue}": [
