@@ -125,6 +125,14 @@ importers:
       react: 18.2.0
       react-router-dom: 6.3.0_react@18.2.0
 
+  plugins/vite-plugin-wss-hmr:
+    specifiers:
+      rollup: ^2.70.1
+      vite: ^2.9.13
+    devDependencies:
+      rollup: 2.75.7
+      vite: 2.9.13
+
 packages:
 
   /@ampproject/remapping/2.2.0:
@@ -7682,7 +7690,6 @@ packages:
       rollup: 2.75.7
     optionalDependencies:
       fsevents: 2.3.2
-    dev: false
 
   /vitest/0.16.0:
     resolution: {integrity: sha512-Ntp6jrM8wf2NMtamMBLkRBBdeqHkgAH/WMh5Xryts1j2ft2D8QZQbiSVFkSl4WmEQzcPP0YM069g/Ga1vtnEtg==}

@@ -1,5 +1,7 @@
 node_modules
 templates/react-gun/yarn.lock
+examples
+plugins/*/*.cjs
 
 .idea
 .DS_Store

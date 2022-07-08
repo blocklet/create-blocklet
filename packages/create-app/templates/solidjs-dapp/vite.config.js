@@ -1,26 +1,37 @@
 import { defineConfig, loadEnv } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 import { createHtmlPlugin } from 'vite-plugin-html';
-import { createBlockletPlugin } from 'vite-plugin-blocklet';
+import createWssHmrPlugin from 'vite-plugin-wss-hmr';
 
-export default ({ mode }) => {
+export default defineConfig(async ({ mode }) => {
   const envMap = loadEnv(mode, process.cwd(), '');
   const port = process.env.BLOCKLET_PORT || 3000;
   const apiPort = envMap.API_PORT || 3030;
 
+  const whenDev = mode === 'development';
+
+  let mountPoint = process.env.BLOCKLET_DEV_MOUNT_POINT || '';
+
+  if (mountPoint && !mountPoint.endsWith('/')) {
+    mountPoint = `${mountPoint}/`;
+  }
+
+  const base = whenDev ? mountPoint : process.env.BASE_URL || '/';
+
   return defineConfig({
+    base,
     plugins: [
       solidPlugin(),
       createHtmlPlugin({
         minify: true,
         inject: {
           data: {
-            base: process.env.BASE_URL || '/',
+            base,
             title: envMap.APP_TITLE,
           },
         },
       }),
-      createBlockletPlugin(),
+      await createWssHmrPlugin(),
     ],
     build: {
       target: 'esnext',
@@ -33,4 +44,4 @@ export default ({ mode }) => {
       },
     },
   });
-};
+});
