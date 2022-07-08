@@ -1,5 +1,9 @@
 ## 0.4.11 (七月 08, 2022)
 
+- feat: support the templates of vue(use vite) dev in the component mode
+
+## 0.4.11 (七月 08, 2022)
+
 - feat: feat: support the templates of vue/solidjs/svelte(use vite) dev in the component mode
 
 ## 0.4.10 (七月 07, 2022)
