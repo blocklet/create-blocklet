@@ -3,9 +3,13 @@ import { chalk, fs } from 'zx';
 
 function setDepVersion({ packageObj, key, version, depName, fullPath }) {
   const oldVersion = packageObj?.[key]?.[depName];
-  if (oldVersion && oldVersion !== version) {
-    console.log(chalk.whiteBright(`[update]: ${fullPath} [${depName}] version from ${oldVersion} to ${version}`));
-    packageObj[key][depName] = version;
+  if (oldVersion) {
+    if (oldVersion !== version) {
+      console.log(chalk.blueBright(`[update]: ${fullPath} [${depName}] version from ${oldVersion} to ${version}`));
+      packageObj[key][depName] = version;
+    } else {
+      console.log(chalk.whiteBright(`[info]: ${fullPath} [${depName}] current version is already in ${version}`));
+    }
   }
   return packageObj;
 }
