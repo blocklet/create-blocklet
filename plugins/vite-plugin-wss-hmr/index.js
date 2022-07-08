@@ -67,7 +67,7 @@ async function createVitePlugin() {
     },
     buildStart() {
       if (hmrServer.ws) {
-        const { base } = hmrServiceConfig;
+        const { base = '' } = hmrServiceConfig;
         const { host, port } = hmrServiceConfig.server?.hmr;
         console.log(`[vite-plugin-wss-hmr] hmrServer working on wss://${host}:${port}${base}`);
         setTimeout(() => {
