@@ -30,6 +30,11 @@ jobs:
       - run: npm add -g @antfu/ni
       - run: nci
 
+      - name: Publish plugins to npm
+        run: |
+          npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_TOKEN }}"
+          npm run publish-plugins
+
       - name: Publish to npm
         run: |
           npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_TOKEN }}"

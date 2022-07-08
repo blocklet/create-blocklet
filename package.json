@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "bump-version": "zx scripts/bump-version.mjs --quiet",
     "update:deps": "pnpm -r exec npx taze",
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "npx only-allow pnpm",
+    "publish-plugins": "zx scripts/publish-plugins.mjs --quiet"
   },
   "keywords": [],
   "author": "",
