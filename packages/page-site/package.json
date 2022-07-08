@@ -11,23 +11,13 @@
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json"
   },
   "dependencies": {
-    "@arcblock/ux": "^2.1.53",
-    "@emotion/react": "^11.9.3",
-    "@fontsource/lato": "^4.5.8",
-    "@mdx-js/react": "^2.1.2",
-    "@mui/material": "^5.8.7",
-    "@xmark/cli": "^2.0.57",
-    "@xmark/client": "^2.0.57",
-    "@xmark/theme-arcblock": "^2.0.57",
-    "@xmark/utils": "^2.0.57",
-    "ahooks": "^3.5.2",
+    "@xmark/cli": "^2.0.63",
+    "@xmark/client": "^2.0.63",
     "asciinema-player": "^3.0.1",
-    "clsx": "^1.2.0",
-    "is-uri": "^1.2.4",
+    "clsx": "^1.2.1",
     "path-browserify": "^1.0.1",
     "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-router-dom": "^6.3.0"
+    "react": "^18.2.0"
   },
   "version": "0.4.12"
 }

@@ -28,17 +28,41 @@ blocks:
           color: primary
           children:
             name: SmartLink
-            to: /docs/getting-started
+            to: /getting-started
+            base: docs
             children: Get Started
-  - name: ListInfo
-    list:
-      - title: Quickly Setup Blocklet DAPP
-        description: You don't need to learn and configure many blocklet server things, you can easily setup a Blocklet DAPP.
-      - title: Plenty Of Templates
-        description: You can use any template you want.
-      - title: Seamless Integration With Blocklet Server
-        description: Built in all kinds of Blocklet Server functions, you can easily integrate your Blocklet DAPP.
   - name: SectionBlock
+    background:
+      color: '#f8f8f8'
+    className: max-w-[1440px] m-auto
+    children:
+      - name: GridBlock
+        cols: 3
+        gap: '0'
+        children:
+          - name: InfoBlock
+            title: Quickly Setup Blocklet DAPP
+            description: You don't need to learn and configure many blocklet server things, you can easily setup a Blocklet DAPP.
+            className: '!max-w-full p-5'
+            classes:
+              title: '!font-700 !text-2xl'
+              description: '!text-lg'
+          - name: InfoBlock
+            title: Plenty Of Templates
+            description: You can use any template you want.
+            className: '!max-w-full p-5'
+            classes:
+              title: '!font-700 !text-2xl'
+              description: '!text-lg'
+          - name: InfoBlock
+            title: Seamless Integration With Blocklet Server
+            description: Built in all kinds of Blocklet Server functions, you can easily integrate your Blocklet DAPP.
+            className: '!max-w-full p-5'
+            classes:
+              title: '!font-700 !text-2xl'
+              description: '!text-lg'
+  - name: SectionBlock
+    className: max-w-[1520px] m-auto
     left:
       name: InfoBlock
       title:
