@@ -1,3 +1,13 @@
+## 0.4.13 (七月 09, 2022)
+
+- feat： add faq->publish-to-blocklet-store
+- chore: set priority for all pages
+- feat: add service page
+- feat: add faq pages
+- chore: tweak styles
+- chore: update deps
+- feat: add logo
+
 ## 0.4.12 (七月 09, 2022)
 
 - feat: polish the github workflows to support publish plugins
