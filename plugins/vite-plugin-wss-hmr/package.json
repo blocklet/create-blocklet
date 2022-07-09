@@ -12,13 +12,14 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c rollup.config.js"
+    "build": "rollup -c rollup.config.js",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [],
   "author": "Liang Yongzhuo",
   "license": "ISC",
   "devDependencies": {
-    "rollup": "^2.70.1",
-    "vite": "^2.9.13"
+    "rollup": "^2.76.0",
+    "vite": "^2.9.14"
   }
 }
