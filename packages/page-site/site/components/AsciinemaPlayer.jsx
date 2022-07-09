@@ -19,7 +19,7 @@ function Asciinema({ sourcePath }) {
       refAsciinema.current && player.dispose();
     };
   }, []);
-  return <div className="overflow-auto" ref={refAsciinema}></div>;
+  return <div className="overflow-auto max-w-[700px] m-auto" ref={refAsciinema}></div>;
 }
 
 export default Asciinema;

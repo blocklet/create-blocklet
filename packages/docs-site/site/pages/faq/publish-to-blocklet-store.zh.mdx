@@ -1,0 +1,19 @@
+---
+layout: 'documentation'
+title: 如何发布到 Blocklet Store
+priority: 12
+---
+
+使用 Create Blocklet 工具创建的所有的模板中，`packages.json` 文件中都包含了一个 `upload` 命令。
+
+例如在 React 的模板中，upload 命令是这样的：
+
+```shell
+npm run bundle && blocklet upload .blocklet/release/blocklet.json
+```
+
+以上命令会首先执行一次 `npm run bundle`，这个命令可以将一个项目打包成为 Blocklet Store 中所需要的压缩包。
+
+然后执行的 `blocklet upload xxx` 可以将指定的 blocklet meta 文件上传至 Blocklet Store。
+
+TBD

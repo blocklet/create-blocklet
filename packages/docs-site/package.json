@@ -8,24 +8,13 @@
     "clean": "rm -rf .blocklet",
     "bundle": "npm run clean && npm run build -- --base=/.blocklet/proxy/z8iZxR98sTfBLymQKPJYE85a95AghSCkLd3bb/ && blocklet bundle --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
+    "deploy:child": "npm run bundle && blocklet deploy .blocklet/bundle --app-did=z8iZrWdW8s5t9p6ndZLW8PmHcBtLdxGVyGN3L --mount-point=docs",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json"
   },
   "dependencies": {
-    "@arcblock/ux": "^2.1.53",
-    "@emotion/react": "^11.9.3",
-    "@fontsource/lato": "^4.5.8",
-    "@mdx-js/react": "^2.1.2",
-    "@mui/material": "^5.8.7",
-    "@xmark/cli": "^2.0.57",
-    "@xmark/client": "^2.0.57",
-    "@xmark/theme-docs": "^2.0.57",
-    "@xmark/utils": "^2.0.57",
-    "ahooks": "^3.5.2",
-    "clsx": "^1.2.0",
-    "path-browserify": "^1.0.1",
-    "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-router-dom": "^6.3.0"
+    "@xmark/cli": "^2.0.64",
+    "@xmark/client": "^2.0.64",
+    "@xmark/theme-docs": "^2.0.64"
   },
-  "version": "0.4.12"
+  "version": "0.4.13"
 }

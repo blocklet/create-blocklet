@@ -1,0 +1,19 @@
+---
+layout: 'documentation'
+title: How To publish to BLocklet Store
+priority: 12
+---
+
+In all templates created using the Create Blocklet tool, the `packages.json` file contains an `upload` command.
+
+For example, in React's templates, the upload command looks like this.
+
+```shell
+npm run bundle && blocklet upload .blocklet/release/blocklet.json
+```
+
+The above command will first execute `npm run bundle`, a command that will package a project into the required zip file in the Blocklet Store.
+
+Then `blocklet upload xxx` is executed to upload the specified blocklet meta file to the Blocklet Store.
+
+TBD

@@ -28,31 +28,55 @@ blocks:
           color: primary
           children:
             name: SmartLink
-            to: /docs/getting-started
+            to: /getting-started
+            base: docs
             children: 立即开始
-  - name: ListInfo
-    list:
-      - title: 快速创建 Blocklet
-        description: 你不需要学习和配置与 Blocklet Server 有关的东西，你就能够轻松的创建一个 Blocklet DAPP。
-      - title: 丰富的模板选择
-        description: 你可以选择任意 Starter 模板
-      - title: 与 Blocklet Server 无缝集成
-        description: 内置了 Blocklet Server 各类功能，你可以轻松的集成到你的 Blocklet DAPP 中。
   - name: SectionBlock
+    background:
+      color: '#f8f8f8'
+    className: max-w-[1440px] m-auto
+    children:
+      - name: GridBlock
+        cols: 3
+        gap: '0'
+        children:
+          - name: InfoBlock
+            title: 快速创建 Blocklet
+            description: 你不需要学习和配置与 Blocklet Server 有关的东西，你就能够轻松的创建一个 Blocklet DAPP。
+            className: '!max-w-full p-5'
+            classes:
+              title: '!font-700 !text-2xl'
+              description: '!text-lg'
+          - name: InfoBlock
+            title: 丰富的模板选择
+            description: 你可以选择任意 Starter 模板
+            className: '!max-w-full p-5'
+            classes:
+              title: '!font-700 !text-2xl'
+              description: '!text-lg'
+          - name: InfoBlock
+            title: 与 Blocklet Server 无缝集成
+            description: 内置了 Blocklet Server 各类功能，你可以轻松的集成到你的 Blocklet DAPP 中。
+            className: '!max-w-full p-5'
+            classes:
+              title: '!font-700 !text-2xl'
+              description: '!text-lg'
+  - name: SectionBlock
+    className: max-w-[1520px] m-auto
     left:
       name: InfoBlock
       title:
         name: div
         className: font-bold text-4xl
-        children: Get started in seconds
+        children: 数秒内即可开始使用
       description:
         name: div
         className: text-xl
         children:
           - !md |
-            Create Blocklet lets you focus on code, not build tools.
+            Create Blocklet 让你专注于代码，而不是构建工具。
 
-            To create a project called my-blocklet, run this command:
+            要创建一个名为 my-blocklet 的项目，请运行以下命令：
           - name: CodeBlock
             language: shell
             children: npx create-blocklet@latest my-blocklet
