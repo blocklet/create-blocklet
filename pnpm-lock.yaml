@@ -55,26 +55,26 @@ importers:
 
   packages/docs-site:
     specifiers:
-      '@xmark/cli': ^2.0.63
-      '@xmark/client': ^2.0.63
-      '@xmark/theme-docs': ^2.0.63
+      '@xmark/cli': ^2.0.64
+      '@xmark/client': ^2.0.64
+      '@xmark/theme-docs': ^2.0.64
     dependencies:
-      '@xmark/cli': 2.0.63
-      '@xmark/client': 2.0.63
-      '@xmark/theme-docs': 2.0.63
+      '@xmark/cli': 2.0.64
+      '@xmark/client': 2.0.64
+      '@xmark/theme-docs': 2.0.64
 
   packages/page-site:
     specifiers:
-      '@xmark/cli': ^2.0.63
-      '@xmark/client': ^2.0.63
+      '@xmark/cli': ^2.0.64
+      '@xmark/client': ^2.0.64
       asciinema-player: ^3.0.1
       clsx: ^1.2.1
       path-browserify: ^1.0.1
       prop-types: ^15.8.1
       react: ^18.2.0
     dependencies:
-      '@xmark/cli': 2.0.63_sh5qlbywuemxd2y3xkrw2y2kr4
-      '@xmark/client': 2.0.63
+      '@xmark/cli': 2.0.64_sh5qlbywuemxd2y3xkrw2y2kr4
+      '@xmark/client': 2.0.64
       asciinema-player: 3.0.1
       clsx: 1.2.1
       path-browserify: 1.0.1
@@ -2295,8 +2295,8 @@ packages:
       - supports-color
     dev: false
 
-  /@xmark/cli/2.0.63:
-    resolution: {integrity: sha512-OwOb1tMQ7/QKxJB2Q5I6w3rBUCHehPXbZiLzBPXsRZziX548wYqUMTPXirIaeewnaDLHr682m0k5qObA9/kM1w==}
+  /@xmark/cli/2.0.64:
+    resolution: {integrity: sha512-exp63lWmhr3EHL3dv6i4aLGmzi8l+Ky6OagHp0H+YvrSamw+im9jC9Ra7PpnFqQVsO3aQN/n9o2EaYKvonF9Dw==}
     hasBin: true
     dependencies:
       '@antfu/utils': 0.5.2
@@ -2306,8 +2306,8 @@ packages:
       '@originjs/vite-plugin-commonjs': 1.0.3
       '@rollup/plugin-yaml': 3.1.0
       '@vitejs/plugin-react': 1.3.2
-      '@xmark/client': 2.0.63_debug@4.3.4+vite@2.9.14
-      '@xmark/utils': 2.0.63
+      '@xmark/client': 2.0.64_debug@4.3.4+vite@2.9.14
+      '@xmark/utils': 2.0.64
       change-case: 4.1.2
       debug: 4.3.4
       escape-html: 1.0.3
@@ -2357,8 +2357,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@xmark/cli/2.0.63_sh5qlbywuemxd2y3xkrw2y2kr4:
-    resolution: {integrity: sha512-OwOb1tMQ7/QKxJB2Q5I6w3rBUCHehPXbZiLzBPXsRZziX548wYqUMTPXirIaeewnaDLHr682m0k5qObA9/kM1w==}
+  /@xmark/cli/2.0.64_sh5qlbywuemxd2y3xkrw2y2kr4:
+    resolution: {integrity: sha512-exp63lWmhr3EHL3dv6i4aLGmzi8l+Ky6OagHp0H+YvrSamw+im9jC9Ra7PpnFqQVsO3aQN/n9o2EaYKvonF9Dw==}
     hasBin: true
     dependencies:
       '@antfu/utils': 0.5.2
@@ -2368,8 +2368,8 @@ packages:
       '@originjs/vite-plugin-commonjs': 1.0.3
       '@rollup/plugin-yaml': 3.1.0
       '@vitejs/plugin-react': 1.3.2
-      '@xmark/client': 2.0.63_debug@4.3.4+vite@2.9.14
-      '@xmark/utils': 2.0.63
+      '@xmark/client': 2.0.64_debug@4.3.4+vite@2.9.14
+      '@xmark/utils': 2.0.64
       change-case: 4.1.2
       debug: 4.3.4
       escape-html: 1.0.3
@@ -2419,15 +2419,15 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@xmark/client/2.0.63:
-    resolution: {integrity: sha512-CFo1AhP4GOKvV8g30bCSXTDJYPxEJBD3qirebXEDsXQuoj4YXwmO+syrfHO2afkakvUQNdZsHcFEfZw5+AUT6g==}
+  /@xmark/client/2.0.64:
+    resolution: {integrity: sha512-/j/BoibfooA6kflsUyVXqI1w51NXQ86h1DB9Z8ZB252DAXw0Iz8u9UbSy+tNZuFt8q6yjMdCzFfQbK+WyMco8g==}
     dependencies:
       '@arcblock/ux': 2.1.56_v2m5e27vhdewzwhryxwfaorcca
       '@blocklet/ui-react': 2.1.56_5qblzwuynz5stpofemqaw7fxv4
       '@emotion/react': 11.9.3_react@18.2.0
       '@iconify-json/mdi': 1.1.25
       '@mui/styles': 5.8.7_react@18.2.0
-      '@xmark/utils': 2.0.63_react-dom@18.2.0
+      '@xmark/utils': 2.0.64_react-dom@18.2.0
       ahooks: 3.5.2_react@18.2.0
       clsx: 1.2.1
       is-uri: 1.2.4
@@ -2456,15 +2456,15 @@ packages:
       - vite
     dev: false
 
-  /@xmark/client/2.0.63_debug@4.3.4+vite@2.9.14:
-    resolution: {integrity: sha512-CFo1AhP4GOKvV8g30bCSXTDJYPxEJBD3qirebXEDsXQuoj4YXwmO+syrfHO2afkakvUQNdZsHcFEfZw5+AUT6g==}
+  /@xmark/client/2.0.64_debug@4.3.4+vite@2.9.14:
+    resolution: {integrity: sha512-/j/BoibfooA6kflsUyVXqI1w51NXQ86h1DB9Z8ZB252DAXw0Iz8u9UbSy+tNZuFt8q6yjMdCzFfQbK+WyMco8g==}
     dependencies:
       '@arcblock/ux': 2.1.56_b4d6a5ueiusxip5jyl3jrxspp4
       '@blocklet/ui-react': 2.1.56_wae4z6py2bbauhc234pqo5ziqq
       '@emotion/react': 11.9.3_react@18.2.0
       '@iconify-json/mdi': 1.1.25
       '@mui/styles': 5.8.7_react@18.2.0
-      '@xmark/utils': 2.0.63_react-dom@18.2.0
+      '@xmark/utils': 2.0.64_react-dom@18.2.0
       ahooks: 3.5.2_react@18.2.0
       clsx: 1.2.1
       is-uri: 1.2.4
@@ -2493,16 +2493,16 @@ packages:
       - vite
     dev: false
 
-  /@xmark/theme-docs/2.0.63:
-    resolution: {integrity: sha512-8GMu+84I+8x3OyyGITcDpwN4zu/1cpilmdCqxOwNh8TYC+ivyPtS39iAqk+KfCDsDb9eaPU6DNKfAgzT7B6ASg==}
+  /@xmark/theme-docs/2.0.64:
+    resolution: {integrity: sha512-E0lDDiTxNAnad4XvlvhBVqwVVTotdf/idkZtibln7/F68GFEqZWfTbKL+cfUahYYpmM6Vs7cD3LzWCfydup9Zw==}
     dependencies:
       '@arcblock/ux': 2.1.56_sh5qlbywuemxd2y3xkrw2y2kr4
       '@emotion/react': 11.9.3_react@18.2.0
       '@fontsource/lato': 4.5.8
       '@mdx-js/react': 2.1.2_react@18.2.0
       '@mui/material': 5.8.7_jhgplt4fmhans76oq3ok5iox2u
-      '@xmark/client': 2.0.63
-      '@xmark/utils': 2.0.63
+      '@xmark/client': 2.0.64
+      '@xmark/utils': 2.0.64
       ahooks: 3.5.2_react@18.2.0
       clsx: 1.2.1
       github-markdown-css: 5.1.0
@@ -2527,8 +2527,8 @@ packages:
       - vite
     dev: false
 
-  /@xmark/utils/2.0.63:
-    resolution: {integrity: sha512-Q4csO9sE0haLJwHYc3MXB72++eYgw1E4t6rAp4ByrEmF01SMI/wphPtWuCBkcinCQLuYfAPhVt3yOwNtoFcLAQ==}
+  /@xmark/utils/2.0.64:
+    resolution: {integrity: sha512-GX/QOyF2zqPdLiv0nuecg2xxD4TAPul4U8hvAOyjgkex+eZ8zH1Db0NlOUz8i8H6EIt3tfLRKx8M9VkChIzaRg==}
     dependencies:
       base-x: 4.0.0
       react: 18.2.0
@@ -2537,8 +2537,8 @@ packages:
       - react-dom
     dev: false
 
-  /@xmark/utils/2.0.63_react-dom@18.2.0:
-    resolution: {integrity: sha512-Q4csO9sE0haLJwHYc3MXB72++eYgw1E4t6rAp4ByrEmF01SMI/wphPtWuCBkcinCQLuYfAPhVt3yOwNtoFcLAQ==}
+  /@xmark/utils/2.0.64_react-dom@18.2.0:
+    resolution: {integrity: sha512-GX/QOyF2zqPdLiv0nuecg2xxD4TAPul4U8hvAOyjgkex+eZ8zH1Db0NlOUz8i8H6EIt3tfLRKx8M9VkChIzaRg==}
     dependencies:
       base-x: 4.0.0
       react: 18.2.0
