@@ -1,3 +1,15 @@
+## 0.4.16 (七月 11, 2022)
+
+- chore: update templates deps
+- fix: #144 @blocklet/sdk version is 1.8.2
+- feat: add page "Available Templates"
+- chore: replace create blocklet logo
+- chore: replace AsciinemaPlayer to gif
+- chore: update page site cover logo
+- feat: add notification-service
+- feat: add auth-services
+- feat: add faq
+
 ## 0.4.15 (七月 11, 2022)
 
 - feat: support the templates of nextjs dev in the component mode
