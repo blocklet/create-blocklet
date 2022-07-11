@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import * as AsciinemaPlayer from 'asciinema-player';
+import { create } from 'asciinema-player';
 import 'asciinema-player/dist/bundle/asciinema-player.css';
 
 function Asciinema({ sourcePath }) {
@@ -8,7 +8,7 @@ function Asciinema({ sourcePath }) {
     const parentElement = refAsciinema.current.parentElement;
     parentElement.style.overflow = 'auto';
     parentElement.style.width = '90%';
-    const player = AsciinemaPlayer.create(sourcePath, refAsciinema.current, {
+    const player = create(sourcePath, refAsciinema.current, {
       autoPlay: true,
       preload: true,
       loop: true,

@@ -1,0 +1,19 @@
+---
+layout: 'documentation'
+title: 通知服务
+priority: 7
+---
+
+通知服务是 Blocklet Server 提供给 Blocklet 应用的一种能够快速给 DID Wallet 发送通知的服务。
+
+在以下场景中，你可能需要用到通知服务：
+
+- 有人向你的 DID Wallet 发起了一笔转账或赠与 NFT，也应该发送一个通知给你。
+- 你购买的 NFT 或者证书等成功或者失败了，也应该发送一个通知给你。
+- Blocklet 应用想要发布一个公告给所有的用户，也可以使用通知服务。
+
+### 如何在 Blocklet 中发送一个通知给 DID Wallet？
+
+发送通知的能力封装在 Blocklet SDK 中，你可以通过[这里](https://docs.arcblock.io/abtnode/zh/developer/blocklet-sdk#notification-sdk)查看详细的使用方式
+
+也可以通过这个[Notification Demo](https://github.com/blocklet/notification-demo)查看完整的示例。
