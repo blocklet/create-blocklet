@@ -1,3 +1,7 @@
+## 0.4.15 (七月 11, 2022)
+
+- feat: support the templates of nextjs dev in the component mode
+
 ## 0.4.14 (七月 11, 2022)
 
 - fix: polish the templates of vite can't be builded bug
