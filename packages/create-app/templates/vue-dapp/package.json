@@ -18,12 +18,12 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@arcblock/did-auth": "^1.17.0",
+    "@arcblock/did-auth": "^1.17.4",
     "@arcblock/did-auth-storage-nedb": "^1.6.3",
     "@blocklet/sdk": "^1.8.2",
-    "@ocap/client": "^1.17.0",
-    "@ocap/mcrypto": "^1.17.0",
-    "@ocap/wallet": "^1.17.0",
+    "@ocap/client": "^1.17.4",
+    "@ocap/mcrypto": "^1.17.4",
+    "@ocap/wallet": "^1.17.4",
     "axios": "^0.27.2",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
@@ -37,16 +37,16 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",
-    "eslint": "^8.18.0",
+    "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-vue": "^9.1.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.2.0",
     "husky": "^8.0.1",
     "lint-staged": "^12.5.0",
-    "nodemon": "^2.0.16",
+    "nodemon": "^2.0.19",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.7.1",
-    "vite": "^2.9.12",
+    "vite": "^2.9.14",
     "vite-plugin-wss-hmr": "^0.4.15"
   },
   "lint-staged": {
