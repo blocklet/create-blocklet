@@ -66,7 +66,7 @@ async function createVitePlugin() {
       }
     },
     buildStart() {
-      if (hmrServer.ws) {
+      if (hmrServer?.ws) {
         const { base = '' } = hmrServiceConfig;
         const { host, port } = hmrServiceConfig.server?.hmr;
         console.log(`[vite-plugin-wss-hmr] hmrServer working on wss://${host}:${port}${base}`);
@@ -93,7 +93,7 @@ async function createVitePlugin() {
       if (updates.length > 0) {
         console.log(`[vite-plugin-wss-hmr] hot reloading: ${updateFileUrlList.join(' ')} updates`);
 
-        hmrServer.ws.send({
+        hmrServer?.ws.send({
           type: 'update',
           updates,
         });
@@ -108,7 +108,7 @@ async function createVitePlugin() {
         clearInterval(pongPoll);
       }
       if (hmrServer) {
-        hmrServer.close();
+        hmrServer?.close();
       }
     },
   };
