@@ -30,7 +30,7 @@ export default defineConfig(async ({ mode }) => {
           },
         },
       }),
-      await createWssHmrPlugin(),
+      whenDev && (await createWssHmrPlugin()),
     ],
     build: {
       target: 'esnext',

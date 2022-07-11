@@ -31,7 +31,7 @@ export default defineConfig(async ({ mode }) => {
           },
         },
       }),
-      await createWssHmrPlugin(),
+      whenDev && (await createWssHmrPlugin()),
     ],
     server: {
       port,

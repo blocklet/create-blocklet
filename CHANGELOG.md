@@ -1,3 +1,7 @@
+## 0.4.14 (七月 11, 2022)
+
+- fix: polish the templates of vite can't be builded bug
+
 ## 0.4.13 (七月 09, 2022)
 
 - feat： add faq->publish-to-blocklet-store
