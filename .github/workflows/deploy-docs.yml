@@ -1,4 +1,4 @@
-name: Deploy Page to staging
+name: Deploy Docs Site
 
 on: workflow_dispatch
 
@@ -24,7 +24,7 @@ jobs:
       - run: npm add -g @antfu/ni
       - run: nci
 
-      - name: Deploy to Staging
+      - name: Deploy to Blocklet Server
         uses: blocklet/action-workflow@v1
         with:
           skip-deps: false
@@ -33,8 +33,10 @@ jobs:
           skip-deploy: false
           skip-release: true
           bundle-command: nr bundle
-          working-directory: packages/page-site
-          server-endpoint: ${{ secrets.STAGING_NODE_ENDPOINT }}
-          server-access-key: ${{ secrets.STAGING_NODE_ACCESS_KEY }}
-          server-access-secret: ${{ secrets.STAGING_NODE_ACCESS_SECRET }}
+          deploy-app-did: z8iZuvjcXn3Lj1DXsaKkAPvL4y1nf5SSsUsXc
+          deploy-mount-point: docs
+          working-directory: packages/docs-site
+          server-endpoint: ${{ secrets.AWS_NODE_ENDPOINT }}
+          server-access-key: ${{ secrets.AWS_NODE_ACCESS_KEY }}
+          server-access-secret: ${{ secrets.AWS_NODE_ACCESS_SECRET }}
           slack-webhook: ${{ secrets.SLACK_WEBHOOK }}

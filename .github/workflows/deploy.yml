@@ -1,4 +1,4 @@
-name: Deploy to staging
+name: Deploy
 
 on:
   push:
@@ -37,9 +37,9 @@ jobs:
           skip-release: true
           bundle-command: nr bundle
           working-directory: packages/page-site
-          server-endpoint: ${{ secrets.STAGING_NODE_ENDPOINT }}
-          server-access-key: ${{ secrets.STAGING_NODE_ACCESS_KEY }}
-          server-access-secret: ${{ secrets.STAGING_NODE_ACCESS_SECRET }}
+          server-endpoint: ${{ secrets.AWS_NODE_ENDPOINT }}
+          server-access-key: ${{ secrets.AWS_NODE_ACCESS_KEY }}
+          server-access-secret: ${{ secrets.AWS_NODE_ACCESS_SECRET }}
           slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
 
       - name: Deploy Docs Site
@@ -50,11 +50,11 @@ jobs:
           skip-upload: true
           skip-deploy: false
           skip-release: true
-          deploy-app-did: zNKtcB67ghAa1Vtufpy1v9zfyKJu9AAddZna
+          deploy-app-did: z8iZuvjcXn3Lj1DXsaKkAPvL4y1nf5SSsUsXc
           deploy-mount-point: docs
           bundle-command: nr bundle
           working-directory: packages/docs-site
-          server-endpoint: ${{ secrets.STAGING_NODE_ENDPOINT }}
-          server-access-key: ${{ secrets.STAGING_NODE_ACCESS_KEY }}
-          server-access-secret: ${{ secrets.STAGING_NODE_ACCESS_SECRET }}
+          server-endpoint: ${{ secrets.AWS_NODE_ENDPOINT }}
+          server-access-key: ${{ secrets.AWS_NODE_ACCESS_KEY }}
+          server-access-secret: ${{ secrets.AWS_NODE_ACCESS_SECRET }}
           slack-webhook: ${{ secrets.SLACK_WEBHOOK }}

@@ -1,3 +1,7 @@
+## 0.4.17 (七月 12, 2022)
+
+- chore: update ci deploy to prod-1
+
 ## 0.4.16 (七月 11, 2022)
 
 - chore: update templates deps

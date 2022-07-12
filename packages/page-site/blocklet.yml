@@ -1,4 +1,4 @@
-name: page-site
+name: create-blocklet-page-site
 title: Create Blocklet Page
 description: A Blocklet Server blocklet
 keywords:
@@ -6,7 +6,7 @@ keywords:
   - blocklet-page
   - xmark
 group: static
-did: z8iZrWdW8s5t9p6ndZLW8PmHcBtLdxGVyGN3L
+did: z8iZuvjcXn3Lj1DXsaKkAPvL4y1nf5SSsUsXc
 main: dist
 author:
   name: LancelotLewis

@@ -1,4 +1,4 @@
-name: docs-site
+name: create-blocklet-docs-site
 title: Create Blocklet Docs
 description: A Blocklet Server blocklet
 keywords:
@@ -6,7 +6,7 @@ keywords:
   - blocklet-page
   - xmark
 group: static
-did: z8iZxR98sTfBLymQKPJYE85a95AghSCkLd3bb
+did: z8iZua8WdqKwWLW56gbf4Z4R4KLkQHQiEPrHj
 main: dist
 author:
   name: LancelotLewis
