@@ -9,7 +9,7 @@
     "lint:fix": "npm run lint -- --fix",
     "serve": "vite preview",
     "clean": "rm -rf .blocklet",
-    "bundle": "npm run clean && vite build --base /.blocklet/proxy/<%= did %>/ && blocklet bundle --zip --create-release",
+    "bundle": "npm run clean && vite build && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
     "prepare": "husky install"
@@ -26,7 +26,7 @@
     "vite": "^2.9.14",
     "vite-plugin-html": "^3.2.0",
     "vite-plugin-solid": "^2.2.6",
-    "vite-plugin-wss-hmr": "^0.4.17"
+    "vite-plugin-blocklet": "^0.4.18"
   },
   "dependencies": {
     "solid-js": "^1.4.7"

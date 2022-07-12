@@ -80,3 +80,7 @@ ln -s /pathToCreateBlockletRepo/index.js /usr/local/bin/cb
 cb
 ```
 to create a blocklet
+
+## Docs
+
+View full documentation in [here](https://www.createblocklet.dev)

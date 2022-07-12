@@ -1,3 +1,8 @@
+## 0.4.18 (七月 12, 2022)
+
+- chore: update create-blocklet templates with vite
+- feat: add vite-plugin-blocklet
+
 ## 0.4.17 (七月 12, 2022)
 
 - chore: update ci deploy to prod-1

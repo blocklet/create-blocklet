@@ -12,10 +12,10 @@ importers:
 
   packages/create-app:
     specifiers:
-      '@arcblock/did': ^1.17.3
+      '@arcblock/did': ^1.17.4
       '@arcblock/eslint-config-base': 0.2.2
-      '@ocap/mcrypto': ^1.17.3
-      '@ocap/util': ^1.17.3
+      '@ocap/mcrypto': ^1.17.4
+      '@ocap/util': ^1.17.4
       boxen: ^6.2.1
       ejs: ^3.1.8
       envfile: ^6.17.0
@@ -29,12 +29,12 @@ importers:
       prompts: ^2.4.2
       semver: ^7.3.7
       terminal-link: ^3.0.0
-      vitest: ^0.17.1
+      vitest: ^0.18.0
       zx: 7.0.7
     dependencies:
-      '@arcblock/did': 1.17.3
-      '@ocap/mcrypto': 1.17.3
-      '@ocap/util': 1.17.3
+      '@arcblock/did': 1.17.4
+      '@ocap/mcrypto': 1.17.4
+      '@ocap/util': 1.17.4
       boxen: 6.2.1
       ejs: 3.1.8
       envfile: 6.17.0
@@ -51,7 +51,7 @@ importers:
       '@arcblock/eslint-config-base': 0.2.2_exbhzpnbupd3ikhi4722x4yn6e
       eslint: 8.19.0
       prettier: 2.7.1
-      vitest: 0.17.1
+      vitest: 0.18.0
 
   packages/docs-site:
     specifiers:
@@ -80,6 +80,21 @@ importers:
       path-browserify: 1.0.1
       prop-types: 15.8.1
       react: 18.2.0
+
+  plugins/vite-plugin-blocklet:
+    specifiers:
+      '@arcblock/did': ^1.17.4
+      '@ocap/mcrypto': ^1.17.4
+      '@ocap/util': ^1.17.4
+      rollup: ^2.76.0
+      yaml: ^2.1.1
+    dependencies:
+      '@arcblock/did': 1.17.4
+      '@ocap/mcrypto': 1.17.4
+      '@ocap/util': 1.17.4
+      yaml: 2.1.1
+    devDependencies:
+      rollup: 2.76.0
 
   plugins/vite-plugin-wss-hmr:
     specifiers:
@@ -200,11 +215,11 @@ packages:
       bs58: 5.0.0
     dev: false
 
-  /@arcblock/did/1.17.3:
-    resolution: {integrity: sha512-MBph3lZlCAjVP4S0E8tE1BdkhkMexOdWeYYImVg+JmQq+nTNT3iT5HqWd9OfxHz8j8vZzR3NVdvbdjzfmdFhAw==}
+  /@arcblock/did/1.17.4:
+    resolution: {integrity: sha512-TXuNgc+NWXuUH3cQtscbVfxnp0oJDF5N7NZ/TsUTkpugGPufx/erIw0r6+iYDt+nX3EZf/EhwC2G9Pt+FiR7vQ==}
     dependencies:
-      '@ocap/mcrypto': 1.17.3
-      '@ocap/util': 1.17.3
+      '@ocap/mcrypto': 1.17.4
+      '@ocap/util': 1.17.4
       bn.js: 5.2.1
       debug: 4.3.4
       lodash: 4.17.21
@@ -1771,10 +1786,10 @@ packages:
       fastq: 1.13.0
     dev: false
 
-  /@ocap/mcrypto/1.17.3:
-    resolution: {integrity: sha512-1FDA/wine/XzbFye8ViLvzowT44AzJsdpaAn0nBjRHfKIELnlsvZc+4AXbOqwyZhvZuSvDF8dkksiYVGnUWTAA==}
+  /@ocap/mcrypto/1.17.4:
+    resolution: {integrity: sha512-S/ldizuiuEpZQnbtx3wdPxNtaJZ+9GWBxPuIMwhKNYY8jaY7G5+VC7tRI+vL13j2JW54/lWeRQ61OY2qSmNv7A==}
     dependencies:
-      '@ocap/util': 1.17.3
+      '@ocap/util': 1.17.4
       bn.js: 5.2.1
       crypto-js: 4.1.1
       elliptic: 6.5.4
@@ -1787,8 +1802,8 @@ packages:
       type-fest: 2.13.1
     dev: false
 
-  /@ocap/util/1.17.3:
-    resolution: {integrity: sha512-2P5DMY8smeoxMGnBgK12rQWrM0bMQktaOFzLO7sFO/lnF50sUVOESO0gOADjQ1twrxf67yU7F6w7YkHXArV1Aw==}
+  /@ocap/util/1.17.4:
+    resolution: {integrity: sha512-vo6JD+9jHJAqu/6eD2PkqIQB7VZ4O0VvQJtezRqXMzEQEnldBSpBb9CA84wHUqoDah/aWhVsMRkxOKkJ/wn/Wg==}
     dependencies:
       base64-url: 2.3.3
       bn.js: 5.2.1
@@ -2711,7 +2726,7 @@ packages:
   /axios/0.21.4_debug@4.3.4:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
     dependencies:
-      follow-redirects: 1.15.1_debug@4.3.4
+      follow-redirects: 1.15.1
     transitivePeerDependencies:
       - debug
     dev: false
@@ -4194,18 +4209,6 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
-    dev: false
-
-  /follow-redirects/1.15.1_debug@4.3.4:
-    resolution: {integrity: sha512-yLAMQs+k0b2m7cVxpS1VKJVvoz7SS9Td1zss3XRwXj+ZDH00RJgnuLx7E44wx02kQLrdM3aOOy+FpzS7+8OizA==}
-    engines: {node: '>=4.0'}
-    peerDependencies:
-      debug: '*'
-    peerDependenciesMeta:
-      debug:
-        optional: true
-    dependencies:
-      debug: 4.3.4
     dev: false
 
   /format/0.2.2:
@@ -8323,8 +8326,8 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vitest/0.17.1:
-    resolution: {integrity: sha512-d6NsFC6FPmZ5XdiSYfW5rwJ/b8060wqe2steNNlVbhO69HWma6CucIm5g7PXlCSkmKvrdEbUsZHPAarlH83VGw==}
+  /vitest/0.18.0:
+    resolution: {integrity: sha512-ryAtlh5Gvg3+aLNuOQ8YOHxgQCCu46jx40X5MBL0K0/ejB9i5zsr8fV8LTGXbXex80UMHlzceI9F+ouGaiR+mQ==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:

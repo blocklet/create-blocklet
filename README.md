@@ -14,6 +14,8 @@ A tool helps you to quickly setup a blocklet for Blocklet Server, with:
 
 View more details on [Create Blocklet](./packages/create-app)
 
+Check docs in [here](https://www.createblocklet.dev)
+
 ## Docs
 Our docs site is generate by Create Blocklet itself.
 
