@@ -31,7 +31,6 @@ export default function createConfigPlugin() {
       }
 
       if (command === 'build') {
-        console.log({ config });
         if (!config.base) {
           try {
             const blockletYamlPath = './blocklet.yml';

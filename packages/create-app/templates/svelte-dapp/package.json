@@ -10,7 +10,7 @@
     "start:api": "NODE_ENV=development nodemon api/index.js -w api",
     "clean": "rm -rf .blocklet",
     "bundle": "npm run bundle:client && npm run bundle:api",
-    "bundle:client": "vite build --base /.blocklet/proxy/<%= did %>/",
+    "bundle:client": "vite build",
     "bundle:api": "npm run clean && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
@@ -44,7 +44,7 @@
     "svelte": "^3.49.0",
     "vite": "^2.9.14",
     "vite-plugin-html": "^3.2.0",
-    "vite-plugin-wss-hmr": "^0.4.17"
+    "vite-plugin-blocklet": "^0.4.17"
   },
   "lint-staged": {
     "*.{mjs,js,vue}": [
