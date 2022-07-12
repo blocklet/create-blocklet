@@ -1,12 +1,12 @@
 {
-  "name": "vite-plugin-wss-hmr",
+  "name": "vite-plugin-blocklet",
   "type": "module",
-  "version": "0.4.17",
+  "version": "0.1.2",
   "description": "",
   "main": "index.js",
   "exports": {
     ".": {
-      "require": "./index.cjs",
+      "require": "./dist/index.cjs",
       "import": "./index.js"
     }
   },
@@ -18,10 +18,15 @@
     "prepublishOnly": "npm run build"
   },
   "keywords": [],
-  "author": "Liang Yongzhuo",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
-    "rollup": "^2.76.0",
-    "vite": "^2.9.14"
+    "rollup": "^2.76.0"
+  },
+  "dependencies": {
+    "@arcblock/did": "^1.17.4",
+    "@ocap/mcrypto": "^1.17.4",
+    "@ocap/util": "^1.17.4",
+    "yaml": "^2.1.1"
   }
 }
