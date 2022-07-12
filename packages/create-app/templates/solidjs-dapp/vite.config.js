@@ -7,7 +7,7 @@ export default defineConfig(async ({ mode }) => {
   const envMap = loadEnv(mode, process.cwd(), '');
   const apiPort = envMap.API_PORT || 3030;
 
-  return defineConfig({
+  return {
     plugins: [
       solidPlugin(),
       createHtmlPlugin({
@@ -29,5 +29,5 @@ export default defineConfig(async ({ mode }) => {
         '/api': `http://127.0.0.1:${apiPort}`,
       },
     },
-  });
+  };
 });
