@@ -3,13 +3,13 @@
   "private": true,
   "scripts": {
     "dev": "blocklet dev",
-    "dev:child": "blocklet dev --component --app-did=z8iZrWdW8s5t9p6ndZLW8PmHcBtLdxGVyGN3L --mount-point=/docs",
+    "dev:child": "blocklet dev --component --app-did=z8iZuvjcXn3Lj1DXsaKkAPvL4y1nf5SSsUsXc --mount-point=docs",
     "start": "xmark start",
     "build": "xmark build",
     "clean": "rm -rf .blocklet",
     "bundle": "npm run clean && npm run build -- --base=/.blocklet/proxy/z8iZxR98sTfBLymQKPJYE85a95AghSCkLd3bb/ && blocklet bundle --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
-    "deploy:child": "npm run bundle && blocklet deploy .blocklet/bundle --app-did=z8iZrWdW8s5t9p6ndZLW8PmHcBtLdxGVyGN3L --mount-point=docs",
+    "deploy:child": "npm run bundle && blocklet deploy .blocklet/bundle --app-did=z8iZuvjcXn3Lj1DXsaKkAPvL4y1nf5SSsUsXc --mount-point=docs",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json"
   },
   "dependencies": {
