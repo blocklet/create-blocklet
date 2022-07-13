@@ -1,3 +1,7 @@
+## 0.4.19 (七月 13, 2022)
+
+- chore: bump-version
+
 ## 0.4.18 (七月 12, 2022)
 
 - chore: update create-blocklet templates with vite
