@@ -12,10 +12,10 @@ importers:
 
   packages/create-app:
     specifiers:
-      '@arcblock/did': ^1.17.4
+      '@arcblock/did': ^1.17.5
       '@arcblock/eslint-config-base': 0.2.2
-      '@ocap/mcrypto': ^1.17.4
-      '@ocap/util': ^1.17.4
+      '@ocap/mcrypto': ^1.17.5
+      '@ocap/util': ^1.17.5
       boxen: ^6.2.1
       ejs: ^3.1.8
       envfile: ^6.17.0
@@ -32,9 +32,9 @@ importers:
       vitest: ^0.18.0
       zx: 7.0.7
     dependencies:
-      '@arcblock/did': 1.17.4
-      '@ocap/mcrypto': 1.17.4
-      '@ocap/util': 1.17.4
+      '@arcblock/did': 1.17.5
+      '@ocap/mcrypto': 1.17.5
+      '@ocap/util': 1.17.5
       boxen: 6.2.1
       ejs: 3.1.8
       envfile: 6.17.0
@@ -83,15 +83,15 @@ importers:
 
   plugins/vite-plugin-blocklet:
     specifiers:
-      '@arcblock/did': ^1.17.4
-      '@ocap/mcrypto': ^1.17.4
-      '@ocap/util': ^1.17.4
+      '@arcblock/did': ^1.17.5
+      '@ocap/mcrypto': ^1.17.5
+      '@ocap/util': ^1.17.5
       rollup: ^2.76.0
       yaml: ^2.1.1
     dependencies:
-      '@arcblock/did': 1.17.4
-      '@ocap/mcrypto': 1.17.4
-      '@ocap/util': 1.17.4
+      '@arcblock/did': 1.17.5
+      '@ocap/mcrypto': 1.17.5
+      '@ocap/util': 1.17.5
       yaml: 2.1.1
     devDependencies:
       rollup: 2.76.0
@@ -215,11 +215,11 @@ packages:
       bs58: 5.0.0
     dev: false
 
-  /@arcblock/did/1.17.4:
-    resolution: {integrity: sha512-TXuNgc+NWXuUH3cQtscbVfxnp0oJDF5N7NZ/TsUTkpugGPufx/erIw0r6+iYDt+nX3EZf/EhwC2G9Pt+FiR7vQ==}
+  /@arcblock/did/1.17.5:
+    resolution: {integrity: sha512-wxqnKgAeh7wpTMD4i5fpl8c5emFvxBOwy3Kt2urmcfUQ/S87uc+vUZ2t2GZeV/7Ny59klBdQ5eJ3siXa1CdeYA==}
     dependencies:
-      '@ocap/mcrypto': 1.17.4
-      '@ocap/util': 1.17.4
+      '@ocap/mcrypto': 1.17.5
+      '@ocap/util': 1.17.5
       bn.js: 5.2.1
       debug: 4.3.4
       lodash: 4.17.21
@@ -1786,10 +1786,10 @@ packages:
       fastq: 1.13.0
     dev: false
 
-  /@ocap/mcrypto/1.17.4:
-    resolution: {integrity: sha512-S/ldizuiuEpZQnbtx3wdPxNtaJZ+9GWBxPuIMwhKNYY8jaY7G5+VC7tRI+vL13j2JW54/lWeRQ61OY2qSmNv7A==}
+  /@ocap/mcrypto/1.17.5:
+    resolution: {integrity: sha512-ydtXwbggFhJcJA2FlL/UdjnqnWs8ooovrgvmtFF9x/60VxUQgSf6h6TwnO2LJqScWYpxFxAyw8zrtvxslJJhPQ==}
     dependencies:
-      '@ocap/util': 1.17.4
+      '@ocap/util': 1.17.5
       bn.js: 5.2.1
       crypto-js: 4.1.1
       elliptic: 6.5.4
@@ -1802,8 +1802,8 @@ packages:
       type-fest: 2.13.1
     dev: false
 
-  /@ocap/util/1.17.4:
-    resolution: {integrity: sha512-vo6JD+9jHJAqu/6eD2PkqIQB7VZ4O0VvQJtezRqXMzEQEnldBSpBb9CA84wHUqoDah/aWhVsMRkxOKkJ/wn/Wg==}
+  /@ocap/util/1.17.5:
+    resolution: {integrity: sha512-Aw5Py+nkmMEmFe/n6+EFqdRVdJCuEKWvhQq4cip6UuDEO4MDqtjTKEEB8IaG3ayWsJ01tUUqxdS/waRNQwxUiQ==}
     dependencies:
       base64-url: 2.3.3
       bn.js: 5.2.1
