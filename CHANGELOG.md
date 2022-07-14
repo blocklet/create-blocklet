@@ -1,3 +1,8 @@
+## 0.4.20 (七月 14, 2022)
+
+- feat: replace Create Blocklet logo
+- fix: vite-plugin-blocklet append url with prefix when dev as component blocklet
+
 ## 0.4.19 (七月 13, 2022)
 
 - chore: bump-version
