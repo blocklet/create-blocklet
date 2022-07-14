@@ -1,7 +1,7 @@
 <br/>
 
 <p align="center">
-<img src="./logo.png" style="width:200px;" />
+<img src="./logo-v.png" style="width:200px;" />
 </p>
 
 ## Features
