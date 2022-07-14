@@ -29,9 +29,9 @@
     "test:run": "vitest run"
   },
   "dependencies": {
-    "@arcblock/did": "^1.17.4",
-    "@ocap/mcrypto": "^1.17.4",
-    "@ocap/util": "^1.17.4",
+    "@arcblock/did": "^1.17.5",
+    "@ocap/mcrypto": "^1.17.5",
+    "@ocap/util": "^1.17.5",
     "boxen": "^6.2.1",
     "ejs": "^3.1.8",
     "envfile": "^6.17.0",

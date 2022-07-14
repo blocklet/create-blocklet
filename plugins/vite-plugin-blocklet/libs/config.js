@@ -1,10 +1,23 @@
 import fs from 'fs';
+import path from 'path';
 import YAML from 'yaml';
-import { toBlockletDid } from './utils';
+import { toBlockletDid, isInBlocklet } from './utils.js';
 
 export default function createConfigPlugin() {
   return {
     name: 'blocklet:config',
+    configureServer(server) {
+      if (isInBlocklet) {
+        server.middlewares.use((req, res, next) => {
+          const prefix = req.headers['x-path-prefix'] || '/';
+          // blocklet server 会把设置的 base 从请求 url 中移除，所以需要再加回 base
+          if (!req.url.startsWith(prefix)) {
+            req.url = path.join(prefix || '/', req.url);
+          }
+          return next();
+        });
+      }
+    },
     config(config, { command }) {
       if (command === 'serve') {
         const targetConfig = {};
