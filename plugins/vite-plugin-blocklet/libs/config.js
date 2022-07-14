@@ -34,7 +34,7 @@ export default function createConfigPlugin() {
           }
           targetConfig.base = base;
         }
-        if (!config.server.port) {
+        if (!(config.server && config.server.port)) {
           const port = process.env.BLOCKLET_PORT || 3000;
           targetConfig.server = {
             port,
