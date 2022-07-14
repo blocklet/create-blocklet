@@ -1,3 +1,7 @@
+## 0.4.21 (七月 14, 2022)
+
+- fix: vite-plugin-blocklet config plugin
+
 ## 0.4.20 (七月 14, 2022)
 
 - feat: replace Create Blocklet logo
