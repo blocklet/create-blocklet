@@ -5,7 +5,7 @@ export default function createHmrPlugin({ version }) {
     name: 'blocklet:hmr',
     apply: 'serve',
     transform(code, id) {
-      if (isInBlocklet() && version === 2) {
+      if (isInBlocklet && version === 2) {
         if (id.endsWith('/vite/dist/client/client.mjs')) {
           let replacedCode = code;
           replacedCode = replacedCode.replace("const base = __BASE__ || '/';\n", '');
