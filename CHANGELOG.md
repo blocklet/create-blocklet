@@ -1,3 +1,7 @@
+## 0.4.23 (七月 19, 2022)
+
+- fix: add "dist" in vite-plugin-blocklet
+
 ## 0.4.22 (七月 17, 2022)
 
 - fix: remove "postinstall scripts" in plugins/*

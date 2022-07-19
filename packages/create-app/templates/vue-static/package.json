@@ -27,7 +27,7 @@
     "prettier": "^2.7.1",
     "vite": "^2.9.14",
     "vite-plugin-html": "^3.2.0",
-    "vite-plugin-blocklet": "^0.4.22"
+    "vite-plugin-blocklet": "^0.4.23"
   },
   "lint-staged": {
     "*.{mjs,js,vue}": [
