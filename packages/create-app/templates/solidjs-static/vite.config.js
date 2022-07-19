@@ -17,7 +17,7 @@ export default defineConfig(async ({ mode }) => {
           },
         },
       }),
-      createBlockletPlugin(),
+      createBlockletPlugin({ version: 2 }),
     ],
     build: {
       target: 'esnext',

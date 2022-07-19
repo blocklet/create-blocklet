@@ -18,7 +18,7 @@ export default defineConfig(async ({ mode }) => {
           },
         },
       }),
-      createBlockletPlugin(),
+      createBlockletPlugin({ version: 2 }),
     ],
   };
 });

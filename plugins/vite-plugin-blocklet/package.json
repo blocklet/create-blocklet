@@ -1,9 +1,13 @@
 {
   "name": "vite-plugin-blocklet",
   "type": "module",
-  "version": "0.4.22",
+  "version": "0.4.23",
   "description": "",
   "main": "index.js",
+  "files": [
+    "dist",
+    "libs"
+  ],
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
