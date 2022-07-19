@@ -1,3 +1,7 @@
+## 0.4.24 (七月 19, 2022)- 
+
+- fix: vite-plugin-blocklet hmr isInBlocklet
+
 ## 0.4.23 (七月 19, 2022)
 
 - fix: add "dist" in vite-plugin-blocklet
