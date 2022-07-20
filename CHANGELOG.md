@@ -1,4 +1,8 @@
-## 0.4.24 (七月 19, 2022)- 
+## 0.4.25 (July 21, 2022)
+
+- chore: cleanup useless code
+
+## 0.4.24 (七月 19, 2022)-
 
 - fix: vite-plugin-blocklet hmr isInBlocklet
 
