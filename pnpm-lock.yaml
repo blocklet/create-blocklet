@@ -1336,7 +1336,7 @@ packages:
         optional: true
     dependencies:
       '@babel/runtime': 7.18.3
-      '@mui/material': 5.8.7_fdnqutfacy7v3gmlcm66flps3q
+      '@mui/material': 5.8.7_qsuhhlyfbpdicstla2jcf7xfmy
       react: 18.2.0
     dev: false
 
@@ -2749,7 +2749,7 @@ packages:
       babel-plugin-syntax-jsx: 6.18.0
       lodash: 4.17.21
       picomatch: 2.3.1
-      styled-components: 5.3.5_react@18.2.0
+      styled-components: 5.3.5
     dev: false
 
   /babel-plugin-syntax-jsx/6.18.0:
@@ -5335,7 +5335,7 @@ packages:
       '@mui/material': ^5.0.0 || ^5.0.0-rc.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@mui/material': 5.8.7_fdnqutfacy7v3gmlcm66flps3q
+      '@mui/material': 5.8.7_qsuhhlyfbpdicstla2jcf7xfmy
       react: 18.2.0
     dev: false
 
