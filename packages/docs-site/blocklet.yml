@@ -34,8 +34,8 @@ documentation: ''
 homepage: ''
 license: ''
 payment:
-  tokens: []
-  shares: []
+  price: []
+  share: []
 timeout:
   start: 60
 requirements:
