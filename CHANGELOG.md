@@ -1,3 +1,7 @@
+## 0.4.26 (July 24, 2022)
+
+- fix: payment field error in some templates
+
 ## 0.4.25 (July 21, 2022)
 
 - chore: cleanup useless code
