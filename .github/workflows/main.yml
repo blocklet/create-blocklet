@@ -33,7 +33,7 @@ jobs:
       - name: Publish to npm
         run: |
           npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_TOKEN }}"
-          pnpm -r --filter "./plugins/*" exec npm publish --access public --no-git-checks
+          pnpm -r --filter "./plugins/*" --filter "./packages/create-app" exec npm publish --access public --no-git-checks
 
       - name: get-npm-version
         id: package-version

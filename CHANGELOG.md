@@ -1,3 +1,7 @@
+## 0.4.28 (七月 26, 2022)
+
+- fix: ci npm publish
+
 ## 0.4.27 (七月 26, 2022)
 
 - chore: update page-site & docs-site
