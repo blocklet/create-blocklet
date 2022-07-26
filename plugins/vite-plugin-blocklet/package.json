@@ -24,12 +24,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "rollup": "^2.76.0"
+    "rollup": "^2.77.1"
   },
   "dependencies": {
-    "@arcblock/did": "^1.17.5",
-    "@ocap/mcrypto": "^1.17.5",
-    "@ocap/util": "^1.17.5",
+    "@arcblock/did": "^1.17.6",
+    "@ocap/mcrypto": "^1.17.6",
+    "@ocap/util": "^1.17.6",
     "yaml": "^2.1.1"
   }
 }
