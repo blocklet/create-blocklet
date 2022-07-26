@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "blocklet dev",
-    "start": "xmark start --force",
+    "start": "xmark start",
     "build": "xmark build",
     "clean": "rm -rf .blocklet",
     "bundle": "npm run clean && npm run build && blocklet bundle --create-release",
@@ -11,13 +11,13 @@
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json"
   },
   "dependencies": {
-    "@xmark/cli": "^2.0.64",
-    "@xmark/client": "^2.0.64",
+    "@xmark/cli": "^2.2.3",
+    "@xmark/client": "^2.2.3",
     "asciinema-player": "^3.0.1",
     "clsx": "^1.2.1",
     "path-browserify": "^1.0.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0"
   },
-  "version": "0.4.26"
+  "version": "0.4.27"
 }

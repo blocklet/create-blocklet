@@ -27,12 +27,11 @@ function Header({ meta, ...rest }) {
       // eslint-disable-next-line react/no-unstable-nested-components
       addons={(addons, { navigation }) => {
         const navItems = navigation.navItems || [];
-        const filterNavItems = navItems.slice(0, Math.max(1, navItems.length - 1));
 
         return (
           <>
-            {filterNavItems.length > 0 && (
-              <NavMenu activeId={navigation.activeId} items={filterNavItems} bgColor="transparent" textColor="#888" />
+            {navItems.length > 0 && (
+              <NavMenu activeId={navigation.activeId} items={navItems} bgColor="transparent" textColor="#888" />
             )}
             {addons}
           </>

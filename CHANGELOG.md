@@ -1,3 +1,8 @@
+## 0.4.27 (七月 26, 2022)
+
+- chore: update page-site & docs-site
+- chore: update deps
+
 ## 0.4.26 (July 24, 2022)
 
 - fix: payment field error in some templates
