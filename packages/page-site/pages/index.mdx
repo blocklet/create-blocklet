@@ -1,0 +1,61 @@
+---
+layout: 'my-layout'
+blocks:
+  - name: SectionBlock
+    background:
+      color: '#fff'
+    center: true
+    logo: /logos/logo-ico.png
+    title: !md |
+      **Create Blocklet**
+    description: Set up a blocklet app by running one command.
+    actions:
+      name: SmartLink
+      to: /getting-started
+      base: docs
+      children:
+        name: Button
+        size: large
+        variant: outlined
+        color: primary
+        children: Get Started
+        className: '!text-lg'
+  - name: SectionFeatureList
+    list:
+      - title: Quickly Setup Blocklet DAPP
+        description: You don't need to learn and configure many blocklet server things, you can easily setup a Blocklet DAPP.
+        className: '!max-w-full p-5'
+        classes:
+          title: '!font-700 !text-2xl'
+          description: '!text-lg'
+      - title: Plenty Of Templates
+        description: You can use any template you want.
+        className: '!max-w-full p-5'
+        classes:
+          title: '!font-700 !text-2xl'
+          description: '!text-lg'
+      - title: Seamless Integration With Blocklet Server
+        description: Built in all kinds of Blocklet Server functions, you can easily integrate your Blocklet DAPP.
+        className: '!max-w-full p-5'
+        classes:
+          title: '!font-700 !text-2xl'
+          description: '!text-lg'
+  - name: SectionBlock
+    className: max-w-[1520px] m-auto
+    title:
+      name: div
+      className: font-bold text-4xl
+      children: Get started in seconds
+    description:
+      name: div
+      className: text-xl
+      children:
+        - !md |
+          Create Blocklet lets you focus on code, not build tools.
+
+          To create a project called my-blocklet, run this command:
+        - name: CodeBlock
+          language: shell
+          children: npx create-blocklet@latest my-blocklet
+    image: /images/create-blocklet.gif
+---
