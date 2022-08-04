@@ -1,3 +1,8 @@
+## 0.4.29 (八月 04, 2022)
+
+- chore: refactor docs folder
+- chore: update deps
+
 ## 0.4.28 (七月 26, 2022)
 
 - fix: ci npm publish
