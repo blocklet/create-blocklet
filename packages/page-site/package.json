@@ -11,8 +11,10 @@
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json"
   },
   "dependencies": {
-    "@xmark/cli": "^2.2.13",
-    "@xmark/client": "^2.2.13",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@xmark/cli": "^2.3.0",
+    "@xmark/client": "^2.3.0",
     "asciinema-player": "^3.0.1",
     "clsx": "^1.2.1",
     "path-browserify": "^1.0.1",

@@ -1,5 +1,4 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import CommonHeader from '@xmark/client/src/components/Header';
 import NavMenu from '@arcblock/ux/lib/NavMenu';
@@ -7,7 +6,7 @@ import { useInjectContext } from 'virtual:context';
 import path from 'path-browserify';
 
 function Header({ meta, ...rest }) {
-  const rootCss = css`
+  const Root = styled(CommonHeader)`
     .header-nav {
       display: none;
     }
@@ -15,8 +14,7 @@ function Header({ meta, ...rest }) {
   const { locale } = useInjectContext();
 
   return (
-    <CommonHeader
-      css={rootCss}
+    <Root
       {...rest}
       homeLink={path.join('/', locale)}
       meta={meta}
