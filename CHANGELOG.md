@@ -1,3 +1,7 @@
+## 0.4.30 (八月 09, 2022)
+
+- chore: update xmark
+
 ## 0.4.29 (八月 04, 2022)
 
 - chore: refactor docs folder
