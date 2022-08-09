@@ -1,3 +1,7 @@
+## 0.4.31 (August 09, 2022)
+
+- chore: update xmark and polish home page
+
 ## 0.4.30 (八月 09, 2022)
 
 - chore: update xmark
