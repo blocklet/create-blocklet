@@ -17,12 +17,12 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@arcblock/did-auth": "^1.17.6",
+    "@arcblock/did-auth": "^1.17.10",
     "@arcblock/did-auth-storage-nedb": "^1.6.3",
-    "@blocklet/sdk": "^1.8.4",
-    "@ocap/client": "^1.17.6",
-    "@ocap/mcrypto": "^1.17.6",
-    "@ocap/wallet": "^1.17.6",
+    "@blocklet/sdk": "^1.8.6",
+    "@ocap/client": "^1.17.10",
+    "@ocap/mcrypto": "^1.17.10",
+    "@ocap/wallet": "^1.17.10",
     "axios": "^0.27.2",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "1.0.1",
-    "eslint": "^8.20.0",
+    "eslint": "^8.21.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-svelte3": "^4.0.0",
@@ -42,9 +42,9 @@
     "lint-staged": "^12.5.0",
     "prettier": "^2.7.1",
     "svelte": "^3.49.0",
-    "vite": "^3.0.3",
-    "vite-plugin-html": "^3.2.0",
-    "vite-plugin-blocklet": "^0.4.30"
+    "vite": "^3.0.4",
+    "vite-plugin-blocklet": "^0.4.30",
+    "vite-plugin-html": "^3.2.0"
   },
   "lint-staged": {
     "*.{mjs,js,vue}": [
