@@ -1,3 +1,7 @@
+## 0.4.32 (August 11, 2022)
+
+- chore: update deps
+
 ## 0.4.31 (August 09, 2022)
 
 - chore: update xmark and polish home page
