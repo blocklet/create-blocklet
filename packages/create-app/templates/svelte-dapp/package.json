@@ -42,7 +42,7 @@
     "lint-staged": "^12.5.0",
     "prettier": "^2.7.1",
     "svelte": "^3.49.0",
-    "vite": "^3.0.4",
+    "vite": "^3.0.5",
     "vite-plugin-blocklet": "^0.4.31",
     "vite-plugin-html": "^3.2.0"
   },

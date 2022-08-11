@@ -7,3 +7,7 @@ plugins/*/*.cjs
 .DS_Store
 dist
 .blocklet
+.vscode/configurationCache.log
+.vscode/dryrun.log
+.vscode/targets.log
+.vscode

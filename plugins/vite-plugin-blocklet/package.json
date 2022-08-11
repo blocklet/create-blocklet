@@ -24,7 +24,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "rollup": "^2.77.2"
+    "rollup": "^2.77.3"
   },
   "dependencies": {
     "@arcblock/did": "^1.17.10",

@@ -1,20 +1,25 @@
 {
-  "name": "docs-site",
+  "name": "page-site",
   "private": true,
   "scripts": {
     "dev": "blocklet dev",
-    "dev:child": "blocklet dev --component --app-did=z8iZuvjcXn3Lj1DXsaKkAPvL4y1nf5SSsUsXc --mount-point=docs",
     "start": "xmark start",
     "build": "xmark build",
     "clean": "rm -rf .blocklet",
     "bundle": "npm run clean && npm run build && blocklet bundle --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
-    "deploy:child": "npm run bundle && blocklet deploy .blocklet/bundle --app-did=z8iZuvjcXn3Lj1DXsaKkAPvL4y1nf5SSsUsXc --mount-point=docs",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json"
   },
   "dependencies": {
-    "@xmark/cli": "^2.3.6",
-    "@xmark/theme-docs": "^2.3.6"
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@xmark/cli": "^2.3.16",
+    "@xmark/client": "^2.3.16",
+    "asciinema-player": "^3.0.1",
+    "clsx": "^1.2.1",
+    "path-browserify": "^1.0.1",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0"
   },
   "version": "0.4.31"
 }

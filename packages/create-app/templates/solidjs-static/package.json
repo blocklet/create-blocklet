@@ -23,7 +23,7 @@
     "husky": "^8.0.1",
     "lint-staged": "^12.5.0",
     "prettier": "^2.7.1",
-    "vite": "^3.0.4",
+    "vite": "^3.0.5",
     "vite-plugin-blocklet": "^0.4.31",
     "vite-plugin-html": "^3.2.0",
     "vite-plugin-solid": "^2.3.0"
