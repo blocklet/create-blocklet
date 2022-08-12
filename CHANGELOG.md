@@ -1,3 +1,7 @@
+## 0.4.33 (August 13, 2022)
+
+- chore: update xmark and add github link
+
 ## 0.4.32 (August 11, 2022)
 
 - chore: update deps
