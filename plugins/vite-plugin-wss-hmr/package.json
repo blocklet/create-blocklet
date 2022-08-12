@@ -21,6 +21,6 @@
   "license": "ISC",
   "devDependencies": {
     "rollup": "^2.77.3",
-    "vite": "^2.9.14"
+    "vite": "^2.9.15"
   }
 }

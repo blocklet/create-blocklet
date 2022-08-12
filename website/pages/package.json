@@ -13,8 +13,8 @@
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
-    "@xmark/cli": "^2.3.16",
-    "@xmark/client": "^2.3.16",
+    "@xmark/cli": "^2.3.20",
+    "@xmark/client": "^2.3.20",
     "asciinema-player": "^3.0.1",
     "clsx": "^1.2.1",
     "path-browserify": "^1.0.1",

@@ -27,9 +27,9 @@
     "rollup": "^2.77.3"
   },
   "dependencies": {
-    "@arcblock/did": "^1.17.10",
-    "@ocap/mcrypto": "^1.17.10",
-    "@ocap/util": "^1.17.10",
+    "@arcblock/did": "^1.17.11",
+    "@ocap/mcrypto": "^1.17.11",
+    "@ocap/util": "^1.17.11",
     "yaml": "^2.1.1"
   }
 }
