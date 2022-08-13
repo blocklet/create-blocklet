@@ -36,7 +36,7 @@ jobs:
           deploy-app-did: z8iZuvjcXn3Lj1DXsaKkAPvL4y1nf5SSsUsXc
           deploy-mount-point: docs
           working-directory: packages/docs-site
-          server-endpoint: ${{ secrets.AWS_NODE_ENDPOINT }}
-          server-access-key: ${{ secrets.AWS_NODE_ACCESS_KEY }}
-          server-access-secret: ${{ secrets.AWS_NODE_ACCESS_SECRET }}
+          server-endpoint: ${{ secrets.XMARK_NODE_ENDPOINT }}
+          server-access-key: ${{ secrets.XMARK_NODE_ACCESS_KEY }}
+          server-access-secret: ${{ secrets.XMARK_NODE_ACCESS_SECRET }}
           slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
