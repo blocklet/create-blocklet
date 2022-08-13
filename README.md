@@ -24,8 +24,8 @@ We use Blocklet Page to write our docs
 
 check more details on
 
-- [home page site](./packages/page-site)
-- [docs site](./packages/docs-site)
+- [home page site](./website/pages)
+- [docs site](./website/docs)
 
 ## plugins
 

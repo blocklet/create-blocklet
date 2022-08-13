@@ -36,7 +36,7 @@ jobs:
           skip-deploy: false
           skip-release: true
           bundle-command: nr bundle
-          working-directory: packages/page-site
+          working-directory: website/pages
           server-endpoint: ${{ secrets.XMARK_NODE_ENDPOINT }}
           server-access-key: ${{ secrets.XMARK_NODE_ACCESS_KEY }}
           server-access-secret: ${{ secrets.XMARK_NODE_ACCESS_SECRET }}
@@ -53,7 +53,7 @@ jobs:
           deploy-app-did: z8iZuvjcXn3Lj1DXsaKkAPvL4y1nf5SSsUsXc
           deploy-mount-point: docs
           bundle-command: nr bundle
-          working-directory: packages/docs-site
+          working-directory: website/docs
           server-endpoint: ${{ secrets.XMARK_NODE_ENDPOINT }}
           server-access-key: ${{ secrets.XMARK_NODE_ACCESS_KEY }}
           server-access-secret: ${{ secrets.XMARK_NODE_ACCESS_SECRET }}
