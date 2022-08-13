@@ -78,18 +78,18 @@ importers:
 
   website/docs:
     specifiers:
-      '@xmark/cli': ^2.3.20
-      '@xmark/theme-docs': ^2.3.20
+      '@xmark/cli': ^2.3.21
+      '@xmark/theme-docs': ^2.3.21
     dependencies:
-      '@xmark/cli': 2.3.20
-      '@xmark/theme-docs': 2.3.20
+      '@xmark/cli': 2.3.21
+      '@xmark/theme-docs': 2.3.21
 
   website/pages:
     specifiers:
       '@emotion/react': ^11.10.0
       '@emotion/styled': ^11.10.0
-      '@xmark/cli': ^2.3.20
-      '@xmark/client': ^2.3.20
+      '@xmark/cli': ^2.3.21
+      '@xmark/client': ^2.3.21
       asciinema-player: ^3.0.1
       clsx: ^1.2.1
       path-browserify: ^1.0.1
@@ -98,8 +98,8 @@ importers:
     dependencies:
       '@emotion/react': 11.10.0_react@18.2.0
       '@emotion/styled': 11.10.0_g566eayvhbit5eqxocdac5mhdm
-      '@xmark/cli': 2.3.20_sh5qlbywuemxd2y3xkrw2y2kr4
-      '@xmark/client': 2.3.20
+      '@xmark/cli': 2.3.21_sh5qlbywuemxd2y3xkrw2y2kr4
+      '@xmark/client': 2.3.21
       asciinema-player: 3.0.1
       clsx: 1.2.1
       path-browserify: 1.0.1
@@ -2221,8 +2221,8 @@ packages:
       - supports-color
     dev: false
 
-  /@xmark/cli/2.3.20:
-    resolution: {integrity: sha512-rijHTp6QCSjlPsE9nNe2PDN/1Gg5D3CBA+GebGp6be91SQKs+wGTMQPgHkouhVTKLGhhXTI0e0dl+ExxkjsXkQ==}
+  /@xmark/cli/2.3.21:
+    resolution: {integrity: sha512-//HlL6YOyqRC1wKv/0LUO9ET2vhZ52iZug8kaTEQlfZ2TudlgTiLwu8t4y0daGVeilJW7wonT/l/NvPDkmtQBQ==}
     hasBin: true
     dependencies:
       '@antfu/utils': 0.5.2
@@ -2231,8 +2231,8 @@ packages:
       '@mdx-js/rollup': 2.1.2
       '@rollup/plugin-yaml': 3.1.0
       '@vitejs/plugin-react': 2.0.1_vite@3.0.7
-      '@xmark/client': 2.3.20_debug@4.3.4+vite@3.0.7
-      '@xmark/utils': 2.3.20
+      '@xmark/client': 2.3.21_debug@4.3.4+vite@3.0.7
+      '@xmark/utils': 2.3.21
       change-case: 4.1.2
       debug: 4.3.4
       escape-html: 1.0.3
@@ -2255,7 +2255,7 @@ packages:
       unist-util-visit: 4.1.0
       unocss: 0.45.6_vite@3.0.7
       vite: 3.0.7
-      vite-plugin-blocklet: 0.4.32
+      vite-plugin-blocklet: 0.4.33
       vite-plugin-svgr: 2.2.1_vite@3.0.7
       yaml: 2.1.1
       yargs: 17.5.1
@@ -2280,8 +2280,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@xmark/cli/2.3.20_sh5qlbywuemxd2y3xkrw2y2kr4:
-    resolution: {integrity: sha512-rijHTp6QCSjlPsE9nNe2PDN/1Gg5D3CBA+GebGp6be91SQKs+wGTMQPgHkouhVTKLGhhXTI0e0dl+ExxkjsXkQ==}
+  /@xmark/cli/2.3.21_sh5qlbywuemxd2y3xkrw2y2kr4:
+    resolution: {integrity: sha512-//HlL6YOyqRC1wKv/0LUO9ET2vhZ52iZug8kaTEQlfZ2TudlgTiLwu8t4y0daGVeilJW7wonT/l/NvPDkmtQBQ==}
     hasBin: true
     dependencies:
       '@antfu/utils': 0.5.2
@@ -2290,8 +2290,8 @@ packages:
       '@mdx-js/rollup': 2.1.2
       '@rollup/plugin-yaml': 3.1.0
       '@vitejs/plugin-react': 2.0.1_vite@3.0.7
-      '@xmark/client': 2.3.20_debug@4.3.4+vite@3.0.7
-      '@xmark/utils': 2.3.20
+      '@xmark/client': 2.3.21_debug@4.3.4+vite@3.0.7
+      '@xmark/utils': 2.3.21
       change-case: 4.1.2
       debug: 4.3.4
       escape-html: 1.0.3
@@ -2314,7 +2314,7 @@ packages:
       unist-util-visit: 4.1.0
       unocss: 0.45.6_vite@3.0.7
       vite: 3.0.7
-      vite-plugin-blocklet: 0.4.32
+      vite-plugin-blocklet: 0.4.33
       vite-plugin-svgr: 2.2.1_vite@3.0.7
       yaml: 2.1.1
       yargs: 17.5.1
@@ -2339,8 +2339,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@xmark/client/2.3.20:
-    resolution: {integrity: sha512-haw68hUMFDameCHWm8mG6Us37S7ZusDZzH1H1odOLiBSLKPJVM9GLlzcsP9dSP1GPG1dv2ZSSkKjhaPxhh+3HA==}
+  /@xmark/client/2.3.21:
+    resolution: {integrity: sha512-KK/9oPltuSiTS/yAopqlCdYM8pq8zUF1iI5dn63CzXoWoGalH8SknzW9oIgDslPLv6R2yITcRx/OJh6FooSv9Q==}
     dependencies:
       '@arcblock/ux': 2.4.2_v2m5e27vhdewzwhryxwfaorcca
       '@blocklet/ui-react': 2.4.2_v2m5e27vhdewzwhryxwfaorcca
@@ -2352,7 +2352,7 @@ packages:
       '@mdx-js/react': 2.1.2_react@18.2.0
       '@mui/material': 5.10.0_tyh4ta3a3jg5wknldy4g2a7uiy
       '@mui/styles': 5.9.3_react@18.2.0
-      '@xmark/utils': 2.3.20_react-dom@18.2.0
+      '@xmark/utils': 2.3.21_react-dom@18.2.0
       ahooks: 3.7.0_react@18.2.0
       clsx: 1.2.1
       copy-to-clipboard: 3.3.2
@@ -2384,8 +2384,8 @@ packages:
       - vite
     dev: false
 
-  /@xmark/client/2.3.20_debug@4.3.4+vite@3.0.7:
-    resolution: {integrity: sha512-haw68hUMFDameCHWm8mG6Us37S7ZusDZzH1H1odOLiBSLKPJVM9GLlzcsP9dSP1GPG1dv2ZSSkKjhaPxhh+3HA==}
+  /@xmark/client/2.3.21_debug@4.3.4+vite@3.0.7:
+    resolution: {integrity: sha512-KK/9oPltuSiTS/yAopqlCdYM8pq8zUF1iI5dn63CzXoWoGalH8SknzW9oIgDslPLv6R2yITcRx/OJh6FooSv9Q==}
     dependencies:
       '@arcblock/ux': 2.4.2_b4d6a5ueiusxip5jyl3jrxspp4
       '@blocklet/ui-react': 2.4.2_b4d6a5ueiusxip5jyl3jrxspp4
@@ -2397,7 +2397,7 @@ packages:
       '@mdx-js/react': 2.1.2_react@18.2.0
       '@mui/material': 5.10.0_tyh4ta3a3jg5wknldy4g2a7uiy
       '@mui/styles': 5.9.3_react@18.2.0
-      '@xmark/utils': 2.3.20_react-dom@18.2.0
+      '@xmark/utils': 2.3.21_react-dom@18.2.0
       ahooks: 3.7.0_react@18.2.0
       clsx: 1.2.1
       copy-to-clipboard: 3.3.2
@@ -2429,15 +2429,15 @@ packages:
       - vite
     dev: false
 
-  /@xmark/theme-docs/2.3.20:
-    resolution: {integrity: sha512-MPCG5ts7+vvVJ0B8Xjoa3WX3KJohhfss3mKt3WS4uEuVHTCkGfB2jPoCJ5hrPTvldh8kWOq4uw1FJZN1DTzG9Q==}
+  /@xmark/theme-docs/2.3.21:
+    resolution: {integrity: sha512-O65FJqNUG1EFJEWHFDWBwLxdrzn4Wd30puC0D6iVKH3Pl0S5Ihh/So7igHRqn01Buby0xpeB2TYy2lrXzL1CAg==}
     dependencies:
       '@arcblock/ux': 2.4.2_sh5qlbywuemxd2y3xkrw2y2kr4
       '@emotion/react': 11.10.0_react@18.2.0
       '@emotion/styled': 11.10.0_g566eayvhbit5eqxocdac5mhdm
       '@fontsource/lato': 4.5.9
       '@mui/material': 5.10.0_rq3l25qc4qpq3j4w6o4x7hatzy
-      '@xmark/client': 2.3.20
+      '@xmark/client': 2.3.21
       ahooks: 3.7.0_react@18.2.0
       clsx: 1.2.1
       path-browserify: 1.0.1
@@ -2460,8 +2460,8 @@ packages:
       - vite
     dev: false
 
-  /@xmark/utils/2.3.20:
-    resolution: {integrity: sha512-yAOmEXJy1VNzsDJ2BwynQINzRn3LAFPhbbN2yV3GVmPUKui9Tj7alC1tf+eaDVyc+YgDXmRHtr2N8p0RxFGv+g==}
+  /@xmark/utils/2.3.21:
+    resolution: {integrity: sha512-sYxiEMZ0aTd9feLXm6H7sOSVcPXcy3/Z6Rze6CJRWccKC3dY9t8py82hKLrDzplGJE89LMIu4uf5Lj4HobVlrA==}
     dependencies:
       base-x: 4.0.0
       hast-util-from-html: 1.0.0
@@ -2477,8 +2477,8 @@ packages:
       - supports-color
     dev: false
 
-  /@xmark/utils/2.3.20_react-dom@18.2.0:
-    resolution: {integrity: sha512-yAOmEXJy1VNzsDJ2BwynQINzRn3LAFPhbbN2yV3GVmPUKui9Tj7alC1tf+eaDVyc+YgDXmRHtr2N8p0RxFGv+g==}
+  /@xmark/utils/2.3.21_react-dom@18.2.0:
+    resolution: {integrity: sha512-sYxiEMZ0aTd9feLXm6H7sOSVcPXcy3/Z6Rze6CJRWccKC3dY9t8py82hKLrDzplGJE89LMIu4uf5Lj4HobVlrA==}
     dependencies:
       base-x: 4.0.0
       hast-util-from-html: 1.0.0
@@ -8347,8 +8347,8 @@ packages:
       vfile-message: 3.1.2
     dev: false
 
-  /vite-plugin-blocklet/0.4.32:
-    resolution: {integrity: sha512-xNUv7jID67fM+hc1sFdzmJr7M9BQFM/9VuD/6LC144ukgAAvTuwJSgh4AmhOpeEppCzAvEa7ROLaHg5uMb1fog==}
+  /vite-plugin-blocklet/0.4.33:
+    resolution: {integrity: sha512-OgCPQx6PQTxNRyqPoCz91YWoqDT1GpdZT1szvO7v+Z0Ge5ZZaOQUsyPqXH9L5dHTjHu4Mq7q7/SKnwHRdowmBQ==}
     dependencies:
       '@arcblock/did': 1.17.11
       '@ocap/mcrypto': 1.17.11
