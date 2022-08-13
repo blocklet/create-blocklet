@@ -1,3 +1,8 @@
+## 0.4.34 (August 13, 2022)
+
+- chore: bump xmark to latest
+- chore: update deploy target machine
+
 ## 0.4.33 (August 13, 2022)
 
 - chore: update xmark and add github link
