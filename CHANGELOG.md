@@ -1,3 +1,7 @@
+## 0.4.35 (August 13, 2022)
+
+- fix: deploy action folder
+
 ## 0.4.34 (August 13, 2022)
 
 - chore: bump xmark to latest
