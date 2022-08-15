@@ -1,3 +1,7 @@
+## 0.4.36 (August 15, 2022)
+
+- chore: update site links
+
 ## 0.4.35 (August 13, 2022)
 
 - fix: deploy action folder
