@@ -1,15 +1,10 @@
 ---
 layout: 'my-layout'
 blocks:
-  - name: SectionBlock
-    center: true
-    level: 1
-    logo: /logos/logo-ico.png
+  - name: SectionHero
     title: !md |
       **Create Blocklet**
     description: Set up a blocklet app by running one command.
-    classes:
-      description: text-md
     actions:
       name: SmartLink
       to: /getting-started
@@ -20,7 +15,6 @@ blocks:
         variant: outlined
         color: primary
         children: Get Started
-        className: '!text-lg'
   - name: SectionFeatureList
     align: top
     list:
