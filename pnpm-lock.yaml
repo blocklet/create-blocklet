@@ -78,32 +78,26 @@ importers:
 
   website/docs:
     specifiers:
-      '@xmark/cli': ^2.4.2
-      '@xmark/theme-docs': ^2.4.2
+      '@xmark/cli': ^2.4.3
+      '@xmark/theme-docs': ^2.4.3
     dependencies:
-      '@xmark/cli': 2.4.2
-      '@xmark/theme-docs': 2.4.2
+      '@xmark/cli': 2.4.3
+      '@xmark/theme-docs': 2.4.3
 
   website/pages:
     specifiers:
       '@emotion/react': ^11.10.0
       '@emotion/styled': ^11.10.0
-      '@xmark/cli': ^2.4.2
-      '@xmark/client': ^2.4.2
+      '@xmark/cli': ^2.4.3
+      '@xmark/client': ^2.4.3
       asciinema-player: ^3.0.1
-      clsx: ^1.2.1
-      path-browserify: ^1.0.1
-      prop-types: ^15.8.1
       react: ^18.2.0
     dependencies:
       '@emotion/react': 11.10.0_react@18.2.0
       '@emotion/styled': 11.10.0_g566eayvhbit5eqxocdac5mhdm
-      '@xmark/cli': 2.4.2_sh5qlbywuemxd2y3xkrw2y2kr4
-      '@xmark/client': 2.4.2
+      '@xmark/cli': 2.4.3_react@18.2.0
+      '@xmark/client': 2.4.3
       asciinema-player: 3.0.1
-      clsx: 1.2.1
-      path-browserify: 1.0.1
-      prop-types: 15.8.1
       react: 18.2.0
 
 packages:
@@ -282,58 +276,6 @@ packages:
       ismobilejs: 1.1.1
     dev: false
 
-  /@arcblock/ux/2.4.4_3pmjcye52u32jaup6yq6ds75gq:
-    resolution: {integrity: sha512-2SFJcTWrIb2PwslHbo/6vWlnrc3QC3eLXgsvZWq0VSbsdE6TASwawwYR6tQwJj7N5z116RlKaoPVZX0sSObUlw==}
-    peerDependencies:
-      '@sentry/browser': ^5.0.8
-      react: '>=18.1.0'
-      react-ga: ^2.7.0
-    dependencies:
-      '@arcblock/icons': 2.4.4_react@18.2.0
-      '@arcblock/react-hooks': 2.4.4
-      '@babel/plugin-syntax-dynamic-import': 7.8.3
-      '@emotion/react': 11.10.0_react@18.2.0
-      '@emotion/styled': 11.10.0_g566eayvhbit5eqxocdac5mhdm
-      '@fontsource/lato': 4.5.9
-      '@mui/icons-material': 5.8.4_7cbaqbgp3vjpyvhjjccag2533q
-      '@mui/material': 5.10.0_rq3l25qc4qpq3j4w6o4x7hatzy
-      '@solana/qr-code-styling': 1.6.0-beta.0
-      axios: 0.21.4_debug@4.3.4
-      base64-url: 2.3.3
-      copy-to-clipboard: 3.3.2
-      core-js: 3.24.1
-      d3-geo: 1.12.1
-      dayjs: 1.11.4
-      devices.css: 0.1.15
-      highlight.js: 11.6.0
-      is-svg: 4.3.2
-      js-cookie: 2.2.1
-      lodash: 4.17.21
-      mdi-material-ui: 7.5.0_7cbaqbgp3vjpyvhjjccag2533q
-      mui-datatables: 4.2.2_dd25ix4pfe7pf7rhzhrigmcj5e
-      notistack: 2.0.5_4zsx7yy6zjm7ig3eyhlnxmoavi
-      react: 18.2.0
-      react-cookie-consent: 6.4.1_react@18.2.0
-      react-error-boundary: 3.1.4_react@18.2.0
-      react-helmet: 6.1.0_react@18.2.0
-      react-intersection-observer: 8.34.0_react@18.2.0
-      react-lottie-player: 1.4.3_react@18.2.0
-      react-player: 1.15.3_react@18.2.0
-      react-router-dom: 6.3.0_react@18.2.0
-      react-shadow: 19.0.3_sh5qlbywuemxd2y3xkrw2y2kr4
-      react-use: 17.4.0_react@18.2.0
-      rebound: 0.1.0
-      topojson-client: 3.1.0
-      versor: 0.0.4
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@emotion/server'
-      - '@types/react'
-      - debug
-      - prop-types
-      - react-dom
-    dev: false
-
   /@arcblock/ux/2.4.4_b4d6a5ueiusxip5jyl3jrxspp4:
     resolution: {integrity: sha512-2SFJcTWrIb2PwslHbo/6vWlnrc3QC3eLXgsvZWq0VSbsdE6TASwawwYR6tQwJj7N5z116RlKaoPVZX0sSObUlw==}
     peerDependencies:
@@ -425,6 +367,58 @@ packages:
       react-router-dom: 6.3.0
       react-shadow: 19.0.3
       react-use: 17.4.0
+      rebound: 0.1.0
+      topojson-client: 3.1.0
+      versor: 0.0.4
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@emotion/server'
+      - '@types/react'
+      - debug
+      - prop-types
+      - react-dom
+    dev: false
+
+  /@arcblock/ux/2.4.4_debug@4.3.4+react@18.2.0:
+    resolution: {integrity: sha512-2SFJcTWrIb2PwslHbo/6vWlnrc3QC3eLXgsvZWq0VSbsdE6TASwawwYR6tQwJj7N5z116RlKaoPVZX0sSObUlw==}
+    peerDependencies:
+      '@sentry/browser': ^5.0.8
+      react: '>=18.1.0'
+      react-ga: ^2.7.0
+    dependencies:
+      '@arcblock/icons': 2.4.4_react@18.2.0
+      '@arcblock/react-hooks': 2.4.4
+      '@babel/plugin-syntax-dynamic-import': 7.8.3
+      '@emotion/react': 11.10.0_react@18.2.0
+      '@emotion/styled': 11.10.0_g566eayvhbit5eqxocdac5mhdm
+      '@fontsource/lato': 4.5.9
+      '@mui/icons-material': 5.8.4_7cbaqbgp3vjpyvhjjccag2533q
+      '@mui/material': 5.10.0_rq3l25qc4qpq3j4w6o4x7hatzy
+      '@solana/qr-code-styling': 1.6.0-beta.0
+      axios: 0.21.4_debug@4.3.4
+      base64-url: 2.3.3
+      copy-to-clipboard: 3.3.2
+      core-js: 3.24.1
+      d3-geo: 1.12.1
+      dayjs: 1.11.4
+      devices.css: 0.1.15
+      highlight.js: 11.6.0
+      is-svg: 4.3.2
+      js-cookie: 2.2.1
+      lodash: 4.17.21
+      mdi-material-ui: 7.5.0_7cbaqbgp3vjpyvhjjccag2533q
+      mui-datatables: 4.2.2_dd25ix4pfe7pf7rhzhrigmcj5e
+      notistack: 2.0.5_4zsx7yy6zjm7ig3eyhlnxmoavi
+      react: 18.2.0
+      react-cookie-consent: 6.4.1_react@18.2.0
+      react-error-boundary: 3.1.4_react@18.2.0
+      react-helmet: 6.1.0_react@18.2.0
+      react-intersection-observer: 8.34.0_react@18.2.0
+      react-lottie-player: 1.4.3_react@18.2.0
+      react-player: 1.15.3_react@18.2.0
+      react-router-dom: 6.3.0_react@18.2.0
+      react-shadow: 19.0.3_react@18.2.0
+      react-use: 17.4.0_react@18.2.0
       rebound: 0.1.0
       topojson-client: 3.1.0
       versor: 0.0.4
@@ -2161,8 +2155,8 @@ packages:
       - supports-color
     dev: false
 
-  /@xmark/cli/2.4.2:
-    resolution: {integrity: sha512-qK4VC9B0jYvkuX0F27g3Ly9QhxutKhw62oeJ6hS+ztkztbHbYGKrXKJ8vwi++/8PmB+8jTWpm//Oq7kWE5n58w==}
+  /@xmark/cli/2.4.3:
+    resolution: {integrity: sha512-mBfDcJXMng2crcxaeuNICtPGRvmkaaxOY+V1ZKuDiQwR3FNRZe0XWmkJvQiHw/0WYnILf0TRIX0anmwcgu7iuA==}
     hasBin: true
     dependencies:
       '@antfu/utils': 0.5.2
@@ -2171,8 +2165,8 @@ packages:
       '@mdx-js/rollup': 2.1.2
       '@rollup/plugin-yaml': 3.1.0
       '@vitejs/plugin-react': 2.0.1_vite@3.0.7
-      '@xmark/client': 2.4.2_debug@4.3.4+vite@3.0.7
-      '@xmark/utils': 2.4.2
+      '@xmark/client': 2.4.3_debug@4.3.4+vite@3.0.7
+      '@xmark/utils': 2.4.3
       change-case: 4.1.2
       debug: 4.3.4
       escape-string-regexp: 5.0.0
@@ -2219,18 +2213,18 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@xmark/cli/2.4.2_sh5qlbywuemxd2y3xkrw2y2kr4:
-    resolution: {integrity: sha512-qK4VC9B0jYvkuX0F27g3Ly9QhxutKhw62oeJ6hS+ztkztbHbYGKrXKJ8vwi++/8PmB+8jTWpm//Oq7kWE5n58w==}
+  /@xmark/cli/2.4.3_react@18.2.0:
+    resolution: {integrity: sha512-mBfDcJXMng2crcxaeuNICtPGRvmkaaxOY+V1ZKuDiQwR3FNRZe0XWmkJvQiHw/0WYnILf0TRIX0anmwcgu7iuA==}
     hasBin: true
     dependencies:
       '@antfu/utils': 0.5.2
-      '@arcblock/ux': 2.4.4_3pmjcye52u32jaup6yq6ds75gq
+      '@arcblock/ux': 2.4.4_debug@4.3.4+react@18.2.0
       '@mdx-js/react': 2.1.2_react@18.2.0
       '@mdx-js/rollup': 2.1.2
       '@rollup/plugin-yaml': 3.1.0
       '@vitejs/plugin-react': 2.0.1_vite@3.0.7
-      '@xmark/client': 2.4.2_debug@4.3.4+vite@3.0.7
-      '@xmark/utils': 2.4.2
+      '@xmark/client': 2.4.3_debug@4.3.4+vite@3.0.7
+      '@xmark/utils': 2.4.3
       change-case: 4.1.2
       debug: 4.3.4
       escape-string-regexp: 5.0.0
@@ -2277,8 +2271,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@xmark/client/2.4.2:
-    resolution: {integrity: sha512-fgGXWPRLp47capUyBcxk3rrMrnJuPFpyGgRXE6DhU3Q8n0KTosrHgs6t4SdfgOYSXSrpOHhh/hgOWEUdP4ykSQ==}
+  /@xmark/client/2.4.3:
+    resolution: {integrity: sha512-FJ8RWNKcw/i5+kZHV2G2VWEWrwXEHIHR/vAWY1OKsmCNQT1Q4lJxMPHONXUwTvF1zPeAzDLCQbjycO0oOsUuBw==}
     dependencies:
       '@arcblock/ux': 2.4.4_v2m5e27vhdewzwhryxwfaorcca
       '@blocklet/ui-react': 2.4.4_v2m5e27vhdewzwhryxwfaorcca
@@ -2288,7 +2282,7 @@ packages:
       '@iconify-json/mdi': 1.1.30
       '@mdx-js/react': 2.1.2_react@18.2.0
       '@mui/material': 5.10.0_tyh4ta3a3jg5wknldy4g2a7uiy
-      '@xmark/utils': 2.4.2_react-dom@18.2.0
+      '@xmark/utils': 2.4.3_react-dom@18.2.0
       ahooks: 3.7.0_react@18.2.0
       clsx: 1.2.1
       defu: 6.0.0
@@ -2318,8 +2312,8 @@ packages:
       - vite
     dev: false
 
-  /@xmark/client/2.4.2_debug@4.3.4+vite@3.0.7:
-    resolution: {integrity: sha512-fgGXWPRLp47capUyBcxk3rrMrnJuPFpyGgRXE6DhU3Q8n0KTosrHgs6t4SdfgOYSXSrpOHhh/hgOWEUdP4ykSQ==}
+  /@xmark/client/2.4.3_debug@4.3.4+vite@3.0.7:
+    resolution: {integrity: sha512-FJ8RWNKcw/i5+kZHV2G2VWEWrwXEHIHR/vAWY1OKsmCNQT1Q4lJxMPHONXUwTvF1zPeAzDLCQbjycO0oOsUuBw==}
     dependencies:
       '@arcblock/ux': 2.4.4_b4d6a5ueiusxip5jyl3jrxspp4
       '@blocklet/ui-react': 2.4.4_b4d6a5ueiusxip5jyl3jrxspp4
@@ -2329,7 +2323,7 @@ packages:
       '@iconify-json/mdi': 1.1.30
       '@mdx-js/react': 2.1.2_react@18.2.0
       '@mui/material': 5.10.0_tyh4ta3a3jg5wknldy4g2a7uiy
-      '@xmark/utils': 2.4.2_react-dom@18.2.0
+      '@xmark/utils': 2.4.3_react-dom@18.2.0
       ahooks: 3.7.0_react@18.2.0
       clsx: 1.2.1
       defu: 6.0.0
@@ -2359,15 +2353,15 @@ packages:
       - vite
     dev: false
 
-  /@xmark/theme-docs/2.4.2:
-    resolution: {integrity: sha512-rYhsdCo1xujhSW/FBNEIh8nBzJALyWc2B1SLF4NAn/gSt30N/Z0MQ5QyAAWv90FpAk2MjABO2gHAFYGIwsXBNw==}
+  /@xmark/theme-docs/2.4.3:
+    resolution: {integrity: sha512-7MOlmFL4i/6eEtL+YNnRJQrtSltjlEAyGNpXxuXp1H9yCOkq7MR8ALXw1iGO9eGcRVhnT2V1NOGjcPLgoFvDFg==}
     dependencies:
       '@arcblock/ux': 2.4.4_sh5qlbywuemxd2y3xkrw2y2kr4
       '@emotion/react': 11.10.0_react@18.2.0
       '@emotion/styled': 11.10.0_g566eayvhbit5eqxocdac5mhdm
       '@fontsource/lato': 4.5.9
       '@mui/material': 5.10.0_rq3l25qc4qpq3j4w6o4x7hatzy
-      '@xmark/client': 2.4.2
+      '@xmark/client': 2.4.3
       ahooks: 3.7.0_react@18.2.0
       clsx: 1.2.1
       path-browserify: 1.0.1
@@ -2389,8 +2383,8 @@ packages:
       - vite
     dev: false
 
-  /@xmark/utils/2.4.2:
-    resolution: {integrity: sha512-pWF36z24SuuLCBjp2xrsSilhu+lx17TGGUTkDNTTvtBJb++ufbCq+trD9l88fiqjm4BmffMgF4nAHo7/KbeC6Q==}
+  /@xmark/utils/2.4.3:
+    resolution: {integrity: sha512-saNvVcgSE/IDfZ6b/cxdnSccG/mSc/5Da/98VaopEDGhLWx71oqlw9dKDgkdAtxbwp99qprIv9xl1fSHpo4AzA==}
     dependencies:
       base-x: 4.0.0
       hast-util-from-html: 1.0.0
@@ -2406,8 +2400,8 @@ packages:
       - supports-color
     dev: false
 
-  /@xmark/utils/2.4.2_react-dom@18.2.0:
-    resolution: {integrity: sha512-pWF36z24SuuLCBjp2xrsSilhu+lx17TGGUTkDNTTvtBJb++ufbCq+trD9l88fiqjm4BmffMgF4nAHo7/KbeC6Q==}
+  /@xmark/utils/2.4.3_react-dom@18.2.0:
+    resolution: {integrity: sha512-saNvVcgSE/IDfZ6b/cxdnSccG/mSc/5Da/98VaopEDGhLWx71oqlw9dKDgkdAtxbwp99qprIv9xl1fSHpo4AzA==}
     dependencies:
       base-x: 4.0.0
       hast-util-from-html: 1.0.0
@@ -6786,6 +6780,18 @@ packages:
     dependencies:
       humps: 2.0.1
       react-use: 15.3.8
+    dev: false
+
+  /react-shadow/19.0.3_react@18.2.0:
+    resolution: {integrity: sha512-B1DoQC/rOyOjDdpgC1bd7nfhrYEF9ukV/vz8HcKaFTNmUkUmFnQCp4NHgEPxDfe3HJ1Mdr5ePzu+ZYAOvX6bNg==}
+    peerDependencies:
+      prop-types: ^15.0.0
+      react: ^16.8.0 || ^17.0.0
+      react-dom: ^16.0.0 || ^17.0.0
+    dependencies:
+      humps: 2.0.1
+      react: 18.2.0
+      react-use: 15.3.8_react@18.2.0
     dev: false
 
   /react-shadow/19.0.3_sh5qlbywuemxd2y3xkrw2y2kr4:
