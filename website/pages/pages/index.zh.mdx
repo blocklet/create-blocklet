@@ -6,29 +6,35 @@ blocks:
       **Create Blocklet**
     description: 创建一个 Blocklet 只需要一条命令
     actions:
-      name: SmartLink
-      to: /getting-started
-      base: docs
-      children:
-        name: Button
+      - name: SmartLink
+        to: /getting-started
+        base: docs
+        children:
+          name: Button
+          size: large
+          variant: contained
+          color: primary
+          children: 立即创建
+      - name: Button
         size: large
         variant: outlined
         color: primary
-        children: 立即开始
+        href: https://developer.blocklet.io
+        children: 学习 Blocklet
   - name: SectionFeatureList
     list:
       - title: 快速创建 Blocklet
         description: 你不需要学习和配置与 Blocklet Server 有关的东西，你就能够轻松的创建一个 Blocklet DAPP，并专注在业务逻辑上。
-        icon: i-mdi:truck-fast
+        icon: i-mdi:truck-fast-outline
         iconColor: '#1DC1C7'
       - title: 丰富的模板选择
         description: !md |
           你可以选择任意 Starter 模板，比如 [React](https://reactjs.org), [Vue](https://vuejs.org), [Express](http://expressjs.com), [Next.js](https://nextjs.org), [Gatsby.js](https://www.gatsbyjs.org)，并且可以自定义模板。
-        icon: i-mdi:puzzle
+        icon: i-mdi:puzzle-outline
         iconColor: '#1DC1C7'
       - title: 与 Blocklet Server 无缝集成
         description: 内置了 Blocklet Server 各类功能，你可以轻松的集成到你的 Blocklet DAPP 中。
-        icon: i-mdi:application-braces
+        icon: i-mdi:application-braces-outline
         iconColor: '#1DC1C7'
   - name: SectionBlock
     title:
@@ -40,11 +46,26 @@ blocks:
       className: text-xl
       children:
         - !md |
-          Create Blocklet 让你专注于代码，而不是构建工具。
-
-          要创建一个名为 my-blocklet 的项目，请运行以下命令：
+          不管你用的是什么应用开发框架，Create Blocklet 让你专注于**应用逻辑的代码，而不是构建工具**。<br/><br/>
+          要创建一个名为 my-blocklet 的项目，仅需运行以下命令：
         - name: CodeBlock
           language: shell
           children: npx create-blocklet@latest my-blocklet
     image: /images/create-blocklet.gif
+  - name: SectionBlock
+    center: true
+    dark: true
+    title: 创建 Blocklet 之后？
+    description: 你可能感兴趣的话题：什么是 Blocklet？如何成为严肃的 Blocklet 开发者？
+    actions:
+      - name: Button
+        size: large
+        variant: contained
+        href: https://www.blocklet.io
+        children: Blocklet 平台
+      - name: Button
+        size: large
+        variant: contained
+        href: https://developer.blocklet.io
+        children: 开发者门户
 ---

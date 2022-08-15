@@ -53,7 +53,9 @@ navigation:
       en: Docs
       zh: 文档
     link: /docs
-  - title: Resources
+  - title:
+      en: Resources
+      zh: 资源
     items:
       - title:
           en: Blocklet Platform
