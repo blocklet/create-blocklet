@@ -1,3 +1,6 @@
 name: Create Blocklet
 title: Create Blocklet
 description: Bootstrap a blocklet within seconds
+themeConfig:
+  colors:
+    primary: '#1DC1C7'
