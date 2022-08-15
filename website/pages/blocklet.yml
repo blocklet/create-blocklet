@@ -63,7 +63,3 @@ navigation:
           en: Blocklet Developer
           zh: Blocklet 开发者
         link: https://developer.blocklet.io
-  - title:
-      en: GitHub
-      zh: 源代码
-    link: https://github.com/blocklet/create-blocklet

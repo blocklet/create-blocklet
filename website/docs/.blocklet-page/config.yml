@@ -2,6 +2,7 @@ name: Create Blocklet
 title: Create Blocklet
 description: Bootstrap a blocklet within seconds
 theme: docs
+github: https://github.com/blocklet/create-blocklet
 themeConfig:
   colors:
     primary: '#1DC1C7'
