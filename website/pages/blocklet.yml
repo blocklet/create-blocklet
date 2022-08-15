@@ -50,10 +50,20 @@ screenshots: []
 children: []
 navigation:
   - title:
-      en: GitHub
-      zh: 源代码
-    link: https://github.com/blocklet/create-blocklet
-  - title:
       en: Docs
       zh: 文档
     link: /docs
+  - title: Resources
+    items:
+      - title:
+          en: Blocklet Platform
+          zh: Blocklet 平台
+        link: https://www.blocklet.io
+      - title:
+          en: Blocklet Developer
+          zh: Blocklet 开发者
+        link: https://developer.blocklet.io
+  - title:
+      en: GitHub
+      zh: 源代码
+    link: https://github.com/blocklet/create-blocklet
