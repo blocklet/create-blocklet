@@ -53,7 +53,9 @@ navigation:
       en: Docs
       zh: 文档
     link: /docs
-  - title: Resources
+  - title:
+      en: Resources
+      zh: 资源
     items:
       - title:
           en: Blocklet Platform
@@ -63,7 +65,3 @@ navigation:
           en: Blocklet Developer
           zh: Blocklet 开发者
         link: https://developer.blocklet.io
-  - title:
-      en: GitHub
-      zh: 源代码
-    link: https://github.com/blocklet/create-blocklet

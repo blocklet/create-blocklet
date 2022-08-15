@@ -16,7 +16,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^8.21.0",
+    "eslint": "^8.22.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-solid": "0.7.1",
@@ -24,7 +24,7 @@
     "lint-staged": "^12.5.0",
     "prettier": "^2.7.1",
     "vite": "^3.0.7",
-    "vite-plugin-blocklet": "^0.4.36",
+    "vite-plugin-blocklet": "^0.4.37",
     "vite-plugin-html": "^3.2.0",
     "vite-plugin-solid": "^2.3.0"
   },

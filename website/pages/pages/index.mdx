@@ -1,45 +1,42 @@
 ---
 layout: 'my-layout'
 blocks:
-  - name: SectionBlock
-    center: true
-    level: 1
-    logo: /logos/logo-ico.png
+  - name: SectionHero
     title: !md |
       **Create Blocklet**
     description: Set up a blocklet app by running one command.
-    classes:
-      description: text-md
     actions:
-      name: SmartLink
-      to: /getting-started
-      base: docs
-      children:
-        name: Button
+      - name: SmartLink
+        to: /getting-started
+        base: docs
+        children:
+          name: Button
+          size: large
+          variant: contained
+          color: primary
+          children: Get Started
+      - name: Button
         size: large
         variant: outlined
         color: primary
-        children: Get Started
-        className: '!text-lg'
+        href: https://developer.blocklet.io
+        children: Learn Blocklet
   - name: SectionFeatureList
     align: top
     list:
       - title: !md |
           **Quickly** Setup Blocklet DAPP
         description: You don't need to learn and configure many blocklet server things, you can easily setup a Blocklet DAPP, and focus on the application logic.
-        icon: i-mdi:truck-fast
-        iconColor: '#1DC1C7'
+        icon: i-mdi:truck-fast-outline
       - title: !md |
           **Plenty** Of Templates
         description: !md |
           You can choose any Starter template, such as [React](https://reactjs.org), [Vue](https://vuejs.org), [Express](http://expressjs.com), [Next.js](https://nextjs.org), [Gatsby.js](https://www.gatsbyjs.org), and custom templates are available.
-        icon: i-mdi:puzzle
-        iconColor: '#1DC1C7'
+        icon: i-mdi:puzzle-outline
       - title: !md |
           **Seamless** Integration With Blocklet Server
         description: Built in all kinds of Blocklet Server functions, you can easily integrate your Blocklet DAPP.
-        icon: i-mdi:application-braces
-        iconColor: '#1DC1C7'
+        icon: i-mdi:application-braces-outline
   - name: SectionBlock
     title:
       name: div
@@ -50,11 +47,28 @@ blocks:
       className: text-xl
       children:
         - !md |
-          Create Blocklet lets you focus on code, not build tools.
-
+          Regardless of the application development framework you use, Create Blocklet lets you focus on the code of **application logic, not on building tools**. <br/><br/>
           To create a project called my-blocklet, run this command:
         - name: CodeBlock
           language: shell
           children: npx create-blocklet@latest my-blocklet
     image: /images/create-blocklet.gif
+  - name: SectionBlock
+    center: true
+    dark: true
+    title: !md |
+      What's Next?
+    description: !md |
+      Topics you may be interested in: What is a Blocklet and how to become a serious Blocklet developer?
+    actions:
+      - name: Button
+        size: large
+        variant: contained
+        href: https://www.blocklet.io
+        children: Blocklet Platform
+      - name: Button
+        size: large
+        variant: contained
+        href: https://developer.blocklet.io
+        children: Developer Portal
 ---

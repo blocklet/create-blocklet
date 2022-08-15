@@ -1,3 +1,10 @@
+## 0.4.37 (August 15, 2022)
+
+- chore: update create-blocklet home page
+- chore: move github link to theme config
+- chore: update theme color
+- chore: update deps
+
 ## 0.4.36 (August 15, 2022)
 
 - chore: update site links
