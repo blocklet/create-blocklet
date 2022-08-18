@@ -1,3 +1,7 @@
+## 0.4.38 (August 18, 2022)
+
+- docs: update developer documentation link
+
 ## 0.4.37 (August 15, 2022)
 
 - chore: update create-blocklet home page
