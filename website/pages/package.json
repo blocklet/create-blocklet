@@ -16,7 +16,6 @@
     "@xmark/cli": "^2.4.18",
     "@xmark/client": "^2.4.18",
     "@xmark/theme-arcblock": "^2.4.18",
-    "asciinema-player": "^3.0.1",
     "react": "^18.2.0"
   },
   "version": "0.4.31"

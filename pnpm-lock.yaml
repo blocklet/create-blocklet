@@ -91,7 +91,6 @@ importers:
       '@xmark/cli': ^2.4.18
       '@xmark/client': ^2.4.18
       '@xmark/theme-arcblock': ^2.4.18
-      asciinema-player: ^3.0.1
       react: ^18.2.0
     dependencies:
       '@emotion/react': 11.10.0_react@18.2.0
@@ -99,7 +98,6 @@ importers:
       '@xmark/cli': 2.4.18_react@18.2.0
       '@xmark/client': 2.4.18
       '@xmark/theme-arcblock': 2.4.18
-      asciinema-player: 3.0.1
       react: 18.2.0
 
 packages:
@@ -2645,13 +2643,6 @@ packages:
       es-abstract: 1.20.1
       es-shim-unscopables: 1.0.0
     dev: true
-
-  /asciinema-player/3.0.1:
-    resolution: {integrity: sha512-plm/C/MhOtZWysrfcT/rzxOuu8vxvvDSvF50pqZS6KpJUDmATedAhO54zktbE/g7RiaaYfzgX8xjRhlQdgISwA==}
-    dependencies:
-      '@babel/runtime': 7.18.3
-      solid-js: 1.4.8
-    dev: false
 
   /assertion-error/1.1.0:
     resolution: {integrity: sha512-jgsaNduz+ndvGyFt3uSuWqvy4lCnIJiovtouQN5JZHOKCS2QuhEdbcQHFhVksz2N2U9hXJo8odG7ETyWlEeuDw==}
@@ -7528,10 +7519,6 @@ packages:
     dependencies:
       dot-case: 3.0.4
       tslib: 2.4.0
-    dev: false
-
-  /solid-js/1.4.8:
-    resolution: {integrity: sha512-XErZdnnYYXF7OwGSUAPcua2y5/ELB/c53zFCpWiEGqxTNoH1iQghzI8EsHJXk06sNn+Z/TGhb8bPDNNGSgimag==}
     dev: false
 
   /source-map-js/1.0.2:
