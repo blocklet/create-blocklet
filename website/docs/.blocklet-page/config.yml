@@ -81,6 +81,3 @@ themeConfig:
             link: /faq/earn-money-by-blocklet
           - text: 其他框架的支持？
             link: /faq/other-frameworks-support
-
-# 删除 screenshots, blocklet.md, 更新 blocklet.yml 、readme.md
-# 需要在所有 pages 项目中把 theme 从内置主题
