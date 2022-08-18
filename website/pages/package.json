@@ -13,9 +13,9 @@
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
-    "@xmark/cli": "^2.4.14",
-    "@xmark/client": "^2.4.14",
-    "@xmark/theme-arcblock": "^2.4.14",
+    "@xmark/cli": "^2.4.18",
+    "@xmark/client": "^2.4.18",
+    "@xmark/theme-arcblock": "^2.4.18",
     "asciinema-player": "^3.0.1",
     "react": "^18.2.0"
   },

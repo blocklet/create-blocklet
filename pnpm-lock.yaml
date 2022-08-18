@@ -78,27 +78,27 @@ importers:
 
   website/docs:
     specifiers:
-      '@xmark/cli': ^2.4.14
-      '@xmark/theme-docs': ^2.4.14
+      '@xmark/cli': ^2.4.18
+      '@xmark/theme-docs': ^2.4.18
     dependencies:
-      '@xmark/cli': 2.4.14
-      '@xmark/theme-docs': 2.4.14
+      '@xmark/cli': 2.4.18
+      '@xmark/theme-docs': 2.4.18
 
   website/pages:
     specifiers:
       '@emotion/react': ^11.10.0
       '@emotion/styled': ^11.10.0
-      '@xmark/cli': ^2.4.14
-      '@xmark/client': ^2.4.14
-      '@xmark/theme-arcblock': ^2.4.14
+      '@xmark/cli': ^2.4.18
+      '@xmark/client': ^2.4.18
+      '@xmark/theme-arcblock': ^2.4.18
       asciinema-player: ^3.0.1
       react: ^18.2.0
     dependencies:
       '@emotion/react': 11.10.0_react@18.2.0
       '@emotion/styled': 11.10.0_377de2031538513e921770860175871b
-      '@xmark/cli': 2.4.14_react@18.2.0
-      '@xmark/client': 2.4.14
-      '@xmark/theme-arcblock': 2.4.14
+      '@xmark/cli': 2.4.18_react@18.2.0
+      '@xmark/client': 2.4.18
+      '@xmark/theme-arcblock': 2.4.18
       asciinema-player: 3.0.1
       react: 18.2.0
 
@@ -1239,8 +1239,8 @@ packages:
       - supports-color
     dev: false
 
-  /@mdx-js/react/2.1.2:
-    resolution: {integrity: sha512-52e3DTJBrjsw3U51ZCdZ3N1IBaqnbzLIngCSXpKtiYiGr7PIqp3/P/+kym0MPTwBL/y9ZBmCieD8FyrXuEDrRw==}
+  /@mdx-js/react/2.1.3:
+    resolution: {integrity: sha512-11n4lTvvRyxq3OYbWJwEYM+7q6PE0GxKbk0AwYIIQmrRkxDeljIsjDQkKOgdr/orgRRbYy5zi+iERdnwe01CHQ==}
     peerDependencies:
       react: '>=16'
     dependencies:
@@ -1248,8 +1248,8 @@ packages:
       '@types/react': 18.0.14
     dev: false
 
-  /@mdx-js/react/2.1.2_react@18.2.0:
-    resolution: {integrity: sha512-52e3DTJBrjsw3U51ZCdZ3N1IBaqnbzLIngCSXpKtiYiGr7PIqp3/P/+kym0MPTwBL/y9ZBmCieD8FyrXuEDrRw==}
+  /@mdx-js/react/2.1.3_react@18.2.0:
+    resolution: {integrity: sha512-11n4lTvvRyxq3OYbWJwEYM+7q6PE0GxKbk0AwYIIQmrRkxDeljIsjDQkKOgdr/orgRRbYy5zi+iERdnwe01CHQ==}
     peerDependencies:
       react: '>=16'
     dependencies:
@@ -1258,8 +1258,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@mdx-js/rollup/2.1.2:
-    resolution: {integrity: sha512-3ahqp3DCpIlGlCRuLX4z7dFEgN5kWBljrk8BpipiWkVrvB4FQpTQu1T7lmDffm8tOunjHAsZEHtb076HiW51NQ==}
+  /@mdx-js/rollup/2.1.3:
+    resolution: {integrity: sha512-KaX9GcZ63TDaLNH9UYYE94+naZQldV2IUzmMkDVOlPxDtTh8kcEn8l6/4W1P79wxZZbakSOFejTuaYmcstl5sA==}
     peerDependencies:
       rollup: '>=2'
     dependencies:
@@ -2205,18 +2205,18 @@ packages:
       - supports-color
     dev: false
 
-  /@xmark/cli/2.4.14:
-    resolution: {integrity: sha512-UdMOtDg+YZA9TK2kLIuvHq1sfZoCZ4sYot0oLPVfQ/jYe0LrXgZYmf/YPLo9wpEdna/oGrUZRt4GZe5i+V8sqQ==}
+  /@xmark/cli/2.4.18:
+    resolution: {integrity: sha512-eAxvOQz2bYYfd5QZhDNjZlYaxyQuCy4iJdXmo/mTL3sjI/hpP6pXpBMJYDn5WS1YkID+j0MO1uiqmOtlrJsBpQ==}
     hasBin: true
     dependencies:
       '@antfu/utils': 0.5.2
       '@arcblock/ux': 2.4.9_debug@4.3.4
-      '@mdx-js/react': 2.1.2
-      '@mdx-js/rollup': 2.1.2
+      '@mdx-js/react': 2.1.3
+      '@mdx-js/rollup': 2.1.3
       '@rollup/plugin-yaml': 3.1.0
       '@vitejs/plugin-react': 2.0.1_vite@3.0.8
-      '@xmark/client': 2.4.14_debug@4.3.4+vite@3.0.8
-      '@xmark/utils': 2.4.14
+      '@xmark/client': 2.4.18_debug@4.3.4+vite@3.0.8
+      '@xmark/utils': 2.4.18
       change-case: 4.1.2
       debug: 4.3.4
       escape-string-regexp: 5.0.0
@@ -2264,18 +2264,18 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@xmark/cli/2.4.14_react@18.2.0:
-    resolution: {integrity: sha512-UdMOtDg+YZA9TK2kLIuvHq1sfZoCZ4sYot0oLPVfQ/jYe0LrXgZYmf/YPLo9wpEdna/oGrUZRt4GZe5i+V8sqQ==}
+  /@xmark/cli/2.4.18_react@18.2.0:
+    resolution: {integrity: sha512-eAxvOQz2bYYfd5QZhDNjZlYaxyQuCy4iJdXmo/mTL3sjI/hpP6pXpBMJYDn5WS1YkID+j0MO1uiqmOtlrJsBpQ==}
     hasBin: true
     dependencies:
       '@antfu/utils': 0.5.2
       '@arcblock/ux': 2.4.9_debug@4.3.4+react@18.2.0
-      '@mdx-js/react': 2.1.2_react@18.2.0
-      '@mdx-js/rollup': 2.1.2
+      '@mdx-js/react': 2.1.3_react@18.2.0
+      '@mdx-js/rollup': 2.1.3
       '@rollup/plugin-yaml': 3.1.0
       '@vitejs/plugin-react': 2.0.1_vite@3.0.8
-      '@xmark/client': 2.4.14_debug@4.3.4+vite@3.0.8
-      '@xmark/utils': 2.4.14
+      '@xmark/client': 2.4.18_debug@4.3.4+vite@3.0.8
+      '@xmark/utils': 2.4.18
       change-case: 4.1.2
       debug: 4.3.4
       escape-string-regexp: 5.0.0
@@ -2323,8 +2323,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@xmark/client/2.4.14:
-    resolution: {integrity: sha512-ce0aU9ctQKqdwEtVC6GJeoY8C/6DDt3GSwznZT7XpIXgdMLsZo1/EvvlV4+wv/DCzFLTrz/JQZ5lzi31yOuIVA==}
+  /@xmark/client/2.4.18:
+    resolution: {integrity: sha512-hK3r76W7A1UsBkKyODzqi0EqIWVC7xLbi0P9oE9ogvk8LvrKP544LoJ3r28rCanwp5E2hMeWhkSocpRLGsoJrw==}
     dependencies:
       '@arcblock/ux': 2.4.9_ae99d26bf538c96cd8f1c5ec503a2210
       '@blocklet/ui-react': 2.4.9_ae99d26bf538c96cd8f1c5ec503a2210
@@ -2332,9 +2332,9 @@ packages:
       '@emotion/styled': 11.10.0_377de2031538513e921770860175871b
       '@iconify-json/ion': 1.1.3
       '@iconify-json/mdi': 1.1.30
-      '@mdx-js/react': 2.1.2_react@18.2.0
+      '@mdx-js/react': 2.1.3_react@18.2.0
       '@mui/material': 5.10.1_9e0fc98360da4ddb29ab1e386d03f446
-      '@xmark/utils': 2.4.14_react-dom@18.2.0
+      '@xmark/utils': 2.4.18_react-dom@18.2.0
       ahooks: 3.7.0_react@18.2.0
       clsx: 1.2.1
       defu: 6.1.0
@@ -2365,8 +2365,8 @@ packages:
       - vite
     dev: false
 
-  /@xmark/client/2.4.14_debug@4.3.4+vite@3.0.8:
-    resolution: {integrity: sha512-ce0aU9ctQKqdwEtVC6GJeoY8C/6DDt3GSwznZT7XpIXgdMLsZo1/EvvlV4+wv/DCzFLTrz/JQZ5lzi31yOuIVA==}
+  /@xmark/client/2.4.18_debug@4.3.4+vite@3.0.8:
+    resolution: {integrity: sha512-hK3r76W7A1UsBkKyODzqi0EqIWVC7xLbi0P9oE9ogvk8LvrKP544LoJ3r28rCanwp5E2hMeWhkSocpRLGsoJrw==}
     dependencies:
       '@arcblock/ux': 2.4.9_0f07e076844525743fa9c2f698de4f7f
       '@blocklet/ui-react': 2.4.9_0f07e076844525743fa9c2f698de4f7f
@@ -2374,9 +2374,9 @@ packages:
       '@emotion/styled': 11.10.0_377de2031538513e921770860175871b
       '@iconify-json/ion': 1.1.3
       '@iconify-json/mdi': 1.1.30
-      '@mdx-js/react': 2.1.2_react@18.2.0
+      '@mdx-js/react': 2.1.3_react@18.2.0
       '@mui/material': 5.10.1_9e0fc98360da4ddb29ab1e386d03f446
-      '@xmark/utils': 2.4.14_react-dom@18.2.0
+      '@xmark/utils': 2.4.18_react-dom@18.2.0
       ahooks: 3.7.0_react@18.2.0
       clsx: 1.2.1
       defu: 6.1.0
@@ -2407,8 +2407,8 @@ packages:
       - vite
     dev: false
 
-  /@xmark/theme-arcblock/2.4.14:
-    resolution: {integrity: sha512-ZS1LYHjMaENDBjBniFcaB3Anv4kbDYltnE9MXK2LDAnSvAga4nlZXRu05hUFFtaMzyCccISmoaX4vAp3o+ZhjQ==}
+  /@xmark/theme-arcblock/2.4.18:
+    resolution: {integrity: sha512-5YL0IKRgOq9JnIudp0SWCiTGVMMhxa5WJUq0Ge5GXhU1R1WynCzdgMHtHBtNpvMbUqqX8EAulp0yXvqcFReKOw==}
     dependencies:
       '@arcblock/did-connect': 2.4.9_prop-types@15.8.1+react@18.2.0
       '@arcblock/ux': 2.4.9_prop-types@15.8.1+react@18.2.0
@@ -2418,8 +2418,8 @@ packages:
       '@iconify-json/uim': 1.1.2
       '@mui/material': 5.10.1_8c36bd7602e41f0da796f3b97f9c13ce
       '@popperjs/core': 2.11.6
-      '@xmark/client': 2.4.14
-      '@xmark/utils': 2.4.14
+      '@xmark/client': 2.4.18
+      '@xmark/utils': 2.4.18
       ahooks: 3.7.0_react@18.2.0
       clsx: 1.2.1
       pathe: 0.3.4
@@ -2443,15 +2443,15 @@ packages:
       - vite
     dev: false
 
-  /@xmark/theme-docs/2.4.14:
-    resolution: {integrity: sha512-GpGZB/tGWop/ZMDKxggv3ni0XHrAoHp+B7S3xUQIIM2LgLHUsO2zu86tDM+Tnzv525qSGhTiXVDuaUYExBAHkA==}
+  /@xmark/theme-docs/2.4.18:
+    resolution: {integrity: sha512-vn9mRguIuIYhWbeQszK/IEL1fduY29MtN6wttbp0oMVHLHqKROy9NfJN2OIIqrgipdnF7pF9+CD/++fibYN/xA==}
     dependencies:
       '@arcblock/ux': 2.4.9_prop-types@15.8.1+react@18.2.0
       '@emotion/react': 11.10.0_react@18.2.0
       '@emotion/styled': 11.10.0_377de2031538513e921770860175871b
       '@fontsource/lato': 4.5.9
       '@mui/material': 5.10.1_8c36bd7602e41f0da796f3b97f9c13ce
-      '@xmark/client': 2.4.14
+      '@xmark/client': 2.4.18
       ahooks: 3.7.0_react@18.2.0
       clsx: 1.2.1
       is-uri: 1.2.4
@@ -2475,8 +2475,8 @@ packages:
       - vite
     dev: false
 
-  /@xmark/utils/2.4.14:
-    resolution: {integrity: sha512-sgZ87bLCQ3UX9ocZNu7MC58Ou7881jqFm4l5XFNDaUYcbg7FAYIltTMVTSc8CbCQP1rwW0iqePv9+ZWHoKdpYg==}
+  /@xmark/utils/2.4.18:
+    resolution: {integrity: sha512-FahOlPWeYvxnD2FnUEmoAdh5PItMkrhLrkK+bR2/zq6AnHc/FJyT3S4I4qnVKpGs1njXwwpYYwO0OVI2TjLVZA==}
     dependencies:
       base-x: 4.0.0
       hast-util-from-html: 1.0.0
@@ -2494,8 +2494,8 @@ packages:
       - supports-color
     dev: false
 
-  /@xmark/utils/2.4.14_react-dom@18.2.0:
-    resolution: {integrity: sha512-sgZ87bLCQ3UX9ocZNu7MC58Ou7881jqFm4l5XFNDaUYcbg7FAYIltTMVTSc8CbCQP1rwW0iqePv9+ZWHoKdpYg==}
+  /@xmark/utils/2.4.18_react-dom@18.2.0:
+    resolution: {integrity: sha512-FahOlPWeYvxnD2FnUEmoAdh5PItMkrhLrkK+bR2/zq6AnHc/FJyT3S4I4qnVKpGs1njXwwpYYwO0OVI2TjLVZA==}
     dependencies:
       base-x: 4.0.0
       hast-util-from-html: 1.0.0
