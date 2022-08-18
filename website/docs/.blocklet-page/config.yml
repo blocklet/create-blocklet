@@ -6,3 +6,6 @@ github: https://github.com/blocklet/create-blocklet
 themeConfig:
   colors:
     primary: '#1DC1C7'
+
+# 删除 screenshots, blocklet.md, 更新 blocklet.yml 、readme.md
+# 需要在所有 pages 项目中把 theme 从内置主题切换为 arcblock 主题：
