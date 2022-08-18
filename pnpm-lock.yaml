@@ -2650,7 +2650,7 @@ packages:
     resolution: {integrity: sha512-plm/C/MhOtZWysrfcT/rzxOuu8vxvvDSvF50pqZS6KpJUDmATedAhO54zktbE/g7RiaaYfzgX8xjRhlQdgISwA==}
     dependencies:
       '@babel/runtime': 7.18.3
-      solid-js: 1.4.4
+      solid-js: 1.4.8
     dev: false
 
   /assertion-error/1.1.0:
@@ -7530,8 +7530,8 @@ packages:
       tslib: 2.4.0
     dev: false
 
-  /solid-js/1.4.4:
-    resolution: {integrity: sha512-nf/cbRzMuhb5UjbRDNfSJPqHKzUxNb9YgCQwijPUbdA3koQ/hWrz/lj0ter3lvThgxinvGPtXofDGy9bsKrXqA==}
+  /solid-js/1.4.8:
+    resolution: {integrity: sha512-XErZdnnYYXF7OwGSUAPcua2y5/ELB/c53zFCpWiEGqxTNoH1iQghzI8EsHJXk06sNn+Z/TGhb8bPDNNGSgimag==}
     dev: false
 
   /source-map-js/1.0.2:

@@ -5,4 +5,4 @@ github: https://github.com/blocklet/create-blocklet
 theme: arcblock
 themeConfig:
   colors:
-    primary: '#1DC1C7'
+    primary: '#25C99B'
