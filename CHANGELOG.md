@@ -1,3 +1,7 @@
+## 0.4.44 (八月 19, 2022)
+
+- chore: bump deps to latest
+
 ## 0.4.43 (August 19, 2022)
 
 - chore: bump deps to latest
