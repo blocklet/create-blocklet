@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-wss-hmr",
   "type": "module",
-  "version": "0.4.42",
+  "version": "0.4.43",
   "description": "",
   "main": "index.js",
   "exports": {
@@ -20,7 +20,7 @@
   "author": "Liang Yongzhuo",
   "license": "ISC",
   "devDependencies": {
-    "rollup": "^2.78.0",
+    "rollup": "^2.78.1",
     "vite": "^2.9.15"
   }
 }
