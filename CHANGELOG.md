@@ -1,3 +1,11 @@
+## 0.4.40 (八月 19, 2022)
+
+- chore: remove assets
+- fix: i18n
+- chore: remove comments
+- chore: update theme-config
+
+
 ## 0.4.39 (August 19, 2022)
 
 - fix(site): fix docs in navigation
