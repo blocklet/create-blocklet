@@ -1,3 +1,7 @@
+## 0.4.41 (八月 19, 2022)
+
+- chore: update logo.png
+
 ## 0.4.40 (八月 19, 2022)
 
 - chore: remove assets
