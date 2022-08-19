@@ -48,7 +48,8 @@ capabilities: {}
 screenshots: []
 children: []
 navigation:
-  - title:
+  - child: create-blocklet-docs-site
+    title:
       en: Docs
       zh: 文档
     link: /docs

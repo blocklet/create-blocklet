@@ -11,10 +11,7 @@
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.0",
-    "@emotion/styled": "^11.10.0",
     "@xmark/cli": "^2.4.18",
-    "@xmark/client": "^2.4.18",
     "@xmark/theme-arcblock": "^2.4.18",
     "react": "^18.2.0"
   },
