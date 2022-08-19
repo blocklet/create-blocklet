@@ -1,3 +1,11 @@
+## 0.4.39 (八月 19, 2022)
+
+- fix: i18n
+- chore: remove unused img
+- chore: update deps
+- chore: remove comments
+- chore: update theme-config
+
 ## 0.4.38 (August 18, 2022)
 
 - docs: update developer documentation link
