@@ -30,3 +30,10 @@ check more details on
 ## plugins
 
 TBD
+
+## Install deps
+
+```bash
+pnpm install
+
+```

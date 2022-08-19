@@ -5,4 +5,79 @@ theme: docs
 github: https://github.com/blocklet/create-blocklet
 themeConfig:
   colors:
-    primary: '#1DC1C7'
+    primary: '#25C99B'
+  sidebar:
+    en: 
+      - text: Getting Started
+        items:
+          - text: Intro
+            link: /intro
+          - text: Getting Started
+            link: /getting-started
+          - text: Folder Structure
+            link: /folder-structure
+          - text: Available Scripts
+            link: /available-scripts
+          - text: Available Templates
+            link: /available-templates
+      - text: Services
+        link: /services
+        items:
+          - text: Auth Service
+            link: /services/auth-service
+          - text: Notification Service
+            link: /services/notification-service
+      - text: Best Practice
+        items:
+          - text: Static Site
+            link: /best-practice/demo-static
+          - text: API Site
+            link: /best-practice/demo-api
+          - text: DAPP Site
+            link: /best-practice/demo-dapp
+      - text: FAQ
+        link: /faq
+        items:
+          - text: How to publish to Blocklet Store ?
+            link: /faq/publish-to-blocklet-store
+          - text: How to earn money by develop a blocklet ?
+            link: /faq/earn-money-by-blocklet
+          - text: Support for other frameworks ?
+            link: /faq/other-frameworks-support
+    zh:
+      - text: 快速上手
+        items:
+          - text: 介绍
+            link: /intro
+          - text: 快速上手
+            link: /getting-started
+          - text: 目录结构
+            link: /folder-structure
+          - text: 可用脚本
+            link: /available-scripts
+          - text: 支持的模板
+            link: /available-templates
+      - text: 集成服务
+        link: /services
+        items:
+          - text: 认证服务
+            link: /services/auth-service
+          - text: 通知服务
+            link: /services/notification-service
+      - text: 最佳实践
+        items:
+          - text: 前端站点
+            link: /best-practice/demo-static
+          - text: 后端站点
+            link: /best-practice/demo-api
+          - text: 全栈站点
+            link: /best-practice/demo-dapp
+      - text: FAQ
+        link: /faq
+        items:
+          - text: 如何发布到 Store？
+            link: /faq/publish-to-blocklet-store
+          - text: 如何通过开发 blocklet 赚钱？
+            link: /faq/earn-money-by-blocklet
+          - text: 其他框架的支持？
+            link: /faq/other-frameworks-support

@@ -21,7 +21,6 @@ files:
   - logo.png
   - README.md
   - blocklet.md
-  - screenshots
 interfaces:
   - type: web
     name: publicUrl

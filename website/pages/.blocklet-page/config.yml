@@ -2,6 +2,7 @@ name: Create Blocklet
 title: Create Blocklet
 description: Bootstrap a blocklet within seconds
 github: https://github.com/blocklet/create-blocklet
+theme: arcblock
 themeConfig:
   colors:
-    primary: '#1DC1C7'
+    primary: '#25C99B'

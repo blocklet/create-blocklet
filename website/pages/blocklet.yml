@@ -21,7 +21,6 @@ files:
   - logo.png
   - README.md
   - blocklet.md
-  - screenshots
 interfaces:
   - type: web
     name: publicUrl
@@ -49,10 +48,10 @@ capabilities: {}
 screenshots: []
 children: []
 navigation:
-  - title:
+  - child: create-blocklet-docs-site
+    title:
       en: Docs
       zh: 文档
-    child: create-blocklet-docs-site
   - title:
       en: Resources
       zh: 资源
