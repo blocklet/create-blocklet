@@ -1,3 +1,7 @@
+## 0.4.39 (August 19, 2022)
+
+- fix(site): fix docs in navigation
+
 ## 0.4.38 (August 18, 2022)
 
 - docs: update developer documentation link
