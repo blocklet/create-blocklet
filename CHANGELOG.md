@@ -1,3 +1,7 @@
+## 0.4.45 (August 22, 2022)
+
+- chore: add logo wall
+
 ## 0.4.44 (八月 19, 2022)
 
 - chore: bump deps to latest
