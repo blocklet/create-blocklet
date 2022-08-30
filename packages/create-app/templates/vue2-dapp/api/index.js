@@ -28,7 +28,7 @@ if (isProduction) {
   app.use(compression());
 
   const staticDir = path.resolve(__dirname, '../', 'dist');
-  app.use(express.static(staticDir, { index: 'index.html' }));
+  app.use(express.static(staticDir, { maxAge: '30d', index: false }));
   app.use(router);
   app.use(fallback('index.html', { root: staticDir }));
 

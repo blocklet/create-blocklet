@@ -20,7 +20,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^8.22.0",
+    "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-solid": "0.7.1",
@@ -35,12 +35,12 @@
     "vite-plugin-solid": "^2.3.0"
   },
   "dependencies": {
-    "@arcblock/did-auth": "^1.17.11",
+    "@arcblock/did-auth": "^1.17.16",
     "@arcblock/did-auth-storage-nedb": "^1.6.3",
-    "@blocklet/sdk": "^1.8.9",
-    "@ocap/client": "^1.17.11",
-    "@ocap/mcrypto": "^1.17.11",
-    "@ocap/wallet": "^1.17.11",
+    "@blocklet/sdk": "^1.8.13",
+    "@ocap/client": "^1.17.16",
+    "@ocap/mcrypto": "^1.17.16",
+    "@ocap/wallet": "^1.17.16",
     "axios": "^0.27.2",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
@@ -49,7 +49,7 @@
     "express": "^4.18.1",
     "express-async-errors": "^3.1.1",
     "express-history-api-fallback": "^2.2.1",
-    "solid-js": "^1.4.8"
+    "solid-js": "^1.5.2"
   },
   "lint-staged": {
     "*.{mjs,js,vue}": [
