@@ -1,3 +1,7 @@
+## 0.4.46 (August 30, 2022)
+
+- chore: fix production cache and fullstack-react building
+
 ## 0.4.45 (August 22, 2022)
 
 - chore: add logo wall
