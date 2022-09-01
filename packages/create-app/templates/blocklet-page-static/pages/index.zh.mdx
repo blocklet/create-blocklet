@@ -2,11 +2,25 @@
 layout: 'my-layout'
 blocks:
   - name: SectionHero
-    title: 这是一个示例页面
-    description:  你可以点击 "使用xxx主题 "进入主题的模板，当你找到一个你喜欢的模块时，点击 "使用此部分 "获得相应的模块代码。
+    title: 这是什么？
+    description: !md 这是一个由[Blocklet Pages](https://pages.blocklet.io)驱动的网站，这是一个灵活的内容创作系统，支持产品页面和文档页面。
     actions:
       - name: Button
-        children: 使用默认主题
+        children: 了解更多
         variant: contained
-        href: https://pages.blocklet.io/samples/default/
+        href: https://pages.blocklet.io
+  - name: SectionAccordionList
+    title: 如何更新本网站？
+    description: 你可以通过调整文件或更换图片来快速更新这个网站。
+    list:
+      - title: 更新网站配置
+        description: 你可以通过改变这个网站的名称和描述来更新`.blocklet-page/config.yml`。
+      - title: 更新网站标识
+        description: 你可以替换`.blocklet-page/composes/images/logo.png`来更新这个网站的标志。
+      - title: 更新此页面
+        description: 你可以编辑`pages/index.zh.mdx`来更新这个页面。
+      - title: 启用/禁用i18n页面
+        description: 你可以在`.blocklet-page/composes/MyLayout.mdx`中设置`enableLocale`为`true/false`来启用/禁用i18n。
+      - title: 启用/禁用 DID Connect
+        description: 你可以在`.blocklet-page/composes/MyLayout.mdx`中设置`enableConnect`为`true/false`，以启用/禁用 DID Connect，这需要本网站以 blocklet 形式运行。
 ---

@@ -2,11 +2,26 @@
 layout: 'my-layout'
 blocks:
   - name: SectionHero
-    title: This is a sample page
-    description: You can click "use xxx theme" to enter the template of the theme, when you find a module you like, click "Use This Section" to get the corresponding module code
+    title: What is this?
+    description: !md
+      This is a web site powered by [Blocklet Pages](https://pages.blocklet.io), a flexible content authoring system that supports both product pages and documentation pages.
     actions:
       - name: Button
-        children: Use Default Theme
+        children: Learn More
         variant: contained
-        href: https://pages.blocklet.io/samples/default/
+        href: https://pages.blocklet.io
+  - name: SectionAccordionList
+    title: How to update this site?
+    description: You can quickly update this site by tweaking files or replacing images.
+    list:
+      - title: Update website config
+        description: You can update `.blocklet-page/config.yml` by changing the name and description of this website.
+      - title: Update website logo
+        description: You can replace `.blocklet-page/composes/images/logo.png` to update the logo for this website.
+      - title: Update this page
+        description: You can edit `pages/index.mdx` to update this page.
+      - title: Enable/Disable i18n pages
+        description: You can set `enableLocale` to `true/false` in `.blocklet-page/composes/MyLayout.mdx` to enable/disable i18n.
+      - title: Enable/Disable DID Connect
+        description: You can set `enableConnect` to `true/false` in `.blocklet-page/composes/MyLayout.mdx` to enable/disable DID Connect, which requires this website run as a blocklet.
 ---
