@@ -7,13 +7,17 @@ themeConfig:
   colors:
     primary: '#25C99B'
   sidebar:
-    en: 
+    en:
       - text: Getting Started
         items:
-          - text: Intro
+          - text: Introduction
             link: /intro
+      - text: Markdown Reference
+        link: /markdown
     zh:
       - text: 快速上手
         items:
           - text: 介绍
             link: /intro
+      - text: Markdown 参考
+        link: /markdown
