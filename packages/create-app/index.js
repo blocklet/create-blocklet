@@ -100,6 +100,11 @@ const TYPES = [
         color: blue,
       },
       {
+        name: 'doc-site',
+        display: 'doc site',
+        color: blue,
+      },
+      {
         name: 'html',
         display: 'html',
         color: blue,
@@ -276,7 +281,7 @@ async function init() {
         // eslint-disable-next-line no-continue
         continue;
       }
-      if (framework === 'blocklet-page' && ['_eslintignore', '.husky'].includes(file)) {
+      if (['blocklet-page','doc-site'].includes(framework) && ['_eslintignore', '.husky'].includes(file)) {
         // eslint-disable-next-line no-continue
         continue;
       }

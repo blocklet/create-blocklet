@@ -1,9 +1,9 @@
-name: template-blocklet-page
-title: Blocklet Page Template
+name: template-doc-site
+title: Doc Site Template
 description: A Blocklet Server blocklet
 keywords:
   - blocklet
-  - blocklet-page
+  - doc-site
   - xmark
 group: static
 did: ''
@@ -48,20 +48,14 @@ screenshots: []
 children: []
 navigation:
   - title:
+      en: Doc Site 
+      zh: 文档站点模板
+    link:
+      en: /en
+      zh: /zh
+  - title:
       en: ArcBlock
       zh: ArcBlock
     link:
       en: https://www.arcblock.io/en/
       zh: https://www.arcblock.io/zh/
-  - title:
-      en: Resources
-      zh: 资源
-    items:
-      - title:
-          en: Blocklet Platform
-          zh: Blocklet 平台
-        link: https://www.blocklet.io
-      - title:
-          en: Blocklet Developer
-          zh: Blocklet 开发者
-        link: https://developer.blocklet.io

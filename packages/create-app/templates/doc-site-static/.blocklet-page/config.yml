@@ -1,0 +1,19 @@
+name: Create Blocklet
+title: Create Blocklet
+description: Bootstrap a blocklet within seconds
+theme: docs
+github: https://github.com/blocklet/create-blocklet
+themeConfig:
+  colors:
+    primary: '#25C99B'
+  sidebar:
+    en: 
+      - text: Getting Started
+        items:
+          - text: Intro
+            link: /intro
+    zh:
+      - text: 快速上手
+        items:
+          - text: 介绍
+            link: /intro
