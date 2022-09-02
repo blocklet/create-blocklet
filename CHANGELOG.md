@@ -1,3 +1,8 @@
+## 0.4.48 (九月 02, 2022)
+
+- chore: update bump-version
+- chore: add github actions
+
 ## 0.4.46 (August 30, 2022)
 
 - chore: fix production cache and fullstack-react building
