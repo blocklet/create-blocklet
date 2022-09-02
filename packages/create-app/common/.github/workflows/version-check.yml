@@ -9,6 +9,8 @@ on:
       - synchronize
     branches:
       - main
+      - dev
+      - master
 jobs:
   main:
     runs-on: ubuntu-latest
