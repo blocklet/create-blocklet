@@ -100,6 +100,11 @@ const TYPES = [
         color: blue,
       },
       {
+        name: 'doc-site',
+        display: 'doc site',
+        color: blue,
+      },
+      {
         name: 'html',
         display: 'html',
         color: blue,
@@ -272,15 +277,11 @@ async function init() {
     const commonDir = path.join(__dirname, 'common');
     const commonFiles = fs.readdirSync(commonDir);
     for (const file of commonFiles) {
-      if (!['react', 'react-gun'].includes(framework) && file === '_eslintrc.js') {
+      if (!['react', 'react-gun',].includes(framework) && file === '_eslintrc.js') {
         // eslint-disable-next-line no-continue
         continue;
       }
-      if (framework === 'blocklet-page' && ['_eslintignore', '.husky'].includes(file)) {
-        // eslint-disable-next-line no-continue
-        continue;
-      }
-      if (framework === 'express' && ['_eslintignore', '.husky'].includes(file)) {
+      if (['blocklet-page','doc-site'].includes(framework) && ['_eslintignore', '.husky'].includes(file)) {
         // eslint-disable-next-line no-continue
         continue;
       }
