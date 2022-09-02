@@ -2,7 +2,6 @@ name: Blocklet Pages
 title: Blocklet Pages
 description: Content authoring system for blocklets, powered by Blocklet Pages itself
 github: https://github.com/blocklet
-theme: arcblock
 themeConfig:
   colors:
     primary: '#2482F6'

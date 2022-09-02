@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.19",
-    "@arcblock/eslint-config": "^0.2.3",
+    "@arcblock/eslint-config-base": "^0.2.3",
     "eslint": "^8.23.0",
     "husky": "^8.0.1",
     "lint-staged": "^12.5.0",
