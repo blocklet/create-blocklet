@@ -1,6 +1,6 @@
 ## 0.4.49 (九月 13, 2022)
 
-- chore: replace templates name
+- fix: blocklet.md irrelevant content and template name
 
 ## 0.4.48 (九月 02, 2022)
 
