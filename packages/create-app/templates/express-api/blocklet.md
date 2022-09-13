@@ -1,3 +1,3 @@
-# template-react
+# template-express
 
-A react template for creating a new blocklet project.
+A express template for creating a new blocklet project.
