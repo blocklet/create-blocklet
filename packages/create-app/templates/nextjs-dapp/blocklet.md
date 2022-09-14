@@ -1,3 +1,3 @@
-# template-react
+# template-nextjs
 
-A react template for creating a new blocklet project.
+A nextjs template for creating a new blocklet project.

@@ -1,3 +1,3 @@
-# template-react
+# template-react-gun
 
-A react template for creating a new blocklet project.
+A react gun for creating a new blocklet project.
