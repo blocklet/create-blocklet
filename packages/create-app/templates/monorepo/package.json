@@ -1,0 +1,28 @@
+{
+    "name": "root",
+    "private": true,
+    "workspaces": [
+        "blocklets/*"
+    ],
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run lint"
+        }
+    },
+    "scripts": {
+        "lint": "lerna run lint",
+        "lint:fix": "lerna run lint:fix",
+        "build": "lerna run clean && lerna run build",
+        "clean": "lerna clean && lerna run clean",
+        "update:deps": "lerna exec --no-bail -- \"ncu -u -f /arcblock\\|ocap\\|abtnode\\|blocklet\\|did-connect/\" && lerna bootstrap && npx yarn-deduplicate yarn.lock && yarn"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@arcblock/eslint-config": "0.2.2",
+        "eslint": "^8.22.0",
+        "husky": "^4.3.8",
+        "prettier": "^2.7.1"
+    }
+}

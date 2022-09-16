@@ -15,7 +15,7 @@ import { getUser } from './lib/index.js';
 import { checkServerInstalled, checkServerRunning, checkSatisfiedVersion, getServerDirectory } from './lib/server.js';
 import { toBlockletDid } from './lib/did.js';
 import { initGitRepo } from './lib/git.js';
-import { copy, emptyDir, isEmpty, isValidPackageName, toValidPackageName } from './lib/utils.js';
+import { copy, emptyDir, isEmpty, isValidPackageName, toValidPackageName, fuzzyQuery } from './lib/utils.js';
 
 const { yellow, red, green, cyan, blue, bold, magenta } = chalk;
 
@@ -23,104 +23,86 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const cwd = process.cwd();
 
-const TYPES = [
+const templates = [
   {
-    name: 'dapp',
+    name: 'react-dapp',
+    display: '[dapp] react',
     color: yellow,
-    frameworks: [
-      {
-        name: 'react',
-        display: 'react',
-        color: yellow,
-      },
-      {
-        name: 'solidjs',
-        display: 'solidjs',
-        color: yellow,
-      },
-      {
-        name: 'vue',
-        display: 'vue3 + vite',
-        color: green,
-      },
-      {
-        name: 'vue2',
-        display: 'vue2 + @vue/cli',
-        color: green,
-      },
-      {
-        name: 'svelte',
-        display: 'svelte',
-        color: magenta,
-      },
-      {
-        name: 'nextjs',
-        display: 'next.js',
-        color: blue,
-      },
-      {
-        name: 'react-gun',
-        display: 'react + gunjs',
-        color: blue,
-      },
-    ],
   },
   {
-    name: 'static',
+    name: 'solidjs-dapp',
+    display: '[dapp] solidjs',
     color: yellow,
-    frameworks: [
-      {
-        name: 'react',
-        display: 'react',
-        color: yellow,
-      },
-      {
-        name: 'solidjs',
-        display: 'solidjs',
-        color: yellow,
-      },
-      {
-        name: 'vue',
-        display: 'vue3 + vite',
-        color: green,
-      },
-      {
-        name: 'vue2',
-        display: 'vue2 + @vue/cli',
-        color: green,
-      },
-      {
-        name: 'svelte',
-        display: 'svelte',
-        color: magenta,
-      },
-      {
-        name: 'blocklet-page',
-        display: 'blocklet page',
-        color: blue,
-      },
-      {
-        name: 'doc-site',
-        display: 'doc site',
-        color: blue,
-      },
-      {
-        name: 'html',
-        display: 'html',
-        color: blue,
-      },
-    ],
   },
   {
-    name: 'api',
+    name: 'vue-dapp',
+    display: '[dapp] vue3 + vite',
+    color: green,
+  },
+  {
+    name: 'vue2-dapp',
+    display: '[dapp] vue2 + @vue/cli',
+    color: green,
+  },
+  {
+    name: 'svelte-dapp',
+    display: '[dapp] svelte',
+    color: magenta,
+  },
+  {
+    name: 'nextjs-dapp',
+    display: '[dapp] next.js',
+    color: blue,
+  },
+  {
+    name: 'react-gun-dapp',
+    display: '[dapp] react + gunjs',
+    color: blue,
+  },
+  {
+    name: 'react-static',
+    display: '[static] react',
     color: yellow,
-    frameworks: [
-      {
-        name: 'express',
-        display: 'express',
-        color: yellow,
-      },
-    ],
+  },
+  {
+    name: 'solidjs-static',
+    display: '[static] solidjs',
+    color: yellow,
+  },
+  {
+    name: 'vue-static',
+    display: '[static] vue3 + vite',
+    color: green,
+  },
+  {
+    name: 'vue2-static',
+    display: '[static] vue2 + @vue/cli',
+    color: green,
+  },
+  {
+    name: 'svelte-static',
+    display: '[static] svelte',
+    color: magenta,
+  },
+  {
+    name: 'blocklet-page',
+    display: '[static] blocklet page',
+    color: blue,
+  },
+  {
+    name: 'doc-site',
+    display: '[static] doc site',
+    color: blue,
+  },
+  {
+    name: 'html-static',
+    display: '[static] html',
+    color: blue,
+  },
+  {
+    name: 'express-api',
+    display: '[api] express',
+    color: yellow,
   },
 ];
 
@@ -135,7 +117,6 @@ const renameFiles = {
 
 async function init() {
   const { version } = await fs.readJSONSync(path.resolve(__dirname, 'package.json'));
-
   await echoBrand({ version });
 
   let targetDir = argv._[0] ? String(argv._[0]) : undefined;
@@ -182,39 +163,36 @@ async function init() {
           validate: (dir) => isValidPackageName(dir) || 'Invalid package.json name',
         },
         {
-          type: 'select',
-          name: 'type',
-          message: 'What type blocklet you want to create:',
-          initial: 0,
-          choices: TYPES.map((type) => {
-            const TYPE_TITLE = {
-              dapp: 'fullstack: webapp with backend code',
-              static: 'webapp: browser only',
-              api: 'api: backend only',
-            };
+          type: 'autocompleteMultiselect',
+          name: 'templateNames',
+          message: 'Choose one or more blocklet templates:',
+          choices: templates.map((template) => {
+            const templateColor = template.color;
             return {
-              title: TYPE_TITLE[type.name],
-              value: type.name,
+              title: templateColor(template.display),
+              value: template.name,
             };
           }),
+          min: 1,
+          suggest: (input, choices) => Promise.resolve(choices.filter((i) => i.title.includes(input))),
         },
+        // 这里需要添加一步 如果选择了 多项 就要提示用户设置主应用
         {
-          type: (typeName) => {
-            const type = TYPES.find((item) => item.name === typeName);
-            return type && type.frameworks ? 'select' : null;
+          type: (templateNames = []) => {
+            return templateNames.length > 1 ? 'select' : null;
           },
-          name: 'framework',
-          message: 'Select a framework:',
-          choices: (typeName) => {
-            const type = TYPES.find((item) => item.name === typeName);
-            return type.frameworks.map((framework) => {
-              const frameworkColor = framework.color;
+          name: 'mainBlocklet',
+          message: 'Please choose the main blocklet',
+          //
+          choices: (templateNames = []) =>
+            templateNames.map((templateName) => {
+              const template = templates.find((x) => x.name === templateName);
               return {
-                title: frameworkColor(framework.display),
-                value: framework.name,
+                title: template.display,
+                value: template.name,
               };
-            });
-          },
+            }),
+          initial: 1,
         },
         {
           type: 'text',
@@ -243,7 +221,7 @@ async function init() {
   }
 
   // user choice associated with prompts
-  const { type, framework, overwrite, packageName, authorName, authorEmail } = result;
+  const { mainBlocklet = null, templateNames = [], overwrite, packageName, authorName, authorEmail } = result;
 
   await echoDocument();
 
@@ -267,96 +245,144 @@ async function init() {
   console.log(`\nScaffolding project in ${cyan(root)}`);
 
   const scaffoldSpinner = ora('Creating project...').start();
-
-  const templateDir = path.join(__dirname, `templates/${framework}-${type}`);
+  // name 是用户输入的项目名称，当有
   const name = packageName || targetDir;
 
-  // TODO: 需要把 common file copy 的逻辑移除，不同的 template 之间的差异越来越多，就会需要越来越多特殊处理的代码，违背了初衷，移除这部分逻辑可能是更好的选择
-  // copy common files
-  (() => {
-    const commonDir = path.join(__dirname, 'common');
-    const commonFiles = fs.readdirSync(commonDir);
-    for (const file of commonFiles) {
-      if (!['react', 'react-gun',].includes(framework) && file === '_eslintrc.js') {
-        // eslint-disable-next-line no-continue
-        continue;
-      }
-      if (['blocklet-page','doc-site'].includes(framework) && ['_eslintignore', '.husky'].includes(file)) {
-        // eslint-disable-next-line no-continue
-        continue;
-      }
-      const targetPath = renameFiles[file] ? path.join(root, renameFiles[file]) : path.join(root, file);
-      copy(path.join(commonDir, file), targetPath);
-    }
-  })();
-
-  // copy template files
-  (() => {
-    const files = fs.readdirSync(templateDir);
-    for (const file of files) {
-      write(file);
-    }
-  })();
-
-  // correctName
-  modifyPackage((pkg) => {
-    pkg.name = name;
-  });
-  modifyBlockletYaml((yamlConfig) => {
-    yamlConfig.name = name;
-    yamlConfig.title = name;
-  });
-  modifyBlockletMd((md) => {
-    return md.replace(/# template-react/g, `# ${name}`);
-  });
-
-  let randomPort;
-  if (['dapp'].includes(type)) {
-    randomPort = await getPort();
+  // 如果选中了多个则说明时 monorepo 类型的模板
+  if (mainBlocklet) {
+    copy(path.join(__dirname, 'templates', 'monorepo'), root);
   }
-  modifyEnv((env) => {
-    if (randomPort) {
-      env.API_PORT = randomPort;
-    }
-    if (!['blocklet-page'].includes(framework)) {
-      if (['react'].includes(framework)) {
-        env.REACT_APP_TITLE = name;
-      } else if (['vue', 'blocklet-page'].includes(framework)) {
-        env.VITE_APP_TITLE = name;
-      } else {
-        env.APP_TITLE = name;
-      }
-    }
-    return env;
-  });
 
-  // patch blocklet author
-  modifyBlockletYaml(async (yamlConfig) => {
-    yamlConfig.author.name = authorName;
-    yamlConfig.author.email = authorEmail;
-  });
-
-  // patch did
-  (() => {
-    const did = toBlockletDid(name);
-    modifyBlockletYaml((yamlConfig) => {
-      yamlConfig.did = did;
-    });
-    modifyPackage((pkg) => {
-      try {
-        if (type === 'dapp') {
-          pkg.scripts['bundle:client'] = ejs.render(pkg.scripts['bundle:client'], { did });
-        } else if (type === 'static') {
-          pkg.scripts.bundle = ejs.render(pkg.scripts.bundle, { did });
+  for (const templateName of templateNames) {
+    const templateDir = path.join(__dirname, `templates/${templateName}`);
+    const finalTemplateName = `${name}-${templateName}`;
+    // TODO: 需要把 common file copy 的逻辑移除，不同的 template 之间的差异越来越多，就会需要越来越多特殊处理的代码，违背了初衷，移除这部分逻辑可能是更好的选择
+    // copy common files
+    (() => {
+      const commonDir = path.join(__dirname, 'common');
+      const commonFiles = fs.readdirSync(commonDir);
+      for (const file of commonFiles) {
+        // 如果选中了多个模板时，应该排除掉这些
+        if (mainBlocklet && ['Makefile', 'version', '_npmrc', '_editorconfig', '_gitignore'].includes(file)) {
+          continue;
         }
-      } catch {
-        console.info('\nNo need to patch bundle script\n');
+        // react 相关的模板使用通用的 eslintrc.js 文件
+        if (!fuzzyQuery(['react', 'react-gun'], templateName) && file === '_eslintrc.js') {
+          // eslint-disable-next-line no-continue
+          continue;
+        }
+        // xmark 相关的模板不添加 .eslintignore 和 .includes
+        if (fuzzyQuery(['blocklet-page', 'doc-site'], templateName) && ['_eslintignore', '.husky'].includes(file)) {
+          // eslint-disable-next-line no-continue
+          continue;
+        }
+        // 如果选中了多个模板，则要将 common file copy 到项目 root 目录下的 blocklets 中
+        const targetPath = renameFiles[file]
+          ? path.join(root, mainBlocklet ? `blocklets/${finalTemplateName}` : '', renameFiles[file])
+          : path.join(root, mainBlocklet ? `blocklets/${finalTemplateName}` : '', file);
+        
+        copy(path.join(commonDir, file), targetPath);
       }
-    });
-    // disabled random logo
-    // const pngIcon = toDidIcon(did, undefined, true);
-    // fs.writeFileSync(path.join(root, 'logo.png'), pngIcon);
-  })();
+    })();
+
+    // copy template files
+    (() => {
+      const files = fs.readdirSync(templateDir);
+      for (const file of files) {
+        write(file, null, templateDir, finalTemplateName);
+      }
+    })();
+
+    modifyPackage(
+      (pkg) => {
+        pkg.name = finalTemplateName;
+      },
+      templateDir,
+      finalTemplateName
+    );
+    modifyBlockletYaml(
+      (yamlConfig) => {
+        yamlConfig.name = finalTemplateName;
+        yamlConfig.title = finalTemplateName;
+      },
+      templateDir,
+      finalTemplateName
+    );
+
+    let randomPort;
+    if (fuzzyQuery(['dapp'], templateName)) {
+      randomPort = await getPort();
+    }
+    modifyEnv(
+      (env) => {
+        if (randomPort) {
+          env.API_PORT = randomPort;
+        }
+        if (!fuzzyQuery(['blocklet-page'], templateName)) {
+          if (fuzzyQuery(['react'], templateName)) {
+            env.REACT_APP_TITLE = finalTemplateName;
+          } else if (fuzzyQuery(['vue', 'blocklet-page'], templateName)) {
+            env.VITE_APP_TITLE = finalTemplateName;
+          } else {
+            env.APP_TITLE = finalTemplateName;
+          }
+        }
+        return env;
+      },
+      templateDir,
+      finalTemplateName
+    );
+
+    // patch blocklet author
+    modifyBlockletYaml(
+      async (yamlConfig) => {
+        yamlConfig.author.name = authorName;
+        yamlConfig.author.email = authorEmail;
+      },
+      templateDir,
+      finalTemplateName
+    );
+
+    // patch did
+    (() => {
+      const did = toBlockletDid(finalTemplateName);
+      modifyBlockletYaml(
+        (yamlConfig) => {
+          yamlConfig.did = did;
+        },
+        templateDir,
+        finalTemplateName
+      );
+      modifyPackage(
+        (pkg) => {
+          try {
+            if (templateName.includes('dapp')) {
+              pkg.scripts['bundle:client'] = ejs.render(pkg.scripts['bundle:client'], { did });
+            } else if (templateName.includes('static')) {
+              pkg.scripts.bundle = ejs.render(pkg.scripts.bundle, { did });
+            }
+            // 如果用户选了多个模板，为其他应用配置好 dev:child 和 deploy:child
+            if (mainBlocklet && templateName !== mainBlocklet) {
+              const mainBlockletDid = toBlockletDid(`${name}-${mainBlocklet}`);
+              pkg.scripts['dev:child'] = ejs.render(pkg.scripts['dev:child'], { did: mainBlockletDid });
+              pkg.scripts['deploy:child'] = ejs.render(pkg.scripts['deploy:child'], { did: mainBlockletDid });
+            }
+            if (!mainBlocklet || templateName === mainBlocklet) {
+              delete pkg.scripts['dev:child'];
+              delete pkg.scripts['deploy:child'];
+            }
+          } catch {
+            console.info('\nNo need to patch bundle script\n');
+          }
+        },
+        templateDir,
+        finalTemplateName
+      );
+      // disabled random logo
+      // const pngIcon = toDidIcon(did, undefined, true);
+      // fs.writeFileSync(path.join(root, 'logo.png'), pngIcon);
+    })();
+  }
 
   scaffoldSpinner.succeed('✨  Done. Now run:\n');
 
@@ -390,14 +416,15 @@ async function init() {
 
     let defaultAgent = 'npm';
     let agentList = ['npm', 'yarn', 'pnpm'];
-    switch (framework) {
-      case 'react':
-      case 'blocklet-page':
-        agentList = ['npm', 'yarn'];
-        break;
-      default:
-        break;
-    }
+
+    // switch (templateNames) {
+    //   case 'react':
+    //   case 'blocklet-page':
+    //     agentList = ['npm', 'yarn'];
+    //     break;
+    //   default:
+    //     break;
+    // }
     if (yes) {
       const { agent } = await prompts({
         name: 'agent',
@@ -465,9 +492,13 @@ async function init() {
     if (!hasStart) {
       // console.log(dim('\n  start it later by:\n'));
       if (root !== cwd) console.log(blue(`  cd ${bold(related)}`));
+      if (mainBlocklet) {
+        console.log(blue(`make init`));
+      } else {
+        console.log(blue(`${defaultAgent === 'yarn' ? 'yarn' : `${defaultAgent} install`}`));
+        console.log(cyan('blocklet dev'));
+      }
 
-      console.log(blue(`  ${defaultAgent === 'yarn' ? 'yarn' : `${defaultAgent} install`}`));
-      console.log(cyan('blocklet dev'));
       console.log('\n', `Find more usage in ${green('README.md')}`, '\n');
     }
   } catch (cancelled) {
@@ -475,45 +506,43 @@ async function init() {
   }
 
   // inside functions
-  function write(file, content) {
-    const targetPath = renameFiles[file] ? path.join(root, renameFiles[file]) : path.join(root, file);
+  function write(file, content, templateDir, finalTemplateName) {
+    const targetPath = renameFiles[file]
+      ? path.join(root, mainBlocklet ? `blocklets/${finalTemplateName}` : '', renameFiles[file])
+      : path.join(root, mainBlocklet ? `blocklets/${finalTemplateName}` : '', file);
     if (content) {
       fs.writeFileSync(targetPath, content);
     } else {
       copy(path.join(templateDir, file), targetPath);
     }
   }
-  function read(file) {
-    const targetPath = path.join(root, file);
+  function read(file, finalTemplateName) {
+    const targetPath = path.join(root, mainBlocklet ? `blocklets/${finalTemplateName}` : '', file);
     if (fs.existsSync(targetPath)) {
       return fs.readFileSync(targetPath, 'utf8');
     }
     return null;
   }
 
-  function modifyPackage(modifyFn = () => {}) {
-    const pkg = JSON.parse(read('package.json'));
+  function modifyPackage(modifyFn = () => {}, templateDir, finalTemplateName) {
+    const pkg = JSON.parse(read('package.json', finalTemplateName));
     modifyFn(pkg);
-    write('package.json', JSON.stringify(pkg, null, 2));
+    write('package.json', JSON.stringify(pkg, null, 2), templateDir, finalTemplateName);
   }
 
-  function modifyBlockletYaml(modifyFn = () => {}) {
-    const blockletYaml = read('blocklet.yml');
+  function modifyBlockletYaml(modifyFn = () => {}, templateDir, finalTemplateName) {
+    const blockletYaml = read('blocklet.yml', finalTemplateName);
     const yamlConfig = YAML.parse(blockletYaml);
     modifyFn(yamlConfig);
-    write('blocklet.yml', YAML.stringify(yamlConfig, 2));
+    write('blocklet.yml', YAML.stringify(yamlConfig, 2), templateDir, finalTemplateName);
   }
-  function modifyBlockletMd(modifyFn = (...args) => ({ ...args })) {
-    const blockletMd = read('blocklet.md', 'utf8');
-    const modifyMd = modifyFn(blockletMd);
-    write('blocklet.md', modifyMd);
-  }
-  function modifyEnv(modifyFn = (...args) => ({ ...args })) {
-    const envContent = read('.env');
+
+  function modifyEnv(modifyFn = (...args) => ({ ...args }), templateDir, finalTemplateName) {
+    const envContent = read('.env', finalTemplateName);
     if (envContent) {
       const env = envfile.parse(envContent);
       modifyFn(env);
-      write('.env', envfile.stringify(env));
+      write('.env', envfile.stringify(env), templateDir, finalTemplateName);
     }
     // else {
     //   console.warn(`\n${yellow('No .env file found, please add one.')}`);

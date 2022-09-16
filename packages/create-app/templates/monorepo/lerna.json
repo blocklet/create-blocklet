@@ -1,0 +1,14 @@
+{
+    "version": "0.1.0",
+    "useWorkspaces": true,
+    "npmClient": "yarn",
+    "command": {
+      "publish": {
+        "message": "[skip ci] %s"
+      }
+    },
+    "packages": [
+      "blocklets/*"
+    ]
+  }
+  

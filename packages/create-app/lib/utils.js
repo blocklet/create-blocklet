@@ -51,3 +51,13 @@ export function emptyDir(dir) {
     }
   }
 }
+
+export function fuzzyQuery(list = [], keyWord = '') {
+  const arr = [];
+  for (var i = 0; i < list.length; i++) {
+    if (keyWord.includes(list[i])) {
+      arr.push(list[i]);
+    }
+  }
+  return arr.length > 0;
+}
