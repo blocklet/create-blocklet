@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create Blocklet](https://github.com/blocklet/create-blocklet).
 
-This blocklet is a monorepo project, which means that there are multiple blocklet applications
+This project is a monorepo project, which means that there are multiple blocklet applications.
 
 ## File Structure
 
