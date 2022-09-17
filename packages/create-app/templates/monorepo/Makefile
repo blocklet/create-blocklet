@@ -10,7 +10,6 @@ dep:
 	@echo "Install dependencies required for this repo..."
 	@lerna bootstrap
 	@lerna link
-	@lerna run build
 
 test:
 	@echo "Running test suites..."
@@ -18,9 +17,6 @@ test:
 build:
 	@echo "Building the software..."
 
-bundle:
-	@echo "Bundling the software..."
-	@npm run bundle
 
 github-init:
 	@make dep

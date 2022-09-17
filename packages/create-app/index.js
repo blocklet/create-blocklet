@@ -15,7 +15,16 @@ import { getUser } from './lib/index.js';
 import { checkServerInstalled, checkServerRunning, checkSatisfiedVersion, getServerDirectory } from './lib/server.js';
 import { toBlockletDid } from './lib/did.js';
 import { initGitRepo } from './lib/git.js';
-import { copy, emptyDir, isEmpty, isValidPackageName, toValidPackageName, fuzzyQuery } from './lib/utils.js';
+import {
+  copy,
+  emptyDir,
+  isEmpty,
+  isValidPackageName,
+  toValidPackageName,
+  fuzzyQuery,
+  checkLearn,
+  checkYarn,
+} from './lib/utils.js';
 
 const { yellow, red, green, cyan, blue, bold, magenta } = chalk;
 
@@ -250,6 +259,8 @@ async function init() {
 
   // 如果选中了多个则说明时 monorepo 类型的模板
   if (mainBlocklet) {
+    await checkLearn();
+    await checkYarn();
     copy(path.join(__dirname, 'templates', 'monorepo'), root);
   }
 
@@ -278,9 +289,9 @@ async function init() {
         }
         // 如果选中了多个模板，则要将 common file copy 到项目 root 目录下的 blocklets 中
         const targetPath = renameFiles[file]
-          ? path.join(root, mainBlocklet ? `blocklets/${finalTemplateName}` : '', renameFiles[file])
-          : path.join(root, mainBlocklet ? `blocklets/${finalTemplateName}` : '', file);
-        
+          ? path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', renameFiles[file])
+          : path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
+
         copy(path.join(commonDir, file), targetPath);
       }
     })();
@@ -289,7 +300,7 @@ async function init() {
     (() => {
       const files = fs.readdirSync(templateDir);
       for (const file of files) {
-        write(file, null, templateDir, finalTemplateName);
+        write(file, null, templateDir, templateName);
       }
     })();
 
@@ -298,7 +309,7 @@ async function init() {
         pkg.name = finalTemplateName;
       },
       templateDir,
-      finalTemplateName
+      templateName
     );
     modifyBlockletYaml(
       (yamlConfig) => {
@@ -306,7 +317,7 @@ async function init() {
         yamlConfig.title = finalTemplateName;
       },
       templateDir,
-      finalTemplateName
+      templateName
     );
 
     let randomPort;
@@ -330,7 +341,7 @@ async function init() {
         return env;
       },
       templateDir,
-      finalTemplateName
+      templateName
     );
 
     // patch blocklet author
@@ -340,7 +351,7 @@ async function init() {
         yamlConfig.author.email = authorEmail;
       },
       templateDir,
-      finalTemplateName
+      templateName
     );
 
     // patch did
@@ -351,7 +362,7 @@ async function init() {
           yamlConfig.did = did;
         },
         templateDir,
-        finalTemplateName
+        templateName
       );
       modifyPackage(
         (pkg) => {
@@ -376,7 +387,7 @@ async function init() {
           }
         },
         templateDir,
-        finalTemplateName
+        templateName
       );
       // disabled random logo
       // const pngIcon = toDidIcon(did, undefined, true);
@@ -506,43 +517,43 @@ async function init() {
   }
 
   // inside functions
-  function write(file, content, templateDir, finalTemplateName) {
+  function write(file, content, templateDir, templateName) {
     const targetPath = renameFiles[file]
-      ? path.join(root, mainBlocklet ? `blocklets/${finalTemplateName}` : '', renameFiles[file])
-      : path.join(root, mainBlocklet ? `blocklets/${finalTemplateName}` : '', file);
+      ? path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', renameFiles[file])
+      : path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
     if (content) {
       fs.writeFileSync(targetPath, content);
     } else {
       copy(path.join(templateDir, file), targetPath);
     }
   }
-  function read(file, finalTemplateName) {
-    const targetPath = path.join(root, mainBlocklet ? `blocklets/${finalTemplateName}` : '', file);
+  function read(file, templateName) {
+    const targetPath = path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
     if (fs.existsSync(targetPath)) {
       return fs.readFileSync(targetPath, 'utf8');
     }
     return null;
   }
 
-  function modifyPackage(modifyFn = () => {}, templateDir, finalTemplateName) {
-    const pkg = JSON.parse(read('package.json', finalTemplateName));
+  function modifyPackage(modifyFn = () => {}, templateDir, templateName) {
+    const pkg = JSON.parse(read('package.json', templateName));
     modifyFn(pkg);
-    write('package.json', JSON.stringify(pkg, null, 2), templateDir, finalTemplateName);
+    write('package.json', JSON.stringify(pkg, null, 2), templateDir, templateName);
   }
 
-  function modifyBlockletYaml(modifyFn = () => {}, templateDir, finalTemplateName) {
-    const blockletYaml = read('blocklet.yml', finalTemplateName);
+  function modifyBlockletYaml(modifyFn = () => {}, templateDir, templateName) {
+    const blockletYaml = read('blocklet.yml', templateName);
     const yamlConfig = YAML.parse(blockletYaml);
     modifyFn(yamlConfig);
-    write('blocklet.yml', YAML.stringify(yamlConfig, 2), templateDir, finalTemplateName);
+    write('blocklet.yml', YAML.stringify(yamlConfig, 2), templateDir, templateName);
   }
 
-  function modifyEnv(modifyFn = (...args) => ({ ...args }), templateDir, finalTemplateName) {
-    const envContent = read('.env', finalTemplateName);
+  function modifyEnv(modifyFn = (...args) => ({ ...args }), templateDir, templateName) {
+    const envContent = read('.env', templateName);
     if (envContent) {
       const env = envfile.parse(envContent);
       modifyFn(env);
-      write('.env', envfile.stringify(env), templateDir, finalTemplateName);
+      write('.env', envfile.stringify(env), templateDir, templateName);
     }
     // else {
     //   console.warn(`\n${yellow('No .env file found, please add one.')}`);
