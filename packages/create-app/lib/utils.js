@@ -1,4 +1,4 @@
-import { fs, path, $, echo, chalk } from 'zx';
+import { fs, path, $, echo } from 'zx';
 $.verbose = false;
 
 // common functions
@@ -65,8 +65,9 @@ export function fuzzyQuery(list = [], keyWord = '') {
 
 export async function checkLearn() {
   const checkResult = await $`type lerna >/dev/null 2>&1 || echo "false"`;
+  console.log('checkLearn==', checkResult.stdout.trim());
   if (checkResult.stdout.trim() === 'false') {
-    console.log(`\n ${chalk.cyan('install lerna...')}`);
+    console.log('\n install lerna...');
     const output = await $`npm install -g lerna`;
     echo(output);
   }
@@ -74,8 +75,9 @@ export async function checkLearn() {
 
 export async function checkYarn() {
   const checkResult = await $`type yarn >/dev/null 2>&1 || echo "false"`;
+  console.log('checkYarn==', checkResult.stdout.trim());
   if (checkResult.stdout.trim() === 'false') {
-    console.log(`\n ${chalk.cyan('install yarn...')}`);
+    console.log('\n install yarn...');
     const output = await $`npm install -g yarn`;
     echo(output);
   }
