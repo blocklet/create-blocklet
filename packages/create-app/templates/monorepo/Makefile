@@ -20,5 +20,3 @@ build:
 
 github-init:
 	@make dep
-
-include .makefiles/*.mk
