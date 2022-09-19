@@ -35,27 +35,27 @@ const cwd = process.cwd();
 const templates = [
   {
     name: 'react-dapp',
-    display: '[dapp] react',
+    display: '[dapp] react + express.js',
     color: yellow,
   },
   {
     name: 'solidjs-dapp',
-    display: '[dapp] solidjs',
+    display: '[dapp] solid + express.js',
     color: yellow,
   },
   {
     name: 'vue-dapp',
-    display: '[dapp] vue3 + vite',
+    display: '[dapp] vue3 + express.js',
     color: green,
   },
   {
     name: 'vue2-dapp',
-    display: '[dapp] vue2 + @vue/cli',
+    display: '[dapp] vue2 + express.js',
     color: green,
   },
   {
     name: 'svelte-dapp',
-    display: '[dapp] svelte',
+    display: '[dapp] svelte + express.js',
     color: magenta,
   },
   {
@@ -65,7 +65,7 @@ const templates = [
   },
   {
     name: 'react-gun-dapp',
-    display: '[dapp] react + gunjs',
+    display: '[dapp] react + gun.js + express.js',
     color: blue,
   },
   {
@@ -110,7 +110,7 @@ const templates = [
   },
   {
     name: 'express-api',
-    display: '[api] express',
+    display: '[api] express.js',
     color: yellow,
   },
 ];
