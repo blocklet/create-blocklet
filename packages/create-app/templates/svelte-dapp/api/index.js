@@ -27,7 +27,7 @@ if (isProduction) {
   app.use(cors());
   app.use(compression());
 
-  const staticDir = path.resolve(__dirname, '../', 'dist');
+  const staticDir = path.resolve(process.env.BLOCKLET_APP_DIR, 'dist');
   app.use(express.static(staticDir, { maxAge: '30d', index: false }));
   app.use(router);
   app.use(fallback('index.html', { root: staticDir }));

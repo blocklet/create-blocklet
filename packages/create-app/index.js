@@ -22,7 +22,7 @@ import {
   isValidPackageName,
   toValidPackageName,
   fuzzyQuery,
-  checkLearn,
+  checkLerna,
   checkYarn,
 } from './lib/utils.js';
 
@@ -259,7 +259,7 @@ async function init() {
 
   // 如果选中了多个则说明时 monorepo 类型的模板
   if (mainBlocklet) {
-    await checkLearn();
+    await checkLerna();
     await checkYarn();
     copy(path.join(__dirname, 'templates', 'monorepo'), root);
   }

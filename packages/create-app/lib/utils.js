@@ -63,7 +63,7 @@ export function fuzzyQuery(list = [], keyWord = '') {
   return arr.length > 0;
 }
 
-export async function checkLearn() {
+export async function checkLerna() {
   const checkResult = await $`type lerna >/dev/null 2>&1 || echo "false"`;
   if (checkResult.stdout.trim() === 'false') {
     console.log(`\n ${chalk.cyan('install lerna...')}`);
