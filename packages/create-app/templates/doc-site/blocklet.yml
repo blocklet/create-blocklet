@@ -1,0 +1,61 @@
+name: template-doc-site
+title: Doc Site Template
+description: A Blocklet Server blocklet
+keywords:
+  - blocklet
+  - doc-site
+  - xmark
+group: static
+did: ''
+main: dist
+author:
+  name: Arcblock
+  email: blocklet@arcblock.io
+repository:
+  type: git
+  url: 'git+https://github.com/blocklet/create-blocklet.git'
+specVersion: 1.1.1
+version: 0.1.0
+logo: logo.png
+files:
+  - logo.png
+  - screenshots
+interfaces:
+  - type: web
+    name: publicUrl
+    path: /
+    prefix: '*'
+    port: BLOCKLET_PORT
+    protocol: http
+community: ''
+documentation: ''
+homepage: ''
+license: ''
+payment:
+  price: []
+  share: []
+timeout:
+  start: 60
+requirements:
+  abtnode: '>=1.6.22'
+  os: '*'
+  cpu: '*'
+scripts:
+  dev: npm run start
+environments: []
+capabilities: {}
+screenshots: []
+children: []
+navigation:
+  - title:
+      en: Doc Site 
+      zh: 文档站点模板
+    link:
+      en: /en
+      zh: /zh
+  - title:
+      en: ArcBlock
+      zh: ArcBlock
+    link:
+      en: https://www.arcblock.io/en/
+      zh: https://www.arcblock.io/zh/

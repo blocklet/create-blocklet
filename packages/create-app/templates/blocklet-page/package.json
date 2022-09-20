@@ -1,0 +1,19 @@
+{
+  "name": "blocklet-page",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "blocklet dev",
+    "start": "xmark start",
+    "clean": "rm -rf .blocklet && rm -rf node_modules/.vite",
+    "build": "xmark build",
+    "bundle": "npm run clean && xmark build && blocklet bundle --create-release",
+    "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
+    "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
+    "deploy:child": "npm run bundle && blocklet deploy .blocklet/bundle --app-did=<%= did %>",
+    "dev:child": "blocklet dev --component --app-did=<%= did %>"
+  },
+  "dependencies": {
+    "@xmark/cli": "^2.4.44"
+  }
+}

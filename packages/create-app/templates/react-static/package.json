@@ -11,6 +11,8 @@
     "bundle": "npm run clean && PUBLIC_URL='/.blocklet/proxy/<%= did %>' craco build && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
+    "deploy:child": "npm run bundle && blocklet deploy .blocklet/bundle --app-did=<%= did %>",
+    "dev:child": "blocklet dev --component --app-did=<%= did %>",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -37,12 +39,12 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.4.0"
   },
   "devDependencies": {
     "@arcblock/eslint-config": "^0.2.3",
     "@craco/craco": "^6.4.5",
-    "eslint": "^8.23.0",
+    "eslint": "^8.23.1",
     "husky": "^8.0.1",
     "lint-staged": "^12.5.0",
     "prettier": "^2.7.1",

@@ -1,3 +1,9 @@
+## 0.4.50 (九月 17, 2022)
+
+- chore: update monorepo readme
+- chore: support monorepo template
+- chore: rename blocklet-page&&doc-site
+
 ## 0.4.49 (九月 13, 2022)
 
 - fix: blocklet.md irrelevant content and template name

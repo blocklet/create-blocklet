@@ -15,15 +15,17 @@
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
     "lint": "eslint src api --ext .mjs,.js,.vue",
     "lint:fix": "npm run lint -- --fix",
+    "deploy:child": "npm run bundle && blocklet deploy .blocklet/bundle --app-did=<%= did %>",
+    "dev:child": "blocklet dev --component --app-did=<%= did %>",
     "prepare": "husky install"
   },
   "dependencies": {
-    "@arcblock/did-auth": "^1.17.16",
-    "@arcblock/did-auth-storage-nedb": "^1.6.3",
-    "@blocklet/sdk": "^1.8.13",
-    "@ocap/client": "^1.17.16",
-    "@ocap/mcrypto": "^1.17.16",
-    "@ocap/wallet": "^1.17.16",
+    "@arcblock/did-auth": "^1.17.19",
+    "@arcblock/did-auth-storage-nedb": "^1.7.1",
+    "@blocklet/sdk": "^1.8.22",
+    "@ocap/client": "^1.17.19",
+    "@ocap/mcrypto": "^1.17.19",
+    "@ocap/wallet": "^1.17.19",
     "axios": "^0.27.2",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
@@ -33,21 +35,21 @@
     "express-async-errors": "^3.1.1",
     "express-history-api-fallback": "^2.2.1",
     "vite-plugin-html": "^3.2.0",
-    "vue": "^3.2.37"
+    "vue": "^3.2.39"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^3.0.3",
-    "eslint": "^8.23.0",
+    "@vitejs/plugin-vue": "^3.1.0",
+    "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-vue": "^9.4.0",
+    "eslint-plugin-vue": "^9.5.1",
     "husky": "^8.0.1",
     "lint-staged": "^12.5.0",
-    "nodemon": "^2.0.19",
+    "nodemon": "^2.0.20",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.7.1",
-    "vite": "^3.0.9",
-    "vite-plugin-blocklet": "^0.4.49"
+    "vite": "^3.1.2",
+    "vite-plugin-blocklet": "^0.4.50"
   },
   "lint-staged": {
     "*.{mjs,js,vue}": [

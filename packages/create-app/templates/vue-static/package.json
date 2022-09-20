@@ -11,22 +11,24 @@
     "bundle": "npm run clean && vite build && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
+    "deploy:child": "npm run bundle && blocklet deploy .blocklet/bundle --app-did=<%= did %>",
+    "dev:child": "blocklet dev --component --app-did=<%= did %>",
     "prepare": "husky install"
   },
   "dependencies": {
-    "vue": "^3.2.37"
+    "vue": "^3.2.39"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^3.0.3",
-    "eslint": "^8.23.0",
+    "@vitejs/plugin-vue": "^3.1.0",
+    "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-vue": "^9.4.0",
+    "eslint-plugin-vue": "^9.5.1",
     "husky": "^8.0.1",
     "lint-staged": "^12.5.0",
     "prettier": "^2.7.1",
-    "vite": "^3.0.9",
-    "vite-plugin-blocklet": "^0.4.49",
+    "vite": "^3.1.2",
+    "vite-plugin-blocklet": "^0.4.50",
     "vite-plugin-html": "^3.2.0"
   },
   "lint-staged": {

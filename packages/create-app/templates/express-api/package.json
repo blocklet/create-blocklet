@@ -12,6 +12,8 @@
     "bundle": "npm run clean && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
+    "deploy:child": "npm run bundle && blocklet deploy .blocklet/bundle --app-did=<%= did %>",
+    "dev:child": "blocklet dev --component --app-did=<%= did %>",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -27,18 +29,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@arcblock/did-auth-storage-nedb": "^1.6.3",
-    "@blocklet/sdk": "^1.8.13",
-    "@ocap/client": "^1.17.16",
+    "@arcblock/did-auth-storage-nedb": "^1.7.1",
+    "@blocklet/sdk": "^1.8.22",
+    "@ocap/client": "^1.17.19",
     "dotenv-flow": "^3.2.0",
     "express": "^4.18.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19",
     "@arcblock/eslint-config-base": "^0.2.3",
-    "eslint": "^8.23.0",
+    "eslint": "^8.23.1",
     "husky": "^8.0.1",
     "lint-staged": "^12.5.0",
+    "nodemon": "^2.0.20",
     "prettier": "^2.7.1"
   }
 }

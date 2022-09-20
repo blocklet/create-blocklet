@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "blocklet dev",
-    "dev:child": "blocklet dev --component --app-did=z8iZuvjcXn3Lj1DXsaKkAPvL4y1nf5SSsUsXc --mount-point=docs",
+    "dev:child": "blocklet dev --component --app-did=z8iZuvjcXn3Lj1DXsaKkAPvL4y1nf5SSsUsXc",
     "start": "xmark start",
     "build": "xmark build",
     "clean": "rm -rf .blocklet",
@@ -13,9 +13,9 @@
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json"
   },
   "dependencies": {
-    "@xmark/cli": "^2.4.32",
-    "@xmark/client": "^2.4.32",
-    "@xmark/theme-docs": "^2.4.32"
+    "@xmark/cli": "^2.4.44",
+    "@xmark/client": "^2.4.44",
+    "@xmark/theme-docs": "^2.4.44"
   },
   "version": "0.4.31"
 }

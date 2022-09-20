@@ -1,4 +1,5 @@
-import { fs, path } from 'zx';
+import { fs, path, $, echo, chalk } from 'zx';
+$.verbose = false;
 
 // common functions
 export function copy(src, dest) {
@@ -49,5 +50,33 @@ export function emptyDir(dir) {
     } else {
       fs.unlinkSync(abs);
     }
+  }
+}
+
+export function fuzzyQuery(list = [], keyWord = '') {
+  const arr = [];
+  for (var i = 0; i < list.length; i++) {
+    if (keyWord.includes(list[i])) {
+      arr.push(list[i]);
+    }
+  }
+  return arr.length > 0;
+}
+
+export async function checkLerna() {
+  const checkResult = await $`type lerna >/dev/null 2>&1 || echo "false"`;
+  if (checkResult.stdout.trim() === 'false') {
+    console.log(`\n ${chalk.cyan('install lerna...')}`);
+    const output = await $`npm install -g lerna`;
+    echo(output);
+  }
+}
+
+export async function checkYarn() {
+  const checkResult = await $`type yarn >/dev/null 2>&1 || echo "false"`;
+  if (checkResult.stdout.trim() === 'false') {
+    console.log(`\n ${chalk.cyan('install yarn...')}`);
+    const output = await $`npm install -g yarn`;
+    echo(output);
   }
 }
