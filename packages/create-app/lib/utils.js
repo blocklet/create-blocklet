@@ -7,7 +7,7 @@ export function copy(src, dest) {
   if (stat.isDirectory()) {
     copyDir(src, dest);
   } else {
-    fs.copyFileSync(src, dest);
+    fs.copySync(src, dest);
   }
 }
 

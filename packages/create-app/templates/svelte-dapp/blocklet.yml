@@ -4,7 +4,7 @@ description: A Blocklet Server blocklet
 keywords:
   - blocklet
   - svelte
-group: static
+group: dapp
 did: ''
 main: dist
 author:

@@ -115,15 +115,6 @@ const templates = [
   },
 ];
 
-const renameFiles = {
-  _gitignore: '.gitignore',
-  '_eslintrc.js': '.eslintrc.js',
-  _eslintignore: '.eslintignore',
-  _npmrc: '.npmrc',
-  _editorconfig: '.editorconfig',
-  _prettierrc: '.prettierrc',
-};
-
 async function init() {
   const { version } = await fs.readJSONSync(path.resolve(__dirname, 'package.json'));
   await echoBrand({ version });
@@ -273,24 +264,16 @@ async function init() {
       const commonDir = path.join(__dirname, 'common');
       const commonFiles = fs.readdirSync(commonDir);
       for (const file of commonFiles) {
-        // 如果选中了多个模板时，应该排除掉这些
-        if (mainBlocklet && ['Makefile', 'version', '_npmrc', '_editorconfig', '_gitignore'].includes(file)) {
+        // 如果选择多个模板，每个子 package 中 只会包含必要的 文件
+        if (mainBlocklet && !['screenshots', 'public', 'logo.png', '_prettierrc'].includes(file)) {
           continue;
         }
-        // react 相关的模板使用通用的 eslintrc.js 文件
-        if (!fuzzyQuery(['react', 'react-gun'], templateName) && file === '_eslintrc.js') {
+        // xmark 相关的模板不添加 .husky
+        if (fuzzyQuery(['blocklet-page', 'doc-site'], templateName) && ['.husky'].includes(file)) {
           // eslint-disable-next-line no-continue
           continue;
         }
-        // xmark 相关的模板不添加 .eslintignore 和 .includes
-        if (fuzzyQuery(['blocklet-page', 'doc-site'], templateName) && ['_eslintignore', '.husky'].includes(file)) {
-          // eslint-disable-next-line no-continue
-          continue;
-        }
-        // 如果选中了多个模板，则要将 common file copy 到项目 root 目录下的 blocklets 中
-        const targetPath = renameFiles[file]
-          ? path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', renameFiles[file])
-          : path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
+        const targetPath = path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
 
         copy(path.join(commonDir, file), targetPath);
       }
@@ -314,7 +297,7 @@ async function init() {
     modifyBlockletYaml(
       (yamlConfig) => {
         yamlConfig.name = finalTemplateName;
-        yamlConfig.title = finalTemplateName;
+        yamlConfig.title = templateName;
       },
       templateDir,
       templateName
@@ -518,9 +501,7 @@ async function init() {
 
   // inside functions
   function write(file, content, templateDir, templateName) {
-    const targetPath = renameFiles[file]
-      ? path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', renameFiles[file])
-      : path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
+    const targetPath = path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
     if (content) {
       fs.writeFileSync(targetPath, content);
     } else {
