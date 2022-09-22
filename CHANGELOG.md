@@ -1,3 +1,8 @@
+## 0.4.51 (九月 22, 2022)
+
+- fix: single project name
+- fix: bugbash-0921
+
 ## 0.4.50 (九月 17, 2022)
 
 - chore: update monorepo readme
