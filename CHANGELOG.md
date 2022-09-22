@@ -1,3 +1,7 @@
+## 0.4.52 (九月 22, 2022)
+
+- fix: monorepo bump version
+
 ## 0.4.51 (九月 22, 2022)
 
 - fix: single project name
