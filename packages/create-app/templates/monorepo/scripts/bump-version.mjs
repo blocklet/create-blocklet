@@ -1,11 +1,25 @@
 /* eslint-disable no-console */
 import { execSync } from 'child_process';
-import { $, chalk, fs } from 'zx';
+import { $, chalk, fs, path, YAML } from 'zx';
 
 // or use pnpm to bump version: `pnpm -r --filter {packages/*, themes/*} -- pnpm version`
-execSync('bumpp package.json packages/*/package.json plugins/*/package.json', { stdio: 'inherit' });
+execSync('bumpp package.json blocklets/*/package.json', { stdio: 'inherit' });
 
 const { version } = await fs.readJSON('package.json');
+
+(async () => {
+  console.log(chalk.greenBright(`[info]: start to modify blocklets version to ${version}`));
+  const dirPath = path.join(__dirname, '../blocklets');
+  let pathList = await fs.readdirSync(dirPath);
+  pathList = pathList.map((item) => `${dirPath}/${item}/blocklet.yml`);
+  for (const ymlPath of pathList) {
+    const blockletYaml = await fs.readFileSync(ymlPath, 'utf8');
+    const yamlConfig = YAML.parse(blockletYaml);
+    yamlConfig.version = version;
+    fs.writeFileSync(ymlPath, YAML.stringify(yamlConfig, 2));
+  }
+  console.log(chalk.greenBright('[info]: all blocklets version modified.'));
+})();
 
 console.log(`\nNow you can make adjustments to ${chalk.cyan('CHANGELOG.md')}. Then press enter to continue.`);
 

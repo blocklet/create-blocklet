@@ -46,7 +46,7 @@
     "prettier": "^2.7.1",
     "svelte": "^3.50.1",
     "vite": "^3.1.2",
-    "vite-plugin-blocklet": "^0.4.50",
+    "vite-plugin-blocklet": "^0.4.51",
     "vite-plugin-html": "^3.2.0"
   },
   "lint-staged": {
