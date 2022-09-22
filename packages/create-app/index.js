@@ -115,6 +115,13 @@ const templates = [
   },
 ];
 
+const renameFiles = {
+  _gitignore: '.gitignore',
+  _npmrc: '.npmrc',
+  _editorconfig: '.editorconfig',
+  _prettierrc: '.prettierrc',
+};
+
 async function init() {
   const { version } = await fs.readJSONSync(path.resolve(__dirname, 'package.json'));
   await echoBrand({ version });
@@ -273,7 +280,9 @@ async function init() {
           // eslint-disable-next-line no-continue
           continue;
         }
-        const targetPath = path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
+        const targetPath = renameFiles[file]
+          ? path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', renameFiles[file])
+          : path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
 
         copy(path.join(commonDir, file), targetPath);
       }
@@ -289,15 +298,15 @@ async function init() {
 
     modifyPackage(
       (pkg) => {
-        pkg.name = finalTemplateName;
+        pkg.name = mainBlocklet ? finalTemplateName : name;
       },
       templateDir,
       templateName
     );
     modifyBlockletYaml(
       (yamlConfig) => {
-        yamlConfig.name = finalTemplateName;
-        yamlConfig.title = templateName;
+        yamlConfig.name = mainBlocklet ? finalTemplateName : name;
+        yamlConfig.title = mainBlocklet ? templateName : name;
       },
       templateDir,
       templateName
@@ -501,7 +510,9 @@ async function init() {
 
   // inside functions
   function write(file, content, templateDir, templateName) {
-    const targetPath = path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
+    const targetPath = renameFiles[file]
+      ? path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', renameFiles[file])
+      : path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
     if (content) {
       fs.writeFileSync(targetPath, content);
     } else {
