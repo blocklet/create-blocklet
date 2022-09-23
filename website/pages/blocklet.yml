@@ -46,7 +46,14 @@ scripts:
 environments: []
 capabilities: {}
 screenshots: []
-children: []
+children:
+  - name: meilisearch
+    mountPoint: /meilisearch
+    source:
+      store:
+        - https://test.store.blocklet.dev
+      name: meilisearch
+      version: latest
 navigation:
   - child: create-blocklet-docs-site
     title:

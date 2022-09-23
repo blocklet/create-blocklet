@@ -15,6 +15,7 @@
   "dependencies": {
     "@xmark/cli": "^2.4.52",
     "@xmark/client": "^2.4.52",
+    "@xmark/plugin-docs-indexer": "^2.4.52",
     "@xmark/theme-docs": "^2.4.52"
   },
   "version": "0.4.31"

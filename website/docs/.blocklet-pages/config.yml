@@ -3,11 +3,16 @@ title: Create Blocklet
 description: Bootstrap a blocklet within seconds
 theme: docs
 github: https://github.com/blocklet/create-blocklet
+plugins:
+  - resolve: '@xmark/plugin-docs-indexer'
+optimizeDeps:
+  include:
+    - docs-searchbar.js
 themeConfig:
   colors:
     primary: '#25C99B'
   sidebar:
-    en: 
+    en:
       - text: Getting Started
         items:
           - text: Intro
