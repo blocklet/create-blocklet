@@ -1,3 +1,9 @@
+## 0.4.53 (九月 24, 2022)
+
+- chore: update deps
+- chore: node-linker=hoisted
+- feat: add docs search
+
 ## 0.4.52 (九月 22, 2022)
 
 - fix: monorepo bump version

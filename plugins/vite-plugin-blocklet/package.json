@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-blocklet",
   "type": "module",
-  "version": "0.4.52",
+  "version": "0.4.53",
   "description": "",
   "main": "index.js",
   "files": [
@@ -24,7 +24,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "rollup": "^2.79.0"
+    "rollup": "^2.79.1"
   },
   "dependencies": {
     "@arcblock/did": "^1.17.19",
