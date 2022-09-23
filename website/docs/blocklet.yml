@@ -48,14 +48,7 @@ scripts:
 environments: []
 capabilities: {}
 screenshots: []
-children:
-  - name: meilisearch
-    mountPoint: /meilisearch
-    source:
-      store:
-        - https://test.store.blocklet.dev
-      name: meilisearch
-      version: latest
+children: []
 navigation:
   - title:
       en: Docs
