@@ -20,7 +20,7 @@
   "author": "Liang Yongzhuo",
   "license": "ISC",
   "devDependencies": {
-    "rollup": "^2.79.0",
+    "rollup": "^2.79.1",
     "vite": "^2.9.15"
   }
 }
