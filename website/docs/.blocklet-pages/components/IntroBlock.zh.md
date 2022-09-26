@@ -8,37 +8,38 @@ col: 2
 gap: 2
 list:
   - icon: i-mdi:gesture-two-double-tap
-    title: 新手入门
+    title: 入门指南
     description: !md |
-      在几分钟内启动并运行你的第一个 Blocklet Pages 项目
+      在几分钟内启动并运行您的第一个 Blocklet 项目。
 
-      - [配置开发环境](/en/quick-start/blocklet-server)
-      - [创建第一个网站](/en/quick-start/create-blocklet)
+      - [配置开发环境](/docs/zh/quick-start/blocklet-server)
+      - [创建第一个应用](/docs/zh/quick-start/hello-blocklet)
+      - [选择应用模板](/docs/zh/templates)
   - icon: i-mdi:chart-tree
-    title: 概念解惑
+    title: 资源传送门
     description: !md |
-      了解 Blocklet Pages 的核心概念和工作原理
+      对 Blocklet 开发者有用的其他资源。
 
-      - [Blocklet pages 核心概念](/en/conceptual/core-concepts)
-      - [插件工作原理](/en/conceptual/how-plugin-works)
+      - [Blocklet Pages](https://pages.blocklet.io)
+      - [Blocklet CLI](https://developer.blocklet.io)
+      - [Blocklet SDK](https://developer.blocklet.io)
+      - [Blocklet UI](https://developer.blocklet.io)
   - icon: i-mdi:television-guide
     title: 操作手册
     description: !md |
-      了解如何使用 Blocklet Pages 来构建、扩展、打包和发布网站或文档站
+      学习如何使用 Create Blocklet 的各种模板。
 
-      - [创建一个网站](/en/guides/bootstrap-website)
-      - [更新网站内容](/en/guides/compose-website)
-      - [创建一个文档站](/en/guides/bootstrap-docsite)
-      - [更新文档站内容](/en/guides/compose-docsite)
-      - [构建和发布网站](/en/guides/build-and-ship-website)
+      - [创建单个应用](/docs/zh/how-to/create-single-blocklet)
+      - [创建组合应用](/docs/zh/how-to/create-blocklet-composition)
+      - [自定义应用](/docs/zh/how-to/customize-blocklet)
+      - [管理应用版本](/docs/zh/how-to/manage-blocklet-release)
+      - [添加新模板](/docs/zh/how-to/add-new-template)
   - icon: i-mdi:comment-quote-outline
     title: 参考指南
     description: !md |
-      获取使用 Blocklet Pages 建立网站和文档站的详细指南
+      获取用 Create Blocklet 创建的应用的详细介绍。
 
-      - [路由和多语言](/en/reference/routing)
-      - [主题支持](/en/reference/themes)
-      - [MDX 语法](/en/reference/mdx-syntax)
-      - [YAML 语法](/en/reference/yaml-syntax)
-      - [最佳实践](/en/best-practices)
+      - [单应用目录结构](/docs/zh/reference/blocklet-structure)
+      - [组合应用结构](/docs/zh/reference/composition-structure)
+      - [可用的命名和脚本](/docs/zh/reference/npm-scripts)
 ---

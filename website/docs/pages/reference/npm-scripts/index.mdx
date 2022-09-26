@@ -1,10 +1,31 @@
 ---
 layout: 'documentation'
-title: Available npm scripts
+title: Available Scripts
+priority: 4
 ---
 
-:::Alert
-this page is a draft and need to be updated
-:::
+In the current project, you can run the following script:
 
-  
+## yarn dev
+
+Run the blocklet project in development mode (this command requires the @blocklet/ cli tool installed in the development environment). After running the command, wait for a moment, the terminal will print a URL. You can view the current project through this URL.
+
+## yarn bundle
+
+Package the project into an application package that can be deployed to Blocklet Server. The packaged product is compressed and the file name contains the hash value. At this point, your Blocklet project is ready to deploy to Blocklet Server.
+
+## yarn deploy
+
+This command allows you to easily deploy your packaged Blocklet application to your local Blocklet Server (make sure your Blocklet Server is currently running).
+
+## yarn upload
+
+Upload a project to the Blocklet Store. As long as you are a Blocklet Store developer user, you can use this command to upload your project to the Blocklet Store to which you have access.
+
+## yarn lint
+
+Use Eslint to check your code.
+
+## yarn lint\:fix
+
+Use Eslint to quickly fix your code.

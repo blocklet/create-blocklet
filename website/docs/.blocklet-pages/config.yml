@@ -29,7 +29,7 @@ themeConfig:
         items:
           - text: Create single blocklet
             link: /how-to/create-single-blocklet
-          - text: Create blocklet composition
+          - text: Create composition blocklet
             link: /how-to/create-blocklet-composition
           - text: Customize your blocklet
             link: /how-to/customize-blocklet
