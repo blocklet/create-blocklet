@@ -63,7 +63,7 @@
   "devDependencies": {
     "@arcblock/eslint-config": "^0.2.3",
     "@craco/craco": "^6.4.5",
-    "eslint": "^8.23.1",
+    "eslint": "^8.24.0",
     "husky": "^8.0.1",
     "lint-staged": "^12.5.0",
     "nodemon": "^2.0.20",

@@ -19,7 +19,7 @@ importers:
       boxen: ^6.2.1
       ejs: ^3.1.8
       envfile: ^6.18.0
-      eslint: ^8.23.1
+      eslint: ^8.24.0
       figlet: ^1.5.2
       get-port: ^6.1.2
       gradient-string: ^2.0.2
@@ -48,8 +48,8 @@ importers:
       terminal-link: 3.0.0
       zx: 7.0.7
     devDependencies:
-      '@arcblock/eslint-config-base': 0.2.2_lpvhfrfofky3e6gkwtrv5gvhfa
-      eslint: 8.23.1
+      '@arcblock/eslint-config-base': 0.2.2_uoqzb7ub56apwdxrwurswvvfwe
+      eslint: 8.24.0
       prettier: 2.7.1
       vitest: 0.19.1
 
@@ -78,24 +78,24 @@ importers:
 
   website/docs:
     specifiers:
-      '@xmark/cli': ^2.4.56
-      '@xmark/client': ^2.4.56
-      '@xmark/plugin-docs-indexer': ^2.4.56
-      '@xmark/theme-docs': ^2.4.56
+      '@xmark/cli': ^2.4.57
+      '@xmark/client': ^2.4.57
+      '@xmark/plugin-docs-indexer': ^2.4.57
+      '@xmark/theme-docs': ^2.4.57
     dependencies:
-      '@xmark/cli': 2.4.56
-      '@xmark/client': 2.4.56
-      '@xmark/plugin-docs-indexer': 2.4.56
-      '@xmark/theme-docs': 2.4.56
+      '@xmark/cli': 2.4.57
+      '@xmark/client': 2.4.57
+      '@xmark/plugin-docs-indexer': 2.4.57
+      '@xmark/theme-docs': 2.4.57
 
   website/pages:
     specifiers:
-      '@xmark/cli': ^2.4.56
-      '@xmark/theme-arcblock': ^2.4.56
+      '@xmark/cli': ^2.4.57
+      '@xmark/theme-arcblock': ^2.4.57
       react: ^18.2.0
     dependencies:
-      '@xmark/cli': 2.4.56_react@18.2.0
-      '@xmark/theme-arcblock': 2.4.56
+      '@xmark/cli': 2.4.57_react@18.2.0
+      '@xmark/theme-arcblock': 2.4.57
       react: 18.2.0
 
 packages:
@@ -386,18 +386,18 @@ packages:
       - supports-color
     dev: false
 
-  /@arcblock/eslint-config-base/0.2.2_lpvhfrfofky3e6gkwtrv5gvhfa:
+  /@arcblock/eslint-config-base/0.2.2_uoqzb7ub56apwdxrwurswvvfwe:
     resolution: {integrity: sha512-+AVqIlkC1pWaLIMn/WlgmOQfYH6nctdsKZwMTCBzbrduLzdKx/Kuqq1/c0/GiY53Bv0kWh3gguZSfdKnhCPXfQ==}
     peerDependencies:
       eslint: ^8.17.0
       prettier: ^2.7.1
     dependencies:
-      eslint: 8.23.1
-      eslint-config-airbnb-base: 15.0.0_hdzsmr7kawaomymueo2tso6fjq
-      eslint-config-prettier: 8.5.0_eslint@8.23.1
-      eslint-plugin-import: 2.26.0_eslint@8.23.1
-      eslint-plugin-prettier: 4.0.0_cabrci5exjdaojcvd6xoxgeowu
-      eslint-plugin-unicorn: 42.0.0_eslint@8.23.1
+      eslint: 8.24.0
+      eslint-config-airbnb-base: 15.0.0_dg2pe6kqkrddxbf2funb723kue
+      eslint-config-prettier: 8.5.0_eslint@8.24.0
+      eslint-plugin-import: 2.26.0_eslint@8.24.0
+      eslint-plugin-prettier: 4.0.0_cfn5x6ujhhgzv3423d6k7r2zzm
+      eslint-plugin-unicorn: 42.0.0_eslint@8.24.0
       prettier: 2.7.1
     transitivePeerDependencies:
       - '@typescript-eslint/parser'
@@ -1503,8 +1503,8 @@ packages:
       '@hapi/hoek': 9.3.0
     dev: false
 
-  /@humanwhocodes/config-array/0.10.4:
-    resolution: {integrity: sha512-mXAIHxZT3Vcpg83opl1wGlVZ9xydbfZO3r5YfRSH6Gpp2J/PfdBP0wbDa2sO6/qRbcalpoevVyW6A/fI6LfeMw==}
+  /@humanwhocodes/config-array/0.10.5:
+    resolution: {integrity: sha512-XVVDtp+dVvRxMoxSiSfasYaG02VEe1qH5cKgMQJWhol6HwzbcqoCMJi8dAGoYAO57jhUyhI6cWuRiTcRaDaYug==}
     engines: {node: '>=10.10.0'}
     dependencies:
       '@humanwhocodes/object-schema': 1.2.1
@@ -2811,8 +2811,8 @@ packages:
       elliptic: 6.5.4
     dev: false
 
-  /@xmark/cli/2.4.56:
-    resolution: {integrity: sha512-jy4JZtuo9brpZeQ7gYsGjbqoiSTyFZjLjj/Q1WEGOCK7wfSLaZyH/fm9mS9H66KZF0TIL3z6w9Txlz8O4p+tjQ==}
+  /@xmark/cli/2.4.57:
+    resolution: {integrity: sha512-uTodwKcgCq3CKx7MmqziJuq3rlcGOVh6oJVoIqqT7jwrAY3B2w9NJRtAZS4aLafZjBMYd67Pdtm/wpAwzqbqpw==}
     hasBin: true
     dependencies:
       '@antfu/utils': 0.5.2
@@ -2821,8 +2821,8 @@ packages:
       '@mdx-js/rollup': 2.1.3
       '@rollup/plugin-yaml': 3.1.0
       '@vitejs/plugin-react': 2.1.0_vite@3.1.3
-      '@xmark/client': 2.4.56_debug@4.3.4+vite@3.1.3
-      '@xmark/utils': 2.4.56
+      '@xmark/client': 2.4.57_debug@4.3.4+vite@3.1.3
+      '@xmark/utils': 2.4.57
       change-case: 4.1.2
       debug: 4.3.4
       escape-string-regexp: 5.0.0
@@ -2880,8 +2880,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@xmark/cli/2.4.56_react@18.2.0:
-    resolution: {integrity: sha512-jy4JZtuo9brpZeQ7gYsGjbqoiSTyFZjLjj/Q1WEGOCK7wfSLaZyH/fm9mS9H66KZF0TIL3z6w9Txlz8O4p+tjQ==}
+  /@xmark/cli/2.4.57_react@18.2.0:
+    resolution: {integrity: sha512-uTodwKcgCq3CKx7MmqziJuq3rlcGOVh6oJVoIqqT7jwrAY3B2w9NJRtAZS4aLafZjBMYd67Pdtm/wpAwzqbqpw==}
     hasBin: true
     dependencies:
       '@antfu/utils': 0.5.2
@@ -2890,8 +2890,8 @@ packages:
       '@mdx-js/rollup': 2.1.3
       '@rollup/plugin-yaml': 3.1.0
       '@vitejs/plugin-react': 2.1.0_vite@3.1.3
-      '@xmark/client': 2.4.56_debug@4.3.4+vite@3.1.3
-      '@xmark/utils': 2.4.56
+      '@xmark/client': 2.4.57_debug@4.3.4+vite@3.1.3
+      '@xmark/utils': 2.4.57
       change-case: 4.1.2
       debug: 4.3.4
       escape-string-regexp: 5.0.0
@@ -2949,8 +2949,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@xmark/client/2.4.56:
-    resolution: {integrity: sha512-sTJswjYrNTz261RSSI+7WU5nBcZA7y1UVzeHzOFk3t1u32Wn3KwGuV61XlglIAV3t0J522kalpqjtjP+YUftvQ==}
+  /@xmark/client/2.4.57:
+    resolution: {integrity: sha512-Zn5hm0Q1t732gODHRjlWDUicrsBZOXqP+Z1xBPgrZWs2oG/4SSMJmwq6+FPtLhpk1aUlVXEFdHKnu2HxzVRTeA==}
     dependencies:
       '@arcblock/did-connect': 2.4.31_v2m5e27vhdewzwhryxwfaorcca
       '@arcblock/ux': 2.4.31_v2m5e27vhdewzwhryxwfaorcca
@@ -2961,7 +2961,7 @@ packages:
       '@iconify-json/mdi': 1.1.33
       '@mdx-js/react': 2.1.3_react@18.2.0
       '@mui/material': 5.10.6_6xnkn2aqnlmdvuspwqrjexfduy
-      '@xmark/utils': 2.4.56_react-dom@18.2.0
+      '@xmark/utils': 2.4.57_react-dom@18.2.0
       ahooks: 3.7.1_react@18.2.0
       clsx: 1.2.1
       defu: 6.1.0
@@ -2992,8 +2992,8 @@ packages:
       - vite
     dev: false
 
-  /@xmark/client/2.4.56_debug@4.3.4+vite@3.1.3:
-    resolution: {integrity: sha512-sTJswjYrNTz261RSSI+7WU5nBcZA7y1UVzeHzOFk3t1u32Wn3KwGuV61XlglIAV3t0J522kalpqjtjP+YUftvQ==}
+  /@xmark/client/2.4.57_debug@4.3.4+vite@3.1.3:
+    resolution: {integrity: sha512-Zn5hm0Q1t732gODHRjlWDUicrsBZOXqP+Z1xBPgrZWs2oG/4SSMJmwq6+FPtLhpk1aUlVXEFdHKnu2HxzVRTeA==}
     dependencies:
       '@arcblock/did-connect': 2.4.31_b4d6a5ueiusxip5jyl3jrxspp4
       '@arcblock/ux': 2.4.31_b4d6a5ueiusxip5jyl3jrxspp4
@@ -3004,7 +3004,7 @@ packages:
       '@iconify-json/mdi': 1.1.33
       '@mdx-js/react': 2.1.3_react@18.2.0
       '@mui/material': 5.10.6_6xnkn2aqnlmdvuspwqrjexfduy
-      '@xmark/utils': 2.4.56_react-dom@18.2.0
+      '@xmark/utils': 2.4.57_react-dom@18.2.0
       ahooks: 3.7.1_react@18.2.0
       clsx: 1.2.1
       defu: 6.1.0
@@ -3035,8 +3035,8 @@ packages:
       - vite
     dev: false
 
-  /@xmark/plugin-docs-indexer/2.4.56:
-    resolution: {integrity: sha512-6dHsogPa0rxtNjgUBu/jHzYdoITsDOCZRLl1D4UkwL9L69sE80RtvSONRFuzRtQh6xSk8Hppr8NNex22t+WfuA==}
+  /@xmark/plugin-docs-indexer/2.4.57:
+    resolution: {integrity: sha512-M20/fNOD0iGK+XPC3SYFWjNuGna5LqiCDnvh/kF5qMWVqk2Gztq3W5EoKR/xXQwpPV9DqRrWu0DruiOFLI6xfQ==}
     dependencies:
       '@blocklet/sdk': 1.8.24
       '@emotion/react': 11.10.4_react@18.2.0
@@ -3059,8 +3059,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@xmark/theme-arcblock/2.4.56:
-    resolution: {integrity: sha512-OJgnohBPeDTvBk+rZsa/xgOL5Bb3wT4DsGOQKgeg6Nzn9BKf2MKuolMxf08ahEvuuJxAxm2kcy2IpMXYLmJGbA==}
+  /@xmark/theme-arcblock/2.4.57:
+    resolution: {integrity: sha512-TYistFBOfShnuxn0PxvfQpL1+rv300H711eCcFASlPMeuxJRUk2c8JkRo/wDCyVUUoWmdMSV68N6Vig9u+QURQ==}
     dependencies:
       '@arcblock/did-connect': 2.4.31_sh5qlbywuemxd2y3xkrw2y2kr4
       '@arcblock/ux': 2.4.31_sh5qlbywuemxd2y3xkrw2y2kr4
@@ -3070,8 +3070,8 @@ packages:
       '@iconify-json/uim': 1.1.2
       '@mui/material': 5.10.6_hfzxdiydbrbhhfpkwuv3jhvwmq
       '@popperjs/core': 2.11.6
-      '@xmark/client': 2.4.56
-      '@xmark/utils': 2.4.56
+      '@xmark/client': 2.4.57
+      '@xmark/utils': 2.4.57
       ahooks: 3.7.1_react@18.2.0
       clsx: 1.2.1
       pathe: 0.3.8
@@ -3095,15 +3095,15 @@ packages:
       - vite
     dev: false
 
-  /@xmark/theme-docs/2.4.56:
-    resolution: {integrity: sha512-4+PcAN+Xusv9jfW6B4sXO3P0TvK/NMflGDXVrc2wQz6yw8fJPXKynFvcRt55OmpYPs7OG9DCDhy2IfCqeailog==}
+  /@xmark/theme-docs/2.4.57:
+    resolution: {integrity: sha512-BTxwAHRs1RyhDEK0xS3JYPW72mzMXuk2QX6AF9aTmrIGu/97idyf2uwmA5yhL+xlidsUtw7y3mROotShvYnOlg==}
     dependencies:
       '@arcblock/ux': 2.4.31_sh5qlbywuemxd2y3xkrw2y2kr4
       '@emotion/react': 11.10.4_react@18.2.0
       '@emotion/styled': 11.10.4_gyryel6m34lsxtsejhafetjriq
       '@fontsource/lato': 4.5.9
       '@mui/material': 5.10.6_hfzxdiydbrbhhfpkwuv3jhvwmq
-      '@xmark/client': 2.4.56
+      '@xmark/client': 2.4.57
       ahooks: 3.7.1_react@18.2.0
       clsx: 1.2.1
       is-uri: 1.2.4
@@ -3128,8 +3128,8 @@ packages:
       - vite
     dev: false
 
-  /@xmark/utils/2.4.56:
-    resolution: {integrity: sha512-/XcRnqNjEb9Z+1Yq7S2E2TY6OKe/ib2OGxSRyIqM178OGaP7++SSJIpKeGFqX0sFpOMGpBjZlizPVGn/FNcwNQ==}
+  /@xmark/utils/2.4.57:
+    resolution: {integrity: sha512-yVCDnq3HbH3KNQBbQxs/lNwCo7yJc7oA3n/5ztTbhfAVwxykZpz0Y0dVenStdXTXI+7sy8AlH2Rww334AJ5/+A==}
     dependencies:
       base-x: 4.0.0
       hast-util-from-html: 1.0.0
@@ -3147,8 +3147,8 @@ packages:
       - supports-color
     dev: false
 
-  /@xmark/utils/2.4.56_react-dom@18.2.0:
-    resolution: {integrity: sha512-/XcRnqNjEb9Z+1Yq7S2E2TY6OKe/ib2OGxSRyIqM178OGaP7++SSJIpKeGFqX0sFpOMGpBjZlizPVGn/FNcwNQ==}
+  /@xmark/utils/2.4.57_react-dom@18.2.0:
+    resolution: {integrity: sha512-yVCDnq3HbH3KNQBbQxs/lNwCo7yJc7oA3n/5ztTbhfAVwxykZpz0Y0dVenStdXTXI+7sy8AlH2Rww334AJ5/+A==}
     dependencies:
       base-x: 4.0.0
       hast-util-from-html: 1.0.0
@@ -5083,7 +5083,7 @@ packages:
     engines: {node: '>=12'}
     dev: false
 
-  /eslint-config-airbnb-base/15.0.0_hdzsmr7kawaomymueo2tso6fjq:
+  /eslint-config-airbnb-base/15.0.0_dg2pe6kqkrddxbf2funb723kue:
     resolution: {integrity: sha512-xaX3z4ZZIcFLvh2oUNvcX5oEofXda7giYmuplVxoOg5A7EXJMrUyqRgR+mhDhPK8LZ4PttFOBvCYDbX3sUoUig==}
     engines: {node: ^10.12.0 || >=12.0.0}
     peerDependencies:
@@ -5091,20 +5091,20 @@ packages:
       eslint-plugin-import: ^2.25.2
     dependencies:
       confusing-browser-globals: 1.0.11
-      eslint: 8.23.1
-      eslint-plugin-import: 2.26.0_eslint@8.23.1
+      eslint: 8.24.0
+      eslint-plugin-import: 2.26.0_eslint@8.24.0
       object.assign: 4.1.2
       object.entries: 1.1.5
       semver: 6.3.0
     dev: true
 
-  /eslint-config-prettier/8.5.0_eslint@8.23.1:
+  /eslint-config-prettier/8.5.0_eslint@8.24.0:
     resolution: {integrity: sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
     dependencies:
-      eslint: 8.23.1
+      eslint: 8.24.0
     dev: true
 
   /eslint-import-resolver-node/0.3.6:
@@ -5141,7 +5141,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-import/2.26.0_eslint@8.23.1:
+  /eslint-plugin-import/2.26.0_eslint@8.24.0:
     resolution: {integrity: sha512-hYfi3FXaM8WPLf4S1cikh/r4IxnO6zrhZbEGz2b660EJRbuxgpDS5gkCuYgGWg2xxh2rBuIr4Pvhve/7c31koA==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -5155,7 +5155,7 @@ packages:
       array.prototype.flat: 1.3.0
       debug: 2.6.9
       doctrine: 2.1.0
-      eslint: 8.23.1
+      eslint: 8.24.0
       eslint-import-resolver-node: 0.3.6
       eslint-module-utils: 2.7.3_ulu2225r2ychl26a37c6o2rfje
       has: 1.0.3
@@ -5171,7 +5171,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-prettier/4.0.0_cabrci5exjdaojcvd6xoxgeowu:
+  /eslint-plugin-prettier/4.0.0_cfn5x6ujhhgzv3423d6k7r2zzm:
     resolution: {integrity: sha512-98MqmCJ7vJodoQK359bqQWaxOE0CS8paAz/GgjaZLyex4TTk3g9HugoO89EqWCrFiOqn9EVvcoo7gZzONCWVwQ==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
@@ -5182,13 +5182,13 @@ packages:
       eslint-config-prettier:
         optional: true
     dependencies:
-      eslint: 8.23.1
-      eslint-config-prettier: 8.5.0_eslint@8.23.1
+      eslint: 8.24.0
+      eslint-config-prettier: 8.5.0_eslint@8.24.0
       prettier: 2.7.1
       prettier-linter-helpers: 1.0.0
     dev: true
 
-  /eslint-plugin-unicorn/42.0.0_eslint@8.23.1:
+  /eslint-plugin-unicorn/42.0.0_eslint@8.24.0:
     resolution: {integrity: sha512-ixBsbhgWuxVaNlPTT8AyfJMlhyC5flCJFjyK3oKE8TRrwBnaHvUbuIkCM1lqg8ryYrFStL/T557zfKzX4GKSlg==}
     engines: {node: '>=12'}
     peerDependencies:
@@ -5197,8 +5197,8 @@ packages:
       '@babel/helper-validator-identifier': 7.16.7
       ci-info: 3.3.2
       clean-regexp: 1.0.0
-      eslint: 8.23.1
-      eslint-utils: 3.0.0_eslint@8.23.1
+      eslint: 8.24.0
+      eslint-utils: 3.0.0_eslint@8.24.0
       esquery: 1.4.0
       indent-string: 4.0.0
       is-builtin-module: 3.1.0
@@ -5234,13 +5234,13 @@ packages:
       eslint-visitor-keys: 1.3.0
     dev: false
 
-  /eslint-utils/3.0.0_eslint@8.23.1:
+  /eslint-utils/3.0.0_eslint@8.24.0:
     resolution: {integrity: sha512-uuQC43IGctw68pJA1RgbQS8/NP7rch6Cwd4j3ZBtgo4/8Flj4eGE7ZYSZRN3iq5pVUv6GPdW5Z1RFleo84uLDA==}
     engines: {node: ^10.0.0 || ^12.0.0 || >= 14.0.0}
     peerDependencies:
       eslint: '>=5'
     dependencies:
-      eslint: 8.23.1
+      eslint: 8.24.0
       eslint-visitor-keys: 2.1.0
     dev: true
 
@@ -5305,13 +5305,13 @@ packages:
       - supports-color
     dev: false
 
-  /eslint/8.23.1:
-    resolution: {integrity: sha512-w7C1IXCc6fNqjpuYd0yPlcTKKmHlHHktRkzmBPZ+7cvNBQuiNjx0xaMTjAJGCafJhQkrFJooREv0CtrVzmHwqg==}
+  /eslint/8.24.0:
+    resolution: {integrity: sha512-dWFaPhGhTAiPcCgm3f6LI2MBWbogMnTJzFBbhXVRQDJPkr9pGZvVjlVfXd+vyDcWPA2Ic9L2AXPIQM0+vk/cSQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     hasBin: true
     dependencies:
       '@eslint/eslintrc': 1.3.2
-      '@humanwhocodes/config-array': 0.10.4
+      '@humanwhocodes/config-array': 0.10.5
       '@humanwhocodes/gitignore-to-minimatch': 1.0.2
       '@humanwhocodes/module-importer': 1.0.1
       ajv: 6.12.6
@@ -5321,7 +5321,7 @@ packages:
       doctrine: 3.0.0
       escape-string-regexp: 4.0.0
       eslint-scope: 7.1.1
-      eslint-utils: 3.0.0_eslint@8.23.1
+      eslint-utils: 3.0.0_eslint@8.24.0
       eslint-visitor-keys: 3.3.0
       espree: 9.4.0
       esquery: 1.4.0
@@ -6676,7 +6676,7 @@ packages:
     dev: false
 
   /json-buffer/3.0.0:
-    resolution: {integrity: sha512-CuUqjv0FUZIdXkHPI8MezCnFCdaTAacej1TZYulLoAg1h/PhwkdXFN4V/gzY4g+fMBCOV2xF+rp7t2XD2ns/NQ==}
+    resolution: {integrity: sha1-Wx85evx11ne96Lz8Dkfh+aPZqJg=}
     dev: false
 
   /json-parse-even-better-errors/2.3.1:
@@ -6772,7 +6772,7 @@ packages:
     dev: true
 
   /lie/3.1.1:
-    resolution: {integrity: sha512-RiNhHysUjhrDQntfYSfY4MU24coXXdEOgw9WGcKHNeEwffDYbF//u87M1EWaMGzuFoSbqW0C9C6lEEhDOAswfw==}
+    resolution: {integrity: sha1-mkNrLMd0bKWd56QfpGmz77dr2H4=}
     dependencies:
       immediate: 3.0.6
     dev: false
