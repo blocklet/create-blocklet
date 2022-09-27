@@ -36,7 +36,7 @@ const templatesData = [
     composable: true,
     framework: 'Express',
     languages: 'JavaScript',
-    useCase: 'Server Side API Application',
+    useCase: 'Server Side Application',
     author: 'ZhangHan',
   },
   {

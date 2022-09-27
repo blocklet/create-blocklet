@@ -51,8 +51,6 @@ function TemplateInfo({ info, ...rest }) {
   );
 }
 
-
-
 TemplateInfo.propTypes = {
   info: PropTypes.shape({
     name: PropTypes.string,
@@ -60,7 +58,7 @@ TemplateInfo.propTypes = {
     composable: PropTypes.oneOf(['Yes', 'No']),
     framework: PropTypes.string,
     languages: PropTypes.oneOf(['HTML', 'JavaScript', 'TypeScript']),
-    useCase: PropTypes.oneOf(['Starter', 'Documentation / Website', 'Server Side API Application']),
+    useCase: PropTypes.oneOf(['Starter', 'Documentation / Website', 'Server Side Application']),
     author: PropTypes.string,
   }).isRequired
 }
