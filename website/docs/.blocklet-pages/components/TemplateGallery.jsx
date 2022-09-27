@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@arcblock/ux/lib/Theme';
 import { useLocaleContext } from '@arcblock/ux/lib/Locale/context';
-// import SmarkLink from '@xmark/client';
 import { Link } from 'react-router-dom';
 import { templates } from '../lib/templates';
 
 function GalleryItem({ templateInfo, ...rest }) {
-  const { name, displayName, coverImage } = templateInfo;
+  const { locale = 'en' } = useLocaleContext();
+  const { name, displayName, coverImage, desc } = templateInfo;
   return (
     <GalleryItemRoot>
       <Link className="gallery-inner" to={`/templates/${name}`}>
@@ -16,6 +16,7 @@ function GalleryItem({ templateInfo, ...rest }) {
         </div>
         <div className="gallery-content">
           <span className="gallery-title">{displayName}</span>
+          <p className="gallery-desc">{desc[locale]}</p>
         </div>
       </Link>
     </GalleryItemRoot>
@@ -23,8 +24,6 @@ function GalleryItem({ templateInfo, ...rest }) {
 }
 
 const GalleryItemRoot = styled('li')`
-  flex: 0 0 auto;
-  width: 33.33%;
   padding: 12px;
   overflow: hidden;
   font-size: 14px;
@@ -34,6 +33,7 @@ const GalleryItemRoot = styled('li')`
   }
   a.gallery-inner {
     display: block;
+    height: 100%;
     overflow: hidden;
     color: inherit!important;
     border-radius: 4px;
@@ -62,12 +62,15 @@ const GalleryItemRoot = styled('li')`
     .gallery-title {
       font-weight: bold;
     }
+    .gallery-desc {
+      margin-top: 4px;
+      font-size: 13px;
+      color: ${props => props.theme.palette.grey[600]};
+    }
   }
 `;
 
 function TemplateGallery(props) {
-  const { locale = 'en' } = useLocaleContext();
-
   return (
     <Root {...props}>
       <ul>
@@ -87,10 +90,9 @@ TemplateGallery.defaultProps = {
 
 const Root = styled('div')`
   ul {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     list-style: none;
-    margin: 0 -12px;
     padding: 0;
   }
 `;

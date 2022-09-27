@@ -1,6 +1,10 @@
 const templatesData = [
   {
     name: 'blocklet-page',
+    desc: { 
+      en: '一个由 xmark 驱动的网站骨架，可用于构建个人站点或项目站点', 
+      zh: '一个由 xmark 驱动的网站骨架，可用于构建个人站点或项目站点' 
+    },
     blockletType: 'static',
     composable: true,
     framework: 'xmark',
@@ -10,6 +14,10 @@ const templatesData = [
   },
   {
     name: 'doc-site',
+    desc: { 
+      en: '一个由 xmark 驱动的文档站骨架，可以用于构建项目文档站点', 
+      zh: '一个由 xmark 驱动的文档站骨架，可以用于构建项目文档站点' 
+    },
     blockletType: 'static',
     composable: true,
     framework: 'xmark',
@@ -19,6 +27,10 @@ const templatesData = [
   },
   {
     name: 'express-api',
+    desc: { 
+      en: '一个基于 Express 构建的服务端 API 应用', 
+      zh: '一个基于 Express 构建的服务端 API 应用' 
+    },
     displayName: 'Express API',
     blockletType: 'dapp',
     composable: true,
@@ -29,6 +41,10 @@ const templatesData = [
   },
   {
     name: 'html-static',
+    desc: { 
+      en: '一个最简单的 HTML 静态页面应用。可以用于将已有的静态网页程序包装成 Blocklet', 
+      zh: '一个最简单的 HTML 静态页面应用。可以用于将已有的静态网页程序包装成 Blocklet' 
+    },
     blockletType: 'static',
     composable: true,
     languages: 'HTML',
@@ -37,6 +53,10 @@ const templatesData = [
   },
   {
     name: 'nextjs-dapp',
+    desc: { 
+      en: '一个基于 Next.js 构建的 Dapp 应用骨架', 
+      zh: '一个基于 Next.js 构建的 Dapp 应用骨架' 
+    },
     blockletType: 'dapp',
     composable: true,
     languages: 'JavaScript',
@@ -45,6 +65,10 @@ const templatesData = [
   },
   {
     name: 'react-dapp',
+    desc: { 
+      en: '一个基于 React 构建的 Dapp 应用骨架', 
+      zh: '一个基于 React 构建的 Dapp 应用骨架' 
+    },
     blockletType: 'dapp',
     composable: true,
     languages: 'JavaScript',
@@ -53,6 +77,10 @@ const templatesData = [
   },
   {
     name: 'react-static',
+    desc: { 
+      en: '一个基于 React 构建的前端应用骨架', 
+      zh: '一个基于 React 构建的前端应用骨架' 
+    },
     blockletType: 'static',
     composable: true,
     languages: 'JavaScript',
@@ -61,6 +89,10 @@ const templatesData = [
   },
   {
     name: 'solidjs-dapp',
+    desc: { 
+      en: '一个基于 SolidJS 构建的 Dapp 应用骨架', 
+      zh: '一个基于 SolidJS 构建的 Dapp 应用骨架' 
+    },
     blockletType: 'dapp',
     composable: true,
     languages: 'JavaScript',
@@ -69,6 +101,10 @@ const templatesData = [
   },
   {
     name: 'solidjs-static',
+    desc: { 
+      en: '一个基于 Solidjs 构建的前端应用骨架', 
+      zh: '一个基于 Solidjs 构建的前端应用骨架' 
+    },
     blockletType: 'static',
     composable: true,
     languages: 'JavaScript',
@@ -77,6 +113,10 @@ const templatesData = [
   },
   {
     name: 'svelte-dapp',
+    desc: { 
+      en: '一个基于 Svelte 构建的 Dapp 应用骨架', 
+      zh: '一个基于 Svelte 构建的 Dapp 应用骨架' 
+    },
     blockletType: 'dapp',
     composable: true,
     languages: 'JavaScript',
@@ -85,6 +125,10 @@ const templatesData = [
   },
   {
     name: 'svelte-static',
+    desc: { 
+      en: '一个基于 Svelte 构建的前端应用骨架', 
+      zh: '一个基于 Svelte 构建的前端应用骨架' 
+    },
     blockletType: 'static',
     composable: true,
     languages: 'JavaScript',
@@ -93,6 +137,10 @@ const templatesData = [
   },
   {
     name: 'vue-dapp',
+    desc: { 
+      en: '一个基于 Vue 3 构建的 Dapp 应用骨架', 
+      zh: '一个基于 Vue 3 构建的 Dapp 应用骨架' 
+    },
     blockletType: 'dapp',
     composable: true,
     languages: 'JavaScript',
@@ -101,6 +149,10 @@ const templatesData = [
   },
   {
     name: 'vue-static',
+    desc: { 
+      en: '一个基于 Vue 3 构建的前端应用骨架', 
+      zh: '一个基于 Vue 3 构建的前端应用骨架' 
+    },
     blockletType: 'static',
     composable: true,
     languages: 'JavaScript',
@@ -109,6 +161,10 @@ const templatesData = [
   },
   {
     name: 'vue2-dapp',
+    desc: { 
+      en: '一个基于 Vue 2 构建的 Dapp 应用骨架', 
+      zh: '一个基于 Vue 2 构建的 Dapp 应用骨架' 
+    },
     blockletType: 'dapp',
     composable: true,
     languages: 'JavaScript',
@@ -117,6 +173,10 @@ const templatesData = [
   },
   {
     name: 'vue2-static',
+    desc: { 
+      en: '一个基于 Vue 2 构建的前端应用骨架', 
+      zh: '一个基于 Vue 2 构建的前端应用骨架' 
+    },
     blockletType: 'static',
     composable: true,
     languages: 'JavaScript',

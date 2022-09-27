@@ -69,7 +69,13 @@ TemplateInfo.defaultProps = {
 }
 
 const Root = styled('div')`
+  margin: 32px 0;
   font-size: 14px;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
   li span:last-child {
     font-weight: bold;
   }
