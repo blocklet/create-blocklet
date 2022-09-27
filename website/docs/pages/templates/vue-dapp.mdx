@@ -1,19 +1,24 @@
 ---
 layout: 'documentation'
-title: vue-dapp
+title: Vue Dapp
 priority: 1
 ---
 
-![](./images/vue-dapp.png)
+<TemplateCoverImage>
+  ![](./images/vue-dapp.png)
+</TemplateCoverImage>
 
-DescDescDescDescDescDescDesc
+<TemplateInfo info={{ 
+  name: 'vue-dapp', 
+  blockletType: 'dapp',
+  composable: 'Yes',
+  languages: 'JavaScript',
+  useCase: 'Starter', 
+  author:'ZhangHan',
+  readme: 'https://github.com/blocklet/create-blocklet/blob/main/packages/create-app/templates/vue-dapp/README.md',
+}} />
 
-- Blocklet Type: Static
-- Composable: Yes
-- React	Framework: React
-- Languages: JavaScript	
-- Use Case: Starter
-- Author: ZH				
+该模板是一个基于 Vue 3 构建的 Dapp 应用骨架。
 
 ## 开发
 
@@ -22,18 +27,27 @@ DescDescDescDescDescDescDesc
 :::
 
 ```shell
-npm install # install dependencies
-blocklet dev # start dev
+# install dependencies
+npm install
+# run the blocklet in development environment mode
+blocklet dev
 ```
 
+应用代码主要存放于以下几个目录中:  
+
+- api 目录: 存放服务端接口模块
+- src 目录: 存放 Vue 前端应用相关模块
+
+你可以尝试编辑目录中的模块，然后刷新页面查看修改后的效果。
 
 ## 技术栈
 
-- React 18
-- React Router 6
-- CRA 5
-- CRACO 6.x
+- Vue 3
+- Vite
+- Express
 
 ## 参考
 
+- [在本机启动 Blocklet Server](https://developer.blocklet.io/docs/en/prerequisites/server)
 - [可用脚本](/available-scripts)
+- [目录结构](/folder-structure)
