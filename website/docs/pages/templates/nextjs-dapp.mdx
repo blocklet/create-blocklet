@@ -1,19 +1,24 @@
 ---
 layout: 'documentation'
-title: nextjs-dapp
+title: Nextjs Dapp
 priority: 1
 ---
 
-![](./images/nextjs-dapp.png)
+<TemplateCoverImage>
+  ![](./images/nextjs-dapp.png)
+</TemplateCoverImage>
 
-DescDescDescDescDescDescDesc
+<TemplateInfo info={{ 
+  name: 'nextjs-dapp', 
+  blockletType: 'dapp',
+  composable: 'Yes',
+  languages: 'JavaScript',
+  useCase: 'Starter', 
+  author:'ZhangHan',
+  readme: 'https://github.com/blocklet/create-blocklet/blob/main/packages/create-app/templates/nextjs-dapp/README.md',
+}} />
 
-- Blocklet Type: Static
-- Composable: Yes
-- React	Framework: React
-- Languages: JavaScript	
-- Use Case: Starter
-- Author: ZH				
+该模板是一个基于 Next.js 构建的 Dapp 应用骨架。
 
 ## 开发
 
@@ -22,18 +27,22 @@ DescDescDescDescDescDescDesc
 :::
 
 ```shell
-npm install # install dependencies
-blocklet dev # start dev
+# install dependencies
+npm install
+# run the blocklet in development environment mode
+blocklet dev
 ```
 
+应用包含前端和服务端两个部分，分别对应 api 和 pages 目录，你可以尝试编辑 api 目录或 pages 目录中的模块，然后刷新页面查看修改后的效果。
 
 ## 技术栈
 
 - React 18
-- React Router 6
-- CRA 5
-- CRACO 6.x
+- Next.js
+- Express
 
 ## 参考
 
+- [在本机启动 Blocklet Server](https://developer.blocklet.io/docs/en/prerequisites/server)
 - [可用脚本](/available-scripts)
+- [目录结构](/folder-structure)
