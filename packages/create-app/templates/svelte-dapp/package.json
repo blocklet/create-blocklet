@@ -21,7 +21,7 @@
   "dependencies": {
     "@arcblock/did-auth": "^1.17.19",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
-    "@blocklet/sdk": "^1.8.24",
+    "@blocklet/sdk": "^1.8.26",
     "@ocap/client": "^1.17.19",
     "@ocap/mcrypto": "^1.17.19",
     "@ocap/wallet": "^1.17.19",
@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "1.0.1",
-    "eslint": "^8.23.1",
+    "eslint": "^8.24.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-svelte3": "^4.0.0",
@@ -46,7 +46,7 @@
     "prettier": "^2.7.1",
     "svelte": "^3.50.1",
     "vite": "^3.1.3",
-    "vite-plugin-blocklet": "^0.4.53",
+    "vite-plugin-blocklet": "^0.4.54",
     "vite-plugin-html": "^3.2.0"
   },
   "lint-staged": {

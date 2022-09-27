@@ -1,3 +1,11 @@
+## 0.4.54 (September 27, 2022)
+
+- chore: welcome page
+- chore: refer to blocklet developer links
+- chore: bump xmark to latest
+- chore: add faq and chapter redirect
+- chore: new doc structure
+
 ## 0.4.53 (九月 24, 2022)
 
 - chore: update deps
