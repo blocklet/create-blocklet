@@ -62,7 +62,7 @@ const GalleryItemRoot = styled('li')`
       font-weight: bold;
     }
     .gallery-desc {
-      margin-top: 4px;
+      margin: 4px 0;
       font-size: 13px;
       color: ${props => props.theme.palette.grey[600]};
     }
