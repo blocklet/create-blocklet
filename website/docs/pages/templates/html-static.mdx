@@ -1,19 +1,24 @@
 ---
 layout: 'documentation'
-title: html-static
+title: HTML Static
 priority: 1
 ---
 
-![](./images/html-static.png)
+<TemplateCoverImage>
+  ![](./images/html-static.png)
+</TemplateCoverImage>
 
-DescDescDescDescDescDescDesc
+<TemplateInfo info={{ 
+  name: 'html-static', 
+  blockletType: 'static',
+  composable: 'Yes',
+  languages: 'HTML',
+  useCase: 'Starter', 
+  author:'ZhangHan',
+  readme: 'https://github.com/blocklet/create-blocklet/blob/main/packages/create-app/templates/html-static/README.md',
+}} />
 
-- Blocklet Type: Static
-- Composable: Yes
-- React	Framework: React
-- Languages: JavaScript	
-- Use Case: Starter
-- Author: ZH				
+该模板是一个最简单的 HTML 静态页面应用。可以用于将已有的静态网页程序包装成 Blocklet。
 
 ## 开发
 
@@ -22,18 +27,16 @@ DescDescDescDescDescDescDesc
 :::
 
 ```shell
-npm install # install dependencies
-blocklet dev # start dev
+# install dependencies
+npm install
+# run the blocklet in development environment mode
+blocklet dev
 ```
 
-
-## 技术栈
-
-- React 18
-- React Router 6
-- CRA 5
-- CRACO 6.x
+你可以尝试编辑 app 目录中的 html 和 css 文件，然后刷新页面查看修改后的效果。
 
 ## 参考
 
+- [在本机启动 Blocklet Server](https://developer.blocklet.io/docs/en/prerequisites/server)
 - [可用脚本](/available-scripts)
+- [目录结构](/folder-structure)

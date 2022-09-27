@@ -9,13 +9,14 @@ priority: 1
 </TemplateCoverImage>
 
 <TemplateInfo info={{ 
-  name: 'doc-site', 
+  name: 'doc-site',
   blockletType: 'static',
   composable: 'Yes',
-  framework: 'xmark', 
+  framework: 'xmark',
   languages: 'JavaScript',
-  useCase: 'Documentation / Website', 
+  useCase: 'Documentation / Website',
   author:'ZhangHan',
+  readme: 'https://github.com/blocklet/create-blocklet/blob/main/packages/create-app/templates/doc-site/README.md',
 }} />
 
 该模板是一个由 xmark 驱动的文档站骨架，可以用于构建项目文档站点。
@@ -27,18 +28,16 @@ priority: 1
 :::
 
 ```shell
-npm install # install dependencies
-blocklet dev # start dev
+# install dependencies
+npm install
+# run the blocklet in development environment mode
+blocklet dev
 ```
 
-
-## 技术栈
-
-- React 18
-- React Router 6
-- CRA 5
-- CRACO 6.x
+该应用基于 xmark 构建，你可以编辑 pages 目录中的页面，或者通过 .blocklet-pages/config.yml 定制你的站点。进一步了解请参考 [Blocklet Pages](https://pages.blocklet.io/)。
 
 ## 参考
 
+- [在本机启动 Blocklet Server](https://developer.blocklet.io/docs/en/prerequisites/server)
 - [可用脚本](/available-scripts)
+- [目录结构](/folder-structure)
