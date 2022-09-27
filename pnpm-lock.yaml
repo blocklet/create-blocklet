@@ -78,24 +78,24 @@ importers:
 
   website/docs:
     specifiers:
-      '@xmark/cli': ^2.4.61
-      '@xmark/client': ^2.4.61
-      '@xmark/plugin-docs-indexer': ^2.4.61
-      '@xmark/theme-docs': ^2.4.61
+      '@xmark/cli': ^2.4.62
+      '@xmark/client': ^2.4.62
+      '@xmark/plugin-docs-indexer': ^2.4.62
+      '@xmark/theme-docs': ^2.4.62
     dependencies:
-      '@xmark/cli': 2.4.61
-      '@xmark/client': 2.4.61
-      '@xmark/plugin-docs-indexer': 2.4.61
-      '@xmark/theme-docs': 2.4.61
+      '@xmark/cli': 2.4.62
+      '@xmark/client': 2.4.62
+      '@xmark/plugin-docs-indexer': 2.4.62
+      '@xmark/theme-docs': 2.4.62
 
   website/pages:
     specifiers:
-      '@xmark/cli': ^2.4.61
-      '@xmark/theme-arcblock': ^2.4.61
+      '@xmark/cli': ^2.4.62
+      '@xmark/theme-arcblock': ^2.4.62
       react: ^18.2.0
     dependencies:
-      '@xmark/cli': 2.4.61_react@18.2.0
-      '@xmark/theme-arcblock': 2.4.61
+      '@xmark/cli': 2.4.62_react@18.2.0
+      '@xmark/theme-arcblock': 2.4.62
       react: 18.2.0
 
 packages:
@@ -2818,8 +2818,8 @@ packages:
       elliptic: 6.5.4
     dev: false
 
-  /@xmark/cli/2.4.61:
-    resolution: {integrity: sha512-XFYGy/ACn4Cfxf2ZwJq5buc3xtedqArvYPiEWv1OZkucxoNpUiQ0EyAWQm3lYjU8f03e2hCgQm4yUEv8jOhbiQ==}
+  /@xmark/cli/2.4.62:
+    resolution: {integrity: sha512-IxihDEjR2S1SjMy/t9681UpoB/3/qs7AybiJxXHX593kz2QZmOcyFM5ZGhlhs2K+U7fimLtBgLAndB75gZoZqA==}
     hasBin: true
     dependencies:
       '@antfu/utils': 0.5.2
@@ -2828,8 +2828,8 @@ packages:
       '@mdx-js/rollup': 2.1.3
       '@rollup/plugin-yaml': 3.1.0
       '@vitejs/plugin-react': 2.1.0_vite@3.1.3
-      '@xmark/client': 2.4.61_debug@4.3.4+vite@3.1.3
-      '@xmark/utils': 2.4.61
+      '@xmark/client': 2.4.62_debug@4.3.4+vite@3.1.3
+      '@xmark/utils': 2.4.62
       change-case: 4.1.2
       debug: 4.3.4
       escape-string-regexp: 5.0.0
@@ -2887,8 +2887,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@xmark/cli/2.4.61_react@18.2.0:
-    resolution: {integrity: sha512-XFYGy/ACn4Cfxf2ZwJq5buc3xtedqArvYPiEWv1OZkucxoNpUiQ0EyAWQm3lYjU8f03e2hCgQm4yUEv8jOhbiQ==}
+  /@xmark/cli/2.4.62_react@18.2.0:
+    resolution: {integrity: sha512-IxihDEjR2S1SjMy/t9681UpoB/3/qs7AybiJxXHX593kz2QZmOcyFM5ZGhlhs2K+U7fimLtBgLAndB75gZoZqA==}
     hasBin: true
     dependencies:
       '@antfu/utils': 0.5.2
@@ -2897,8 +2897,8 @@ packages:
       '@mdx-js/rollup': 2.1.3
       '@rollup/plugin-yaml': 3.1.0
       '@vitejs/plugin-react': 2.1.0_vite@3.1.3
-      '@xmark/client': 2.4.61_debug@4.3.4+vite@3.1.3
-      '@xmark/utils': 2.4.61
+      '@xmark/client': 2.4.62_debug@4.3.4+vite@3.1.3
+      '@xmark/utils': 2.4.62
       change-case: 4.1.2
       debug: 4.3.4
       escape-string-regexp: 5.0.0
@@ -2956,8 +2956,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@xmark/client/2.4.61:
-    resolution: {integrity: sha512-G698SPPSTfeRaKpaKUOEw7R090TdmF8LsKPDiR+KMVJXmdYM9HcFeS7nc3gQw89rSmsGqx9uxz9vQrPRAZS5qg==}
+  /@xmark/client/2.4.62:
+    resolution: {integrity: sha512-ke5XWOKsJOrGulCbMLGIQymVBjKRDrHq5JZbXf9ZO1jcWsbwWQZ/wJ32m69fvboxI2PK25xfBytW6v8ZvJbECg==}
     dependencies:
       '@arcblock/did-connect': 2.4.32_v2m5e27vhdewzwhryxwfaorcca
       '@arcblock/ux': 2.4.32_v2m5e27vhdewzwhryxwfaorcca
@@ -2968,7 +2968,7 @@ packages:
       '@iconify-json/mdi': 1.1.33
       '@mdx-js/react': 2.1.3_react@18.2.0
       '@mui/material': 5.10.6_6xnkn2aqnlmdvuspwqrjexfduy
-      '@xmark/utils': 2.4.61_react-dom@18.2.0
+      '@xmark/utils': 2.4.62_react-dom@18.2.0
       ahooks: 3.7.1_react@18.2.0
       clsx: 1.2.1
       defu: 6.1.0
@@ -2999,8 +2999,8 @@ packages:
       - vite
     dev: false
 
-  /@xmark/client/2.4.61_debug@4.3.4+vite@3.1.3:
-    resolution: {integrity: sha512-G698SPPSTfeRaKpaKUOEw7R090TdmF8LsKPDiR+KMVJXmdYM9HcFeS7nc3gQw89rSmsGqx9uxz9vQrPRAZS5qg==}
+  /@xmark/client/2.4.62_debug@4.3.4+vite@3.1.3:
+    resolution: {integrity: sha512-ke5XWOKsJOrGulCbMLGIQymVBjKRDrHq5JZbXf9ZO1jcWsbwWQZ/wJ32m69fvboxI2PK25xfBytW6v8ZvJbECg==}
     dependencies:
       '@arcblock/did-connect': 2.4.32_b4d6a5ueiusxip5jyl3jrxspp4
       '@arcblock/ux': 2.4.32_b4d6a5ueiusxip5jyl3jrxspp4
@@ -3011,7 +3011,7 @@ packages:
       '@iconify-json/mdi': 1.1.33
       '@mdx-js/react': 2.1.3_react@18.2.0
       '@mui/material': 5.10.6_6xnkn2aqnlmdvuspwqrjexfduy
-      '@xmark/utils': 2.4.61_react-dom@18.2.0
+      '@xmark/utils': 2.4.62_react-dom@18.2.0
       ahooks: 3.7.1_react@18.2.0
       clsx: 1.2.1
       defu: 6.1.0
@@ -3042,8 +3042,8 @@ packages:
       - vite
     dev: false
 
-  /@xmark/plugin-docs-indexer/2.4.61:
-    resolution: {integrity: sha512-CmQW6oBYLsDwVVR//NqV+lcPSS+5nVCIangqLj4nmQIJn5INpy1RXPj+vSRCg1YbdtCDQnHVCbxYF8rCQoSBTA==}
+  /@xmark/plugin-docs-indexer/2.4.62:
+    resolution: {integrity: sha512-Qyv9vWYeysNEOWDZxQBoZFQcNU4EHqKzgKZ+NssGj2JcwJJa9SJTSfn5AN+1mkHvEpf884Vi79KQLwW71Jz8Qw==}
     dependencies:
       '@blocklet/sdk': 1.8.24
       '@emotion/react': 11.10.4_react@18.2.0
@@ -3066,8 +3066,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@xmark/theme-arcblock/2.4.61:
-    resolution: {integrity: sha512-k25bWCg65TejyzFqnCLfhdBC3rDi3TuIb/Wlaqm0wFmqNBeOigthpzqSaChTuN0/Q0wRhcNZLjuth5v0yFXDjw==}
+  /@xmark/theme-arcblock/2.4.62:
+    resolution: {integrity: sha512-V5tKrZ7rEpQDvt4f7Gaox7zpz9bytWqfilx+58HO7ir/mGh9J2MENV62UQ8bfwI5MtVfsBPvCoc5Q19OcdO1fA==}
     dependencies:
       '@arcblock/did-connect': 2.4.32_sh5qlbywuemxd2y3xkrw2y2kr4
       '@arcblock/ux': 2.4.32_sh5qlbywuemxd2y3xkrw2y2kr4
@@ -3077,8 +3077,8 @@ packages:
       '@iconify-json/uim': 1.1.2
       '@mui/material': 5.10.6_hfzxdiydbrbhhfpkwuv3jhvwmq
       '@popperjs/core': 2.11.6
-      '@xmark/client': 2.4.61
-      '@xmark/utils': 2.4.61
+      '@xmark/client': 2.4.62
+      '@xmark/utils': 2.4.62
       ahooks: 3.7.1_react@18.2.0
       clsx: 1.2.1
       pathe: 0.3.8
@@ -3102,15 +3102,15 @@ packages:
       - vite
     dev: false
 
-  /@xmark/theme-docs/2.4.61:
-    resolution: {integrity: sha512-b8sXPnDLH4s7qny1QYAkS6wZgQTSdPRZTuMxHhJSC9i7Fu9f6/3n0lnVfz2hBDPUckShWz8IqccBs5GxeUZf5Q==}
+  /@xmark/theme-docs/2.4.62:
+    resolution: {integrity: sha512-vNPOBlajZUn8iynIZMMQub+Uk41/g/mG/M+eQurtSyVlnAXTkKXnTJQtBCi/LO6MCTkkArutTBCCtM1Ue3RTXQ==}
     dependencies:
       '@arcblock/ux': 2.4.32_sh5qlbywuemxd2y3xkrw2y2kr4
       '@emotion/react': 11.10.4_react@18.2.0
       '@emotion/styled': 11.10.4_gyryel6m34lsxtsejhafetjriq
       '@fontsource/lato': 4.5.9
       '@mui/material': 5.10.6_hfzxdiydbrbhhfpkwuv3jhvwmq
-      '@xmark/client': 2.4.61
+      '@xmark/client': 2.4.62
       ahooks: 3.7.1_react@18.2.0
       clsx: 1.2.1
       is-uri: 1.2.4
@@ -3135,8 +3135,8 @@ packages:
       - vite
     dev: false
 
-  /@xmark/utils/2.4.61:
-    resolution: {integrity: sha512-D9llMo2Q3qkQa6mH3kqU/amtJSoKpwj5dMXM/FZS3/pQc5pqS/WOM9WbvKxc3hIzjmBsn3LQdNS1YUAgNpHdEQ==}
+  /@xmark/utils/2.4.62:
+    resolution: {integrity: sha512-O8mbeJ++Ff0yx6ORre+y6nwdAaGBbJMIacYmcwzRCbAqYCKmW2YINFSYhzHiKUVwE66X8eMltpQSnjvTYGD1gw==}
     dependencies:
       base-x: 4.0.0
       hast-util-from-html: 1.0.0
@@ -3154,8 +3154,8 @@ packages:
       - supports-color
     dev: false
 
-  /@xmark/utils/2.4.61_react-dom@18.2.0:
-    resolution: {integrity: sha512-D9llMo2Q3qkQa6mH3kqU/amtJSoKpwj5dMXM/FZS3/pQc5pqS/WOM9WbvKxc3hIzjmBsn3LQdNS1YUAgNpHdEQ==}
+  /@xmark/utils/2.4.62_react-dom@18.2.0:
+    resolution: {integrity: sha512-O8mbeJ++Ff0yx6ORre+y6nwdAaGBbJMIacYmcwzRCbAqYCKmW2YINFSYhzHiKUVwE66X8eMltpQSnjvTYGD1gw==}
     dependencies:
       base-x: 4.0.0
       hast-util-from-html: 1.0.0
