@@ -45,7 +45,7 @@ scripts:
 environments: []
 capabilities: {}
 screenshots: []
-children: []
+components: []
 navigation:
   - title:
       en: ArcBlock

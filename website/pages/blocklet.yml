@@ -46,7 +46,7 @@ scripts:
 environments: []
 capabilities: {}
 screenshots: []
-children:
+components:
   - name: meilisearch
     mountPoint: /meilisearch
     source:
@@ -55,10 +55,10 @@ children:
       name: meilisearch
       version: latest
 navigation:
-  - child: create-blocklet-docs-site
-    title:
+  - title:
       en: Docs
       zh: 文档
+    component: create-blocklet-docs-site
   - title:
       en: Resources
       zh: 资源

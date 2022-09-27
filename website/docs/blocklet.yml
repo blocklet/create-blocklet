@@ -48,7 +48,7 @@ scripts:
 environments: []
 capabilities: {}
 screenshots: []
-children: []
+components: []
 navigation:
   - title:
       en: Docs
