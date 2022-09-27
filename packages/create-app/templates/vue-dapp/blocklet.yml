@@ -52,4 +52,4 @@ environments:
     secure: false
 capabilities: {}
 screenshots: []
-children: []
+components: []
