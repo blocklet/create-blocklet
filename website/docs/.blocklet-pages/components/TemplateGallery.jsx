@@ -24,9 +24,9 @@ function GalleryItem({ templateInfo, ...rest }) {
 }
 
 const GalleryItemRoot = styled('li')`
-  padding: 12px;
   overflow: hidden;
   font-size: 14px;
+  box-shadow: 0 5px 10px rgba(0,0,0,.12);
   /* fix: 避免受 .markdown-body li+li 样式影响 */
   & + & {
     margin: 0;
@@ -37,7 +37,6 @@ const GalleryItemRoot = styled('li')`
     overflow: hidden;
     color: inherit!important;
     border-radius: 4px;
-    box-shadow: 0 5px 10px rgba(0,0,0,.12);
     &,
     &:hover {
       text-decoration: none;
@@ -92,6 +91,7 @@ const Root = styled('div')`
   ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
     list-style: none;
     padding: 0;
   }
