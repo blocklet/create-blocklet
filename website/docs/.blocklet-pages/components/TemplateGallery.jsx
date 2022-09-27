@@ -12,7 +12,7 @@ function GalleryItem({ templateInfo, ...rest }) {
     <GalleryItemRoot>
       <Link className="gallery-inner" to={`/templates/${name}`}>
         <div className="gallery-cover-image" style={{ backgroundImage: `url(${coverImage})` }} >
-          <div className="gallery-cover-overlay" style={{  }}></div>
+          <div className="gallery-cover-overlay" />
         </div>
         <div className="gallery-content">
           <span className="gallery-title">{displayName}</span>
@@ -32,9 +32,16 @@ const GalleryItemRoot = styled('li')`
   & + & {
     margin: 0;
   }
-  .gallery-inner {
+  a.gallery-inner {
     display: block;
+    overflow: hidden;
+    color: inherit!important;
+    border-radius: 4px;
     box-shadow: 0 5px 10px rgba(0,0,0,.12);
+    &,
+    &:hover {
+      text-decoration: none;
+    }
   }
   .gallery-cover-image {
     position: relative;

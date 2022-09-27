@@ -19,6 +19,7 @@ const templatesData = [
   },
   {
     name: 'express-api',
+    displayName: 'Express API',
     blockletType: 'dapp',
     composable: true,
     framework: 'Express',
@@ -134,7 +135,7 @@ const getImage = (name) => {
 
 export const templates = templatesData.map(item => ({
   ...item,
-  displayName: toDisplayName(item.name),
+  displayName: item.displayName || toDisplayName(item.name),
   readme: `https://github.com/blocklet/create-blocklet/blob/main/packages/create-app/templates/${item.name}/README.md`,
   coverImage: getImage(item.name),
 }));
