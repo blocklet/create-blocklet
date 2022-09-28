@@ -1,3 +1,7 @@
+## 0.4.56 (September 28, 2022)
+
+- fix: navigation
+
 ## 0.4.55 (September 27, 2022)
 
 - chore: rename children to components in blocklet.yml
