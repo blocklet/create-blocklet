@@ -35,7 +35,7 @@
     "express-async-errors": "^3.1.1",
     "express-history-api-fallback": "^2.2.1",
     "vite-plugin-html": "^3.2.0",
-    "vue": "^3.2.39"
+    "vue": "^3.2.40"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.1.0",
