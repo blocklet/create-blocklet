@@ -15,15 +15,16 @@ themeConfig:
     en:
       - text: Welcome
         link: /
-      - text: Frequently Asked Questions
-        link: /faq
       - text: Quick Start
+        link: /quick-start
         items:
-          - text: Node.js
+          - text: Setup Node.js
             link: /quick-start/nodejs
-          - text: Blocklet Server
+          - text: Setup DID Wallet
+            link: /quick-start/did-wallet
+          - text: Setup Blocklet Server
             link: /quick-start/blocklet-server
-          - text: Hello Blocklet
+          - text: Create first blocklet
             link: /quick-start/hello-blocklet
       - text: How To Guides
         items:
@@ -49,15 +50,18 @@ themeConfig:
             link: /reference/npm-scripts
       - text: Templates
         link: /templates
+      - text: Frequently Asked Questions
+        link: /faq
     zh:
       - text: 欢迎
         link: /
-      - text: 常见问题
-        link: /faq
       - text: 新手入门
+        link: /quick-start
         items:
           - text: 安装 Node.js
             link: /quick-start/nodejs
+          - text: 安装 DID Wallet
+            link: /quick-start/did-wallet
           - text: 安装 Blocklet Server
             link: /quick-start/blocklet-server
           - text: 创建第一个 Blocklet
@@ -86,3 +90,5 @@ themeConfig:
             link: /reference/npm-scripts
       - text: 模板列表
         link: /templates
+      - text: 常见问题
+        link: /faq
