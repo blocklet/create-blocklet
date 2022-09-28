@@ -1,3 +1,7 @@
+## 0.4.59 (September 28, 2022)
+
+- chore: use latest xmark
+
 ## 0.4.58 (September 28, 2022)
 
 - feat: add template argument to create-blocklet command
