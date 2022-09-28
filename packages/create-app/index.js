@@ -127,6 +127,11 @@ async function init() {
   await echoBrand({ version });
 
   let targetDir = argv._[0] ? String(argv._[0]) : undefined;
+  let inputTemplateName = argv._[1] ? String(argv._[1]) : undefined;
+  if (inputTemplateName && !templates.find(item => item.name === inputTemplateName)) {
+    console.error(`${red('✖')} The template ${inputTemplateName} is invalid.`);
+    return;
+  }
 
   const defaultProjectName = !targetDir ? 'blocklet-project' : targetDir;
 
@@ -169,38 +174,40 @@ async function init() {
           initial: () => toValidPackageName(targetDir),
           validate: (dir) => isValidPackageName(dir) || 'Invalid package.json name',
         },
-        {
-          type: 'autocompleteMultiselect',
-          name: 'templateNames',
-          message: 'Choose one or more blocklet templates:',
-          choices: templates.map((template) => {
-            const templateColor = template.color;
-            return {
-              title: templateColor(template.display),
-              value: template.name,
-            };
-          }),
-          min: 1,
-          suggest: (input, choices) => Promise.resolve(choices.filter((i) => i.title.includes(input))),
-        },
-        // 这里需要添加一步 如果选择了 多项 就要提示用户设置主应用
-        {
-          type: (templateNames = []) => {
-            return templateNames.length > 1 ? 'select' : null;
-          },
-          name: 'mainBlocklet',
-          message: 'Please choose the main blocklet',
-          //
-          choices: (templateNames = []) =>
-            templateNames.map((templateName) => {
-              const template = templates.find((x) => x.name === templateName);
+        ...(inputTemplateName ? [] : [
+          {
+            type: 'autocompleteMultiselect',
+            name: 'templateNames',
+            message: 'Choose one or more blocklet templates:',
+            choices: templates.map((template) => {
+              const templateColor = template.color;
               return {
-                title: template.display,
+                title: templateColor(template.display),
                 value: template.name,
               };
             }),
-          initial: 1,
-        },
+            min: 1,
+            suggest: (input, choices) => Promise.resolve(choices.filter((i) => i.title.includes(input))),
+          },
+          // 这里需要添加一步 如果选择了 多项 就要提示用户设置主应用
+          {
+            type: (templateNames = []) => {
+              return templateNames.length > 1 ? 'select' : null;
+            },
+            name: 'mainBlocklet',
+            message: 'Please choose the main blocklet',
+            //
+            choices: (templateNames = []) =>
+              templateNames.map((templateName) => {
+                const template = templates.find((x) => x.name === templateName);
+                return {
+                  title: template.display,
+                  value: template.name,
+                };
+              }),
+            initial: 1,
+          },
+        ]),
         {
           type: 'text',
           name: 'authorName',
@@ -228,7 +235,7 @@ async function init() {
   }
 
   // user choice associated with prompts
-  const { mainBlocklet = null, templateNames = [], overwrite, packageName, authorName, authorEmail } = result;
+  const { mainBlocklet = null, templateNames = inputTemplateName ? [inputTemplateName] : [], overwrite, packageName, authorName, authorEmail } = result;
 
   await echoDocument();
 
