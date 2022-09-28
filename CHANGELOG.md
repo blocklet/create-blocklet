@@ -1,3 +1,7 @@
+## 0.4.57 (September 28, 2022)
+
+- chore: polish quick start
+
 ## 0.4.56 (September 28, 2022)
 
 - fix: navigation
