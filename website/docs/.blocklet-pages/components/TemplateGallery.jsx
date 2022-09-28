@@ -52,8 +52,8 @@ const GalleryItemRoot = styled('li')`
       position: absolute;
       bottom: 0;
       width: 100%;
-      height: 40px;
-      background: linear-gradient(180deg,transparent,rgba(0,0,0,.05));
+      height: 50px;
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,.02));
     }
   }
   .gallery-content {
