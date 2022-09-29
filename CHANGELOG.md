@@ -1,3 +1,7 @@
+## 0.4.62 (九月 29, 2022)
+
+- docs: add template gallery and template detail pages
+
 ## 0.4.61 (九月 29, 2022)
 
 - chrore: add @xmark/client for "website/page"
