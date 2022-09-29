@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import Button from '@arcblock/ux/lib/Button';
 import { styled } from '@arcblock/ux/lib/Theme';
-import { useLocaleContext } from '@arcblock/ux/lib/Locale/context';
+import { useInjectContext } from 'virtual:context';
 import { templates } from '../lib/templates';
 
 const translations = {
@@ -19,6 +19,7 @@ const translations = {
 
 function GalleryItem({ templateInfo, ...rest }) {
   const navigate = useNavigate();
+  const { useLocaleContext } = useInjectContext();
   const { locale = 'en' } = useLocaleContext();
   const { name, displayName, coverImage, desc } = templateInfo;
 

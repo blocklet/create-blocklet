@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import Button from '@arcblock/ux/lib/Button';
 import { styled } from '@arcblock/ux/lib/Theme';
-import { useLocaleContext } from '@arcblock/ux/lib/Locale/context';
+import { useInjectContext } from 'virtual:context';
 import { findByName } from '../lib/templates';
 
 function TemplateInfo({ templateName, ...rest }) {
+  const { useLocaleContext } = useInjectContext();
   const { locale = 'en' } = useLocaleContext();
   const template = findByName(templateName);
   const items = [
