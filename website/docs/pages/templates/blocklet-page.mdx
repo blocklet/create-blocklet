@@ -5,16 +5,19 @@ template: blocklet-page
 
 <TemplateInfo templateName="blocklet-page" />
 
-## 使用模板
+## Usage
 
 ```shell
 npm init blocklet@latest my-blocklet blocklet-page
 ```
 
-## 开发
+## Development
 
 :::Alert
-需要准备 Blocklet Server 环境.
+Prerequisites: 
+
+- Blocklet Server
+- Node.js 14+
 :::
 
 ```shell
@@ -24,10 +27,10 @@ npm install
 blocklet dev
 ```
 
-该应用基于 xmark 构建，你可以编辑 pages 目录中的页面，或者通过 .blocklet-pages/config.yml 定制你的站点。进一步了解请参考 [Blocklet Pages](https://pages.blocklet.io/)。
+The application is built on xmark, and you can try to edit pages in the pages directory or customize your site with .blocklet-pages/config.yml. See [Blocklet Pages](https://pages.blocklet.io/) for more information.
 
-## 参考
+## See also
 
-- [在本机启动 Blocklet Server](https://developer.blocklet.io/docs/en/prerequisites/server)
-- [可用脚本](/available-scripts)
-- [目录结构](/folder-structure)
+- [Setup Local Blocklet Server](https://developer.blocklet.io/docs/en/quick-start/blocklet-server)
+- [Available Scripts](/reference/npm-scripts)
+- [Folder Structure](/reference/blocklet-structure)
