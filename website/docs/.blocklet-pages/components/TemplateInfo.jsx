@@ -12,11 +12,23 @@ function TemplateInfo({ templateName, ...rest }) {
   const items = [
     { key: 'name', label: { en: 'Template Name', zh: '模板名称', } },
     { key: 'blockletType', label: { en: 'Blocklet Type', zh: 'Blocklet 类型', } },
-    { key: 'composable', label: { en: 'Composable', zh: '是否可组合', } },
+    { 
+      key: 'composable', 
+      label: { en: 'Composable', zh: '是否可组合', },
+      renderer(value) {
+        const texts = {
+          true: { en: 'Yes', zh: '是' },
+          false: { en: 'No', zh: '否' },
+        };
+        return texts[value][locale]
+      },
+    },
     { 
       key: 'framework', 
       label: { en: 'Framework', zh: '使用框架', }, 
-      ignoreEmptyValue: true,
+      renderer(value) {
+        return value || 'N/A';
+      },
     },
     { key: 'languages', label: { en: 'Languages', zh: '开发语言', } },
     { key: 'useCase', label: { en: 'Use Case', zh: '使用案例', } },
@@ -32,13 +44,10 @@ function TemplateInfo({ templateName, ...rest }) {
         <ul>
           {items.map((item) => {
             const { key, label, ignoreEmptyValue, renderer } = item;
-            const value = template[key];
+            const value = renderer ? renderer(template[key]) : template[key];
             const localizedLabel = label[locale];
             if (ignoreEmptyValue && !value) {
               return null;
-            }
-            if (renderer) {
-              return renderer({ key, label: localizedLabel, value });
             }
             return (
               <li key={key}>
