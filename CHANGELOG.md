@@ -1,3 +1,7 @@
+## 0.4.60 (September 29, 2022)
+
+- fix: home page link
+
 ## 0.4.59 (September 28, 2022)
 
 - chore: use latest xmark
