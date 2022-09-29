@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from '@mui/material/Button';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import Button from '@arcblock/ux/lib/Button';
 import { styled } from '@arcblock/ux/lib/Theme';
 import { useLocaleContext } from '@arcblock/ux/lib/Locale/context';
 import { templates } from '../lib/templates';

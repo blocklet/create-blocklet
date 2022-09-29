@@ -210,22 +210,3 @@ export const search = (conditions = {}) => {
     return fields.every(field => conditions[field] === template[field]);
   });
 }
-
-export const labels = {
-  en: {
-    name: 'xxxx',
-    blockletType: 'xxxx',
-    composable: 'xxxx',
-    languages: 'xxxx',
-    useCase: 'xxxx',
-    author: 'xxxx',
-  },
-  zh: {
-    name: 'xxxx',
-    blockletType: 'xxxx',
-    composable: 'xxxx',
-    languages: 'xxxx',
-    useCase: 'xxxx',
-    author: 'xxxx',
-  }
-};
