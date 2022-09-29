@@ -1,3 +1,7 @@
+## 0.4.61 (九月 29, 2022)
+
+- chrore: add @xmark/client for "website/page"
+
 ## 0.4.60 (September 29, 2022)
 
 - fix: home page link
