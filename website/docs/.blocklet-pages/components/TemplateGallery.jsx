@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import Button from '@arcblock/ux/lib/Button';
 import { styled } from '@arcblock/ux/lib/Theme';
@@ -18,14 +18,13 @@ const translations = {
 }
 
 function GalleryItem({ templateInfo, ...rest }) {
-  const navigate = useNavigate();
   const { useLocaleContext } = useInjectContext();
   const { locale = 'en' } = useLocaleContext();
   const { name, displayName, coverImage, desc } = templateInfo;
 
   return (
     <GalleryItemRoot>
-      <div className="gallery-inner" to={`/templates/${name}`}>
+      <Link className="gallery-inner" to={`/templates/${name}`}>
         <div className="gallery-cover-image" style={{ backgroundImage: `url(${coverImage})` }} >
           <div className="gallery-cover-overlay" />
         </div>
@@ -43,15 +42,15 @@ function GalleryItem({ templateInfo, ...rest }) {
             </Button> */}
             <Button 
               size="small" 
+              variant="outlined"
               color="inherit" 
               endIcon={<NavigateNextIcon />} 
-              sx={{ textTransform: 'none' }}
-              onClick={() => navigate(`/templates/${name}`)}>
+              sx={{ textTransform: 'none' }}>
               {translations[locale].readMore}
             </Button>
           </div>
         </div>
-      </div>
+      </Link>
     </GalleryItemRoot>
   );
 }
@@ -59,15 +58,25 @@ function GalleryItem({ templateInfo, ...rest }) {
 const GalleryItemRoot = styled('li')`
   overflow: hidden;
   font-size: 14px;
-  box-shadow: 0 5px 10px rgba(0,0,0,.12);
+  box-shadow: 0 2px 6px rgba(0,0,0,.1);
+  transition: box-shadow 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 0 6px 10px rgba(0,0,0,.2);
+  }
   /* fix: 避免受 .markdown-body li+li 样式影响 */
   & + & {
     margin: 0;
   }
-  gallery-inner {
+  a.gallery-inner {
+    display: block;
     height: 100%;
     overflow: hidden;
     border-radius: 4px;
+    color: inherit;
+    &,
+    &:hover {
+      text-decoration: none;
+    }
   }
   .gallery-cover-image {
     position: relative;
