@@ -78,24 +78,24 @@ importers:
 
   website/docs:
     specifiers:
-      '@xmark/cli': ^2.4.66
-      '@xmark/client': ^2.4.66
-      '@xmark/plugin-docs-indexer': ^2.4.66
-      '@xmark/theme-docs': ^2.4.66
+      '@xmark/cli': ^2.4.71
+      '@xmark/client': ^2.4.71
+      '@xmark/plugin-docs-indexer': ^2.4.71
+      '@xmark/theme-docs': ^2.4.71
     dependencies:
-      '@xmark/cli': 2.4.66
-      '@xmark/client': 2.4.66
-      '@xmark/plugin-docs-indexer': 2.4.66
-      '@xmark/theme-docs': 2.4.66
+      '@xmark/cli': 2.4.71
+      '@xmark/client': 2.4.71
+      '@xmark/plugin-docs-indexer': 2.4.71
+      '@xmark/theme-docs': 2.4.71
 
   website/pages:
     specifiers:
-      '@xmark/cli': ^2.4.66
-      '@xmark/theme-arcblock': ^2.4.66
+      '@xmark/cli': ^2.4.71
+      '@xmark/theme-arcblock': ^2.4.71
       react: ^18.2.0
     dependencies:
-      '@xmark/cli': 2.4.66_react@18.2.0
-      '@xmark/theme-arcblock': 2.4.66
+      '@xmark/cli': 2.4.71_react@18.2.0
+      '@xmark/theme-arcblock': 2.4.71
       react: 18.2.0
 
 packages:
@@ -2605,12 +2605,12 @@ packages:
       - vite
     dev: false
 
-  /@unocss/astro/0.45.25_vite@3.1.3:
+  /@unocss/astro/0.45.25_vite@3.1.4:
     resolution: {integrity: sha512-TxFxESIvSZtaVIRP/cDyrwnYlHz78mG9ohhAhI0adLGi0v0yBwoGJ1krlqxAuTzhV191InTlwD/C5QevTsf86Q==}
     dependencies:
       '@unocss/core': 0.45.25
       '@unocss/reset': 0.45.25
-      '@unocss/vite': 0.45.25_vite@3.1.3
+      '@unocss/vite': 0.45.25_vite@3.1.4
     transitivePeerDependencies:
       - vite
     dev: false
@@ -2764,7 +2764,7 @@ packages:
       pathe: 0.3.8
     dev: false
 
-  /@unocss/vite/0.45.25_vite@3.1.3:
+  /@unocss/vite/0.45.25_vite@3.1.4:
     resolution: {integrity: sha512-ExjEDlCBWixADfgSr2FTeXsfN+9Ye6fd5XlYnXuvXlTd8QZQVkW4EOMJwDAB6Lcd8LnJ1nRCX9oltU9ecdbrzw==}
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0-0
@@ -2778,10 +2778,10 @@ packages:
       '@unocss/transformer-directives': 0.45.25
       magic-string: 0.26.3
       pathe: 0.3.8
-      vite: 3.1.3
+      vite: 3.1.4
     dev: false
 
-  /@vitejs/plugin-react/2.1.0_vite@3.1.3:
+  /@vitejs/plugin-react/2.1.0_vite@3.1.4:
     resolution: {integrity: sha512-am6rPyyU3LzUYne3Gd9oj9c4Rzbq5hQnuGXSMT6Gujq45Il/+bunwq3lrB7wghLkiF45ygMwft37vgJ/NE8IAA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -2794,7 +2794,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.18.6_@babel+core@7.19.1
       magic-string: 0.26.3
       react-refresh: 0.14.0
-      vite: 3.1.3
+      vite: 3.1.4
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -2814,8 +2814,8 @@ packages:
       elliptic: 6.5.4
     dev: false
 
-  /@xmark/cli/2.4.66:
-    resolution: {integrity: sha512-uUtlHvcJLN+a7wqi5z5aNePUJHtY/gFq3bWRYqWl8nDhCBAupiTBYfc1rITB+Q9WjsCsLru8RLMB6J/m/2/Uwg==}
+  /@xmark/cli/2.4.71:
+    resolution: {integrity: sha512-S8OewE2oXefio6BOImBXkAucqL3JgT9PweS4yUwva6xerxT/ad8PoTcSJglUD9bvasMwPeroJr9/R5m3IpPvuw==}
     hasBin: true
     dependencies:
       '@antfu/utils': 0.5.2
@@ -2823,9 +2823,9 @@ packages:
       '@mdx-js/react': 2.1.3
       '@mdx-js/rollup': 2.1.3
       '@rollup/plugin-yaml': 3.1.0
-      '@vitejs/plugin-react': 2.1.0_vite@3.1.3
-      '@xmark/client': 2.4.66_debug@4.3.4+vite@3.1.3
-      '@xmark/utils': 2.4.66
+      '@vitejs/plugin-react': 2.1.0_vite@3.1.4
+      '@xmark/client': 2.4.71_debug@4.3.4+vite@3.1.4
+      '@xmark/utils': 2.4.71
       change-case: 4.1.2
       debug: 4.3.4
       escape-string-regexp: 5.0.0
@@ -2857,10 +2857,10 @@ packages:
       string-replace-async: 3.0.2
       ufo: 0.8.5
       unist-util-visit: 4.1.1
-      unocss: 0.45.25_vite@3.1.3
-      vite: 3.1.3
-      vite-plugin-blocklet: 0.4.58
-      vite-plugin-svgr: 2.2.1_vite@3.1.3
+      unocss: 0.45.25_vite@3.1.4
+      vite: 3.1.4
+      vite-plugin-blocklet: 0.4.59
+      vite-plugin-svgr: 2.2.1_vite@3.1.4
       yaml: 2.1.1
       yargs: 17.5.1
     transitivePeerDependencies:
@@ -2883,8 +2883,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@xmark/cli/2.4.66_react@18.2.0:
-    resolution: {integrity: sha512-uUtlHvcJLN+a7wqi5z5aNePUJHtY/gFq3bWRYqWl8nDhCBAupiTBYfc1rITB+Q9WjsCsLru8RLMB6J/m/2/Uwg==}
+  /@xmark/cli/2.4.71_react@18.2.0:
+    resolution: {integrity: sha512-S8OewE2oXefio6BOImBXkAucqL3JgT9PweS4yUwva6xerxT/ad8PoTcSJglUD9bvasMwPeroJr9/R5m3IpPvuw==}
     hasBin: true
     dependencies:
       '@antfu/utils': 0.5.2
@@ -2892,9 +2892,9 @@ packages:
       '@mdx-js/react': 2.1.3_react@18.2.0
       '@mdx-js/rollup': 2.1.3
       '@rollup/plugin-yaml': 3.1.0
-      '@vitejs/plugin-react': 2.1.0_vite@3.1.3
-      '@xmark/client': 2.4.66_debug@4.3.4+vite@3.1.3
-      '@xmark/utils': 2.4.66
+      '@vitejs/plugin-react': 2.1.0_vite@3.1.4
+      '@xmark/client': 2.4.71_debug@4.3.4+vite@3.1.4
+      '@xmark/utils': 2.4.71
       change-case: 4.1.2
       debug: 4.3.4
       escape-string-regexp: 5.0.0
@@ -2926,10 +2926,10 @@ packages:
       string-replace-async: 3.0.2
       ufo: 0.8.5
       unist-util-visit: 4.1.1
-      unocss: 0.45.25_vite@3.1.3
-      vite: 3.1.3
-      vite-plugin-blocklet: 0.4.58
-      vite-plugin-svgr: 2.2.1_vite@3.1.3
+      unocss: 0.45.25_vite@3.1.4
+      vite: 3.1.4
+      vite-plugin-blocklet: 0.4.59
+      vite-plugin-svgr: 2.2.1_vite@3.1.4
       yaml: 2.1.1
       yargs: 17.5.1
     transitivePeerDependencies:
@@ -2952,8 +2952,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@xmark/client/2.4.66:
-    resolution: {integrity: sha512-AcQ/ihBtwvFKBuoDmSoDimtL92cEh3X4p3w8iUmGJPgEfr6iFSPZhcv42Jki2zcHvKzeYr1hWvXOkz5K6LSwbQ==}
+  /@xmark/client/2.4.71:
+    resolution: {integrity: sha512-MX48/pI0Zs6FYkeGwi5hIswLdQcso96lT8yTndf+OznqER2fI+Mdlb7ZG6otuYS6ShWGUg1/g5x0/TMLRC0qsA==}
     dependencies:
       '@arcblock/did-connect': 2.4.32_v2m5e27vhdewzwhryxwfaorcca
       '@arcblock/ux': 2.4.32_v2m5e27vhdewzwhryxwfaorcca
@@ -2964,7 +2964,7 @@ packages:
       '@iconify-json/mdi': 1.1.33
       '@mdx-js/react': 2.1.3_react@18.2.0
       '@mui/material': 5.10.7_6xnkn2aqnlmdvuspwqrjexfduy
-      '@xmark/utils': 2.4.66_react-dom@18.2.0
+      '@xmark/utils': 2.4.71_react-dom@18.2.0
       ahooks: 3.7.1_react@18.2.0
       clsx: 1.2.1
       defu: 6.1.0
@@ -2979,6 +2979,7 @@ packages:
       react-error-boundary: 3.1.4_react@18.2.0
       react-helmet: 6.1.0_react@18.2.0
       react-router-dom: 6.4.1_biqbaboplfbrettd7655fr4n2y
+      slugify: 1.6.5
       ufo: 0.8.5
       unocss: 0.45.25
     transitivePeerDependencies:
@@ -2995,8 +2996,8 @@ packages:
       - vite
     dev: false
 
-  /@xmark/client/2.4.66_debug@4.3.4+vite@3.1.3:
-    resolution: {integrity: sha512-AcQ/ihBtwvFKBuoDmSoDimtL92cEh3X4p3w8iUmGJPgEfr6iFSPZhcv42Jki2zcHvKzeYr1hWvXOkz5K6LSwbQ==}
+  /@xmark/client/2.4.71_debug@4.3.4+vite@3.1.4:
+    resolution: {integrity: sha512-MX48/pI0Zs6FYkeGwi5hIswLdQcso96lT8yTndf+OznqER2fI+Mdlb7ZG6otuYS6ShWGUg1/g5x0/TMLRC0qsA==}
     dependencies:
       '@arcblock/did-connect': 2.4.32_b4d6a5ueiusxip5jyl3jrxspp4
       '@arcblock/ux': 2.4.32_b4d6a5ueiusxip5jyl3jrxspp4
@@ -3007,7 +3008,7 @@ packages:
       '@iconify-json/mdi': 1.1.33
       '@mdx-js/react': 2.1.3_react@18.2.0
       '@mui/material': 5.10.7_6xnkn2aqnlmdvuspwqrjexfduy
-      '@xmark/utils': 2.4.66_react-dom@18.2.0
+      '@xmark/utils': 2.4.71_react-dom@18.2.0
       ahooks: 3.7.1_react@18.2.0
       clsx: 1.2.1
       defu: 6.1.0
@@ -3022,8 +3023,9 @@ packages:
       react-error-boundary: 3.1.4_react@18.2.0
       react-helmet: 6.1.0_react@18.2.0
       react-router-dom: 6.4.1_biqbaboplfbrettd7655fr4n2y
+      slugify: 1.6.5
       ufo: 0.8.5
-      unocss: 0.45.25_vite@3.1.3
+      unocss: 0.45.25_vite@3.1.4
     transitivePeerDependencies:
       - '@babel/core'
       - '@emotion/server'
@@ -3038,8 +3040,8 @@ packages:
       - vite
     dev: false
 
-  /@xmark/plugin-docs-indexer/2.4.66:
-    resolution: {integrity: sha512-6V7diBl+Dasiey+aeJLnzCoPiKGA2AMGF7uoLYEBScK/3WgNQiBf7aCy8Asj6cxU1MYEkTDXnUUmXP6jTDhNCw==}
+  /@xmark/plugin-docs-indexer/2.4.71:
+    resolution: {integrity: sha512-saTI5DKZpXj+VVCn0HYjS73rNJjqzHzNM01rR7UaoKRKK8Yi5fodPG1Y2hx5m/jXSCOQ/N9388QM2jj/Y2RpcQ==}
     dependencies:
       '@blocklet/sdk': 1.8.26
       '@emotion/react': 11.10.4_react@18.2.0
@@ -3062,8 +3064,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@xmark/theme-arcblock/2.4.66:
-    resolution: {integrity: sha512-tKbl5myOLkc8zWBtRyWY7NY49tRdcDiZEFZsiMQDe4mie4YVXWg/u7bKOEzwpcnthO98rXc09fThmjgpX/mo5w==}
+  /@xmark/theme-arcblock/2.4.71:
+    resolution: {integrity: sha512-CZkcjMMsv5CPvp/fMx69gD+oRf2mOFKMBjWSVFpR/TyIuee1kUe8Naf/12OpU4WaTZbvsizJidYyHsSo5ZdIRw==}
     dependencies:
       '@arcblock/did-connect': 2.4.32_sh5qlbywuemxd2y3xkrw2y2kr4
       '@arcblock/ux': 2.4.32_sh5qlbywuemxd2y3xkrw2y2kr4
@@ -3073,8 +3075,8 @@ packages:
       '@iconify-json/uim': 1.1.2
       '@mui/material': 5.10.7_hfzxdiydbrbhhfpkwuv3jhvwmq
       '@popperjs/core': 2.11.6
-      '@xmark/client': 2.4.66
-      '@xmark/utils': 2.4.66
+      '@xmark/client': 2.4.71
+      '@xmark/utils': 2.4.71
       ahooks: 3.7.1_react@18.2.0
       clsx: 1.2.1
       pathe: 0.3.8
@@ -3098,15 +3100,15 @@ packages:
       - vite
     dev: false
 
-  /@xmark/theme-docs/2.4.66:
-    resolution: {integrity: sha512-JZYKRGX47tsQuaex6BYcQkHh4uAYDBtmPXdZtLI47lr22btFnG30VfrNyoLO8AWgebCby1b2EDETh5Sl05qJNQ==}
+  /@xmark/theme-docs/2.4.71:
+    resolution: {integrity: sha512-qMLNqqLUy01X85wTBDpqVCZKuFKvbFi6yqXY/1+20kD5mWXV1mQ+pQ2SYSAHN8qwdYGCQ4Pbu7r1F8BZ3L2WbQ==}
     dependencies:
       '@arcblock/ux': 2.4.32_sh5qlbywuemxd2y3xkrw2y2kr4
       '@emotion/react': 11.10.4_react@18.2.0
       '@emotion/styled': 11.10.4_gyryel6m34lsxtsejhafetjriq
       '@fontsource/lato': 4.5.9
       '@mui/material': 5.10.7_hfzxdiydbrbhhfpkwuv3jhvwmq
-      '@xmark/client': 2.4.66
+      '@xmark/client': 2.4.71
       ahooks: 3.7.1_react@18.2.0
       clsx: 1.2.1
       is-uri: 1.2.4
@@ -3115,6 +3117,7 @@ packages:
       prop-types: 15.8.1
       react: 18.2.0
       react-router-dom: 6.4.1_react@18.2.0
+      slugify: 1.6.5
       zx: 7.0.8
     transitivePeerDependencies:
       - '@babel/core'
@@ -3131,8 +3134,8 @@ packages:
       - vite
     dev: false
 
-  /@xmark/utils/2.4.66:
-    resolution: {integrity: sha512-xoT74KwbVBO5f05XUAV9Q2w+COyjqt3cDPwsTBoPFZx/iPpmaiWZAZitWGVuciTqYdnu9yCH55ZeU4yKrkvCow==}
+  /@xmark/utils/2.4.71:
+    resolution: {integrity: sha512-wK49Vjmu+0+XMXYiG+rYCkLu3iHjCf4IxFt0uBTop0+wUBLKrniG1JbGWtwsi5kW+gv9C4nxx/8LkcuBge5Eng==}
     dependencies:
       base-x: 4.0.0
       hast-util-from-html: 1.0.0
@@ -3150,8 +3153,8 @@ packages:
       - supports-color
     dev: false
 
-  /@xmark/utils/2.4.66_react-dom@18.2.0:
-    resolution: {integrity: sha512-xoT74KwbVBO5f05XUAV9Q2w+COyjqt3cDPwsTBoPFZx/iPpmaiWZAZitWGVuciTqYdnu9yCH55ZeU4yKrkvCow==}
+  /@xmark/utils/2.4.71_react-dom@18.2.0:
+    resolution: {integrity: sha512-wK49Vjmu+0+XMXYiG+rYCkLu3iHjCf4IxFt0uBTop0+wUBLKrniG1JbGWtwsi5kW+gv9C4nxx/8LkcuBge5Eng==}
     dependencies:
       base-x: 4.0.0
       hast-util-from-html: 1.0.0
@@ -10450,7 +10453,7 @@ packages:
       - vite
     dev: false
 
-  /unocss/0.45.25_vite@3.1.3:
+  /unocss/0.45.25_vite@3.1.4:
     resolution: {integrity: sha512-7qMTM0t29rXlV0i2cBO9Nh8xGVfBw2B0WHbjmvSoL8kRpX7MG6Ypy8iJuUrS3gvURcN+j6GUxah2CzJtO6ZZ9Q==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -10459,7 +10462,7 @@ packages:
       '@unocss/webpack':
         optional: true
     dependencies:
-      '@unocss/astro': 0.45.25_vite@3.1.3
+      '@unocss/astro': 0.45.25_vite@3.1.4
       '@unocss/cli': 0.45.25
       '@unocss/core': 0.45.25
       '@unocss/preset-attributify': 0.45.25
@@ -10475,7 +10478,7 @@ packages:
       '@unocss/transformer-compile-class': 0.45.25
       '@unocss/transformer-directives': 0.45.25
       '@unocss/transformer-variant-group': 0.45.25
-      '@unocss/vite': 0.45.25_vite@3.1.3
+      '@unocss/vite': 0.45.25_vite@3.1.4
     transitivePeerDependencies:
       - supports-color
       - vite
@@ -10587,8 +10590,8 @@ packages:
       vfile-message: 3.1.2
     dev: false
 
-  /vite-plugin-blocklet/0.4.58:
-    resolution: {integrity: sha512-FTJ1FjBGa9NLGgQ7MjygBDjNODs4BVm9yKymoydAy8Kk/3UtQXwk9udHw74PH8Ew/kI4lTK+FOxyWj32GziTmA==}
+  /vite-plugin-blocklet/0.4.59:
+    resolution: {integrity: sha512-1a7tLB+dWK1Yys1lUTmplCj+IZIfsLN6MwoYYBXe2TF6zYetLl/hnug6mEO6U+5l7Ws5yMfPZiTP5RQ82/pPcw==}
     dependencies:
       '@arcblock/did': 1.17.19
       '@ocap/mcrypto': 1.17.19
@@ -10598,14 +10601,14 @@ packages:
       - supports-color
     dev: false
 
-  /vite-plugin-svgr/2.2.1_vite@3.1.3:
+  /vite-plugin-svgr/2.2.1_vite@3.1.4:
     resolution: {integrity: sha512-+EqwahbwjETJH/ssA/66dNYyKN1cO0AStq96MuXmq5maU7AePBMf2lDKfQna49tJZAjtRz+R899BWCsUUP45Fg==}
     peerDependencies:
       vite: ^2.6.0 || 3
     dependencies:
       '@rollup/pluginutils': 4.2.1
       '@svgr/core': 6.3.1
-      vite: 3.1.3
+      vite: 3.1.4
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -10658,8 +10661,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vite/3.1.3:
-    resolution: {integrity: sha512-/3XWiktaopByM5bd8dqvHxRt5EEgRikevnnrpND0gRfNkrMrPaGGexhtLCzv15RcCMtV2CLw+BPas8YFeSG0KA==}
+  /vite/3.1.4:
+    resolution: {integrity: sha512-JoQI08aBjY9lycL7jcEq4p9o1xUjq5aRvdH4KWaXtkSx7e7RpAh9D3IjzDWRD4Fg44LS3oDAIOG/Kq1L+82psA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:

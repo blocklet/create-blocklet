@@ -14,7 +14,7 @@
     "dev:child": "blocklet dev --component --app-did=<%= did %>"
   },
   "dependencies": {
-    "@xmark/cli": "^2.4.66",
-    "@xmark/theme-docs": "^2.4.66"
+    "@xmark/cli": "^2.4.71",
+    "@xmark/theme-docs": "^2.4.71"
   }
 }
