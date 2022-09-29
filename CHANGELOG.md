@@ -1,3 +1,7 @@
+## 0.4.63 (九月 29, 2022)
+
+- fix: error caused by locale context
+
 ## 0.4.62 (九月 29, 2022)
 
 - docs: add template gallery and template detail pages
