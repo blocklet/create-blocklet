@@ -92,6 +92,11 @@ const GalleryItemRoot = styled('li')`
       margin: 4px 0 0 0;
       font-size: 13px;
       color: ${props => props.theme.palette.grey[600]};
+      /* text ellipsis */
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
     }
     .gallery-actions {
       display: flex;
