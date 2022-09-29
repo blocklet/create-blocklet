@@ -1,0 +1,47 @@
+---
+layout: TemplatePageLayout
+template: vue-dapp
+---
+
+<TemplateInfo templateName="vue-dapp" />
+
+## Usage
+
+```shell
+npm init blocklet@latest my-blocklet vue-dapp
+```
+
+## Development
+
+:::Alert
+Prerequisites: 
+
+- Blocklet Server
+- Node.js 14+
+:::
+
+```shell
+# install dependencies
+npm install
+# run the blocklet in development environment mode
+blocklet dev
+```
+
+应用代码主要存放于以下几个目录中:  
+
+- api 目录: 存放服务端接口模块
+- src 目录: 存放 Vue 前端应用相关模块
+
+你可以尝试编辑目录中的模块，然后刷新页面查看修改后的效果。
+
+## Tech Stack
+
+- Vue 3
+- Vite
+- Express
+
+## See also
+
+- [Setup Local Blocklet Server](https://developer.blocklet.io/docs/en/quick-start/blocklet-server)
+- [Available Scripts](/reference/npm-scripts)
+- [Folder Structure](/reference/blocklet-structure)

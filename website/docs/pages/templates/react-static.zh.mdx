@@ -1,0 +1,44 @@
+---
+layout: TemplatePageLayout
+template: react-static
+---
+
+<TemplateInfo templateName="react-static" />
+
+## 使用模板
+
+```shell
+npm init blocklet@latest my-blocklet react-static
+```
+
+## 开发
+
+:::Alert
+前提条件: 
+
+- Blocklet Server
+- Node.js 14+
+:::
+
+
+```shell
+# install dependencies
+npm install
+# run the blocklet in development environment mode
+blocklet dev
+```
+
+应用代码主要存放于 src 目录中，你可以尝试编辑目录中的模块，然后刷新页面查看修改后的效果。
+
+## 技术栈
+
+- React 18
+- React Router v6
+- CRA & craco
+- Express
+
+## 参考
+
+- [在本机启动 Blocklet Server](https://developer.blocklet.io/docs/zh/quick-start/blocklet-server)
+- [可用脚本](/reference/npm-scripts)
+- [目录结构](/reference/blocklet-structure)
