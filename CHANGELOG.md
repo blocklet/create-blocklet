@@ -1,3 +1,7 @@
+## 0.4.64 (九月 30, 2022)
+
+- docs: ui improvements for template pages
+
 ## 0.4.63 (九月 29, 2022)
 
 - fix: error caused by locale context
