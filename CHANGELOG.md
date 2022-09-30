@@ -1,3 +1,7 @@
+## 0.4.66 (September 30, 2022)
+
+- chore: rename blocklet pages template
+
 ## 0.4.65 (September 30, 2022)
 
 - chore: update github actions
