@@ -1,3 +1,7 @@
+## 0.4.64 (September 30, 2022)
+
+- chore: update github actions
+
 ## 0.4.63 (九月 29, 2022)
 
 - fix: error caused by locale context
