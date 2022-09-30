@@ -9,8 +9,6 @@ on:
       - synchronize
     branches:
       - main
-      - dev
-      - master
 
 jobs:
   lint-title:
