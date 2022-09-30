@@ -127,7 +127,7 @@ async function init() {
   await echoBrand({ version });
 
   let targetDir = argv._[0] ? String(argv._[0]) : undefined;
-  let inputTemplateName = argv._[1] ? String(argv._[1]) : undefined;
+  const inputTemplateName = argv.template;
   if (inputTemplateName && !templates.find(item => item.name === inputTemplateName)) {
     console.error(`${red('✖')} The template ${inputTemplateName} is invalid.`);
     return;
