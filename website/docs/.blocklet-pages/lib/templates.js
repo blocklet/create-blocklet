@@ -2,12 +2,13 @@ const templatesData = [
   {
     name: 'blocklet-page',
     desc: { 
-      en: 'An xmark-driven website skeleton that can be used to build personal sites or project sites' ,
-      zh: '一个由 xmark 驱动的网站骨架，可用于构建个人站点或项目站点', 
+      en: 'A website skeleton driven by Blocklet Pages that can be used to build personal sites or project sites' ,
+      zh: '一个由 Blocklet Pages 驱动的网站骨架，可用于构建个人站点或项目站点', 
     },
+    displayName: 'Blocklet Pages',
     blockletType: 'static',
     composable: true,
-    framework: 'xmark',
+    framework: 'Blocklet Pages',
     languages: 'JavaScript',
     useCase: 'Documentation / Website',
     author: 'ZhangHan',
@@ -15,12 +16,12 @@ const templatesData = [
   {
     name: 'doc-site',
     desc: { 
-      en: 'An xmark-driven documentation site skeleton that can be used to build project documentation sites', 
-      zh: '一个由 xmark 驱动的文档站骨架，可以用于构建项目文档站点' 
+      en: 'A documentation site skeleton driven by Blocklet Pages that can be used to build project documentation sites', 
+      zh: '一个由 Blocklet Pages 驱动的文档站骨架，可以用于构建项目文档站点' 
     },
     blockletType: 'static',
     composable: true,
-    framework: 'xmark',
+    framework: 'Blocklet Pages',
     languages: 'JavaScript',
     useCase: 'Documentation / Website',
     author: 'ZhangHan',

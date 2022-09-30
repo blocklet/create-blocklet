@@ -1,6 +1,6 @@
 {
   "name": "create-blocklet",
-  "version": "0.4.63",
+  "version": "0.4.64",
   "exports": "./index.js",
   "type": "module",
   "repository": "git@github.com:blocklet/create-blocklet.git",
@@ -29,9 +29,9 @@
     "test:run": "vitest run"
   },
   "dependencies": {
-    "@arcblock/did": "^1.17.19",
-    "@ocap/mcrypto": "^1.17.19",
-    "@ocap/util": "^1.17.19",
+    "@arcblock/did": "^1.17.20",
+    "@ocap/mcrypto": "^1.17.20",
+    "@ocap/util": "^1.17.20",
     "boxen": "^6.2.1",
     "ejs": "^3.1.8",
     "envfile": "^6.18.0",
