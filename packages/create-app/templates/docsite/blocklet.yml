@@ -1,9 +1,9 @@
-name: template-doc-site
+name: template-docsite
 title: Doc Site Template
 description: A Blocklet Server blocklet
 keywords:
   - blocklet
-  - doc-site
+  - docsite
   - xmark
 group: static
 did: ''
@@ -48,7 +48,7 @@ screenshots: []
 components: []
 navigation:
   - title:
-      en: Doc Site 
+      en: Doc Site
       zh: 文档站点模板
     link:
       en: /en

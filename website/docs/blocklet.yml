@@ -2,9 +2,7 @@ name: create-blocklet-docs-site
 title: Create Blocklet Docs
 description: A Blocklet Server blocklet
 keywords:
-  - blocklet
-  - blocklet-page
-  - xmark
+  - docsite
 group: static
 did: z8iZua8WdqKwWLW56gbf4Z4R4KLkQHQiEPrHj
 main: dist

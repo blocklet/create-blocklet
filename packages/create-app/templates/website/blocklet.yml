@@ -1,9 +1,9 @@
-name: template-blocklet-page
+name: template-website
 title: Blocklet Page Template
 description: A Blocklet Server blocklet
 keywords:
   - blocklet
-  - blocklet-page
+  - website
   - xmark
 group: static
 did: ''

@@ -1,3 +1,3 @@
-# template-blocklet-page
+# template-website
 
-A blocklet-page template for creating a new blocklet project.
+A website template for creating a new blocklet project.

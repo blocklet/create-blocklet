@@ -2,9 +2,7 @@ name: create-blocklet-page-site
 title: Create Blocklet Page
 description: A Blocklet Server blocklet
 keywords:
-  - blocklet
-  - blocklet-page
-  - xmark
+  - website
 group: static
 did: z8iZuvjcXn3Lj1DXsaKkAPvL4y1nf5SSsUsXc
 main: dist

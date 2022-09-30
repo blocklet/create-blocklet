@@ -69,7 +69,7 @@
 
 - chore: update monorepo readme
 - chore: support monorepo template
-- chore: rename blocklet-page&&doc-site
+- chore: rename website&&docsite
 
 ## 0.4.49 (九月 13, 2022)
 
@@ -304,7 +304,7 @@
 - chore: update .npmrc
 - chore: use virtual:context module rather than @xmark/utils/inject
 - chore: change blocklet.yml & docs-site, page-site bundle command
-- chore: rename doc-site -> docs-site
+- chore: rename docsite -> docs-site
 - chore: adjust Header components
 - chore: polish theme-docs style
 - chore: polish Siderbar style
@@ -408,7 +408,7 @@
 - fix: closed #71, polish github action ci default value
 - fix: template dapps return empty object when it's not login
 - fix: closed #70, disabled random logo
-- chore: update template blocklet-page dependencies
+- chore: update template website dependencies
 
 ## 0.2.18 (March 14, 2022)
 

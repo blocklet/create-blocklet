@@ -48,7 +48,8 @@ Currently supported template presets include:
 - `vue2 + @vue/cli`
 - `solid-js`
 - `svelte`
-- `blocklet page`
+- `website powered by blocklet pages`
+- `documentation site powered by blocklet pages`
 - `html`
 
 **api**

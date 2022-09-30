@@ -94,13 +94,13 @@ const templates = [
     color: magenta,
   },
   {
-    name: 'blocklet-page',
-    display: '[static] blocklet page',
+    name: 'website',
+    display: '[static] website powered by blocklet pages',
     color: blue,
   },
   {
-    name: 'doc-site',
-    display: '[static] doc site',
+    name: 'docsite',
+    display: '[static] documentation site powered by blocklet pages',
     color: blue,
   },
   {
@@ -283,7 +283,7 @@ async function init() {
           continue;
         }
         // xmark 相关的模板不添加 .husky
-        if (fuzzyQuery(['blocklet-page', 'doc-site'], templateName) && ['.husky'].includes(file)) {
+        if (fuzzyQuery(['website', 'docsite'], templateName) && ['.husky'].includes(file)) {
           // eslint-disable-next-line no-continue
           continue;
         }
@@ -328,10 +328,10 @@ async function init() {
         if (randomPort) {
           env.API_PORT = randomPort;
         }
-        if (!fuzzyQuery(['blocklet-page'], templateName)) {
+        if (!fuzzyQuery(['website'], templateName)) {
           if (fuzzyQuery(['react'], templateName)) {
             env.REACT_APP_TITLE = finalTemplateName;
-          } else if (fuzzyQuery(['vue', 'blocklet-page'], templateName)) {
+          } else if (fuzzyQuery(['vue', 'website'], templateName)) {
             env.VITE_APP_TITLE = finalTemplateName;
           } else {
             env.APP_TITLE = finalTemplateName;
@@ -429,7 +429,7 @@ async function init() {
 
     // switch (templateNames) {
     //   case 'react':
-    //   case 'blocklet-page':
+    //   case 'website':
     //     agentList = ['npm', 'yarn'];
     //     break;
     //   default:
