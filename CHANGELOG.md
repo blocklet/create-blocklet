@@ -1,3 +1,7 @@
+## 0.4.67 (September 30, 2022)
+
+- chore: support '--template' arg to create-blocklet command
+
 ## 0.4.66 (September 30, 2022)
 
 - chore: rename blocklet pages template
