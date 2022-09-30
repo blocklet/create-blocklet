@@ -5,13 +5,31 @@ on:
     types:
       - opened
       - reopened
-      - edited
       - synchronize
+      - edited
     branches:
       - main
-      - master
 jobs:
+  check-files:
+    if: "! contains(toJSON(github.event.commits.*.message), 'WIP') && !contains(toJSON(github.event.commits.*.message), 'wip')"
+    runs-on: ubuntu-latest
+    name: Check files changed
+    outputs:
+      changed-files: ${{ toJSON(steps.changed-files-docs.outputs) }}
+      bump-version: ${{ steps.changed-files-docs.outputs.only_changed == 'false' }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+      - name: Get changed files in the docs folder
+        id: changed-files-docs
+        uses: tj-actions/changed-files@v31
+        with:
+          files: |
+            website/**
   main:
+    if: needs.check-files.outputs.bump-version == 'true'
+    needs: check-files
     runs-on: ubuntu-latest
     steps:
       - name: action-version-check
