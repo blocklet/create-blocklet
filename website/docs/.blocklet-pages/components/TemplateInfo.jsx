@@ -1,10 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import Button from '@arcblock/ux/lib/Button';
 import { styled } from '@arcblock/ux/lib/Theme';
 import { useInjectContext } from 'virtual:context';
 import { findByName } from '../lib/templates';
+
+const translations = {
+  en: {
+    viewSource: 'View Source',
+  },
+  zh: {
+    viewSource: '查看源码',
+  }
+}
 
 function TemplateInfo({ templateName, ...rest }) {
   const { useLocaleContext } = useInjectContext();
@@ -62,12 +71,12 @@ function TemplateInfo({ templateName, ...rest }) {
               size="small"
               variant="outlined"
               color="inherit"
-              endIcon={<OpenInNewIcon />}
+              startIcon={<GitHubIcon />}
               component="a"
               href={template.readme}
               target="_blank"
-              style={{ color: 'inherit', textTransform: 'none' }}>
-              README
+              style={{ color: 'inherit', textDecoration: 'none', textTransform: 'none' }}>
+              {translations[locale].viewSource}
             </Button>
           </li>
         </ul>

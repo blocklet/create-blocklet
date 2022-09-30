@@ -99,18 +99,22 @@ jobs:
       - name: Publish to npm
         run: |
           npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_TOKEN }}"
-          pnpm -r publish --access public --no-git-checks
+          pnpm -r --filter "./plugins/*" --filter "./packages/create-app" exec npm publish --access public --no-git-checks
+
       - name: get-npm-version
         id: package-version
         uses: martinbeentjes/npm-get-version-action@main
+
       - name: Config Git
         run: |
           git config --local user.name "bot"
           git config --local user.email "bot@arcblock.io"
+
       - name: Git Tag
         run: |
           git tag -a v${{ steps.package-version.outputs.current-version }} -m "chore(release): v${{ steps.package-version.outputs.current-version }}"
           git push origin v${{ steps.package-version.outputs.current-version }}
+
       - run: npx conventional-github-releaser -p angular
         env:
           CONVENTIONAL_GITHUB_RELEASER_TOKEN: ${{secrets.GITHUB_TOKEN}}

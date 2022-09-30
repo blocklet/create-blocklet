@@ -1,6 +1,6 @@
-## 0.4.64 (September 30, 2022)
+## 0.4.64 (九月 30, 2022)
 
-- chore: update github actions
+- docs: ui improvements for template pages
 
 ## 0.4.63 (九月 29, 2022)
 

@@ -55,10 +55,18 @@ components:
       name: meilisearch
       version: latest
 navigation:
-  - component: create-blocklet-docs-site
-    title:
+  - title:
       en: Docs
       zh: 文档
+    link:
+      en: /docs/en
+      zh: /docs/zh
+  - title:
+      en: Templates
+      zh: 模板
+    link:
+      en: /docs/en/templates
+      zh: /docs/zh/templates
   - title:
       en: Resources
       zh: 资源

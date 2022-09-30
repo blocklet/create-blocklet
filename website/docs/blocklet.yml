@@ -56,3 +56,9 @@ navigation:
     link:
       en: /en
       zh: /zh
+  - title:
+      en: Templates
+      zh: 模板
+    link:
+      en: /en/templates
+      zh: /zh/templates
