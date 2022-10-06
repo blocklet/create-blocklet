@@ -1,0 +1,9 @@
+{
+  "name": "react-static",
+  "desc": { "en": "A front-end application skeleton built with React", "zh": "一个基于 React 构建的前端应用骨架" },
+  "blockletType": "static",
+  "composable": true,
+  "languages": "JavaScript",
+  "useCase": "Starter",
+  "author": "ZhangHan"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "svelte-dapp",
+  "desc": {
+    "en": "A Dapp Blocklet skeleton built with Svelte and Express",
+    "zh": "一个基于 Svelte 构建的 Dapp Blocklet 应用骨架"
+  },
+  "blockletType": "dapp",
+  "composable": true,
+  "languages": "JavaScript",
+  "useCase": "Starter",
+  "author": "ZhangHan"
+}

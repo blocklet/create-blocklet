@@ -1,0 +1,12 @@
+{
+  "name": "solidjs-static",
+  "desc": {
+    "en": "A front-end application skeleton built with Solidjs",
+    "zh": "一个基于 Solidjs 构建的前端应用骨架"
+  },
+  "blockletType": "static",
+  "composable": true,
+  "languages": "JavaScript",
+  "useCase": "Starter",
+  "author": "ZhangHan"
+}

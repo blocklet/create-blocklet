@@ -82,11 +82,13 @@ importers:
       '@xmark/client': ^2.4.73
       '@xmark/plugin-docs-indexer': ^2.4.73
       '@xmark/theme-docs': ^2.4.73
+      create-blocklet: workspace:*
     dependencies:
       '@xmark/cli': 2.4.73
       '@xmark/client': 2.4.73
       '@xmark/plugin-docs-indexer': 2.4.73
       '@xmark/theme-docs': 2.4.73
+      create-blocklet: link:../../packages/create-app
 
   website/pages:
     specifiers:

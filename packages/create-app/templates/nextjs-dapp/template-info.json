@@ -1,0 +1,12 @@
+{
+  "name": "nextjs-dapp",
+  "desc": {
+    "en": "A Dapp Blocklet skeleton built with Next.js and Express",
+    "zh": "一个基于 Next.js 构建的 Dapp Blocklet 应用骨架"
+  },
+  "blockletType": "dapp",
+  "composable": true,
+  "languages": "JavaScript",
+  "useCase": "Starter",
+  "author": "ZhangHan"
+}

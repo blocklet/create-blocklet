@@ -1,0 +1,9 @@
+{
+  "name": "vue2-static",
+  "desc": { "en": "A front-end application skeleton built with Vue 2", "zh": "一个基于 Vue 2 构建的前端应用骨架" },
+  "blockletType": "static",
+  "composable": true,
+  "languages": "JavaScript",
+  "useCase": "Starter",
+  "author": "ZhangHan"
+}

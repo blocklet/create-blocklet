@@ -1,0 +1,12 @@
+{
+  "name": "solidjs-dapp",
+  "desc": {
+    "en": "A Dapp Blocklet skeleton built with SolidJS and Express",
+    "zh": "一个基于 SolidJS 构建的 Dapp Blocklet 应用骨架"
+  },
+  "blockletType": "dapp",
+  "composable": true,
+  "languages": "JavaScript",
+  "useCase": "Starter",
+  "author": "ZhangHan"
+}

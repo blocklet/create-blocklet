@@ -1,0 +1,12 @@
+{
+  "name": "html-static",
+  "desc": {
+    "en": "A simple HTML static page application. Can be used to wrap an existing static web application into a Blocklet",
+    "zh": "一个简单的 HTML 静态页面应用。可以用于将已有的静态网页程序包装成 Blocklet"
+  },
+  "blockletType": "static",
+  "composable": true,
+  "languages": "HTML",
+  "useCase": "Starter",
+  "author": "ZhangHan"
+}
