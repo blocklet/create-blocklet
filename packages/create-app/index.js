@@ -297,7 +297,8 @@ async function init() {
 
     // copy template files
     (() => {
-      const files = fs.readdirSync(templateDir);
+      // 过滤掉 template-info.json 文件
+      const files = fs.readdirSync(templateDir).filter(file => file !== 'template-info.json');
       for (const file of files) {
         write(file, null, templateDir, templateName);
       }
