@@ -1,3 +1,7 @@
+## 0.4.68 (October 08, 2022)
+
+- chore: split template infos into individual template-info.json files
+
 ## 0.4.67 (September 30, 2022)
 
 - chore: support '--template' arg to create-blocklet command
