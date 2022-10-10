@@ -1,3 +1,7 @@
+## 0.4.70 (十月 10, 2022)
+
+- chore: update dependency module
+
 ## 0.4.69 (十月 10, 2022)
 
 - feat: update xmark
