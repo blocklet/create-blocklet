@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "blocklet dev",
     "clean": "rm -rf .blocklet",
-    "bundle": "npm run clean && blocklet bundle --create-release",
+    "bundle": "npm run clean && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle --skip-hooks",
     "deploy:child": "npm run bundle && blocklet deploy .blocklet/bundle --app-did=<%= did %>",
     "dev:child": "blocklet dev --component --app-did=<%= did %>",

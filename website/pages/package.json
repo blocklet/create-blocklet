@@ -6,7 +6,7 @@
     "start": "xmark start",
     "build": "xmark build",
     "clean": "rm -rf .blocklet",
-    "bundle": "npm run clean && npm run build && blocklet bundle --create-release",
+    "bundle": "npm run clean && npm run build && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json"
   },
