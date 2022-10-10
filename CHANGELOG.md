@@ -1,3 +1,8 @@
+## 0.4.69 (十月 10, 2022)
+
+- feat: update xmark
+- fix: article error link
+
 ## 0.4.68 (October 08, 2022)
 
 - chore: split template infos into individual template-info.json files
