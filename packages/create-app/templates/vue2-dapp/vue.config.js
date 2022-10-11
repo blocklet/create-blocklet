@@ -1,11 +1,10 @@
 require('dotenv-flow').config();
 
+const mountPoint = process.env.BLOCKLET_DEV_MOUNT_POINT || '';
 const port = process.env.BLOCKLET_PORT || process.env.PORT || 3000;
 const apiPort = process.env.API_PORT || 3030;
-
+const apiPrefix = `${mountPoint}/api`;
 const whenDev = process.env.NODE_ENV === 'development';
-
-const mountPoint = process.env.BLOCKLET_DEV_MOUNT_POINT || '';
 
 module.exports = {
   publicPath: whenDev ? '' : process.env.PUBLIC_PATH || '/',
@@ -17,8 +16,9 @@ module.exports = {
       webSocketURL: `wss://0.0.0.0${mountPoint}/ws`,
     },
     proxy: {
-      '/api': {
+      [apiPrefix]: {
         target: `http://127.0.0.1:${apiPort}`,
+        rewrite: (path) => path.replace(apiPrefix, '/api'), // rewrite path when blocklet dev
       },
     },
   },
