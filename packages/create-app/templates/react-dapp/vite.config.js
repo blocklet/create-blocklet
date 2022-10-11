@@ -7,6 +7,8 @@ import svgr from 'vite-plugin-svgr';
 // https://vitejs.dev/config/
 export default defineConfig(async ({ mode }) => {
   const envMap = loadEnv(mode, process.cwd(), '');
+  const apiPort = envMap.API_PORT || 3030;
+  const apiPrefix = `${process.env.BLOCKLET_DEV_MOUNT_POINT || ''}/api`;
 
   return {
     plugins: [
@@ -22,5 +24,11 @@ export default defineConfig(async ({ mode }) => {
       createBlockletPlugin(),
       svgr(),
     ],
+    server: {
+      proxy: {
+        [apiPrefix]: `http://127.0.0.1:${apiPort}`,
+        rewrite: (path) => path.replace(apiPrefix, '/api'), // rewrite path when blocklet dev
+      },
+    },
   };
 });

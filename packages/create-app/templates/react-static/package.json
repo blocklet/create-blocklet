@@ -51,6 +51,7 @@
     "prettier": "^2.7.1",
     "vite": "^3.1.7",
     "vite-plugin-blocklet": "^0.4.70",
-    "vite-plugin-html": "^3.2.0"
+    "vite-plugin-html": "^3.2.0",
+    "vite-plugin-svgr": "^2.2.1"
   }
 }
