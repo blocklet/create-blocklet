@@ -6,7 +6,7 @@ keywords:
   - react
 group: static
 did: ''
-main: build
+main: dist
 author:
   name: Blocklet
   email: blocklet@arcblock.io
