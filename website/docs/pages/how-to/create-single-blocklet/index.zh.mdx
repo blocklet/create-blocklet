@@ -6,6 +6,7 @@ title: 创建单个应用
 `create-blocklet` 支持两种创建模式，分别是`创建单个应用` 和创建 `monorepo 类型的`组合应用
 
 ## Create the single blocklet
+
 通过 create-blocklet 命令创建，输入项目名称后即可进入选择模板阶段，在这个页面中可以输入关键字进行搜索。
 
 想了解关于更多 blocklet 模板的信息，请参考 [blocklet 类型](https://developer.blocklet.io/docs/zh/how-to/create)
@@ -20,6 +21,7 @@ cd my-single-blocklet
 npm install
 blocklet dev
 ```
+
 ## Start the blocklet
 
 如果你上面的 blocklet dev 执行成功的话，终端里会输出一个 blocklet 的应用的启动地址,点击后在浏览器中访问就能看到当前启动的 blocklet 了。
@@ -52,14 +54,14 @@ blocklet dev
     "prepare": "husky install"
   },
 ```
-通过 `create-blocklet` 工具创建出来的项目，已经自动配置好了npm script，你只需要执行 `npm run bundle` 即可将你的 blocklet 打包
+
+通过 `create-blocklet` 工具创建出来的项目，已经自动配置好了 npm script，你只需要执行 `npm run bundle` 即可将你的 blocklet 打包
 
 ![preview](./image/bundle.png)
 
 接下来你可以通过 `blocklet upload` 命令将你的 `blocklet` 上传到 `blocklet-store` 中 , [详细文档在这里](https://developer.blocklet.io/docs/zh/how-to/publish)
 
-点击下面链接了解关于更多 `@blocklet/cli` 和 `blocklet-store`  的信息
+点击下面链接了解关于更多 `@blocklet/cli` 和 `blocklet-store` 的信息
+
 - [blocklet-store](https://registry.arcblock.io/pages/zh/)
 - [@blocklet/cli](https://developer.blocklet.io/docs/en/reference/blocklet-cli)
-
-
