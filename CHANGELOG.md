@@ -1,3 +1,7 @@
+## 0.4.73 (十月 13, 2022)
+
+- fix: LICENSE is missing in items of type monorepo
+
 ## 0.4.72 (十月 13, 2022)
 
 - copy fix some files are missing
