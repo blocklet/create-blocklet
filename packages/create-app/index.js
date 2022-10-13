@@ -273,7 +273,7 @@ async function init() {
       const commonFiles = fs.readdirSync(commonDir);
       for (const file of commonFiles) {
         // 如果选择多个模板，每个子 package 中 只会包含必要的 文件
-        if (mainBlocklet && !['screenshots', 'public', 'logo.png', '.prettierrc'].includes(file)) {
+        if (mainBlocklet && !['screenshots', 'public', 'logo.png', '.prettierrc','LICENSE'].includes(file)) {
           continue;
         }
         // xmark 相关的模板不添加 .husky
