@@ -1,4 +1,4 @@
-name: template-react
+name: template-react-gunjs
 title: Blocklet Template React
 description: A Blocklet DAPP blocklet
 keywords:
@@ -17,7 +17,7 @@ specVersion: 1.1.1
 version: 0.1.0
 logo: logo.png
 files:
-  - build
+  - dist
   - logo.png
   - screenshots
   - api/hooks/pre-start.js

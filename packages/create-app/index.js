@@ -16,7 +16,6 @@ import { checkServerInstalled, checkServerRunning, checkSatisfiedVersion, getSer
 import { toBlockletDid } from './lib/did.js';
 import { initGitRepo } from './lib/git.js';
 import {
-  copy,
   emptyDir,
   isEmpty,
   isValidPackageName,
@@ -115,12 +114,7 @@ const templates = [
   },
 ];
 
-const renameFiles = {
-  _gitignore: '.gitignore',
-  _npmrc: '.npmrc',
-  _editorconfig: '.editorconfig',
-  _prettierrc: '.prettierrc',
-};
+
 
 async function init() {
   const { version } = await fs.readJSONSync(path.resolve(__dirname, 'package.json'));
@@ -266,7 +260,7 @@ async function init() {
   if (mainBlocklet) {
     await checkLerna();
     await checkYarn();
-    copy(path.join(__dirname, 'templates', 'monorepo'), root);
+    fs.copySync(path.join(__dirname, 'templates', 'monorepo'), root);
   }
 
   for (const templateName of templateNames) {
@@ -279,7 +273,7 @@ async function init() {
       const commonFiles = fs.readdirSync(commonDir);
       for (const file of commonFiles) {
         // 如果选择多个模板，每个子 package 中 只会包含必要的 文件
-        if (mainBlocklet && !['screenshots', 'public', 'logo.png', '_prettierrc'].includes(file)) {
+        if (mainBlocklet && !['screenshots', 'public', 'logo.png', '.prettierrc','LICENSE'].includes(file)) {
           continue;
         }
         // xmark 相关的模板不添加 .husky
@@ -287,11 +281,9 @@ async function init() {
           // eslint-disable-next-line no-continue
           continue;
         }
-        const targetPath = renameFiles[file]
-          ? path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', renameFiles[file])
-          : path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
+        const targetPath = path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
 
-        copy(path.join(commonDir, file), targetPath);
+        fs.copySync(path.join(commonDir, file), targetPath);
       }
     })();
 
@@ -518,13 +510,11 @@ async function init() {
 
   // inside functions
   function write(file, content, templateDir, templateName) {
-    const targetPath = renameFiles[file]
-      ? path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', renameFiles[file])
-      : path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
+    const targetPath = path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
     if (content) {
       fs.writeFileSync(targetPath, content);
     } else {
-      copy(path.join(templateDir, file), targetPath);
+      fs.copySync(path.join(templateDir, file), targetPath);
     }
   }
   function read(file, templateName) {
