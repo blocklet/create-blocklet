@@ -1,3 +1,7 @@
+## 0.4.72 (十月 13, 2022)
+
+- copy fix some files are missing
+
 ## 0.4.71 (十月 11, 2022)
 
 - refactor: migrate react template's framework from carco to vite
