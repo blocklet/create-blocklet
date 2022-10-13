@@ -41,7 +41,7 @@ create-blocklet 通过 [monorepo](https://en.wikipedia.org/wiki/Monorepo) 的方
 在你本地的 blocklet-server 实例的管理页面中，我们可以查看直观的看到 blocklet 之间的挂载关系： react-static 作为主应用，vue-static、express-api 作为子应用挂载在主应用上
 ![view-component](./image/view-component.png)
 
-## Update composition navigation
+## 更新组合应用的 navigation
 
 > 应用的 navigation 会显示在页面中
 
@@ -109,12 +109,16 @@ export default Home;
 ```
 
 修改完成后，你将在首页看到如下页面：我们刚刚配置的 navigation 展示在来页面的导航栏中
-
 ![navigation](./image/navigation.png)
-
 此时点击 `Vue page` 就可以访问到我们 dev 的 Vue 子应用
 ![vue-child](./image/vue-child.png)
 
-## Deploy the composition
+## 部署组合型应用
 
-当开发完毕，你可以使用 blocklet deploy 命令将
+当开发完毕，你可以使用 `blocklet deploy` 命令将应用部署到 `blocklet server`;
+
+通过 `create-blocklet` 工具创建出来的项目，已经自动配置好了 npm script, 你只需要执行 `npm run deploy` 即可将你的 blocklet 打包并部署到本地正在运行的 `blocklet-server` 实例的管理页面中，我们可以查看直观的看到
+
+
+
+想了解关于更多 `blocklet deploy` 命令的信息，请参考[这里](https://developer.blocklet.io/docs/zh/how-to/deploy)
