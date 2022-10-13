@@ -43,19 +43,24 @@ export default async function batchModifyDepsVersion({ dirPath = './', depList =
 
   const resultList = await Promise.all(
     pathList.map(async (fullPath) => {
-      let packageObj = await fs.readJSON(fullPath);
-
-      depList.map((depName) => {
-        packageObj = setDepVersion({ packageObj, key: 'dependencies', version, depName, fullPath });
-        packageObj = setDepVersion({ packageObj, key: 'devDependencies', version, depName, fullPath });
-      });
-
       try {
-        await fs.writeJSON(fullPath, packageObj, { spaces: 2 });
-        return true;
-      } catch (err) {
-        console.error(chalk.redBright('[error]: ', err));
-        return false;
+        await fs.statSync(fullPath);
+        let packageObj = await fs.readJSON(fullPath);
+
+        depList.map((depName) => {
+          packageObj = setDepVersion({ packageObj, key: 'dependencies', version, depName, fullPath });
+          packageObj = setDepVersion({ packageObj, key: 'devDependencies', version, depName, fullPath });
+        });
+
+        try {
+          await fs.writeJSON(fullPath, packageObj, { spaces: 2 });
+          return true;
+        } catch (err) {
+          console.error(chalk.redBright('[error]: ', err));
+          return false;
+        }
+      } catch (error) {
+        console.warn(chalk.yellowBright('[warn]: ', `${fullPath} no such file or directory`));
       }
     })
   );

@@ -1,3 +1,7 @@
+## 0.4.71 (十月 11, 2022)
+
+- refactor: migrate react template's framework from carco to vite
+
 ## 0.4.70 (十月 10, 2022)
 
 - chore: update dependency module
@@ -132,7 +136,6 @@
 - chore: remove comments
 - chore: update theme-config
 
-
 ## 0.4.39 (August 19, 2022)
 
 - fix(site): fix docs in navigation
@@ -209,7 +212,7 @@
 
 ## 0.4.22 (七月 17, 2022)
 
-- fix: remove "postinstall scripts" in plugins/*
+- fix: remove "postinstall scripts" in plugins/\*
 
 ## 0.4.21 (七月 14, 2022)
 

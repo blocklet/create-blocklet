@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "blocklet dev",
-    "eject": "react-scripts eject",
+    "eject": "vite eject",
+    "serve": "vite preview",
     "lint": "eslint src --ext .mjs,.js,.jsx,.ts,.tsx",
     "lint:fix": "npm run lint -- --fix",
-    "start": "craco start",
+    "start": "vite --host",
     "clean": "rm -rf .blocklet",
-    "bundle": "npm run clean && PUBLIC_URL='/.blocklet/proxy/<%= did %>' craco build && blocklet bundle --zip --create-release",
+    "bundle": "npm run clean && vite build && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
     "deploy:child": "npm run bundle && blocklet deploy .blocklet/bundle --app-did=<%= did %>",
@@ -43,11 +44,14 @@
   },
   "devDependencies": {
     "@arcblock/eslint-config": "^0.2.3",
-    "@craco/craco": "^6.4.5",
+    "@vitejs/plugin-react": "^2.1.0",
     "eslint": "^8.25.0",
     "husky": "^8.0.1",
     "lint-staged": "^12.5.0",
     "prettier": "^2.7.1",
-    "react-scripts": "5.0.1"
+    "vite": "^3.1.7",
+    "vite-plugin-blocklet": "^0.4.71",
+    "vite-plugin-html": "^3.2.0",
+    "vite-plugin-svgr": "^2.2.1"
   }
 }

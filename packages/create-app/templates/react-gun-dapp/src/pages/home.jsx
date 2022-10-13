@@ -5,7 +5,7 @@ import Gun from 'gun';
 import { Link } from 'react-router-dom';
 
 const gun = Gun({
-  peers: [`${window.location.origin}/gun`], // Put the relay nodes that you want here
+  peers: [`${window.location.origin}${window?.blocklet?.prefix || ''}gun`], // Put the relay nodes that you want here
 });
 
 export default function Home() {
