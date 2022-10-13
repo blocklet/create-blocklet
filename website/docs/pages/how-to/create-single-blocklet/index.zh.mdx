@@ -7,9 +7,9 @@ title: 如何创建单个应用？
 
 ## 创建单个应用
 
-通过 create-blocklet 命令创建，输入项目名称后即可进入选择模板阶段，在这个页面中可以输入关键字进行搜索。
+通过 `create-blocklet` 命令创建，输入项目名称后即可进入选择模板阶段，在这个页面中可以输入关键字进行搜索。
 
-想了解关于更多 blocklet 模板的信息，请参考 [blocklet 类型](https://developer.blocklet.io/docs/zh/how-to/create)
+想了解关于更多 `blocklet` 模板的信息，请参考 [blocklet 类型](https://developer.blocklet.io/docs/zh/how-to/create)
 ![create-blocklet](./image/single-blocklet.png)
 
 接下来我们选择 `[static] react` 作为示例
@@ -24,20 +24,20 @@ blocklet dev
 
 ## 启动应用
 
-如果你上面的 blocklet dev 执行成功的话，终端里会输出一个 blocklet 的应用的启动地址,点击后在浏览器中访问就能看到当前启动的 blocklet 了。
+如果你上面的 `blocklet dev` 执行成功的话，终端里会输出一个 `blocklet` 的应用的启动地址,点击后在浏览器中访问就能看到当前启动的 `blocklet` 了。
 
 ![start-blocklet](./image/start-blocklet.png)
 ![browser](./image/browser.png)
 
 ## 更新和预览应用
 
-这时你的 blocklet 处于开发运行的模式，你可以一边开发一边在浏览器中调试应用。接下来我们修改项目中的代码，向 home.jsx 中添加 h2 标题 `Home Page`，保存后页面上的内容将自动发生更改
+这时你的 `blocklet` 处于开发运行的模式，你可以一边开发一边在浏览器中调试应用。接下来我们修改项目中的代码，向 `home.jsx` 中添加 h2 标题 `Home Page`，保存后页面上的内容将自动发生更改
 
 ![preview](./image/preview.png)
 
 ## 打包和发布应用
 
-当开发工作完成后，通过 `@blocklet/cli` 中提供的 `blocklet bundle`命令，可以将你的 blocklet 打包。
+当开发工作完成后，通过 `@blocklet/cli` 中提供的 `blocklet bundle`命令，可以将你的 `blocklet` 打包。
 
 ```json
   "scripts": {
@@ -55,7 +55,7 @@ blocklet dev
   },
 ```
 
-通过 `create-blocklet` 工具创建出来的项目，已经自动配置好了 npm script, 你只需要执行 `npm run bundle` 即可将你的 blocklet 打包
+通过 `create-blocklet` 工具创建出来的项目，已经自动配置好了 `npm script`, 你只需要执行 `npm run bundle` 即可将你的 `blocklet` 打包
 
 ![preview](./image/bundle.png)
 
