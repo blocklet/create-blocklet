@@ -3,11 +3,48 @@ layout: 'documentation'
 title: Customize your blocklet
 ---
 
-:::Alert
-this page is a draft and need to be updated
-:::
+In the root directory of every `Blocklet` application there exists a `blocklet.yml` file, which is the configuration file for the `Blocklet` application, including the project name, version, author, description of the project and other configuration information.
 
-- Update title and description
-- Update logo
-- Update blocklet.md
-- Update screenshots
+Here's how to define your application by modifying `blocklet.yml`
+
+## Configure the name and description of the blocklet
+
+```shell
+title: Example APP
+description: Demo blocklet that shows how to configure Blocklet Meta
+```
+
+The `Blocklet` name and description are represented by `title` and `description`.
+
+The `title` and `description` will be presented in the page and will be visible to the user.
+
+## Configure the blocklet's logo
+
+> Note: The logo must have the same aspect ratio and be no smaller than 256px \* 256px
+
+```shell
+logo: logo.png
+```
+
+## Configure blocklet.md file
+
+`blocklet.md` is a file dedicated to describe the `Blocklet` application and will be used as the `Blocklet` application description file after uploading the `Blocklet` to the `blocklet-store`.
+
+## Configure screenshots
+
+`screenshots` is the image folder of the `Blocklet` application, which is used to display in the details page of the `blocklet-store` after uploading to the `blocklet-store`.
+
+We need to configure the `screenshots` field in `blocklet.yml`, specifying the path to the `Blocklet` application's image folder.
+
+```shell
+screenshots:
+  - 0.png
+  - 1.png
+  - 2.png
+```
+
+A configured `Blocklet` displayed in the `blocklet-store` looks like
+
+![example](./image/example.png)
+
+For more configuration see [Blocklet Meta: Infomation](https://developer.blocklet.io/docs/zh/reference/blocklet-spec#infomation)

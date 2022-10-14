@@ -5,16 +5,16 @@ title: How to create a single blocklet?
 
 `create-blocklet` supports two creation modes, `create single application` and `combined application` of type `monorepo
 
-## Create the blocklet
+## Creating a single application
 
-It is created by the create-blocklet command. After entering the project name, you can enter the template selection stage, and you can enter keywords to search in this page.
+The `create-blocklet` command allows you to enter the project name and enter the template selection stage, where you can enter keywords to search.
 
-For more information about blocklet templates, please refer to [blocklet type](https://developer.blocklet.io/docs/zh/how-to/create)
-! [create-blocklet](. /image/single-blocklet.png)
+For more information about `blocklet` templates, please refer to [blocklet types](https://developer.blocklet.io/docs/zh/how-to/create)
+![create-blocklet](./image/single-blocklet.png)
 
 Next we choose `[static] react` as an example
-! [select-blocklet](. /image/select-blocklet.png)
-The program will automatically create the directory structure of the corresponding template and install the dependencies according to its prompts to enter the development mode of the project (provided that the [blocklet-server](https://developer.blocklet.io/docs/zh/quick-start/blocklet-server) environment is installed locally).
+![select-blocklet](./image/select-blocklet.png)
+The program will automatically create the directory structure of the corresponding template and install the dependencies according to its prompts to enter the development mode of the project (provided that the [blocklet-server](https://developer.blocklet.io/docs/zh/quick-start/blocklet) environment is installed locally). -server) environment).
 
 ```shell
 cd my-single-blocklet
@@ -22,23 +22,22 @@ npm install
 blocklet dev
 ```
 
-## Start the blocklet
+## Start the application
 
-If your blocklet dev above is executed successfully, the terminal will output a blocklet's application launch address, and you can see the currently launched blocklet by clicking on it and visiting it in your browser.
+If your `blocklet dev` executes successfully, the terminal will output a `blocklet` application launch address, and you can see the currently launched `blocklet` by clicking on it and visiting it in your browser.
 
-! [start-blocklet](. /image/start-blocklet.png)
-! [browser](. /image/browser.png)
+![start-blocklet](./image/start-blocklet.png)
+![browser](./image/browser.png)
 
+## Update and preview the application
 
-## Update and preview the blocklet
+At this point your `blocklet` is in development run mode, so you can debug the application in the browser while you develop. Next we modify the code in the project by adding the h2 title `Home Page` to `home.jsx`, which will automatically change the content on the page after saving
 
-At this point your blocklet is in development run mode and you can debug the application in the browser while you develop. Next we modify the code in our project by adding the h2 title `Home Page` to home.jsx, which will automatically change the content on the page after saving
+![preview](./image/preview.png)
 
-! [preview](. /image/preview.png)
+## Package and publish the application
 
-## Bundle and publish the blocklet
-
-When development is complete, your blocklet can be packaged via the `blocklet bundle` command provided in `@blocklet/cli`.
+When development is complete, your `blocklet` can be packaged using the `blocklet bundle` command provided in `@blocklet/cli`.
 
 ```json
   "scripts": {
@@ -56,13 +55,13 @@ When development is complete, your blocklet can be packaged via the `blocklet bu
   },
 ```
 
-The project created with the `create-blocklet` tool is automatically configured with the npm script, you just need to run `npm run bundle` to package your blocklet
+The project created with the `create-blocklet` tool is automatically configured with the `npm script`, you just need to run `npm run bundle` to package your `blocklet`
 
 ![preview](./image/bundle.png)
 
-Next you can upload your `blocklet` to the `blocklet-store` with the `blocklet upload` command , [detailed documentation is here](https://developer.blocklet.io/docs/zh/how-to/publish)
+Next you can upload your `Blocklet` to the `blocklet-store` with the `blocklet upload` command , [detailed documentation here](https://developer.blocklet.io/docs/zh/how-to/publish)
 
-Click on the links below to learn more about `@blocklet/cli` and `blocklet-store`
+Click on the following links for more information about `@blocklet/cli` and `blocklet-store`
 
-- [blocklet-store](https://registry.arcblock.io/pages/zh/)
+- [blocklet-store](https://store.blocklet.dev/pages/zh/)
 - [@blocklet/cli](https://developer.blocklet.io/docs/en/reference/blocklet-cli)

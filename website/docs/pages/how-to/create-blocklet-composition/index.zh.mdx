@@ -15,7 +15,7 @@ title: 如何创建组合应用
 
 `create-blocklet` 通过 [monorepo](https://en.wikipedia.org/wiki/Monorepo) 的方式将多个 `Blocklet` 项目放在一起进行管理，从而实现开发组合型 `Blocklet` 的能力。
 
-在终端中执行 `create-blocklet` 命令，输入项目名称后即可进入选择模板阶段后，我们选择多个模板，这里我们选择 `react-dapp` `react-static` `express` 三种模板（借助 `blocklet` 平台的能力，我们可以将不同的前端框架组合在一起使用）。
+在终端中执行 `create-blocklet` 命令，输入项目名称后即可进入选择模板阶段后，我们选择多个模板，这里我们选择 `react-dapp` `vue-static` `express` 三种模板（借助 `blocklet` 平台的能力，我们可以将不同的前端框架组合在一起使用）。
 ![create](./image/create.png)
 
 选择一个项目作为主应用，这里我们选择 `react` 作为主应用
@@ -126,7 +126,5 @@ export default Home;
 然后依次部署子应用: 进入其他子应用所在的目录，然后执行 `npm run deploy:child`
 
 ![deploy-view](./image/deploy-view.png)
-
-
 
 想了解关于更多 `blocklet deploy` 命令的信息，请参考[这里](https://developer.blocklet.io/docs/zh/how-to/deploy)
