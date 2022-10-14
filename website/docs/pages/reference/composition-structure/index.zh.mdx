@@ -4,26 +4,28 @@ title: 组合应用的目录结构
 ---
 
 在创建后，你的项目应该像这样:
+
 ```shell
-composition-blocklet/
-    README.md 
-    package.json 
+composition-blocklet
+    README.md
+    package.json
     eslintrc.js
-    .prettierrc 
+    .prettierrc
     .gitignore
     .npmrc
     .editorconfig
     .github
     .husky
-    LICENSE 
+    LICENSE
     Makefile
     lerna.json
-    version 
-    blocklets/ 
+    version
+    blocklets/
     scripts/
         batch-modify-deps-version.mjs
         bump-version.mjs
-``` 
+```
+
 ## 根目录
 
 ### README.md
@@ -62,11 +64,12 @@ composition-blocklet/
 
 用于配置 `Husky` 的文件。
 
-### blocklets/
-`Blocklet` 应用文件夹，里面是在 `create-blocklet` 阶段选中的 `Blocklet` 
+### blocklets
 
-### scripts/
+`Blocklet` 应用文件夹，里面是在 `create-blocklet` 阶段选中的 `Blocklet`
+
+### scripts
+
 脚本目录，应用版本管理之类的脚本
 
-想了解更多关于 `组合应用` 信息，请参考[这里](https://github.com/blocklet/create-blocklet/tree/main/packages/create-app/templates/monorepo
-)
+想了解更多关于 `组合应用` 信息，请参考[这里](https://github.com/blocklet/create-blocklet/tree/main/packages/create-app/templates/monorepo)
