@@ -1,3 +1,9 @@
+## 0.4.74 (十月 14, 2022)
+
+- chore: additional English translation documentation 
+- chore: bump deps and fix dev issue
+- chore: additional documentation for create-blocklet
+
 ## 0.4.73 (十月 13, 2022)
 
 - fix: LICENSE is missing in items of type monorepo

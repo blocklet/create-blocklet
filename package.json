@@ -1,7 +1,7 @@
 {
   "name": "create-blocklet",
   "private": true,
-  "version": "0.4.73",
+  "version": "0.4.74",
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,6 +15,6 @@
   "license": "ISC",
   "dependencies": {
     "bumpp": "^7.2.0",
-    "zx": "^7.0.8"
+    "zx": "^7.1.1"
   }
 }

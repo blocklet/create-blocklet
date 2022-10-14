@@ -3,6 +3,71 @@ layout: 'documentation'
 title: 组合应用的目录结构
 ---
 
-:::Alert
-this page is a draft and need to be updated
-:::
+在创建后，你的项目应该像这样:
+
+```shell
+composition-blocklet
+    README.md
+    package.json
+    eslintrc.js
+    .prettierrc
+    .gitignore
+    .npmrc
+    .editorconfig
+    .github
+    .husky
+    LICENSE
+    Makefile
+    lerna.json
+    version
+    blocklets/
+    scripts/
+        batch-modify-deps-version.mjs
+        bump-version.mjs
+```
+
+### README.md
+
+项目的说明文件，简单介绍项目的一些基本情况
+
+### package.json
+
+包含 Blocklet 应用的依赖等信息。
+
+### .eslintrc.js
+
+用于配置 `ESLint` 规则的文件。
+
+### .prettierrc
+
+用于配置 `Prettier` 规则的文件。
+
+### .npmrc
+
+用于配置 `npm` 的文件。
+
+### .editorconfig
+
+用于配置 EditorConfig 规则的文件。
+
+### .gitignore
+
+用于配置 `git` 忽略的文件。
+
+### .github
+
+用于配置 `GitHub` 的文件。
+
+### .husky
+
+用于配置 `Husky` 的文件。
+
+### blocklets
+
+`Blocklet` 应用文件夹，里面是在 `create-blocklet` 阶段选中的 `Blocklet`
+
+### scripts
+
+脚本目录，应用版本管理之类的脚本
+
+想了解更多关于 `组合应用` 信息，请参考[这里](https://github.com/blocklet/create-blocklet/tree/main/packages/create-app/templates/monorepo)

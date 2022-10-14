@@ -3,6 +3,71 @@ layout: 'documentation'
 title: Composition folder structure
 ---
 
-:::Alert
-this page is a draft and need to be updated
-:::
+After creation, your project should look like this:
+
+```shell
+composition-blocklet
+    README.md
+    package.json
+    eslintrc.js
+    .prettierrc
+    .gitignore
+    .npmrc
+    .editorconfig
+    .github
+    .husky
+    LICENSE
+    Makefile
+    lerna.json
+    version
+    blocklets/
+    scripts/
+        batch-modify-deps-version.mjs
+        bump-version.mjs
+```
+
+### README.md
+
+The project's description document, briefly introducing some basic information of the project.
+
+### package.json
+
+Contains information such as the Blocklet application's dependencies.
+
+### .eslintrc.js
+
+The file used to configure the `ESLint` rules.
+
+### .prettierrc
+
+The file used to configure the `Prettier` rules.
+
+### .npmrc
+
+The file used to configure `npm`.
+
+### .editorconfig
+
+The file used to configure the EditorConfig rules.
+
+### .gitignore
+
+Used to configure files that are ignored by `git`.
+
+### .github
+
+The file used to configure `GitHub`.
+
+### .husky
+
+The file used to configure `Husky`.
+
+### blocklets
+
+The `Blocklet` application folder, containing the `Blocklet` selected in the `create-blocklet` phase
+
+### scripts
+
+Scripts directory, application versioning and such scripts.
+
+For more information about `combination applications`, please refer to [here](https://github.com/blocklet/create-blocklet/tree/main/packages/create-app/templates/monorepo)

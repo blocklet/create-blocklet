@@ -4,7 +4,7 @@ title: 入门指南
 description: 如何配置你的开发和调试环境
 ---
 
-如果你是一个中级或高级开发者，并且你已经对 Blocklet 的工作原理有了基本的了解，你可以从[创建第一个 Blocklet]（/quick-start/hello-blocklet）开始。
+如果你是一个中级或高级开发者，并且你已经对 Blocklet 的工作原理有了基本的了解，你可以从[创建第一个 Blocklet](/quick-start/hello-blocklet)开始。
 
 如果你是[Blocklet 平台](https://developer.blocklet.io)的新手，你应该按照以下步骤来开始。
 

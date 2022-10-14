@@ -3,9 +3,27 @@ layout: 'documentation'
 title: Manage blocklet release
 ---
 
-:::Alert
-this page is a draft and need to be updated
-:::
+The project created by the `create-blocklet` tool is automatically configured with the corresponding versioning script
 
-- Version bump —> semantic versioning
-- Changelog updating
+## Versioning in a single application project
+
+Execute `make bump-version ` in the root directory, the script will automatically calculate the next version number, or you can choose to enter the specified version number by typing enter.
+
+![single](./image/single-input.png)
+
+Follow the prompts in the terminal to adjust the CHANGELOG.md file, continue typing enter and end.
+
+![single](./image/single.png)
+
+This completes the update of the single application project version
+
+## Versioning in a combined application project
+
+Run `npm run bump-version` in the root directory, select a version update method, and type enter.
+![single](./image/composition-select.png)
+
+Follow the prompts in the terminal to adjust the CHANGELOG.md file, continue typing enter, and finish.
+
+![single](./image/composition.png)
+
+This completes the update of the composition application version
