@@ -1,6 +1,6 @@
 ## 0.4.74 (十月 14, 2022)
 
-- chore: add the corresponding English translation
+- chore: additional English translation documentation 
 - chore: bump deps and fix dev issue
 - chore: additional documentation for create-blocklet
 
