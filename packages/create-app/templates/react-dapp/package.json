@@ -9,7 +9,7 @@
     "start": "npm-run-all --parallel start:*",
     "start:client": "vite --host",
     "start:api": "cross-env NODE_ENV=development nodemon api/index.js -w api",
-    "clean": "zx scripts/build-clean.mjs",
+    "clean": "node scripts/build-clean.js",
     "bundle": "npm run bundle:client && npm run bundle:api",
     "bundle:client": "vite build",
     "bundle:api": "npm run clean && blocklet bundle --zip --create-release",
@@ -58,7 +58,8 @@
     "express-history-api-fallback": "^2.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.2"
+    "react-router-dom": "^6.4.2",
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {
     "@arcblock/eslint-config": "^0.2.3",

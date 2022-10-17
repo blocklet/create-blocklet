@@ -15,9 +15,9 @@ try {
   console.error(chalk.redBright('Could not get git log, please write changelog manually.'));
 }
 
-const dateRes = await $`date +'%B %d, %Y'`;
-const date = dateRes.stdout.trim();
-const title = `## ${version} (${date})`;
+const now = new Date();
+const currentDate = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
+const title = `## ${version} (${currentDate})`;
 
 await fs.ensureFile('CHANGELOG.md');
 const oldChangelog = await fs.readFile('CHANGELOG.md', 'utf8');
@@ -25,6 +25,9 @@ const changelog = [title, newChangelog, oldChangelog].filter((item) => !!item).j
 await fs.writeFile('CHANGELOG.md', changelog);
 
 console.log(`\nNow you can make adjustments to ${chalk.cyan('CHANGELOG.md')}. Then press enter to continue.`);
-await $`read`;
+
+process.stdin.setRawMode(true);
+process.stdin.resume();
+process.stdin.on('data', process.exit.bind(process, 0));
 
 await fs.writeFileSync('version', version);
