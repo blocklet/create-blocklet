@@ -15,7 +15,6 @@ try {
   console.error(chalk.redBright('Could not get git log, please write changelog manually.'));
 }
 
-// TODO: 这里可以直接用 nodejs 来获取日期？不需要区分系统语言
 const dateRes = await $`date +'%B %d, %Y'`;
 const date = dateRes.stdout.trim();
 const title = `## ${version} (${date})`;
