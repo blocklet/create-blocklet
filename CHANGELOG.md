@@ -1,3 +1,7 @@
+## 0.4.75 (十月 17, 2022)
+
+- fix: npm publish and pack leaving out files.
+
 ## 0.4.74 (十月 14, 2022)
 
 - chore: additional English translation documentation 
