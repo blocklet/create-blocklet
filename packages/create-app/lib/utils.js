@@ -1,4 +1,5 @@
 import { fs, path, $, echo, chalk } from 'zx';
+
 $.verbose = false;
 
 // common functions

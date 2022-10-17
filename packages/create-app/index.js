@@ -16,6 +16,7 @@ import { checkServerInstalled, checkServerRunning, checkSatisfiedVersion, getSer
 import { toBlockletDid } from './lib/did.js';
 import { initGitRepo } from './lib/git.js';
 import {
+  copy,
   emptyDir,
   isEmpty,
   isValidPackageName,
@@ -114,7 +115,11 @@ const templates = [
   },
 ];
 
-
+//see: https://github.com/npm/npm/issues/3763
+const renameFiles = {
+  _gitignore: '.gitignore',
+  _npmrc: '.npmrc',
+};
 
 async function init() {
   const { version } = await fs.readJSONSync(path.resolve(__dirname, 'package.json'));
@@ -122,7 +127,7 @@ async function init() {
 
   let targetDir = argv._[0] ? String(argv._[0]) : undefined;
   const inputTemplateName = argv.template;
-  if (inputTemplateName && !templates.find(item => item.name === inputTemplateName)) {
+  if (inputTemplateName && !templates.find((item) => item.name === inputTemplateName)) {
     console.error(`${red('✖')} The template ${inputTemplateName} is invalid.`);
     return;
   }
@@ -168,40 +173,42 @@ async function init() {
           initial: () => toValidPackageName(targetDir),
           validate: (dir) => isValidPackageName(dir) || 'Invalid package.json name',
         },
-        ...(inputTemplateName ? [] : [
-          {
-            type: 'autocompleteMultiselect',
-            name: 'templateNames',
-            message: 'Choose one or more blocklet templates:',
-            choices: templates.map((template) => {
-              const templateColor = template.color;
-              return {
-                title: templateColor(template.display),
-                value: template.name,
-              };
-            }),
-            min: 1,
-            suggest: (input, choices) => Promise.resolve(choices.filter((i) => i.title.includes(input))),
-          },
-          // 这里需要添加一步 如果选择了 多项 就要提示用户设置主应用
-          {
-            type: (templateNames = []) => {
-              return templateNames.length > 1 ? 'select' : null;
-            },
-            name: 'mainBlocklet',
-            message: 'Please choose the main blocklet',
-            //
-            choices: (templateNames = []) =>
-              templateNames.map((templateName) => {
-                const template = templates.find((x) => x.name === templateName);
-                return {
-                  title: template.display,
-                  value: template.name,
-                };
-              }),
-            initial: 1,
-          },
-        ]),
+        ...(inputTemplateName
+          ? []
+          : [
+              {
+                type: 'autocompleteMultiselect',
+                name: 'templateNames',
+                message: 'Choose one or more blocklet templates:',
+                choices: templates.map((template) => {
+                  const templateColor = template.color;
+                  return {
+                    title: templateColor(template.display),
+                    value: template.name,
+                  };
+                }),
+                min: 1,
+                suggest: (input, choices) => Promise.resolve(choices.filter((i) => i.title.includes(input))),
+              },
+              // 这里需要添加一步 如果选择了 多项 就要提示用户设置主应用
+              {
+                type: (templateNames = []) => {
+                  return templateNames.length > 1 ? 'select' : null;
+                },
+                name: 'mainBlocklet',
+                message: 'Please choose the main blocklet',
+                //
+                choices: (templateNames = []) =>
+                  templateNames.map((templateName) => {
+                    const template = templates.find((x) => x.name === templateName);
+                    return {
+                      title: template.display,
+                      value: template.name,
+                    };
+                  }),
+                initial: 1,
+              },
+            ]),
         {
           type: 'text',
           name: 'authorName',
@@ -229,7 +236,14 @@ async function init() {
   }
 
   // user choice associated with prompts
-  const { mainBlocklet = null, templateNames = inputTemplateName ? [inputTemplateName] : [], overwrite, packageName, authorName, authorEmail } = result;
+  const {
+    mainBlocklet = null,
+    templateNames = inputTemplateName ? [inputTemplateName] : [],
+    overwrite,
+    packageName,
+    authorName,
+    authorEmail,
+  } = result;
 
   await echoDocument();
 
@@ -260,7 +274,12 @@ async function init() {
   if (mainBlocklet) {
     await checkLerna();
     await checkYarn();
-    fs.copySync(path.join(__dirname, 'templates', 'monorepo'), root);
+    const monorepoDir = path.join(__dirname, 'templates', 'monorepo');
+    const monorepoFiles = fs.readdirSync(monorepoDir);
+    for (const file of monorepoFiles) {
+      const targetPath = path.join(root, renameFiles[file]||file);
+      copy(path.join(monorepoDir, file), targetPath);
+    }
   }
 
   for (const templateName of templateNames) {
@@ -273,7 +292,7 @@ async function init() {
       const commonFiles = fs.readdirSync(commonDir);
       for (const file of commonFiles) {
         // 如果选择多个模板，每个子 package 中 只会包含必要的 文件
-        if (mainBlocklet && !['screenshots', 'public', 'logo.png', '.prettierrc','LICENSE'].includes(file)) {
+        if (mainBlocklet && !['screenshots', 'public', 'logo.png', '.prettierrc', 'LICENSE'].includes(file)) {
           continue;
         }
         // xmark 相关的模板不添加 .husky
@@ -281,16 +300,18 @@ async function init() {
           // eslint-disable-next-line no-continue
           continue;
         }
-        const targetPath = path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
+        const targetPath = renameFiles[file]
+          ? path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', renameFiles[file])
+          : path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
 
-        fs.copySync(path.join(commonDir, file), targetPath);
+        copy(path.join(commonDir, file), targetPath);
       }
     })();
 
     // copy template files
     (() => {
       // 过滤掉 template-info.json 文件
-      const files = fs.readdirSync(templateDir).filter(file => file !== 'template-info.json');
+      const files = fs.readdirSync(templateDir).filter((file) => file !== 'template-info.json');
       for (const file of files) {
         write(file, null, templateDir, templateName);
       }
@@ -510,11 +531,13 @@ async function init() {
 
   // inside functions
   function write(file, content, templateDir, templateName) {
-    const targetPath = path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
+    const targetPath = renameFiles[file]
+      ? path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', renameFiles[file])
+      : path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
     if (content) {
       fs.writeFileSync(targetPath, content);
     } else {
-      fs.copySync(path.join(templateDir, file), targetPath);
+      copy(path.join(templateDir, file), targetPath);
     }
   }
   function read(file, templateName) {
