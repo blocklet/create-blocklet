@@ -1,3 +1,7 @@
+## 0.4.76 (十月 18, 2022)
+
+- chore: update dependency module
+
 ## 0.4.75 (十月 17, 2022)
 
 - fix: npm publish and pack leaving out files.
