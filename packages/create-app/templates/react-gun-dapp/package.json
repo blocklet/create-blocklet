@@ -43,7 +43,7 @@
   "dependencies": {
     "@arcblock/did-auth": "^1.17.23",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
-    "@blocklet/sdk": "^1.8.28",
+    "@blocklet/sdk": "^1.8.30",
     "@ocap/client": "^1.17.23",
     "@ocap/mcrypto": "^1.17.23",
     "@ocap/wallet": "^1.17.23",

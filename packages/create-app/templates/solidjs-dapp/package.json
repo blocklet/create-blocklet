@@ -39,7 +39,7 @@
   "dependencies": {
     "@arcblock/did-auth": "^1.17.23",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
-    "@blocklet/sdk": "^1.8.28",
+    "@blocklet/sdk": "^1.8.30",
     "@ocap/client": "^1.17.23",
     "@ocap/mcrypto": "^1.17.23",
     "@ocap/wallet": "^1.17.23",
@@ -51,7 +51,7 @@
     "express": "^4.18.2",
     "express-async-errors": "^3.1.1",
     "express-history-api-fallback": "^2.2.1",
-    "solid-js": "^1.5.7"
+    "solid-js": "^1.5.9"
   },
   "lint-staged": {
     "*.{mjs,js,vue}": [

@@ -16,7 +16,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "vue": "^3.2.40"
+    "vue": "^3.2.41"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.1.2",
