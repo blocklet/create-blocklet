@@ -74,7 +74,7 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
   Bump version at first.
 
   ```shell
-  make bump-version
+  npm run bump-version
   ```
 
   Then config blocklet store url.
@@ -114,7 +114,7 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
   Bump version at first.
 
   ```shell
-  make bump-version
+  npm run bump-version
   ```
 
   Push your code to Github main/master branch, or make a pull request to the main/master branch.  

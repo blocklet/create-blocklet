@@ -1,3 +1,7 @@
+## 0.4.77 (October 19, 2022)
+
+- replace makefile and bash script with npm script and zx
+
 ## 0.4.76 (十月 18, 2022)
 
 - chore: update dependency module
