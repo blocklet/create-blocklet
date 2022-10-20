@@ -1,3 +1,5 @@
+## 0.4.78 (October 20, 2022)
+
 ## 0.4.77 (October 19, 2022)
 
 - replace makefile and bash script with npm script and zx
