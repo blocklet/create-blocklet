@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="theme-color" content="#4F6AF5" />
         <meta name="description" content="Web site created using create-blocklet" />
       </Head>
-      <Script src="__meta__.js" />
+      <Script src="__blocklet__.js" />
       <Component {...pageProps} />
     </>
   );

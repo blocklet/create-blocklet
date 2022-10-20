@@ -9,7 +9,7 @@ export default function createMetaPlugin() {
             // injectTo: 'head',
             tag: 'script',
             attrs: {
-              src: '__meta__.js',
+              src: '__blocklet__.js',
             },
           },
         ],
