@@ -28,7 +28,7 @@
     "lint-staged": "^12.5.0",
     "prettier": "^2.7.1",
     "vite": "^3.1.8",
-    "vite-plugin-blocklet": "^0.4.78",
+    "vite-plugin-blocklet": "^0.4.79",
     "vite-plugin-html": "^3.2.0"
   },
   "lint-staged": {

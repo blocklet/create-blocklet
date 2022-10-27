@@ -10,5 +10,5 @@ If you are new to the [blocklet platform](https://developer.blocklet.io), you sh
 
 - [Setup Node.js](https://developer.blocklet.io/docs/en/quick-start/nodejs)
 - [Setup DID Wallet](https://developer.blocklet.io/docs/en/quick-start/did-wallet)
-- [Setup Blocklet Server](https://developer.blocklet.io/docs/en/quick-start/blocklet-server)
+- [Install Blocklet Cli](https://developer.blocklet.io/docs/en/quick-start/blocklet-server)
 - [Create first blocklet](/quick-start/hello-blocklet)
