@@ -10,5 +10,5 @@ description: 如何配置你的开发和调试环境
 
 - [设置 Node.js](https://developer.blocklet.io/docs/zh/quick-start/nodejs)
 - [设置 DID 钱包](https://developer.blocklet.io/docs/zh/quick-start/did-wallet)
-- [设置 Blocklet 服务器](https://developer.blocklet.io/docs/zh/quick-start/blocklet-server)
+- [安装 Blocklet CLI](https://developer.blocklet.io/docs/zh/quick-start/blocklet-server)
 - [创建第一个 Blocklet](/quick-start/hello-blocklet)
