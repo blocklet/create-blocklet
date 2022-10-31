@@ -121,6 +121,8 @@ const renameFiles = {
   _npmrc: '.npmrc',
 };
 
+const excludeFiles=['.github','.husky','.vscode','.editorconfig','_gitignore','_npmrc','version']
+
 async function init() {
   const { version } = await fs.readJSONSync(path.resolve(__dirname, 'package.json'));
   await echoBrand({ version });
@@ -153,8 +155,7 @@ async function init() {
           type: () => (!fs.existsSync(targetDir) || isEmpty(targetDir) ? null : 'confirm'),
           name: 'overwrite',
           message: () =>
-            `${
-              targetDir === '.' ? 'Current directory' : `Target directory "${targetDir}"`
+            `${targetDir === '.' ? 'Current directory' : `Target directory "${targetDir}"`
             } is not empty. Remove existing files and continue?`,
         },
         {
@@ -176,39 +177,38 @@ async function init() {
         ...(inputTemplateName
           ? []
           : [
-              {
-                type: 'autocompleteMultiselect',
-                name: 'templateNames',
-                message: 'Choose one or more blocklet templates:',
-                choices: templates.map((template) => {
-                  const templateColor = template.color;
+            {
+              type: 'autocompleteMultiselect',
+              name: 'templateNames',
+              message: 'Choose one or more blocklet templates:',
+              choices: templates.map((template) => {
+                const templateColor = template.color;
+                return {
+                  title: templateColor(template.display),
+                  value: template.name,
+                };
+              }),
+              min: 1,
+              suggest: (input, choices) => Promise.resolve(choices.filter((i) => i.title.includes(input))),
+            },
+            {
+              type: (templateNames = []) => {
+                return templateNames.length > 1 ? 'select' : null;
+              },
+              name: 'mainBlocklet',
+              message: 'Please choose the main blocklet',
+              //
+              choices: (templateNames = []) =>
+                templateNames.map((templateName) => {
+                  const template = templates.find((x) => x.name === templateName);
                   return {
-                    title: templateColor(template.display),
+                    title: template.display,
                     value: template.name,
                   };
                 }),
-                min: 1,
-                suggest: (input, choices) => Promise.resolve(choices.filter((i) => i.title.includes(input))),
-              },
-              // 这里需要添加一步 如果选择了 多项 就要提示用户设置主应用
-              {
-                type: (templateNames = []) => {
-                  return templateNames.length > 1 ? 'select' : null;
-                },
-                name: 'mainBlocklet',
-                message: 'Please choose the main blocklet',
-                //
-                choices: (templateNames = []) =>
-                  templateNames.map((templateName) => {
-                    const template = templates.find((x) => x.name === templateName);
-                    return {
-                      title: template.display,
-                      value: template.name,
-                    };
-                  }),
-                initial: 1,
-              },
-            ]),
+              initial: 1,
+            },
+          ]),
         {
           type: 'text',
           name: 'authorName',
@@ -267,17 +267,17 @@ async function init() {
   console.log(`\nScaffolding project in ${cyan(root)}`);
 
   const scaffoldSpinner = ora('Creating project...').start();
-  // name 是用户输入的项目名称，当有
+  // name 是用户输入的项目名称
   const name = packageName || targetDir;
 
-  // 如果选中了多个则说明时 monorepo 类型的模板
+  // 如果选中了多个则说明是 monorepo 类型的模板
   if (mainBlocklet) {
     await checkLerna();
     await checkYarn();
     const monorepoDir = path.join(__dirname, 'templates', 'monorepo');
     const monorepoFiles = fs.readdirSync(monorepoDir);
     for (const file of monorepoFiles) {
-      const targetPath = path.join(root, renameFiles[file]||file);
+      const targetPath = path.join(root, renameFiles[file] || file);
       copy(path.join(monorepoDir, file), targetPath);
     }
   }
@@ -285,35 +285,19 @@ async function init() {
   for (const templateName of templateNames) {
     const templateDir = path.join(__dirname, `templates/${templateName}`);
     const finalTemplateName = `${name}-${templateName}`;
-    // TODO: 需要把 common file copy 的逻辑移除，不同的 template 之间的差异越来越多，就会需要越来越多特殊处理的代码，违背了初衷，移除这部分逻辑可能是更好的选择
-    // copy common files
-    (() => {
-      const commonDir = path.join(__dirname, 'common');
-      const commonFiles = fs.readdirSync(commonDir);
-      for (const file of commonFiles) {
-        // 如果选择多个模板，每个子 package 中 只会包含必要的 文件
-        if (mainBlocklet && !['screenshots', 'public', 'logo.png', '.prettierrc', 'LICENSE'].includes(file)) {
-          continue;
-        }
-        // xmark 相关的模板不添加 .husky
-        if (fuzzyQuery(['website', 'docsite'], templateName) && ['.husky'].includes(file)) {
-          // eslint-disable-next-line no-continue
-          continue;
-        }
-        const targetPath = renameFiles[file]
-          ? path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', renameFiles[file])
-          : path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
-
-        copy(path.join(commonDir, file), targetPath);
-      }
-    })();
-
     // copy template files
     (() => {
       // 过滤掉 template-info.json 文件
-      const files = fs.readdirSync(templateDir).filter((file) => file !== 'template-info.json');
+      let files = fs.readdirSync(templateDir).filter((file) => file !== 'template-info.json');
+      // 如果选择了多个模板，每个子 package 中应该过滤掉一些文件
+      if(mainBlocklet){
+        files=files.filter((file)=>!fuzzyQuery(excludeFiles,file));
+      }
       for (const file of files) {
         write(file, null, templateDir, templateName);
+      }
+      if(mainBlocklet){
+        fs.removeSync(path.join(root,`blocklets/${templateName}`,'scripts/bump-version.mjs'))
       }
     })();
 
@@ -384,6 +368,9 @@ async function init() {
               pkg.scripts['bundle:client'] = ejs.render(pkg.scripts['bundle:client'], { did });
             } else if (templateName.includes('static')) {
               pkg.scripts.bundle = ejs.render(pkg.scripts.bundle, { did });
+            }
+            if(mainBlocklet){
+              delete pkg.scripts['bump-version'];
             }
             // 如果用户选了多个模板，为其他应用配置好 dev:child 和 deploy:child
             if (mainBlocklet && templateName !== mainBlocklet) {
@@ -517,7 +504,7 @@ async function init() {
       // console.log(dim('\n  start it later by:\n'));
       if (root !== cwd) console.log(blue(`  cd ${bold(related)}`));
       if (mainBlocklet) {
-        console.log(blue(`make init`));
+        console.log(blue(`npm run init`));
       } else {
         console.log(blue(`${defaultAgent === 'yarn' ? 'yarn' : `${defaultAgent} install`}`));
         console.log(cyan('blocklet dev'));
@@ -548,13 +535,13 @@ async function init() {
     return null;
   }
 
-  function modifyPackage(modifyFn = () => {}, templateDir, templateName) {
+  function modifyPackage(modifyFn = () => { }, templateDir, templateName) {
     const pkg = JSON.parse(read('package.json', templateName));
     modifyFn(pkg);
     write('package.json', JSON.stringify(pkg, null, 2), templateDir, templateName);
   }
 
-  function modifyBlockletYaml(modifyFn = () => {}, templateDir, templateName) {
+  function modifyBlockletYaml(modifyFn = () => { }, templateDir, templateName) {
     const blockletYaml = read('blocklet.yml', templateName);
     const yamlConfig = YAML.parse(blockletYaml);
     modifyFn(yamlConfig);

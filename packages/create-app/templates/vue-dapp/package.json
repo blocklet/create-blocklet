@@ -7,7 +7,7 @@
     "start": "npm-run-all --parallel start:*",
     "start:client": "vite --host",
     "start:api": "NODE_ENV=development nodemon api/index.js -w api",
-    "clean": "rm -rf .blocklet",
+    "clean": "node scripts/build-clean.js",
     "bundle": "npm run bundle:client && npm run bundle:api",
     "bundle:client": "vite build",
     "bundle:api": "npm run clean && blocklet bundle --zip --create-release",

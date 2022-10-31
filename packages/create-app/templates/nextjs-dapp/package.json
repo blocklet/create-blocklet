@@ -7,7 +7,7 @@
     "start": "nodemon -w api api/index.js",
     "lint": "next lint",
     "lint:fix": "npm run lint -- --fix",
-    "clean": "rm -rf .blocklet",
+    "clean": "node scripts/build-clean.js",
     "bundle": "npm run bundle:client && npm run bundle:api",
     "bundle:client": "PUBLIC_URL='/.blocklet/proxy/<%= did %>' next build",
     "bundle:api": "npm run clean && blocklet bundle --zip --create-release",

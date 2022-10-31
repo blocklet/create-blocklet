@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "blocklet dev",
     "start": "xmark start",
-    "clean": "rm -rf .blocklet && rm -rf node_modules/.vite",
+    "clean": "node scripts/build-clean.js",
     "build": "xmark build",
     "bundle": "npm run clean && xmark build && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",

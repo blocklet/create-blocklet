@@ -9,7 +9,7 @@
     "start": "npm-run-all --parallel start:*",
     "start:client": "vue-cli-service serve",
     "start:api": "NODE_ENV=development nodemon api/index.js -w api",
-    "clean": "rm -rf .blocklet",
+    "clean": "node scripts/build-clean.js",
     "bundle": "npm run bundle:client && npm run bundle:api",
     "bundle:client": "PUBLIC_PATH=/.blocklet/proxy/<%= did %> vue-cli-service build",
     "bundle:api": "npm run clean && blocklet bundle --zip --create-release",
