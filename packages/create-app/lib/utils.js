@@ -1,4 +1,4 @@
-import { fs, path, $, echo, chalk,which } from 'zx';
+import { fs, path, $, echo, chalk, which } from 'zx';
 
 $.verbose = false;
 
@@ -74,7 +74,7 @@ export async function checkCLIInstall(name) {
 }
 
 export async function checkLerna() {
-  const learn =await checkCLIInstall('lerna');
+  const learn = await checkCLIInstall('lerna');
   if (!learn) {
     console.log(`\n ${chalk.cyan('install lerna...')}`);
     const output = await $`npm install -g lerna`;
@@ -83,7 +83,7 @@ export async function checkLerna() {
 }
 
 export async function checkYarn() {
-  const yarn =await checkCLIInstall('yarn');
+  const yarn = await checkCLIInstall('yarn');
   if (!yarn) {
     console.log(`\n ${chalk.cyan('install yarn...')}`);
     const output = await $`npm install -g yarn`;

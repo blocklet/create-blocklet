@@ -121,7 +121,7 @@ const renameFiles = {
   _npmrc: '.npmrc',
 };
 
-const excludeFiles=['.github','.husky','.vscode','.editorconfig','_gitignore','_npmrc','version']
+const excludeFiles = ['.github', '.husky', '.vscode', '.editorconfig', '_gitignore', '_npmrc', 'version']
 
 async function init() {
   const { version } = await fs.readJSONSync(path.resolve(__dirname, 'package.json'));
@@ -290,14 +290,14 @@ async function init() {
       // 过滤掉 template-info.json 文件
       let files = fs.readdirSync(templateDir).filter((file) => file !== 'template-info.json');
       // 如果选择了多个模板，每个子 package 中应该过滤掉一些文件
-      if(mainBlocklet){
-        files=files.filter((file)=>!fuzzyQuery(excludeFiles,file));
+      if (mainBlocklet) {
+        files = files.filter((file) => !fuzzyQuery(excludeFiles, file));
       }
       for (const file of files) {
         write(file, null, templateDir, templateName);
       }
-      if(mainBlocklet){
-        fs.removeSync(path.join(root,`blocklets/${templateName}`,'scripts/bump-version.mjs'))
+      if (mainBlocklet) {
+        fs.removeSync(path.join(root, `blocklets/${templateName}`, 'scripts/bump-version.mjs'))
       }
     })();
 
@@ -369,7 +369,7 @@ async function init() {
             } else if (templateName.includes('static')) {
               pkg.scripts.bundle = ejs.render(pkg.scripts.bundle, { did });
             }
-            if(mainBlocklet){
+            if (mainBlocklet) {
               delete pkg.scripts['bump-version'];
             }
             // 如果用户选了多个模板，为其他应用配置好 dev:child 和 deploy:child

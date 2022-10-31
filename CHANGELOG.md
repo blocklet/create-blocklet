@@ -1,5 +1,7 @@
 ## 0.4.80 (2022-10-31)
+
 - chore: all templates support windows
+
 ## 0.4.79 (十月 27, 2022)
 
 - chore: update docs
