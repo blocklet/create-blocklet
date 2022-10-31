@@ -50,7 +50,7 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.7.1",
     "vite": "^3.1.8",
-    "vite-plugin-blocklet": "^0.4.79",
+    "vite-plugin-blocklet": "^0.4.80",
     "zx": "^7.1.1",
     "rimraf": "^3.0.2",
     "bumpp": "^8.2.1"
