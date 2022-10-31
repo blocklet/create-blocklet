@@ -14,7 +14,8 @@
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
     "deploy:child": "npm run bundle && blocklet deploy .blocklet/bundle --app-did=<%= did %>",
     "dev:child": "blocklet dev --component --app-did=<%= did %>",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "bump-version": "zx scripts/bump-version.mjs"
   },
   "license": "MIT",
   "devDependencies": {
@@ -28,7 +29,10 @@
     "vite": "^3.1.8",
     "vite-plugin-blocklet": "^0.4.79",
     "vite-plugin-html": "^3.2.0",
-    "vite-plugin-solid": "^2.3.9"
+    "vite-plugin-solid": "^2.3.9",
+    "zx": "^7.1.1",
+    "rimraf": "^3.0.2",
+    "bumpp": "^8.2.1"
   },
   "dependencies": {
     "solid-js": "^1.5.9"
