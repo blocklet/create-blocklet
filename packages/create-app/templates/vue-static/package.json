@@ -7,13 +7,14 @@
     "lint": "eslint src --ext .mjs,.js,.vue",
     "lint:fix": "npm run lint -- --fix",
     "serve": "vite preview",
-    "clean": "rm -rf .blocklet",
+    "clean": "node scripts/build-clean.js",
     "bundle": "npm run clean && vite build && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
     "deploy:child": "npm run bundle && blocklet deploy .blocklet/bundle --app-did=<%= did %>",
     "dev:child": "blocklet dev --component --app-did=<%= did %>",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "bump-version": "zx scripts/bump-version.mjs"
   },
   "dependencies": {
     "vue": "^3.2.41"
@@ -28,8 +29,11 @@
     "lint-staged": "^12.5.0",
     "prettier": "^2.7.1",
     "vite": "^3.1.8",
-    "vite-plugin-blocklet": "^0.4.79",
-    "vite-plugin-html": "^3.2.0"
+    "vite-plugin-blocklet": "^0.4.80",
+    "vite-plugin-html": "^3.2.0",
+    "zx": "^7.1.1",
+    "rimraf": "^3.0.2",
+    "bumpp": "^8.2.1"
   },
   "lint-staged": {
     "*.{mjs,js,vue}": [

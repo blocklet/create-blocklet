@@ -1,4 +1,4 @@
-import { fs, path, $, echo, chalk } from 'zx';
+import { fs, path, $, echo, chalk, which } from 'zx';
 
 $.verbose = false;
 
@@ -64,9 +64,18 @@ export function fuzzyQuery(list = [], keyWord = '') {
   return arr.length > 0;
 }
 
+export async function checkCLIInstall(name) {
+  try {
+    await which(name);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
 export async function checkLerna() {
-  const checkResult = await $`type lerna >/dev/null 2>&1 || echo "false"`;
-  if (checkResult.stdout.trim() === 'false') {
+  const learn = await checkCLIInstall('lerna');
+  if (!learn) {
     console.log(`\n ${chalk.cyan('install lerna...')}`);
     const output = await $`npm install -g lerna`;
     echo(output);
@@ -74,8 +83,8 @@ export async function checkLerna() {
 }
 
 export async function checkYarn() {
-  const checkResult = await $`type yarn >/dev/null 2>&1 || echo "false"`;
-  if (checkResult.stdout.trim() === 'false') {
+  const yarn = await checkCLIInstall('yarn');
+  if (!yarn) {
     console.log(`\n ${chalk.cyan('install yarn...')}`);
     const output = await $`npm install -g yarn`;
     echo(output);

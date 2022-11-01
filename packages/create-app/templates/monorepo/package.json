@@ -11,6 +11,7 @@
     }
   },
   "scripts": {
+    "init": "lerna bootstrap && lerna link",
     "lint": "lerna run lint",
     "lint:fix": "lerna run lint:fix",
     "build": "lerna run clean && lerna run build",

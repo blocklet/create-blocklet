@@ -32,15 +32,20 @@ try {
   console.error(chalk.redBright('Could not get git log, please write changelog manually.'));
 }
 
-// TODO: 这里可以直接用 nodejs 来获取日期？不需要区分系统语言
-const dateRes = await $`date +'%B %d, %Y'`;
-const date = dateRes.stdout.trim();
-const title = `## ${version} (${date})`;
+const now = new Date();
+const currentDate = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
+const title = `## ${version} (${currentDate})`;
 
 await fs.ensureFile('CHANGELOG.md');
 const oldChangelog = await fs.readFile('CHANGELOG.md', 'utf8');
 const changelog = [title, newChangelog, oldChangelog].filter((item) => !!item).join('\n\n');
 
 await fs.writeFile('CHANGELOG.md', changelog);
-await $`read`;
+
+console.log(`\nNow you can make adjustments to ${chalk.cyan('CHANGELOG.md')}. Then press enter to continue.`);
+
+process.stdin.setRawMode(true);
+process.stdin.resume();
+process.stdin.on('data', process.exit.bind(process, 0));
+
 await fs.writeFileSync('version', version);
