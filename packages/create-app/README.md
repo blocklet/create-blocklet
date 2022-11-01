@@ -84,8 +84,6 @@ ln -s /pathToCreateBlockletRepo/index.js /usr/local/bin/cb
 cb
 ```
 
-In a windows environment, you need to configure the directory where `cb.cmd` is located to the system's environment variables, and then use the cb command
-
 to create a blocklet
 
 ## Docs
