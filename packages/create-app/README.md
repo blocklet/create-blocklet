@@ -53,6 +53,7 @@ Currently supported template presets include:
 - `html`
 
 **api**
+
 - `express`
 
 ## Community Templates
@@ -74,12 +75,17 @@ npx degit user/blocklet#main my-blocklet
 ```
 
 ## Development
+
 Use `node /pathToCreateBlockletRepo/index.js` to create a blocklet, or you can use
-``` bash
+
+```bash
 ln -s /pathToCreateBlockletRepo/index.js /usr/local/bin/cb
 
 cb
 ```
+
+In a windows environment, you need to configure the directory where `cb.cmd` is located to the system's environment variables, and then use the cb command
+
 to create a blocklet
 
 ## Docs
