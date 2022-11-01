@@ -6,9 +6,7 @@
     "eject": "vite eject",
     "lint": "eslint src api --ext .mjs,.js,.jsx,.ts,.tsx",
     "lint:fix": "npm run lint -- --fix",
-    "start": "npm-run-all --parallel start:*",
-    "start:client": "vite --host",
-    "start:api": "cross-env NODE_ENV=development nodemon api/index.js -w api",
+    "start": "cross-env NODE_ENV=development nodemon api/dev.js -w api",
     "clean": "node scripts/build-clean.js",
     "bundle": "npm run bundle:client && npm run bundle:api",
     "bundle:client": "vite build",
@@ -75,7 +73,6 @@
     "prettier": "^2.7.1",
     "vite": "^3.1.8",
     "vite-plugin-blocklet": "^0.4.81",
-    "vite-plugin-html": "^3.2.0",
     "vite-plugin-svgr": "^2.2.2",
     "zx": "^7.1.1"
   }
