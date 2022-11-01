@@ -1,3 +1,7 @@
+## 0.4.81 (2022-11-1)
+
+- chore: fix husky no executable
+
 ## 0.4.80 (2022-10-31)
 
 - chore: all templates support windows
