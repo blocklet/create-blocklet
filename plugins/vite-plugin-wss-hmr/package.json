@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-wss-hmr",
   "type": "module",
-  "version": "0.4.80",
+  "version": "0.4.81",
   "description": "",
   "main": "index.js",
   "exports": {
