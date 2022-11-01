@@ -3,10 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "blocklet dev",
-    "serve": "vite preview",
-    "start": "npm-run-all --parallel start:*",
-    "start:client": "vite --host",
-    "start:api": "NODE_ENV=development nodemon api/index.js -w api",
+    "start": "NODE_ENV=development nodemon api/dev.js -w api",
     "clean": "node scripts/build-clean.js",
     "bundle": "npm run bundle:client && npm run bundle:api",
     "bundle:client": "vite build",
@@ -35,7 +32,6 @@
     "express": "^4.18.2",
     "express-async-errors": "^3.1.1",
     "express-history-api-fallback": "^2.2.1",
-    "vite-plugin-html": "^3.2.0",
     "vue": "^3.2.41"
   },
   "devDependencies": {
