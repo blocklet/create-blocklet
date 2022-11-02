@@ -1,3 +1,18 @@
+## 0.5.0 (2022-11-2)
+
+- chore: fix typo
+- chore: update deps
+- chore: update template title
+- chore: update vue2-static with vite
+- chore: update vue2-dapp with vite
+- chore: update xxx-static template, remove vite-plugin-html
+- chore: update svelte-dapp template
+- chore: update solidjs-dapp template
+- chore: update react-gun-dapp template
+- chore: update react-dapp template
+- feat: vite-plugin-blocklet can inject title automatic
+- feat: better workflow in vue-dapp template
+
 ## 0.4.81 (2022-11-1)
 
 - chore: fix husky no executable

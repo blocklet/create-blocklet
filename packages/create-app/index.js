@@ -8,7 +8,6 @@ import { cd, argv, fs, YAML, chalk, path } from 'zx';
 import ora from 'ora';
 import prompts from 'prompts';
 import * as envfile from 'envfile';
-import getPort from 'get-port';
 
 import { echoBrand, echoDocument } from './lib/arcblock.js';
 import { getUser } from './lib/index.js';
@@ -63,11 +62,12 @@ const templates = [
     display: '[dapp] next.js',
     color: blue,
   },
-  {
-    name: 'react-gun-dapp',
-    display: '[dapp] react + gun.js + express.js',
-    color: blue,
-  },
+  // 暂时不用这个模板
+  // {
+  //   name: 'react-gun-dapp',
+  //   display: '[dapp] react + gun.js + express.js',
+  //   color: blue,
+  // },
   {
     name: 'react-static',
     display: '[static] react',
@@ -80,12 +80,12 @@ const templates = [
   },
   {
     name: 'vue-static',
-    display: '[static] vue3 + vite',
+    display: '[static] vue3',
     color: green,
   },
   {
     name: 'vue2-static',
-    display: '[static] vue2 + @vue/cli',
+    display: '[static] vue2',
     color: green,
   },
   {
@@ -121,7 +121,7 @@ const renameFiles = {
   _npmrc: '.npmrc',
 };
 
-const excludeFiles = ['.github', '.husky', '.vscode', '.editorconfig', '_gitignore', '_npmrc', 'version']
+const excludeFiles = ['.github', '.husky', '.vscode', '.editorconfig', '_gitignore', '_npmrc', 'version'];
 
 async function init() {
   const { version } = await fs.readJSONSync(path.resolve(__dirname, 'package.json'));
@@ -155,7 +155,8 @@ async function init() {
           type: () => (!fs.existsSync(targetDir) || isEmpty(targetDir) ? null : 'confirm'),
           name: 'overwrite',
           message: () =>
-            `${targetDir === '.' ? 'Current directory' : `Target directory "${targetDir}"`
+            `${
+              targetDir === '.' ? 'Current directory' : `Target directory "${targetDir}"`
             } is not empty. Remove existing files and continue?`,
         },
         {
@@ -177,38 +178,38 @@ async function init() {
         ...(inputTemplateName
           ? []
           : [
-            {
-              type: 'autocompleteMultiselect',
-              name: 'templateNames',
-              message: 'Choose one or more blocklet templates:',
-              choices: templates.map((template) => {
-                const templateColor = template.color;
-                return {
-                  title: templateColor(template.display),
-                  value: template.name,
-                };
-              }),
-              min: 1,
-              suggest: (input, choices) => Promise.resolve(choices.filter((i) => i.title.includes(input))),
-            },
-            {
-              type: (templateNames = []) => {
-                return templateNames.length > 1 ? 'select' : null;
-              },
-              name: 'mainBlocklet',
-              message: 'Please choose the main blocklet',
-              //
-              choices: (templateNames = []) =>
-                templateNames.map((templateName) => {
-                  const template = templates.find((x) => x.name === templateName);
+              {
+                type: 'autocompleteMultiselect',
+                name: 'templateNames',
+                message: 'Choose one or more blocklet templates:',
+                choices: templates.map((template) => {
+                  const templateColor = template.color;
                   return {
-                    title: template.display,
+                    title: templateColor(template.display),
                     value: template.name,
                   };
                 }),
-              initial: 1,
-            },
-          ]),
+                min: 1,
+                suggest: (input, choices) => Promise.resolve(choices.filter((i) => i.title.includes(input))),
+              },
+              {
+                type: (templateNames = []) => {
+                  return templateNames.length > 1 ? 'select' : null;
+                },
+                name: 'mainBlocklet',
+                message: 'Please choose the main blocklet',
+                //
+                choices: (templateNames = []) =>
+                  templateNames.map((templateName) => {
+                    const template = templates.find((x) => x.name === templateName);
+                    return {
+                      title: template.display,
+                      value: template.name,
+                    };
+                  }),
+                initial: 1,
+              },
+            ]),
         {
           type: 'text',
           name: 'authorName',
@@ -297,7 +298,7 @@ async function init() {
         write(file, null, templateDir, templateName);
       }
       if (mainBlocklet) {
-        fs.removeSync(path.join(root, `blocklets/${templateName}`, 'scripts/bump-version.mjs'))
+        fs.removeSync(path.join(root, `blocklets/${templateName}`, 'scripts/bump-version.mjs'));
       }
     })();
 
@@ -312,30 +313,6 @@ async function init() {
       (yamlConfig) => {
         yamlConfig.name = mainBlocklet ? finalTemplateName : name;
         yamlConfig.title = mainBlocklet ? templateName : name;
-      },
-      templateDir,
-      templateName
-    );
-
-    let randomPort;
-    if (fuzzyQuery(['dapp'], templateName)) {
-      randomPort = await getPort();
-    }
-    modifyEnv(
-      (env) => {
-        if (randomPort) {
-          env.API_PORT = randomPort;
-        }
-        if (!fuzzyQuery(['website'], templateName)) {
-          if (fuzzyQuery(['react'], templateName)) {
-            env.REACT_APP_TITLE = finalTemplateName;
-          } else if (fuzzyQuery(['vue', 'website'], templateName)) {
-            env.VITE_APP_TITLE = finalTemplateName;
-          } else {
-            env.APP_TITLE = finalTemplateName;
-          }
-        }
-        return env;
       },
       templateDir,
       templateName
@@ -535,13 +512,13 @@ async function init() {
     return null;
   }
 
-  function modifyPackage(modifyFn = () => { }, templateDir, templateName) {
+  function modifyPackage(modifyFn = () => {}, templateDir, templateName) {
     const pkg = JSON.parse(read('package.json', templateName));
     modifyFn(pkg);
     write('package.json', JSON.stringify(pkg, null, 2), templateDir, templateName);
   }
 
-  function modifyBlockletYaml(modifyFn = () => { }, templateDir, templateName) {
+  function modifyBlockletYaml(modifyFn = () => {}, templateDir, templateName) {
     const blockletYaml = read('blocklet.yml', templateName);
     const yamlConfig = YAML.parse(blockletYaml);
     modifyFn(yamlConfig);

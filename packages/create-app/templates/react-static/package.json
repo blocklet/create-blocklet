@@ -41,21 +41,20 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.2"
+    "react-router-dom": "^6.4.3"
   },
   "devDependencies": {
     "@arcblock/eslint-config": "^0.2.3",
-    "@vitejs/plugin-react": "^2.1.0",
-    "eslint": "^8.25.0",
+    "@vitejs/plugin-react": "^2.2.0",
+    "bumpp": "^8.2.1",
+    "eslint": "^8.26.0",
     "husky": "^8.0.1",
     "lint-staged": "^12.5.0",
     "prettier": "^2.7.1",
-    "vite": "^3.1.8",
-    "vite-plugin-blocklet": "^0.4.81",
-    "vite-plugin-html": "^3.2.0",
-    "vite-plugin-svgr": "^2.2.2",
-    "zx": "^7.1.1",
     "rimraf": "^3.0.2",
-    "bumpp": "^8.2.1"
+    "vite": "^3.2.2",
+    "vite-plugin-blocklet": "^0.5.0",
+    "vite-plugin-svgr": "^2.2.2",
+    "zx": "^7.1.1"
   }
 }

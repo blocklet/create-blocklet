@@ -34,8 +34,8 @@ Currently supported template presets include:
 **dapp**
 
 - `react`
-- `vue3 + vite`
-- `vue2 + @vue/cli`
+- `vue3`
+- `vue2`
 - `solid-js`
 - `svelte`
 - `next.js`
@@ -44,8 +44,8 @@ Currently supported template presets include:
 **static**
 
 - `react`
-- `vue3 + vite`
-- `vue2 + @vue/cli`
+- `vue3`
+- `vue2`
 - `solid-js`
 - `svelte`
 - `website powered by blocklet pages`
