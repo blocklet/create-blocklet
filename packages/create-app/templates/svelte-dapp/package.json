@@ -4,10 +4,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "blocklet dev",
-    "serve": "vite preview",
-    "start": "npm-run-all --parallel start:*",
-    "start:client": "vite",
-    "start:api": "NODE_ENV=development nodemon api/index.js -w api",
+    "start": "cross-env NODE_ENV=development nodemon api/dev.js -w api",
     "clean": "node scripts/build-clean.js",
     "bundle": "npm run bundle:client && npm run bundle:api",
     "bundle:client": "vite build",
@@ -37,6 +34,7 @@
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "1.0.1",
+    "cross-env": "^7.0.3",
     "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
