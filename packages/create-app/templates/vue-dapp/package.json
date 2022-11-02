@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "blocklet dev",
-    "start": "NODE_ENV=development nodemon api/dev.js -w api",
+    "start": "cross-env NODE_ENV=development nodemon api/dev.js -w api",
     "clean": "node scripts/build-clean.js",
     "bundle": "npm run bundle:client && npm run bundle:api",
     "bundle:client": "vite build",
@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.1.2",
+    "cross-env": "^7.0.3",
     "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
