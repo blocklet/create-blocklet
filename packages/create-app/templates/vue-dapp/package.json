@@ -18,12 +18,12 @@
     "bump-version": "zx scripts/bump-version.mjs"
   },
   "dependencies": {
-    "@arcblock/did-auth": "^1.17.23",
+    "@arcblock/did-auth": "^1.18.6",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
-    "@blocklet/sdk": "^1.8.30",
-    "@ocap/client": "^1.17.23",
-    "@ocap/mcrypto": "^1.17.23",
-    "@ocap/wallet": "^1.17.23",
+    "@blocklet/sdk": "^1.8.33",
+    "@ocap/client": "^1.18.6",
+    "@ocap/mcrypto": "^1.18.6",
+    "@ocap/wallet": "^1.18.6",
     "axios": "^0.27.2",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
@@ -35,22 +35,22 @@
     "vue": "^3.2.41"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^3.1.2",
+    "@vitejs/plugin-vue": "^3.2.0",
+    "bumpp": "^8.2.1",
     "cross-env": "^7.0.3",
-    "eslint": "^8.25.0",
+    "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-vue": "^9.6.0",
+    "eslint-plugin-vue": "^9.7.0",
     "husky": "^8.0.1",
     "lint-staged": "^12.5.0",
     "nodemon": "^2.0.20",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.7.1",
-    "vite": "^3.1.8",
-    "vite-plugin-blocklet": "^0.4.81",
-    "zx": "^7.1.1",
     "rimraf": "^3.0.2",
-    "bumpp": "^8.2.1"
+    "vite": "^3.2.2",
+    "vite-plugin-blocklet": "^0.4.81",
+    "zx": "^7.1.1"
   },
   "lint-staged": {
     "*.{mjs,js,vue}": [
