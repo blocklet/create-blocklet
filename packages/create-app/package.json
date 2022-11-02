@@ -36,7 +36,6 @@
     "ejs": "^3.1.8",
     "envfile": "^6.18.0",
     "figlet": "^1.5.2",
-    "get-port": "^6.1.2",
     "gradient-string": "^2.0.2",
     "jdenticon": "^3.2.0",
     "ora": "^6.1.2",

@@ -8,7 +8,6 @@ import { cd, argv, fs, YAML, chalk, path } from 'zx';
 import ora from 'ora';
 import prompts from 'prompts';
 import * as envfile from 'envfile';
-import getPort from 'get-port';
 
 import { echoBrand, echoDocument } from './lib/arcblock.js';
 import { getUser } from './lib/index.js';
@@ -81,12 +80,12 @@ const templates = [
   },
   {
     name: 'vue-static',
-    display: '[static] vue3 + vite',
+    display: '[static] vue3',
     color: green,
   },
   {
     name: 'vue2-static',
-    display: '[static] vue2 + @vue/cli',
+    display: '[static] vue2',
     color: green,
   },
   {
@@ -314,30 +313,6 @@ async function init() {
       (yamlConfig) => {
         yamlConfig.name = mainBlocklet ? finalTemplateName : name;
         yamlConfig.title = mainBlocklet ? templateName : name;
-      },
-      templateDir,
-      templateName
-    );
-
-    let randomPort;
-    if (fuzzyQuery(['dapp'], templateName)) {
-      randomPort = await getPort();
-    }
-    modifyEnv(
-      (env) => {
-        if (randomPort) {
-          env.API_PORT = randomPort;
-        }
-        if (!fuzzyQuery(['website'], templateName)) {
-          if (fuzzyQuery(['react'], templateName)) {
-            env.REACT_APP_TITLE = finalTemplateName;
-          } else if (fuzzyQuery(['vue', 'website'], templateName)) {
-            env.VITE_APP_TITLE = finalTemplateName;
-          } else {
-            env.APP_TITLE = finalTemplateName;
-          }
-        }
-        return env;
       },
       templateDir,
       templateName
