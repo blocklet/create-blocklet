@@ -1,14 +1,14 @@
 {
   "name": "template-vue2",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
-    "dev": "vue-cli-service serve",
+    "dev": "blocklet dev",
+    "start": "vite --host",
     "lint": "eslint src --ext .mjs,.js,.vue",
     "lint:fix": "npm run lint -- --fix",
-    "start": "vue-cli-service serve",
+    "serve": "vite preview",
     "clean": "node scripts/build-clean.js",
-    "bundle": "npm run clean && PUBLIC_PATH=/.blocklet/proxy/<%= did %> vue-cli-service build && blocklet bundle --zip --create-release",
+    "bundle": "npm run clean && vite build && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
     "deploy:child": "npm run bundle && blocklet deploy .blocklet/bundle --app-did=<%= did %>",
@@ -17,22 +17,19 @@
     "bump-version": "zx scripts/bump-version.mjs"
   },
   "dependencies": {
-    "vue": "~2.6.14"
+    "vue": "^2.7.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.19.3",
-    "@babel/eslint-parser": "^7.19.1",
-    "@vue/cli-plugin-babel": "~5.0.8",
-    "@vue/cli-plugin-eslint": "~5.0.8",
-    "@vue/cli-service": "~5.0.8",
-    "core-js": "^3.25.5",
+    "@vitejs/plugin-vue2": "^2.0.0",
     "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.6.0",
     "husky": "^8.0.1",
     "lint-staged": "^12.5.0",
-    "vue-template-compiler": "~2.6.14",
+    "prettier": "^2.7.1",
+    "vite": "^3.1.8",
+    "vite-plugin-blocklet": "^0.4.81",
     "zx": "^7.1.1",
     "rimraf": "^3.0.2",
     "bumpp": "^8.2.1"
