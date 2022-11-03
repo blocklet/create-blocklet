@@ -14,3 +14,6 @@
 
 ### 检查清单
 
+- [ ]  create-blocklet 生成的项目应该可以正常 dev
+- [ ]  create-blocklet 生成的项目应该可以正常 deploy
+- [ ]  create-blocklet 生成的项目应该可以正常 upload
