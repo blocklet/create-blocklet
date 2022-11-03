@@ -25,6 +25,7 @@ import {
   checkYarn,
 } from './lib/utils.js';
 
+
 const { yellow, red, green, cyan, blue, bold, magenta } = chalk;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -120,8 +121,6 @@ const renameFiles = {
   _gitignore: '.gitignore',
   _npmrc: '.npmrc',
 };
-
-const excludeFiles = ['.github', '.husky', '.vscode', '.editorconfig', '_gitignore', '_npmrc', 'version'];
 
 async function init() {
   const { version } = await fs.readJSONSync(path.resolve(__dirname, 'package.json'));
