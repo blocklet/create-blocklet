@@ -1,32 +1,22 @@
 /* eslint-disable no-console */
 import { execSync } from 'child_process';
-import { $, chalk, fs, path, YAML } from 'zx';
+import { $, chalk, fs,YAML } from 'zx';
 
-// or use pnpm to bump version: `pnpm -r --filter {packages/*, themes/*} -- pnpm version`
-execSync('bumpp package.json blocklets/*/package.json', { stdio: 'inherit' });
+execSync('bumpp --no-tag --no-commit --no-push package.json', { stdio: 'inherit' });
 
 const { version } = await fs.readJSON('package.json');
+const blockletYaml = await fs.readFileSync('blocklet.yml', 'utf8');
+const yamlConfig = YAML.parse(blockletYaml);
 
-(async () => {
-  console.log(chalk.greenBright(`[info]: start to modify blocklets version to ${version}`));
-  const dirPath = path.join(__dirname, '../blocklets');
-  let pathList = await fs.readdirSync(dirPath);
-  pathList = pathList.map((item) => `${dirPath}/${item}/blocklet.yml`);
-  for (const ymlPath of pathList) {
-    const blockletYaml = await fs.readFileSync(ymlPath, 'utf8');
-    const yamlConfig = YAML.parse(blockletYaml);
-    yamlConfig.version = version;
-    fs.writeFileSync(ymlPath, YAML.stringify(yamlConfig, 2));
-  }
-  console.log(chalk.greenBright('[info]: all blocklets version modified.'));
-})();
-
-console.log(`\nNow you can make adjustments to ${chalk.cyan('CHANGELOG.md')}. Then press enter to continue.`);
+yamlConfig.version = version;
+await fs.writeFileSync('version', version);
+console.log(chalk.greenBright(`[info]: start to modify blocklet version to ${version}`));
+fs.writeFileSync('blocklet.yml', YAML.stringify(yamlConfig, 2));
+console.log(chalk.greenBright('[info]: blocklet version modified.'));
 
 let newChangelog = '';
-
 try {
-  const gitRes = await $`git log --pretty=format:"- %s" "main"...HEAD`;
+  const gitRes = await $`git log --pretty=format:"- %s" "master"...HEAD`;
   newChangelog = gitRes.stdout.trim();
 } catch {
   console.error(chalk.redBright('Could not get git log, please write changelog manually.'));
@@ -39,7 +29,6 @@ const title = `## ${version} (${currentDate})`;
 await fs.ensureFile('CHANGELOG.md');
 const oldChangelog = await fs.readFile('CHANGELOG.md', 'utf8');
 const changelog = [title, newChangelog, oldChangelog].filter((item) => !!item).join('\n\n');
-
 await fs.writeFile('CHANGELOG.md', changelog);
 
 console.log(`\nNow you can make adjustments to ${chalk.cyan('CHANGELOG.md')}. Then press enter to continue.`);
@@ -48,4 +37,3 @@ process.stdin.setRawMode(true);
 process.stdin.resume();
 process.stdin.on('data', process.exit.bind(process, 0));
 
-await fs.writeFileSync('version', version);
