@@ -5,7 +5,7 @@
     "dev": "blocklet dev",
     "clean": "node scripts/build-clean.js",
     "bundle": "npm run clean && blocklet bundle --zip --create-release",
-    "deploy": "npm run bundle && blocklet deploy .blocklet/bundle --skip-hooks",
+    "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "deploy:child": "npm run bundle && blocklet deploy .blocklet/bundle --app-did=<%= did %>",
     "dev:child": "blocklet dev --component --app-did=<%= did %>",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",

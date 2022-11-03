@@ -1,27 +1,25 @@
 /* eslint-disable no-console */
 import { execSync } from 'child_process';
-import { $, chalk, fs, path, YAML } from 'zx';
+import { $, chalk, fs, path } from 'zx';
+
+const cwd = process.cwd(); // 获取脚本执行目录
 
 // or use pnpm to bump version: `pnpm -r --filter {packages/*, themes/*} -- pnpm version`
 execSync('bumpp package.json blocklets/*/package.json', { stdio: 'inherit' });
 
 const { version } = await fs.readJSON('package.json');
+await fs.writeFileSync('version', version);
 
-(async () => {
-  console.log(chalk.greenBright(`[info]: start to modify blocklets version to ${version}`));
-  const dirPath = path.join(__dirname, '../blocklets');
-  let pathList = await fs.readdirSync(dirPath);
-  pathList = pathList.map((item) => `${dirPath}/${item}/blocklet.yml`);
-  for (const ymlPath of pathList) {
-    const blockletYaml = await fs.readFileSync(ymlPath, 'utf8');
-    const yamlConfig = YAML.parse(blockletYaml);
-    yamlConfig.version = version;
-    fs.writeFileSync(ymlPath, YAML.stringify(yamlConfig, 2));
-  }
-  console.log(chalk.greenBright('[info]: all blocklets version modified.'));
-})();
+console.log(chalk.greenBright(`[info]: start to modify blocklets version to ${version}`));
+const dirPath = path.join(__dirname, '../blocklets');
+let pathList = await fs.readdirSync(dirPath);
+pathList = pathList.map((item) => `${dirPath}/${item}`);
+for (const ymlDir of pathList) {
+  await $`cd ${ymlDir} && blocklet version ${version}`;
+}
+console.log(chalk.greenBright('[info]: all blocklets version modified.'));
 
-console.log(`\nNow you can make adjustments to ${chalk.cyan('CHANGELOG.md')}. Then press enter to continue.`);
+await $`cd ${cwd}`;
 
 let newChangelog = '';
 
@@ -47,5 +45,3 @@ console.log(`\nNow you can make adjustments to ${chalk.cyan('CHANGELOG.md')}. Th
 process.stdin.setRawMode(true);
 process.stdin.resume();
 process.stdin.on('data', process.exit.bind(process, 0));
-
-await fs.writeFileSync('version', version);

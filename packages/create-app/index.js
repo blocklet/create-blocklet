@@ -121,8 +121,6 @@ const renameFiles = {
   _npmrc: '.npmrc',
 };
 
-const excludeFiles = ['.github', '.husky', '.vscode', '.editorconfig', '_gitignore', '_npmrc', 'version'];
-
 async function init() {
   const { version } = await fs.readJSONSync(path.resolve(__dirname, 'package.json'));
   await echoBrand({ version });
@@ -286,17 +284,36 @@ async function init() {
   for (const templateName of templateNames) {
     const templateDir = path.join(__dirname, `templates/${templateName}`);
     const finalTemplateName = `${name}-${templateName}`;
+    // TODO: 需要把 common file copy 的逻辑移除，不同的 template 之间的差异越来越多，就会需要越来越多特殊处理的代码，违背了初衷，移除这部分逻辑可能是更好的选择
+    // copy common files
+    (() => {
+      const commonDir = path.join(__dirname, 'common');
+      const commonFiles = fs.readdirSync(commonDir);
+      for (const file of commonFiles) {
+        // 如果选择多个模板，每个子 package 中 只会包含必要的 文件
+        if (mainBlocklet && !['screenshots', 'public', 'logo.png', '.prettierrc', 'LICENSE'].includes(file)) {
+          continue;
+        }
+        // html-staic 和 xmark 相关的模板不添加 .husky
+        if (fuzzyQuery(['html-static', 'website', 'docsite'], templateName) && ['.husky'].includes(file)) {
+          // eslint-disable-next-line no-continue
+          continue;
+        }
+        const targetPath = renameFiles[file]
+          ? path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', renameFiles[file])
+          : path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
+
+        copy(path.join(commonDir, file), targetPath);
+      }
+    })();
     // copy template files
     (() => {
       // 过滤掉 template-info.json 文件
       let files = fs.readdirSync(templateDir).filter((file) => file !== 'template-info.json');
-      // 如果选择了多个模板，每个子 package 中应该过滤掉一些文件
-      if (mainBlocklet) {
-        files = files.filter((file) => !fuzzyQuery(excludeFiles, file));
-      }
       for (const file of files) {
         write(file, null, templateDir, templateName);
       }
+      // 如果选择了多个模板，每个子 package 中的 bump-version.mjs 文件
       if (mainBlocklet) {
         fs.removeSync(path.join(root, `blocklets/${templateName}`, 'scripts/bump-version.mjs'));
       }

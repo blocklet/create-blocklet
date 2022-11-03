@@ -7,6 +7,7 @@ import batchModifyDepsVersion from './batch-modify-deps-version.mjs';
 execSync('bumpp package.json packages/*/package.json plugins/*/package.json', { stdio: 'inherit' });
 
 const { version } = await fs.readJSON('package.json');
+await fs.writeFileSync('version', version);
 
 // modify the /create-app/templates plugin version
 await batchModifyDepsVersion({
@@ -41,5 +42,3 @@ console.log(`\nNow you can make adjustments to ${chalk.cyan('CHANGELOG.md')}. Th
 process.stdin.setRawMode(true);
 process.stdin.resume();
 process.stdin.on('data', process.exit.bind(process, 0));
-
-await fs.writeFileSync('version', version);
