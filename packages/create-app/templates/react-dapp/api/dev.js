@@ -1,4 +1,4 @@
 const { setupClient } = require('vite-plugin-blocklet');
-const { server, app } = require('./index');
+const { app } = require('./index');
 
-setupClient(app, server);
+setupClient(app);

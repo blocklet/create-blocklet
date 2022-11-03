@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { useEffect, useState } from 'react';
-import Gun from 'gun';
+import Gun from 'gun/browser';
 
 import { Link } from 'react-router-dom';
 

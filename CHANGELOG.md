@@ -1,3 +1,9 @@
+## 0.5.2 (2022-11-3)
+
+- chore: update deps
+- chore: recover gun.js template
+- fix: better hmr with xxx-dapp templates fixes #248
+
 ## 0.5.1 (2022-11-3)
 
 - chore: update pull template

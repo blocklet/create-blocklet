@@ -1,28 +1,24 @@
 import getPort from 'get-port';
 import { createServer } from 'vite';
-import { createProxyMiddleware } from 'http-proxy-middleware';
 
 const isProduction = process.env.NODE_ENV === 'production' || process.env.ABT_NODE_SERVICE_ENV === 'production';
 
-export default async function setupClient(app, server, options = {}) {
+export default async function setupClient(app, options = {}) {
   if (!isProduction) {
-    const randomport = await getPort();
-    const { host = 'localhost', protocol = 'ws', port = randomport } = options;
-    const hmrPath = `/_vite_websocket_${port}`;
+    const { host = '127.0.0.1', protocol = 'ws', port: inputPort } = options;
+    const port = await getPort({ port: inputPort });
     // 以中间件模式创建 Vite 服务器
     const vite = await createServer({
       server: {
         middlewareMode: true,
         hmr: {
+          host,
           port,
-          path: hmrPath,
+          protocol,
         },
       },
     });
     // 将 vite 的 connect 实例作中间件使用
-    const wsProxy = createProxyMiddleware(`${protocol}://${host}:${port}`);
-    app.use(hmrPath, wsProxy);
-    server.on('upgrade', wsProxy.upgrade);
     app.use(vite.middlewares);
   }
 }

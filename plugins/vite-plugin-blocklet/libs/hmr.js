@@ -17,10 +17,6 @@ export default function createHmrPlugin({ version = viteVersion } = {}) {
             "const base = __BASE__ || '/';\nlet tmpPort = __HMR_PORT__;\nif (window.blocklet) {\ntmpPort = new URL(window.location.href).port + base;\n}\nconst socketHost = `${__HMR_HOSTNAME__ || location.hostname}${tmpPort ? `:${tmpPort}` : ''}`;"
           );
           return replacedCode;
-        } else if (pureVersion === 3) {
-          let replacedCode = code;
-          replacedCode = replacedCode.replace('__HMR_PORT__', 'undefined');
-          return replacedCode;
         }
       }
     },
