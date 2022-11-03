@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { execSync } from 'child_process';
-import { $, chalk,fs } from 'zx';
+import { $, chalk, fs } from 'zx';
 
 execSync('bumpp --no-tag --no-commit --no-push package.json', { stdio: 'inherit' });
 

@@ -25,7 +25,6 @@ import {
   checkYarn,
 } from './lib/utils.js';
 
-
 const { yellow, red, green, cyan, blue, bold, magenta } = chalk;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -295,8 +294,8 @@ async function init() {
         if (mainBlocklet && !['screenshots', 'public', 'logo.png', '.prettierrc', 'LICENSE'].includes(file)) {
           continue;
         }
-        // xmark 相关的模板不添加 .husky
-        if (fuzzyQuery(['website', 'docsite'], templateName) && ['.husky'].includes(file)) {
+        // html-staic 和 xmark 相关的模板不添加 .husky
+        if (fuzzyQuery(['html-static', 'website', 'docsite'], templateName) && ['.husky'].includes(file)) {
           // eslint-disable-next-line no-continue
           continue;
         }
