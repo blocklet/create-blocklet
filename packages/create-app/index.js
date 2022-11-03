@@ -62,12 +62,11 @@ const templates = [
     display: '[dapp] next.js',
     color: blue,
   },
-  // 暂时不用这个模板
-  // {
-  //   name: 'react-gun-dapp',
-  //   display: '[dapp] react + gun.js + express.js',
-  //   color: blue,
-  // },
+  {
+    name: 'react-gun-dapp',
+    display: '[dapp] react + gun.js + express.js',
+    color: blue,
+  },
   {
     name: 'react-static',
     display: '[static] react',
