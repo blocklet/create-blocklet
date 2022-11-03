@@ -3,7 +3,6 @@ module.exports = {
   parserOptions: {
     requireConfigFile: false,
   },
-  files: ["**/*.mjs"],
   extends: '@arcblock/eslint-config-base',
   rules: {
     'import/extensions': 'off',

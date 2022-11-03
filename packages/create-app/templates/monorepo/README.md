@@ -39,7 +39,7 @@ This project is a monorepo project, which means that there are multiple blocklet
 3. init project
 
 ```bash
- npm run init
+ make init
 ```
 
 4. Go to the main blocklet directory `cd blocklets/[main blocklet]`
