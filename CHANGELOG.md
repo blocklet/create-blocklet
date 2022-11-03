@@ -1,3 +1,8 @@
+## 0.5.1 (2022-11-3)
+
+- fix: update pull template
+- fix: bump-version no modified blocklet version
+
 ## 0.5.0 (2022-11-2)
 
 - chore: fix typo
