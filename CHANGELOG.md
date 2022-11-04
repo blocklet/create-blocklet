@@ -1,3 +1,9 @@
+## 0.5.4 (2022-11-4)
+
+- fix: support bump blocklet version while bump-version fixes #161
+- chore: add faq for "not found global / buffer / process" fixes #232
+- chore: use node-linker=hoisted for pnpm
+
 ## 0.5.3 (2022-11-4)
 
 - chore: update docs
