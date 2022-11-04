@@ -9,7 +9,7 @@ title: 自定义你的应用
 
 ## 配置 blocklet 的名称和描述
 
-```shell
+```yaml
 title: Example APP
 description: Demo blocklet that shows how to configure Blocklet Meta
 ```
@@ -20,9 +20,12 @@ description: Demo blocklet that shows how to configure Blocklet Meta
 
 ## 配置 blocklet 的 logo
 
-> 注意: logo 的宽高比须相同，尺寸不能小于 256px \* 256px
+:::Alert{title=注意 icon=i-mdi:information-outline}
+logo 的宽高比须相同，尺寸不能小于 256px \* 256px
+:::
 
-```shell
+
+```yaml
 logo: logo.png
 ```
 
@@ -36,7 +39,7 @@ logo: logo.png
 
 我们需要在 `blocklet.yml` 中配置 `screenshots` 字段，指定 `Blocklet` 应用的图片文件夹的路径。
 
-```shell
+```yaml
 screenshots:
   - 0.png
   - 1.png
