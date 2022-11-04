@@ -1,3 +1,7 @@
+## 0.5.3 (2022-11-4)
+
+- chore: update docs
+
 ## 0.5.2 (2022-11-3)
 
 - chore: update deps
