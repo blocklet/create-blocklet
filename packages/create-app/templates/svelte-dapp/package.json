@@ -17,12 +17,12 @@
     "bump-version": "zx scripts/bump-version.mjs"
   },
   "dependencies": {
-    "@arcblock/did-auth": "^1.18.11",
+    "@arcblock/did-auth": "^1.18.13",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
     "@blocklet/sdk": "^1.8.33",
-    "@ocap/client": "^1.18.11",
-    "@ocap/mcrypto": "^1.18.11",
-    "@ocap/wallet": "^1.18.11",
+    "@ocap/client": "^1.18.13",
+    "@ocap/mcrypto": "^1.18.13",
+    "@ocap/wallet": "^1.18.13",
     "axios": "^0.27.2",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",

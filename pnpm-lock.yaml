@@ -12,10 +12,10 @@ importers:
 
   packages/create-app:
     specifiers:
-      '@arcblock/did': ^1.18.11
+      '@arcblock/did': ^1.18.13
       '@arcblock/eslint-config-base': 0.2.2
-      '@ocap/mcrypto': ^1.18.11
-      '@ocap/util': ^1.18.11
+      '@ocap/mcrypto': ^1.18.13
+      '@ocap/util': ^1.18.13
       boxen: ^6.2.1
       ejs: ^3.1.8
       envfile: ^6.18.0
@@ -31,9 +31,9 @@ importers:
       vitest: ^0.19.1
       zx: 7.0.7
     dependencies:
-      '@arcblock/did': 1.18.11
-      '@ocap/mcrypto': 1.18.11
-      '@ocap/util': 1.18.11
+      '@arcblock/did': 1.18.13
+      '@ocap/mcrypto': 1.18.13
+      '@ocap/util': 1.18.13
       boxen: 6.2.1
       ejs: 3.1.8
       envfile: 6.18.0
@@ -53,17 +53,17 @@ importers:
 
   plugins/vite-plugin-blocklet:
     specifiers:
-      '@arcblock/did': ^1.18.11
-      '@ocap/mcrypto': ^1.18.11
-      '@ocap/util': ^1.18.11
+      '@arcblock/did': ^1.18.13
+      '@ocap/mcrypto': ^1.18.13
+      '@ocap/util': ^1.18.13
       get-port: ^5.1.1
       rollup: ^2.79.1
       semver: ^7.3.8
       yaml: ^2.1.3
     dependencies:
-      '@arcblock/did': 1.18.11
-      '@ocap/mcrypto': 1.18.11
-      '@ocap/util': 1.18.11
+      '@arcblock/did': 1.18.13
+      '@ocap/mcrypto': 1.18.13
+      '@ocap/util': 1.18.13
       get-port: 5.1.1
       semver: 7.3.8
       yaml: 2.1.3
@@ -391,11 +391,11 @@ packages:
       - supports-color
     dev: false
 
-  /@arcblock/did/1.18.11:
-    resolution: {integrity: sha512-9vFUKKB77am4RarHy/ILDxt7bR0TIQLxET9bv/bZpRTmWRDS17Cs9xvlJLoO1jKPbQb1/dOIsc4dQ8B04hnBTg==}
+  /@arcblock/did/1.18.13:
+    resolution: {integrity: sha512-I9YT02kIMiAVJKP5oLIZ7EkBf5oAxCTP1FL0C6CcoIw6Hw67y+0XNabRdVW2Igm8MJFH1Y2EqMk/gOvT6bpymg==}
     dependencies:
-      '@ocap/mcrypto': 1.18.11
-      '@ocap/util': 1.18.11
+      '@ocap/mcrypto': 1.18.13
+      '@ocap/util': 1.18.13
       bn.js: 5.2.1
       debug: 4.3.4
       lodash: 4.17.21
@@ -1240,10 +1240,10 @@ packages:
   /@did-connect/authenticator/2.1.23:
     resolution: {integrity: sha512-Q3KphLieuJSh4pxP21l5YRe6EaXqXplj3FO+hoG4GvdiSn+chvF5qJAlAIzdmPHaKy3BeZf4QuAooGGpJJzpIg==}
     dependencies:
-      '@arcblock/did': 1.18.11
+      '@arcblock/did': 1.18.13
       '@arcblock/jwt': 1.17.23
       '@did-connect/types': 2.1.23
-      '@ocap/util': 1.18.11
+      '@ocap/util': 1.18.13
       '@ocap/wallet': 1.17.23
       debug: 4.3.4
       lodash: 4.17.21
@@ -1255,14 +1255,14 @@ packages:
   /@did-connect/handler/2.1.23:
     resolution: {integrity: sha512-jIWsf+wZHc0lq6Cs9pXoNBr+X6uwxuGJ6GLT5tF7GF1Jd7Be86cgV0R9NQ34ouNmVI+vJxh/HS04yr9UkYO/rw==}
     dependencies:
-      '@arcblock/did': 1.18.11
+      '@arcblock/did': 1.18.13
       '@arcblock/jwt': 1.17.23
       '@arcblock/ws': 1.17.23
       '@did-connect/authenticator': 2.1.23
       '@did-connect/storage': 2.1.23
       '@did-connect/types': 2.1.23
-      '@ocap/mcrypto': 1.18.11
-      '@ocap/util': 1.18.11
+      '@ocap/mcrypto': 1.18.13
+      '@ocap/util': 1.18.13
       axios: 0.27.2
       lodash: 4.17.21
       object-hash: 3.0.0
@@ -1288,7 +1288,7 @@ packages:
     resolution: {integrity: sha512-NN7TOpKOhMZCZiewfTMBgoadXWfoxNXc+lRaT0TGbNxiVcDB8JdaOOp2q+srBPmUkbfSwT1EYLVes7CeJrEicg==}
     dependencies:
       '@arcblock/validator': 1.17.23
-      '@ocap/mcrypto': 1.18.11
+      '@ocap/mcrypto': 1.18.13
       joi: 17.6.0
       type-fest: 2.19.0
     transitivePeerDependencies:
@@ -2180,10 +2180,10 @@ packages:
       type-fest: 2.19.0
     dev: false
 
-  /@ocap/mcrypto/1.18.11:
-    resolution: {integrity: sha512-0HlHWfAGYPe6e7KiEyj/L5C/on6DgRZ/qtV2uBabp8mkRrhrIYtFEWZjoz4IockeVRgV52niGxwRiE9kYP7Grg==}
+  /@ocap/mcrypto/1.18.13:
+    resolution: {integrity: sha512-TL8RIDR3sGa74SVxJ3kDeE74ZBAtl30GtcnPTr5O8VEIUuoFKUirka7STLIwHrICTxT7WKlNea2N0jB9BumaMw==}
     dependencies:
-      '@ocap/util': 1.18.11
+      '@ocap/util': 1.18.13
       bn.js: 5.2.1
       crypto-js: 4.1.1
       elliptic: 6.5.4
@@ -2234,8 +2234,8 @@ packages:
       utf8: 3.0.0
     dev: false
 
-  /@ocap/util/1.18.11:
-    resolution: {integrity: sha512-Wkf6T+9ygJZQe2sWyO8WUv656r2qt1ajhJMkhXx85EaHRZ1Ju2dD6EuA7fR/og1bmB1JcqQzf0WBbWANlQO0EQ==}
+  /@ocap/util/1.18.13:
+    resolution: {integrity: sha512-5iY0NikrMl2/W5Fc6D1dPirsWiZJ38HV9xXarRoldNaKAmE6T9OcOS5N83DAxkHXC3TMWcT9tqVHZPzoCwDynw==}
     dependencies:
       base64-url: 2.3.3
       bn.js: 5.2.1
@@ -10555,9 +10555,9 @@ packages:
   /vite-plugin-blocklet/0.4.81:
     resolution: {integrity: sha512-tVpp6Z56VQFeEeJF6d/+jJOXAxI5+B7+Pvj7duji9jkjm6xrZYqpLYvHg5JiB8PDFirmfX7Jz6ISt/OtV9qx3w==}
     dependencies:
-      '@arcblock/did': 1.18.11
-      '@ocap/mcrypto': 1.18.11
-      '@ocap/util': 1.18.11
+      '@arcblock/did': 1.18.13
+      '@ocap/mcrypto': 1.18.13
+      '@ocap/util': 1.18.13
       yaml: 2.1.3
     transitivePeerDependencies:
       - supports-color
