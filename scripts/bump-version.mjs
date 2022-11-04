@@ -8,6 +8,8 @@ execSync('bumpp package.json packages/*/package.json plugins/*/package.json', { 
 
 const { version } = await fs.readJSON('package.json');
 await fs.writeFileSync('version', version);
+await $`cd website/pages && blocklet version ${version}`;
+await $`cd website/docs && blocklet version ${version}`;
 
 // modify the /create-app/templates plugin version
 await batchModifyDepsVersion({
