@@ -12,8 +12,8 @@ author:
 repository:
   type: git
   url: git+https://github.com/blocklet/create-blocklet.git
-specVersion: 1.1.1
-version: 0.1.0
+specVersion: 1.2.7
+version: 0.5.4
 logo: logo.png
 files:
   - logo.png
@@ -42,7 +42,9 @@ requirements:
 scripts:
   dev: npm run start
 environments: []
-capabilities: {}
+capabilities:
+  clusterMode: false
+  component: true
 screenshots: []
 components:
   - name: meilisearch

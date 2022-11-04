@@ -11,3 +11,7 @@ description: 常见问题
 - [快速入门](/docs/zh/quick-start)带领你通过一系列的步骤来创建一个网站。如果你是 Blocklet 新手，可以从这里开始。
 - [参考指南](/docs/zh/reference/blocklet-structure) 包含创建 Blocklet 各个方面的技术参考。它们描述了它是如何工作的以及如何使用它，但假定你对关键概念有基本的了解。
 - [操作指南](/docs/zh/how-to/create-single-blocklet) 是教程，它们指导你完成解决关键问题和用例的步骤。
+
+## 未找到 global / buffer / process 对象的问题
+
+由于默认的模板中使用了 vite 作为开发服务器，可以通过 [vite-plugin-ngmi-polyfill](https://www.npmjs.com/package/vite-plugin-ngmi-polyfill) 插件来解决该问题
