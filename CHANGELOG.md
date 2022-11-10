@@ -1,3 +1,8 @@
+## 0.5.5 (2022-11-10)
+
+- chore: update deps
+- fix: vite-plugin-blocklet peerDependencies vite should be ">=2"
+
 ## 0.5.4 (2022-11-4)
 
 - fix: support bump blocklet version while bump-version fixes #161

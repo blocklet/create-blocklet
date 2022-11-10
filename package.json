@@ -1,20 +1,21 @@
 {
   "name": "create-blocklet",
   "private": true,
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bump-version": "zx scripts/bump-version.mjs --quiet",
-    "update:deps": "pnpm -r exec npx -y taze -r -w",
+    "bump-version": "zx --quiet scripts/bump-version.mjs",
+    "update:deps": "pnpm -r exec taze -r -w",
     "preinstall": "npx only-allow pnpm",
-    "publish-plugins": "zx scripts/publish-plugins.mjs --quiet"
+    "publish-plugins": "zx --quiet scripts/publish-plugins.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bumpp": "^7.2.0",
+    "taze": "^0.8.3",
     "zx": "^7.1.1"
   }
 }
