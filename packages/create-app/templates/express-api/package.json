@@ -31,16 +31,16 @@
   "license": "ISC",
   "dependencies": {
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
-    "@blocklet/sdk": "^1.8.33",
-    "@ocap/client": "^1.18.13",
+    "@blocklet/sdk": "^1.8.34",
+    "@ocap/client": "^1.18.14",
     "dotenv-flow": "^3.2.0",
     "express": "^4.18.2"
   },
   "devDependencies": {
     "@arcblock/eslint-config-base": "^0.2.3",
     "bumpp": "^8.2.1",
-    "eslint": "^8.26.0",
-    "husky": "^8.0.1",
+    "eslint": "^8.27.0",
+    "husky": "^8.0.2",
     "lint-staged": "^12.5.0",
     "nodemon": "^2.0.20",
     "prettier": "^2.7.1",
