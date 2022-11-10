@@ -5,10 +5,10 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bump-version": "zx scripts/bump-version.mjs --quiet",
+    "bump-version": "zx --quiet scripts/bump-version.mjs",
     "update:deps": "pnpm -r exec taze -r -w",
     "preinstall": "npx only-allow pnpm",
-    "publish-plugins": "zx scripts/publish-plugins.mjs --quiet"
+    "publish-plugins": "zx --quiet scripts/publish-plugins.mjs"
   },
   "keywords": [],
   "author": "",
