@@ -15,3 +15,7 @@ description: 常见问题
 ## 未找到 global / buffer / process 对象的问题
 
 由于默认的模板中使用了 vite 作为开发服务器，可以通过 [vite-plugin-ngmi-polyfill](https://www.npmjs.com/package/vite-plugin-ngmi-polyfill) 插件来解决该问题
+
+## 为什么 GitHub Actions 没有触发？
+
+如果你使用 GitHub Actions 来实现 Blocklet 打包和发布工作流，请确保 `.github/workflows/main.yml` 的分支和你代码仓库的默认分支一致，否则 GitHub Actions 可能不会被触发。

@@ -15,3 +15,7 @@ A high-level overview of how this documentation is organized will help you know 
 ## Error "not found global / buffer / process"
 
 Since the default template uses vite as the development server, it can be solved by this plugin [vite-plugin-ngmi-polyfill](https://www.npmjs.com/package/vite-plugin-ngmi-polyfill)
+
+## Why isn't GitHub Actions triggering?
+
+If you are using GitHub Actions to implement Blocklet bundle and release workflow, make sure the branch in `.github/workflows/main.yml` matches the default branch of your repository, otherwise GitHub Actions may not be triggered.
