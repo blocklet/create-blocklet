@@ -346,7 +346,7 @@ async function init() {
 
     // patch did
     (() => {
-      const did = toBlockletDid(finalTemplateName);
+      const did = toBlockletDid(mainBlocklet ? finalTemplateName : name);
       modifyBlockletYaml(
         (yamlConfig) => {
           yamlConfig.did = did;
