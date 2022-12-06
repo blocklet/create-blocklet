@@ -1,3 +1,7 @@
+## 0.5.7 (2022-12-6)
+
+- fix: navigation
+
 ## 0.5.6 (2022-11-19)
 
 ## 0.5.5 (2022-11-10)
@@ -69,7 +73,7 @@
 
 ## 0.4.74 (十月 14, 2022)
 
-- chore: additional English translation documentation 
+- chore: additional English translation documentation
 - chore: bump deps and fix dev issue
 - chore: additional documentation for create-blocklet
 
