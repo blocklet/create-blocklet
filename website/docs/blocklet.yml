@@ -50,13 +50,15 @@ capabilities:
 screenshots: []
 components: []
 navigation:
-  - title:
+  - id: docs
+    title:
       en: Docs
       zh: 文档
     link:
       en: /en
       zh: /zh
-  - title:
+  - id: templates
+    title:
       en: Templates
       zh: 模板
     link:

@@ -55,19 +55,22 @@ components:
       name: meilisearch
       version: latest
 navigation:
-  - title:
+  - id: docs
+    title:
       en: Docs
       zh: 文档
     link:
       en: /docs/en
       zh: /docs/zh
-  - title:
+  - id: templates
+    title:
       en: Templates
       zh: 模板
     link:
       en: /docs/en/templates
       zh: /docs/zh/templates
-  - title:
+  - id: resources
+    title:
       en: Resources
       zh: 资源
     items:
