@@ -1,3 +1,8 @@
+## 0.5.8 (2022-12-6)
+
+- chore: add navigation did
+- fix: generate error did
+
 ## 0.5.7 (2022-12-6)
 
 - fix: navigation

@@ -13,7 +13,7 @@ repository:
   type: git
   url: git+https://github.com/blocklet/create-blocklet.git
 specVersion: 1.2.7
-version: 0.5.7
+version: 0.5.8
 logo: logo.png
 files:
   - logo.png
@@ -75,11 +75,13 @@ navigation:
       en: Resources
       zh: 资源
     items:
-      - title:
+      - id: resources_platform
+        title:
           en: Blocklet Platform
           zh: Blocklet 平台
         link: https://www.blocklet.io
-      - title:
+      - id: resources_developer
+        title:
           en: Blocklet Developer
           zh: Blocklet 开发者
         link: https://developer.blocklet.io
