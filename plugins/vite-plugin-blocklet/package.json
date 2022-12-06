@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-blocklet",
   "type": "module",
-  "version": "0.5.7",
+  "version": "0.5.8",
   "description": "",
   "main": "index.js",
   "files": [
