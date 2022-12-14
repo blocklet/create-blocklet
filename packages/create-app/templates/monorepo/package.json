@@ -25,9 +25,9 @@
   "devDependencies": {
     "@arcblock/eslint-config": "0.2.2",
     "bumpp": "^7.2.0",
-    "eslint": "^8.27.0",
+    "eslint": "^8.29.0",
     "husky": "^4.3.8",
-    "prettier": "^2.7.1",
+    "prettier": "^2.8.1",
     "zx": "^7.1.1"
   }
 }
