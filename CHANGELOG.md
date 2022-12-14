@@ -1,3 +1,8 @@
+## 0.5.9 (2022-12-14)
+
+- chore: update deps
+- fix: remove useless deps
+
 ## 0.5.8 (2022-12-6)
 
 - chore: add navigation did

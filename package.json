@@ -1,7 +1,7 @@
 {
   "name": "create-blocklet",
   "private": true,
-  "version": "0.5.8",
+  "version": "0.5.9",
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
