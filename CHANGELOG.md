@@ -1,3 +1,7 @@
+## 0.5.10 (2023-1-28)
+
+- chore: remove favicon link in some templates
+
 ## 0.5.9 (2022-12-14)
 
 - chore: update deps
