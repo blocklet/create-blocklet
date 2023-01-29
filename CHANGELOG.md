@@ -1,3 +1,8 @@
+## 0.5.11 (2023-1-29)
+
+- chore: add README
+- feat: setupClient support pass confiFile params
+
 ## 0.5.10 (2023-1-28)
 
 - chore: remove favicon link in some templates
