@@ -11,7 +11,8 @@ test(
   'blocklet server version is bigger than 1.7.0',
   async () => {
     const version = await getServerVersion();
-    expect(semver.satisfies(version, '>=1.7.0')).toBe(true);
+    const cleanVersion = semver.valid(semver.coerce(version));
+    expect(semver.satisfies(cleanVersion), '>=1.7.0').toBe(true);
   },
   -1
 );
@@ -30,7 +31,7 @@ test(
   'blocklet server directory',
   async () => {
     const directory = await getServerDirectory();
-    expect(directory).toBe('/Users/han/workspace/an-test/prod');
+    expect(directory).toBe('/workspace/.run/prod');
   },
   -1
 );

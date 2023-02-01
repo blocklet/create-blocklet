@@ -3,8 +3,14 @@ import semver from 'semver';
 
 $.verbose = false;
 
-function trimServerOutputVersion(output = '') {
-  return output?.replace(/blocklet \S+ v\d+\.\d+\.\d+\n+/g, '');
+async function trimServerOutputVersion(output = '', command) {
+  // 调用 blocklet 命令时，都会在第一行先打印一个 blocklet [command] [version] 的信息，需要把这个信息 trim 掉
+  const version = await getServerVersion();
+  if (command) {
+    return output?.replace(`blocklet ${command} v${version}\n`, '');
+  }
+  const reg = new RegExp(`blocklet \\S+ v${version}\\n+`, 'g');
+  return output?.replace(reg, '');
 }
 
 export async function checkServerInstalled() {
@@ -42,7 +48,8 @@ export async function checkServerRunning() {
 
 export async function checkSatisfiedVersion() {
   const version = await getServerVersion();
-  return semver.satisfies(version, '>= 1.7.0');
+  const cleanVersion = semver.valid(semver.coerce(version));
+  return semver.satisfies(cleanVersion, '>= 1.7.0');
 }
 
 export async function getServerDirectory() {
@@ -63,8 +70,8 @@ export async function getUserInfo() {
     const { stdout: name } = await $`blocklet config get name`;
     const { stdout: email } = await $`blocklet config get email`;
     return {
-      name: trimServerOutputVersion(name?.trim()),
-      email: trimServerOutputVersion(email?.trim()),
+      name: await trimServerOutputVersion(name?.trim()),
+      email: await trimServerOutputVersion(email?.trim()),
     };
   } catch {
     return {
