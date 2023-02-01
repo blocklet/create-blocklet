@@ -15,7 +15,7 @@
     "bump-version": "zx scripts/bump-version.mjs"
   },
   "dependencies": {
-    "@xmark/cli": "^2.4.87",
+    "@xmark/cli": "^2.4.90",
     "bumpp": "^8.2.1",
     "rimraf": "^3.0.2",
     "zx": "^7.1.1"
