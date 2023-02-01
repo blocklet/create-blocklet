@@ -1,3 +1,7 @@
+## 0.5.12 (2023-2-1)
+
+- fix: check version compatible with beta version
+
 ## 0.5.11 (2023-1-29)
 
 - chore: add README
