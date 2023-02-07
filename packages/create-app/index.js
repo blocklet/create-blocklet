@@ -38,6 +38,11 @@ const templates = [
     color: yellow,
   },
   {
+    name: 'react-dapp-ts',
+    display: '[dapp] react + express + typescript',
+    color: yellow,
+  },
+  {
     name: 'solidjs-dapp',
     display: '[dapp] solid + express.js',
     color: yellow,

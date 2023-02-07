@@ -1,3 +1,7 @@
+## 0.5.13 (2023-2-7)
+
+- feat: add react-dapp-ts template
+
 ## 0.5.12 (2023-2-1)
 
 - fix: check version compatible with beta version
