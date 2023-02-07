@@ -4,7 +4,4 @@ module.exports = {
   parserOptions: {
     project: 'tsconfig.json',
   },
-  globals: {
-    logger: true,
-  },
 };
