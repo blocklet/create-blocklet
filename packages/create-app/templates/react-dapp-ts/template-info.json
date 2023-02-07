@@ -1,0 +1,12 @@
+{
+  "name": "react-dapp-ts",
+  "desc": {
+    "en": "A Dapp Blocklet skeleton built with React and Express and Typescript",
+    "zh": "一个基于 React 构建的 Dapp Blocklet 应用骨架"
+  },
+  "blockletType": "dapp",
+  "composable": true,
+  "languages": "Typescript",
+  "useCase": "Starter",
+  "author": "Yechao Li"
+}
