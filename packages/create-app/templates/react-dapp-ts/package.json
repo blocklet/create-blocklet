@@ -87,6 +87,10 @@
     "zx": "^7.1.1"
   },
   "importSort": {
+    ".js, .jsx, .mjs": {
+      "parser": "babylon",
+      "style": "module"
+    },
     ".ts, .tsx": {
       "style": "module",
       "parser": "typescript"
