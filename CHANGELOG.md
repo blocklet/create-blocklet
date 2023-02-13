@@ -1,3 +1,7 @@
+## 0.5.14 (2023-2-10)
+
+- fix: add tsconfig for eslint and format code
+
 ## 0.5.13 (2023-2-7)
 
 - feat: add react-dapp-ts template
