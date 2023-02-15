@@ -1,3 +1,7 @@
+## 0.5.16 (2023-2-15)
+
+- fix: ignore unused parameters for error handler
+
 ## 0.5.15 (2023-2-15)
 
 - fix: correct handle express error

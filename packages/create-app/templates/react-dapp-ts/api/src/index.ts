@@ -37,7 +37,7 @@ if (isProduction) {
   app.use(fallback('index.html', { root: staticDir }));
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  app.use(<ErrorRequestHandler>((err, req, res, next) => {
+  app.use(<ErrorRequestHandler>((err, _req, res, _next) => {
     logger.error(err.stack);
     res.status(500).send('Something broke!');
   }));
