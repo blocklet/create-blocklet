@@ -30,7 +30,8 @@ if (isProduction) {
   app.use(express.static(staticDir, { maxAge: '30d', index: false }));
   app.use(fallback('index.html', { root: staticDir }));
 
-  app.use((err, req, res) => {
+  // eslint-disable-next-line no-unused-vars
+  app.use((err, req, res, next) => {
     logger.error(err.stack);
     res.status(500).send('Something broke!');
   });

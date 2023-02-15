@@ -1,3 +1,7 @@
+## 0.5.15 (2023-2-15)
+
+- fix: correct handle express error
+
 ## 0.5.14 (2023-2-10)
 
 - fix: add tsconfig for eslint and format code
