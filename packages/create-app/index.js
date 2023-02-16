@@ -13,7 +13,7 @@ import * as envfile from 'envfile';
 import { echoBrand, echoDocument } from './lib/arcblock.js';
 import { getUser } from './lib/index.js';
 import { checkServerInstalled, checkServerRunning, checkSatisfiedVersion, getServerDirectory } from './lib/server.js';
-import { getBlockletDid, toBlockletDid } from './lib/did.js';
+import { getBlockletDidList } from './lib/did.js';
 import { initGitRepo } from './lib/git.js';
 import {
   copy,
@@ -308,7 +308,15 @@ async function init() {
     }
   }
 
+  let didList = [];
+  if (inputDid && templateNames.length === 1) {
+    didList = [inputDid];
+  } else {
+    didList = await getBlockletDidList(templateNames.length);
+  }
+
   for (const templateName of templateNames) {
+    const index = templateNames.indexOf(templateName);
     const templateDir = path.join(__dirname, `templates/${templateName}`);
     const finalTemplateName = `${name}-${templateName}`;
     // TODO: 需要把 common file copy 的逻辑移除，不同的 template 之间的差异越来越多，就会需要越来越多特殊处理的代码，违背了初衷，移除这部分逻辑可能是更好的选择
@@ -374,7 +382,7 @@ async function init() {
 
     // patch did
     async function patchDid() {
-      const did = inputDid || (await getBlockletDid());
+      const did = didList[index];
       modifyBlockletYaml(
         (yamlConfig) => {
           yamlConfig.did = did;
@@ -395,8 +403,7 @@ async function init() {
             }
             // 如果用户选了多个模板，为其他应用配置好 dev:child 和 deploy:child
             if (mainBlocklet && templateName !== mainBlocklet) {
-              // FIXME: 多个 did 该如何获取
-              const mainBlockletDid = toBlockletDid(`${name}-${mainBlocklet}`);
+              const mainBlockletDid = didList[templateNames.indexOf(mainBlocklet)];
               pkg.scripts['dev:child'] = ejs.render(pkg.scripts['dev:child'], { did: mainBlockletDid });
               pkg.scripts['deploy:child'] = ejs.render(pkg.scripts['deploy:child'], { did: mainBlockletDid });
             }

@@ -1,6 +1,6 @@
 import { $, which } from 'zx';
 import semver from 'semver';
-import { BLOCKLET_COMMAND } from '../enums';
+import { BLOCKLET_COMMAND } from '../enums/index.js';
 
 $.verbose = false;
 
