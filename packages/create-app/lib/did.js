@@ -18,12 +18,16 @@ export function toDidIcon(did, size = 200, isPng = false) {
   return isPng ? jdenticon.toPng(did, size) : jdenticon.toSvg(did, size);
 }
 
-export async function getBlockletDidList(num = 1) {
-  const output = execSync(`${BLOCKLET_COMMAND} init --onlyDid=${num}`);
-  const pureOutput = await trimServerOutputVersion(output.toString('utf8'));
-  try {
-    return JSON.parse(pureOutput.trim());
-  } catch {
-    return [];
+export async function getBlockletDidList(monikerList = []) {
+  let command = `${BLOCKLET_COMMAND} init`;
+  if (monikerList.length > 0) {
+    command += ` --monikers=${monikerList.join(',')}`;
+    const output = execSync(command);
+    const pureOutput = await trimServerOutputVersion(output.toString('utf8'));
+    return pureOutput
+      .trim()
+      .split(',')
+      .filter((x) => x !== '');
   }
+  return [];
 }
