@@ -19,15 +19,20 @@ export function toDidIcon(did, size = 200, isPng = false) {
 }
 
 export async function getBlockletDidList(monikerList = []) {
-  let command = `${BLOCKLET_COMMAND} init`;
-  if (monikerList.length > 0) {
-    command += ` --monikers=${monikerList.join(',')}`;
-    const output = execSync(command);
-    const pureOutput = await trimServerOutputVersion(output.toString('utf8'));
-    return pureOutput
-      .trim()
-      .split(',')
-      .filter((x) => x !== '');
+  try {
+    let command = `${BLOCKLET_COMMAND} init`;
+    if (monikerList.length > 0) {
+      command += ` --monikers=${monikerList.join(',')}`;
+      command += ' --connectUrl=https://blocklet-registry-service-cbq-10-0-0-2.ip.abtnet.io';
+      const output = execSync(command);
+      const pureOutput = await trimServerOutputVersion(output.toString('utf8'));
+      return pureOutput
+        .trim()
+        .split(',')
+        .filter((x) => x !== '');
+    }
+    return [];
+  } catch {
+    throw new Error('Failed to generate blocklet did');
   }
-  return [];
 }

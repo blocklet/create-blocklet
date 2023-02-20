@@ -312,7 +312,11 @@ async function init() {
   if (inputDid && templateNames.length === 1) {
     didList = [inputDid];
   } else {
-    didList = await getBlockletDidList(templateNames);
+    try {
+      didList = await getBlockletDidList(templateNames);
+    } catch {
+      process.exit(1);
+    }
   }
 
   for (const templateName of templateNames) {
