@@ -14,28 +14,28 @@ importers:
 
   packages/create-app:
     specifiers:
-      '@arcblock/did': ^1.18.36
+      '@arcblock/did': ^1.18.50
       '@arcblock/eslint-config-base': 0.2.2
-      '@ocap/mcrypto': ^1.18.36
-      '@ocap/util': ^1.18.36
+      '@ocap/mcrypto': ^1.18.50
+      '@ocap/util': ^1.18.50
       boxen: ^6.2.1
       ejs: ^3.1.8
       envfile: ^6.18.0
-      eslint: ^8.33.0
+      eslint: ^8.34.0
       figlet: ^1.5.2
       gradient-string: ^2.0.2
       jdenticon: ^3.2.0
       ora: ^6.1.2
-      prettier: ^2.8.3
+      prettier: ^2.8.4
       prompts: ^2.4.2
       semver: ^7.3.8
       terminal-link: ^3.0.0
       vitest: ^0.19.1
       zx: 7.0.7
     dependencies:
-      '@arcblock/did': 1.18.36
-      '@ocap/mcrypto': 1.18.36
-      '@ocap/util': 1.18.36
+      '@arcblock/did': 1.18.50
+      '@ocap/mcrypto': 1.18.50
+      '@ocap/util': 1.18.50
       boxen: 6.2.1
       ejs: 3.1.8
       envfile: 6.18.0
@@ -48,25 +48,25 @@ importers:
       terminal-link: 3.0.0
       zx: 7.0.7
     devDependencies:
-      '@arcblock/eslint-config-base': 0.2.2_6xprzernlpxwjedpj2snzq4bpq
-      eslint: 8.33.0
-      prettier: 2.8.3
+      '@arcblock/eslint-config-base': 0.2.2_yrlhudqyxg2l7qvwle5bdpmrli
+      eslint: 8.34.0
+      prettier: 2.8.4
       vitest: 0.19.1
 
   plugins/vite-plugin-blocklet:
     specifiers:
-      '@arcblock/did': ^1.18.36
-      '@ocap/mcrypto': ^1.18.36
-      '@ocap/util': ^1.18.36
+      '@arcblock/did': ^1.18.50
+      '@ocap/mcrypto': ^1.18.50
+      '@ocap/util': ^1.18.50
       get-port: ^5.1.1
       mri: ^1.2.0
       rollup: ^2.79.1
       semver: ^7.3.8
       yaml: ^2.2.1
     dependencies:
-      '@arcblock/did': 1.18.36
-      '@ocap/mcrypto': 1.18.36
-      '@ocap/util': 1.18.36
+      '@arcblock/did': 1.18.50
+      '@ocap/mcrypto': 1.18.50
+      '@ocap/util': 1.18.50
       get-port: 5.1.1
       mri: 1.2.0
       semver: 7.3.8
@@ -409,19 +409,32 @@ packages:
       - supports-color
     dev: false
 
-  /@arcblock/eslint-config-base/0.2.2_6xprzernlpxwjedpj2snzq4bpq:
+  /@arcblock/did/1.18.50:
+    resolution: {integrity: sha512-CFL9Br75nlRycl67yHmgURe2Pm1e4/D+ZC3hHtDQLpzjrWvthw/6qiLiMQcJuzlITrXc0Dz1ZinO/+GwjKNzNA==}
+    dependencies:
+      '@ocap/mcrypto': 1.18.50
+      '@ocap/util': 1.18.50
+      bn.js: 5.2.1
+      debug: 4.3.4
+      lodash: 4.17.21
+      type-fest: 3.1.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@arcblock/eslint-config-base/0.2.2_yrlhudqyxg2l7qvwle5bdpmrli:
     resolution: {integrity: sha512-+AVqIlkC1pWaLIMn/WlgmOQfYH6nctdsKZwMTCBzbrduLzdKx/Kuqq1/c0/GiY53Bv0kWh3gguZSfdKnhCPXfQ==}
     peerDependencies:
       eslint: ^8.17.0
       prettier: ^2.7.1
     dependencies:
-      eslint: 8.33.0
-      eslint-config-airbnb-base: 15.0.0_ga4sep7loct7ajt7pxcme7xdqu
-      eslint-config-prettier: 8.5.0_eslint@8.33.0
-      eslint-plugin-import: 2.26.0_eslint@8.33.0
-      eslint-plugin-prettier: 4.2.1_6szgnv26mlwjcnkli62b775hwe
-      eslint-plugin-unicorn: 42.0.0_eslint@8.33.0
-      prettier: 2.8.3
+      eslint: 8.34.0
+      eslint-config-airbnb-base: 15.0.0_w7dy265x2bmlgtc6kmsfumkjde
+      eslint-config-prettier: 8.5.0_eslint@8.34.0
+      eslint-plugin-import: 2.26.0_eslint@8.34.0
+      eslint-plugin-prettier: 4.2.1_tgj6q6crlj7y24j3aycgzuhnii
+      eslint-plugin-unicorn: 42.0.0_eslint@8.34.0
+      prettier: 2.8.4
     transitivePeerDependencies:
       - '@typescript-eslint/parser'
       - eslint-import-resolver-typescript
@@ -1252,10 +1265,10 @@ packages:
   /@did-connect/authenticator/2.1.33:
     resolution: {integrity: sha512-oUZEpcZRYHoG40kvtmZ0YWefS6kidEE5Gl0GpNfagoS4sD9YZZT0M0ts8mvEWHyEab9XWsseNsM+s7EGeKPspQ==}
     dependencies:
-      '@arcblock/did': 1.18.36
+      '@arcblock/did': 1.18.50
       '@arcblock/jwt': 1.18.36
       '@did-connect/types': 2.1.33
-      '@ocap/util': 1.18.36
+      '@ocap/util': 1.18.50
       '@ocap/wallet': 1.18.36
       debug: 4.3.4
       lodash: 4.17.21
@@ -1267,14 +1280,14 @@ packages:
   /@did-connect/handler/2.1.33:
     resolution: {integrity: sha512-f5GDHZoFrUH06eb9As0JNuP8KhWp50jEFzTE/Dnr8TGQYuuBLllQ5MjZu0jGokKGrc+ZEfn3GnudRGehaatUkw==}
     dependencies:
-      '@arcblock/did': 1.18.36
+      '@arcblock/did': 1.18.50
       '@arcblock/jwt': 1.18.36
       '@arcblock/ws': 1.18.36
       '@did-connect/authenticator': 2.1.33
       '@did-connect/storage': 2.1.33
       '@did-connect/types': 2.1.33
-      '@ocap/mcrypto': 1.18.36
-      '@ocap/util': 1.18.36
+      '@ocap/mcrypto': 1.18.50
+      '@ocap/util': 1.18.50
       axios: 0.27.2
       lodash: 4.17.21
       object-hash: 3.0.0
@@ -1300,7 +1313,7 @@ packages:
     resolution: {integrity: sha512-eXzVPYLRENuk2nt1DN7sBnScHqVG8G03Va7OviWBiReP50TkpoSeyshmr2XifwHkx+c8o6cV2atrxLWQvi65iA==}
     dependencies:
       '@arcblock/validator': 1.18.36
-      '@ocap/mcrypto': 1.18.36
+      '@ocap/mcrypto': 1.18.50
       joi: 17.7.0
       type-fest: 3.1.0
     transitivePeerDependencies:
@@ -2269,6 +2282,22 @@ packages:
       type-fest: 3.1.0
     dev: false
 
+  /@ocap/mcrypto/1.18.50:
+    resolution: {integrity: sha512-JC7uc5A7LC1QC9DX5dv8MvMu/6YZ46M3Ih541M8ge4yEFYezzE8GzwsLKJb+I844jEGo41g8s90cizvayawCpw==}
+    dependencies:
+      '@ocap/util': 1.18.50
+      bn.js: 5.2.1
+      crypto-js: 4.1.1
+      elliptic: 6.5.4
+      eth-lib: 0.2.8
+      hash.js: 1.1.7
+      interface: 1.2.1
+      js-sha3: 0.8.0
+      randombytes: 2.1.0
+      tweetnacl: 1.0.3
+      type-fest: 3.1.0
+    dev: false
+
   /@ocap/message/1.18.36:
     resolution: {integrity: sha512-zB+MhQ5tSU4TvRY6hmqrUHwLj7iX9eNA++Ar1JHTS1jyESUNYtAFo4d9XViXb1JUeLd5ZKfis6WOZwj3QKKluA==}
     dependencies:
@@ -2298,6 +2327,17 @@ packages:
 
   /@ocap/util/1.18.36:
     resolution: {integrity: sha512-s1iyLCPCorZ3dHYMx/0G4da8RklUomnkpoewHOYNQbsV8th1qLcWk/AekycLLy3hBNAbmnO9cP8MJfL5pSsr7g==}
+    dependencies:
+      base64-url: 2.3.3
+      bn.js: 5.2.1
+      bs58: 5.0.0
+      lodash: 4.17.21
+      type-fest: 3.1.0
+      utf8: 3.0.0
+    dev: false
+
+  /@ocap/util/1.18.50:
+    resolution: {integrity: sha512-NF4RP4hkTa3VZBsMWVIWjbwSy7OvVX2/zdYK7CV6KpJbdDRLtjuMgdAqkfSORrmM4uJLq4VWfJ0euhrNZ5dTaA==}
     dependencies:
       base64-url: 2.3.3
       bn.js: 5.2.1
@@ -5282,7 +5322,7 @@ packages:
     engines: {node: '>=12'}
     dev: false
 
-  /eslint-config-airbnb-base/15.0.0_ga4sep7loct7ajt7pxcme7xdqu:
+  /eslint-config-airbnb-base/15.0.0_w7dy265x2bmlgtc6kmsfumkjde:
     resolution: {integrity: sha512-xaX3z4ZZIcFLvh2oUNvcX5oEofXda7giYmuplVxoOg5A7EXJMrUyqRgR+mhDhPK8LZ4PttFOBvCYDbX3sUoUig==}
     engines: {node: ^10.12.0 || >=12.0.0}
     peerDependencies:
@@ -5290,20 +5330,20 @@ packages:
       eslint-plugin-import: ^2.25.2
     dependencies:
       confusing-browser-globals: 1.0.11
-      eslint: 8.33.0
-      eslint-plugin-import: 2.26.0_eslint@8.33.0
+      eslint: 8.34.0
+      eslint-plugin-import: 2.26.0_eslint@8.34.0
       object.assign: 4.1.4
       object.entries: 1.1.5
       semver: 6.3.0
     dev: true
 
-  /eslint-config-prettier/8.5.0_eslint@8.33.0:
+  /eslint-config-prettier/8.5.0_eslint@8.34.0:
     resolution: {integrity: sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
     dependencies:
-      eslint: 8.33.0
+      eslint: 8.34.0
     dev: true
 
   /eslint-import-resolver-node/0.3.6:
@@ -5315,7 +5355,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-module-utils/2.7.4_tgafturnl5vmrtiy3jnsp5mn4q:
+  /eslint-module-utils/2.7.4_dxrlgjdnwtgm3wferu2lqgbvv4:
     resolution: {integrity: sha512-j4GT+rqzCoRKHwURX7pddtIPGySnX9Si/cgMI5ztrcqOPtk5dDEeZ34CQVPphnqkJytlc97Vuk05Um2mJ3gEQA==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -5337,13 +5377,13 @@ packages:
         optional: true
     dependencies:
       debug: 3.2.7
-      eslint: 8.33.0
+      eslint: 8.34.0
       eslint-import-resolver-node: 0.3.6
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /eslint-plugin-import/2.26.0_eslint@8.33.0:
+  /eslint-plugin-import/2.26.0_eslint@8.34.0:
     resolution: {integrity: sha512-hYfi3FXaM8WPLf4S1cikh/r4IxnO6zrhZbEGz2b660EJRbuxgpDS5gkCuYgGWg2xxh2rBuIr4Pvhve/7c31koA==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -5357,9 +5397,9 @@ packages:
       array.prototype.flat: 1.3.0
       debug: 2.6.9
       doctrine: 2.1.0
-      eslint: 8.33.0
+      eslint: 8.34.0
       eslint-import-resolver-node: 0.3.6
-      eslint-module-utils: 2.7.4_tgafturnl5vmrtiy3jnsp5mn4q
+      eslint-module-utils: 2.7.4_dxrlgjdnwtgm3wferu2lqgbvv4
       has: 1.0.3
       is-core-module: 2.10.0
       is-glob: 4.0.3
@@ -5373,7 +5413,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-prettier/4.2.1_6szgnv26mlwjcnkli62b775hwe:
+  /eslint-plugin-prettier/4.2.1_tgj6q6crlj7y24j3aycgzuhnii:
     resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -5384,13 +5424,13 @@ packages:
       eslint-config-prettier:
         optional: true
     dependencies:
-      eslint: 8.33.0
-      eslint-config-prettier: 8.5.0_eslint@8.33.0
-      prettier: 2.8.3
+      eslint: 8.34.0
+      eslint-config-prettier: 8.5.0_eslint@8.34.0
+      prettier: 2.8.4
       prettier-linter-helpers: 1.0.0
     dev: true
 
-  /eslint-plugin-unicorn/42.0.0_eslint@8.33.0:
+  /eslint-plugin-unicorn/42.0.0_eslint@8.34.0:
     resolution: {integrity: sha512-ixBsbhgWuxVaNlPTT8AyfJMlhyC5flCJFjyK3oKE8TRrwBnaHvUbuIkCM1lqg8ryYrFStL/T557zfKzX4GKSlg==}
     engines: {node: '>=12'}
     peerDependencies:
@@ -5399,8 +5439,8 @@ packages:
       '@babel/helper-validator-identifier': 7.19.1
       ci-info: 3.4.0
       clean-regexp: 1.0.0
-      eslint: 8.33.0
-      eslint-utils: 3.0.0_eslint@8.33.0
+      eslint: 8.34.0
+      eslint-utils: 3.0.0_eslint@8.34.0
       esquery: 1.4.0
       indent-string: 4.0.0
       is-builtin-module: 3.2.0
@@ -5436,13 +5476,13 @@ packages:
       eslint-visitor-keys: 1.3.0
     dev: false
 
-  /eslint-utils/3.0.0_eslint@8.33.0:
+  /eslint-utils/3.0.0_eslint@8.34.0:
     resolution: {integrity: sha512-uuQC43IGctw68pJA1RgbQS8/NP7rch6Cwd4j3ZBtgo4/8Flj4eGE7ZYSZRN3iq5pVUv6GPdW5Z1RFleo84uLDA==}
     engines: {node: ^10.0.0 || ^12.0.0 || >= 14.0.0}
     peerDependencies:
       eslint: '>=5'
     dependencies:
-      eslint: 8.33.0
+      eslint: 8.34.0
       eslint-visitor-keys: 2.1.0
     dev: true
 
@@ -5507,8 +5547,8 @@ packages:
       - supports-color
     dev: false
 
-  /eslint/8.33.0:
-    resolution: {integrity: sha512-WjOpFQgKK8VrCnAtl8We0SUOy/oVZ5NHykyMiagV1M9r8IFpIJX7DduK6n1mpfhlG7T1NLWm2SuD8QB7KFySaA==}
+  /eslint/8.34.0:
+    resolution: {integrity: sha512-1Z8iFsucw+7kSqXNZVslXS8Ioa4u2KM7GPwuKtkTFAqZ/cHMcEaR+1+Br0wLlot49cNxIiZk5wp8EAbPcYZxTg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -5523,7 +5563,7 @@ packages:
       doctrine: 3.0.0
       escape-string-regexp: 4.0.0
       eslint-scope: 7.1.1
-      eslint-utils: 3.0.0_eslint@8.33.0
+      eslint-utils: 3.0.0_eslint@8.34.0
       eslint-visitor-keys: 3.3.0
       espree: 9.4.0
       esquery: 1.4.0
@@ -9069,8 +9109,8 @@ packages:
       fast-diff: 1.2.0
     dev: true
 
-  /prettier/2.8.3:
-    resolution: {integrity: sha512-tJ/oJ4amDihPoufT5sM0Z1SKEuKay8LfVAMlbbhnnkvt6BUserZylqo2PN+p9KeljLr0OHa2rXHU1T8reeoTrw==}
+  /prettier/2.8.4:
+    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
@@ -11406,9 +11446,9 @@ packages:
     peerDependencies:
       vite: '>=2'
     dependencies:
-      '@arcblock/did': 1.18.36
-      '@ocap/mcrypto': 1.18.36
-      '@ocap/util': 1.18.36
+      '@arcblock/did': 1.18.50
+      '@ocap/mcrypto': 1.18.50
+      '@ocap/util': 1.18.50
       get-port: 5.1.1
       mri: 1.2.0
       semver: 7.3.8

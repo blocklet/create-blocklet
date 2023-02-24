@@ -12,7 +12,7 @@ function Home() {
       <Link className="app-link" to="/about">
         About
       </Link>
-      <a className="app-link" href="https://docs.arcblock.io/abtnode/" target="_blank" rel="noopener noreferrer">
+      <a className="app-link" href="https://developer.blocklet.io/docs/" target="_blank" rel="noopener noreferrer">
         Learn Blocklet
       </a>
     </header>
