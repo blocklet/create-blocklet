@@ -1,3 +1,7 @@
+## 0.5.17 (2023-2-25)
+
+- fix: doc links and vite default config
+
 ## 0.5.16 (2023-2-15)
 
 - fix: ignore unused parameters for error handler

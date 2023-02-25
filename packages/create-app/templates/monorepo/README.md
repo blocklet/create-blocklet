@@ -25,16 +25,16 @@ This project is a monorepo project, which means that there are multiple blocklet
 
 1. Make sure you have [@blocklet/cli](https://www.npmjs.com/package/@blocklet/cli) installed
 
-   Blocklet needs blocklet server as a dependency. So you need to install it first.  
-   `npm install -g @blocklet/cli`  
-   See details in [https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#use-the-binary-distribution](https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#use-the-binary-distribution)
+   Blocklet needs blocklet server as a dependency. So you need to install it first.
+   `npm install -g @blocklet/cli`
+   See details in [https://developer.blocklet.io/docs/en/quick-start/blocklet-server#use-the-binary-distribution](https://developer.blocklet.io/docs/en/quick-start/blocklet-server#use-the-binary-distribution)
 
 2. Init blocklet server & start blocklet server
 
-   Before starting an blocklet server, you need to init blocklet server.  
-   `blocklet server init --mode=debug`  
-   `blocklet server start`  
-   See details in [https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#configure-abt-node](https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#configure-abt-node)
+   Before starting an blocklet server, you need to init blocklet server.
+   `blocklet server init --mode=debug`
+   `blocklet server start`
+   See details in [https://developer.blocklet.io/docs/en/quick-start/blocklet-server](https://developer.blocklet.io/docs/en/quick-start/blocklet-server)
 
 3. init project
 
