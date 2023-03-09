@@ -1,4 +1,4 @@
-# vite-plugi-blocklet
+# vite-plugin-blocklet
 
 The Vite library plugin, which enhanced development of [ArcBlock blocklet](http://developer.blocklet.io/)
 

@@ -12,7 +12,7 @@ export default async function setupClient(app, options = {}) {
         config: 'c',
       },
     });
-    const { host = '127.0.0.1', protocol = 'ws', port: inputPort, configFile = '' } = options;
+    const { host = '127.0.0.1', protocol = 'ws', port: inputPort, configFile = '', appType = 'spa' } = options;
     const port = await getPort({ port: inputPort });
     // 以中间件模式创建 Vite 服务器
     const vite = await createServer({
@@ -25,8 +25,10 @@ export default async function setupClient(app, options = {}) {
           protocol,
         },
       },
+      appType,
     });
     // 将 vite 的 connect 实例作中间件使用
     app.use(vite.middlewares);
+    return vite;
   }
 }

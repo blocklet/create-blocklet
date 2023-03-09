@@ -1,3 +1,7 @@
+## 0.5.18 (2023-3-9)
+
+- chore: support custom appType option for vite server
+
 ## 0.5.17 (2023-2-25)
 
 - fix: doc links and vite default config
