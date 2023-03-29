@@ -1,3 +1,7 @@
+## 0.5.19 (2023-3-30)
+
+- fix(template): should only skip ci base on head commit
+
 ## 0.5.18 (2023-3-9)
 
 - chore: support custom appType option for vite server
