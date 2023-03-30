@@ -14,7 +14,24 @@ A high-level overview of how this documentation is organized will help you know 
 
 ## Error "not found global / buffer / process"
 
-Since the default template uses vite as the development server, it can be solved by this plugin [vite-plugin-ngmi-polyfill](https://www.npmjs.com/package/vite-plugin-ngmi-polyfill)
+A solution is provided in vite-plugin-blocklet to solve the problem by passing the parameter `disableNodePolyfills: false`.
+
+Full example:
+``` js
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { createBlockletPlugin } from 'vite-plugin-blocklet';
+import svgr from 'vite-plugin-svgr';
+
+export default defineConfig(() => {
+  return {
+    plugins: [react(), createBlockletPlugin({ disableNodePolyfills: false }), svgr()],
+  };
+});
+
+```
+
+
 
 ## Why isn't GitHub Actions triggering?
 

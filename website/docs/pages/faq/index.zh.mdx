@@ -14,7 +14,22 @@ description: 常见问题
 
 ## 未找到 global / buffer / process 对象的问题
 
-由于默认的模板中使用了 vite 作为开发服务器，可以通过 [vite-plugin-ngmi-polyfill](https://www.npmjs.com/package/vite-plugin-ngmi-polyfill) 插件来解决该问题
+在 vite-plugin-blocklet 中提供了解决方案，通过传入参数 `disableNodePolyfills: false` 即可解决该问题。
+
+完整示例：
+``` js
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { createBlockletPlugin } from 'vite-plugin-blocklet';
+import svgr from 'vite-plugin-svgr';
+
+export default defineConfig((s) => {
+  return {
+    plugins: [react(), createBlockletPlugin({ disableNodePolyfills: false }), svgr()],
+  };
+});
+
+```
 
 ## 为什么 GitHub Actions 没有触发？
 

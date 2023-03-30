@@ -28,12 +28,12 @@
     ]
   },
   "dependencies": {
-    "@arcblock/did-auth": "^1.18.50",
+    "@arcblock/did-auth": "^1.18.65",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
-    "@blocklet/sdk": "^1.8.65",
-    "@ocap/client": "^1.18.50",
-    "@ocap/mcrypto": "^1.18.50",
-    "@ocap/wallet": "^1.18.50",
+    "@blocklet/sdk": "^1.8.68",
+    "@ocap/client": "^1.18.65",
+    "@ocap/mcrypto": "^1.18.65",
+    "@ocap/wallet": "^1.18.65",
     "dotenv-flow": "^3.2.0",
     "express": "^4.18.2",
     "next": "12.2.3",
@@ -46,9 +46,9 @@
     "eslint-config-next": "12.2.3",
     "husky": "^8.0.3",
     "lint-staged": "^12.5.0",
-    "nodemon": "^2.0.20",
+    "nodemon": "^2.0.22",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
-    "zx": "^7.1.1"
+    "zx": "^7.2.1"
   }
 }
