@@ -18,8 +18,6 @@ await batchModifyDepsVersion({
   version: `^${version}`,
 });
 
-console.log(`\nNow you can make adjustments to ${chalk.cyan('CHANGELOG.md')}. Then press enter to continue.`);
-
 let newChangelog = '';
 
 try {
