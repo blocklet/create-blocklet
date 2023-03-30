@@ -1,3 +1,7 @@
+## 0.5.20 (2023-3-30)
+
+- chore: add vite-plugin-node-polyfills in vite-plugin-blocklet
+
 ## 0.5.19 (2023-3-30)
 
 - fix(template): should only skip ci base on head commit
