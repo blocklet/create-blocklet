@@ -1,3 +1,8 @@
+## 0.5.21 (2023-4-3)
+
+- chore: update deps
+- chore: update site deploy config
+
 ## 0.5.20 (2023-3-30)
 
 - chore: add vite-plugin-node-polyfills in vite-plugin-blocklet
