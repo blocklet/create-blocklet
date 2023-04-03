@@ -35,7 +35,7 @@
     "zx": "^7.2.1"
   },
   "dependencies": {
-    "solid-js": "^1.6.16"
+    "solid-js": "^1.7.1"
   },
   "lint-staged": {
     "*.{mjs,js,vue}": [

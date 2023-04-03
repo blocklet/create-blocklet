@@ -40,7 +40,7 @@
   "dependencies": {
     "@arcblock/did-auth": "^1.18.65",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
-    "@blocklet/sdk": "^1.8.68",
+    "@blocklet/sdk": "^1.16.2",
     "@ocap/client": "^1.18.65",
     "@ocap/mcrypto": "^1.18.65",
     "@ocap/wallet": "^1.18.65",
@@ -66,7 +66,7 @@
     "@types/dotenv-flow": "^3.2.0",
     "@types/express": "^4.17.17",
     "@types/node": "^18.15.11",
-    "@types/react": "^18.0.31",
+    "@types/react": "^18.0.32",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^2.2.0",
     "bumpp": "^8.2.1",

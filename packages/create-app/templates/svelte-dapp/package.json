@@ -19,7 +19,7 @@
   "dependencies": {
     "@arcblock/did-auth": "^1.18.65",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
-    "@blocklet/sdk": "^1.8.68",
+    "@blocklet/sdk": "^1.16.2",
     "@ocap/client": "^1.18.65",
     "@ocap/mcrypto": "^1.18.65",
     "@ocap/wallet": "^1.18.65",
@@ -45,7 +45,7 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.8.7",
     "rimraf": "^3.0.2",
-    "svelte": "^3.57.0",
+    "svelte": "^3.58.0",
     "vite": "^3.2.5",
     "vite-plugin-blocklet": "^0.5.20",
     "vite-plugin-html": "^3.2.0",
