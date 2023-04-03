@@ -32,6 +32,8 @@ jobs:
           skip-upload: true
           skip-deploy: false
           skip-release: true
+          deploy-app-did: zNKkQuRidtsBVskb8oDXKVh5PpM5uD5PKxim
+          deploy-mount-point: /
           bundle-command: nr bundle
           working-directory: website/pages
           server-endpoint: ${{ secrets.XMARK_NODE_ENDPOINT }}
