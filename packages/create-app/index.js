@@ -7,12 +7,13 @@ import { execSync } from 'child_process';
 import { cd, argv, fs, YAML, chalk, path } from 'zx';
 import ora from 'ora';
 import prompts from 'prompts';
+import { isValid, toTypeInfo, types } from '@arcblock/did';
 import * as envfile from 'envfile';
 
 import { echoBrand, echoDocument } from './lib/arcblock.js';
 import { getUser } from './lib/index.js';
 import { checkServerInstalled, checkServerRunning, checkSatisfiedVersion, getServerDirectory } from './lib/server.js';
-import { toBlockletDid } from './lib/did.js';
+import { getBlockletDidList } from './lib/did.js';
 import { initGitRepo } from './lib/git.js';
 import {
   copy,
@@ -125,12 +126,35 @@ const renameFiles = {
   _npmrc: '.npmrc',
 };
 
+function checkDid(did = '') {
+  if (did) {
+    if (!isValid(did)) {
+      return false;
+    }
+    const typeInfo = toTypeInfo(did);
+    if (typeInfo.role !== types.RoleType.ROLE_BLOCKLET) {
+      return `The DID must be an blocklet DID: ${did}`;
+    }
+  }
+  return true;
+}
+
 async function init() {
   const { version } = await fs.readJSONSync(path.resolve(__dirname, 'package.json'));
   await echoBrand({ version });
 
   let targetDir = argv._[0] ? String(argv._[0]) : undefined;
   const inputTemplateName = argv.template;
+  const connectUrl = argv.connectUrl;
+  const inputDid = argv.did;
+  const checkRes = checkDid(inputDid);
+  if (typeof checkRes === 'string') {
+    console.error(checkRes);
+    return;
+  } else if (checkRes !== true) {
+    console.error(`Invalid blocklet did: ${inputDid}`);
+    return;
+  }
   if (inputTemplateName && !templates.find((item) => item.name === inputTemplateName)) {
     console.error(`${red('✖')} The template ${inputTemplateName} is invalid.`);
     return;
@@ -285,7 +309,19 @@ async function init() {
     }
   }
 
+  let didList = [];
+  if (inputDid && templateNames.length === 1) {
+    didList = [inputDid];
+  } else {
+    try {
+      didList = await getBlockletDidList(templateNames, connectUrl);
+    } catch {
+      process.exit(1);
+    }
+  }
+
   for (const templateName of templateNames) {
+    const index = templateNames.indexOf(templateName);
     const templateDir = path.join(__dirname, `templates/${templateName}`);
     const finalTemplateName = `${name}-${templateName}`;
     // TODO: 需要把 common file copy 的逻辑移除，不同的 template 之间的差异越来越多，就会需要越来越多特殊处理的代码，违背了初衷，移除这部分逻辑可能是更好的选择
@@ -350,8 +386,8 @@ async function init() {
     );
 
     // patch did
-    (() => {
-      const did = toBlockletDid(mainBlocklet ? finalTemplateName : name);
+    async function patchDid() {
+      const did = didList[index];
       modifyBlockletYaml(
         (yamlConfig) => {
           yamlConfig.did = did;
@@ -372,7 +408,7 @@ async function init() {
             }
             // 如果用户选了多个模板，为其他应用配置好 dev:child 和 deploy:child
             if (mainBlocklet && templateName !== mainBlocklet) {
-              const mainBlockletDid = toBlockletDid(`${name}-${mainBlocklet}`);
+              const mainBlockletDid = didList[templateNames.indexOf(mainBlocklet)];
               pkg.scripts['dev:child'] = ejs.render(pkg.scripts['dev:child'], { did: mainBlockletDid });
               pkg.scripts['deploy:child'] = ejs.render(pkg.scripts['deploy:child'], { did: mainBlockletDid });
             }
@@ -390,7 +426,8 @@ async function init() {
       // disabled random logo
       // const pngIcon = toDidIcon(did, undefined, true);
       // fs.writeFileSync(path.join(root, 'logo.png'), pngIcon);
-    })();
+    }
+    await patchDid();
   }
 
   scaffoldSpinner.succeed('✨  Done. Now run:\n');

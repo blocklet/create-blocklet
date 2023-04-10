@@ -1,3 +1,11 @@
+## 0.6.0 (2023-2-21)
+
+- chore: add error catch
+- fix: generate did
+- chore: pass `monikers` to `blocklet init` command
+- feat: support create monorepo with new did generate step
+- feat: support get did from `blocklet init --onlyDid` command
+
 ## 0.5.21 (2023-4-3)
 
 - chore: update deps
