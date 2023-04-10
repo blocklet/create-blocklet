@@ -11,7 +11,7 @@ function App() {
         </p>
         <a
           class={styles.link}
-          href="https://docs.arcblock.io/abtnode/en/blocklet"
+          href="https://developer.blocklet.io/docs/en/blocklet"
           target="_blank"
           rel="noopener noreferrer">
           Learn Blocklet

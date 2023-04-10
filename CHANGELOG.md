@@ -6,6 +6,27 @@
 - feat: support create monorepo with new did generate step
 - feat: support get did from `blocklet init --onlyDid` command
 
+## 0.5.21 (2023-4-3)
+
+- chore: update deps
+- chore: update site deploy config
+
+## 0.5.20 (2023-3-30)
+
+- chore: add vite-plugin-node-polyfills in vite-plugin-blocklet
+
+## 0.5.19 (2023-3-30)
+
+- fix(template): should only skip ci base on head commit
+
+## 0.5.18 (2023-3-9)
+
+- chore: support custom appType option for vite server
+
+## 0.5.17 (2023-2-25)
+
+- fix: doc links and vite default config
+
 ## 0.5.16 (2023-2-15)
 
 - fix: ignore unused parameters for error handler

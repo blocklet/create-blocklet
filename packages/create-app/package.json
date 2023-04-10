@@ -29,16 +29,16 @@
     "test:run": "vitest run"
   },
   "dependencies": {
-    "@arcblock/did": "^1.18.36",
-    "@ocap/mcrypto": "^1.18.36",
-    "@ocap/util": "^1.18.36",
+    "@arcblock/did": "^1.18.65",
+    "@ocap/mcrypto": "^1.18.65",
+    "@ocap/util": "^1.18.65",
     "boxen": "^6.2.1",
-    "ejs": "^3.1.8",
+    "ejs": "^3.1.9",
     "envfile": "^6.18.0",
     "figlet": "^1.5.2",
     "gradient-string": "^2.0.2",
     "jdenticon": "^3.2.0",
-    "ora": "^6.1.2",
+    "ora": "^6.3.0",
     "prompts": "^2.4.2",
     "semver": "^7.3.8",
     "terminal-link": "^3.0.0",
@@ -46,8 +46,8 @@
   },
   "devDependencies": {
     "@arcblock/eslint-config-base": "0.2.2",
-    "eslint": "^8.33.0",
-    "prettier": "^2.8.3",
+    "eslint": "^8.37.0",
+    "prettier": "^2.8.7",
     "vitest": "^0.19.1"
   }
 }

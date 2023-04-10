@@ -51,6 +51,8 @@ jobs:
           skip-upload: true
           skip-deploy: false
           skip-release: true
+          deploy-app-did: zNKkQuRidtsBVskb8oDXKVh5PpM5uD5PKxim
+          deploy-mount-point: /
           bundle-command: nr bundle
           working-directory: website/pages
           server-endpoint: ${{ secrets.XMARK_NODE_ENDPOINT }}
@@ -66,8 +68,8 @@ jobs:
           skip-upload: true
           skip-deploy: false
           skip-release: true
-          deploy-app-did: z8iZuvjcXn3Lj1DXsaKkAPvL4y1nf5SSsUsXc
-          deploy-mount-point: docs
+          deploy-app-did: zNKkQuRidtsBVskb8oDXKVh5PpM5uD5PKxim
+          deploy-mount-point: /docs
           bundle-command: nr bundle
           working-directory: website/docs
           server-endpoint: ${{ secrets.XMARK_NODE_ENDPOINT }}

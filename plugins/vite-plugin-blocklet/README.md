@@ -1,4 +1,4 @@
-# vite-plugi-blocklet
+# vite-plugin-blocklet
 
 The Vite library plugin, which enhanced development of [ArcBlock blocklet](http://developer.blocklet.io/)
 
@@ -9,11 +9,12 @@ The Vite library plugin, which enhanced development of [ArcBlock blocklet](http:
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { createBlockletPlugin } from 'vite-plugin-blocklet';
+import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 // https://vitejs.dev/config/
 export default defineConfig(async () => {
   return {
-    plugins: [react(), createBlockletPlugin()],
+    plugins: [react(), createBlockletPlugin(), nodePolyfills({ protocolImports: true })],
   };
 });
 ```

@@ -42,14 +42,14 @@ This blocklet is a dapp project, which means this is a full-stack application. I
 
    Blocklet needs blocklet server as a dependency. So you need to install it first.
    `npm install -g @blocklet/cli`
-   See details in [https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#use-the-binary-distribution](https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#use-the-binary-distribution)
+   See details in [https://developer.blocklet.io/docs/en/quick-start/blocklet-server#use-the-binary-distribution](https://developer.blocklet.io/docs/en/quick-start/blocklet-server#use-the-binary-distribution)
 
 2. Init blocklet server & start blocklet server
 
    Before starting an blocklet server, you need to init blocklet server.
    `blocklet server init --mode=debug`
    `blocklet server start`
-   See details in [https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#configure-abt-node](https://docs.arcblock.io/abtnode/en/introduction/abtnode-setup#configure-abt-node)
+   See details in [https://developer.blocklet.io/docs/en/quick-start/blocklet-server](https://developer.blocklet.io/docs/en/quick-start/blocklet-server)
 
 3. Go to the project directory `cd [name]`
 4. Install dependencies: `npm install` or `yarn`
@@ -149,7 +149,7 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
 ## Learn More
 
 - Full specification of `blocklet.yml`: [https://github.com/blocklet/blocklet-specification/blob/main/docs/meta.md](https://github.com/blocklet/blocklet-specification/blob/main/docs/meta.md)
-- Full document of Blocklet Server & blocklet development: [https://docs.arcblock.io/abtnode/en/introduction](https://docs.arcblock.io/abtnode/en/introduction)
+- Full document of Blocklet Server & blocklet development: [https://developer.blocklet.io/docs/en](https://developer.blocklet.io/docs/en)
 
 ## License
 
