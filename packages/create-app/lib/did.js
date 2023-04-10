@@ -33,11 +33,6 @@ export async function getBlockletDidList(monikerList = [], connectUrl) {
     const output = execSync(command);
     const pureOutput = await trimServerOutputVersion(output.toString('utf8'));
     const didStrList = pureOutput.split('\n').pop();
-    console.log({
-      output,
-      pureOutput,
-      clean: didStrList,
-    });
     return didStrList
       .trim()
       .split(',')
