@@ -18,20 +18,30 @@ export function toDidIcon(did, size = 200, isPng = false) {
   return isPng ? jdenticon.toPng(did, size) : jdenticon.toSvg(did, size);
 }
 
-export async function getBlockletDidList(monikerList = []) {
+export async function getBlockletDidList(monikerList = [], connectUrl) {
   try {
     let command = `${BLOCKLET_COMMAND} init`;
     if (monikerList.length > 0) {
       command += ` --monikers=${monikerList.join(',')}`;
-      command += ' --connectUrl=https://blocklet-registry-service-cbq-10-0-0-2.ip.abtnet.io';
-      const output = execSync(command);
-      const pureOutput = await trimServerOutputVersion(output.toString('utf8'));
-      return pureOutput
-        .trim()
-        .split(',')
-        .filter((x) => x !== '');
+    } else {
+      return [];
     }
-    return [];
+
+    if (connectUrl) {
+      command += ` --connectUrl=${connectUrl}`;
+    }
+    const output = execSync(command);
+    const pureOutput = await trimServerOutputVersion(output.toString('utf8'));
+    const didStrList = pureOutput.split('\n').pop();
+    console.log({
+      output,
+      pureOutput,
+      clean: didStrList,
+    });
+    return didStrList
+      .trim()
+      .split(',')
+      .filter((x) => x !== '');
   } catch {
     throw new Error('Failed to generate blocklet did');
   }

@@ -145,6 +145,7 @@ async function init() {
 
   let targetDir = argv._[0] ? String(argv._[0]) : undefined;
   const inputTemplateName = argv.template;
+  const connectUrl = argv.connectUrl;
   const inputDid = argv.did;
   const checkRes = checkDid(inputDid);
   if (typeof checkRes === 'string') {
@@ -313,7 +314,7 @@ async function init() {
     didList = [inputDid];
   } else {
     try {
-      didList = await getBlockletDidList(templateNames);
+      didList = await getBlockletDidList(templateNames, connectUrl);
     } catch {
       process.exit(1);
     }

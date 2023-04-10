@@ -11,7 +11,7 @@ export async function trimServerOutputVersion(output = '', command) {
     return output?.replace(`${BLOCKLET_COMMAND} ${command} v${version}\n`, '');
   }
   const reg = new RegExp(`${BLOCKLET_COMMAND} \\S+ v${version}\\n+`, 'g');
-  return output?.replace(reg, '');
+  return output?.replace(reg, '').trim();
 }
 
 export async function checkServerInstalled() {
