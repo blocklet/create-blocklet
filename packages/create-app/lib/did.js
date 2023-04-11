@@ -5,7 +5,7 @@ import { toHex } from '@ocap/util';
 import { fromPublicKey } from '@arcblock/did';
 import { execSync } from 'child_process';
 import { trimServerOutputVersion } from './server.js';
-import { BLOCKLET_COMMAND } from '../enums/index.js';
+import { BLOCKLET_COMMAND } from './constant.js';
 
 const { types } = Mcrypto;
 
