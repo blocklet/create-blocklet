@@ -1,3 +1,7 @@
+## 0.6.1 (2023-4-11)
+
+- fix: rename enum/index.js -> lib/constant.js
+
 ## 0.6.0 (2023-2-21)
 
 - chore: add error catch
