@@ -118,17 +118,17 @@ importers:
   website/docs:
     dependencies:
       '@xmark/cli':
-        specifier: ^2.5.3
-        version: 2.5.3(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.21)(prop-types@15.8.1)(react-dom@17.0.2)(react-ga@2.7.0)(react@18.2.0)(rollup@2.79.1)
+        specifier: ^2.5.4
+        version: 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.21)(prop-types@15.8.1)(react-dom@17.0.2)(react-ga@2.7.0)(react@18.2.0)(rollup@2.79.1)
       '@xmark/client':
-        specifier: ^2.5.3
-        version: 2.5.3(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.21)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1)
+        specifier: ^2.5.4
+        version: 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.21)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1)
       '@xmark/plugin-docs-indexer':
-        specifier: ^2.5.3
-        version: 2.5.3(react-dom@17.0.2)
+        specifier: ^2.5.4
+        version: 2.5.4(react-dom@17.0.2)
       '@xmark/theme-docs':
-        specifier: ^2.5.3
-        version: 2.5.3(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.21)(react-dom@17.0.2)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1)
+        specifier: ^2.5.4
+        version: 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.21)(react-dom@17.0.2)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1)
       create-blocklet:
         specifier: workspace:*
         version: link:../../packages/create-app
@@ -136,14 +136,14 @@ importers:
   website/pages:
     dependencies:
       '@xmark/cli':
-        specifier: ^2.5.3
-        version: 2.5.3(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.21)(prop-types@15.8.1)(react-dom@17.0.2)(react-ga@2.7.0)(react@18.2.0)(rollup@2.79.1)
+        specifier: ^2.5.4
+        version: 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.21)(prop-types@15.8.1)(react-dom@17.0.2)(react-ga@2.7.0)(react@18.2.0)(rollup@2.79.1)
       '@xmark/client':
-        specifier: ^2.5.3
-        version: 2.5.3(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.21)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1)
+        specifier: ^2.5.4
+        version: 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.21)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1)
       '@xmark/theme-arcblock':
-        specifier: ^2.5.3
-        version: 2.5.3(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.21)(react-dom@17.0.2)(react-ga@2.7.0)(rollup@2.79.1)(vite@2.9.15)
+        specifier: ^2.5.4
+        version: 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.21)(react-dom@17.0.2)(react-ga@2.7.0)(rollup@2.79.1)(vite@2.9.15)
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -2854,8 +2854,8 @@ packages:
       elliptic: 6.5.4
     dev: false
 
-  /@xmark/cli@2.5.3(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.21)(prop-types@15.8.1)(react-dom@17.0.2)(react-ga@2.7.0)(react@18.2.0)(rollup@2.79.1):
-    resolution: {integrity: sha512-5voxbPoKSBEea24wx5DXRXr0whas0S9vBImd95O0KHPIK4nW3Yz/lAToFr5jmAEO2sXTMUrrfai6iPfI7G/pvg==}
+  /@xmark/cli@2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.21)(prop-types@15.8.1)(react-dom@17.0.2)(react-ga@2.7.0)(react@18.2.0)(rollup@2.79.1):
+    resolution: {integrity: sha512-yNILGoK49t9aFZTSLJ28i6jVRoQtgDi4HTjOUFAbdka2p+8zy0XtBmo8VE5ZUEzBBEqSoTLqh6Z2mJKRdDUhRQ==}
     hasBin: true
     dependencies:
       '@antfu/utils': 0.7.2
@@ -2864,8 +2864,8 @@ packages:
       '@mdx-js/rollup': 2.3.0(rollup@2.79.1)
       '@rollup/plugin-yaml': 4.0.1(rollup@2.79.1)
       '@vitejs/plugin-react': 3.1.0(vite@4.2.1)
-      '@xmark/client': 2.5.3(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.21)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1)
-      '@xmark/utils': 2.5.3(react-dom@17.0.2)
+      '@xmark/client': 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.21)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1)
+      '@xmark/utils': 2.5.4(react-dom@17.0.2)
       change-case: 4.1.2
       debug: 4.3.4
       escape-string-regexp: 5.0.0
@@ -2926,8 +2926,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@xmark/client@2.5.3(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.21)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1):
-    resolution: {integrity: sha512-+hbIZVVFCYevbjeoQEUFZYM891ssXBggJjVmQjU0CDukWIszMNBDegX9vz53BCZauLaSAPil8WcCjF0V4iDuUQ==}
+  /@xmark/client@2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.21)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1):
+    resolution: {integrity: sha512-r2Xo6GtVVocP6oOYBnvjaRhq268zzv1WlJ9AkL5c69YuKLm4Db0oK5DZen8gaECulcW7WjJXjvsOYokhLoRIxw==}
     dependencies:
       '@arcblock/did-connect': 2.5.34(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(prop-types@15.8.1)(react-dom@18.2.0)(react-ga@2.7.0)(react@18.2.0)
       '@arcblock/ux': 2.5.34(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(prop-types@15.8.1)(react-dom@18.2.0)(react-ga@2.7.0)(react@18.2.0)
@@ -2938,7 +2938,7 @@ packages:
       '@iconify-json/mdi': 1.1.50
       '@mdx-js/react': 2.3.0(react@18.2.0)
       '@mui/material': 5.11.15(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(react-dom@18.2.0)(react@18.2.0)
-      '@xmark/utils': 2.5.3(react-dom@18.2.0)
+      '@xmark/utils': 2.5.4(react-dom@18.2.0)
       ahooks: 3.7.6(react@18.2.0)
       clsx: 1.2.1
       defu: 6.1.2
@@ -2972,13 +2972,13 @@ packages:
       - vite
     dev: false
 
-  /@xmark/plugin-docs-indexer@2.5.3(react-dom@17.0.2):
-    resolution: {integrity: sha512-dmipqOauZApgwHhX9PrzDDbwbzKOcSLK/3qiW7bCrplb8VpRSkb2lUX30tpRubJSMDFOZXwYB/TMbizmjG6u/A==}
+  /@xmark/plugin-docs-indexer@2.5.4(react-dom@17.0.2):
+    resolution: {integrity: sha512-7lyYkN/2hCQBLSkVzRmve1sWf3t14b2QNFGyEoGKADnAE1p63TcD7O1pM5813Utz1/T4R+3NvJDKe0CCLuTRYw==}
     dependencies:
       '@blocklet/sdk': 1.16.5
       '@emotion/react': 11.10.6(react@18.2.0)
       '@emotion/styled': 11.10.6(@emotion/react@11.10.6)(react@18.2.0)
-      '@xmark/utils': 2.5.3(react-dom@17.0.2)
+      '@xmark/utils': 2.5.4(react-dom@17.0.2)
       ahooks: 3.7.6(react@18.2.0)
       docs-searchbar.js: 2.5.0
       fs-extra: 11.1.1
@@ -2997,8 +2997,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@xmark/theme-arcblock@2.5.3(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.21)(react-dom@17.0.2)(react-ga@2.7.0)(rollup@2.79.1)(vite@2.9.15):
-    resolution: {integrity: sha512-KHAG9Oz93fmZvqW7OXauwLWBHnnzfsodSMSnErCwT2YBJLbP43ewxt3fI3AxKHCR2r4eTSrlutT1yBLbdA2PTA==}
+  /@xmark/theme-arcblock@2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.21)(react-dom@17.0.2)(react-ga@2.7.0)(rollup@2.79.1)(vite@2.9.15):
+    resolution: {integrity: sha512-u/SKnHPadZw9RQt9BzluiqxcO4sal7tA7na7jTPLA+UHKnFky3cMUF/R+dRRHWW9+S/+5/hLw4eHXrzV1x7SRA==}
     dependencies:
       '@arcblock/did-connect': 2.5.34(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(prop-types@15.8.1)(react-dom@18.2.0)(react-ga@2.7.0)(react@18.2.0)
       '@arcblock/ux': 2.5.34(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(prop-types@15.8.1)(react-dom@18.2.0)(react-ga@2.7.0)(react@18.2.0)
@@ -3008,8 +3008,8 @@ packages:
       '@iconify-json/uim': 1.1.5
       '@mui/material': 5.11.15(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(react-dom@17.0.2)(react@18.2.0)
       '@popperjs/core': 2.11.7
-      '@xmark/client': 2.5.3(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.21)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1)
-      '@xmark/utils': 2.5.3(react-dom@17.0.2)
+      '@xmark/client': 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.21)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1)
+      '@xmark/utils': 2.5.4(react-dom@17.0.2)
       ahooks: 3.7.6(react@18.2.0)
       clsx: 1.2.1
       pathe: 1.1.0
@@ -3035,16 +3035,16 @@ packages:
       - vite
     dev: false
 
-  /@xmark/theme-docs@2.5.3(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.21)(react-dom@17.0.2)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1):
-    resolution: {integrity: sha512-8cs5J5vDTjht2cQO2zXq+V+LYyQPRwh6rOPNu0FJm876YN8vjGayVo1Kg7bbKdFmWnruyNhJtZgt/pUICNjqmg==}
+  /@xmark/theme-docs@2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.21)(react-dom@17.0.2)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1):
+    resolution: {integrity: sha512-toCFqkF5nSkx+kg9Gey3fuNfuVnP/Yt3r+jSfqu7HvLvVqUZh0jbo4AgNYxV0o4VaqLchtZHeZPq526k6ctUNg==}
     dependencies:
       '@arcblock/ux': 2.5.34(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(prop-types@15.8.1)(react-dom@18.2.0)(react-ga@2.7.0)(react@18.2.0)
       '@emotion/react': 11.10.6(react@18.2.0)
       '@emotion/styled': 11.10.6(@emotion/react@11.10.6)(react@18.2.0)
       '@fontsource/lato': 4.5.10
       '@mui/material': 5.11.15(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(react-dom@17.0.2)(react@18.2.0)
-      '@xmark/client': 2.5.3(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.21)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1)
-      '@xmark/utils': 2.5.3(react-dom@17.0.2)
+      '@xmark/client': 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.21)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1)
+      '@xmark/utils': 2.5.4(react-dom@17.0.2)
       ahooks: 3.7.6(react@18.2.0)
       clsx: 1.2.1
       is-uri: 1.2.4
@@ -3071,8 +3071,8 @@ packages:
       - vite
     dev: false
 
-  /@xmark/utils@2.5.3(react-dom@17.0.2):
-    resolution: {integrity: sha512-lKxlUwtwv8N120drUyq8au4MeDs7jfeI8fv3D8gPOPowChHpiZMcBhBbXF6D9QbhsxdqsK6UHfdbI/VMzTvs5A==}
+  /@xmark/utils@2.5.4(react-dom@17.0.2):
+    resolution: {integrity: sha512-8b3LvhPfqdSMXctjyeoJdyiSkykVZ7O7vZp+PDEnEndN2tAkkzxJp76yk3lZJPjN6/sKYfXTDjWREzRWCGvoKQ==}
     dependencies:
       '@sindresorhus/transliterate': 1.6.0
       base-x: 4.0.0
@@ -3092,8 +3092,8 @@ packages:
       - supports-color
     dev: false
 
-  /@xmark/utils@2.5.3(react-dom@18.2.0):
-    resolution: {integrity: sha512-lKxlUwtwv8N120drUyq8au4MeDs7jfeI8fv3D8gPOPowChHpiZMcBhBbXF6D9QbhsxdqsK6UHfdbI/VMzTvs5A==}
+  /@xmark/utils@2.5.4(react-dom@18.2.0):
+    resolution: {integrity: sha512-8b3LvhPfqdSMXctjyeoJdyiSkykVZ7O7vZp+PDEnEndN2tAkkzxJp76yk3lZJPjN6/sKYfXTDjWREzRWCGvoKQ==}
     dependencies:
       '@sindresorhus/transliterate': 1.6.0
       base-x: 4.0.0

@@ -293,7 +293,7 @@ async function init() {
 
   console.log(`\nScaffolding project in ${cyan(root)}`);
 
-  const scaffoldSpinner = ora('Creating project...').start();
+  const scaffoldSpinner = ora('Creating project...\n').start();
   // name 是用户输入的项目名称
   const name = packageName || targetDir;
 
@@ -315,7 +315,8 @@ async function init() {
   } else {
     try {
       didList = await getBlockletDidList(templateNames, connectUrl);
-    } catch {
+    } catch (err) {
+      console.error(red(err.message));
       process.exit(1);
     }
   }
