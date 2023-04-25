@@ -27,14 +27,14 @@
     "rollup": "^2.79.1"
   },
   "dependencies": {
-    "@arcblock/did": "^1.18.65",
-    "@ocap/mcrypto": "^1.18.65",
-    "@ocap/util": "^1.18.65",
+    "@arcblock/did": "^1.18.75",
+    "@ocap/mcrypto": "^1.18.75",
+    "@ocap/util": "^1.18.75",
     "get-port": "^5.1.1",
     "mri": "^1.2.0",
-    "semver": "^7.3.8",
+    "semver": "^7.5.0",
     "vite-plugin-node-polyfills": "^0.7.0",
-    "yaml": "^2.2.1"
+    "yaml": "^2.2.2"
   },
   "peerDependencies": {
     "vite": ">=2"
