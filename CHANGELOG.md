@@ -1,3 +1,9 @@
+## 0.6.2 (2023-4-25)
+
+- chore: update create error process
+- chore: disableNodePolyfills default -> false
+- chore: update deps
+
 ## 0.6.1 (2023-4-11)
 
 - fix: rename enum/index.js -> lib/constant.js
