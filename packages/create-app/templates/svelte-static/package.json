@@ -15,12 +15,12 @@
     "deploy:child": "npm run bundle && blocklet deploy .blocklet/bundle --app-did=<%= did %>",
     "dev:child": "blocklet dev --component --app-did=<%= did %>",
     "prepare": "husky install",
-    "bump-version": "zx scripts/bump-version.mjs"
+    "bump-version": "zx --quiet scripts/bump-version.mjs"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "1.0.1",
     "bumpp": "^8.2.1",
-    "eslint": "^8.39.0",
+    "eslint": "^8.40.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-svelte3": "^4.0.0",
@@ -28,11 +28,11 @@
     "lint-staged": "^12.5.0",
     "prettier": "^2.8.8",
     "rimraf": "^3.0.2",
-    "svelte": "^3.58.0",
-    "vite": "^3.2.6",
-    "vite-plugin-blocklet": "^0.6.2",
+    "svelte": "^3.59.1",
+    "vite": "^4.3.5",
+    "vite-plugin-blocklet": "^0.6.3",
     "vite-plugin-node-polyfills": "^0.7.0",
-    "zx": "^7.2.1"
+    "zx": "^7.2.2"
   },
   "lint-staged": {
     "*.{mjs,js,vue}": [

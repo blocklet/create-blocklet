@@ -1,3 +1,10 @@
+## 0.6.3 (2023-5-12)
+
+- chore: update vite to latest
+- chore: update zx --quiet
+- chore: update deps
+- fix: bundle use blocklet.yml -> did first
+
 ## 0.6.2 (2023-4-25)
 
 - chore: update create error process

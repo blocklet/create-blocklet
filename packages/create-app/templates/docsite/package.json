@@ -12,13 +12,13 @@
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
     "deploy:child": "npm run bundle && blocklet deploy .blocklet/bundle --app-did=<%= did %>",
     "dev:child": "blocklet dev --component --app-did=<%= did %>",
-    "bump-version": "zx scripts/bump-version.mjs"
+    "bump-version": "zx --quiet scripts/bump-version.mjs"
   },
   "dependencies": {
     "@xmark/cli": "^2.5.4",
     "@xmark/theme-docs": "^2.5.4",
     "bumpp": "^8.2.1",
     "rimraf": "^3.0.2",
-    "zx": "^7.2.1"
+    "zx": "^7.2.2"
   }
 }

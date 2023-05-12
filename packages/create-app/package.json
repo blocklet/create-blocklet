@@ -1,6 +1,6 @@
 {
   "name": "create-blocklet",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "exports": "./index.js",
   "type": "module",
   "repository": "git@github.com:blocklet/create-blocklet.git",
@@ -29,9 +29,9 @@
     "test:run": "vitest run"
   },
   "dependencies": {
-    "@arcblock/did": "^1.18.75",
-    "@ocap/mcrypto": "^1.18.75",
-    "@ocap/util": "^1.18.75",
+    "@arcblock/did": "^1.18.78",
+    "@ocap/mcrypto": "^1.18.78",
+    "@ocap/util": "^1.18.78",
     "boxen": "^6.2.1",
     "ejs": "^3.1.9",
     "envfile": "^6.18.0",
@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@arcblock/eslint-config-base": "0.2.2",
-    "eslint": "^8.39.0",
+    "eslint": "^8.40.0",
     "prettier": "^2.8.8",
     "vitest": "^0.19.1"
   }
