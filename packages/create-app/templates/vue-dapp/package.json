@@ -15,7 +15,7 @@
     "deploy:child": "npm run bundle && blocklet deploy .blocklet/bundle --app-did=<%= did %>",
     "dev:child": "blocklet dev --component --app-did=<%= did %>",
     "prepare": "husky install",
-    "bump-version": "zx scripts/bump-version.mjs"
+    "bump-version": "zx --quiet scripts/bump-version.mjs"
   },
   "dependencies": {
     "@arcblock/did-auth": "^1.18.78",
