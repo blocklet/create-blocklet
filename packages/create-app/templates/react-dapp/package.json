@@ -40,12 +40,12 @@
     ]
   },
   "dependencies": {
-    "@arcblock/did-auth": "^1.18.75",
+    "@arcblock/did-auth": "^1.18.78",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
-    "@blocklet/sdk": "^1.16.5",
-    "@ocap/client": "^1.18.75",
-    "@ocap/mcrypto": "^1.18.75",
-    "@ocap/wallet": "^1.18.75",
+    "@blocklet/sdk": "^1.16.7",
+    "@ocap/client": "^1.18.78",
+    "@ocap/mcrypto": "^1.18.78",
+    "@ocap/wallet": "^1.18.78",
     "axios": "^0.27.2",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
@@ -56,7 +56,7 @@
     "express-history-api-fallback": "^2.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.10.0",
+    "react-router-dom": "^6.11.1",
     "rimraf": "^3.0.2"
   },
   "devDependencies": {
@@ -64,7 +64,7 @@
     "@vitejs/plugin-react": "^2.2.0",
     "bumpp": "^8.2.1",
     "cross-env": "^7.0.3",
-    "eslint": "^8.39.0",
+    "eslint": "^8.40.0",
     "husky": "^8.0.3",
     "lint-staged": "^12.5.0",
     "nodemon": "^2.0.22",
@@ -74,6 +74,6 @@
     "vite-plugin-blocklet": "^0.6.2",
     "vite-plugin-node-polyfills": "^0.7.0",
     "vite-plugin-svgr": "^2.4.0",
-    "zx": "^7.2.1"
+    "zx": "^7.2.2"
   }
 }

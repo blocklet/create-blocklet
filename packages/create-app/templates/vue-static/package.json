@@ -17,15 +17,15 @@
     "bump-version": "zx scripts/bump-version.mjs"
   },
   "dependencies": {
-    "vue": "^3.2.47"
+    "vue": "^3.3.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.2.0",
     "bumpp": "^8.2.1",
-    "eslint": "^8.39.0",
+    "eslint": "^8.40.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-vue": "^9.11.0",
+    "eslint-plugin-vue": "^9.12.0",
     "husky": "^8.0.3",
     "lint-staged": "^12.5.0",
     "prettier": "^2.8.8",
@@ -33,7 +33,7 @@
     "vite": "^3.2.6",
     "vite-plugin-blocklet": "^0.6.2",
     "vite-plugin-node-polyfills": "^0.7.0",
-    "zx": "^7.2.1"
+    "zx": "^7.2.2"
   },
   "lint-staged": {
     "*.{mjs,js,vue}": [
