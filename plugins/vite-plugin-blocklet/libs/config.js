@@ -48,11 +48,12 @@ export default function createConfigPlugin() {
           try {
             const blockletYamlPath = './blocklet.yml';
             const blockletYaml = YAML.parse(fs.readFileSync(blockletYamlPath, 'utf8'));
-            const { name } = blockletYaml;
-            if (name) {
-              const did = toBlockletDid(name);
+            let { name, did } = blockletYaml;
+            if (!did && name) {
+              did = toBlockletDid(name);
+            }
+            if (did) {
               const base = `/.blocklet/proxy/${did}/`;
-
               return {
                 base,
               };
