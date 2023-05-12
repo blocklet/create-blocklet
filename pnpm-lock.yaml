@@ -17,14 +17,14 @@ importers:
   packages/create-app:
     dependencies:
       '@arcblock/did':
-        specifier: ^1.18.75
-        version: 1.18.75
+        specifier: ^1.18.78
+        version: 1.18.78
       '@ocap/mcrypto':
-        specifier: ^1.18.75
-        version: 1.18.75
+        specifier: ^1.18.78
+        version: 1.18.78
       '@ocap/util':
-        specifier: ^1.18.75
-        version: 1.18.75
+        specifier: ^1.18.78
+        version: 1.18.78
       boxen:
         specifier: ^6.2.1
         version: 6.2.1
@@ -61,10 +61,10 @@ importers:
     devDependencies:
       '@arcblock/eslint-config-base':
         specifier: 0.2.2
-        version: 0.2.2(eslint@8.39.0)(prettier@2.8.8)
+        version: 0.2.2(eslint@8.40.0)(prettier@2.8.8)
       eslint:
-        specifier: ^8.39.0
-        version: 8.39.0
+        specifier: ^8.40.0
+        version: 8.40.0
       prettier:
         specifier: ^2.8.8
         version: 2.8.8
@@ -75,14 +75,14 @@ importers:
   plugins/vite-plugin-blocklet:
     dependencies:
       '@arcblock/did':
-        specifier: ^1.18.75
-        version: 1.18.75
+        specifier: ^1.18.78
+        version: 1.18.78
       '@ocap/mcrypto':
-        specifier: ^1.18.75
-        version: 1.18.75
+        specifier: ^1.18.78
+        version: 1.18.78
       '@ocap/util':
-        specifier: ^1.18.75
-        version: 1.18.75
+        specifier: ^1.18.78
+        version: 1.18.78
       get-port:
         specifier: ^5.1.1
         version: 5.1.1
@@ -112,23 +112,23 @@ importers:
         specifier: ^2.79.1
         version: 2.79.1
       vite:
-        specifier: ^2.9.15
-        version: 2.9.15
+        specifier: ^4.3.5
+        version: 4.3.5
 
   website/docs:
     dependencies:
       '@xmark/cli':
         specifier: ^2.5.4
-        version: 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.21)(prop-types@15.8.1)(react-dom@17.0.2)(react-ga@2.7.0)(react@18.2.0)(rollup@2.79.1)
+        version: 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.23)(prop-types@15.8.1)(react-dom@17.0.2)(react-ga@2.7.0)(react@18.2.0)(rollup@2.79.1)
       '@xmark/client':
         specifier: ^2.5.4
-        version: 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.21)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1)
+        version: 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.23)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.3.5)
       '@xmark/plugin-docs-indexer':
         specifier: ^2.5.4
         version: 2.5.4(react-dom@17.0.2)
       '@xmark/theme-docs':
         specifier: ^2.5.4
-        version: 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.21)(react-dom@17.0.2)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1)
+        version: 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.23)(react-dom@17.0.2)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.3.5)
       create-blocklet:
         specifier: workspace:*
         version: link:../../packages/create-app
@@ -137,13 +137,13 @@ importers:
     dependencies:
       '@xmark/cli':
         specifier: ^2.5.4
-        version: 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.21)(prop-types@15.8.1)(react-dom@17.0.2)(react-ga@2.7.0)(react@18.2.0)(rollup@2.79.1)
+        version: 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.23)(prop-types@15.8.1)(react-dom@17.0.2)(react-ga@2.7.0)(react@18.2.0)(rollup@2.79.1)
       '@xmark/client':
         specifier: ^2.5.4
-        version: 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.21)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1)
+        version: 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.23)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.3.5)
       '@xmark/theme-arcblock':
         specifier: ^2.5.4
-        version: 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.21)(react-dom@17.0.2)(react-ga@2.7.0)(rollup@2.79.1)(vite@2.9.15)
+        version: 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.23)(react-dom@17.0.2)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.3.5)
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -390,18 +390,31 @@ packages:
       - supports-color
     dev: false
 
-  /@arcblock/eslint-config-base@0.2.2(eslint@8.39.0)(prettier@2.8.8):
+  /@arcblock/did@1.18.78:
+    resolution: {integrity: sha512-hi0zVhR0vetdFytfIy/dgCY5QqjSKGecGSXYCj6DQfuI+l1L/9zx1dN/fmlKyzuD+TH6nrfSqFlbUQPtfb4OxQ==}
+    dependencies:
+      '@ocap/mcrypto': 1.18.78
+      '@ocap/util': 1.18.78
+      bn.js: 5.2.1
+      debug: 4.3.4
+      lodash: 4.17.21
+      type-fest: 3.1.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@arcblock/eslint-config-base@0.2.2(eslint@8.40.0)(prettier@2.8.8):
     resolution: {integrity: sha512-+AVqIlkC1pWaLIMn/WlgmOQfYH6nctdsKZwMTCBzbrduLzdKx/Kuqq1/c0/GiY53Bv0kWh3gguZSfdKnhCPXfQ==}
     peerDependencies:
       eslint: ^8.17.0
       prettier: ^2.7.1
     dependencies:
-      eslint: 8.39.0
-      eslint-config-airbnb-base: 15.0.0(eslint-plugin-import@2.26.0)(eslint@8.39.0)
-      eslint-config-prettier: 8.5.0(eslint@8.39.0)
-      eslint-plugin-import: 2.26.0(eslint@8.39.0)
-      eslint-plugin-prettier: 4.2.1(eslint-config-prettier@8.5.0)(eslint@8.39.0)(prettier@2.8.8)
-      eslint-plugin-unicorn: 42.0.0(eslint@8.39.0)
+      eslint: 8.40.0
+      eslint-config-airbnb-base: 15.0.0(eslint-plugin-import@2.26.0)(eslint@8.40.0)
+      eslint-config-prettier: 8.5.0(eslint@8.40.0)
+      eslint-plugin-import: 2.26.0(eslint@8.40.0)
+      eslint-plugin-prettier: 4.2.1(eslint-config-prettier@8.5.0)(eslint@8.40.0)(prettier@2.8.8)
+      eslint-plugin-unicorn: 42.0.0(eslint@8.40.0)
       prettier: 2.8.8
     transitivePeerDependencies:
       - '@typescript-eslint/parser'
@@ -667,7 +680,7 @@ packages:
       debug: 4.3.4
       eventemitter3: 4.0.7
       lodash: 4.17.21
-      nanoid: 3.3.4
+      nanoid: 3.3.6
       phoenix: 1.7.2
       ws: 8.9.0
     transitivePeerDependencies:
@@ -1061,10 +1074,10 @@ packages:
   /@did-connect/authenticator@2.1.52:
     resolution: {integrity: sha512-276tI/EmArLKE6yKwe0QFiwoaDeaaEgnZLwLXz08Z/nwXLn/GiVBZNnwZNQaGHRPwN7jVJ0eVrj6BCO62XIHsA==}
     dependencies:
-      '@arcblock/did': 1.18.75
+      '@arcblock/did': 1.18.78
       '@arcblock/jwt': 1.18.75
       '@did-connect/types': 2.1.52
-      '@ocap/util': 1.18.75
+      '@ocap/util': 1.18.78
       '@ocap/wallet': 1.18.75
       debug: 4.3.4
       lodash: 4.17.21
@@ -1076,14 +1089,14 @@ packages:
   /@did-connect/handler@2.1.52:
     resolution: {integrity: sha512-lAdYtHEdDHEso/WbQ2rh4aAmR0vqp/1e/r46XVwQle6Totr+8AN0ky81/A+5wzws1Wvse8HkVN1djRVJTg9JmA==}
     dependencies:
-      '@arcblock/did': 1.18.75
+      '@arcblock/did': 1.18.78
       '@arcblock/jwt': 1.18.75
       '@arcblock/ws': 1.18.75
       '@did-connect/authenticator': 2.1.52
       '@did-connect/storage': 2.1.52
       '@did-connect/types': 2.1.52
-      '@ocap/mcrypto': 1.18.75
-      '@ocap/util': 1.18.75
+      '@ocap/mcrypto': 1.18.78
+      '@ocap/util': 1.18.78
       axios: 0.27.2(debug@4.3.4)
       lodash: 4.17.21
       object-hash: 3.0.0
@@ -1109,7 +1122,7 @@ packages:
     resolution: {integrity: sha512-owwcLIho6RvCd5KbuIVUBAeGcJT6LT5Txla6yPWtcJMJeVovFXSt8TtoWq4MgwkCHqMrqwmmfXoEdAIfdFS+Yg==}
     dependencies:
       '@arcblock/validator': 1.18.75
-      '@ocap/mcrypto': 1.18.75
+      '@ocap/mcrypto': 1.18.78
       joi: 17.7.0
       type-fest: 3.1.0
     transitivePeerDependencies:
@@ -1236,7 +1249,6 @@ packages:
     cpu: [arm64]
     os: [android]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/android-arm@0.17.15:
@@ -1245,7 +1257,6 @@ packages:
     cpu: [arm]
     os: [android]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/android-x64@0.17.15:
@@ -1254,7 +1265,6 @@ packages:
     cpu: [x64]
     os: [android]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/darwin-arm64@0.17.15:
@@ -1263,7 +1273,6 @@ packages:
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/darwin-x64@0.17.15:
@@ -1272,7 +1281,6 @@ packages:
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/freebsd-arm64@0.17.15:
@@ -1281,7 +1289,6 @@ packages:
     cpu: [arm64]
     os: [freebsd]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/freebsd-x64@0.17.15:
@@ -1290,7 +1297,6 @@ packages:
     cpu: [x64]
     os: [freebsd]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-arm64@0.17.15:
@@ -1299,7 +1305,6 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-arm@0.17.15:
@@ -1308,7 +1313,6 @@ packages:
     cpu: [arm]
     os: [linux]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-ia32@0.17.15:
@@ -1317,7 +1321,6 @@ packages:
     cpu: [ia32]
     os: [linux]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-loong64@0.14.54:
@@ -1334,7 +1337,6 @@ packages:
     cpu: [loong64]
     os: [linux]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-mips64el@0.17.15:
@@ -1343,7 +1345,6 @@ packages:
     cpu: [mips64el]
     os: [linux]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-ppc64@0.17.15:
@@ -1352,7 +1353,6 @@ packages:
     cpu: [ppc64]
     os: [linux]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-riscv64@0.17.15:
@@ -1361,7 +1361,6 @@ packages:
     cpu: [riscv64]
     os: [linux]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-s390x@0.17.15:
@@ -1370,7 +1369,6 @@ packages:
     cpu: [s390x]
     os: [linux]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/linux-x64@0.17.15:
@@ -1379,7 +1377,6 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/netbsd-x64@0.17.15:
@@ -1388,7 +1385,6 @@ packages:
     cpu: [x64]
     os: [netbsd]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/openbsd-x64@0.17.15:
@@ -1397,7 +1393,6 @@ packages:
     cpu: [x64]
     os: [openbsd]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/sunos-x64@0.17.15:
@@ -1406,7 +1401,6 @@ packages:
     cpu: [x64]
     os: [sunos]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/win32-arm64@0.17.15:
@@ -1415,7 +1409,6 @@ packages:
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/win32-ia32@0.17.15:
@@ -1424,7 +1417,6 @@ packages:
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
-    dev: false
     optional: true
 
   /@esbuild/win32-x64@0.17.15:
@@ -1433,17 +1425,16 @@ packages:
     cpu: [x64]
     os: [win32]
     requiresBuild: true
-    dev: false
     optional: true
 
-  /@eslint-community/eslint-utils@4.4.0(eslint@8.39.0):
+  /@eslint-community/eslint-utils@4.4.0(eslint@8.40.0):
     resolution: {integrity: sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || >=8.0.0
     dependencies:
-      eslint: 8.39.0
-      eslint-visitor-keys: 3.4.0
+      eslint: 8.40.0
+      eslint-visitor-keys: 3.4.1
     dev: true
 
   /@eslint-community/regexpp@4.5.0:
@@ -1451,13 +1442,13 @@ packages:
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
     dev: true
 
-  /@eslint/eslintrc@2.0.2:
-    resolution: {integrity: sha512-3W4f5tDUra+pA+FzgugqL2pRimUTDJWKr7BINqOpkZrC0uYI0NIc0/JFgBROCU07HR6GieA5m3/rsPIhDmCXTQ==}
+  /@eslint/eslintrc@2.0.3:
+    resolution: {integrity: sha512-+5gy6OQfk+xx3q0d6jGZZC3f3KzAkXc/IanVxd1is/VIIziRqqt3ongQz0FiTUXqTk0c7aDB3OaFuKnuSoJicQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
       ajv: 6.12.6
       debug: 4.3.4
-      espree: 9.5.1
+      espree: 9.5.2
       globals: 13.20.0
       ignore: 5.2.0
       import-fresh: 3.3.0
@@ -1468,8 +1459,8 @@ packages:
       - supports-color
     dev: true
 
-  /@eslint/js@8.39.0:
-    resolution: {integrity: sha512-kf9RB0Fg7NZfap83B3QOqOGg9QmD9yBudqQXzzOtn3i4y7ZUXe5ONeW34Gwi+TxhH4mvj72R1Zc300KUMa9Bng==}
+  /@eslint/js@8.40.0:
+    resolution: {integrity: sha512-ElyB54bJIhXQYVKjDSvCkPO1iU1tSAeVQJbllWJq1XQSmmA4dgFk8CbiBGpiOPxleE48vDogxCtmMYku4HSVLA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
@@ -2113,6 +2104,22 @@ packages:
       type-fest: 3.1.0
     dev: false
 
+  /@ocap/mcrypto@1.18.78:
+    resolution: {integrity: sha512-CBt71FVWNWoWr6NqO6r9SABl5bnoCY4cu92U1Qp6CG/9nJVF5uelG0DEWyIyRYmDs+3NI751tOOc/5wbuGArDw==}
+    dependencies:
+      '@ocap/util': 1.18.78
+      bn.js: 5.2.1
+      crypto-js: 4.1.1
+      elliptic: 6.5.4
+      eth-lib: 0.2.8
+      hash.js: 1.1.7
+      interface: 1.2.1
+      js-sha3: 0.8.0
+      randombytes: 2.1.0
+      tweetnacl: 1.0.3
+      type-fest: 3.1.0
+    dev: false
+
   /@ocap/message@1.18.68:
     resolution: {integrity: sha512-y67YK+jSjARXFzD2kRPHHMSFEawxRp/TWeHHbJP8Lo5Dcf3CSB5LT0pdyRcb9nC/58Xhxiud9siFB42gOo11aQ==}
     dependencies:
@@ -2153,6 +2160,17 @@ packages:
 
   /@ocap/util@1.18.75:
     resolution: {integrity: sha512-OhBfsTs8wvF+quOog+hFvBtGZnsIBId5qSQn/A6VGWZcTF48WpgZQTzM7CcOZKZWdfT32WdMZvsOKRnNhDu0cQ==}
+    dependencies:
+      base64-url: 2.3.3
+      bn.js: 5.2.1
+      bs58: 5.0.0
+      lodash: 4.17.21
+      type-fest: 3.1.0
+      utf8: 3.0.0
+    dev: false
+
+  /@ocap/util@1.18.78:
+    resolution: {integrity: sha512-0BcxBkCwZBRYcfY1TkAYDNpjSMbMo6MMbE535NkCXtFWP1RH2nSci2b41PUBZe94bxlqNLcnmZMRYVPGx2QHVQ==}
     dependencies:
       base64-url: 2.3.3
       bn.js: 5.2.1
@@ -2646,12 +2664,12 @@ packages:
     resolution: {integrity: sha512-113D3mDkZDjo+EeUEHCFy0qniNc1ZpecGiAU7WSo7YDoSzolZIQKpYFHrPpjkB2nuyahcKfrmLXeQlh7gqJYdw==}
     dev: false
 
-  /@unocss/astro@0.50.6(rollup@2.79.1)(vite@4.2.1):
+  /@unocss/astro@0.50.6(rollup@2.79.1)(vite@4.3.5):
     resolution: {integrity: sha512-gSGQIh+hBCor7KbAylu4wBQaMZp3AkT8dW9E6jrecpluVxzGGdar93a79Wqs76OlWiu7hr8zOyRbSDgfkwDung==}
     dependencies:
       '@unocss/core': 0.50.6
       '@unocss/reset': 0.50.6
-      '@unocss/vite': 0.50.6(rollup@2.79.1)(vite@4.2.1)
+      '@unocss/vite': 0.50.6(rollup@2.79.1)(vite@4.3.5)
     transitivePeerDependencies:
       - rollup
       - vite
@@ -2698,7 +2716,7 @@ packages:
       sirv: 2.0.2
     dev: false
 
-  /@unocss/postcss@0.50.6(postcss@8.4.21):
+  /@unocss/postcss@0.50.6(postcss@8.4.23):
     resolution: {integrity: sha512-pRPBVPmwjsVu3v1T0hQuqq3L4K74Wobo6pGDypvK/MuzWdWDhHiktWwmXGNxlYSWK7mGJBIa+vI10pp4e15OUw==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -2709,7 +2727,7 @@ packages:
       css-tree: 2.3.1
       fast-glob: 3.2.12
       magic-string: 0.30.0
-      postcss: 8.4.21
+      postcss: 8.4.23
     dev: false
 
   /@unocss/preset-attributify@0.50.6:
@@ -2802,7 +2820,7 @@ packages:
       '@unocss/core': 0.50.6
     dev: false
 
-  /@unocss/vite@0.50.6(rollup@2.79.1)(vite@4.2.1):
+  /@unocss/vite@0.50.6(rollup@2.79.1)(vite@4.3.5):
     resolution: {integrity: sha512-BBfNHWRTD69ToNX4NlYdORFG6uH51HCjX+vZ8HAVgYHpSeVWziG3srnGYOk5IS0pKPzQGoLBlz8rstMsGhrAjA==}
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0-0 || ^4.0.0
@@ -2817,12 +2835,12 @@ packages:
       chokidar: 3.5.3
       fast-glob: 3.2.12
       magic-string: 0.30.0
-      vite: 4.2.1
+      vite: 4.3.5
     transitivePeerDependencies:
       - rollup
     dev: false
 
-  /@vitejs/plugin-react@3.1.0(vite@4.2.1):
+  /@vitejs/plugin-react@3.1.0(vite@4.3.5):
     resolution: {integrity: sha512-AfgcRL8ZBhAlc3BFdigClmTUMISmmzHn7sB2h9U1odvc5U/MjWXsAaz18b/WoppUTDBzxOJwo2VdClfUcItu9g==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -2833,7 +2851,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.19.6(@babel/core@7.21.4)
       magic-string: 0.27.0
       react-refresh: 0.14.0
-      vite: 4.2.1
+      vite: 4.3.5
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -2854,7 +2872,7 @@ packages:
       elliptic: 6.5.4
     dev: false
 
-  /@xmark/cli@2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.21)(prop-types@15.8.1)(react-dom@17.0.2)(react-ga@2.7.0)(react@18.2.0)(rollup@2.79.1):
+  /@xmark/cli@2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.23)(prop-types@15.8.1)(react-dom@17.0.2)(react-ga@2.7.0)(react@18.2.0)(rollup@2.79.1):
     resolution: {integrity: sha512-yNILGoK49t9aFZTSLJ28i6jVRoQtgDi4HTjOUFAbdka2p+8zy0XtBmo8VE5ZUEzBBEqSoTLqh6Z2mJKRdDUhRQ==}
     hasBin: true
     dependencies:
@@ -2863,8 +2881,8 @@ packages:
       '@mdx-js/react': 2.3.0(react@18.2.0)
       '@mdx-js/rollup': 2.3.0(rollup@2.79.1)
       '@rollup/plugin-yaml': 4.0.1(rollup@2.79.1)
-      '@vitejs/plugin-react': 3.1.0(vite@4.2.1)
-      '@xmark/client': 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.21)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1)
+      '@vitejs/plugin-react': 3.1.0(vite@4.3.5)
+      '@xmark/client': 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.23)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.3.5)
       '@xmark/utils': 2.5.4(react-dom@17.0.2)
       change-case: 4.1.2
       debug: 4.3.4
@@ -2897,10 +2915,10 @@ packages:
       string-replace-async: 3.0.2
       ufo: 1.1.1
       unist-util-visit: 4.1.2
-      unocss: 0.50.6(postcss@8.4.21)(rollup@2.79.1)(vite@4.2.1)
-      vite: 4.2.1
-      vite-plugin-blocklet: 0.5.21(rollup@2.79.1)(vite@4.2.1)
-      vite-plugin-svgr: 2.4.0(rollup@2.79.1)(vite@4.2.1)
+      unocss: 0.50.6(postcss@8.4.23)(rollup@2.79.1)(vite@4.3.5)
+      vite: 4.3.5
+      vite-plugin-blocklet: 0.5.21(rollup@2.79.1)(vite@4.3.5)
+      vite-plugin-svgr: 2.4.0(rollup@2.79.1)(vite@4.3.5)
       yaml: 2.2.1
       yargs: 17.7.1
     transitivePeerDependencies:
@@ -2926,7 +2944,7 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@xmark/client@2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.21)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1):
+  /@xmark/client@2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.23)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.3.5):
     resolution: {integrity: sha512-r2Xo6GtVVocP6oOYBnvjaRhq268zzv1WlJ9AkL5c69YuKLm4Db0oK5DZen8gaECulcW7WjJXjvsOYokhLoRIxw==}
     dependencies:
       '@arcblock/did-connect': 2.5.34(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(prop-types@15.8.1)(react-dom@18.2.0)(react-ga@2.7.0)(react@18.2.0)
@@ -2955,7 +2973,7 @@ packages:
       react-helmet: 6.1.0(react@18.2.0)
       react-router-dom: 6.10.0(react-dom@18.2.0)(react@18.2.0)
       ufo: 1.1.1
-      unocss: 0.50.6(postcss@8.4.21)(rollup@2.79.1)(vite@4.2.1)
+      unocss: 0.50.6(postcss@8.4.23)(rollup@2.79.1)(vite@4.3.5)
     transitivePeerDependencies:
       - '@babel/core'
       - '@emotion/server'
@@ -2997,7 +3015,7 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@xmark/theme-arcblock@2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.21)(react-dom@17.0.2)(react-ga@2.7.0)(rollup@2.79.1)(vite@2.9.15):
+  /@xmark/theme-arcblock@2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.23)(react-dom@17.0.2)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.3.5):
     resolution: {integrity: sha512-u/SKnHPadZw9RQt9BzluiqxcO4sal7tA7na7jTPLA+UHKnFky3cMUF/R+dRRHWW9+S/+5/hLw4eHXrzV1x7SRA==}
     dependencies:
       '@arcblock/did-connect': 2.5.34(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(prop-types@15.8.1)(react-dom@18.2.0)(react-ga@2.7.0)(react@18.2.0)
@@ -3008,7 +3026,7 @@ packages:
       '@iconify-json/uim': 1.1.5
       '@mui/material': 5.11.15(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(react-dom@17.0.2)(react@18.2.0)
       '@popperjs/core': 2.11.7
-      '@xmark/client': 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.21)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1)
+      '@xmark/client': 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.23)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.3.5)
       '@xmark/utils': 2.5.4(react-dom@17.0.2)
       ahooks: 3.7.6(react@18.2.0)
       clsx: 1.2.1
@@ -3035,7 +3053,7 @@ packages:
       - vite
     dev: false
 
-  /@xmark/theme-docs@2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.21)(react-dom@17.0.2)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1):
+  /@xmark/theme-docs@2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(postcss@8.4.23)(react-dom@17.0.2)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.3.5):
     resolution: {integrity: sha512-toCFqkF5nSkx+kg9Gey3fuNfuVnP/Yt3r+jSfqu7HvLvVqUZh0jbo4AgNYxV0o4VaqLchtZHeZPq526k6ctUNg==}
     dependencies:
       '@arcblock/ux': 2.5.34(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(prop-types@15.8.1)(react-dom@18.2.0)(react-ga@2.7.0)(react@18.2.0)
@@ -3043,7 +3061,7 @@ packages:
       '@emotion/styled': 11.10.6(@emotion/react@11.10.6)(react@18.2.0)
       '@fontsource/lato': 4.5.10
       '@mui/material': 5.11.15(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(react-dom@17.0.2)(react@18.2.0)
-      '@xmark/client': 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.21)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.2.1)
+      '@xmark/client': 2.5.4(@babel/core@7.21.4)(@sentry/browser@5.30.0)(debug@4.3.4)(postcss@8.4.23)(react-ga@2.7.0)(rollup@2.79.1)(vite@4.3.5)
       '@xmark/utils': 2.5.4(react-dom@17.0.2)
       ahooks: 3.7.6(react@18.2.0)
       clsx: 1.2.1
@@ -5009,7 +5027,6 @@ packages:
       '@esbuild/win32-arm64': 0.17.15
       '@esbuild/win32-ia32': 0.17.15
       '@esbuild/win32-x64': 0.17.15
-    dev: false
 
   /escalade@3.1.1:
     resolution: {integrity: sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==}
@@ -5033,7 +5050,7 @@ packages:
     engines: {node: '>=12'}
     dev: false
 
-  /eslint-config-airbnb-base@15.0.0(eslint-plugin-import@2.26.0)(eslint@8.39.0):
+  /eslint-config-airbnb-base@15.0.0(eslint-plugin-import@2.26.0)(eslint@8.40.0):
     resolution: {integrity: sha512-xaX3z4ZZIcFLvh2oUNvcX5oEofXda7giYmuplVxoOg5A7EXJMrUyqRgR+mhDhPK8LZ4PttFOBvCYDbX3sUoUig==}
     engines: {node: ^10.12.0 || >=12.0.0}
     peerDependencies:
@@ -5041,20 +5058,20 @@ packages:
       eslint-plugin-import: ^2.25.2
     dependencies:
       confusing-browser-globals: 1.0.11
-      eslint: 8.39.0
-      eslint-plugin-import: 2.26.0(eslint@8.39.0)
+      eslint: 8.40.0
+      eslint-plugin-import: 2.26.0(eslint@8.40.0)
       object.assign: 4.1.4
       object.entries: 1.1.5
       semver: 6.3.0
     dev: true
 
-  /eslint-config-prettier@8.5.0(eslint@8.39.0):
+  /eslint-config-prettier@8.5.0(eslint@8.40.0):
     resolution: {integrity: sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
     dependencies:
-      eslint: 8.39.0
+      eslint: 8.40.0
     dev: true
 
   /eslint-import-resolver-node@0.3.6:
@@ -5066,7 +5083,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-module-utils@2.7.4(eslint-import-resolver-node@0.3.6)(eslint@8.39.0):
+  /eslint-module-utils@2.7.4(eslint-import-resolver-node@0.3.6)(eslint@8.40.0):
     resolution: {integrity: sha512-j4GT+rqzCoRKHwURX7pddtIPGySnX9Si/cgMI5ztrcqOPtk5dDEeZ34CQVPphnqkJytlc97Vuk05Um2mJ3gEQA==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -5088,13 +5105,13 @@ packages:
         optional: true
     dependencies:
       debug: 3.2.7
-      eslint: 8.39.0
+      eslint: 8.40.0
       eslint-import-resolver-node: 0.3.6
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /eslint-plugin-import@2.26.0(eslint@8.39.0):
+  /eslint-plugin-import@2.26.0(eslint@8.40.0):
     resolution: {integrity: sha512-hYfi3FXaM8WPLf4S1cikh/r4IxnO6zrhZbEGz2b660EJRbuxgpDS5gkCuYgGWg2xxh2rBuIr4Pvhve/7c31koA==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -5108,9 +5125,9 @@ packages:
       array.prototype.flat: 1.3.0
       debug: 2.6.9
       doctrine: 2.1.0
-      eslint: 8.39.0
+      eslint: 8.40.0
       eslint-import-resolver-node: 0.3.6
-      eslint-module-utils: 2.7.4(eslint-import-resolver-node@0.3.6)(eslint@8.39.0)
+      eslint-module-utils: 2.7.4(eslint-import-resolver-node@0.3.6)(eslint@8.40.0)
       has: 1.0.3
       is-core-module: 2.10.0
       is-glob: 4.0.3
@@ -5124,7 +5141,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-prettier@4.2.1(eslint-config-prettier@8.5.0)(eslint@8.39.0)(prettier@2.8.8):
+  /eslint-plugin-prettier@4.2.1(eslint-config-prettier@8.5.0)(eslint@8.40.0)(prettier@2.8.8):
     resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -5135,13 +5152,13 @@ packages:
       eslint-config-prettier:
         optional: true
     dependencies:
-      eslint: 8.39.0
-      eslint-config-prettier: 8.5.0(eslint@8.39.0)
+      eslint: 8.40.0
+      eslint-config-prettier: 8.5.0(eslint@8.40.0)
       prettier: 2.8.8
       prettier-linter-helpers: 1.0.0
     dev: true
 
-  /eslint-plugin-unicorn@42.0.0(eslint@8.39.0):
+  /eslint-plugin-unicorn@42.0.0(eslint@8.40.0):
     resolution: {integrity: sha512-ixBsbhgWuxVaNlPTT8AyfJMlhyC5flCJFjyK3oKE8TRrwBnaHvUbuIkCM1lqg8ryYrFStL/T557zfKzX4GKSlg==}
     engines: {node: '>=12'}
     peerDependencies:
@@ -5150,8 +5167,8 @@ packages:
       '@babel/helper-validator-identifier': 7.19.1
       ci-info: 3.4.0
       clean-regexp: 1.0.0
-      eslint: 8.39.0
-      eslint-utils: 3.0.0(eslint@8.39.0)
+      eslint: 8.40.0
+      eslint-utils: 3.0.0(eslint@8.40.0)
       esquery: 1.5.0
       indent-string: 4.0.0
       is-builtin-module: 3.2.0
@@ -5187,13 +5204,13 @@ packages:
       eslint-visitor-keys: 1.3.0
     dev: false
 
-  /eslint-utils@3.0.0(eslint@8.39.0):
+  /eslint-utils@3.0.0(eslint@8.40.0):
     resolution: {integrity: sha512-uuQC43IGctw68pJA1RgbQS8/NP7rch6Cwd4j3ZBtgo4/8Flj4eGE7ZYSZRN3iq5pVUv6GPdW5Z1RFleo84uLDA==}
     engines: {node: ^10.0.0 || ^12.0.0 || >= 14.0.0}
     peerDependencies:
       eslint: '>=5'
     dependencies:
-      eslint: 8.39.0
+      eslint: 8.40.0
       eslint-visitor-keys: 2.1.0
     dev: true
 
@@ -5207,8 +5224,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-visitor-keys@3.4.0:
-    resolution: {integrity: sha512-HPpKPUBQcAsZOsHAFwTtIKcYlCje62XB7SEAcxjtmW6TD1WVpkS6i6/hOVtTZIl4zGj/mBqpFVGvaDneik+VoQ==}
+  /eslint-visitor-keys@3.4.1:
+    resolution: {integrity: sha512-pZnmmLwYzf+kWaM/Qgrvpen51upAktaaiI01nsJD/Yr3lMOdNtq0cxkrrg16w64VtisN6okbs7Q8AfGqj4c9fA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
@@ -5258,15 +5275,15 @@ packages:
       - supports-color
     dev: false
 
-  /eslint@8.39.0:
-    resolution: {integrity: sha512-mwiok6cy7KTW7rBpo05k6+p4YVZByLNjAZ/ACB9DRCu4YDRwjXI01tWHp6KAUWelsBetTxKK/2sHB0vdS8Z2Og==}
+  /eslint@8.40.0:
+    resolution: {integrity: sha512-bvR+TsP9EHL3TqNtj9sCNJVAFK3fBN8Q7g5waghxyRsPLIMwL73XSKnZFK0hk/O2ANC+iAoq6PWMQ+IfBAJIiQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     hasBin: true
     dependencies:
-      '@eslint-community/eslint-utils': 4.4.0(eslint@8.39.0)
+      '@eslint-community/eslint-utils': 4.4.0(eslint@8.40.0)
       '@eslint-community/regexpp': 4.5.0
-      '@eslint/eslintrc': 2.0.2
-      '@eslint/js': 8.39.0
+      '@eslint/eslintrc': 2.0.3
+      '@eslint/js': 8.40.0
       '@humanwhocodes/config-array': 0.11.8
       '@humanwhocodes/module-importer': 1.0.1
       '@nodelib/fs.walk': 1.2.8
@@ -5277,8 +5294,8 @@ packages:
       doctrine: 3.0.0
       escape-string-regexp: 4.0.0
       eslint-scope: 7.2.0
-      eslint-visitor-keys: 3.4.0
-      espree: 9.5.1
+      eslint-visitor-keys: 3.4.1
+      espree: 9.5.2
       esquery: 1.5.0
       esutils: 2.0.3
       fast-deep-equal: 3.1.3
@@ -5316,13 +5333,13 @@ packages:
       eslint-visitor-keys: 1.3.0
     dev: false
 
-  /espree@9.5.1:
-    resolution: {integrity: sha512-5yxtHSZXRSW5pvv3hAlXM5+/Oswi1AUFqBmbibKb5s6bp3rGIDkyXU6xCoyuuLhijr4SFwPrXRoZjz0AZDN9tg==}
+  /espree@9.5.2:
+    resolution: {integrity: sha512-7OASN1Wma5fum5SrNhFMAMJxOUAbhyfQ8dQ//PJaJbNw0URTPWqIghHWt1MmAANKhHZIYOHruW4Kw4ruUWOdGw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
       acorn: 8.8.2
       acorn-jsx: 5.3.2(acorn@8.8.2)
-      eslint-visitor-keys: 3.4.0
+      eslint-visitor-keys: 3.4.1
     dev: true
 
   /esprima@4.0.1:
@@ -8111,6 +8128,11 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
+  /nanoid@3.3.6:
+    resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
+    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
+
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
@@ -8919,6 +8941,14 @@ packages:
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
       nanoid: 3.3.4
+      picocolors: 1.0.0
+      source-map-js: 1.0.2
+
+  /postcss@8.4.23:
+    resolution: {integrity: sha512-bQ3qMcpF6A/YjR55xtoTr0jGOlnPOKAIMdOWiv0EIT6HVPEaJiJB4NLljSbiHoC2RX7DN5Uvjtpbg1NPdwv1oA==}
+    engines: {node: ^10 || ^12 || >=14}
+    dependencies:
+      nanoid: 3.3.6
       picocolors: 1.0.0
       source-map-js: 1.0.2
 
@@ -9974,13 +10004,12 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /rollup@3.20.2:
-    resolution: {integrity: sha512-3zwkBQl7Ai7MFYQE0y1MeQ15+9jsi7XxfrqwTb/9EK8D9C9+//EBR4M+CuA1KODRaNbFez/lWxA5vhEGZp4MUg==}
+  /rollup@3.21.6:
+    resolution: {integrity: sha512-SXIICxvxQxR3D4dp/3LDHZIJPC8a4anKMHd4E3Jiz2/JnY+2bEjqrOokAauc5ShGVNFHlEFjBXAXlaxkJqIqSg==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
-    dev: false
 
   /rotating-file-stream@2.1.6:
     resolution: {integrity: sha512-qS0ndAlDu80MMXeRonqGMXslF0FErzcUSbcXhus3asRG4cvCS79hc5f7s0x4bPAsH6wAwyHVIeARg69VUe3JmQ==}
@@ -11001,7 +11030,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: false
 
-  /unocss@0.50.6(postcss@8.4.21)(rollup@2.79.1)(vite@4.2.1):
+  /unocss@0.50.6(postcss@8.4.23)(rollup@2.79.1)(vite@4.3.5):
     resolution: {integrity: sha512-7cKiIB/ssAPvCDUcFMs0jm0FzIyQKfgIjUzBYZ5dVFthOvN5dcFh7bCZE9dIM862n7oW8FjbkTxwdTbRqqJQVQ==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -11010,10 +11039,10 @@ packages:
       '@unocss/webpack':
         optional: true
     dependencies:
-      '@unocss/astro': 0.50.6(rollup@2.79.1)(vite@4.2.1)
+      '@unocss/astro': 0.50.6(rollup@2.79.1)(vite@4.3.5)
       '@unocss/cli': 0.50.6(rollup@2.79.1)
       '@unocss/core': 0.50.6
-      '@unocss/postcss': 0.50.6(postcss@8.4.21)
+      '@unocss/postcss': 0.50.6(postcss@8.4.23)
       '@unocss/preset-attributify': 0.50.6
       '@unocss/preset-icons': 0.50.6
       '@unocss/preset-mini': 0.50.6
@@ -11027,7 +11056,7 @@ packages:
       '@unocss/transformer-compile-class': 0.50.6
       '@unocss/transformer-directives': 0.50.6
       '@unocss/transformer-variant-group': 0.50.6
-      '@unocss/vite': 0.50.6(rollup@2.79.1)(vite@4.2.1)
+      '@unocss/vite': 0.50.6(rollup@2.79.1)(vite@4.3.5)
     transitivePeerDependencies:
       - postcss
       - rollup
@@ -11169,19 +11198,19 @@ packages:
       vfile-message: 3.1.2
     dev: false
 
-  /vite-plugin-blocklet@0.5.21(rollup@2.79.1)(vite@4.2.1):
+  /vite-plugin-blocklet@0.5.21(rollup@2.79.1)(vite@4.3.5):
     resolution: {integrity: sha512-8ZRJ/IkJknHST3KVewQwNFSETt4GqLXR3lkghGQsQ5o7NO/x8GcJm6dRLkgKm+XHfsLQ1adVSuKvgadQlWCooA==}
     peerDependencies:
       vite: '>=2'
     dependencies:
-      '@arcblock/did': 1.18.75
-      '@ocap/mcrypto': 1.18.75
-      '@ocap/util': 1.18.75
+      '@arcblock/did': 1.18.78
+      '@ocap/mcrypto': 1.18.78
+      '@ocap/util': 1.18.78
       get-port: 5.1.1
       mri: 1.2.0
       semver: 7.5.0
-      vite: 4.2.1
-      vite-plugin-node-polyfills: 0.7.0(rollup@2.79.1)(vite@4.2.1)
+      vite: 4.3.5
+      vite-plugin-node-polyfills: 0.7.0(rollup@2.79.1)(vite@4.3.5)
       yaml: 2.2.2
     transitivePeerDependencies:
       - rollup
@@ -11200,26 +11229,26 @@ packages:
       - rollup
     dev: false
 
-  /vite-plugin-node-polyfills@0.7.0(rollup@2.79.1)(vite@4.2.1):
+  /vite-plugin-node-polyfills@0.7.0(rollup@2.79.1)(vite@4.3.5):
     resolution: {integrity: sha512-DKBSGDOx3R8pUIsQFRZAWNYp0vIffJOT0NkuByX4WIQq80nJ2eamAph5T9zG91liO1Fyl1lo7/Onh6xoQO52XQ==}
     peerDependencies:
       vite: ^2.0.0 || ^3.0.0 || ^4.0.0
     dependencies:
       '@rollup/plugin-inject': 5.0.3(rollup@2.79.1)
       node-stdlib-browser: 1.2.0
-      vite: 4.2.1
+      vite: 4.3.5
     transitivePeerDependencies:
       - rollup
     dev: false
 
-  /vite-plugin-svgr@2.4.0(rollup@2.79.1)(vite@4.2.1):
+  /vite-plugin-svgr@2.4.0(rollup@2.79.1)(vite@4.3.5):
     resolution: {integrity: sha512-q+mJJol6ThvqkkJvvVFEndI4EaKIjSI0I3jNFgSoC9fXAz1M7kYTVUin8fhUsFojFDKZ9VHKtX6NXNaOLpbsHA==}
     peerDependencies:
       vite: ^2.6.0 || 3 || 4
     dependencies:
       '@rollup/pluginutils': 5.0.2(rollup@2.79.1)
       '@svgr/core': 6.5.1
-      vite: 4.2.1
+      vite: 4.3.5
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -11248,8 +11277,8 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vite@4.2.1:
-    resolution: {integrity: sha512-7MKhqdy0ISo4wnvwtqZkjke6XN4taqQ2TBaTccLIpOKv7Vp2h4Y+NpmWCnGDeSvvn45KxvWgGyb0MkHvY1vgbg==}
+  /vite@4.3.5:
+    resolution: {integrity: sha512-0gEnL9wiRFxgz40o/i/eTBwm+NEbpUeTWhzKrZDSdKm6nplj+z4lKz8ANDgildxHm47Vg8EUia0aicKbawUVVA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -11274,12 +11303,10 @@ packages:
         optional: true
     dependencies:
       esbuild: 0.17.15
-      postcss: 8.4.21
-      resolve: 1.22.1
-      rollup: 3.20.2
+      postcss: 8.4.23
+      rollup: 3.21.6
     optionalDependencies:
       fsevents: 2.3.2
-    dev: false
 
   /vitest@0.19.1:
     resolution: {integrity: sha512-E/ZXpFMUahn731wzhMBNzWRp4mGgiZFT0xdHa32cbNO0CSaHpE9hTfteEU247Gi2Dula8uXo5vvrNB6dtszmQA==}
