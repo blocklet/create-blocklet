@@ -1,3 +1,7 @@
+## 0.6.4 (2023-5-23)
+
+- feat: add nestjs-api template
+
 ## 0.6.3 (2023-5-12)
 
 - chore: update vite to latest

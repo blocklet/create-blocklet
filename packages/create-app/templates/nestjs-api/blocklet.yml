@@ -6,7 +6,7 @@ keywords:
   - nestjs
 group: dapp
 did: ''
-main: api/dist/main.js
+main: dist/main.js
 author:
   name: Blocklet
   email: blocklet@arcblock.io
@@ -19,7 +19,7 @@ logo: logo.png
 files:
   - logo.png
   - screenshots
-  - api
+  - dist
 interfaces:
   - type: web
     name: publicUrl

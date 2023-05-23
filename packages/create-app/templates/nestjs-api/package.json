@@ -6,8 +6,9 @@
   "scripts": {
     "lint": "eslint api --ext .mjs,.js,.jsx,.ts,.tsx",
     "lint:fix": "npm run lint -- --fix",
+    "build": "nest build",
     "dev": "blocklet dev",
-    "start": "NODE_ENV=development cd api/ && nest start --watch",
+    "start": "NODE_ENV=development && nest start --watch",
     "clean": "node scripts/build-clean.js",
     "bundle": "npm run clean && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
