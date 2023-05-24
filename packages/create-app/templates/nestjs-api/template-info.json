@@ -5,7 +5,7 @@
   "blockletType": "dapp",
   "composable": true,
   "framework": "NestJS",
-  "languages": "JavaScript",
+  "languages": "TypeScript",
   "useCase": "Server Side Application",
   "author": "Vincent Medina"
 }

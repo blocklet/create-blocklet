@@ -10,11 +10,7 @@ This blocklet is a dapp project, which means this is a full-stack application. I
 - api/ - Api side code
   - hooks/ - blocklet lifecycle hooks
   - libs/ - Api side libraries
-  - middlewares/ - Api side middlewares
-  - routes/ - Api side routes
-  - index.js - Api side entry point
-- .env - Environment variables
-- .env.local - Local environment variables
+  - main.ts - Api side entry point
 - .prettierrc - Prettier configuration
 - blocklet.md - Blocklet README
 - blocklet.yml - Blocklet configuration
