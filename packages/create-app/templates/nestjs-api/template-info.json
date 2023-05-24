@@ -1,0 +1,11 @@
+{
+  "name": "nestjs-api",
+  "desc": { "en": "A server-side API application built on NestJS", "zh": "一个基于 NestJS 构建的服务端 API 应用" },
+  "displayName": "NestJS API",
+  "blockletType": "dapp",
+  "composable": true,
+  "framework": "NestJS",
+  "languages": "TypeScript",
+  "useCase": "Server Side Application",
+  "author": "Vincent Medina"
+}

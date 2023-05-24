@@ -118,6 +118,11 @@ const templates = [
     display: '[api] express.js',
     color: yellow,
   },
+  {
+    name: 'nestjs-api',
+    display: '[api] nestjs',
+    color: yellow,
+  },
 ];
 
 //see: https://github.com/npm/npm/issues/3763
