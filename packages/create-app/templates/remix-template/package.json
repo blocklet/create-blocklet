@@ -1,0 +1,71 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "build": "remix build",
+    "dev": "npm-run-all build --parallel \"dev:*\"",
+    "dev:node": "cross-env NODE_ENV=development nodemon --require dotenv/config ./server.js --watch ./server.js",
+    "dev:remix": "remix watch",
+    "start": "cross-env NODE_ENV=production node ./server.js",
+    "typecheck": "tsc",
+    "setup": "prisma generate && prisma migrate deploy && prisma db seed",
+    "bundle": "blocklet bundle --zip --create-release"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.14.1",
+    "@remix-run/css-bundle": "^1.16.1",
+    "@remix-run/express": "^1.16.1",
+    "@remix-run/node": "^1.16.1",
+    "@remix-run/react": "^1.16.1",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cross-env": "^7.0.3",
+    "express": "^4.18.2",
+    "isbot": "^3.6.8",
+    "morgan": "^1.10.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "@remix-run/dev": "^1.16.1",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/eslint": "^8.37.0",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.37",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^3.1.0",
+    "@vitest/coverage-c8": "^0.30.1",
+    "autoprefixer": "^10.4.14",
+    "c8": "^7.13.0",
+    "cookie": "^0.5.0",
+    "cross-env": "^7.0.3",
+    "cypress": "^12.10.0",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-cypress": "^2.13.2",
+    "eslint-plugin-markdown": "^3.0.0",
+    "eslint-plugin-prefer-let": "^3.0.1",
+    "happy-dom": "^9.8.0",
+    "msw": "^1.2.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.22",
+    "prettier": "2.8.7",
+    "prettier-plugin-tailwindcss": "^0.2.7",
+    "prisma": "^4.12.0",
+    "start-server-and-test": "^2.0.0",
+    "tailwindcss": "^3.3.1",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.0.4",
+    "vite": "^4.2.1",
+    "vite-tsconfig-paths": "^3.6.0",
+    "vitest": "^0.30.1"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "prisma": {
+    "seed": "ts-node --require tsconfig-paths/register prisma/seed.ts"
+  }
+}
