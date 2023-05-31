@@ -1,174 +1,162 @@
-# Remix Indie Stack
+# Getting Started with Create Blocklet
 
-![The Remix Indie Stack](https://repository-images.githubusercontent.com/465928257/a241fa49-bd4d-485a-a2a5-5cb8e4ee0abf)
+This project was bootstrapped with [Create Blocklet](https://github.com/blocklet/create-blocklet).
 
-Learn more about [Remix Stacks](https://remix.run/stacks).
+This blocklet is a dapp project, which means this is a full-stack application. It's contained both `server` and `client` code.
 
-```sh
-npx create-remix@latest --template remix-run/indie-stack
-```
+## File Structure
 
-## What's in the stack
-
-- [Fly app deployment](https://fly.io) with [Docker](https://www.docker.com/)
-- Production-ready [SQLite Database](https://sqlite.org)
-- Healthcheck endpoint for [Fly backups region fallbacks](https://fly.io/docs/reference/configuration/#services-http_checks)
-- [GitHub Actions](https://github.com/features/actions) for deploy on merge to production and staging environments
-- Email/Password Authentication with [cookie-based sessions](https://remix.run/utils/sessions#md-createcookiesessionstorage)
-- Database ORM with [Prisma](https://prisma.io)
-- Styling with [Tailwind](https://tailwindcss.com/)
-- End-to-end testing with [Cypress](https://cypress.io)
-- Local third party request mocking with [MSW](https://mswjs.io)
-- Unit testing with [Vitest](https://vitest.dev) and [Testing Library](https://testing-library.com)
-- Code formatting with [Prettier](https://prettier.io)
-- Linting with [ESLint](https://eslint.org)
-- Static Types with [TypeScript](https://typescriptlang.org)
-
-Not a fan of bits of the stack? Fork it, change it, and use `npx create-remix --template your/repo`! Make it your own.
-
-## Quickstart
-
-Click this button to create a [Gitpod](https://gitpod.io) workspace with the project set up and Fly pre-installed
-
-[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/remix-run/indie-stack/tree/main)
+- screenshots/ - Screenshots
+- app/ - Remix application code
+- prisma/ - SQLite database
+- server.js - Api side entry point
+- .prettierrc - Prettier configuration
+- blocklet.md - Blocklet README
+- blocklet.yml - Blocklet configuration
+- LICENSE - License file
+- logo.png - Blocklet logo file
+- Makefile - Makefile
+- package.json - Npm package file
+- README.md - A guide for this blocklet
+- version - Version file
 
 ## Development
 
-- Initial setup:
+1. Make sure you have [@blocklet/cli](https://www.npmjs.com/package/@blocklet/cli) installed
 
-  ```sh
-  npm run setup
+   Blocklet needs blocklet server as a dependency. So you need to install it first.
+   `npm install -g @blocklet/cli`
+   See details in [https://developer.blocklet.io/docs/en/quick-start/blocklet-server#use-the-binary-distribution](https://developer.blocklet.io/docs/en/quick-start/blocklet-server#use-the-binary-distribution)
+
+2. Init blocklet server & start blocklet server
+
+   Before starting an blocklet server, you need to init blocklet server.
+   `blocklet server init --mode=debug`
+   `blocklet server start`
+   See details in [https://developer.blocklet.io/docs/en/quick-start/blocklet-server](https://developer.blocklet.io/docs/en/quick-start/blocklet-server)
+
+3. Go to the project directory `cd [name]`
+4. Install dependencies: `npm install` or `yarn`
+5. Install dependencies: `npm run setup` or `yarn setup`
+6. Install dependencies: `npm run build` or `yarn build`
+7. Start development server: `blocklet dev`
+
+## Bundle
+
+After developing a blocklet, you may need to bundle it. Use `npm run bundle` command.
+
+## Indie Stack Deploy
+
+- [The Indie Stack](https://github.com/remix-run/indie-stack)
+
+- If you want to deploy this blocklet to local blocklet server as is, you can use `blocklet deploy .blocklet/bundle` command(Make sure the blocklet is bundled before deployment).
+  > Or you can simply use `npm run deploy` command.
+- If you want to deploy this blocklet to remote blocklet server, you can use the command below.
+
+  ```shell
+  blocklet deploy .blocklet/bundle --endpoint {your blocklet server url} --access-key {blocklet server access key} --access-secret {blocklet server access secret}
   ```
 
-- Start dev server:
+  > Make sure the blocklet is bundled before deployment.
 
-  ```sh
-  npm run dev
+## Blues Stack Deploy
+
+- [The Blues Stack](https://github.com/remix-run/blues-stack)
+
+- To use PostgreSQL instead of SQLite, you can the replace the contents of the `prisma` folder with those found in the `_postgres` folder and update the `.env` file.
+
+  - If you want to deploy this blocklet to local blocklet server, you can use `blocklet deploy .blocklet/bundle` command(Make sure the blocklet is bundled before deployment).
+    > Or you can simply use `npm run deploy` command.
+
+- If you want to deploy this blocklet to remote blocklet server, you can use the command below.
+
+  ```shell
+  blocklet deploy .blocklet/bundle --endpoint {your blocklet server url} --access-key {blocklet server access key} --access-secret {blocklet server access secret}
   ```
 
-This starts your app in development mode, rebuilding assets on file changes.
+  > Make sure the blocklet is bundled before deployment.
 
-The database seed script creates a new user with some data you can use to get started:
+## Upload to blocklet store
 
-- Email: `rachel@remix.run`
-- Password: `racheliscool`
+- If you want to upload the blocklet to any store for other users to download and use, you can following the following instructions.
 
-### Relevant code:
+  Bump version at first.
 
-This is a pretty simple note-taking app, but it's a good example of how you can build a full stack app with Prisma and Remix. The main functionality is creating users, logging in and out, and creating and deleting notes.
-
-- creating users, and logging in and out [./app/models/user.server.ts](./app/models/user.server.ts)
-- user sessions, and verifying them [./app/session.server.ts](./app/session.server.ts)
-- creating, and deleting notes [./app/models/note.server.ts](./app/models/note.server.ts)
-
-## Deployment
-
-This Remix Stack comes with two GitHub Actions that handle automatically deploying your app to production and staging environments.
-
-Prior to your first deployment, you'll need to do a few things:
-
-- [Install Fly](https://fly.io/docs/getting-started/installing-flyctl/)
-
-- Sign up and log in to Fly
-
-  ```sh
-  fly auth signup
+  ```shell
+  make bump-version
   ```
 
-  > **Note:** If you have more than one Fly account, ensure that you are signed into the same account in the Fly CLI as you are in the browser. In your terminal, run `fly auth whoami` and ensure the email matches the Fly account signed into the browser.
+  Then config blocklet store url.
+  You can use those store url in below.
 
-- Create two apps on Fly, one for staging and one for production:
+  1. [https://store.blocklet.dev/](https://store.blocklet.dev/)
+  2. [https://dev.store.blocklet.dev/](https://dev.store.blocklet.dev/)
+  3. A blocklet store started by yourself.
+     > Make sure you have installed a `blocklet store` on your own blocklet server. Check it on here: [https://store.blocklet.dev/blocklet/z8ia29UsENBg6tLZUKi2HABj38Cw1LmHZocbQ](https://store.blocklet.dev/blocklet/z8ia29UsENBg6tLZUKi2HABj38Cw1LmHZocbQ)
 
-  ```sh
-  fly apps create remix-template-9ee6
-  fly apps create remix-template-9ee6-staging
+  ```shell
+  blocklet config set store {store url}
   ```
 
-  > **Note:** Make sure this name matches the `app` set in your `fly.toml` file. Otherwise, you will not be able to deploy.
+  Get a `accessToken` by using this command.
 
-  - Initialize Git.
+  > Why we need a `accessToken`?
+  > A `accessToken` is genrate by blocklet store, which help us upload our blocklet to any store.
 
-  ```sh
-  git init
+  Set `accessToken` to blocklet config
+
+  ```shell
+  blocklet config set accessToken {accessToken}
   ```
 
-- Create a new [GitHub Repository](https://repo.new), and then add it as the remote for your project. **Do not push your app yet!**
+  Upload a new version to a store.
 
-  ```sh
-  git remote add origin <ORIGIN_URL>
+  > Make sure the blocklet is bundled before upload.
+
+  ```shell
+  blocklet upload
   ```
 
-- Add a `FLY_API_TOKEN` to your GitHub repo. To do this, go to your user settings on Fly and create a new [token](https://web.fly.io/user/personal_access_tokens/new), then add it to [your repo secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets) with the name `FLY_API_TOKEN`.
+  Or you can simply use `npm run upload` command.
 
-- Add a `SESSION_SECRET` to your fly app secrets, to do this you can run the following commands:
+- You also can upload a new version to a store by Github CI.
+  Bump version at first.
 
-  ```sh
-  fly secrets set SESSION_SECRET=$(openssl rand -hex 32) --app remix-template-9ee6
-  fly secrets set SESSION_SECRET=$(openssl rand -hex 32) --app remix-template-9ee6-staging
+  ```shell
+  make bump-version
   ```
 
-  If you don't have openssl installed, you can also use [1Password](https://1password.com/password-generator) to generate a random secret, just replace `$(openssl rand -hex 32)` with the generated secret.
+  Push your code to Github main/master branch, or make a pull request to the main/master branch.
+  The CI workflow will automatically upload a new version to a store.
 
-- Create a persistent volume for the sqlite database for both your staging and production environments. Run the following:
+## Q & A
 
-  ```sh
-  fly volumes create data --size 1 --app remix-template-9ee6
-  fly volumes create data --size 1 --app remix-template-9ee6-staging
-  ```
+1. Q: How to change a blocklet's name?
 
-Now that everything is set up you can commit and push your changes to your repo. Every commit to your `main` branch will trigger a deployment to your production environment, and every commit to your `dev` branch will trigger a deployment to your staging environment.
+   A: Change the `name` field in the `package.json` file, change the `name` field in the `blocklet.yml` file.
 
-### Connecting to your database
+   You can also change the `title` field and `description` field in the `blocklet.yml` file.
 
-The sqlite database lives at `/data/sqlite.db` in your deployed application. You can connect to the live database by running `fly ssh console -C database-cli`.
+   Run `blocklet meta` command, you will get a `did` config, copy the `did` value.
 
-### Getting Help with Deployment
+   Replace this command `"bundle:client": "PUBLIC_URL='/.blocklet/proxy/{did}' npm run build",` in `package.json`
 
-If you run into any issues deploying to Fly, make sure you've followed all of the steps above and if you have, then post as many details about your deployment (including your app name) to [the Fly support community](https://community.fly.io). They're normally pretty responsive over there and hopefully can help resolve any of your deployment issues and questions.
+   Replace `did` field in the `blocklet.yml`
 
-## GitHub Actions
+2. Q: How to change a blocklet's logo?
 
-We use GitHub Actions for continuous integration and deployment. Anything that gets into the `main` branch will be deployed to production after running tests/build/etc. Anything in the `dev` branch will be deployed to staging.
+   Change the `logo.png` file root folder.
 
-## Testing
+   Or you can change the `logo` field in the `blocklet.yml` file.
 
-### Cypress
+   > Make sure you have added the logo path to the `blocklet.yml` file `files` field.
 
-We use Cypress for our End-to-End tests in this project. You'll find those in the `cypress` directory. As you make changes, add to an existing file or create a new file in the `cypress/e2e` directory to test your changes.
+## Learn More
 
-We use [`@testing-library/cypress`](https://testing-library.com/cypress) for selecting elements on the page semantically.
+- Full specification of `blocklet.yml`: [https://github.com/blocklet/blocklet-specification/blob/main/docs/meta.md](https://github.com/blocklet/blocklet-specification/blob/main/docs/meta.md)
+- Full document of Blocklet Server & blocklet development: [https://developer.blocklet.io/docs/en](https://developer.blocklet.io/docs/en)
 
-To run these tests in development, run `npm run test:e2e:dev` which will start the dev server for the app as well as the Cypress client. Make sure the database is running in docker as described above.
+## License
 
-We have a utility for testing authenticated features without having to go through the login flow:
-
-```ts
-cy.login();
-// you are now logged in as a new user
-```
-
-We also have a utility to auto-delete the user at the end of your test. Just make sure to add this in each test file:
-
-```ts
-afterEach(() => {
-  cy.cleanupUser();
-});
-```
-
-That way, we can keep your local db clean and keep your tests isolated from one another.
-
-### Vitest
-
-For lower level tests of utilities and individual components, we use `vitest`. We have DOM-specific assertion helpers via [`@testing-library/jest-dom`](https://testing-library.com/jest-dom).
-
-### Type Checking
-
-This project uses TypeScript. It's recommended to get TypeScript set up for your editor to get a really great in-editor experience with type checking and auto-complete. To run type checking across the whole project, run `npm run typecheck`.
-
-### Linting
-
-This project uses ESLint for linting. That is configured in `.eslintrc.js`.
-
-### Formatting
-
-We use [Prettier](https://prettier.io/) for auto-formatting in this project. It's recommended to install an editor plugin (like the [VSCode Prettier plugin](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)) to get auto-formatting on save. There's also a `npm run format` script you can run to format all files in the project.
+The code is licensed under the Apache 2.0 license found in the
+[LICENSE](LICENSE) file.
