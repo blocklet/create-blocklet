@@ -37,8 +37,8 @@ This blocklet is a dapp project, which means this is a full-stack application. I
 
 3. Go to the project directory `cd [name]`
 4. Install dependencies: `npm install` or `yarn`
-5. Install dependencies: `npm run setup` or `yarn setup`
-6. Install dependencies: `npm run build` or `yarn build`
+5. Create database: `npm run setup` or `yarn setup`
+6. Build application: `npm run build` or `yarn build`
 7. Start development server: `blocklet dev`
 
 ## Bundle
