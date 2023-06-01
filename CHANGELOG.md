@@ -1,3 +1,8 @@
+## 0.6.5 (2023-6-1)
+
+- chore: translate PULL_REQUEST_TEMPLATE to english
+- feat: enable loading plugin by default
+
 ## 0.6.4 (2023-5-23)
 
 - feat: add nestjs-api template
