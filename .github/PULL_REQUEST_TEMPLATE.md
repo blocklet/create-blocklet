@@ -1,19 +1,19 @@
-### 关联 Issue
+### Relates Issue
 
-<!-- 请用 fixes、closes、resolves、relates 这些关键词来关联 issue，原则上，所有 PR 都应该有关联 Issue -->
+<!-- Please use words like `fixes`, `closes`, `resolves`, `relates` to link issues. In principle, all PR should be associated with an Issue -->
 
-### 主要改动
+### Main changes
 
-1. 修复了 xxx
-2. 改进了 xxx
-3. 调整了 xxx
+1. Fixed xxx
+2. Improved xxx
+3. Tweaked xxx
 
-### 界面截图
+### Screenshots
 
-<!-- 如果改动的是跟 UI 相关的，不论是 CLI 还是 WEB 都应该截图 -->
+<!-- If the change is related to UI, both `cli` and `web` should take screenshots -->
 
-### 检查清单
+### Check list
 
-- [ ]  create-blocklet 生成的项目应该可以正常 dev
-- [ ]  create-blocklet 生成的项目应该可以正常 deploy
-- [ ]  create-blocklet 生成的项目应该可以正常 upload
+- [ ] Project create by create-blocklet can work with `npm run dev`
+- [ ] Project create by create-blocklet can work with `npm run deploy`
+- [ ] Project create by create-blocklet can work with `npm run upload`
