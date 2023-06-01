@@ -10,8 +10,7 @@
     "build": "remix build",
     "dev": "blocklet dev",
     "start": "cross-env NODE_ENV=production node ./server.js",
-    "bundle": "blocklet bundle --zip --create-release",
-    "deploy": "blocklet deploy .blocklet/bundle"
+    "bundle": "blocklet bundle --zip --create-release"
   },
   "dependencies": {
     "@prisma/client": "^4.14.1",
