@@ -17,3 +17,4 @@
 - [ ] Project create by create-blocklet can work with `npm run dev`
 - [ ] Project create by create-blocklet can work with `npm run deploy`
 - [ ] Project create by create-blocklet can work with `npm run upload`
+- [ ] If a new version need to be publish, make sure you have run `npm run bump-version` command
