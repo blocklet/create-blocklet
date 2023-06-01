@@ -37,7 +37,7 @@ This blocklet is a dapp project, which means this is a full-stack application. I
 
 3. Go to the project directory `cd [name]`
 4. Install dependencies: `npm install` or `yarn`
-5. Create database: `npm run setup` or `yarn setup`
+5. Initialize database: `npm run setup` or `yarn setup`
 6. Build application: `npm run build` or `yarn build`
 7. Start development server: `blocklet dev`
 
@@ -45,29 +45,10 @@ This blocklet is a dapp project, which means this is a full-stack application. I
 
 After developing a blocklet, you may need to bundle it. Use `npm run bundle` command.
 
-## Indie Stack Deploy
+## Deploy
 
-- [The Indie Stack](https://github.com/remix-run/indie-stack)
-
-- If you want to deploy this blocklet to local blocklet server as is, you can use `blocklet deploy .blocklet/bundle` command(Make sure the blocklet is bundled before deployment).
+- If you want to deploy this blocklet to local blocklet server, you can use `blocklet deploy .blocklet/bundle` command(Make sure the blocklet is bundled before deployment.)
   > Or you can simply use `npm run deploy` command.
-- If you want to deploy this blocklet to remote blocklet server, you can use the command below.
-
-  ```shell
-  blocklet deploy .blocklet/bundle --endpoint {your blocklet server url} --access-key {blocklet server access key} --access-secret {blocklet server access secret}
-  ```
-
-  > Make sure the blocklet is bundled before deployment.
-
-## Blues Stack Deploy
-
-- [The Blues Stack](https://github.com/remix-run/blues-stack)
-
-- To use PostgreSQL instead of SQLite, you can the replace the contents of the `prisma` folder with those found in the `_postgres` folder and update the `.env` file.
-
-  - If you want to deploy this blocklet to local blocklet server, you can use `blocklet deploy .blocklet/bundle` command(Make sure the blocklet is bundled before deployment).
-    > Or you can simply use `npm run deploy` command.
-
 - If you want to deploy this blocklet to remote blocklet server, you can use the command below.
 
   ```shell
