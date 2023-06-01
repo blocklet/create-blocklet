@@ -2,7 +2,8 @@ import { version as viteVersion } from 'vite';
 import semver from 'semver';
 import { isInBlocklet } from './utils.js';
 
-export default function createHmrPlugin({ version = viteVersion } = {}) {
+export default function createHmrPlugin(options = {}) {
+  const { version = viteVersion } = options;
   return {
     name: 'blocklet:hmr',
     apply: 'serve',
