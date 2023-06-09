@@ -1,10 +1,10 @@
 /* eslint-disable import/prefer-default-export */
+import ora from 'ora';
 import Mcrypto from '@ocap/mcrypto';
 import * as jdenticon from 'jdenticon';
 import { toHex } from '@ocap/util';
 import { fromPublicKey } from '@arcblock/did';
-import { execSync } from 'child_process';
-import { trimServerOutputVersion } from './server.js';
+import { spawn } from 'child_process';
 import { BLOCKLET_COMMAND } from './constant.js';
 
 const { types } = Mcrypto;
@@ -30,14 +30,40 @@ export async function getBlockletDidList(monikerList = [], connectUrl) {
     if (connectUrl) {
       command += ` --connectUrl=${connectUrl}`;
     }
-    const output = execSync(command);
-    const pureOutput = await trimServerOutputVersion(output.toString('utf8'));
-    const didStrList = pureOutput.split('\n').pop();
+    const runCommand = new Promise((resolve, reject) => {
+      let lastMessage = '';
+      const childProcess = spawn('blocklet', ['init', '--monikers=react-dapp']);
+      const spinner = ora().start();
+      childProcess.stdout.on('data', (data) => {
+        const message = data.toString('utf8') || '';
+        if (message.includes('Redirecting to')) {
+          spinner.text = message.replace('✔ \n', '');
+        } else {
+          lastMessage = message;
+        }
+      });
+      childProcess.stderr.on('data', (data) => {
+        const message = data.toString('utf8') || '';
+        if (!message.includes('Waiting for connect:')) {
+          spinner.fail(message);
+        }
+      });
+      childProcess.on('close', () => {
+        spinner.succeed();
+        resolve(lastMessage);
+      });
+      childProcess.on('error', (err) => {
+        spinner.fail();
+        reject(err);
+      });
+    });
+    const didStrList = await runCommand;
     return didStrList
       .trim()
       .split(',')
       .filter((x) => x !== '');
-  } catch {
+  } catch (e) {
+    console.error(e);
     throw new Error('Failed to generate blocklet did');
   }
 }
