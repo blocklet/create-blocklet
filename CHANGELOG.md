@@ -1,3 +1,8 @@
+## 0.6.6 (2023-6-10)
+
+- chore: update deps
+- feat: show connect-url in create step
+
 ## 0.6.5 (2023-6-1)
 
 - chore: translate PULL_REQUEST_TEMPLATE to english
