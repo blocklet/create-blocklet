@@ -1,0 +1,12 @@
+{
+  "name": "remix-dapp",
+  "desc": {
+    "en": "An application skeleton built with Remix",
+    "zh": "一个基于 Remix 构建应用骨架"
+  },
+  "blockletType": "dapp",
+  "composable": true,
+  "languages": "TypeScript",
+  "useCase": "Starter",
+  "author": "Vincent Medina"
+}

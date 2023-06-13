@@ -74,6 +74,11 @@ const templates = [
     color: blue,
   },
   {
+    name: 'remix-dapp',
+    display: '[dapp] remix',
+    color: blue,
+  },
+  {
     name: 'react-static',
     display: '[static] react',
     color: yellow,

@@ -1,3 +1,7 @@
+## 0.6.7 (2023-6-13)
+
+- feat: add remix-dapp template
+
 ## 0.6.6 (2023-6-10)
 
 - chore: update deps
