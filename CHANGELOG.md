@@ -1,3 +1,9 @@
+## 0.6.7 (2023-7-25)
+
+- chore: bump deps to latest
+- feat: move entry js to body for production build
+- feat: offload brotli/gzip compression to server
+
 ## 0.6.6 (2023-6-10)
 
 - chore: update deps

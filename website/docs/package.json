@@ -13,10 +13,10 @@
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json"
   },
   "dependencies": {
-    "@xmark/cli": "^2.5.5",
-    "@xmark/client": "^2.5.5",
-    "@xmark/plugin-docs-indexer": "^2.5.5",
-    "@xmark/theme-docs": "^2.5.5",
+    "@xmark/cli": "^2.5.6",
+    "@xmark/client": "^2.5.6",
+    "@xmark/plugin-docs-indexer": "^2.5.6",
+    "@xmark/theme-docs": "^2.5.6",
     "create-blocklet": "workspace:*"
   },
   "version": "0.4.31"

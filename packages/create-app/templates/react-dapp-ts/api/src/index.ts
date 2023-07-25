@@ -2,7 +2,6 @@ import 'express-async-errors';
 
 import path from 'path';
 
-import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import dotenv from 'dotenv-flow';
@@ -32,7 +31,6 @@ const isProduction = process.env.NODE_ENV === 'production' || process.env.ABT_NO
 
 if (isProduction) {
   const staticDir = path.resolve(process.env.BLOCKLET_APP_DIR!, 'dist');
-  app.use(compression());
   app.use(express.static(staticDir, { maxAge: '30d', index: false }));
   app.use(fallback('index.html', { root: staticDir }));
 

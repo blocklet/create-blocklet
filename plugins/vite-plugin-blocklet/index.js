@@ -1,4 +1,5 @@
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
+import VitePluginEntryInject from 'vite-plugin-entry-inject';
 import createHmrPlugin from './libs/hmr.js';
 import createConfigPlugin from './libs/config.js';
 import createMetaPlugin from './libs/meta.js';
@@ -35,7 +36,11 @@ export function createBlockletPlugin(options = {}) {
     disableLoading = false,
     ...restOptions
   } = options;
-  const plugins = [];
+  const plugins = [
+    VitePluginEntryInject({
+      injectTo: 'body',
+    }),
+  ];
   if (!disableMeta) {
     plugins.push(createMetaPlugin(restOptions));
   }

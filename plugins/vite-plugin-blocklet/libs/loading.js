@@ -32,6 +32,21 @@ function generateHtml({ color, image }) {
     padding: 0;
   }
 
+  .spinner-wrapper {
+    width: 70px;
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 500ms;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-delay: 500ms;
+    animation-fill-mode: forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .spinner {
     width: 70px;
     text-align: center;
@@ -58,6 +73,15 @@ function generateHtml({ color, image }) {
     animation-delay: -0.16s;
   }
 
+  @-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
   @-webkit-keyframes sk-bouncedelay {
     0%,
     80%,
@@ -82,13 +106,13 @@ function generateHtml({ color, image }) {
     }
   }
   </style>
-
-  <img src="${image}" width="90" height="90" style="margin-bottom: 30px" />
-
-  <div class="spinner">
-  <div class="bounce1"></div>
-  <div class="bounce2"></div>
-  <div class="bounce3"></div>
+  <div class="spinner-wrapper">
+    <img src="${image}" width="90" height="90" style="margin-bottom: 16px" />
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
   </div>`;
 }
 
