@@ -1,3 +1,7 @@
+## 0.6.8 (2023-7-25)
+
+- fix: spinner logo size
+
 ## 0.6.7 (2023-7-25)
 
 - chore: bump deps to latest
