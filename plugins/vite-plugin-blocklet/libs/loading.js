@@ -107,7 +107,7 @@ function generateHtml({ color, image }) {
   }
   </style>
   <div class="spinner-wrapper">
-    <img src="${image}" width="90" height="90" style="margin-bottom: 16px" />
+    <img src="${image}" width="70" height="70" style="margin-bottom: 16px" />
     <div class="spinner">
       <div class="bounce1"></div>
       <div class="bounce2"></div>
