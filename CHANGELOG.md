@@ -1,3 +1,7 @@
+## 0.6.9 (2023-7-26)
+
+- fix: vite-plugin-entry-inject cause dev error
+
 ## 0.6.8 (2023-7-25)
 
 - fix: spinner logo size
