@@ -33,7 +33,6 @@
     "get-port": "^5.1.1",
     "mri": "^1.2.0",
     "semver": "^7.5.4",
-    "vite-plugin-entry-inject": "^1.0.2",
     "vite-plugin-node-polyfills": "^0.7.0",
     "yaml": "^2.3.1"
   },
