@@ -1,3 +1,7 @@
+## 0.6.10 (2023-7-31)
+
+- fix: remove background color of loading
+
 ## 0.6.9 (2023-7-26)
 
 - fix: vite-plugin-entry-inject cause dev error

@@ -1,6 +1,6 @@
 {
   "name": "create-blocklet",
-  "version": "0.6.9",
+  "version": "0.6.10",
   "exports": "./index.js",
   "type": "module",
   "repository": "git@github.com:blocklet/create-blocklet.git",
