@@ -1,3 +1,7 @@
+## 0.6.11 (2023-8-15)
+
+- feat: support smaller logo and favico size
+
 ## 0.6.10 (2023-7-31)
 
 - fix: remove background color of loading

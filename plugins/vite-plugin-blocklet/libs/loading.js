@@ -123,7 +123,7 @@ function generateHtml({ color, image }) {
 export default function createLoadingPlugin({
   loadingElementId = 'app',
   loadingColor = '#8abaf0',
-  loadingImage = '/.well-known/service/blocklet/logo/',
+  loadingImage = '/.well-known/service/blocklet/logo?imageFilter=resize&w=80',
 } = {}) {
   const injectHtml = generateHtml({
     color: loadingColor,
