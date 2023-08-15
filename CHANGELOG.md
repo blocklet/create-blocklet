@@ -1,3 +1,7 @@
+## 0.6.12 (2023-8-16)
+
+- chore: use favicon from service instead of static file
+
 ## 0.6.11 (2023-8-15)
 
 - feat: support smaller logo and favico size
