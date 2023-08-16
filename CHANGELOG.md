@@ -1,3 +1,7 @@
+## 0.6.13 (2023-8-16)
+
+- fix: more favicon and logo loading
+
 ## 0.6.12 (2023-8-16)
 
 - chore: use favicon from service instead of static file

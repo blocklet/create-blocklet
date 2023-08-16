@@ -46,7 +46,7 @@
     "rimraf": "^3.0.2",
     "svelte": "^3.59.2",
     "vite": "^4.4.7",
-    "vite-plugin-blocklet": "^0.6.12",
+    "vite-plugin-blocklet": "^0.6.13",
     "vite-plugin-html": "^3.2.0",
     "vite-plugin-node-polyfills": "^0.7.0",
     "zx": "^7.2.3"
