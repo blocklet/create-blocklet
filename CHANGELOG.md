@@ -1,3 +1,7 @@
+## 0.6.14 (2023-8-24)
+
+- feat: remove meta description in favor of server injected
+
 ## 0.6.13 (2023-8-16)
 
 - fix: more favicon and logo loading
