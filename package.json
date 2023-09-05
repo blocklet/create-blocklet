@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "bump-version": "zx --quiet scripts/bump-version.mjs",
-    "update:deps": "pnpm -r exec taze -r -w",
+    "update:deps": "pnpm -r exec taze -r -n '/arcblock|ocap|abtnode|blocklet|did-connect|did-comment|nedb/' -w",
     "preinstall": "npx only-allow pnpm",
     "publish-plugins": "zx --quiet scripts/publish-plugins.mjs"
   },
