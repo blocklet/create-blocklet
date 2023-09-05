@@ -1,3 +1,8 @@
+## 0.6.15 (2023-9-5)
+
+- chore: bump deps to latest
+- chore: use fallback middleware from blocklet sdk
+
 ## 0.6.14 (2023-8-24)
 
 - feat: remove meta description in favor of server injected
