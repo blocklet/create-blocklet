@@ -43,39 +43,39 @@ jobs:
       - run: npm add -g @antfu/ni
       - run: nci
 
-      - name: Deploy Page Site
-        uses: blocklet/action-workflow@v1
-        with:
-          skip-deps: false
-          skip-bundle: false
-          skip-upload: true
-          skip-deploy: false
-          skip-release: true
-          deploy-app-did: zNKkQuRidtsBVskb8oDXKVh5PpM5uD5PKxim
-          deploy-mount-point: /
-          bundle-command: nr bundle
-          working-directory: website/pages
-          server-endpoint: ${{ secrets.XMARK_NODE_ENDPOINT }}
-          server-access-key: ${{ secrets.XMARK_NODE_ACCESS_KEY }}
-          server-access-secret: ${{ secrets.XMARK_NODE_ACCESS_SECRET }}
-          slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
+      # - name: Deploy Page Site
+      #   uses: blocklet/action-workflow@v1
+      #   with:
+      #     skip-deps: false
+      #     skip-bundle: false
+      #     skip-upload: true
+      #     skip-deploy: false
+      #     skip-release: true
+      #     deploy-app-did: zNKkQuRidtsBVskb8oDXKVh5PpM5uD5PKxim
+      #     deploy-mount-point: /
+      #     bundle-command: nr bundle
+      #     working-directory: website/pages
+      #     server-endpoint: ${{ secrets.XMARK_NODE_ENDPOINT }}
+      #     server-access-key: ${{ secrets.XMARK_NODE_ACCESS_KEY }}
+      #     server-access-secret: ${{ secrets.XMARK_NODE_ACCESS_SECRET }}
+      #     slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
 
-      - name: Deploy Docs Site
-        uses: blocklet/action-workflow@v1
-        with:
-          skip-deps: true
-          skip-bundle: false
-          skip-upload: true
-          skip-deploy: false
-          skip-release: true
-          deploy-app-did: zNKkQuRidtsBVskb8oDXKVh5PpM5uD5PKxim
-          deploy-mount-point: /docs
-          bundle-command: nr bundle
-          working-directory: website/docs
-          server-endpoint: ${{ secrets.XMARK_NODE_ENDPOINT }}
-          server-access-key: ${{ secrets.XMARK_NODE_ACCESS_KEY }}
-          server-access-secret: ${{ secrets.XMARK_NODE_ACCESS_SECRET }}
-          slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
+      # - name: Deploy Docs Site
+      #   uses: blocklet/action-workflow@v1
+      #   with:
+      #     skip-deps: true
+      #     skip-bundle: false
+      #     skip-upload: true
+      #     skip-deploy: false
+      #     skip-release: true
+      #     deploy-app-did: zNKkQuRidtsBVskb8oDXKVh5PpM5uD5PKxim
+      #     deploy-mount-point: /docs
+      #     bundle-command: nr bundle
+      #     working-directory: website/docs
+      #     server-endpoint: ${{ secrets.XMARK_NODE_ENDPOINT }}
+      #     server-access-key: ${{ secrets.XMARK_NODE_ACCESS_KEY }}
+      #     server-access-secret: ${{ secrets.XMARK_NODE_ACCESS_SECRET }}
+      #     slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
 
   publish:
     if: needs.check-files.outputs.bump-version == 'true'
