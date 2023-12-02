@@ -1,3 +1,7 @@
+## 0.6.16 (2023-12-2)
+
+- fix: update user type define
+
 ## 0.6.15 (2023-9-5)
 
 - chore: bump deps to latest
