@@ -1,3 +1,9 @@
+## 0.7.0 (2023-12-21)
+
+- chore: clean deps
+- chore: remove docsite & website template
+- chore: update deps
+
 ## 0.6.16 (2023-12-2)
 
 - fix: update user type define
