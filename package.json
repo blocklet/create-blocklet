@@ -15,7 +15,13 @@
   "license": "ISC",
   "dependencies": {
     "bumpp": "^7.2.0",
-    "taze": "^0.8.5",
-    "zx": "^7.2.1"
+    "taze": "^0.13.0",
+    "zx": "^7.2.3"
+  },
+  "resolutions": {
+    "@blocklet/sdk": "^1.16.20",
+    "vite": "^5.0.10",
+    "vite-plugin-blocklet": "^0.6.16",
+    "vite-plugin-node-polyfills": "^0.17.0"
   }
 }
