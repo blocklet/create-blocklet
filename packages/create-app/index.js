@@ -99,16 +99,6 @@ const templates = [
     color: magenta,
   },
   {
-    name: 'website',
-    display: '[static] website powered by blocklet pages',
-    color: blue,
-  },
-  {
-    name: 'docsite',
-    display: '[static] documentation site powered by blocklet pages',
-    color: blue,
-  },
-  {
     name: 'html-static',
     display: '[static] html',
     color: blue,
@@ -341,7 +331,7 @@ async function init() {
           continue;
         }
         // html-staic 和 xmark 相关的模板不添加 .husky
-        if (fuzzyQuery(['html-static', 'website', 'docsite'], templateName) && ['.husky'].includes(file)) {
+        if (fuzzyQuery(['html-static'], templateName) && ['.husky'].includes(file)) {
           // eslint-disable-next-line no-continue
           continue;
         }
