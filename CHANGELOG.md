@@ -1,3 +1,7 @@
+## 0.7.1 (2024-1-2)
+
+- fix: compatible with vite5
+
 ## 0.7.0 (2023-12-21)
 
 - chore: clean deps

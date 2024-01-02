@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-blocklet",
   "type": "module",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "",
   "main": "index.js",
   "files": [
@@ -37,6 +37,6 @@
     "yaml": "^2.3.4"
   },
   "peerDependencies": {
-    "vite": ">=2"
+    "vite": ">=5"
   }
 }
