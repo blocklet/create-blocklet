@@ -37,6 +37,6 @@
     "yaml": "^2.3.4"
   },
   "peerDependencies": {
-    "vite": ">=2"
+    "vite": ">=5"
   }
 }
