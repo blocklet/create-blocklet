@@ -1,3 +1,7 @@
+## 0.7.2 (2024-1-5)
+
+- chore: update deps & lock `get-port` at 5.1.1
+
 ## 0.7.1 (2024-1-2)
 
 - fix: compatible with vite5

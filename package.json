@@ -1,7 +1,7 @@
 {
   "name": "create-blocklet",
   "private": true,
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -21,7 +21,7 @@
   "resolutions": {
     "@blocklet/sdk": "^1.16.20",
     "vite": "^5.0.10",
-    "vite-plugin-blocklet": "^0.6.16",
+    "vite-plugin-blocklet": "^0.7.1",
     "vite-plugin-node-polyfills": "^0.17.0"
   }
 }

@@ -40,12 +40,12 @@
     ]
   },
   "dependencies": {
-    "@arcblock/did-auth": "^1.18.107",
+    "@arcblock/did-auth": "^1.18.108",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
     "@blocklet/sdk": "^1.16.20",
-    "@ocap/client": "^1.18.107",
-    "@ocap/mcrypto": "^1.18.107",
-    "@ocap/wallet": "^1.18.107",
+    "@ocap/client": "^1.18.108",
+    "@ocap/mcrypto": "^1.18.108",
+    "@ocap/wallet": "^1.18.108",
     "axios": "^1.6.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
@@ -70,7 +70,7 @@
     "prettier": "^3.1.1",
     "rimraf": "^3.0.2",
     "vite": "^5.0.10",
-    "vite-plugin-blocklet": "^0.7.1",
+    "vite-plugin-blocklet": "^0.7.2",
     "vite-plugin-svgr": "^4.2.0",
     "zx": "^7.2.3"
   }
