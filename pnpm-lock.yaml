@@ -7,7 +7,7 @@ settings:
 overrides:
   '@blocklet/sdk': ^1.16.20
   vite: ^5.0.10
-  vite-plugin-blocklet: ^0.6.16
+  vite-plugin-blocklet: ^0.7.1
   vite-plugin-node-polyfills: ^0.17.0
 
 importers:
@@ -94,8 +94,8 @@ importers:
         specifier: ^1.18.107
         version: 1.18.107
       get-port:
-        specifier: ^7.0.0
-        version: 7.0.0
+        specifier: ^5.1.1
+        version: 5.1.1
       mri:
         specifier: ^1.2.0
         version: 1.2.0
@@ -2877,7 +2877,7 @@ packages:
       unist-util-visit: 4.1.2
       unocss: 0.50.8(postcss@8.4.32)(rollup@2.79.1)(vite@5.0.10)
       vite: 5.0.10
-      vite-plugin-blocklet: 0.6.16(rollup@2.79.1)(vite@5.0.10)
+      vite-plugin-blocklet: 0.7.1(rollup@2.79.1)(vite@5.0.10)
       vite-plugin-svgr: 2.4.0(rollup@2.79.1)(vite@5.0.10)
       yaml: 2.2.1
       yargs: 17.7.2
@@ -9993,15 +9993,15 @@ packages:
       - terser
     dev: true
 
-  /vite-plugin-blocklet@0.6.16(rollup@2.79.1)(vite@5.0.10):
-    resolution: {integrity: sha512-gnlr60m6I6mbGf5GEek+cOkzo83lH8VHD8Hu/wKQ+dQ7/mJCLrzJ5WB9CsMZZY7MsBj+6i43Zpr8JBKHCcQTqw==}
+  /vite-plugin-blocklet@0.7.1(rollup@2.79.1)(vite@5.0.10):
+    resolution: {integrity: sha512-IQzG4e25hhJvFUbt05hRundfGEPtWGm2Uu1VnqFj0p6TZamdTka+9UiyKGAS5ZNg/EmK2/EEMw0lk+fzYDg2Zg==}
     peerDependencies:
       vite: ^5.0.10
     dependencies:
       '@arcblock/did': 1.18.107
       '@ocap/mcrypto': 1.18.107
       '@ocap/util': 1.18.107
-      get-port: 5.1.1
+      get-port: 7.0.0
       mri: 1.2.0
       semver: 7.5.4
       vite: 5.0.10
