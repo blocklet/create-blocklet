@@ -1,3 +1,7 @@
+## 0.7.3 (2024-3-7)
+
+- feat: add git-ignore env files
+
 ## 0.7.2 (2024-1-5)
 
 - chore: update deps & lock `get-port` at 5.1.1
