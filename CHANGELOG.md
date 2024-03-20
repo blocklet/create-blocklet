@@ -1,3 +1,7 @@
+## 0.7.4 (2024-3-20)
+
+- fix(api): force use png format logo as favicon
+
 ## 0.7.3 (2024-3-7)
 
 - feat: add git-ignore env files
