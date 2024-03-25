@@ -74,5 +74,6 @@ export {
   createConfigPlugin as createBlockletConfig,
   createMetaPlugin as createBlockletMeta,
   createLoadingPlugin as createBlockletLoading,
+  createDebugPlugin as createBlockletDebug,
   nodePolyfills,
 };
