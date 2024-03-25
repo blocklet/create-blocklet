@@ -1,3 +1,8 @@
+## 0.7.5 (2024-3-25)
+
+- feat: support cache vite port in .env.development.local file
+- feat: add debugPlugin & fix plugin types intellisense
+
 ## 0.7.4 (2024-3-20)
 
 - fix(api): force use png format logo as favicon
