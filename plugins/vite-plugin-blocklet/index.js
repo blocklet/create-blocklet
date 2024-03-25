@@ -3,26 +3,32 @@ import createHmrPlugin from './libs/hmr.js';
 import createConfigPlugin from './libs/config.js';
 import createMetaPlugin from './libs/meta.js';
 import createLoadingPlugin from './libs/loading.js';
+import createDebugPlugin from './libs/debug.js';
 import setupClient from './libs/client.js';
 
 /**
- * @typedef {{
- *  disableNodePolyfills?: boolean;
- *  disableConfig?: boolean;
- *  disableMeta?: boolean;
- *  disableHmr?: boolean;
- *  disableLoading?: boolean;
+ * Plugin options.
  *
- *  loadingElementId?: string;
- *  loadingColor?: string;
- *  loadingImage?: string;
- * }} PluginOptions
+ * @typedef {Object} PluginOptions
+ * @property {boolean} [disableNodePolyfills=false] - Disable node polyfills.
+ * @property {boolean} [disableConfig=false] - Disable config plugin.
+ * @property {boolean} [disableMeta=false] - Disable meta plugin.
+ * @property {boolean} [disableHmr=false] - Disable hmr plugin.
+ * @property {boolean} [disableLoading=false] - Disable loading plugin.
+ * @property {boolean} [disableDebug=false] - Disable debug plugin.
+ *
+ * @property {string} [loadingElementId]
+ * @property {string} [loadingColor]
+ * @property {string} [loadingImage]
+ * @property {'all'|'mobile'|'desktop'} [debugPlatform='mobile']
+ * @property {string} [debugScript]
  */
 
 /**
+ * Create blocklet plugins.
  *
  * @param {PluginOptions} options
- * @returns
+ * @returns {import('vite').Plugin[]}
  */
 export function createBlockletPlugin(options = {}) {
   const {
@@ -33,9 +39,13 @@ export function createBlockletPlugin(options = {}) {
     disableMeta = false,
     disableHmr = false,
     disableLoading = false,
+    disableDebug = false,
     ...restOptions
   } = options;
+
+  /** @type {import('vite').Plugin[]} */
   const plugins = [];
+
   if (!disableMeta) {
     plugins.push(createMetaPlugin(restOptions));
   }
@@ -50,6 +60,9 @@ export function createBlockletPlugin(options = {}) {
   }
   if (!disableLoading) {
     plugins.push(createLoadingPlugin(restOptions));
+  }
+  if (!disableDebug) {
+    plugins.push(createDebugPlugin(restOptions));
   }
 
   return plugins;

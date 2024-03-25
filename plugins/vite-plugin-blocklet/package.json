@@ -31,6 +31,7 @@
     "@ocap/mcrypto": "^1.18.108",
     "@ocap/util": "^1.18.108",
     "get-port": "^5.1.1",
+    "ismobilejs": "^1.1.1",
     "mri": "^1.2.0",
     "semver": "^7.5.4",
     "vite-plugin-node-polyfills": "^0.17.0",
