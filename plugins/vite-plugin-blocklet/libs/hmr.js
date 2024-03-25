@@ -2,6 +2,13 @@ import { version as viteVersion } from 'vite';
 import semver from 'semver';
 import { isInBlocklet } from './utils.js';
 
+/**
+ * Creates a HMR plugin with the given options.
+ *
+ * @param {Object} options - The options for the HMR plugin.
+ * @param {string} options.version - The version of the vite version.
+ * @return {Object} The HMR plugin object.
+ */
 export default function createHmrPlugin(options = {}) {
   const { version = viteVersion } = options;
   return {

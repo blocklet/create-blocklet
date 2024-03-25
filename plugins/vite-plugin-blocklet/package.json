@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-blocklet",
   "type": "module",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "",
   "main": "index.js",
   "files": [
@@ -31,6 +31,7 @@
     "@ocap/mcrypto": "^1.18.108",
     "@ocap/util": "^1.18.108",
     "get-port": "^5.1.1",
+    "ismobilejs": "^1.1.1",
     "mri": "^1.2.0",
     "semver": "^7.5.4",
     "vite-plugin-node-polyfills": "^0.17.0",

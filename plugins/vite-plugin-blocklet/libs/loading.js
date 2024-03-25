@@ -1,20 +1,10 @@
 /**
- * @typedef {{
- *  color: string;
- *  image: string;
- * }} GenerateOptions
- */
-/**
- * @typedef {{
- *  loadingElementId?: string;
- *  loadingColor?: string;
- *  loadingImage?: string;
- * }} LoadingPluginOptions
- */
-
-/**
+ * Generates an HTML string containing a spinner with optional color and image.
  *
- * @param {GenerateOptions} options
+ * @param {Object} options - The options for generating the HTML.
+ * @param {string} options.color - The color of the spinner. Defaults to "#333".
+ * @param {string} options.image - The URL of the image to display alongside the spinner.
+ * @return {string} The generated HTML string.
  */
 function generateHtml({ color, image }) {
   return `<style>
@@ -116,14 +106,18 @@ function generateHtml({ color, image }) {
 }
 
 /**
+ * Creates a loading plugin for Vite.
  *
- * @param {LoadingPluginOptions} options
- * @returns
+ * @param {Object} options - The options for the loading plugin.
+ * @param {string} [options.loadingElementId='app'] - The ID of the loading element.
+ * @param {string} [options.loadingColor='#8abaf0'] - The color of the loading animation.
+ * @param {string} [options.loadingImage='/.well-known/service/blocklet/logo?imageFilter=convert&f=png&w=80'] - The URL of the loading image.
+ * @return {Object} - The Vite plugin object.
  */
 export default function createLoadingPlugin({
   loadingElementId = 'app',
   loadingColor = '#8abaf0',
-  loadingImage = '/.well-known/service/blocklet/logo?imageFilter=resize&w=80',
+  loadingImage = '/.well-known/service/blocklet/logo?imageFilter=convert&f=png&w=80',
 } = {}) {
   const injectHtml = generateHtml({
     color: loadingColor,
