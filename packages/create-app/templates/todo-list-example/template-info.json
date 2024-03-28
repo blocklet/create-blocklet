@@ -1,0 +1,12 @@
+{
+  "name": "todo-list-example",
+  "desc": {
+    "en": "A sample Todo List application built on React + Typescript",
+    "zh": "一个基于 React + Typescript 构建的 Todo List 示例应用"
+  },
+  "blockletType": "dapp",
+  "composable": true,
+  "languages": "Typescript",
+  "useCase": "Starter",
+  "author": "JianChao Ye"
+}
