@@ -1,3 +1,8 @@
+## 0.7.6 (2024-3-29)
+
+- chore: remove website/* in workspace
+- fix: use BLOCKLET_VITE_PORT as hmr port
+
 ## 0.7.5 (2024-3-25)
 
 - feat: support cache vite port in .env.development.local file
