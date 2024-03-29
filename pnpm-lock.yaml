@@ -93,6 +93,9 @@ importers:
       '@ocap/util':
         specifier: ^1.18.108
         version: 1.18.108
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.4.5
       get-port:
         specifier: ^5.1.1
         version: 5.1.1
@@ -4438,6 +4441,11 @@ packages:
     dependencies:
       no-case: 3.0.4
       tslib: 2.6.1
+    dev: false
+
+  /dotenv@16.4.5:
+    resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
+    engines: {node: '>=12'}
     dev: false
 
   /dsbridge@3.1.4:
