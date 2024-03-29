@@ -13,30 +13,30 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - uses: pnpm/action-setup@v2.0.1
-        with:
-          version: latest
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-          cache: 'pnpm'
+      # - uses: pnpm/action-setup@v2.0.1
+      #   with:
+      #     version: latest
+      # - uses: actions/setup-node@v2
+      #   with:
+      #     node-version: '16'
+      #     cache: 'pnpm'
 
-      - run: npm add -g @antfu/ni
-      - run: nci
+      # - run: npm add -g @antfu/ni
+      # - run: nci
 
-      - name: Deploy to Blocklet Server
-        uses: blocklet/action-workflow@v1
-        with:
-          skip-deps: false
-          skip-bundle: false
-          skip-upload: true
-          skip-deploy: false
-          skip-release: true
-          deploy-app-did: zNKkQuRidtsBVskb8oDXKVh5PpM5uD5PKxim
-          deploy-mount-point: /
-          bundle-command: nr bundle
-          working-directory: website/pages
-          server-endpoint: ${{ secrets.XMARK_NODE_ENDPOINT }}
-          server-access-key: ${{ secrets.XMARK_NODE_ACCESS_KEY }}
-          server-access-secret: ${{ secrets.XMARK_NODE_ACCESS_SECRET }}
-          slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
+      # - name: Deploy to Blocklet Server
+      #   uses: blocklet/action-workflow@v1
+      #   with:
+      #     skip-deps: false
+      #     skip-bundle: false
+      #     skip-upload: true
+      #     skip-deploy: false
+      #     skip-release: true
+      #     deploy-app-did: zNKkQuRidtsBVskb8oDXKVh5PpM5uD5PKxim
+      #     deploy-mount-point: /
+      #     bundle-command: nr bundle
+      #     working-directory: website/pages
+      #     server-endpoint: ${{ secrets.XMARK_NODE_ENDPOINT }}
+      #     server-access-key: ${{ secrets.XMARK_NODE_ACCESS_KEY }}
+      #     server-access-secret: ${{ secrets.XMARK_NODE_ACCESS_SECRET }}
+      #     slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
