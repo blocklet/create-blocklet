@@ -44,6 +44,11 @@ const templates = [
     color: yellow,
   },
   {
+    name: 'todo-list-example',
+    display: '[dapp: Todo List] react + express + typescript + DID Spaces',
+    color: yellow,
+  },
+  {
     name: 'solidjs-dapp',
     display: '[dapp] solid + express.js',
     color: yellow,

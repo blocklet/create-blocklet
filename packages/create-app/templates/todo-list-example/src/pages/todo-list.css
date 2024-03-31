@@ -1,0 +1,162 @@
+body{
+  background-color: #1f1e1e;
+  color:white;
+  overflow: hidden;
+}
+
+h1{
+  text-align: center;
+}
+
+.todo-wrapper{
+background: #353434;
+padding: 2%;
+width: fit-content;
+margin-left: auto;
+margin-right: auto;
+margin-top: 3%;
+max-height: 80vh;
+overflow-y: auto;
+box-shadow: 0px 5px 7px rgb(27, 27, 27);
+
+}
+
+.todo-input{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgb(78, 78, 78);
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
+
+.todo-input-item{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 25px;
+}
+
+.todo-input-item label{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.todo-input-item input{
+  padding: 8px;
+  border: none;
+  width: 250px;
+}
+
+.todo-input-item input:focus{
+  outline: 2px solid rgb(0,230,122);
+}
+
+.primaryBtn{
+  background-color: rgb(0,230,122);
+  color: white;
+  border:none;
+  border-radius: 0px;
+  margin-top: 25px;
+  padding: 10px;
+  width: 60px;
+  cursor: pointer;
+}
+
+.primaryBtn:hover{
+  background-color: rgb(4, 196, 106);
+}
+
+
+.secondaryBtn{
+  background-color: rgb(71, 71, 71);
+  color: white;
+  border:none;
+  border-radius: 0px;
+  margin-top: 25px;
+  padding: 10px;
+  width: fit-content;
+  cursor: pointer;
+
+}
+
+.active{
+  background-color: rgb(0,230,122);
+}
+
+.todo-list{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.btn-area{
+  margin-bottom: 15px;
+}
+
+.todo-list-item{
+  background-color: #414040;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0px 3px 5px rgb(43, 42, 42);
+}
+
+.todo-list-item h3{
+  font-size: 25px;
+  color: rgb(0,230,122);
+  font-weight: bold;
+  margin: 0;
+}
+
+.todo-list-item p{
+  font-size: 14px;
+  color: rgb(161, 161, 161);
+  margin-top: 8px;
+}
+
+.icon{
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.icon:hover{
+  color: red;
+}
+
+.check-icon{
+  font-size: 25px;
+  margin-left: 10px;
+  color:rgb(0,230,122);
+  cursor: pointer;
+}
+
+.check-icon:hover{
+  color: rgb(4, 196, 106);
+}
+
+.edit__wrapper{
+  background-color: #414040;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit__wrapper input,.edit__wrapper textarea{
+  border: 1px solid lightgray;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 3px;
+}
+
+.edit__wrapper .primaryBtn{
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  font-size: 16px;
+  width:fit-content;
+}
