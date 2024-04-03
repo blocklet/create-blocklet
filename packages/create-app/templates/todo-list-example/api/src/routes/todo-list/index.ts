@@ -5,7 +5,7 @@ import $put from './$put';
 
 const todoListRouter = Router();
 
-// Step 2: The function of reading and writing DID Space is implemented
+// Step 2: the function of reading and writing DID Space is implemented
 todoListRouter.get('/', middleware.user(), $get);
 todoListRouter.put('/', middleware.user(), $put);
 

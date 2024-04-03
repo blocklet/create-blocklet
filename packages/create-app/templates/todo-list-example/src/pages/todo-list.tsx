@@ -8,8 +8,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import './todo-list.css';
 import { nanoid } from 'nanoid';
 import isEmpty from 'lodash/isEmpty';
+import type { AxiosResponse } from 'axios';
 import { useSessionContext } from '../contexts/session';
 import RequiredLogin from './required-login';
+import axios from '../libs/api';
 
 type Todo = {
   id: string;
@@ -31,13 +33,8 @@ function TodoList() {
   const fetchTodoList = async () => {
     try {
       setLoading(true);
-      const response = await fetch('/api/todo-list', {
-        method: 'GET',
-        headers: {
-          'Content-type': 'application/json; charset=UTF-8',
-        },
-      }).then((res) => res.json());
-      setTodoList(response.todoList);
+      const response: AxiosResponse<{ todoList: [] }, any> = await axios.get('/api/todo-list');
+      setTodoList(response.data.todoList);
     } catch (error) {
       console.error(error);
       setTodoList([]);
@@ -52,14 +49,8 @@ function TodoList() {
 
   // Step 4: write data to DID Spaces
   const putTodoList = (todoArray: Todo[]) => {
-    return fetch('/api/todo-list', {
-      method: 'PUT',
-      body: JSON.stringify({
-        todoList: todoArray,
-      }),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
+    return axios.put('/api/todo-list', {
+      todoList: todoArray,
     });
   };
 

@@ -45,5 +45,7 @@ environments: []
 capabilities: 
   # Step 1: set capabilities.didSpace to requiredOnConnect
   didSpace: requiredOnConnect
-screenshots: []
+screenshots: 
+  - 1-login.png
+  - 2-ui.png
 components: []
