@@ -1,7 +1,7 @@
 {
   "name": "create-blocklet",
   "private": true,
-  "version": "0.7.5",
+  "version": "0.7.6",
   "description": "",
   "scripts": {
     "debug": "node packages/create-app/index.js",

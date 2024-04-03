@@ -3,6 +3,7 @@ import path from 'node:path';
 import getPort from 'get-port';
 import { createServer } from 'vite';
 import mri from 'mri';
+import dotenv from 'dotenv';
 
 const argv = process.argv.slice(2);
 const isProduction = process.env.NODE_ENV === 'production' || process.env.ABT_NODE_SERVICE_ENV === 'production';
@@ -29,25 +30,30 @@ export default async function setupClient(app, options = {}) {
     const { host = '127.0.0.1', protocol = 'ws', port: inputPort, configFile = '', appType = 'spa' } = options;
     let skipWritePort = true;
     let envAppendContent = '';
-    const envFile = path.join(process.cwd(), '.env.development.local');
+    let envObject = '';
+    const envFilePath = path.join(process.cwd(), '.env.development.local');
     let port;
 
-    if (!fs.existsSync(envFile)) {
+    if (!fs.existsSync(envFilePath)) {
       skipWritePort = false;
       port = await getPort({ port: inputPort });
-      envAppendContent = `VITE_BLOCKLET_PORT=${port}`;
+      envAppendContent = `BLOCKLET_VITE_PORT=${port}`;
     } else {
       port = await getPort({ port: inputPort });
-      const content = await fs.promises.readFile(envFile, 'utf-8');
-      if (!content.includes('VITE_BLOCKLET_PORT')) {
+      const envContent = await fs.promises.readFile(envFilePath, 'utf-8');
+      envObject = dotenv.parse(envContent);
+
+      if (!envObject.BLOCKLET_VITE_PORT) {
         skipWritePort = false;
-        envAppendContent = `${content}\nVITE_BLOCKLET_PORT=${port}`;
+        envAppendContent = `${envContent}\nBLOCKLET_VITE_PORT=${port}`;
       } else {
-        port = process.env.VITE_BLOCKLET_PORT;
+        port = process.env.BLOCKLET_VITE_PORT;
       }
     }
     if (!skipWritePort && envAppendContent) {
-      await fs.promises.writeFile(envFile, envAppendContent);
+      // TODO @zhanghan 常见的 env file 处理暂不支持保留 comment，所以不能通过解析后的对象来写入文件
+      // @see https://github.com/bevry/envfile/pull/213
+      await fs.promises.writeFile(envFilePath, envAppendContent);
     }
     // 以中间件模式创建 Vite 服务器
     const vite = await createServer({
