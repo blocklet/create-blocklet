@@ -1,8 +1,8 @@
 {
   "name": "todo-list-example",
   "desc": {
-    "en": "A sample Todo List application built on React + Typescript",
-    "zh": "一个基于 React + Typescript 构建的 Todo List 示例应用"
+    "en": "A sample Todo List application built on React + Typescript + DID Spaces",
+    "zh": "一个基于 React + Typescript + DID Spaces 构建的 Todo List 示例应用"
   },
   "blockletType": "dapp",
   "composable": true,

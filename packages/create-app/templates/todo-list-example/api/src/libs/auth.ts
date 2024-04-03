@@ -5,6 +5,7 @@ import getWallet from '@blocklet/sdk/lib/wallet';
 import WalletAuthenticator from '@blocklet/sdk/lib/wallet-authenticator';
 import WalletHandler from '@blocklet/sdk/lib/wallet-handler';
 
+import { AuthService } from '@blocklet/sdk';
 import env from './env';
 
 export const wallet = getWallet();
@@ -15,3 +16,4 @@ export const handlers = new WalletHandler({
     dbPath: path.join(env.dataDir, 'auth.db'),
   }),
 });
+export const authService = new AuthService();
