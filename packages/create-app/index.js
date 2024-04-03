@@ -45,7 +45,7 @@ const templates = [
   },
   {
     name: 'todo-list-example',
-    display: '[dapp: Todo List] react + express + typescript + DID Spaces',
+    display: '[dapp: todo-list] react + express + typescript + DID Spaces',
     color: yellow,
   },
   {
