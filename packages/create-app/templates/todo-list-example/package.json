@@ -46,6 +46,7 @@
     "@blocklet/ui-react": "^2.9.63",
     "@did-space/client": "^0.3.74",
     "@did-space/core": "^0.3.74",
+    "@mui/material": "^5.15.14",
     "@ocap/client": "^1.18.113",
     "@ocap/mcrypto": "^1.18.113",
     "@ocap/wallet": "^1.18.113",

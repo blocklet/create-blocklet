@@ -8,6 +8,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import './todo-list.css';
 import { nanoid } from 'nanoid';
 import isEmpty from 'lodash/isEmpty';
+import { useSessionContext } from '../contexts/session';
+import RequiredLogin from './required-login';
 
 type Todo = {
   id: string;
@@ -23,6 +25,8 @@ function TodoList() {
   const [filterType, setFilterType] = useState<FilterType>('all');
   const [editTaskId, setEditTaskId] = useState<string>('');
   const [loading, setLoading] = useState(true);
+  const { session } = useSessionContext();
+
   // Step 3: get data from DID Spaces
   const fetchTodoList = async () => {
     try {
@@ -168,6 +172,10 @@ function TodoList() {
     })
     .sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
 
+  if (!session.user) {
+    return <RequiredLogin />;
+  }
+
   return (
     <div className="container">
       <ToastContainer />
@@ -246,7 +254,6 @@ function TodoList() {
               </a>
             </div>
           </div>
-
           <div className="completed-task">
             <p>
               Completed: <span id="c-count">{todoList.filter((task) => task.completed).length}</span>
