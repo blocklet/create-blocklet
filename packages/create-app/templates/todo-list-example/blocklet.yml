@@ -1,0 +1,51 @@
+name: template-todo-list
+title: Blocklet Template todo-list
+description: A Blocklet Server blocklet
+keywords:
+  - blocklet
+  - svelte
+group: static
+did: ''
+main: dist
+author:
+  name: Blocklet
+  email: blocklet@arcblock.io
+repository:
+  type: git
+  url: 'git+https://github.com/blocklet/create-blocklet.git'
+specVersion: 1.1.1
+version: 0.1.0
+logo: logo.png
+files:
+  - logo.png
+  - screenshots
+interfaces:
+  - type: web
+    name: publicUrl
+    path: /
+    prefix: '*'
+    port: BLOCKLET_PORT
+    protocol: http
+community: ''
+documentation: ''
+homepage: ''
+license: ''
+payment:
+  price: []
+  share: []
+timeout:
+  start: 60
+requirements:
+  server: '>=1.6.29'
+  os: '*'
+  cpu: '*'
+scripts:
+  dev: npm run start
+environments: []
+capabilities: 
+  # Step 1: set capabilities.didSpace to requiredOnConnect
+  didSpace: requiredOnConnect
+screenshots: 
+  - 1-login.png
+  - 2-ui.png
+components: []

@@ -1,3 +1,7 @@
+## 0.7.7 (2024-4-3)
+
+- feat: add todo-list template
+
 ## 0.7.6 (2024-3-29)
 
 - chore: remove website/* in workspace
