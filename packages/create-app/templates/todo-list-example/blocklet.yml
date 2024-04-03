@@ -42,6 +42,8 @@ requirements:
 scripts:
   dev: npm run start
 environments: []
-capabilities: {}
+capabilities: 
+  # Step 1: set capabilities.didSpace to requiredOnConnect
+  didSpace: requiredOnConnect
 screenshots: []
 components: []
