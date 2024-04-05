@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "blocklet dev",
-    "eject": "vite eject",
     "lint": "eslint src api --ext .mjs,.js,.jsx,.ts,.tsx",
     "lint:fix": "npm run lint -- --fix",
     "start": "cross-env NODE_ENV=development nodemon api/dev.js -w api",
@@ -70,7 +69,7 @@
     "prettier": "^3.1.1",
     "rimraf": "^3.0.2",
     "vite": "^5.0.10",
-    "vite-plugin-blocklet": "^0.7.7",
+    "vite-plugin-blocklet": "^0.7.8",
     "vite-plugin-svgr": "^4.2.0",
     "zx": "^7.2.3"
   }

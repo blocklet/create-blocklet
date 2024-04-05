@@ -1,3 +1,7 @@
+## 0.7.8 (2024-4-5)
+
+- fix: remove invalid eject command
+
 ## 0.7.7 (2024-4-3)
 
 - feat: add todo-list template
