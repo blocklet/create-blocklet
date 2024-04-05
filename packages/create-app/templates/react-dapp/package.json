@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "blocklet dev",
-    "eject": "vite eject",
     "lint": "eslint src api --ext .mjs,.js,.jsx,.ts,.tsx",
     "lint:fix": "npm run lint -- --fix",
     "start": "cross-env NODE_ENV=development nodemon api/dev.js -w api",
