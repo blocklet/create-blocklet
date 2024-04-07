@@ -1,3 +1,5 @@
+## 0.7.9 (2024-4-7)
+
 ## 0.7.8 (2024-4-5)
 
 - fix: remove invalid eject command
