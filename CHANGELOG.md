@@ -1,5 +1,7 @@
 ## 0.7.9 (2024-4-7)
 
+- feat(todo-list-example): improve the todo-list template
+
 ## 0.7.8 (2024-4-5)
 
 - fix: remove invalid eject command
