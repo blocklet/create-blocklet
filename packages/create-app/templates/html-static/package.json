@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "blocklet dev",
-    "clean": "node scripts/build-clean.js",
+    "clean": "node scripts/build-clean.mjs",
     "bundle": "npm run clean && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "deploy:child": "npm run bundle && blocklet deploy .blocklet/bundle --app-did=<%= did %>",

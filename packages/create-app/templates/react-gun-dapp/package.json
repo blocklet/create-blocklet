@@ -6,7 +6,7 @@
     "lint": "eslint src api --ext .mjs,.js,.jsx,.ts,.tsx",
     "lint:fix": "npm run lint -- --fix",
     "start": "cross-env NODE_ENV=development nodemon api/dev.js -w api",
-    "clean": "node scripts/build-clean.js",
+    "clean": "node scripts/build-clean.mjs",
     "bundle": "npm run bundle:client && npm run bundle:api",
     "bundle:client": "vite build",
     "bundle:api": "npm run clean && blocklet bundle --zip --create-release",

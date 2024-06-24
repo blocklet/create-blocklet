@@ -8,7 +8,7 @@
     "lint:fix": "npm run lint -- --fix",
     "dev": "blocklet dev",
     "start": "NODE_ENV=development nodemon api/index.js -w api",
-    "clean": "node scripts/build-clean.js",
+    "clean": "node scripts/build-clean.mjs",
     "bundle": "npm run clean && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
