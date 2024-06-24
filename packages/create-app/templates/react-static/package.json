@@ -1,5 +1,6 @@
 {
   "name": "template-react",
+  "private": true,
   "version": "0.1.0",
   "scripts": {
     "dev": "blocklet dev",
@@ -7,13 +8,13 @@
     "lint": "eslint src --ext .mjs,.js,.jsx,.ts,.tsx",
     "lint:fix": "npm run lint -- --fix",
     "start": "vite --host",
-    "clean": "node scripts/build-clean.js",
+    "clean": "node scripts/build-clean.mjs",
     "bundle": "npm run clean && vite build && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
     "deploy:child": "npm run bundle && blocklet deploy .blocklet/bundle --app-did=<%= did %>",
     "dev:child": "blocklet dev --component --app-did=<%= did %>",
-    "prepare": "husky install",
+    "prepare": "npx simple-git-hooks",
     "bump-version": "zx --quiet scripts/bump-version.mjs"
   },
   "lint-staged": {
@@ -37,23 +38,24 @@
       "last 1 safari version"
     ]
   },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.0"
-  },
   "devDependencies": {
-    "@arcblock/eslint-config": "^0.3.0",
+    "@arcblock/eslint-config": "^0.3.1",
     "@vitejs/plugin-react": "^4.3.1",
     "bumpp": "^9.4.1",
     "eslint": "^8.57.0",
-    "husky": "^8.0.3",
     "lint-staged": "^15.2.7",
     "prettier": "^3.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.23.1",
     "rimraf": "^5.0.7",
+    "simple-git-hooks": "^2.11.1",
     "vite": "^5.3.1",
     "vite-plugin-blocklet": "^0.7.9",
     "vite-plugin-svgr": "^4.2.0",
     "zx": "^8.1.3"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
   }
 }

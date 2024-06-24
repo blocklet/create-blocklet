@@ -1,21 +1,36 @@
-import { Link } from 'react-router-dom';
-
-import logo from '../logo.svg';
+import { useState } from 'react';
+import reactLogo from '../assets/react.svg';
+import blockletLogo from '../assets/logo.svg';
+import viteLogo from '../assets/vite.svg';
+import './home.css';
 
 function Home() {
+  const [count, setCount] = useState(0);
+
   return (
-    <header className="app-header">
-      <img src={logo} className="app-logo" alt="logo" />
-      <pre style={{ textAlign: 'left' }}>
-        <code>window.blocklet = {JSON.stringify(window.blocklet, null, 2)}</code>
-      </pre>
-      <Link className="app-link" to="/about">
-        About
-      </Link>
-      <a className="app-link" href="https://developer.blocklet.io/docs/" target="_blank" rel="noopener noreferrer">
-        Learn Blocklet
-      </a>
-    </header>
+    <>
+      <div>
+        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank" rel="noreferrer">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+        <a href="https://www.arcblock.io" target="_blank" rel="noreferrer">
+          <img src={blockletLogo} className="logo blocklet" alt="Blocklet logo" />
+        </a>
+      </div>
+      <h1>Vite + React + Blocklet</h1>
+      <div className="card">
+        <button type="button" onClick={() => setCount((currentCount) => currentCount + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
+    </>
   );
 }
 
