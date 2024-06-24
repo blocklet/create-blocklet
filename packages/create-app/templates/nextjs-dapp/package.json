@@ -41,7 +41,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "bumpp": "^8.2.1",
+    "bumpp": "^9.4.1",
     "eslint": "8.57.0",
     "eslint-config-next": "14.2.4",
     "husky": "^8.0.3",
@@ -49,6 +49,6 @@
     "nodemon": "^3.1.4",
     "npm-run-all": "^4.1.5",
     "rimraf": "^5.0.7",
-    "zx": "^7.2.3"
+    "zx": "^8.1.3"
   }
 }

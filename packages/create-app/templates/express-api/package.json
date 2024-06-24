@@ -38,13 +38,13 @@
   },
   "devDependencies": {
     "@arcblock/eslint-config-base": "^0.3.0",
-    "bumpp": "^8.2.1",
+    "bumpp": "^9.4.1",
     "eslint": "^8.57.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.7",
     "nodemon": "^3.1.4",
     "prettier": "^3.3.2",
     "rimraf": "^5.0.7",
-    "zx": "^7.2.3"
+    "zx": "^8.1.3"
   }
 }

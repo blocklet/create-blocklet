@@ -15,9 +15,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bumpp": "^7.2.0",
+    "bumpp": "^9.4.1",
     "taze": "^0.13.8",
-    "zx": "^7.2.3"
+    "zx": "^8.1.3"
   },
   "resolutions": {
     "@blocklet/sdk": "^1.16.28",

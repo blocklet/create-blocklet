@@ -5,7 +5,7 @@ import { $, chalk, fs, path } from 'zx';
 const cwd = process.cwd(); // 获取脚本执行目录
 
 // or use pnpm to bump version: `pnpm -r --filter {packages/*, themes/*} -- pnpm version`
-execSync('bumpp package.json blocklets/*/package.json', { stdio: 'inherit' });
+execSync('bumpp --no-tag --no-commit --no-push package.json blocklets/*/package.json', { stdio: 'inherit' });
 
 const { version } = await fs.readJSON('package.json');
 await fs.writeFileSync('version', version);

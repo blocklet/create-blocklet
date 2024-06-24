@@ -15,8 +15,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "bumpp": "^8.2.1",
+    "bumpp": "^9.4.1",
     "rimraf": "^3.0.2",
-    "zx": "^7.2.3"
+    "zx": "^8.1.3"
   }
 }
