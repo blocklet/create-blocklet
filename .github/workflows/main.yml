@@ -23,77 +23,22 @@ jobs:
           files: |
             website/**
 
-  upload:
-    if: "! contains(toJSON(github.event.commits.*.message), '[skip actions]')"
-    needs: check-files
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: pnpm/action-setup@v2.0.1
-        with:
-          version: latest
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-          cache: 'pnpm'
-
-      - run: npm add -g @antfu/ni
-      - run: nci
-
-      # - name: Deploy Page Site
-      #   uses: blocklet/action-workflow@v1
-      #   with:
-      #     skip-deps: false
-      #     skip-bundle: false
-      #     skip-upload: true
-      #     skip-deploy: false
-      #     skip-release: true
-      #     deploy-app-did: zNKkQuRidtsBVskb8oDXKVh5PpM5uD5PKxim
-      #     deploy-mount-point: /
-      #     bundle-command: nr bundle
-      #     working-directory: website/pages
-      #     server-endpoint: ${{ secrets.XMARK_NODE_ENDPOINT }}
-      #     server-access-key: ${{ secrets.XMARK_NODE_ACCESS_KEY }}
-      #     server-access-secret: ${{ secrets.XMARK_NODE_ACCESS_SECRET }}
-      #     slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
-
-      # - name: Deploy Docs Site
-      #   uses: blocklet/action-workflow@v1
-      #   with:
-      #     skip-deps: true
-      #     skip-bundle: false
-      #     skip-upload: true
-      #     skip-deploy: false
-      #     skip-release: true
-      #     deploy-app-did: zNKkQuRidtsBVskb8oDXKVh5PpM5uD5PKxim
-      #     deploy-mount-point: /docs
-      #     bundle-command: nr bundle
-      #     working-directory: website/docs
-      #     server-endpoint: ${{ secrets.XMARK_NODE_ENDPOINT }}
-      #     server-access-key: ${{ secrets.XMARK_NODE_ACCESS_KEY }}
-      #     server-access-secret: ${{ secrets.XMARK_NODE_ACCESS_SECRET }}
-      #     slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
-
   publish:
     if: needs.check-files.outputs.bump-version == 'true'
     runs-on: ubuntu-latest
     needs:
       - check-files
-      - upload
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.GIT_HUB_TOKEN }}
-      - uses: pnpm/action-setup@v2.0.1
+      - uses: pnpm/action-setup@v3
         with:
-          version: latest
-      - uses: actions/setup-node@v2
+          version: 9
+      - uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'pnpm'
       - run: npm add -g @antfu/ni
       - run: nci
