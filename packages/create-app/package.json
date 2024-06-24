@@ -32,22 +32,22 @@
     "@arcblock/did": "^1.18.123",
     "@ocap/mcrypto": "^1.18.123",
     "@ocap/util": "^1.18.123",
-    "boxen": "^6.2.1",
-    "ejs": "^3.1.9",
-    "envfile": "^6.22.0",
+    "boxen": "^7.1.1",
+    "ejs": "^3.1.10",
+    "envfile": "^7.1.0",
     "figlet": "^1.7.0",
     "gradient-string": "^2.0.2",
-    "jdenticon": "^3.2.0",
-    "ora": "^6.3.1",
+    "jdenticon": "^3.3.0",
+    "ora": "^8.0.1",
     "prompts": "^2.4.2",
-    "semver": "^7.5.4",
+    "semver": "^7.6.2",
     "terminal-link": "^3.0.0",
     "zx": "7.2.3"
   },
   "devDependencies": {
-    "@arcblock/eslint-config-base": "0.2.4",
-    "eslint": "^8.56.0",
-    "prettier": "^3.1.1",
-    "vitest": "^1.1.0"
+    "@arcblock/eslint-config-base": "0.3.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.2",
+    "vitest": "^1.6.0"
   }
 }

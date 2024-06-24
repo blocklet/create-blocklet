@@ -34,21 +34,21 @@
     "@ocap/client": "^1.18.123",
     "@ocap/mcrypto": "^1.18.123",
     "@ocap/wallet": "^1.18.123",
-    "dotenv-flow": "^3.3.0",
-    "express": "^4.18.2",
-    "next": "14.0.4",
+    "dotenv-flow": "^4.1.0",
+    "express": "^4.19.2",
+    "next": "14.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
     "bumpp": "^8.2.1",
-    "eslint": "8.56.0",
-    "eslint-config-next": "14.0.4",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.4",
     "husky": "^8.0.3",
-    "lint-staged": "^12.5.0",
-    "nodemon": "^3.0.2",
+    "lint-staged": "^15.2.7",
+    "nodemon": "^3.1.4",
     "npm-run-all": "^4.1.5",
-    "rimraf": "^3.0.2",
+    "rimraf": "^5.0.7",
     "zx": "^7.2.3"
   }
 }

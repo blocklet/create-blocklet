@@ -33,18 +33,18 @@
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
     "@blocklet/sdk": "^1.16.28",
     "@ocap/client": "^1.18.123",
-    "dotenv-flow": "^3.3.0",
-    "express": "^4.18.2"
+    "dotenv-flow": "^4.1.0",
+    "express": "^4.19.2"
   },
   "devDependencies": {
-    "@arcblock/eslint-config-base": "^0.2.4",
+    "@arcblock/eslint-config-base": "^0.3.0",
     "bumpp": "^8.2.1",
-    "eslint": "^8.56.0",
+    "eslint": "^8.57.0",
     "husky": "^8.0.3",
-    "lint-staged": "^12.5.0",
-    "nodemon": "^3.0.2",
-    "prettier": "^3.1.1",
-    "rimraf": "^3.0.2",
+    "lint-staged": "^15.2.7",
+    "nodemon": "^3.1.4",
+    "prettier": "^3.3.2",
+    "rimraf": "^5.0.7",
     "zx": "^7.2.3"
   }
 }
