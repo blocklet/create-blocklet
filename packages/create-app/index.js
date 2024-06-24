@@ -58,11 +58,11 @@ const templates = [
     display: '[dapp] vue3 + express.js',
     color: green,
   },
-  {
-    name: 'vue2-dapp',
-    display: '[dapp] vue2 + express.js',
-    color: green,
-  },
+  // {
+  //   name: 'vue2-dapp',
+  //   display: '[dapp] vue2 + express.js',
+  //   color: green,
+  // },
   {
     name: 'svelte-dapp',
     display: '[dapp] svelte + express.js',
@@ -93,11 +93,11 @@ const templates = [
     display: '[static] vue3',
     color: green,
   },
-  {
-    name: 'vue2-static',
-    display: '[static] vue2',
-    color: green,
-  },
+  // {
+  //   name: 'vue2-static',
+  //   display: '[static] vue2',
+  //   color: green,
+  // },
   {
     name: 'svelte-static',
     display: '[static] svelte',
