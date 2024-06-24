@@ -60,8 +60,8 @@
     "rimraf": "^5.0.7"
   },
   "devDependencies": {
-    "@arcblock/eslint-config": "^0.3.0",
-    "@arcblock/eslint-config-ts": "^0.3.0",
+    "@arcblock/eslint-config": "^0.3.1",
+    "@arcblock/eslint-config-ts": "^0.3.1",
     "@types/cookie-parser": "^1.4.7",
     "@types/cors": "^2.8.17",
     "@types/dotenv-flow": "^3.3.3",

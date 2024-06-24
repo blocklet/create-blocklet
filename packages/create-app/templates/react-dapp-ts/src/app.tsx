@@ -1,8 +1,5 @@
-import './app.css';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
-import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-
-import About from './pages/about';
 import Home from './pages/home';
 
 function App() {
@@ -10,8 +7,6 @@ function App() {
     <div className="app">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/home" element={<Home />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>

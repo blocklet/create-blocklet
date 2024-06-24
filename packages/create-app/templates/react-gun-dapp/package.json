@@ -54,7 +54,7 @@
     "gun": "^0.2020.1240"
   },
   "devDependencies": {
-    "@arcblock/eslint-config": "^0.3.0",
+    "@arcblock/eslint-config": "^0.3.1",
     "@vitejs/plugin-react": "^4.3.1",
     "bumpp": "^9.4.1",
     "cross-env": "^7.0.3",

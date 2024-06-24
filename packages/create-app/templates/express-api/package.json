@@ -37,7 +37,7 @@
     "express": "^4.19.2"
   },
   "devDependencies": {
-    "@arcblock/eslint-config-base": "^0.3.0",
+    "@arcblock/eslint-config-base": "^0.3.1",
     "bumpp": "^9.4.1",
     "eslint": "^8.57.0",
     "husky": "^8.0.3",

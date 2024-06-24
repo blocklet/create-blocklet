@@ -23,7 +23,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@arcblock/eslint-config": "0.3.0",
+    "@arcblock/eslint-config": "^0.3.1",
     "bumpp": "^9.4.1",
     "eslint": "^8.57.0",
     "husky": "^4.3.8",

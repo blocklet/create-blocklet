@@ -1,5 +1,4 @@
 import '@blocklet/sdk/lib/error-handler';
-
 import Client from '@ocap/client';
 import dotenv from 'dotenv-flow';
 
@@ -29,9 +28,10 @@ const ensureAccountDeclared = async () => {
 (async () => {
   try {
     await ensureAccountDeclared();
+    logger.info(`${name} pre-start successfully`);
     process.exit(0);
   } catch (err) {
-    logger.error(`${name} pre-start error`, err.message);
+    logger.error(`${name} pre-start error`, err);
     process.exit(1);
   }
 })();

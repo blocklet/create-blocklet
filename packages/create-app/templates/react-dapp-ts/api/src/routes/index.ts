@@ -5,4 +5,10 @@ const router = Router();
 
 router.use('/user', middleware.user(), (req, res) => res.json(req.user || {}));
 
+router.use('/data', (_, res) =>
+  res.json({
+    message: 'Hello, world!',
+  })
+);
+
 export default router;
