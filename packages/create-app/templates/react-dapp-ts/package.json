@@ -37,12 +37,12 @@
     ]
   },
   "dependencies": {
-    "@arcblock/did-auth": "^1.18.108",
+    "@arcblock/did-auth": "^1.18.123",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
-    "@blocklet/sdk": "^1.16.20",
-    "@ocap/client": "^1.18.108",
-    "@ocap/mcrypto": "^1.18.108",
-    "@ocap/wallet": "^1.18.108",
+    "@blocklet/sdk": "^1.16.28",
+    "@ocap/client": "^1.18.123",
+    "@ocap/mcrypto": "^1.18.123",
+    "@ocap/wallet": "^1.18.123",
     "axios": "^1.6.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
