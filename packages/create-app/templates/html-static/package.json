@@ -16,7 +16,7 @@
   "license": "ISC",
   "devDependencies": {
     "bumpp": "^9.4.1",
-    "rimraf": "^3.0.2",
+    "rimraf": "^5.0.7",
     "zx": "^8.1.3"
   }
 }

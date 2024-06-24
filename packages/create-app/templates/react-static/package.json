@@ -43,15 +43,15 @@
     "react-router-dom": "^6.21.0"
   },
   "devDependencies": {
-    "@arcblock/eslint-config": "^0.2.4",
-    "@vitejs/plugin-react": "^4.2.1",
+    "@arcblock/eslint-config": "^0.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
     "bumpp": "^9.4.1",
-    "eslint": "^8.56.0",
+    "eslint": "^8.57.0",
     "husky": "^8.0.3",
-    "lint-staged": "^12.5.0",
-    "prettier": "^3.1.1",
-    "rimraf": "^3.0.2",
-    "vite": "^5.0.10",
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.3.2",
+    "rimraf": "^5.0.7",
+    "vite": "^5.3.1",
     "vite-plugin-blocklet": "^0.7.9",
     "vite-plugin-svgr": "^4.2.0",
     "zx": "^8.1.3"

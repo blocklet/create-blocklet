@@ -33,7 +33,7 @@
     "vue": "^3.4.30"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.6.2",
+    "@vitejs/plugin-vue": "^5.0.5",
     "bumpp": "^9.4.1",
     "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
