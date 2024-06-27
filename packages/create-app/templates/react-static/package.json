@@ -39,7 +39,7 @@
     ]
   },
   "devDependencies": {
-    "@arcblock/eslint-config": "^0.3.1",
+    "@arcblock/eslint-config": "^0.3.2",
     "@vitejs/plugin-react": "^4.3.1",
     "bumpp": "^9.4.1",
     "eslint": "^8.57.0",
@@ -50,7 +50,7 @@
     "react-router-dom": "^6.24.0",
     "rimraf": "^5.0.7",
     "simple-git-hooks": "^2.11.1",
-    "vite": "^5.3.1",
+    "vite": "^5.3.2",
     "vite-plugin-blocklet": "^0.7.9",
     "vite-plugin-svgr": "^4.2.0",
     "zx": "^8.1.3"

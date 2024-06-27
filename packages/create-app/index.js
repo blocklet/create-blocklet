@@ -120,7 +120,7 @@ const templates = [
   },
 ];
 
-//see: https://github.com/npm/npm/issues/3763
+// see: https://github.com/npm/npm/issues/3763
 const renameFiles = {
   _gitignore: '.gitignore',
   _npmrc: '.npmrc',
@@ -145,13 +145,14 @@ async function init() {
 
   let targetDir = argv._[0] ? String(argv._[0]) : undefined;
   const inputTemplateName = argv.template;
-  const connectUrl = argv.connectUrl;
+  const connectUrl = argv?.connectUrl;
   const inputDid = argv.did;
   const checkRes = checkDid(inputDid);
   if (typeof checkRes === 'string') {
     console.error(checkRes);
     return;
-  } else if (checkRes !== true) {
+  }
+  if (checkRes !== true) {
     console.error(`Invalid blocklet did: ${inputDid}`);
     return;
   }
@@ -333,6 +334,7 @@ async function init() {
       for (const file of commonFiles) {
         // 如果选择多个模板，每个子 package 中 只会包含必要的 文件
         if (mainBlocklet && !['screenshots', 'public', 'logo.png', '.prettierrc', 'LICENSE'].includes(file)) {
+          // eslint-disable-next-line no-continue
           continue;
         }
         // html-staic 和 xmark 相关的模板不添加 .husky
@@ -350,7 +352,7 @@ async function init() {
     // copy template files
     (() => {
       // 过滤掉 template-info.json 文件
-      let files = fs.readdirSync(templateDir).filter((file) => file !== 'template-info.json');
+      const files = fs.readdirSync(templateDir).filter((file) => file !== 'template-info.json');
       for (const file of files) {
         write(file, null, templateDir, templateName);
       }
@@ -378,7 +380,7 @@ async function init() {
 
     // patch blocklet author
     modifyBlockletYaml(
-      async (yamlConfig) => {
+      (yamlConfig) => {
         yamlConfig.author.name = authorName;
         yamlConfig.author.email = authorEmail;
       },
@@ -387,6 +389,7 @@ async function init() {
     );
 
     // patch did
+    // eslint-disable-next-line no-inner-declarations, require-await
     async function patchDid() {
       const did = didList[index];
       modifyBlockletYaml(
@@ -428,6 +431,7 @@ async function init() {
       // const pngIcon = toDidIcon(did, undefined, true);
       // fs.writeFileSync(path.join(root, 'logo.png'), pngIcon);
     }
+    // eslint-disable-next-line no-await-in-loop
     await patchDid();
   }
 
@@ -462,7 +466,7 @@ async function init() {
     await initGitRepo(root);
 
     let defaultAgent = 'npm';
-    let agentList = ['npm', 'yarn', 'pnpm'];
+    const agentList = ['npm', 'yarn', 'pnpm'];
 
     // switch (templateNames) {
     //   case 'react':
@@ -540,7 +544,7 @@ async function init() {
       // console.log(dim('\n  start it later by:\n'));
       if (root !== cwd) console.log(blue(`  cd ${bold(related)}`));
       if (mainBlocklet) {
-        console.log(blue(`npm run init`));
+        console.log(blue('npm run init'));
       } else {
         console.log(blue(`${defaultAgent === 'yarn' ? 'yarn' : `${defaultAgent} install`}`));
         console.log(cyan('blocklet dev'));
@@ -571,20 +575,21 @@ async function init() {
     return null;
   }
 
-  function modifyPackage(modifyFn = () => {}, templateDir, templateName) {
+  function modifyPackage(modifyFn = () => {}, templateDir = '', templateName = '') {
     const pkg = JSON.parse(read('package.json', templateName));
     modifyFn(pkg);
     write('package.json', JSON.stringify(pkg, null, 2), templateDir, templateName);
   }
 
-  function modifyBlockletYaml(modifyFn = () => {}, templateDir, templateName) {
+  function modifyBlockletYaml(modifyFn = () => {}, templateDir = '', templateName = '') {
     const blockletYaml = read('blocklet.yml', templateName);
     const yamlConfig = YAML.parse(blockletYaml);
     modifyFn(yamlConfig);
     write('blocklet.yml', YAML.stringify(yamlConfig, 2), templateDir, templateName);
   }
 
-  function modifyEnv(modifyFn = (...args) => ({ ...args }), templateDir, templateName) {
+  // eslint-disable-next-line no-unused-vars
+  function modifyEnv(modifyFn = (...args) => ({ ...args }), templateDir = '', templateName = '') {
     const envContent = read('.env', templateName);
     if (envContent) {
       const env = envfile.parse(envContent);

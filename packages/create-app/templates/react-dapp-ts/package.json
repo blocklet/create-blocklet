@@ -51,8 +51,8 @@
     "express-async-errors": "^3.1.1"
   },
   "devDependencies": {
-    "@arcblock/eslint-config": "^0.3.1",
-    "@arcblock/eslint-config-ts": "^0.3.1",
+    "@arcblock/eslint-config": "^0.3.2",
+    "@arcblock/eslint-config-ts": "^0.3.2",
     "@blocklet/js-sdk": "^1.16.28",
     "@types/cookie-parser": "^1.4.7",
     "@types/cors": "^2.8.17",
@@ -78,7 +78,7 @@
     "simple-git-hooks": "^2.11.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.2",
-    "vite": "^5.3.1",
+    "vite": "^5.3.2",
     "vite-plugin-blocklet": "^0.7.9",
     "vite-plugin-svgr": "^4.2.0",
     "zx": "^8.1.3"

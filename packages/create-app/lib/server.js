@@ -4,7 +4,16 @@ import { BLOCKLET_COMMAND } from './constant.js';
 
 $.verbose = false;
 
-export async function trimServerOutputVersion(output = '', command) {
+export async function getServerVersion() {
+  try {
+    const { stdout: output } = await $`${BLOCKLET_COMMAND} --version`;
+    return output.trim();
+  } catch (e) {
+    return '0.0.0';
+  }
+}
+
+export async function trimServerOutputVersion(output = '', command = '') {
   // 调用 blocklet 命令时，都会在第一行先打印一个 blocklet [command] [version] 的信息，需要把这个信息 trim 掉
   const version = await getServerVersion();
   if (command) {
@@ -20,15 +29,6 @@ export async function checkServerInstalled() {
     return true;
   } catch (e) {
     return false;
-  }
-}
-
-export async function getServerVersion() {
-  try {
-    const { stdout: output } = await $`${BLOCKLET_COMMAND} --version`;
-    return output.trim();
-  } catch (e) {
-    return '0.0.0';
   }
 }
 
