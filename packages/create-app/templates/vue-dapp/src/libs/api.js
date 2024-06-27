@@ -1,14 +1,7 @@
-import axios from 'axios';
+import { createAxios } from '@blocklet/js-sdk';
 
-axios.interceptors.request.use(
-  (config) => {
-    const prefix = window.blocklet ? window.blocklet.prefix : '/';
-    config.baseURL = prefix || '';
-    config.timeout = 200000;
+const api = createAxios({
+  baseURL: window?.blocklet?.prefix || '/',
+});
 
-    return config;
-  },
-  (error) => Promise.reject(error)
-);
-
-export default axios;
+export default api;

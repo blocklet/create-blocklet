@@ -32,6 +32,7 @@
     "express-async-errors": "^3.1.1"
   },
   "devDependencies": {
+    "@blocklet/js-sdk": "^1.16.28",
     "@vitejs/plugin-vue": "^5.0.5",
     "bumpp": "^9.4.1",
     "cross-env": "^7.0.3",
