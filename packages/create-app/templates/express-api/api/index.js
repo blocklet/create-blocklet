@@ -1,12 +1,11 @@
 const express = require('express');
-const env = require('./libs/env');
 
 const app = express();
 
 const port = process.env.BLOCKLET_PORT || process.env.PORT || 3030;
 
 app.get('/', (_, res) => {
-  res.send('Hello from Blocklet app!');
+  res.send('Hello Blocklet!');
 });
 
 app.listen(port, () => {

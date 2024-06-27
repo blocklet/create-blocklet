@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/blocklet/create-blocklet/tree/main#readme",
   "scripts": {
-    "lint": "eslint index.js lib",
+    "lint": "eslint index.js lib test",
     "test": "NODE_ENV=development vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run"

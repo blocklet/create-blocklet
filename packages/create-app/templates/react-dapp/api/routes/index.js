@@ -5,7 +5,7 @@ router.use('/user', middleware.user(), (req, res) => res.json(req.user || {}));
 
 router.use('/data', (req, res) =>
   res.json({
-    message: 'Hello, world!',
+    message: 'Hello Blocklet!',
   }),
 );
 
