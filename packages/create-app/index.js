@@ -255,7 +255,7 @@ async function init() {
         onCancel: () => {
           throw new Error(`${red('✖')} Operation cancelled`);
         },
-      }
+      },
     );
   } catch (cancelled) {
     console.error(cancelled.message);
@@ -365,7 +365,7 @@ async function init() {
         pkg.name = mainBlocklet ? finalTemplateName : name;
       },
       templateDir,
-      templateName
+      templateName,
     );
     modifyBlockletYaml(
       (yamlConfig) => {
@@ -373,7 +373,7 @@ async function init() {
         yamlConfig.title = mainBlocklet ? templateName : name;
       },
       templateDir,
-      templateName
+      templateName,
     );
 
     // patch blocklet author
@@ -383,7 +383,7 @@ async function init() {
         yamlConfig.author.email = authorEmail;
       },
       templateDir,
-      templateName
+      templateName,
     );
 
     // patch did
@@ -394,7 +394,7 @@ async function init() {
           yamlConfig.did = did;
         },
         templateDir,
-        templateName
+        templateName,
       );
       modifyPackage(
         (pkg) => {
@@ -422,7 +422,7 @@ async function init() {
           }
         },
         templateDir,
-        templateName
+        templateName,
       );
       // disabled random logo
       // const pngIcon = toDidIcon(did, undefined, true);
@@ -493,7 +493,7 @@ async function init() {
             padding: 1,
             margin: 1,
             float: 'center',
-          })
+          }),
         );
         hasStart = true;
         execSync('blocklet dev', { stdio: 'inherit' });

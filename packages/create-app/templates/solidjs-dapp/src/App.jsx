@@ -1,4 +1,4 @@
-import solidjsLogo from './assets/logo.svg';
+import solidjsLogo from './assets/solidjs.svg';
 import blockletLogo from './assets/blocklet.svg';
 import styles from './App.module.css';
 

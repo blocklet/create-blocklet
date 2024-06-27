@@ -2,7 +2,7 @@
   import svelteLogo from './assets/svelte.svg';
   import viteLogo from './assets/vite.svg';
   import blockletLogo from './assets/blocklet.svg';
-  import Counter from './lib/Counter.svelte';
+  import Counter from './components/Counter.svelte';
   import api from './libs/api';
 
   async function getApiData() {

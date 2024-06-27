@@ -72,7 +72,7 @@ async function createVitePlugin() {
         console.log(`[vite-plugin-wss-hmr] hmrServer working on wss://${host}:${port}${base}`);
         setTimeout(() => {
           console.warn(
-            `[vite-plugin-wss-hmr] if you use this plugin for the first time, please visit https://${host}:${port}${base} , and add your browser(which used of dev) as trust`
+            `[vite-plugin-wss-hmr] if you use this plugin for the first time, please visit https://${host}:${port}${base} , and add your browser(which used of dev) as trust`,
           );
         }, 3000);
       }
