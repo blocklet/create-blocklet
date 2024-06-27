@@ -7,7 +7,7 @@
     "debug": "node packages/create-app/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "bump-version": "zx --quiet scripts/bump-version.mjs",
-    "update:deps": "pnpm -r exec taze -r -n '/arcblock|ocap|abtnode|blocklet|did-connect|did-comment|nedb/' -w",
+    "update:deps": "pnpm -r exec npx taze -r -n '/arcblock|ocap|abtnode|blocklet|did-connect|did-comment|nedb/' -w",
     "preinstall": "npx only-allow pnpm",
     "publish-plugins": "zx --quiet scripts/publish-plugins.mjs"
   },
@@ -16,7 +16,6 @@
   "license": "ISC",
   "dependencies": {
     "bumpp": "^9.4.1",
-    "taze": "^0.13.8",
     "zx": "^8.1.3"
   },
   "resolutions": {
