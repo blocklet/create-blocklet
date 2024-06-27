@@ -1,4 +1,4 @@
-import Header from '@blocklet/ui-react/lib/Header';
+import { Header } from '@blocklet/ui-react';
 import { Outlet } from 'react-router-dom';
 
 export default function Layout() {

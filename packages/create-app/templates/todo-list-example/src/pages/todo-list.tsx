@@ -1,14 +1,11 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable jsx-a11y/no-autofocus */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/alt-text */
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './todo-list.css';
 import { nanoid } from 'nanoid';
 import isEmpty from 'lodash/isEmpty';
 import type { AxiosResponse } from 'axios';
+
+import './todo-list.css';
 import { useSessionContext } from '../contexts/session';
 import RequiredLogin from './required-login';
 import axios from '../libs/api';
@@ -179,7 +176,6 @@ function TodoList() {
             className="add-task"
             id="add"
             placeholder="Add your todo"
-            autoFocus
             value={todoTitle}
             onChange={handleInputChange}
           />
@@ -190,12 +186,12 @@ function TodoList() {
 
         <div className="mid">
           <i className="fas fa-check-double" />
-          <p id="complete-all" onClick={handleCompleteAll}>
+          <div id="complete-all" onClick={handleCompleteAll}>
             Complete all todo
-          </p>
-          <p id="clear-all" onClick={handleClearCompleted}>
+          </div>
+          <div id="clear-all" onClick={handleClearCompleted}>
             Delete comp todo
-          </p>
+          </div>
         </div>
 
         <ul id="list">
@@ -210,19 +206,23 @@ function TodoList() {
                 onChange={() => handleTaskCheckboxChange(task.id)}
               />
               <label htmlFor={`task-${task.id}`}>{task.title}</label>
-              <div>
-                <img
-                  src="https://cdn-icons-png.flaticon.com/128/1159/1159633.png"
-                  className="edit"
-                  data-id={task.id}
-                  onClick={() => handleEditTask(task.id)}
-                />
-                <img
-                  src="https://cdn-icons-png.flaticon.com/128/3096/3096673.png"
-                  className="delete"
-                  data-id={task.id}
-                  onClick={() => handleDeleteTask(task.id)}
-                />
+              <div className="task-actions">
+                <div onClick={() => handleEditTask(task.id)}>
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/128/1159/1159633.png"
+                    className="edit"
+                    data-id={task.id}
+                    alt="Edit"
+                  />
+                </div>
+                <div onClick={() => handleDeleteTask(task.id)}>
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/128/3096/3096673.png"
+                    className="delete"
+                    data-id={task.id}
+                    alt="Delete"
+                  />
+                </div>
               </div>
             </li>
           ))}
@@ -234,15 +234,15 @@ function TodoList() {
               Filter
             </button>
             <div className="dropdown-content">
-              <a href="#" id="all" onClick={() => handleFilterTypeChange('all')}>
+              <div className="item" id="all" onClick={() => handleFilterTypeChange('all')}>
                 All
-              </a>
-              <a href="#" id="rem" onClick={() => handleFilterTypeChange('uncompleted')}>
+              </div>
+              <div className="item" id="rem" onClick={() => handleFilterTypeChange('uncompleted')}>
                 Uncompleted
-              </a>
-              <a href="#" id="com" onClick={() => handleFilterTypeChange('completed')}>
+              </div>
+              <div className="item" id="com" onClick={() => handleFilterTypeChange('completed')}>
                 Completed
-              </a>
+              </div>
             </div>
           </div>
           <div className="completed-task">

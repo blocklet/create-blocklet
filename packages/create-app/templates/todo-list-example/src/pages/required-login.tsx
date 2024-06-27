@@ -21,20 +21,17 @@ function RequiredLogin({ onLogin = () => {}, nextUrl = undefined, ...rest }: Rea
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!session.user) {
-      session.login(onLogin);
-    } else if (session.user && nextUrl) {
+    if (session.user) {
       navigate(`${nextUrl}${window.location.search}`, { replace: false });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [session.user, session.login]);
+  }, [session.user, navigate, nextUrl]);
 
   return (
     <Grid container justifyContent="center" {...rest}>
       <Grid item justifyContent="center" textAlign="center" xl={12} lg={12}>
         <Alert severity="warning">Connect to the DID Wallet login to access the website</Alert>
         <Button
-          onClick={() => session.login()}
+          onClick={() => session.login(onLogin)}
           style={{ marginTop: 16, textTransform: 'none' }}
           variant="contained"
           color="primary">
