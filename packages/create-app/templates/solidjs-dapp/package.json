@@ -20,10 +20,11 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@blocklet/js-sdk": "^1.16.28",
     "bumpp": "^9.4.1",
     "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
-    "eslint-config-prettier": "^8.10.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-solid": "0.14.1",
     "lint-staged": "^15.2.7",
@@ -53,9 +54,9 @@
     "solid-js": "^1.8.17"
   },
   "lint-staged": {
-    "*.{mjs,js,vue}": [
+    "*.{mjs,js,jsx,tsx}": [
       "prettier --write",
-      "eslint --ext .js,.vue,.mjs"
+      "eslint --ext .js,.mjs,.jsx,.tsx"
     ],
     "*.{css,less,scss,json,graphql}": [
       "prettier --write"
