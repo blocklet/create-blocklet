@@ -7,7 +7,7 @@
     "clean": "node scripts/build-clean.mjs",
     "bundle": "npm run bundle:client && npm run bundle:api",
     "bundle:client": "vite build",
-    "bundle:api": "npm run clean && blocklet bundle --zip --create-release",
+    "bundle:api": "npm run clean && blocklet bundle --compact --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
     "lint": "eslint src api --ext .mjs,.js,.vue",
