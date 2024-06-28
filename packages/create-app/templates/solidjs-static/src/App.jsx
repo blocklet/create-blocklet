@@ -13,7 +13,11 @@ function App() {
         <p>
           Edit <code>src/App.jsx</code> and save to reload.
         </p>
-        <a class={styles.link} href="https://www.arcblock.io" target="_blank" rel="noopener noreferrer">
+        <a
+          class={styles.link}
+          href="https://www.arcblock.io/docs/blocklet-developer/en/getting-started"
+          target="_blank"
+          rel="noopener noreferrer">
           Learn Blocklet
         </a>
       </header>
