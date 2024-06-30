@@ -1,3 +1,39 @@
+## 0.8.0 (2024-6-30)
+
+- chore: update root bump-version script
+- chore(template): update template docs link
+- chore(template): remove svelte template eslint config
+- chore(template): polish template details
+- chore(template): update blocklet specVersion
+- chore(template): update template doc link
+- chore(template): tweak template info
+- chore(create): eslint should work with create-app
+- chore(deps): update deps
+- chore(style): update prettier config
+- chore(template): update dapp bundle mode -> compact
+- chore(template): update todo-list-example template
+- chore(template): update svelte-dapp template
+- chore(template): update svelte-static template
+- chore(template): update vue-dapp template
+- chore(deps): update eslint-config-prettier version
+- chore(template): update vue-static template
+- chore(template): update solidjs-dapp template
+- chore(template): update solidjs-static template
+- chore(template): update nestjs-api template
+- chore(template): update express-api template
+- chore(remplate): update prepare scripts
+- chore(template): update react-dapp-ts templat
+- chore(template): update react-dapp template
+- chore(template): update clean script
+- chore(templace): update template html file viewport
+- chore(create): update react-static templace
+- chore(ci): update ci deps
+- chore(deps): update missing deps
+- chore(deps): update zx & bumpp
+- chore(deps): update template deps
+- chore(deps): update deps
+- chore(ci): update ci version
+
 ## 0.7.9 (2024-4-7)
 
 - feat(todo-list-example): improve the todo-list template
