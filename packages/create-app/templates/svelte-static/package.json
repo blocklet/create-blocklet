@@ -1,5 +1,5 @@
 {
-  "name": "template-svelte",
+  "name": "template-svelte-static",
   "private": true,
   "version": "0.1.0",
   "scripts": {

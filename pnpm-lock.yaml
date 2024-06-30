@@ -4,12 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  '@blocklet/sdk': ^1.16.28
-  vite: ^5.3.2
-  vite-plugin-blocklet: ^0.7.9
-  vite-plugin-node-polyfills: ^0.17.0
-
 importers:
 
   .:
@@ -28,14 +22,14 @@ importers:
   packages/create-app:
     dependencies:
       '@arcblock/did':
-        specifier: ^1.18.123
-        version: 1.18.123
+        specifier: ^1.18.124
+        version: 1.18.124
       '@ocap/mcrypto':
-        specifier: ^1.18.123
-        version: 1.18.123
+        specifier: ^1.18.124
+        version: 1.18.124
       '@ocap/util':
-        specifier: ^1.18.123
-        version: 1.18.123
+        specifier: ^1.18.124
+        version: 1.18.124
       boxen:
         specifier: ^7.1.1
         version: 7.1.1
@@ -86,14 +80,14 @@ importers:
   plugins/vite-plugin-blocklet:
     dependencies:
       '@arcblock/did':
-        specifier: ^1.18.123
-        version: 1.18.123
+        specifier: ^1.18.124
+        version: 1.18.124
       '@ocap/mcrypto':
-        specifier: ^1.18.123
-        version: 1.18.123
+        specifier: ^1.18.124
+        version: 1.18.124
       '@ocap/util':
-        specifier: ^1.18.123
-        version: 1.18.123
+        specifier: ^1.18.124
+        version: 1.18.124
       dotenv:
         specifier: ^16.4.5
         version: 16.4.5
@@ -107,16 +101,16 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0
       semver:
-        specifier: ^7.5.4
+        specifier: ^7.6.2
         version: 7.6.2
       vite:
-        specifier: ^5.3.2
+        specifier: '>=5'
         version: 5.3.2(@types/node@20.14.8)
       vite-plugin-node-polyfills:
-        specifier: ^0.17.0
-        version: 0.17.0(rollup@4.18.0)(vite@5.3.2(@types/node@20.14.8))
+        specifier: ^0.22.0
+        version: 0.22.0(rollup@4.18.0)(vite@5.3.2(@types/node@20.14.8))
       yaml:
-        specifier: ^2.3.4
+        specifier: ^2.4.5
         version: 2.4.5
     devDependencies:
       rollup:
@@ -138,8 +132,8 @@ packages:
     resolution: {integrity: sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==}
     engines: {node: '>=0.10.0'}
 
-  '@arcblock/did@1.18.123':
-    resolution: {integrity: sha512-NfJhbUahS67vToAlC+/vRwuOFIA7tzIaylIssQ9MHikNndqkNidE1M8sHC2JDutzZxbquzwAQeXCyXAKcxEUhw==}
+  '@arcblock/did@1.18.124':
+    resolution: {integrity: sha512-TS2452GllL6kcoGbYIHhTrzSg0UoGLbaU2V1uhoF7clMeywLcip98h19iPyAHGVqlaQDU+dWtYGlRmRu/oQHFw==}
 
   '@arcblock/eslint-config-base@0.3.2':
     resolution: {integrity: sha512-Af66GNE2o+v2H7O0D8gpoCQ7usLadGGiun8zY830hPb5QqQmv2PO9x3/BHxrOJaCSeAgrTURc8Pyi9OMaItpuA==}
@@ -355,11 +349,11 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@ocap/mcrypto@1.18.123':
-    resolution: {integrity: sha512-8yrROY5mJKd8lPv8kO4m0RiYHUnKXaXvT4NTBtFj1PsYBFUiXO14RwEbGJcrVgR+1LTlZXbhOn7xCDnhrgz35Q==}
+  '@ocap/mcrypto@1.18.124':
+    resolution: {integrity: sha512-FNcFrw062J+z+AZvAXTcmkyn8dg2JbLvW7juGXJqZt8cpDB4k2FQImA7taYWSK9NrZjkh4NydG9IhR1l5umgsg==}
 
-  '@ocap/util@1.18.123':
-    resolution: {integrity: sha512-FDSfEV4Hvcme26R2h1oG1A6Kh8B7gqU5qY7KsxehMVSQZjB+6h/cSWR8eKsWSP/fZEG79YoQjwOETRpCLP2+aA==}
+  '@ocap/util@1.18.124':
+    resolution: {integrity: sha512-i2RvkJNJ9ETk30BEvmV14Mv30A6vmm/BpRhcByE/ZbY9VDm9+HiOKI5oh8FXaca3wgGHmt97UMh7BdZtyChonA==}
 
   '@pkgr/core@0.1.1':
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
@@ -728,9 +722,6 @@ packages:
 
   buffer@5.7.1:
     resolution: {integrity: sha512-EHcyIPBQ4BSGlvjB16k5KgAJ27CIsHY/2JBmCRReo48y9rQ3MaUzWX3KVlBa4U7MyX02HdVj0K7C3WaB3ju7FQ==}
-
-  buffer@6.0.3:
-    resolution: {integrity: sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA==}
 
   builtin-modules@3.3.0:
     resolution: {integrity: sha512-zhaCDicdLuWN5UbN5IMnFqNMhNfo919sH85y2/ea+5Yg9TsTkeZxpL+JLbp6cgYFS4sRLp3YV4S6yDuqVWHYOw==}
@@ -2363,10 +2354,10 @@ packages:
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
 
-  vite-plugin-node-polyfills@0.17.0:
-    resolution: {integrity: sha512-iPmPn7376e5u6QvoTSJa16hf5Q0DFwHFXJk2uYpsNlmI3JdPms7hWyh55o+OysJ5jo9J5XPhLC9sMOYifwFd1w==}
+  vite-plugin-node-polyfills@0.22.0:
+    resolution: {integrity: sha512-F+G3LjiGbG8QpbH9bZ//GSBr9i1InSTkaulfUHFa9jkLqVGORFBoqc2A/Yu5Mmh1kNAbiAeKeK+6aaQUf3x0JA==}
     peerDependencies:
-      vite: ^5.3.2
+      vite: ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0
 
   vite@5.3.2:
     resolution: {integrity: sha512-6lA7OBHBlXUxiJxbO5aAY2fsHHzDr1q7DvXYnyZycRs2Dz+dXBWuhpWHvmljTRTpQC2uvGmUFFkSHF2vGo90MA==}
@@ -2490,10 +2481,10 @@ snapshots:
 
   '@aashutoshrathi/word-wrap@1.2.6': {}
 
-  '@arcblock/did@1.18.123':
+  '@arcblock/did@1.18.124':
     dependencies:
-      '@ocap/mcrypto': 1.18.123
-      '@ocap/util': 1.18.123
+      '@ocap/mcrypto': 1.18.124
+      '@ocap/util': 1.18.124
       bn.js: 5.2.1
       debug: 4.3.4
       lodash: 4.17.21
@@ -2675,9 +2666,9 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
 
-  '@ocap/mcrypto@1.18.123':
+  '@ocap/mcrypto@1.18.124':
     dependencies:
-      '@ocap/util': 1.18.123
+      '@ocap/util': 1.18.124
       bn.js: 5.2.1
       crypto-js: 4.1.1
       elliptic: 6.5.4
@@ -2688,7 +2679,7 @@ snapshots:
       randombytes: 2.1.0
       tweetnacl: 1.0.3
 
-  '@ocap/util@1.18.123':
+  '@ocap/util@1.18.124':
     dependencies:
       base64-url: 2.3.3
       bn.js: 5.2.1
@@ -3105,11 +3096,6 @@ snapshots:
   buffer-xor@1.0.3: {}
 
   buffer@5.7.1:
-    dependencies:
-      base64-js: 1.5.1
-      ieee754: 1.2.1
-
-  buffer@6.0.3:
     dependencies:
       base64-js: 1.5.1
       ieee754: 1.2.1
@@ -4937,12 +4923,10 @@ snapshots:
       - supports-color
       - terser
 
-  vite-plugin-node-polyfills@0.17.0(rollup@4.18.0)(vite@5.3.2(@types/node@20.14.8)):
+  vite-plugin-node-polyfills@0.22.0(rollup@4.18.0)(vite@5.3.2(@types/node@20.14.8)):
     dependencies:
       '@rollup/plugin-inject': 5.0.5(rollup@4.18.0)
-      buffer-polyfill: buffer@6.0.3
       node-stdlib-browser: 1.2.0
-      process: 0.11.10
       vite: 5.3.2(@types/node@20.14.8)
     transitivePeerDependencies:
       - rollup

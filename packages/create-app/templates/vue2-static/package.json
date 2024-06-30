@@ -1,5 +1,5 @@
 {
-  "name": "template-vue2",
+  "name": "template-vue2-static",
   "version": "0.1.0",
   "scripts": {
     "dev": "blocklet dev",
