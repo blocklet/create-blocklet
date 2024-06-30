@@ -22,7 +22,7 @@ export default async function $put(req: Request, res: Response) {
     new PutObjectCommand({
       key: 'todo-list.json',
       data: JSON.stringify(req.body.todoList),
-    })
+    }),
   );
 
   return res.send();

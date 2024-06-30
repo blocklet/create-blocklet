@@ -1,9 +1,12 @@
 {
   "name": "svelte-static",
-  "desc": { "en": "A front-end application skeleton built with Svelte", "zh": "一个基于 Svelte 构建的前端应用骨架" },
+  "desc": {
+    "en": "A front-end application skeleton built with Svelte",
+    "zh": "一个基于 Svelte 构建的前端应用骨架"
+  },
   "blockletType": "static",
   "composable": true,
   "languages": "JavaScript",
   "useCase": "Starter",
-  "author": "ZhangHan"
+  "author": "Blocklet"
 }

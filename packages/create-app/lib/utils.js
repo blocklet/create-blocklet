@@ -6,6 +6,7 @@ $.verbose = false;
 export function copy(src, dest) {
   const stat = fs.statSync(src);
   if (stat.isDirectory()) {
+    // eslint-disable-next-line no-use-before-define
     copyDir(src, dest);
   } else {
     fs.copySync(src, dest);
@@ -56,7 +57,7 @@ export function emptyDir(dir) {
 
 export function fuzzyQuery(list = [], keyWord = '') {
   const arr = [];
-  for (var i = 0; i < list.length; i++) {
+  for (let i = 0; i < list.length; i++) {
     if (keyWord.includes(list[i])) {
       arr.push(list[i]);
     }

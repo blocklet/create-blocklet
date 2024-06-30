@@ -13,7 +13,7 @@ author:
 repository:
   type: git
   url: git+https://github.com/blocklet/create-blocklet.git
-specVersion: 1.1.1
+specVersion: 1.2.8
 version: 0.1.0
 logo: logo.png
 files:

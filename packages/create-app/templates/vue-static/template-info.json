@@ -1,9 +1,12 @@
 {
   "name": "vue-static",
-  "desc": { "en": "A front-end application skeleton built with Vue 3", "zh": "一个基于 Vue 3 构建的前端应用骨架" },
+  "desc": {
+    "en": "A front-end application skeleton built with Vue 3",
+    "zh": "一个基于 Vue 3 构建的前端应用骨架"
+  },
   "blockletType": "static",
   "composable": true,
   "languages": "JavaScript",
   "useCase": "Starter",
-  "author": "ZhangHan"
+  "author": "Blocklet"
 }

@@ -4,21 +4,23 @@ description: A Blocklet Server blocklet
 keywords:
   - blocklet
   - svelte
-group: static
+group: dapp
 did: ''
-main: dist
+main: api/dist/index.js
 author:
   name: Blocklet
   email: blocklet@arcblock.io
 repository:
   type: git
   url: 'git+https://github.com/blocklet/create-blocklet.git'
-specVersion: 1.1.1
+specVersion: 1.2.8
 version: 0.1.0
 logo: logo.png
 files:
   - logo.png
   - screenshots
+  - dist
+  - api/hooks/pre-start.js
 interfaces:
   - type: web
     name: publicUrl
@@ -42,10 +44,10 @@ requirements:
 scripts:
   dev: npm run start
 environments: []
-capabilities: 
+capabilities:
   # Step 1: set capabilities.didSpace to requiredOnConnect
   didSpace: requiredOnConnect
-screenshots: 
+screenshots:
   - 1-login.png
   - 2-ui.png
 components: []

@@ -1,11 +1,14 @@
 {
   "name": "express-api",
-  "desc": { "en": "A server-side API application built on Express", "zh": "一个基于 Express 构建的服务端 API 应用" },
+  "desc": {
+    "en": "A server-side API application built on Express",
+    "zh": "一个基于 Express 构建的服务端 API 应用"
+  },
   "displayName": "Express API",
   "blockletType": "dapp",
   "composable": true,
   "framework": "Express",
   "languages": "JavaScript",
   "useCase": "Server Side Application",
-  "author": "ZhangHan"
+  "author": "Blocklet"
 }

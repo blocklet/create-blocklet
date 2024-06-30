@@ -62,7 +62,7 @@ export default async function batchModifyDepsVersion({ dirPath = './', depList =
       } catch (error) {
         console.warn(chalk.yellowBright('[warn]: ', `${fullPath} no such file or directory`));
       }
-    })
+    }),
   );
 
   if (resultList.some((item) => item === false)) {

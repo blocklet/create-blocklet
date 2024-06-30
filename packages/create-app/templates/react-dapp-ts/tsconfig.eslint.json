@@ -3,5 +3,7 @@
   "compilerOptions": {
     "noEmit": true
   },
-  "include": [".eslintrc.js"]
+  "include": [
+    ".eslintrc.js"
+  ]
 }

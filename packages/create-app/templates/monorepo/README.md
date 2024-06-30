@@ -27,14 +27,14 @@ This project is a monorepo project, which means that there are multiple blocklet
 
    Blocklet needs blocklet server as a dependency. So you need to install it first.
    `npm install -g @blocklet/cli`
-   See details in [https://developer.blocklet.io/docs/en/quick-start/blocklet-server#use-the-binary-distribution](https://developer.blocklet.io/docs/en/quick-start/blocklet-server#use-the-binary-distribution)
+   See details in [https://www.arcblock.io/docs/blocklet-developer/install-blocklet-cli](https://www.arcblock.io/docs/blocklet-developer/install-blocklet-cli)
 
 2. Init blocklet server & start blocklet server
 
    Before starting an blocklet server, you need to init blocklet server.
    `blocklet server init --mode=debug`
    `blocklet server start`
-   See details in [https://developer.blocklet.io/docs/en/quick-start/blocklet-server](https://developer.blocklet.io/docs/en/quick-start/blocklet-server)
+   See details in [https://www.arcblock.io/docs/blocklet-developer/getting-started](https://www.arcblock.io/docs/blocklet-developer/getting-started)
 
 3. init project
 

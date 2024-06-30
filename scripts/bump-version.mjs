@@ -4,7 +4,9 @@ import { $, chalk, fs } from 'zx';
 import batchModifyDepsVersion from './batch-modify-deps-version.mjs';
 
 // or use pnpm to bump version: `pnpm -r --filter {packages/*, themes/*} -- pnpm version`
-execSync('bumpp package.json packages/*/package.json plugins/*/package.json', { stdio: 'inherit' });
+execSync('bumpp --no-tag --no-commit --no-push package.json packages/*/package.json plugins/*/package.json', {
+  stdio: 'inherit',
+});
 
 const { version } = await fs.readJSON('package.json');
 await fs.writeFileSync('version', version);

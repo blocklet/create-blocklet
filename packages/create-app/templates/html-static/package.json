@@ -1,9 +1,9 @@
 {
-  "name": "template-html",
+  "name": "template-html-static",
   "version": "0.1.0",
   "scripts": {
     "dev": "blocklet dev",
-    "clean": "node scripts/build-clean.js",
+    "clean": "node scripts/build-clean.mjs",
     "bundle": "npm run clean && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "deploy:child": "npm run bundle && blocklet deploy .blocklet/bundle --app-did=<%= did %>",
@@ -15,8 +15,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "bumpp": "^8.2.1",
-    "rimraf": "^3.0.2",
-    "zx": "^7.2.3"
+    "bumpp": "^9.4.1",
+    "prettier": "^3.3.2",
+    "rimraf": "^5.0.7",
+    "zx": "^8.1.3"
   }
 }

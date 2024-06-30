@@ -18,7 +18,7 @@ export function toDidIcon(did, size = 200, isPng = false) {
   return isPng ? jdenticon.toPng(did, size) : jdenticon.toSvg(did, size);
 }
 
-export async function getBlockletDidList(monikerList = [], connectUrl) {
+export async function getBlockletDidList(monikerList = [], connectUrl = '') {
   try {
     let command = `${BLOCKLET_COMMAND} init`;
     if (monikerList.length > 0) {
@@ -28,6 +28,7 @@ export async function getBlockletDidList(monikerList = [], connectUrl) {
     }
 
     if (connectUrl) {
+      // eslint-disable-next-line no-unused-vars
       command += ` --connectUrl=${connectUrl}`;
     }
     const runCommand = new Promise((resolve, reject) => {

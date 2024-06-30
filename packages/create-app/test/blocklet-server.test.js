@@ -14,7 +14,7 @@ test(
     const cleanVersion = semver.valid(semver.coerce(version));
     expect(semver.satisfies(cleanVersion, '>=1.7.0')).toBe(true);
   },
-  -1
+  -1,
 );
 
 test(
@@ -24,7 +24,7 @@ test(
     console.log('isRunning', isRunning === true);
     expect(isRunning).toBe(true);
   },
-  -1
+  -1,
 );
 
 test(
@@ -33,5 +33,5 @@ test(
     const directory = await getServerDirectory();
     expect(directory).toBe('/workspace/.run/prod');
   },
-  -1
+  -1,
 );

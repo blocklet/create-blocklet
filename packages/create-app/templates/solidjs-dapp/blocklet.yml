@@ -6,19 +6,21 @@ keywords:
   - solidjs
 group: dapp
 did: ''
-main: dist
+main: api/index.js
 author:
   name: Blocklet
   email: blocklet@arcblock.io
 repository:
   type: git
   url: 'git+https://github.com/blocklet/create-blocklet.git'
-specVersion: 1.1.1
+specVersion: 1.2.8
 version: 0.1.0
 logo: logo.png
 files:
   - logo.png
   - screenshots
+  - dist
+  - api/hooks/pre-start.js
 interfaces:
   - type: web
     name: publicUrl

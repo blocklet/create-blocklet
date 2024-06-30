@@ -6,7 +6,8 @@ module.exports = {
     es6: true,
   },
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
   plugins: ['solid'],
   extends: ['eslint:recommended', 'plugin:prettier/recommended', 'plugin:solid/recommended'],

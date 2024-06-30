@@ -18,7 +18,7 @@ export default async function $get(req: Request, res: Response) {
     const { data } = await spaceClient.send(
       new GetObjectCommand({
         key: 'todo-list.json',
-      })
+      }),
     );
     return res.json({ todoList: JSON.parse(await streamToString(data)) });
   } catch (error) {

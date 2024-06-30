@@ -1,5 +1,5 @@
 {
-  "name": "template-vue",
+  "name": "template-vue-static",
   "version": "0.1.0",
   "scripts": {
     "dev": "blocklet dev",
@@ -7,32 +7,30 @@
     "lint": "eslint src --ext .mjs,.js,.vue",
     "lint:fix": "npm run lint -- --fix",
     "serve": "vite preview",
-    "clean": "node scripts/build-clean.js",
+    "clean": "node scripts/build-clean.mjs",
     "bundle": "npm run clean && vite build && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
     "deploy:child": "npm run bundle && blocklet deploy .blocklet/bundle --app-did=<%= did %>",
     "dev:child": "blocklet dev --component --app-did=<%= did %>",
-    "prepare": "husky install",
+    "prepare": "npx simple-git-hooks",
     "bump-version": "zx --quiet scripts/bump-version.mjs"
   },
-  "dependencies": {
-    "vue": "^3.3.13"
-  },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.5.2",
-    "bumpp": "^8.2.1",
-    "eslint": "^8.56.0",
-    "eslint-config-prettier": "^8.10.0",
-    "eslint-plugin-prettier": "^5.1.0",
-    "eslint-plugin-vue": "^9.19.2",
-    "husky": "^8.0.3",
-    "lint-staged": "^12.5.0",
-    "prettier": "^3.1.1",
-    "rimraf": "^3.0.2",
-    "vite": "^5.0.10",
-    "vite-plugin-blocklet": "^0.7.9",
-    "zx": "^7.2.3"
+    "@vitejs/plugin-vue": "^5.0.5",
+    "bumpp": "^9.4.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-vue": "^9.26.0",
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.3.2",
+    "rimraf": "^5.0.7",
+    "simple-git-hooks": "^2.11.1",
+    "vite": "^5.3.2",
+    "vite-plugin-blocklet": "^0.8.0",
+    "vue": "^3.4.31",
+    "zx": "^8.1.3"
   },
   "lint-staged": {
     "*.{mjs,js,vue}": [
@@ -42,5 +40,8 @@
     "*.{css,less,scss,json,graphql}": [
       "prettier --write"
     ]
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
   }
 }

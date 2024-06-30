@@ -8,6 +8,6 @@ module.exports = {
     project: [join(__dirname, 'tsconfig.eslint.json'), join(__dirname, 'tsconfig.json')],
   },
   rules: {
-    '@typescript-eslint/comma-dangle': 'off',
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
   },
 };

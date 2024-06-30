@@ -4,33 +4,12 @@ const { yellow } = chalk;
 
 $.verbose = false;
 
-async function canInitGit() {
-  const isInstalled = await isGitInstalled();
-  const gitInfo = await getUserInfo();
-  if (isInstalled && gitInfo.name && gitInfo.email) {
-    return true;
-  }
-  return false;
-}
-
 export async function isGitInstalled() {
   try {
     await which('git');
     return true;
   } catch (e) {
     return false;
-  }
-}
-
-export async function initGitRepo(root) {
-  const canInstalled = await canInitGit();
-  if (canInstalled) {
-    await cd(root);
-    await $`git init`;
-    await $`git add .`;
-    await $`git commit -m 'init'`;
-  } else {
-    console.warn(`${yellow('Git is not installed')}`);
   }
 }
 
@@ -44,5 +23,26 @@ export async function getUserInfo() {
       name: '',
       email: '',
     };
+  }
+}
+
+async function canInitGit() {
+  const isInstalled = await isGitInstalled();
+  const gitInfo = await getUserInfo();
+  if (isInstalled && gitInfo.name && gitInfo.email) {
+    return true;
+  }
+  return false;
+}
+
+export async function initGitRepo(root) {
+  const canInstalled = await canInitGit();
+  if (canInstalled) {
+    await cd(root);
+    await $`git init`;
+    await $`git add .`;
+    await $`git commit -m 'init'`;
+  } else {
+    console.warn(`${yellow('Git is not installed')}`);
   }
 }

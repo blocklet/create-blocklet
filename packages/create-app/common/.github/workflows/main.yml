@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - master
 
 jobs:
   Deploy:
@@ -13,20 +14,22 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Set yarn cache
-        uses: c-hive/gha-yarn-cache@v2
-
-      - name: Install dependencies
-        run: yarn
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
 
       - name: Blocklet workflow
         uses: blocklet/action-workflow@v1
         with:
           skip-upload: false
           skip-deploy: false
-          bundle-command: yarn bundle
+          bundle-command: pnpm bundle
           store-endpoint: ${{ secrets.STORE_ENDPOINT }}
           store-access-token: ${{ secrets.STORE_ACCESS_TOKEN }}
           server-endpoint: ${{ secrets.SERVER_ENDPOINT }}

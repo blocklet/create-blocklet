@@ -1,64 +1,67 @@
 <script>
-  import logo from './assets/svelte.png';
-  import Counter from './lib/Counter.svelte';
+  import svelteLogo from './assets/svelte.svg';
+  import viteLogo from './assets/vite.svg';
+  import blockletLogo from './assets/blocklet.svg';
+  import Counter from './components/Counter.svelte';
+  import api from './libs/api';
+
+  async function getApiData() {
+    const { data } = await api.get('/api/data');
+    const { message } = data;
+    alert(`Message from api: ${message}`);
+  }
 </script>
 
 <main>
-  <img src={logo} alt="Svelte Logo" />
-  <h1>Hello world!</h1>
+  <div>
+    <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
+      <img src={viteLogo} class="logo" alt="Vite Logo" />
+    </a>
+    <a href="https://svelte.dev" target="_blank" rel="noreferrer">
+      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
+    </a>
+    <a href="https://svelte.dev" target="_blank" rel="noreferrer">
+      <img src={blockletLogo} class="logo blocklet" alt="Blocklet Logo" />
+    </a>
+  </div>
+  <h1>Vite + Svelte + Blocklet</h1>
 
-  <Counter />
+  <div class="card">
+    <Counter />
+    <br />
+    <br />
+    <button type="button" on:click={getApiData}>Get API Data</button>
+  </div>
 
   <p>
-    Visit <a href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte apps.
+    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the
+    official Svelte app framework powered by Vite!
   </p>
 
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme">SvelteKit</a> for the officially supported framework, also
-    powered by Vite!
-  </p>
+  <p class="read-the-docs">Click on the Vite and Svelte logos to learn more</p>
 </main>
 
 <style>
-  :root {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
-      'Helvetica Neue', sans-serif;
+  .logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
   }
 
-  main {
-    text-align: center;
-    padding: 1em;
-    margin: 0 auto;
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
   }
 
-  img {
-    height: 16rem;
-    width: 16rem;
+  .logo.svelte:hover {
+    filter: drop-shadow(0 0 2em #ff3e00aa);
   }
 
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4rem;
-    font-weight: 100;
-    line-height: 1.1;
-    margin: 2rem auto;
-    max-width: 14rem;
+  .logo.blocklet:hover {
+    filter: drop-shadow(0 0 2em #22cdcdaa);
   }
 
-  p {
-    max-width: 14rem;
-    margin: 1rem auto;
-    line-height: 1.35;
-  }
-
-  @media (min-width: 480px) {
-    h1 {
-      max-width: none;
-    }
-
-    p {
-      max-width: none;
-    }
+  .read-the-docs {
+    color: #888;
   }
 </style>

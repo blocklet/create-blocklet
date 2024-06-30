@@ -33,6 +33,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const cwd = process.cwd();
 
 const templates = [
+  // dapp
   {
     name: 'react-dapp',
     display: '[dapp] react + express.js',
@@ -58,11 +59,11 @@ const templates = [
     display: '[dapp] vue3 + express.js',
     color: green,
   },
-  {
-    name: 'vue2-dapp',
-    display: '[dapp] vue2 + express.js',
-    color: green,
-  },
+  // {
+  //   name: 'vue2-dapp',
+  //   display: '[dapp] vue2 + express.js',
+  //   color: green,
+  // },
   {
     name: 'svelte-dapp',
     display: '[dapp] svelte + express.js',
@@ -73,11 +74,12 @@ const templates = [
     display: '[dapp] next.js',
     color: blue,
   },
-  {
-    name: 'react-gun-dapp',
-    display: '[dapp] react + gun.js + express.js',
-    color: blue,
-  },
+  // {
+  //   name: 'react-gun-dapp',
+  //   display: '[dapp] react + gun.js + express.js',
+  //   color: blue,
+  // },
+  // static
   {
     name: 'react-static',
     display: '[static] react',
@@ -93,11 +95,11 @@ const templates = [
     display: '[static] vue3',
     color: green,
   },
-  {
-    name: 'vue2-static',
-    display: '[static] vue2',
-    color: green,
-  },
+  // {
+  //   name: 'vue2-static',
+  //   display: '[static] vue2',
+  //   color: green,
+  // },
   {
     name: 'svelte-static',
     display: '[static] svelte',
@@ -108,6 +110,7 @@ const templates = [
     display: '[static] html',
     color: blue,
   },
+  // api
   {
     name: 'express-api',
     display: '[api] express.js',
@@ -120,7 +123,7 @@ const templates = [
   },
 ];
 
-//see: https://github.com/npm/npm/issues/3763
+// see: https://github.com/npm/npm/issues/3763
 const renameFiles = {
   _gitignore: '.gitignore',
   _npmrc: '.npmrc',
@@ -145,13 +148,14 @@ async function init() {
 
   let targetDir = argv._[0] ? String(argv._[0]) : undefined;
   const inputTemplateName = argv.template;
-  const connectUrl = argv.connectUrl;
+  const connectUrl = argv?.connectUrl;
   const inputDid = argv.did;
   const checkRes = checkDid(inputDid);
   if (typeof checkRes === 'string') {
     console.error(checkRes);
     return;
-  } else if (checkRes !== true) {
+  }
+  if (checkRes !== true) {
     console.error(`Invalid blocklet did: ${inputDid}`);
     return;
   }
@@ -255,7 +259,7 @@ async function init() {
         onCancel: () => {
           throw new Error(`${red('✖')} Operation cancelled`);
         },
-      }
+      },
     );
   } catch (cancelled) {
     console.error(cancelled.message);
@@ -333,6 +337,7 @@ async function init() {
       for (const file of commonFiles) {
         // 如果选择多个模板，每个子 package 中 只会包含必要的 文件
         if (mainBlocklet && !['screenshots', 'public', 'logo.png', '.prettierrc', 'LICENSE'].includes(file)) {
+          // eslint-disable-next-line no-continue
           continue;
         }
         // html-staic 和 xmark 相关的模板不添加 .husky
@@ -350,7 +355,7 @@ async function init() {
     // copy template files
     (() => {
       // 过滤掉 template-info.json 文件
-      let files = fs.readdirSync(templateDir).filter((file) => file !== 'template-info.json');
+      const files = fs.readdirSync(templateDir).filter((file) => file !== 'template-info.json');
       for (const file of files) {
         write(file, null, templateDir, templateName);
       }
@@ -365,7 +370,7 @@ async function init() {
         pkg.name = mainBlocklet ? finalTemplateName : name;
       },
       templateDir,
-      templateName
+      templateName,
     );
     modifyBlockletYaml(
       (yamlConfig) => {
@@ -373,20 +378,21 @@ async function init() {
         yamlConfig.title = mainBlocklet ? templateName : name;
       },
       templateDir,
-      templateName
+      templateName,
     );
 
     // patch blocklet author
     modifyBlockletYaml(
-      async (yamlConfig) => {
+      (yamlConfig) => {
         yamlConfig.author.name = authorName;
         yamlConfig.author.email = authorEmail;
       },
       templateDir,
-      templateName
+      templateName,
     );
 
     // patch did
+    // eslint-disable-next-line no-inner-declarations, require-await
     async function patchDid() {
       const did = didList[index];
       modifyBlockletYaml(
@@ -394,7 +400,7 @@ async function init() {
           yamlConfig.did = did;
         },
         templateDir,
-        templateName
+        templateName,
       );
       modifyPackage(
         (pkg) => {
@@ -422,12 +428,13 @@ async function init() {
           }
         },
         templateDir,
-        templateName
+        templateName,
       );
       // disabled random logo
       // const pngIcon = toDidIcon(did, undefined, true);
       // fs.writeFileSync(path.join(root, 'logo.png'), pngIcon);
     }
+    // eslint-disable-next-line no-await-in-loop
     await patchDid();
   }
 
@@ -462,7 +469,7 @@ async function init() {
     await initGitRepo(root);
 
     let defaultAgent = 'npm';
-    let agentList = ['npm', 'yarn', 'pnpm'];
+    const agentList = ['npm', 'yarn', 'pnpm'];
 
     // switch (templateNames) {
     //   case 'react':
@@ -493,7 +500,7 @@ async function init() {
             padding: 1,
             margin: 1,
             float: 'center',
-          })
+          }),
         );
         hasStart = true;
         execSync('blocklet dev', { stdio: 'inherit' });
@@ -540,7 +547,7 @@ async function init() {
       // console.log(dim('\n  start it later by:\n'));
       if (root !== cwd) console.log(blue(`  cd ${bold(related)}`));
       if (mainBlocklet) {
-        console.log(blue(`npm run init`));
+        console.log(blue('npm run init'));
       } else {
         console.log(blue(`${defaultAgent === 'yarn' ? 'yarn' : `${defaultAgent} install`}`));
         console.log(cyan('blocklet dev'));
@@ -571,20 +578,21 @@ async function init() {
     return null;
   }
 
-  function modifyPackage(modifyFn = () => {}, templateDir, templateName) {
+  function modifyPackage(modifyFn = () => {}, templateDir = '', templateName = '') {
     const pkg = JSON.parse(read('package.json', templateName));
     modifyFn(pkg);
     write('package.json', JSON.stringify(pkg, null, 2), templateDir, templateName);
   }
 
-  function modifyBlockletYaml(modifyFn = () => {}, templateDir, templateName) {
+  function modifyBlockletYaml(modifyFn = () => {}, templateDir = '', templateName = '') {
     const blockletYaml = read('blocklet.yml', templateName);
     const yamlConfig = YAML.parse(blockletYaml);
     modifyFn(yamlConfig);
     write('blocklet.yml', YAML.stringify(yamlConfig, 2), templateDir, templateName);
   }
 
-  function modifyEnv(modifyFn = (...args) => ({ ...args }), templateDir, templateName) {
+  // eslint-disable-next-line no-unused-vars
+  function modifyEnv(modifyFn = (...args) => ({ ...args }), templateDir = '', templateName = '') {
     const envContent = read('.env', templateName);
     if (envContent) {
       const env = envfile.parse(envContent);
