@@ -13,7 +13,6 @@ This blocklet is a static project, which means this is a frontend application. I
 - screenshots/ - Screenshots
 - src/ - Client side code (A standard vue app structure)
 - .env - Environment variables
-- .eslintrc.js - ESLint configuration
 - .gitignore - Git ignore file
 - .prettierrc - Prettier configuration
 - blocklet.md - Blocklet README
