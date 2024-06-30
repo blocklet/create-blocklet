@@ -1,3 +1,8 @@
+## 0.8.1 (2024-6-30)
+
+- fix(template): fix lint error
+- fix(template): pnpm install use `shamefully-hoist=true`
+
 ## 0.8.0 (2024-6-30)
 
 - chore: update root bump-version script
