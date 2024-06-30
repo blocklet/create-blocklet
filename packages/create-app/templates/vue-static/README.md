@@ -31,14 +31,14 @@ This blocklet is a static project, which means this is a frontend application. I
 
    Blocklet needs blocklet server as a dependency. So you need to install it first.
    `npm install -g @blocklet/cli`
-   See details in [https://developer.blocklet.io/docs/en/quick-start/blocklet-server#use-the-binary-distribution](https://developer.blocklet.io/docs/en/quick-start/blocklet-server#use-the-binary-distribution)
+   See details in [https://www.arcblock.io/docs/blocklet-developer/install-blocklet-cli](https://www.arcblock.io/docs/blocklet-developer/install-blocklet-cli)
 
 2. Init blocklet server & start blocklet server
 
    Before starting an blocklet server, you need to init blocklet server.
    `blocklet server init --mode=debug`
    `blocklet server start`
-   See details in [https://developer.blocklet.io/docs/en/quick-start/blocklet-server](https://developer.blocklet.io/docs/en/quick-start/blocklet-server)
+   See details in [https://www.arcblock.io/docs/blocklet-developer/getting-started](https://www.arcblock.io/docs/blocklet-developer/getting-started)
 
 3. Go to the project directory `cd [name]`
 4. Install dependencies: `npm install` or `yarn`
@@ -138,7 +138,7 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
 ## Learn More
 
 - Full specification of `blocklet.yml`: [https://github.com/blocklet/blocklet-specification/blob/main/docs/meta.md](https://github.com/blocklet/blocklet-specification/blob/main/docs/meta.md)
-- Full document of Blocklet Server & blocklet development: [https://developer.blocklet.io/docs/en](https://developer.blocklet.io/docs/en)
+- Full document of Blocklet Server & blocklet development: [https://www.arcblock.io/docs/blocklet-developer](https://www.arcblock.io/docs/blocklet-developer)
 
 ## License
 

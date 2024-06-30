@@ -10,7 +10,7 @@ import HelloWorld from './components/HelloWorld.vue';
     <a href="https://vuejs.org" target="_blank">
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
-    <a href="https://www.arcblock.io/docs/blocklet-developer/en/getting-started" target="_blank">
+    <a href="https://www.arcblock.io/docs/blocklet-developer/getting-started" target="_blank">
       <img src="./assets/blocklet.svg" class="logo blocklet" alt="Blocklet logo" />
     </a>
   </div>

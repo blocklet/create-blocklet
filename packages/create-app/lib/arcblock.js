@@ -25,7 +25,7 @@ export function echoBrand({ version = '' }) {
   });
 }
 export function echoDocument() {
-  const url = 'https://developer.blocklet.io/docs/';
+  const url = 'https://www.arcblock.io/docs/blocklet-developer';
   let msg;
   if (terminalLink.isSupported) {
     msg = green(terminalLink(`Documentation: ${url}`, url));

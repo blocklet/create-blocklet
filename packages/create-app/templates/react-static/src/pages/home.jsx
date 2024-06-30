@@ -16,7 +16,7 @@ function Home() {
         <a href="https://react.dev" target="_blank" rel="noreferrer">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
-        <a href="https://www.arcblock.io/docs/blocklet-developer/en/getting-started" target="_blank" rel="noreferrer">
+        <a href="https://www.arcblock.io/docs/blocklet-developer/getting-started" target="_blank" rel="noreferrer">
           <img src={blockletLogo} className="logo blocklet" alt="Blocklet logo" />
         </a>
       </div>
