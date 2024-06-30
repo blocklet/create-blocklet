@@ -19,6 +19,7 @@ app.use(cors());
 
 const router = express.Router();
 router.use('/api', require('./routes'));
+
 app.use(router);
 
 const isProduction = process.env.NODE_ENV === 'production' || process.env.ABT_NODE_SERVICE_ENV === 'production';
