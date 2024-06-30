@@ -33,6 +33,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const cwd = process.cwd();
 
 const templates = [
+  // dapp
   {
     name: 'react-dapp',
     display: '[dapp] react + express.js',
@@ -78,6 +79,7 @@ const templates = [
   //   display: '[dapp] react + gun.js + express.js',
   //   color: blue,
   // },
+  // static
   {
     name: 'react-static',
     display: '[static] react',
@@ -108,6 +110,7 @@ const templates = [
     display: '[static] html',
     color: blue,
   },
+  // api
   {
     name: 'express-api',
     display: '[api] express.js',

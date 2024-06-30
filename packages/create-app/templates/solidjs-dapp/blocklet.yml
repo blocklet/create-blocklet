@@ -6,7 +6,7 @@ keywords:
   - solidjs
 group: dapp
 did: ''
-main: dist
+main: api/index.js
 author:
   name: Blocklet
   email: blocklet@arcblock.io
@@ -19,6 +19,8 @@ logo: logo.png
 files:
   - logo.png
   - screenshots
+  - dist
+  - api/hooks/pre-start.js
 interfaces:
   - type: web
     name: publicUrl

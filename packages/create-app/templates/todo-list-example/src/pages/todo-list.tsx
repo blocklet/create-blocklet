@@ -85,7 +85,7 @@ function TodoList() {
 
   const handleTaskCheckboxChange = async (taskId: string) => {
     const currentTodoList = todoList.map((task) =>
-      task.id === taskId ? { ...task, completed: !task.completed } : task
+      task.id === taskId ? { ...task, completed: !task.completed } : task,
     );
     setTodoList(currentTodoList);
     await putTodoList(currentTodoList);
@@ -117,7 +117,7 @@ function TodoList() {
       };
 
       const currentTodoList = todoList.map((task) =>
-        task.id === editTaskId ? { ...task, title: updatedTodo.title } : task
+        task.id === editTaskId ? { ...task, title: updatedTodo.title } : task,
       );
       setTodoList(currentTodoList);
       await putTodoList(currentTodoList);
