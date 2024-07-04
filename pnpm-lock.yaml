@@ -88,12 +88,12 @@ importers:
       '@ocap/util':
         specifier: ^1.18.124
         version: 1.18.124
-      dotenv:
-        specifier: ^16.4.5
-        version: 16.4.5
       get-port:
         specifier: ^5.1.1
         version: 5.1.1
+      http-proxy-middleware:
+        specifier: ^3.0.0
+        version: 3.0.0
       ismobilejs:
         specifier: ^1.1.1
         version: 1.1.1
@@ -465,6 +465,9 @@ packages:
 
   '@types/fs-extra@11.0.1':
     resolution: {integrity: sha512-MxObHvNl4A69ofaTRU8DFqvgzzv8s9yRtaPPm5gud9HDNvpB3GPQFvNuTWAI59B9huVGV5jXYJwbCsmBsOGYWA==}
+
+  '@types/http-proxy@1.17.14':
+    resolution: {integrity: sha512-SSrD0c1OQzlFX7pGu1eXxSEjemej64aaNPRhhVYUGqXh0BtldAAx37MG8btcumvpgKyZp1F5Gn3JkktdxiFv6w==}
 
   '@types/json5@0.0.29':
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
@@ -1152,6 +1155,9 @@ packages:
   eth-lib@0.2.8:
     resolution: {integrity: sha512-ArJ7x1WcWOlSpzdoTBX8vkwlkSQ85CjjifSZtV4co64vWxSV8geWfPI9x4SVYu3DSxnX4yWFVTtGL+j9DUFLNw==}
 
+  eventemitter3@4.0.7:
+    resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
+
   events@3.3.0:
     resolution: {integrity: sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==}
     engines: {node: '>=0.8.x'}
@@ -1212,6 +1218,15 @@ packages:
 
   flatted@3.2.7:
     resolution: {integrity: sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==}
+
+  follow-redirects@1.15.6:
+    resolution: {integrity: sha512-wWN62YITEaOpSK584EZXJafH1AGpO8RVgElfkuXbTOrPX4fIfOyEpW/CsiNd8JdYrAoOvafRTOEnvsO++qCqFA==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
 
   for-each@0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
@@ -1352,6 +1367,14 @@ packages:
   hosted-git-info@2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
 
+  http-proxy-middleware@3.0.0:
+    resolution: {integrity: sha512-36AV1fIaI2cWRzHo+rbcxhe3M3jUDCNzc4D5zRl57sEWRAxdXYtw7FSQKYY6PDKssiAKjLYypbssHk+xs/kMXw==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+
+  http-proxy@1.18.1:
+    resolution: {integrity: sha512-7mz/721AbnJwIVbnaSv1Cz3Am0ZLT/UBwkC92VlxhXv/k/BBQfM2fXElQNC27BVGr0uwUpplYPQM9LnaBMR5NQ==}
+    engines: {node: '>=8.0.0'}
+
   https-browserify@1.0.0:
     resolution: {integrity: sha512-J+FkSdyD+0mA0N+81tMotaRMfSL9SGi+xpD3T6YApKsc3bGSXJlfXri3VyFOeYkfLRQisDk1W+jIFFKBeUBbBg==}
 
@@ -1470,6 +1493,10 @@ packages:
   is-path-inside@3.0.3:
     resolution: {integrity: sha512-Fd4gABb+ycGAmKou8eMftCupSir5lRxqf4aD/vd0cD2qc4HL07OjCeuHMr8Ro4CoMaeCKDB0/ECBOVWjTwUvPQ==}
     engines: {node: '>=8'}
+
+  is-plain-obj@3.0.0:
+    resolution: {integrity: sha512-gwsOE28k+23GP1B6vFl1oVh/WOzmawBrKwo5Ev6wMKzPkaXaCDIQKzLnvsA42DRlbVTWorkgTKIviAKCWkfUwA==}
+    engines: {node: '>=10'}
 
   is-regex@1.1.4:
     resolution: {integrity: sha512-kvRdxDsxZjhzUX07ZnLydzS1TU/TJlTUHHY4YLL87e37oUA49DfkLqgy+VjFocowy29cKvcSiu+kIv728jTTVg==}
@@ -1978,6 +2005,9 @@ packages:
   regjsparser@0.10.0:
     resolution: {integrity: sha512-qx+xQGZVsy55CH0a1hiVwHmqjLryfh7wQyF5HO07XJ9f7dQMY/gPQHhlyDkIzJKC+x2fUCpCcUODUUUFrm7SHA==}
     hasBin: true
+
+  requires-port@1.0.0:
+    resolution: {integrity: sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==}
 
   resolve-from@4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
@@ -2762,6 +2792,10 @@ snapshots:
       '@types/jsonfile': 6.1.1
       '@types/node': 20.14.8
     optional: true
+
+  '@types/http-proxy@1.17.14':
+    dependencies:
+      '@types/node': 20.14.8
 
   '@types/json5@0.0.29': {}
 
@@ -3662,6 +3696,8 @@ snapshots:
       elliptic: 6.5.4
       xhr-request-promise: 0.1.3
 
+  eventemitter3@4.0.7: {}
+
   events@3.3.0: {}
 
   evp_bytestokey@1.0.3:
@@ -3731,6 +3767,10 @@ snapshots:
       rimraf: 3.0.2
 
   flatted@3.2.7: {}
+
+  follow-redirects@1.15.6(debug@4.3.4):
+    optionalDependencies:
+      debug: 4.3.4
 
   for-each@0.3.3:
     dependencies:
@@ -3884,6 +3924,25 @@ snapshots:
 
   hosted-git-info@2.8.9: {}
 
+  http-proxy-middleware@3.0.0:
+    dependencies:
+      '@types/http-proxy': 1.17.14
+      debug: 4.3.4
+      http-proxy: 1.18.1(debug@4.3.4)
+      is-glob: 4.0.3
+      is-plain-obj: 3.0.0
+      micromatch: 4.0.7
+    transitivePeerDependencies:
+      - supports-color
+
+  http-proxy@1.18.1(debug@4.3.4):
+    dependencies:
+      eventemitter3: 4.0.7
+      follow-redirects: 1.15.6(debug@4.3.4)
+      requires-port: 1.0.0
+    transitivePeerDependencies:
+      - debug
+
   https-browserify@1.0.0: {}
 
   human-signals@5.0.0: {}
@@ -3986,6 +4045,8 @@ snapshots:
   is-number@7.0.0: {}
 
   is-path-inside@3.0.3: {}
+
+  is-plain-obj@3.0.0: {}
 
   is-regex@1.1.4:
     dependencies:
@@ -4510,6 +4571,8 @@ snapshots:
   regjsparser@0.10.0:
     dependencies:
       jsesc: 0.5.0
+
+  requires-port@1.0.0: {}
 
   resolve-from@4.0.0: {}
 

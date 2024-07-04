@@ -20,20 +20,19 @@ export function toDidIcon(did, size = 200, isPng = false) {
 
 export async function getBlockletDidList(monikerList = [], connectUrl = '') {
   try {
-    let command = `${BLOCKLET_COMMAND} init`;
+    const commandArgs = ['init'];
     if (monikerList.length > 0) {
-      command += ` --monikers=${monikerList.join(',')}`;
+      commandArgs.push(`--monikers=${monikerList.join(',')}`);
     } else {
       return [];
     }
 
     if (connectUrl) {
-      // eslint-disable-next-line no-unused-vars
-      command += ` --connectUrl=${connectUrl}`;
+      commandArgs.push(`--connectUrl=${connectUrl}`);
     }
     const runCommand = new Promise((resolve, reject) => {
       let lastMessage = '';
-      const childProcess = spawn('blocklet', ['init', '--monikers=react-dapp']);
+      const childProcess = spawn(BLOCKLET_COMMAND, commandArgs);
       const spinner = ora().start();
       childProcess.stdout.on('data', (data) => {
         const message = data.toString('utf8') || '';
