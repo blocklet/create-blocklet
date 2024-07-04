@@ -22,14 +22,14 @@ importers:
   packages/create-app:
     dependencies:
       '@arcblock/did':
-        specifier: ^1.18.124
-        version: 1.18.124
+        specifier: ^1.18.126
+        version: 1.18.126
       '@ocap/mcrypto':
-        specifier: ^1.18.124
-        version: 1.18.124
+        specifier: ^1.18.126
+        version: 1.18.126
       '@ocap/util':
-        specifier: ^1.18.124
-        version: 1.18.124
+        specifier: ^1.18.126
+        version: 1.18.126
       boxen:
         specifier: ^7.1.1
         version: 7.1.1
@@ -80,14 +80,14 @@ importers:
   plugins/vite-plugin-blocklet:
     dependencies:
       '@arcblock/did':
-        specifier: ^1.18.124
-        version: 1.18.124
+        specifier: ^1.18.126
+        version: 1.18.126
       '@ocap/mcrypto':
-        specifier: ^1.18.124
-        version: 1.18.124
+        specifier: ^1.18.126
+        version: 1.18.126
       '@ocap/util':
-        specifier: ^1.18.124
-        version: 1.18.124
+        specifier: ^1.18.126
+        version: 1.18.126
       get-port:
         specifier: ^5.1.1
         version: 5.1.1
@@ -132,8 +132,8 @@ packages:
     resolution: {integrity: sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==}
     engines: {node: '>=0.10.0'}
 
-  '@arcblock/did@1.18.124':
-    resolution: {integrity: sha512-TS2452GllL6kcoGbYIHhTrzSg0UoGLbaU2V1uhoF7clMeywLcip98h19iPyAHGVqlaQDU+dWtYGlRmRu/oQHFw==}
+  '@arcblock/did@1.18.126':
+    resolution: {integrity: sha512-KFxBztd5G3cYz+LbDZuCRJc5pRXmnvM0leEtBg8UnhPeWOqHo0D7afexWuY9rGiqhkpbOOd6QtxRP0UrUybC8w==}
 
   '@arcblock/eslint-config-base@0.3.2':
     resolution: {integrity: sha512-Af66GNE2o+v2H7O0D8gpoCQ7usLadGGiun8zY830hPb5QqQmv2PO9x3/BHxrOJaCSeAgrTURc8Pyi9OMaItpuA==}
@@ -349,11 +349,11 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@ocap/mcrypto@1.18.124':
-    resolution: {integrity: sha512-FNcFrw062J+z+AZvAXTcmkyn8dg2JbLvW7juGXJqZt8cpDB4k2FQImA7taYWSK9NrZjkh4NydG9IhR1l5umgsg==}
+  '@ocap/mcrypto@1.18.126':
+    resolution: {integrity: sha512-0lhsFLfs5Xs0KGfXevV1IkvOPqanuedi+dygmH4cTi2SJo0SNWPb7Ohv55cC2Hw/xZgGh/6fgrxlltzNo4SXkw==}
 
-  '@ocap/util@1.18.124':
-    resolution: {integrity: sha512-i2RvkJNJ9ETk30BEvmV14Mv30A6vmm/BpRhcByE/ZbY9VDm9+HiOKI5oh8FXaca3wgGHmt97UMh7BdZtyChonA==}
+  '@ocap/util@1.18.126':
+    resolution: {integrity: sha512-WorHZOEd+ploIxhopnOjYHh9Bo/z6maCDC0KVAmk6yOcCXxvqeKyKPlIyZf09gFRmwrTQR3jlLmJ1ChcD00P9Q==}
 
   '@pkgr/core@0.1.1':
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
@@ -2511,10 +2511,10 @@ snapshots:
 
   '@aashutoshrathi/word-wrap@1.2.6': {}
 
-  '@arcblock/did@1.18.124':
+  '@arcblock/did@1.18.126':
     dependencies:
-      '@ocap/mcrypto': 1.18.124
-      '@ocap/util': 1.18.124
+      '@ocap/mcrypto': 1.18.126
+      '@ocap/util': 1.18.126
       bn.js: 5.2.1
       debug: 4.3.4
       lodash: 4.17.21
@@ -2696,9 +2696,9 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
 
-  '@ocap/mcrypto@1.18.124':
+  '@ocap/mcrypto@1.18.126':
     dependencies:
-      '@ocap/util': 1.18.124
+      '@ocap/util': 1.18.126
       bn.js: 5.2.1
       crypto-js: 4.1.1
       elliptic: 6.5.4
@@ -2709,7 +2709,7 @@ snapshots:
       randombytes: 2.1.0
       tweetnacl: 1.0.3
 
-  '@ocap/util@1.18.124':
+  '@ocap/util@1.18.126':
     dependencies:
       base64-url: 2.3.3
       bn.js: 5.2.1
