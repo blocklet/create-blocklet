@@ -1,3 +1,8 @@
+## 0.8.2 (2024-7-4)
+
+- fix(create-app): fix monorepo create should create multi did
+- feat(vite-plugin-blocklet): vite hmr use same port with blocklet url
+
 ## 0.8.1 (2024-6-30)
 
 - fix(template): fix lint error
