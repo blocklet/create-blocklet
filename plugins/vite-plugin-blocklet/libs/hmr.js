@@ -26,6 +26,29 @@ export default function createHmrPlugin(options = {}) {
           );
           return replacedCode;
         }
+
+        // 根据页面的协议自动判断端口
+        replacedCode = replacedCode.replace(
+          /__HMR_PORT__/g,
+          'location.port || (location.protocol === "https:" ? 443 : 80);',
+        );
+
+        // 在页面加载时,触发一次 upgrade
+        replacedCode = replacedCode.replace(
+          'function setupWebSocket(protocol, hostAndPath, onCloseWithoutOpen) {',
+          'async function setupWebSocket(protocol, hostAndPath, onCloseWithoutOpen) {\nawait waitForSuccessfulPing(protocol, hostAndPath);\n',
+        );
+        replacedCode = replacedCode.replace('fallback = () => {', 'fallback = async () => {');
+        replacedCode = replacedCode.replace(/socket = setupWebSocket\(/g, 'socket = await setupWebSocket(');
+
+        if ([4, 5].includes(pureVersion)) {
+          // 改变刷新页面的判断
+          replacedCode = replacedCode.replace(
+            'const ping =',
+            "const ping = async () => {\ntry {\nawait fetch(`${pingHostProtocol}://${hostAndPath}`, {\nmode: 'no-cors',\nheaders: {\nAccept: 'text/x-vite-ping'\n}\n}).then(res => {\nif ([404, 502].includes(res.status)) {\nthrow new Error('waiting for server to restart...');\n}\n});\nreturn true;\n} catch {}\nreturn false;\n}\nconst pingBak =",
+          );
+        }
+        return replacedCode;
       }
     },
   };
