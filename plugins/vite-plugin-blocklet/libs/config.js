@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import YAML from 'yaml';
-import { toBlockletDid, isInBlocklet } from './utils.js';
+import { toBlockletDid, isInBlocklet, blockletPort, blockletPrefix } from './utils.js';
 
 export default function createConfigPlugin() {
   return {
@@ -9,10 +9,9 @@ export default function createConfigPlugin() {
     configureServer(server) {
       if (isInBlocklet) {
         server.middlewares.use((req, res, next) => {
-          const prefix = req.headers['x-path-prefix'] || '/';
           // blocklet server 会把设置的 base 从请求 url 中移除，所以需要再加回 base
-          if (!req.url.startsWith(prefix)) {
-            req.url = path.join(prefix || '/', req.url);
+          if (!req.url.startsWith(blockletPrefix)) {
+            req.url = path.join(blockletPrefix || '/', req.url);
           }
           return next();
         });
@@ -21,21 +20,9 @@ export default function createConfigPlugin() {
     config(config, { command }) {
       if (command === 'serve') {
         const targetConfig = {};
-        if (!config.base) {
-          let base = process.env.BLOCKLET_DEV_MOUNT_POINT || '';
-
-          if (base) {
-            if (!base.startsWith('/')) {
-              base = `/${base}`;
-            }
-            if (!base.endsWith('/')) {
-              base = `${base}/`;
-            }
-          }
-          targetConfig.base = base;
-        }
+        targetConfig.base = path.join('/', config.base || blockletPrefix, '/');
         if (!(config.server && config.server.port)) {
-          const port = process.env.BLOCKLET_PORT || 3000;
+          const port = blockletPort || 3000;
           targetConfig.server = {
             port,
           };
