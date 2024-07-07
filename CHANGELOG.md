@@ -1,3 +1,7 @@
+## 0.8.5 (2024-7-7)
+
+- fix(vite-plugin-blocklet): custom hmr host & port support
+
 ## 0.8.4 (2024-7-7)
 
 - fix(vite-plugin-blocklet): createExpressPlugin should pass in ignorePath

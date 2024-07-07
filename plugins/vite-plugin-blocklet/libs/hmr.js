@@ -7,11 +7,11 @@ import { blockletPrefix, isInBlocklet } from './utils.js';
  *
  * @param {Object} options - The options for the HMR plugin.
  * @param {string} options.version - The version of the vite version.
- * @param {'middleware'|'client'} options.hmrMode - The version of the vite version.
+ * @param {'middleware'|'client'|'server'} options.hmrMode - The version of the vite version.
  * @return {Object} The HMR plugin object.
  */
 export default function createHmrPlugin(options = {}) {
-  const { version = viteVersion } = options;
+  const { version = viteVersion, hmrMode = process.env.VITE_HMR_MODE || 'client' } = options || {};
   return {
     name: 'blocklet:hmr',
     apply: 'serve',
@@ -28,9 +28,11 @@ export default function createHmrPlugin(options = {}) {
           return replacedCode;
         }
 
-        replacedCode = replacedCode.replace(/__HMR_BASE__/g, `"${blockletPrefix}"+__HMR_BASE__`);
+        if (['client', 'middleware'].includes(hmrMode)) {
+          replacedCode = replacedCode.replace(/__HMR_BASE__/g, `"${blockletPrefix}"+__HMR_BASE__`);
+        }
 
-        if (process.env.VITE_HMR_MODE === 'middleware') {
+        if (hmrMode === 'middleware') {
           // 根据页面的协议自动判断端口
           replacedCode = replacedCode.replace(
             /__HMR_PORT__/g,
