@@ -28,7 +28,7 @@
     "rimraf": "^5.0.7",
     "simple-git-hooks": "^2.11.1",
     "vite": "^5.3.2",
-    "vite-plugin-blocklet": "^0.8.3",
+    "vite-plugin-blocklet": "^0.8.4",
     "vue": "^2.7.16",
     "zx": "^8.1.3"
   },
