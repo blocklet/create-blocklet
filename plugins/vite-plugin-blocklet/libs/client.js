@@ -3,7 +3,7 @@ import getPort from 'get-port';
 import { createServer } from 'vite';
 import mri from 'mri';
 import { createProxyMiddleware } from 'http-proxy-middleware';
-import { blockletPrefix } from './utils';
+import { blockletPrefix } from './utils.js';
 
 const argv = process.argv.slice(2);
 const isProduction = process.env.NODE_ENV === 'production' || process.env.ABT_NODE_SERVICE_ENV === 'production';

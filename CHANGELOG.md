@@ -1,3 +1,7 @@
+## 0.8.4 (2024-7-7)
+
+- fix(vite-plugin-blocklet): createExpressPlugin should pass in ignorePath
+
 ## 0.8.3 (2024-7-7)
 
 - feat(vite-plugin-blocklet): support hot reload api code
