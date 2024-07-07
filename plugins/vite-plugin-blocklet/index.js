@@ -4,6 +4,7 @@ import createConfigPlugin from './libs/config.js';
 import createMetaPlugin from './libs/meta.js';
 import createLoadingPlugin from './libs/loading.js';
 import createDebugPlugin from './libs/debug.js';
+import createExpressPlugin from './libs/express.js';
 import setupClient from './libs/client.js';
 
 /**
@@ -16,12 +17,14 @@ import setupClient from './libs/client.js';
  * @property {boolean} [disableHmr=false] - Disable hmr plugin.
  * @property {boolean} [disableLoading=false] - Disable loading plugin.
  * @property {boolean} [disableDebug=false] - Disable debug plugin.
+ * @property {import('vite-plugin-node-polyfills').PolyfillOptions} [nodePolyfillsOptions]
  *
  * @property {string} [loadingElementId]
  * @property {string} [loadingColor]
  * @property {string} [loadingImage]
  * @property {'all'|'mobile'|'desktop'} [debugPlatform='mobile']
  * @property {string} [debugScript]
+ * @property {'middleware'|'client'} [hmrMode='middleware']
  */
 
 /**
@@ -40,6 +43,7 @@ export function createBlockletPlugin(options = {}) {
     disableHmr = false,
     disableLoading = false,
     disableDebug = false,
+    nodePolyfillsOptions,
     ...restOptions
   } = options;
 
@@ -56,7 +60,7 @@ export function createBlockletPlugin(options = {}) {
     plugins.push(createHmrPlugin(restOptions));
   }
   if (!disableNodePolyfills) {
-    plugins.push(nodePolyfills({ protocolImports: true }));
+    plugins.push(nodePolyfills(nodePolyfillsOptions));
   }
   if (!disableLoading) {
     plugins.push(createLoadingPlugin(restOptions));
@@ -75,5 +79,6 @@ export {
   createMetaPlugin as createBlockletMeta,
   createLoadingPlugin as createBlockletLoading,
   createDebugPlugin as createBlockletDebug,
+  createExpressPlugin as createBlockletExpress,
   nodePolyfills,
 };

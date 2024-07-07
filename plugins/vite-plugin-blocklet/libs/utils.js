@@ -13,6 +13,6 @@ export function toBlockletDid(name) {
   return fromPublicKey(pk, { role: types.RoleType.ROLE_ANY });
 }
 
-const isInBlocklet = !!process.env.BLOCKLET_PORT;
-
-export { isInBlocklet };
+export const isInBlocklet = !!process.env.BLOCKLET_PORT;
+export const blockletPort = process.env.BLOCKLET_PORT;
+export const blockletPrefix = process.env.BLOCKLET_DEV_MOUNT_POINT || '/';

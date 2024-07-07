@@ -1,7 +1,9 @@
+import path from 'node:path';
 import getPort from 'get-port';
 import { createServer } from 'vite';
 import mri from 'mri';
 import { createProxyMiddleware } from 'http-proxy-middleware';
+import { blockletPrefix } from './utils';
 
 const argv = process.argv.slice(2);
 const isProduction = process.env.NODE_ENV === 'production' || process.env.ABT_NODE_SERVICE_ENV === 'production';
@@ -32,7 +34,8 @@ export default async function setupClient(app, options = {}) {
       target: `ws://127.0.0.1:${port}`,
       ws: true,
     });
-    app.use('/__vite_hmr__', wsProxy);
+    process.env.VITE_HMR_MODE = 'middleware';
+    app.use(path.join(blockletPrefix, '/__vite_hmr__'), wsProxy);
 
     // 以中间件模式创建 Vite 服务器
     const vite = await createServer({
@@ -41,7 +44,6 @@ export default async function setupClient(app, options = {}) {
         middlewareMode: true,
         hmr: {
           port,
-          clientPort: 80,
           path: '/__vite_hmr__',
         },
       },

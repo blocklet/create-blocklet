@@ -79,7 +79,7 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.5.2",
     "vite": "^5.3.2",
-    "vite-plugin-blocklet": "^0.8.2",
+    "vite-plugin-blocklet": "^0.8.3",
     "vite-plugin-svgr": "^4.2.0",
     "zx": "^8.1.3"
   },

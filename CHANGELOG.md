@@ -1,3 +1,7 @@
+## 0.8.3 (2024-7-7)
+
+- feat(vite-plugin-blocklet): support hot reload api code
+
 ## 0.8.2 (2024-7-4)
 
 - fix(create-app): fix monorepo create should create multi did
