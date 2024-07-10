@@ -19,6 +19,8 @@ const isProduction = process.env.NODE_ENV === 'production' || process.env.ABT_NO
  * @param {number} [options.clientPort] - The clientPort for the ws server.
  * @param {string} [options.configFile=''] - The path to the config file.
  * @param {string} [options.appType='spa'] - The type of the application.
+ * @param {import('node:http').Server} [options.server] - The http server instance
+ * @param {object} [options.importMetaHot] - vite import.meta.hot
  * @return {Promise<Object>} A promise that resolves to the Vite server object.
  */
 export default async function setupClient(app, options = {}) {
@@ -65,6 +67,24 @@ export default async function setupClient(app, options = {}) {
     });
     // 将 vite 的 connect 实例作中间件使用
     app.use(vite.middlewares);
+    // 用于 vite-node 进行服务重载时，先关闭原有服务的端口监听
+    if (options?.server && options?.importMetaHot && options.importMetaHot?.on && options.importMetaHot?.dispose) {
+      async function killServer() {
+        await options.server.close((err) => {
+          console.log('vite-plugin-blocklet: Server closed succeed');
+          console.error('vite-plugin-blocklet: Failed to close server', err);
+        });
+      }
+      options.importMetaHot.on('vite:beforeFullReload', async () => {
+        console.log('vite-plugin-blocklet: Full reload');
+        await killServer();
+      });
+
+      options.importMetaHot.dispose(async () => {
+        console.log('vite-plugin-blocklet: Dispose');
+        await killServer();
+      });
+    }
     return vite;
   }
 }
