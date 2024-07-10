@@ -7,7 +7,7 @@ import { blockletPrefix, isInBlocklet } from './utils.js';
  *
  * @param {Object} options - The options for the HMR plugin.
  * @param {string} options.version - The version of the vite version.
- * @param {'middleware'|'client'|'server'} options.hmrMode - The version of the vite version.
+ * @param {'middleware'|'client'|'server'|'wsUpgrade'} [options.hmrMode = 'client'] - The version of the vite version.
  * @return {Object} The HMR plugin object.
  */
 export default function createHmrPlugin(options = {}) {
@@ -28,17 +28,21 @@ export default function createHmrPlugin(options = {}) {
           return replacedCode;
         }
 
-        if (['client', 'middleware'].includes(hmrMode)) {
+        // 兼容不带服务端的情况、vite 以中间件形式挂载到服务端代码的情况
+        if (['client', 'middleware', 'wsUpgrade'].includes(hmrMode)) {
           replacedCode = replacedCode.replace(/__HMR_BASE__/g, `"${blockletPrefix}"+__HMR_BASE__`);
         }
 
-        if (hmrMode === 'middleware') {
+        // 兼容 vite 以中间件形式挂载到服务端代码的情况，无论 ws 是中间件挂载还是 ws 直接监听 upgrade 事件都支持
+        if (['middleware', 'wsUpgrade'].includes(hmrMode)) {
           // 根据页面的协议自动判断端口
           replacedCode = replacedCode.replace(
             /__HMR_PORT__/g,
             'location.port || (location.protocol === "https:" ? 443 : 80);',
           );
-
+        }
+        // 当 ws 是以中间件的形式挂载到服务端代码时，需要手动在页面触发一次 upgrade 事件
+        if (hmrMode === 'middleware') {
           // 在页面加载时,触发一次 upgrade
           replacedCode = replacedCode.replace(
             'function setupWebSocket(protocol, hostAndPath, onCloseWithoutOpen) {',
@@ -46,7 +50,9 @@ export default function createHmrPlugin(options = {}) {
           );
           replacedCode = replacedCode.replace('fallback = () => {', 'fallback = async () => {');
           replacedCode = replacedCode.replace(/socket = setupWebSocket\(/g, 'socket = await setupWebSocket(');
-
+        }
+        // 当 ws 是通过服务端的 proxy 来实现时，需要更改页面自动刷新的判断逻辑
+        if (['middleware', 'wsUpgrade'].includes(hmrMode)) {
           if ([4, 5].includes(pureVersion)) {
             // 改变刷新页面的判断
             replacedCode = replacedCode.replace(

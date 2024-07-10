@@ -35,13 +35,27 @@ export default async function setupClient(app, options = {}) {
     const clientPort = options?.clientPort || port;
     const enableWsMiddleware = !host;
     if (enableWsMiddleware) {
-      process.env.VITE_HMR_MODE = 'middleware';
       // 创建 hmr proxy
+      const hmrWsPath = path.join(blockletPrefix, '/__vite_hmr__');
       const wsProxy = createProxyMiddleware({
         target: `ws://127.0.0.1:${port}`,
         ws: true,
       });
-      app.use(path.join(blockletPrefix, '/__vite_hmr__'), wsProxy);
+      try {
+        if (options?.server) {
+          options.server.on('upgrade', (req, socket, head) => {
+            if ((req.originalUrl || req.url).includes(hmrWsPath)) {
+              wsProxy.upgrade(req, socket, head);
+            }
+          });
+          process.env.VITE_HMR_MODE = 'wsUpgrade';
+        } else {
+          throw new Error('Missing options.server, fallback to use middleware mode.');
+        }
+      } catch {
+        process.env.VITE_HMR_MODE = 'middleware';
+        app.use(hmrWsPath, wsProxy);
+      }
     } else {
       process.env.VITE_HMR_MODE = 'server';
     }
