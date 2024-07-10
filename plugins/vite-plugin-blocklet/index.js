@@ -24,7 +24,7 @@ import setupClient from './libs/client.js';
  * @property {string} [loadingImage]
  * @property {'all'|'mobile'|'desktop'} [debugPlatform='mobile']
  * @property {string} [debugScript]
- * @property {'middleware'|'client'} [hmrMode='middleware']
+ * @property {'middleware'|'client'|'server'|'wsUpgrade'} [hmrMode='middleware'] - 当未传入任何 option 参数时，会自动变为 middleware 模式
  */
 
 /**

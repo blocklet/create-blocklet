@@ -1,3 +1,7 @@
+## 0.8.7 (2024-7-10)
+
+- fix(vite-plugin-blocklet): polish vite hmr ws proxy
+
 ## 0.8.6 (2024-7-10)
 
 - chore(deps): update deps
