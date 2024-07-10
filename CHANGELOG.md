@@ -1,3 +1,8 @@
+## 0.8.6 (2024-7-10)
+
+- chore(deps): update deps
+- feat(vite-plugin-blocklet): support vite-node hot reload server side code
+
 ## 0.8.5 (2024-7-7)
 
 - fix(vite-plugin-blocklet): custom hmr host & port support

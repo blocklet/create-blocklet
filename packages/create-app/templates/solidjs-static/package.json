@@ -30,7 +30,7 @@
     "simple-git-hooks": "^2.11.1",
     "solid-js": "^1.8.18",
     "vite": "^5.3.3",
-    "vite-plugin-blocklet": "^0.8.5",
+    "vite-plugin-blocklet": "^0.8.6",
     "vite-plugin-solid": "^2.10.2",
     "zx": "^8.1.4"
   },
