@@ -1,7 +1,5 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import YAML from 'yaml';
-import { toBlockletDid, isInBlocklet, blockletPort, blockletPrefix } from './utils.js';
+import { joinURL, withTrailingSlash } from 'ufo';
+import { toBlockletDid, isInBlocklet, blockletPort, blockletPrefix, getBlockletYAML } from './utils.js';
 
 export default function createConfigPlugin() {
   return {
@@ -11,16 +9,16 @@ export default function createConfigPlugin() {
         server.middlewares.use((req, res, next) => {
           // blocklet server 会把设置的 base 从请求 url 中移除，所以需要再加回 base
           if (!req.url.startsWith(blockletPrefix)) {
-            req.url = path.join(blockletPrefix || '/', req.url);
+            req.url = joinURL(blockletPrefix || '/', req.url);
           }
           return next();
         });
       }
     },
-    config(config, { command }) {
+    async config(config, { command }) {
       if (command === 'serve') {
         const targetConfig = {};
-        targetConfig.base = path.join('/', config.base || blockletPrefix, '/');
+        targetConfig.base = withTrailingSlash(joinURL('/', config.base || blockletPrefix));
         if (!(config.server && config.server.port)) {
           const port = blockletPort || 3000;
           targetConfig.server = {
@@ -33,9 +31,7 @@ export default function createConfigPlugin() {
       if (command === 'build') {
         if (!config.base) {
           try {
-            const blockletYamlPath = './blocklet.yml';
-            const blockletYaml = YAML.parse(fs.readFileSync(blockletYamlPath, 'utf8'));
-            let { name, did } = blockletYaml;
+            let { name, did } = await getBlockletYAML();
             if (!did && name) {
               did = toBlockletDid(name);
             }

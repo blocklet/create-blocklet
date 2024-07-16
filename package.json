@@ -1,17 +1,18 @@
 {
   "name": "create-blocklet",
   "private": true,
-  "version": "0.8.7",
+  "version": "0.8.8",
   "description": "",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "scripts": {
     "prepare": "npx simple-git-hooks",
+    "lint": "pnpm -r lint",
     "debug": "node packages/create-app/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "bump-version": "zx --quiet scripts/bump-version.mjs",
-    "update:deps": "npx taze -r -n '/arcblock|ocap|abtnode|blocklet|did-connect|did-comment|nedb/' -w",
+    "update:deps": "npx taze -r -n '/arcblock|ocap|abtnode|blocklet|did-connect|did-comment|nedb/' -w && pnpm i",
     "preinstall": "npx only-allow pnpm",
     "publish-plugins": "zx --quiet scripts/publish-plugins.mjs"
   },

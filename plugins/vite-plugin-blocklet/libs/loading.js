@@ -1,3 +1,5 @@
+import { withQuery } from 'ufo';
+
 /**
  * Generates an HTML string containing a spinner with optional color and image.
  *
@@ -61,6 +63,10 @@ function generateHtml({ color, image }) {
     -webkit-animation-delay: -0.16s;
     animation-delay: -0.16s;
   }
+  #loadingImage {
+    margin-bottom: 16px;
+    object-fit: contain;
+  }
 
   @-webkit-keyframes fadeIn {
     0% { opacity: 0; }
@@ -96,13 +102,23 @@ function generateHtml({ color, image }) {
   }
   </style>
   <div class="spinner-wrapper">
-    <img src="${image}" width="70" height="70" style="margin-bottom: 16px" />
+    <img id="loadingImage" width="70" height="70" />
     <div class="spinner">
       <div class="bounce1"></div>
       <div class="bounce2"></div>
       <div class="bounce3"></div>
     </div>
-  </div>`;
+  </div>
+  <script>
+    (() => {
+      const loadingImage = document.getElementById('loadingImage');
+      if (window?.blocklet?.appLogo) {
+        loadingImage.src = window.blocklet.appLogo;
+      } else {
+        loadingImage.src = "${image}";
+      }
+    })();
+  </script>`;
 }
 
 /**
@@ -114,11 +130,14 @@ function generateHtml({ color, image }) {
  * @param {string} [options.loadingImage='/.well-known/service/blocklet/logo?imageFilter=convert&f=png&w=80'] - The URL of the loading image.
  * @return {Object} - The Vite plugin object.
  */
-export default function createLoadingPlugin({
-  loadingElementId = 'app',
-  loadingColor = '#8abaf0',
-  loadingImage = '/.well-known/service/blocklet/logo?imageFilter=convert&f=png&w=80',
-} = {}) {
+export default function createLoadingPlugin({ loadingElementId = 'app', loadingColor = '#8abaf0', loadingImage } = {}) {
+  if (!loadingImage) {
+    loadingImage = withQuery('/.well-known/service/blocklet/logo', {
+      imageFilter: 'convert',
+      f: 'png',
+      w: 80,
+    });
+  }
   const injectHtml = generateHtml({
     color: loadingColor,
     image: loadingImage,

@@ -1,3 +1,8 @@
+## 0.8.8 (2024-7-16)
+
+- chore(deps): update deps
+- fix(vite-plugin-blocklet): preffer use appLogo in loading image
+
 ## 0.8.7 (2024-7-10)
 
 - fix(vite-plugin-blocklet): polish vite hmr ws proxy

@@ -30,7 +30,10 @@ export default function createHmrPlugin(options = {}) {
 
         // 兼容不带服务端的情况、vite 以中间件形式挂载到服务端代码的情况
         if (['client', 'middleware', 'wsUpgrade'].includes(hmrMode)) {
-          replacedCode = replacedCode.replace(/__HMR_BASE__/g, `"${blockletPrefix}"+__HMR_BASE__`);
+          replacedCode = replacedCode.replace(
+            /__HMR_BASE__/g,
+            `"${blockletPrefix === '/' ? '' : blockletPrefix}"+__HMR_BASE__`,
+          );
         }
 
         // 兼容 vite 以中间件形式挂载到服务端代码的情况，无论 ws 是中间件挂载还是 ws 直接监听 upgrade 事件都支持
