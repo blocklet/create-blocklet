@@ -1,4 +1,4 @@
-import path from 'node:path';
+import { joinURL } from 'ufo';
 import getPort from 'get-port';
 import { createServer } from 'vite';
 import mri from 'mri';
@@ -36,7 +36,7 @@ export default async function setupClient(app, options = {}) {
     const enableWsMiddleware = !host;
     if (enableWsMiddleware) {
       // 创建 hmr proxy
-      const hmrWsPath = path.join(blockletPrefix, '/__vite_hmr__');
+      const hmrWsPath = joinURL(blockletPrefix, '/__vite_hmr__');
       const wsProxy = createProxyMiddleware({
         target: `ws://127.0.0.1:${port}`,
         ws: true,

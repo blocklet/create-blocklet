@@ -1,10 +1,9 @@
-import fs from 'node:fs';
-import YAML from 'yaml';
+import { getBlockletYAML } from './utils.js';
 
 export default function createMetaPlugin() {
   return {
     name: 'blocklet:meta',
-    transformIndexHtml(html, ctx) {
+    async transformIndexHtml(html, ctx) {
       const tags = [];
       if (ctx?.chunk?.isEntry) {
         let script;
@@ -17,12 +16,10 @@ export default function createMetaPlugin() {
           html = html.replace('</body>', `${script}</body>`);
         }
       }
-      // 如果 index.html 中没有设置 title，则自动注入 blocklet.yml 中的 title
-      if (!/<title>(.*?)<\/title>/.test(html)) {
-        const blockletYamlPath = './blocklet.yml';
-        const blockletYaml = YAML.parse(fs.readFileSync(blockletYamlPath, 'utf8'));
-        const { title } = blockletYaml;
+      const { title } = await getBlockletYAML();
 
+      // 如果 index.html 中没有设置 title，则自动注入 blocklet.yml 中的 title
+      if (title && !/<title>(.*?)<\/title>/.test(html)) {
         tags.push({
           tag: 'title',
           children: title,
