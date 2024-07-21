@@ -1,4 +1,4 @@
-## 0.8.8 (2024-7-21)
+## 0.8.9 (2024-7-21)
 
 - fix: the issue of blocklet dev failure in nest.js template.
 
