@@ -1,3 +1,7 @@
+## 0.8.10 (2024-7-23)
+
+- fix(create-app): print open url in `blocklet init` command
+
 ## 0.8.9 (2024-7-21)
 
 - fix: the issue of blocklet dev failure in nest.js template.
