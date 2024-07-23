@@ -1,7 +1,5 @@
 import { fs, path, $, echo, chalk, which } from 'zx';
 
-$.verbose = false;
-
 // common functions
 export function copy(src, dest) {
   const stat = fs.statSync(src);
@@ -77,7 +75,7 @@ export async function checkCLIInstall(name) {
 export async function checkLerna() {
   const learn = await checkCLIInstall('lerna');
   if (!learn) {
-    console.log(`\n ${chalk.cyan('install lerna...')}`);
+    echo(`\n ${chalk.cyan('install lerna...')}`);
     const output = await $`npm install -g lerna`;
     echo(output);
   }
@@ -86,7 +84,7 @@ export async function checkLerna() {
 export async function checkYarn() {
   const yarn = await checkCLIInstall('yarn');
   if (!yarn) {
-    console.log(`\n ${chalk.cyan('install yarn...')}`);
+    echo(`\n ${chalk.cyan('install yarn...')}`);
     const output = await $`npm install -g yarn`;
     echo(output);
   }

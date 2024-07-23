@@ -1,7 +1,7 @@
 import figlet from 'figlet';
 import terminalLink from 'terminal-link';
 import gradient from 'gradient-string';
-import { chalk } from 'zx';
+import { chalk, echo } from 'zx';
 
 const { green } = chalk;
 
@@ -19,7 +19,7 @@ export function echoBrand({ version = '' }) {
         msgList.push(`${' '.repeat((symbolLen - 20) / 2)}Create Blocklet v${version}\n`);
       }
       msg = gradient(['cyan', 'rgb(0, 111, 150)', 'rgb(0, 246,136)']).multiline(msgList.join('\n'));
-      console.log(msg);
+      echo(msg);
       return resolve(msg);
     });
   });
@@ -32,6 +32,6 @@ export function echoDocument() {
   } else {
     msg = green(`Check documentation in here: ${url}`);
   }
-  console.log('\n', msg, '\n');
+  echo('\n', msg, '\n');
   return msg;
 }

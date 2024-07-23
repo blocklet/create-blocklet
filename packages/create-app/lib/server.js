@@ -2,8 +2,6 @@ import { $, which } from 'zx';
 import semver from 'semver';
 import { BLOCKLET_COMMAND } from './constant.js';
 
-$.verbose = false;
-
 export async function getServerVersion() {
   try {
     const { stdout: output } = await $`${BLOCKLET_COMMAND} --version`;
