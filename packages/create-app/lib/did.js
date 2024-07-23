@@ -36,7 +36,7 @@ export async function getBlockletDidList(monikerList = [], connectUrl = '') {
       const spinner = ora().start();
       childProcess.stdout.on('data', (data) => {
         const message = data.toString('utf8') || '';
-        if (message.includes('Redirecting to')) {
+        if (message.includes('gen-key-pair') && message.includes('__connect_url__')) {
           spinner.text = message.replace('✔ \n', '');
         } else {
           lastMessage = message;
@@ -44,7 +44,7 @@ export async function getBlockletDidList(monikerList = [], connectUrl = '') {
       });
       childProcess.stderr.on('data', (data) => {
         const message = data.toString('utf8') || '';
-        if (!message.includes('Waiting for connect:')) {
+        if (!message.includes('Waiting for connection:')) {
           spinner.fail(message);
         }
       });

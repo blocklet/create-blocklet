@@ -1,8 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import { $ } from 'zx';
 
-$.verbose = false;
-
 export async function getAuthor() {
   try {
     const { stdout: name } = await $`npm config get init.author.name`;

@@ -2,8 +2,6 @@ import { $, which, cd, chalk } from 'zx';
 
 const { yellow } = chalk;
 
-$.verbose = false;
-
 export async function isGitInstalled() {
   try {
     await which('git');

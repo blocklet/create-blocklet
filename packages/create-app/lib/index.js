@@ -3,8 +3,6 @@ import { getAuthor } from './npm.js';
 import { getUserInfo } from './git.js';
 import { getUserInfo as getServerUserInfo } from './server.js';
 
-$.verbose = false;
-
 export async function getOutput(cmd) {
   const { stdout: output } = await $`${cmd}`;
   return output.trim();
