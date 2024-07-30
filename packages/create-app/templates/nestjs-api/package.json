@@ -1,5 +1,6 @@
 {
   "name": "template-nestjs-api",
+  "private": true,
   "version": "0.1.0",
   "description": "",
   "main": "api/main.ts",

@@ -1,5 +1,6 @@
 {
   "name": "template-react-dapp",
+  "private": true,
   "version": "0.1.0",
   "scripts": {
     "dev": "blocklet dev",

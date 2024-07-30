@@ -1,5 +1,6 @@
 {
   "name": "template-todo-list-example",
+  "private": true,
   "version": "0.1.0",
   "scripts": {
     "dev": "blocklet dev",

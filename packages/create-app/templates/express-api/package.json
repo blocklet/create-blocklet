@@ -1,5 +1,6 @@
 {
   "name": "template-express-api",
+  "private": true,
   "version": "0.1.0",
   "description": "",
   "main": "api/index.js",
