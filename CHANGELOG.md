@@ -1,3 +1,8 @@
+## 0.8.11 (2024-7-30)
+
+- chore(create-app): remove preStart in templates
+- chore(create-app): make all template `private: true`
+
 ## 0.8.10 (2024-7-23)
 
 - fix(create-app): print open url in `blocklet init` command
