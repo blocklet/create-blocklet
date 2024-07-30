@@ -20,7 +20,6 @@ files:
   - .next
   - logo.png
   - screenshots
-  - api/hooks/pre-start.js
 interfaces:
   - type: web
     name: publicUrl
@@ -38,11 +37,10 @@ payment:
 timeout:
   start: 60
 requirements:
-  server: '>=1.6.29'
+  server: '>=1.16.28'
   os: '*'
   cpu: '*'
 scripts:
-  preStart: node api/hooks/pre-start.js
   dev: npm run start
 environments:
   - name: CHAIN_HOST

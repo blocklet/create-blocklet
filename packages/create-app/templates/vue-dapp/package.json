@@ -1,5 +1,6 @@
 {
   "name": "template-vue-dapp",
+  "private": true,
   "version": "0.1.0",
   "scripts": {
     "dev": "blocklet dev",
@@ -33,21 +34,21 @@
   },
   "devDependencies": {
     "@blocklet/js-sdk": "^1.16.28",
-    "@vitejs/plugin-vue": "^5.0.5",
+    "@vitejs/plugin-vue": "^5.1.1",
     "bumpp": "^9.4.1",
     "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-vue": "^9.26.0",
     "lint-staged": "^15.2.7",
     "nodemon": "^3.1.4",
     "npm-run-all": "^4.1.5",
-    "prettier": "^3.3.2",
+    "prettier": "^3.3.3",
     "rimraf": "^5.0.7",
     "simple-git-hooks": "^2.11.1",
-    "vite": "^5.3.3",
-    "vite-plugin-blocklet": "^0.8.10",
+    "vite": "^5.3.5",
+    "vite-plugin-blocklet": "^0.8.11",
     "vue": "^3.4.31",
     "zx": "^8.1.4"
   },

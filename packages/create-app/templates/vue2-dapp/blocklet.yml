@@ -19,7 +19,6 @@ logo: logo.png
 files:
   - logo.png
   - screenshots
-  - api/hooks/pre-start.js
   - dist
 interfaces:
   - type: web
@@ -38,11 +37,10 @@ payment:
 timeout:
   start: 60
 requirements:
-  server: '>=1.6.29'
+  server: '>=1.16.28'
   os: '*'
   cpu: '*'
 scripts:
-  preStart: node api/hooks/pre-start.js
   dev: npm run start
 environments:
   - name: CHAIN_HOST
