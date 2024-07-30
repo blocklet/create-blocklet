@@ -6,7 +6,7 @@ keywords:
   - svelte
 group: dapp
 did: ''
-main: dist
+main: api/index.js
 author:
   name: Blocklet
   email: blocklet@arcblock.io
@@ -17,6 +17,7 @@ specVersion: 1.2.8
 version: 0.1.0
 logo: logo.png
 files:
+  - dist
   - logo.png
   - screenshots
 interfaces:
@@ -36,7 +37,7 @@ payment:
 timeout:
   start: 60
 requirements:
-  server: '>=1.6.29'
+  server: '>=1.16.28'
   os: '*'
   cpu: '*'
 scripts:
