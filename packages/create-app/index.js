@@ -146,7 +146,7 @@ async function init() {
   const { version } = await fs.readJSONSync(path.resolve(__dirname, 'package.json'));
   await echoBrand({ version });
 
-  let targetDir = argv._[0] ? String(argv._[0]) : undefined;
+  const targetDir = argv._[0] ? String(argv._[0]) : undefined;
   const inputTemplateName = argv.template;
   const connectUrl = argv?.connectUrl;
   const inputDid = argv.did;
@@ -164,7 +164,8 @@ async function init() {
     return;
   }
 
-  const defaultProjectName = !targetDir ? 'blocklet-project' : targetDir;
+  const defaultProjectName = !targetDir || ['.', './'].includes(targetDir) ? 'blocklet-project' : targetDir;
+  let projectName;
 
   let result = {};
   const authorInfo = await getUser();
@@ -173,12 +174,12 @@ async function init() {
     result = await prompts(
       [
         {
-          type: targetDir ? null : 'text',
+          type: targetDir && !['.', './'].includes(targetDir) ? null : 'text',
           name: 'projectName',
           message: 'Project name:',
           initial: defaultProjectName,
           onState: (state) => {
-            targetDir = state.value.trim() || defaultProjectName;
+            projectName = state.value.trim() || defaultProjectName;
           },
         },
         {
@@ -186,7 +187,7 @@ async function init() {
           name: 'overwrite',
           message: () =>
             `${
-              targetDir === '.' ? 'Current directory' : `Target directory "${targetDir}"`
+              ['.', './'].includes(targetDir) ? 'Current directory' : `Target directory "${targetDir}"`
             } is not empty. Remove existing files and continue?`,
         },
         {
@@ -199,10 +200,10 @@ async function init() {
           name: 'overwriteChecker',
         },
         {
-          type: () => (isValidPackageName(targetDir) ? null : 'text'),
+          type: () => (isValidPackageName(projectName) ? null : 'text'),
           name: 'packageName',
           message: 'Package name:',
-          initial: () => toValidPackageName(targetDir),
+          initial: () => toValidPackageName(projectName) || defaultProjectName,
           validate: (dir) => isValidPackageName(dir) || 'Invalid package.json name',
         },
         ...(inputTemplateName
@@ -299,7 +300,10 @@ async function init() {
 
   const scaffoldSpinner = ora('Creating project...\n').start();
   // name 是用户输入的项目名称
-  const name = packageName || targetDir;
+  let name = packageName || targetDir;
+  if (['.', './'].includes(name)) {
+    name = defaultProjectName;
+  }
 
   // 如果选中了多个则说明是 monorepo 类型的模板
   if (mainBlocklet) {
