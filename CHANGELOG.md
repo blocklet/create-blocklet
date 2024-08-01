@@ -1,3 +1,7 @@
+## 0.8.12 (2024-8-1)
+
+- fix(create-app): add missing deps in todo-list-example
+
 ## 0.8.11 (2024-7-30)
 
 - chore(create-app): remove preStart in templates
