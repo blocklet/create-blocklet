@@ -34,7 +34,15 @@ export function copyDir(srcDir, destDir) {
 }
 
 export function isEmpty(_path) {
-  return fs.readdirSync(_path).length === 0;
+  const fileList = fs.readdirSync(_path);
+  const isEmitNodeModulesEmpty = fileList.filter((x) => x !== 'node_modules').length === 0;
+  let isNodeModulesEmpty = true;
+  try {
+    isNodeModulesEmpty = fs.readdirSync(path.resolve(_path, 'node_modules')).length === 0;
+  } catch {
+    isNodeModulesEmpty = true;
+  }
+  return isEmitNodeModulesEmpty && isNodeModulesEmpty;
 }
 
 export function emptyDir(dir) {
@@ -46,9 +54,16 @@ export function emptyDir(dir) {
     // baseline is Node 12 so can't use rmSync :(
     if (fs.lstatSync(abs).isDirectory()) {
       emptyDir(abs);
-      fs.rmdirSync(abs);
+      if (file !== 'node_modules') {
+        fs.rmdirSync(abs);
+      }
     } else {
-      fs.unlinkSync(abs);
+      // eslint-disable-next-line no-lonely-if
+      if (file !== 'node_modules') {
+        fs.unlinkSync(abs);
+      } else {
+        emptyDir(abs);
+      }
     }
   }
 }
