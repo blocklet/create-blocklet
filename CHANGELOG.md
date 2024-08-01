@@ -1,3 +1,7 @@
+## 0.8.14 (2024-8-1)
+
+- fix(create-app): should ignore .pnpm-store folder
+
 ## 0.8.13 (2024-8-1)
 
 - fix(create-app): ignore empty node_modules folder
