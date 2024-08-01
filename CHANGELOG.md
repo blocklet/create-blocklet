@@ -1,3 +1,8 @@
+## 0.8.13 (2024-8-1)
+
+- fix(create-app): ignore empty node_modules folder
+- fix(create-app): better support for relative path (`.`, `./`)
+
 ## 0.8.12 (2024-8-1)
 
 - fix(create-app): add missing deps in todo-list-example
