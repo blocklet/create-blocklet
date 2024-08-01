@@ -35,7 +35,7 @@ export function copyDir(srcDir, destDir) {
 
 export function isEmpty(_path) {
   const fileList = fs.readdirSync(_path);
-  const isEmitNodeModulesEmpty = fileList.filter((x) => x !== 'node_modules').length === 0;
+  const isEmitNodeModulesEmpty = fileList.filter((x) => !['node_modules', '.pnpm-store'].includes(x)).length === 0;
   let isNodeModulesEmpty = true;
   try {
     isNodeModulesEmpty = fs.readdirSync(path.resolve(_path, 'node_modules')).length === 0;
