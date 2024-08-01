@@ -1,3 +1,7 @@
+## 0.8.15 (2024-8-1)
+
+- fix(create-app): fix `blocklet create` with no name error
+
 ## 0.8.14 (2024-8-1)
 
 - fix(create-app): should ignore .pnpm-store folder

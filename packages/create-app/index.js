@@ -279,7 +279,7 @@ async function init() {
 
   await echoDocument();
 
-  const root = path.join(cwd, targetDir);
+  const root = path.join(cwd, targetDir || projectName || packageName);
 
   if (overwrite) {
     emptyDir(root);
