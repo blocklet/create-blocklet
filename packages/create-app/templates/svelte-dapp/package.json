@@ -17,12 +17,12 @@
     "bump-version": "zx --quiet scripts/bump-version.mjs"
   },
   "dependencies": {
-    "@arcblock/did-auth": "^1.18.126",
+    "@arcblock/did-auth": "^1.18.128",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
     "@blocklet/sdk": "^1.16.28",
-    "@ocap/client": "^1.18.126",
-    "@ocap/mcrypto": "^1.18.126",
-    "@ocap/wallet": "^1.18.126",
+    "@ocap/client": "^1.18.128",
+    "@ocap/mcrypto": "^1.18.128",
+    "@ocap/wallet": "^1.18.128",
     "axios": "^1.7.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
@@ -43,7 +43,7 @@
     "simple-git-hooks": "^2.11.1",
     "svelte": "^4.2.18",
     "vite": "^5.3.5",
-    "vite-plugin-blocklet": "^0.8.11",
+    "vite-plugin-blocklet": "^0.8.12",
     "zx": "^8.1.4"
   },
   "lint-staged": {
