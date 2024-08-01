@@ -33,7 +33,7 @@
   "dependencies": {
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
     "@blocklet/sdk": "^1.16.28",
-    "@ocap/client": "^1.18.126",
+    "@ocap/client": "^1.18.128",
     "dotenv-flow": "^4.1.0",
     "express": "^4.19.2"
   },
