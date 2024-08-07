@@ -1,3 +1,8 @@
+## 0.8.16 (2024-8-7)
+
+- chore(create-app): hide next-dapp temporary
+- fix(create-app): ensure blocklet-name after create
+
 ## 0.8.15 (2024-8-1)
 
 - fix(create-app): fix `blocklet create` with no name error

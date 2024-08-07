@@ -19,7 +19,7 @@
   "dependencies": {
     "@arcblock/did-auth": "^1.18.128",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
-    "@blocklet/sdk": "^1.16.28",
+    "@blocklet/sdk": "^1.16.29",
     "@ocap/client": "^1.18.128",
     "@ocap/mcrypto": "^1.18.128",
     "@ocap/wallet": "^1.18.128",
@@ -31,7 +31,7 @@
     "express-async-errors": "^3.1.1"
   },
   "devDependencies": {
-    "@blocklet/js-sdk": "^1.16.28",
+    "@blocklet/js-sdk": "^1.16.29",
     "@sveltejs/vite-plugin-svelte": "3.1.1",
     "bumpp": "^9.4.1",
     "cross-env": "^7.0.3",
@@ -43,7 +43,7 @@
     "simple-git-hooks": "^2.11.1",
     "svelte": "^4.2.18",
     "vite": "^5.3.5",
-    "vite-plugin-blocklet": "^0.8.15",
+    "vite-plugin-blocklet": "^0.8.16",
     "zx": "^8.1.4"
   },
   "lint-staged": {

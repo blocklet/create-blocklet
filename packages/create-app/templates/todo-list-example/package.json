@@ -40,7 +40,7 @@
   "dependencies": {
     "@arcblock/did-auth": "^1.18.128",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
-    "@blocklet/sdk": "^1.16.28",
+    "@blocklet/sdk": "^1.16.29",
     "@did-space/client": "^0.5.11",
     "@did-space/core": "^0.5.11",
     "@ocap/client": "^1.18.128",
@@ -56,12 +56,12 @@
     "nanoid": "^5.0.7"
   },
   "devDependencies": {
-    "@arcblock/did-connect": "^2.10.12",
+    "@arcblock/did-connect": "^2.10.13",
     "@arcblock/eslint-config": "^0.3.2",
     "@arcblock/eslint-config-ts": "^0.3.2",
-    "@arcblock/ux": "^2.10.12",
-    "@blocklet/js-sdk": "^1.16.28",
-    "@blocklet/ui-react": "^2.10.12",
+    "@arcblock/ux": "^2.10.13",
+    "@blocklet/js-sdk": "^1.16.29",
+    "@blocklet/ui-react": "^2.10.13",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^5.15.21",
@@ -95,7 +95,7 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.5.2",
     "vite": "^5.3.5",
-    "vite-plugin-blocklet": "^0.8.15",
+    "vite-plugin-blocklet": "^0.8.16",
     "vite-plugin-svgr": "^4.2.0",
     "zx": "^8.1.4"
   },

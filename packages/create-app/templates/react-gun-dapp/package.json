@@ -42,7 +42,7 @@
   "dependencies": {
     "@arcblock/did-auth": "^1.18.128",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
-    "@blocklet/sdk": "^1.16.28",
+    "@blocklet/sdk": "^1.16.29",
     "@ocap/client": "^1.18.128",
     "@ocap/mcrypto": "^1.18.128",
     "@ocap/wallet": "^1.18.128",
@@ -70,7 +70,7 @@
     "rimraf": "^5.0.7",
     "simple-git-hooks": "^2.11.1",
     "vite": "^5.3.5",
-    "vite-plugin-blocklet": "^0.8.15",
+    "vite-plugin-blocklet": "^0.8.16",
     "vite-plugin-svgr": "^4.2.0",
     "zx": "^8.1.4"
   },
