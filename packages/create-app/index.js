@@ -300,7 +300,7 @@ async function init() {
 
   const scaffoldSpinner = ora('Creating project...\n').start();
   // name 是用户输入的项目名称
-  let name = packageName || targetDir;
+  let name = projectName || packageName || targetDir;
   if (['.', './'].includes(name)) {
     name = defaultProjectName;
   }
