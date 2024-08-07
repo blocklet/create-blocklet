@@ -1,3 +1,7 @@
+## 0.8.16 (2024-8-7)
+
+- feat(create-app): add vue3 typescript static template
+
 ## 0.8.15 (2024-8-1)
 
 - fix(create-app): fix `blocklet create` with no name error
