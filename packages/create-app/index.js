@@ -69,11 +69,12 @@ const templates = [
     display: '[dapp] svelte + express.js',
     color: magenta,
   },
-  {
-    name: 'nextjs-dapp',
-    display: '[dapp] next.js',
-    color: blue,
-  },
+  // FIXME: @zhanghan add this template in the future
+  // {
+  //   name: 'nextjs-dapp',
+  //   display: '[dapp] next.js',
+  //   color: blue,
+  // },
   // {
   //   name: 'react-gun-dapp',
   //   display: '[dapp] react + gun.js + express.js',
@@ -305,7 +306,7 @@ async function init() {
 
   const scaffoldSpinner = ora('Creating project...\n').start();
   // name 是用户输入的项目名称
-  let name = packageName || targetDir;
+  let name = projectName || packageName || targetDir;
   if (['.', './'].includes(name)) {
     name = defaultProjectName;
   }
