@@ -1,0 +1,12 @@
+{
+  "name": "vue-ts-static",
+  "desc": {
+    "en": "A front-end application skeleton built with Vue 3 and TypeScript",
+    "zh": "一个基于 Vue 3 和 TypeScript 构建的前端应用骨架"
+  },
+  "blockletType": "static",
+  "composable": true,
+  "languages": "TypeScript",
+  "useCase": "Starter",
+  "author": "Blocklet"
+}

@@ -1,0 +1,52 @@
+{
+  "name": "template-vue-ts-static",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "author": {
+    "name": "Blocklet",
+    "email": "blocklet@arcblock.io"
+  },
+  "scripts": {
+    "prepare": "npx simple-git-hooks",
+    "dev": "blocklet dev",
+    "start": "vite --host",
+    "clean": "rimraf .blocklet",
+    "bundle": "npm run clean && vue-tsc -b && vite build && blocklet bundle --zip --create-release",
+    "serve": "vite preview",
+    "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
+    "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
+    "deploy:child": "npm run bundle && blocklet deploy .blocklet/bundle --app-did=<%= did %>",
+    "dev:child": "blocklet dev --component --app-did=<%= did %>",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "bump-version": "zx --quiet scripts/bump-version.mjs",
+    "up:deps": "taze major -I"
+  },
+  "dependencies": {
+    "vue": "^3.4.35"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.24.1",
+    "@blocklet/cli": "^1.16.29",
+    "@vitejs/plugin-vue": "^5.1.2",
+    "bumpp": "^9.4.2",
+    "eslint": "9.5.0",
+    "eslint-plugin-format": "^0.1.2",
+    "lint-staged": "^15.2.8",
+    "rimraf": "^6.0.1",
+    "simple-git-hooks": "^2.11.1",
+    "taze": "^0.16.3",
+    "typescript": "^5.5.4",
+    "vite": "^5.3.5",
+    "vite-plugin-blocklet": "^0.8.17",
+    "vue-tsc": "^2.0.29",
+    "zx": "^8.1.4"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}

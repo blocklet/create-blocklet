@@ -96,6 +96,11 @@ const templates = [
     display: '[static] vue3',
     color: green,
   },
+  {
+    name: 'vue-ts-static',
+    display: '[static] vue3 + typescript',
+    color: green,
+  },
   // {
   //   name: 'vue2-static',
   //   display: '[static] vue2',
@@ -350,6 +355,13 @@ async function init() {
           // eslint-disable-next-line no-continue
           continue;
         }
+        // If it's a `vue-ts-static` template, you don't need to copy the `.prettierrc` files.
+        // Because only `eslint` is used to format and lint the code.
+        if (templateNames.includes('vue-ts-static') && ['.prettierrc'].includes(file)) {
+          // eslint-disable-next-line no-continue
+          continue;
+        }
+
         const targetPath = renameFiles[file]
           ? path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', renameFiles[file])
           : path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);

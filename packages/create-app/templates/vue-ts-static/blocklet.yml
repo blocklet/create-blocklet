@@ -1,25 +1,25 @@
-name: create-blocklet-docs-site
-title: Create Blocklet Docs
+name: template-vue-ts
+title: Blocklet Template Vue + TypeScript
 description: A Blocklet Server blocklet
 keywords:
-  - docsite
+  - blocklet
+  - vue
+  - typescript
 group: static
-did: z8iZua8WdqKwWLW56gbf4Z4R4KLkQHQiEPrHj
+did: '' 
 main: dist
 author:
-  name: LancelotLewis
-  email: lancelot_lewis@163.com
+  name: Blocklet
+  email: blocklet@arcblock.io
 repository:
   type: git
   url: git+https://github.com/blocklet/create-blocklet.git
 specVersion: 1.2.8
-version: 0.8.17
+version: 0.0.1
 logo: logo.png
 files:
   - logo.png
-  - README.md
-  - blocklet.md
-  - hooks
+  - screenshots
 interfaces:
   - type: web
     name: publicUrl
@@ -37,31 +37,13 @@ payment:
 timeout:
   start: 60
 requirements:
-  abtnode: '>=1.6.22'
+  server: '>=1.16.28'
   os: '*'
   cpu: '*'
 scripts:
   dev: npm run start
-  postStart: node hooks/post-start.js
 environments: []
 capabilities:
-  clusterMode: false
-  component: true
   navigation: true
 screenshots: []
 components: []
-navigation:
-  - id: docs
-    title:
-      en: Docs
-      zh: 文档
-    link:
-      en: /en
-      zh: /zh
-  - id: templates
-    title:
-      en: Templates
-      zh: 模板
-    link:
-      en: /en/templates
-      zh: /zh/templates

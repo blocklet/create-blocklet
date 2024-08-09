@@ -1,7 +1,10 @@
+## 0.8.17 (2024-8-9)
+
+- fix(create-app): ensure blocklet-name after create (#351)
+
 ## 0.8.16 (2024-8-7)
 
-- chore(create-app): hide next-dapp temporary
-- fix(create-app): ensure blocklet-name after create
+- feat(create-app): add vue3 typescript static template
 
 ## 0.8.15 (2024-8-1)
 
