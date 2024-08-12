@@ -56,12 +56,12 @@
     "nanoid": "^5.0.7"
   },
   "devDependencies": {
-    "@arcblock/did-connect": "^2.10.13",
+    "@arcblock/did-connect": "^2.10.18",
     "@arcblock/eslint-config": "^0.3.2",
     "@arcblock/eslint-config-ts": "^0.3.2",
-    "@arcblock/ux": "^2.10.13",
+    "@arcblock/ux": "^2.10.18",
     "@blocklet/js-sdk": "^1.16.29",
-    "@blocklet/ui-react": "^2.10.13",
+    "@blocklet/ui-react": "^2.10.18",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^5.15.21",
