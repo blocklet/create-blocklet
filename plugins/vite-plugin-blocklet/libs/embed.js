@@ -78,8 +78,8 @@ export default function createEmbedPlugin(options) {
           return;
         }
 
-        const externals = options?.embedExternals ? options.embedExternals : defaultExternals;
-        const externalMaps = externals.reduce((acc, cur) => {
+        const external = options?.embedExternals ? options.embedExternals : defaultExternals;
+        const externalMaps = external.reduce((acc, cur) => {
           acc[cur] = `window[Symbol.for('embedModules')]['${cur}']`;
           return acc;
         }, {});
@@ -96,6 +96,10 @@ export default function createEmbedPlugin(options) {
               publicDir: false,
               define: {
                 ...cache.config?.define,
+                'process.env': {
+                  NODE_ENV: 'production',
+                  ...(cache.config?.define?.['process.env'] || {}),
+                },
                 [DEFINE_KEY]: true,
               },
               plugins: [
@@ -110,9 +114,8 @@ export default function createEmbedPlugin(options) {
                   fileName: path.parse(ENTRY_FILE).name,
                 },
                 rollupOptions: {
-                  external: externalMaps,
+                  external,
                   output: {
-                    inlineDynamicImports: true,
                     dir: joinURL(cache.config?.build?.outDir || 'dist', outputItem),
                   },
                 },
