@@ -1,3 +1,7 @@
+## 0.9.0 (2024-8-12)
+
+- feat(vite-plugin-blocklet): add embed build plugin
+
 ## 0.8.17 (2024-8-9)
 
 - fix(create-app): ensure blocklet-name after create (#351)
