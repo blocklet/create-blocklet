@@ -2,14 +2,19 @@ import path from 'node:path';
 import { promises as fs } from 'node:fs';
 import { findExportNames } from 'mlly';
 import externalGlobals from 'rollup-plugin-external-globals';
-import { joinURL, withLeadingSlash, withoutLeadingSlash } from 'ufo';
+import { joinURL, withLeadingSlash, withoutLeadingSlash, getQuery, withQuery, parseURL } from 'ufo';
 import { build } from 'vite';
 import pMap from 'p-map';
 
 const DEFINE_KEY = '__UNDER_BLOCKLET_EMBED_BUNDLE__';
-const PROXY_SUFFIX = '?blocklet-embed-proxy';
+const PROXY_SUFFIX = 'blocklet-embed-proxy';
 const ENTRY_FILE = 'index.mjs';
-const defaultExternals = ['react', '@arcblock/ux/lib/Locale/context', '@arcblock/did-connect/lib/Session'];
+const defaultExternals = [
+  // default externals
+  'react',
+  '@arcblock/ux/lib/Locale/context',
+  '@arcblock/did-connect/lib/Session',
+];
 
 /**
  * @param {object} options - The options for the plugin.
@@ -40,20 +45,25 @@ export default function createEmbedPlugin(options) {
     {
       name: 'blocklet:embed:serve',
       apply: 'serve',
+      enforce: 'pre',
       async resolveId(id, importer, options) {
-        if (id.endsWith(PROXY_SUFFIX)) {
+        const queryObject = getQuery(id);
+        if (queryObject[PROXY_SUFFIX] !== undefined) {
           return id;
         }
-        const embedInput = embedList.find((x) => joinURL(withLeadingSlash(x.output), ENTRY_FILE) === id);
-        if (embedInput) {
-          const resolution = await this.resolve(embedInput, importer, options);
-          return `${resolution.id}${PROXY_SUFFIX}`;
+        const entryId = parseURL(id).pathname;
+        const embedInput = embedList.find((x) => joinURL(withLeadingSlash(x.output), ENTRY_FILE) === entryId);
+        console.log('embedInput', embedInput);
+        if (embedInput?.entry) {
+          const resolution = await this.resolve(embedInput.entry, importer, options);
+          return withQuery(resolution.id, { [PROXY_SUFFIX]: '' });
         }
         return null;
       },
       async load(id) {
-        if (id.endsWith(PROXY_SUFFIX)) {
-          const entryId = `${id.slice(0, -PROXY_SUFFIX.length)}`;
+        const queryObject = getQuery(id);
+        if (queryObject[PROXY_SUFFIX] !== undefined) {
+          const entryId = parseURL(id).pathname;
           const fileContent = await fs.readFile(entryId, { encoding: 'utf-8' });
           const names = findExportNames(fileContent);
           let code = `import ${JSON.stringify(entryId)};`;
