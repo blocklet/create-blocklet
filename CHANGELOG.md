@@ -1,3 +1,7 @@
+## 0.9.1 (2024-8-13)
+
+- chore(vite-plugin-blocklet): skip embed plugin while embeds is empty
+
 ## 0.9.0 (2024-8-12)
 
 - feat(vite-plugin-blocklet): add embed build plugin
