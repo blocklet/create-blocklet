@@ -41,6 +41,10 @@ export default function createEmbedPlugin(options) {
     });
   }
 
+  if (inputEmbeds.length === 0) {
+    return [];
+  }
+
   return [
     {
       name: 'blocklet:embed:serve',
