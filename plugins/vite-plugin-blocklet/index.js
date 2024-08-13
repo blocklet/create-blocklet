@@ -5,6 +5,7 @@ import createMetaPlugin from './libs/meta.js';
 import createLoadingPlugin from './libs/loading.js';
 import createDebugPlugin from './libs/debug.js';
 import createExpressPlugin from './libs/express.js';
+import createEmbedPlugin from './libs/embed.js';
 import setupClient from './libs/client.js';
 
 /**
@@ -17,6 +18,7 @@ import setupClient from './libs/client.js';
  * @property {boolean} [disableHmr=false] - Disable hmr plugin.
  * @property {boolean} [disableLoading=false] - Disable loading plugin.
  * @property {boolean} [disableDebug=false] - Disable debug plugin.
+ * @property {boolean} [disableEmbed=false] - Disable embed plugin.
  * @property {import('vite-plugin-node-polyfills').PolyfillOptions} [nodePolyfillsOptions]
  *
  * @property {string} [loadingElementId]
@@ -24,6 +26,10 @@ import setupClient from './libs/client.js';
  * @property {string} [loadingImage]
  * @property {'all'|'mobile'|'desktop'} [debugPlatform='mobile']
  * @property {string} [debugScript]
+ * @param {object} [embeds={}] - The embeds to be built.
+ * @param {array} [embedExternals=['react', '@arcblock/ux/lib/Locale/context', '@arcblock/did-connect/lib/Session']] - The external modules to be used in the embeds.
+ * @param {array} [embedPlugins=[]] - The plugins to be used in the embeds.
+ * @param {number} [embedBuildConcurrency=0] - The plugins to be used in the embeds.
  * @property {'middleware'|'client'|'server'|'wsUpgrade'} [hmrMode='middleware'] - 当未传入任何 option 参数时，会自动变为 middleware 模式
  */
 
@@ -43,6 +49,7 @@ export function createBlockletPlugin(options = {}) {
     disableHmr = false,
     disableLoading = false,
     disableDebug = false,
+    disableEmbed = false,
     nodePolyfillsOptions,
     ...restOptions
   } = options;
@@ -68,6 +75,9 @@ export function createBlockletPlugin(options = {}) {
   if (!disableDebug) {
     plugins.push(createDebugPlugin(restOptions));
   }
+  if (!disableEmbed) {
+    plugins.push(createEmbedPlugin(restOptions));
+  }
 
   return plugins;
 }
@@ -80,5 +90,6 @@ export {
   createLoadingPlugin as createBlockletLoading,
   createDebugPlugin as createBlockletDebug,
   createExpressPlugin as createBlockletExpress,
+  createEmbedPlugin as createBlockletEmbed,
   nodePolyfills,
 };
