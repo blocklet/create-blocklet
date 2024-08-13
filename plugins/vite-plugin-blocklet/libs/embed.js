@@ -57,7 +57,6 @@ export default function createEmbedPlugin(options) {
         }
         const entryId = parseURL(id).pathname;
         const embedInput = embedList.find((x) => joinURL(withLeadingSlash(x.output), ENTRY_FILE) === entryId);
-        console.log('embedInput', embedInput);
         if (embedInput?.entry) {
           const resolution = await this.resolve(embedInput.entry, importer, options);
           return withQuery(resolution.id, { [PROXY_SUFFIX]: '' });
