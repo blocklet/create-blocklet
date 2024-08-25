@@ -1,3 +1,7 @@
+## 0.9.2 (2024-8-25)
+
+- fix: add import sort plugin for prettier
+
 ## 0.9.1 (2024-8-13)
 
 - chore(vite-plugin-blocklet): skip embed plugin while embeds is empty
