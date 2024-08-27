@@ -1,3 +1,7 @@
+## 0.9.3 (2024-8-27)
+
+- fix(vite-plugin-blocklet): should not use top await with export
+
 ## 0.9.2 (2024-8-25)
 
 - fix: add import sort plugin for prettier
