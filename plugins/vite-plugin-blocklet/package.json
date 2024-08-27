@@ -27,9 +27,9 @@
     "rollup": "^4.20.0"
   },
   "dependencies": {
-    "@arcblock/did": "^1.18.128",
-    "@ocap/mcrypto": "^1.18.128",
-    "@ocap/util": "^1.18.128",
+    "@arcblock/did": "^1.18.135",
+    "@ocap/mcrypto": "^1.18.135",
+    "@ocap/util": "^1.18.135",
     "get-port": "^5.1.1",
     "http-proxy-middleware": "^3.0.0",
     "ismobilejs": "^1.1.1",
