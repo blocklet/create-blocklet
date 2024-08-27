@@ -23,7 +23,12 @@ export default function createHmrPlugin(options = {}) {
           replacedCode = replacedCode.replace("const base = __BASE__ || '/';\n", '');
           replacedCode = replacedCode.replace(
             'const socketHost = `${__HMR_HOSTNAME__ || location.hostname}:${__HMR_PORT__}`;',
-            "const base = __BASE__ || '/';\nlet tmpPort = __HMR_PORT__;\nif (window.blocklet) {\ntmpPort = new URL(window.location.href).port + base;\n}\nconst socketHost = `${__HMR_HOSTNAME__ || location.hostname}${tmpPort ? `:${tmpPort}` : ''}`;",
+            `const base = __BASE__ || '/';
+let tmpPort = __HMR_PORT__;
+if (window.blocklet) {
+  tmpPort = new URL(window.location.href).port + base;
+}
+const socketHost = \`\$\{__HMR_HOSTNAME__ || location.hostname\}\$\{tmpPort ? \`:\$\{tmpPort\}\` : ''}\`;`,
           );
           return replacedCode;
         }
@@ -48,8 +53,25 @@ export default function createHmrPlugin(options = {}) {
         if (hmrMode === 'middleware') {
           // 在页面加载时,触发一次 upgrade
           replacedCode = replacedCode.replace(
+            `try {
+  let fallback;`,
+            `async function runInit() {
+try {
+  let fallback;`,
+          );
+          replacedCode = replacedCode.replace(
+            `console.error(\`[vite] failed to connect to websocket (\$\{error\}). \`);
+}`,
+            `console.error(\`[vite] failed to connect to websocket (\$\{error\}). \`);
+}
+}
+runInit();`,
+          );
+          replacedCode = replacedCode.replace(
             'function setupWebSocket(protocol, hostAndPath, onCloseWithoutOpen) {',
-            'async function setupWebSocket(protocol, hostAndPath, onCloseWithoutOpen) {\nawait waitForSuccessfulPing(protocol, hostAndPath);\n',
+            `async function setupWebSocket(protocol, hostAndPath, onCloseWithoutOpen) {
+  await waitForSuccessfulPing(protocol, hostAndPath);
+`,
           );
           replacedCode = replacedCode.replace('fallback = () => {', 'fallback = async () => {');
           replacedCode = replacedCode.replace(/socket = setupWebSocket\(/g, 'socket = await setupWebSocket(');
@@ -60,7 +82,23 @@ export default function createHmrPlugin(options = {}) {
             // 改变刷新页面的判断
             replacedCode = replacedCode.replace(
               'const ping =',
-              "const ping = async () => {\ntry {\nawait fetch(`${pingHostProtocol}://${hostAndPath}`, {\nmode: 'no-cors',\nheaders: {\nAccept: 'text/x-vite-ping'\n}\n}).then(res => {\nif ([404, 502].includes(res.status)) {\nthrow new Error('waiting for server to restart...');\n}\n});\nreturn true;\n} catch {}\nreturn false;\n}\nconst pingBak =",
+              `const ping = async () => {
+      try {
+        await fetch(\`\$\{pingHostProtocol\}://\$\{hostAndPath\}\`, {
+          mode: 'no-cors',
+          headers: {
+            Accept: 'text/x-vite-ping'
+          }
+        }).then((res) => {
+          if ([404, 502].includes(res.status)) {
+            throw new Error('waiting for server to restart...');
+          }
+        });
+        return true;
+      } catch {}
+    return false;
+  }
+  const pingBak =`,
             );
           }
         }
