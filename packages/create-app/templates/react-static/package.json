@@ -51,7 +51,7 @@
     "rimraf": "^5.0.7",
     "simple-git-hooks": "^2.11.1",
     "vite": "^5.3.5",
-    "vite-plugin-blocklet": "^0.9.3",
+    "vite-plugin-blocklet": "^0.9.4",
     "vite-plugin-svgr": "^4.2.0",
     "zx": "^8.1.4"
   },

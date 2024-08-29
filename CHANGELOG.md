@@ -1,3 +1,7 @@
+## 0.9.4 (2024-8-29)
+
+- fix(vite-plugin-blocklet): fix blockletPrefix without trailingSlash cause vite error
+
 ## 0.9.3 (2024-8-27)
 
 - fix(vite-plugin-blocklet): should not use top await with export
