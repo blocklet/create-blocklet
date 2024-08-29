@@ -11,6 +11,7 @@ export default function createConfigPlugin() {
           if (!req.url.startsWith(blockletPrefix)) {
             req.url = joinURL(blockletPrefix || '/', req.url);
           }
+          // NOTICE: 由于传递给 vite 的 base 是带有结尾 slash 的，所以需要确保传递的 vite 的 url 在等于 blockletPrefix 也一定要带有结尾 slash
           if (isEqual(req.url, blockletPrefix)) {
             req.url = withTrailingSlash(req.url);
           }
