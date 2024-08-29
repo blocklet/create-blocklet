@@ -56,12 +56,12 @@
     "nanoid": "^5.0.7"
   },
   "devDependencies": {
-    "@arcblock/did-connect": "^2.10.25",
+    "@arcblock/did-connect": "^2.10.26",
     "@arcblock/eslint-config": "^0.3.2",
     "@arcblock/eslint-config-ts": "^0.3.2",
-    "@arcblock/ux": "^2.10.25",
+    "@arcblock/ux": "^2.10.26",
     "@blocklet/js-sdk": "^1.16.30",
-    "@blocklet/ui-react": "^2.10.25",
+    "@blocklet/ui-react": "^2.10.26",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^5.15.21",
@@ -95,7 +95,7 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.5.2",
     "vite": "^5.3.5",
-    "vite-plugin-blocklet": "^0.9.3",
+    "vite-plugin-blocklet": "^0.9.4",
     "vite-plugin-svgr": "^4.2.0",
     "zx": "^8.1.4"
   },

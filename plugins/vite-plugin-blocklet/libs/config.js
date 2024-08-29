@@ -1,4 +1,4 @@
-import { joinURL, withTrailingSlash } from 'ufo';
+import { isEqual, joinURL, withTrailingSlash } from 'ufo';
 import { toBlockletDid, isInBlocklet, blockletPort, blockletPrefix, getBlockletYAML } from './utils.js';
 
 export default function createConfigPlugin() {
@@ -10,6 +10,10 @@ export default function createConfigPlugin() {
           // blocklet server 会把设置的 base 从请求 url 中移除，所以需要再加回 base
           if (!req.url.startsWith(blockletPrefix)) {
             req.url = joinURL(blockletPrefix || '/', req.url);
+          }
+          // NOTICE: 由于传递给 vite 的 base 是带有结尾 slash 的，所以需要确保传递的 vite 的 url 在等于 blockletPrefix 也一定要带有结尾 slash
+          if (isEqual(req.url, blockletPrefix)) {
+            req.url = withTrailingSlash(req.url);
           }
           return next();
         });
