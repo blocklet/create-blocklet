@@ -1,11 +1,11 @@
 import path from 'path';
 
 import AuthStorage from '@arcblock/did-auth-storage-nedb';
+import { AuthService } from '@blocklet/sdk';
 import getWallet from '@blocklet/sdk/lib/wallet';
 import WalletAuthenticator from '@blocklet/sdk/lib/wallet-authenticator';
 import WalletHandler from '@blocklet/sdk/lib/wallet-handler';
 
-import { AuthService } from '@blocklet/sdk';
 import env from './env';
 
 export const wallet = getWallet();

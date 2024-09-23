@@ -1,14 +1,16 @@
-import { useState, useEffect } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { nanoid } from 'nanoid';
-import isEmpty from 'lodash/isEmpty';
-import type { AxiosResponse } from 'axios';
 
 import './todo-list.css';
+
+import type { AxiosResponse } from 'axios';
+import isEmpty from 'lodash/isEmpty';
+import { nanoid } from 'nanoid';
+import { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+
 import { useSessionContext } from '../contexts/session';
-import RequiredLogin from './required-login';
 import axios from '../libs/api';
+import RequiredLogin from './required-login';
 
 type Todo = {
   id: string;
@@ -30,11 +32,18 @@ function TodoList() {
   const fetchTodoList = async () => {
     try {
       setLoading(true);
+
+      if (!session.user) {
+        setTodoList([]);
+        return;
+      }
+
       const response: AxiosResponse<{ todoList: [] }, any> = await axios.get('/api/todo-list');
       setTodoList(response.data.todoList);
     } catch (error) {
       console.error(error);
       setTodoList([]);
+      toast.error(error.message);
     } finally {
       setLoading(false);
     }
@@ -42,6 +51,7 @@ function TodoList() {
 
   useEffect(() => {
     fetchTodoList();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Step 4: write data to DID Spaces

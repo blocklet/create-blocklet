@@ -1,6 +1,7 @@
-import type { Request, Response } from 'express';
 import { GetObjectCommand, SpaceClient } from '@did-space/client';
 import { streamToString } from '@did-space/core';
+import type { Request, Response } from 'express';
+
 import { authService, wallet } from '../../libs/auth';
 
 export default async function $get(req: Request, res: Response) {
@@ -14,18 +15,20 @@ export default async function $get(req: Request, res: Response) {
     // @ts-ignore
     endpoint: user.didSpace.endpoint,
   });
-  try {
-    const { data } = await spaceClient.send(
-      new GetObjectCommand({
-        key: 'todo-list.json',
-      }),
-    );
-    return res.json({ todoList: JSON.parse(await streamToString(data)) });
-  } catch (error) {
-    if (error.message.includes('404')) {
-      return res.json({ todoList: [] });
-    }
-    console.error(error);
-    return res.status(400).send(error.message);
+
+  const output = await spaceClient.send(
+    new GetObjectCommand({
+      key: 'todo-list.json',
+    }),
+  );
+
+  if (output.statusCode === 200) {
+    return res.json({ todoList: JSON.parse(await streamToString(output.data)) });
   }
+
+  if (output.statusCode === 404) {
+    return res.json({ todoList: [] });
+  }
+
+  return res.status(output.statusCode).send(output.statusMessage);
 }

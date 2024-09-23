@@ -1,8 +1,9 @@
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { LocaleProvider } from '@arcblock/ux/lib/Locale/context';
-import TodoList from './pages/todo-list';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+
 import Layout from './components/layout';
 import { SessionProvider } from './contexts/session';
+import TodoList from './pages/todo-list';
 
 function App() {
   return (
