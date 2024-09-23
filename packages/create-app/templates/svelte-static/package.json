@@ -24,7 +24,7 @@
     "simple-git-hooks": "^2.11.1",
     "svelte": "^4.2.18",
     "vite": "^5.3.5",
-    "vite-plugin-blocklet": "^0.9.4",
+    "vite-plugin-blocklet": "^0.9.5",
     "zx": "^8.1.4"
   },
   "lint-staged": {

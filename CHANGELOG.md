@@ -1,3 +1,7 @@
+## 0.9.5 (2024-9-23)
+
+- fix: todo list template
+
 ## 0.9.4 (2024-8-29)
 
 - fix(vite-plugin-blocklet): fix blockletPrefix without trailingSlash cause vite error
