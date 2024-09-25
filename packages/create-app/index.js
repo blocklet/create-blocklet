@@ -45,6 +45,11 @@ const templates = [
     color: yellow,
   },
   {
+    name: 'did-wallet-dapp',
+    display: '[dapp: did-wallet] react + express + DID Wallet',
+    color: yellow,
+  },
+  {
     name: 'todo-list-example',
     display: '[dapp: todo-list] react + express + typescript + DID Spaces',
     color: yellow,
