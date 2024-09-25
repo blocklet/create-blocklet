@@ -55,6 +55,11 @@ const templates = [
     color: yellow,
   },
   {
+    name: 'did-connect-dapp',
+    display: '[dapp: did-connect] Full stack app (react.js + express.js) with DID Connect integration',
+    color: yellow,
+  },
+  {
     name: 'solidjs-dapp',
     display: '[dapp] solid + express.js',
     color: yellow,
