@@ -21,5 +21,10 @@ module.exports = {
         res.json({ user: null });
       }
     });
+    app.get('/api/data', (req, res) => {
+      res.json({
+        message: 'Hello Blocklet!',
+      });
+    });
   },
 };

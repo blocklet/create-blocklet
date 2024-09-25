@@ -47,10 +47,13 @@ capabilities: {}
 screenshots: []
 components: []
 navigation:
+  - id: home
+    title:
+      en: Home page
+      zh: 首页
+    link: /home
   - id: profile
     title:
       en: Profile page
       zh: Profile 页面
-    link: /
-    section:
-      - userCenter
+    link: /profile

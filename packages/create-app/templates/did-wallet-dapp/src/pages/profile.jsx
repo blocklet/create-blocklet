@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import dayjs from 'dayjs';
-import { Avatar, Box } from '@mui/material';
+import { Avatar, Box, Button, Stack, Typography } from '@mui/material';
 
 import InfoRow from '@arcblock/ux/lib/InfoRow';
 import { useLocaleContext } from '@arcblock/ux/lib/Locale/context';
 import Tag from '@arcblock/ux/lib/Tag';
 import DID from '@arcblock/ux/lib/DID';
-import { UserCenter } from '@blocklet/ui-react';
 import uniqBy from 'lodash/uniqBy';
 
 import { useSessionContext } from '../libs/session';
@@ -22,9 +21,9 @@ const formatToDatetime = (date) => {
 export default function Main() {
   const { session, api } = useSessionContext();
   const [user, setUser] = useState();
+  // function t to translate the text
   const { t } = useLocaleContext();
   const { preferences } = window.blocklet;
-  const { pathname } = window.location;
 
   useEffect(() => {
     getData();
@@ -41,9 +40,10 @@ export default function Main() {
       });
   };
 
+  console.log('user',user)
   const rows = !!user
     ? [
-        { name: t('name'), value: user.fullName },
+        { name: t('name'), value: <Box display="flex" alignItems="center" gap={2}><Avatar src={user.avatar}/>{user.fullName}</Box> },
         preferences.displayAvatar ? { name: t('avatar'), value: <Avatar alt="" src={user.avatar}></Avatar> } : null,
         { name: t('did'), value: <DID did={user.did} showQrcode locale="zh" /> },
         { name: t('email'), value: user.email },
@@ -71,10 +71,9 @@ export default function Main() {
     : [];
 
   return (
-    <>
+    <Stack className="container" sx={{ maxWidth: 500, mt: 8 }}>
       {/* Current Page: {pathname} */}
-      <UserCenter currentTab={pathname}>
-        {!user && (
+      {!user && (
           <Box
             sx={{
               textAlign: 'center',
@@ -82,7 +81,16 @@ export default function Main() {
               color: '#888',
               py: 5,
             }}>
-            You are not logged in yet! {preferences.welcome}
+              <Typography>
+              You are not logged in yet! {preferences.welcome}
+              </Typography>
+            <Button
+              onClick={() => session.login()}
+              style={{ marginTop: 16, textTransform: 'none' }}
+              variant="contained"
+              color="primary">
+              Login
+            </Button>
           </Box>
         )}
         {!!user && (
@@ -99,6 +107,9 @@ export default function Main() {
                 color: 'grey.800',
               },
             }}>
+            <Typography variant="h3" mb={3}>
+              {t('profile')}
+            </Typography>
             {rows.map((row) => {
               if (row.name === t('did')) {
                 return (
@@ -121,7 +132,6 @@ export default function Main() {
             })}
           </Box>
         )}
-      </UserCenter>
-    </>
+    </Stack>
   );
 }

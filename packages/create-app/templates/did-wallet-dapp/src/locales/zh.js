@@ -9,4 +9,5 @@ export default flatten({
   lastLogin: '上次登录',
   createdAt: '创建时间',
   passports: '通行证',
+  profile: '个人信息',
 });

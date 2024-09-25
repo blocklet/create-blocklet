@@ -9,4 +9,5 @@ export default flatten({
   lastLogin: 'Last Login',
   createdAt: 'Created At',
   passports: 'Passports',
+  profile: 'Profile',
 });
