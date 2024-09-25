@@ -5,6 +5,7 @@ import { createAuthServiceSessionContext } from '@arcblock/did-connect/lib/Sessi
 const { SessionProvider, SessionContext, SessionConsumer, withSession } = createAuthServiceSessionContext();
 
 function useSessionContext() {
+  // get session info, see more: https://www.arcblock.io/docs/blocklet-developer/blocklet-sdk#session
   const info = useContext(SessionContext);
   return info;
 }

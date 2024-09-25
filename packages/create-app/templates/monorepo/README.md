@@ -1,6 +1,4 @@
-# Getting Started with Create Blocklet
-
-This project was bootstrapped with [Create Blocklet](https://github.com/blocklet/create-blocklet).
+## PROJECT_DESCRIPTION
 
 This project is a monorepo project, which means that there are multiple blocklet applications.
 
@@ -53,12 +51,14 @@ This project is a monorepo project, which means that there are multiple blocklet
 npm run bump-version
 ```
 
-## Reference
+## Bundle
 
-Our docs site is generate by Create Blocklet itself.
+## Deploy
 
-We use Blocklet Page to write our docs
+## Upload to blocklet store
 
-check more details on
+## Q & A
 
-- [Create Blocklet Docs](https://www.createblocklet.dev/docs/en/intro)
+## Learn More
+
+
