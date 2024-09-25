@@ -7,12 +7,13 @@
     "lint": "eslint src api --ext .mjs,.js,.jsx,.ts,.tsx",
     "lint:fix": "npm run lint -- --fix",
     "start": "cross-env NODE_ENV=development nodemon api/dev.js -w api",
-    "clean": "node scripts/build-clean.js",
+    "clean": "node scripts/build-clean.mjs",
     "bundle": "npm run bundle:client && npm run bundle:api",
     "bundle:client": "vite build",
     "bundle:api": "npm run clean && blocklet bundle --compact --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
+    "prepare": "npx simple-git-hooks",
     "bump-version": "zx --quiet scripts/bump-version.mjs"
   },
   "lint-staged": {
@@ -45,15 +46,11 @@
     "@ocap/mcrypto": "^1.18.135",
     "@ocap/util": "^1.18.135",
     "@ocap/wallet": "^1.18.135",
-    "axios": "^1.7.7",
     "cookie-parser": "^1.4.6",
     "dotenv-flow": "^4.1.0",
     "express": "^4.21.0",
     "express-async-errors": "^3.1.1",
-    "lodash": "^4.17.21",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "rimraf": "^6.0.1"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@arcblock/did-connect": "^2.10.36",
@@ -73,11 +70,17 @@
     "flat": "^6.0.1",
     "lint-staged": "^15.2.10",
     "nodemon": "^3.1.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rimraf": "^5.0.7",
     "prettier": "^3.3.3",
     "prop-types": "^15.8.1",
     "vite": "^5.4.8",
     "vite-plugin-blocklet": "^0.9.5",
     "vite-plugin-svgr": "^4.2.0",
     "zx": "^8.1.8"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
   }
 }
