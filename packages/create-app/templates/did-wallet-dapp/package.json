@@ -35,6 +35,7 @@
     "@arcblock/ux": "^2.10.32",
     "@blocklet/js-sdk": "^1.16.31",
     "@blocklet/ui-react": "^2.10.32",
+    "bumpp": "^9.4.1",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.16.0",
@@ -53,7 +54,8 @@
     "vite-node": "^2.0.2",
     "vite-plugin-blocklet": "^0.9.4",
     "vite-plugin-require": "^1.2.14",
-    "vite-plugin-svgr": "^4.2.0"
+    "vite-plugin-svgr": "^4.2.0",
+    "zx": "^8.1.4"
   },
   "lint-staged": {
     "*.{mjs,js,jsx,ts,tsx}": [
