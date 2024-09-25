@@ -1,3 +1,7 @@
+## 0.9.6 (2024-9-25)
+
+- feat(template): add did wallet dapp template
+
 ## 0.9.5 (2024-9-23)
 
 - fix: todo list template
