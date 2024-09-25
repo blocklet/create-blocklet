@@ -33,6 +33,7 @@
     "express-async-errors": "^3.1.1"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@vitejs/plugin-vue2": "^2.3.1",
     "bumpp": "^9.4.1",
     "cross-env": "^7.0.3",

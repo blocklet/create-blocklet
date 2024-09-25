@@ -16,6 +16,7 @@
     "bump-version": "zx --quiet scripts/bump-version.mjs"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "bumpp": "^9.4.1",
     "lint-staged": "^15.2.7",
     "prettier": "^3.3.3",
