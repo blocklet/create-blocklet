@@ -1,3 +1,10 @@
+## 0.9.8 (2024-9-27)
+
+- chore(deps): update deps
+- chore(create-blocklet): update did-connect-dapp readme
+- chore(create-blocklet): connect-to-store-url should not use spinner style
+- fix(create-blocklet): `blocklet init` exit(1) should break create-flow
+
 ## 0.9.7 (2024-9-26)
 
 - chore(create-blocklet): update templates deps
