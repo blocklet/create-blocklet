@@ -32,22 +32,22 @@
   "license": "ISC",
   "dependencies": {
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
-    "@blocklet/sdk": "^1.16.30",
+    "@blocklet/sdk": "^1.16.31",
     "@ocap/client": "^1.18.135",
     "dotenv-flow": "^4.1.0",
-    "express": "^4.19.2"
+    "express": "^4.21.0"
   },
   "devDependencies": {
     "@arcblock/eslint-config-base": "^0.3.2",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-    "bumpp": "^9.4.1",
-    "eslint": "^8.57.0",
-    "lint-staged": "^15.2.7",
-    "nodemon": "^3.1.4",
+    "bumpp": "^9.5.2",
+    "eslint": "^8.57.1",
+    "lint-staged": "^15.2.10",
+    "nodemon": "^3.1.7",
     "prettier": "^3.3.3",
-    "rimraf": "^5.0.7",
+    "rimraf": "^5.0.10",
     "simple-git-hooks": "^2.11.1",
-    "zx": "^8.1.4"
+    "zx": "^8.1.8"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"

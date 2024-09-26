@@ -24,24 +24,24 @@
     "up:deps": "taze major -I"
   },
   "dependencies": {
-    "vue": "^3.4.35"
+    "vue": "^3.5.8"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.24.1",
-    "@blocklet/cli": "^1.16.30",
-    "@vitejs/plugin-vue": "^5.1.2",
-    "bumpp": "^9.4.2",
+    "@antfu/eslint-config": "^2.27.3",
+    "@blocklet/cli": "^1.16.31",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "bumpp": "^9.5.2",
     "eslint": "9.5.0",
     "eslint-plugin-format": "^0.1.2",
-    "lint-staged": "^15.2.8",
+    "lint-staged": "^15.2.10",
     "rimraf": "^6.0.1",
     "simple-git-hooks": "^2.11.1",
-    "taze": "^0.16.3",
-    "typescript": "^5.5.4",
-    "vite": "^5.3.5",
+    "taze": "^0.16.9",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.8",
     "vite-plugin-blocklet": "^0.9.6",
-    "vue-tsc": "^2.0.29",
-    "zx": "^8.1.4"
+    "vue-tsc": "^2.1.6",
+    "zx": "^8.1.8"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
