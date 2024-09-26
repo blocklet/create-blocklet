@@ -48,9 +48,14 @@ export async function getBlockletDidList(monikerList = [], connectUrl = '') {
           spinner.fail(message);
         }
       });
-      childProcess.on('close', () => {
-        spinner.succeed();
-        resolve(lastMessage);
+      childProcess.on('close', (exitCode) => {
+        if (exitCode !== 0) {
+          spinner.fail();
+          reject(new Error('Failed to connect store'));
+        } else {
+          spinner.succeed();
+          resolve(lastMessage);
+        }
       });
       childProcess.on('error', (err) => {
         spinner.fail();
