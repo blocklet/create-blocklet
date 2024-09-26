@@ -40,7 +40,6 @@ export default function Main() {
       });
   };
 
-  console.log('user',user)
   const rows = !!user
     ? [
         { name: t('name'), value: <Box display="flex" alignItems="center" gap={2}><Avatar src={user.avatar}/>{user.fullName}</Box> },

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Stack } from '@mui/material';
 
 import api from '../../libs/api';
-import './home.css';
+import './index.css';
 
 
 function Home() {
