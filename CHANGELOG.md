@@ -1,3 +1,16 @@
+## 0.9.7 (2024-9-26)
+
+- chore(create-blocklet): update templates deps
+- chore(create-blocklet): remove name in blocklet.yml
+- chore(create-blocklet): tweak template did-connect-dapp
+- chore(create-blocklet): recolor template group (dapp: yellow, static: green, api: blue)
+- chore(create-blocklet): rename did-connect-playground -> did-connect-dapp
+- chore(create-blocklet): update template readme
+- chore(create-blocklet): add @trivago/prettier-plugin-sort-imports
+- chore(create-blocklet): avoid to use top-await
+- feat(create-blocklet): add did-connect-playground template
+- feat(template): add did wallet dapp template (#361)
+
 ## 0.9.6 (2024-9-25)
 
 - feat(template): add did wallet dapp template
