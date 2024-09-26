@@ -12,15 +12,13 @@ const Profile = React.lazy(() => import('./pages/profile'));
 
 function App() {
   return (
-    <div className="app">
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="/" element={<Navigate to="/home" />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
-        </Route>
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
+      </Route>
+    </Routes>
   );
 }
 
