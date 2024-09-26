@@ -18,20 +18,21 @@
     "bump-version": "zx --quiet scripts/bump-version.mjs"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@vitejs/plugin-vue2": "^2.3.1",
-    "bumpp": "^9.4.1",
-    "eslint": "^8.57.0",
+    "bumpp": "^9.5.2",
+    "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-vue": "^9.26.0",
-    "lint-staged": "^15.2.7",
+    "eslint-plugin-vue": "^9.28.0",
+    "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
-    "rimraf": "^5.0.7",
+    "rimraf": "^5.0.10",
     "simple-git-hooks": "^2.11.1",
-    "vite": "^5.3.5",
-    "vite-plugin-blocklet": "^0.9.6",
+    "vite": "^5.4.8",
+    "vite-plugin-blocklet": "^0.9.7",
     "vue": "^2.7.16",
-    "zx": "^8.1.4"
+    "zx": "^8.1.8"
   },
   "lint-staged": {
     "*.{mjs,js,vue}": [

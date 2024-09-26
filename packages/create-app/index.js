@@ -26,7 +26,7 @@ import {
   checkYarn,
 } from './lib/utils.js';
 
-const { yellow, red, green, cyan, blue, bold, magenta } = chalk;
+const { yellow, red, green, cyan, blue, bold } = chalk;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -55,6 +55,11 @@ const templates = [
     color: yellow,
   },
   {
+    name: 'did-connect-dapp',
+    display: '[dapp: did-connect] Full stack app (react.js + express.js) with DID Connect integration',
+    color: yellow,
+  },
+  {
     name: 'solidjs-dapp',
     display: '[dapp] solid + express.js',
     color: yellow,
@@ -62,7 +67,7 @@ const templates = [
   {
     name: 'vue-dapp',
     display: '[dapp] vue3 + express.js',
-    color: green,
+    color: yellow,
   },
   // {
   //   name: 'vue2-dapp',
@@ -72,7 +77,7 @@ const templates = [
   {
     name: 'svelte-dapp',
     display: '[dapp] svelte + express.js',
-    color: magenta,
+    color: yellow,
   },
   // FIXME: @zhanghan add this template in the future
   // {
@@ -89,12 +94,12 @@ const templates = [
   {
     name: 'react-static',
     display: '[static] react',
-    color: yellow,
+    color: green,
   },
   {
     name: 'solidjs-static',
     display: '[static] solidjs',
-    color: yellow,
+    color: green,
   },
   {
     name: 'vue-static',
@@ -114,23 +119,23 @@ const templates = [
   {
     name: 'svelte-static',
     display: '[static] svelte',
-    color: magenta,
+    color: green,
   },
   {
     name: 'html-static',
     display: '[static] html',
-    color: blue,
+    color: green,
   },
   // api
   {
     name: 'express-api',
     display: '[api] express.js',
-    color: yellow,
+    color: blue,
   },
   {
     name: 'nestjs-api',
     display: '[api] nestjs',
-    color: yellow,
+    color: blue,
   },
 ];
 
@@ -461,7 +466,8 @@ async function init() {
     );
     modifyBlockletYaml(
       (yamlConfig) => {
-        yamlConfig.name = mainBlocklet ? finalTemplateName : name;
+        // NOTICE: don't need set name anymore
+        // yamlConfig.name = mainBlocklet ? finalTemplateName : name;
         yamlConfig.title = mainBlocklet ? templateName : name;
       },
       templateDir,

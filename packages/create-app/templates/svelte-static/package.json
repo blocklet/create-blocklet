@@ -16,16 +16,17 @@
     "bump-version": "zx --quiet scripts/bump-version.mjs"
   },
   "devDependencies": {
-    "bumpp": "^9.4.1",
-    "lint-staged": "^15.2.7",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "bumpp": "^9.5.2",
+    "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "prettier-plugin-svelte": "^3.2.6",
-    "rimraf": "^5.0.7",
+    "rimraf": "^5.0.10",
     "simple-git-hooks": "^2.11.1",
-    "svelte": "^4.2.18",
-    "vite": "^5.3.5",
-    "vite-plugin-blocklet": "^0.9.6",
-    "zx": "^8.1.4"
+    "svelte": "^4.2.19",
+    "vite": "^5.4.8",
+    "vite-plugin-blocklet": "^0.9.7",
+    "zx": "^8.1.8"
   },
   "lint-staged": {
     "*.{mjs,js,svelte}": [
