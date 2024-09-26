@@ -1,0 +1,12 @@
+{
+  "name": "did-wallet-dapp",
+  "desc": {
+    "en": "A simple DID wallet dapp",
+    "zh": "一个简单的 DID 钱包 Dapp"
+  },
+  "blockletType": "dapp",
+  "composable": true,
+  "languages": "JavaScript",
+  "useCase": "Starter",
+  "author": "Blocklet"
+}
