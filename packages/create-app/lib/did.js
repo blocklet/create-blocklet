@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import ora from 'ora';
 import Mcrypto from '@ocap/mcrypto';
 import * as jdenticon from 'jdenticon';
@@ -37,7 +36,8 @@ export async function getBlockletDidList(monikerList = [], connectUrl = '') {
       childProcess.stdout.on('data', (data) => {
         const message = data.toString('utf8') || '';
         if (message.includes('gen-key-pair') && message.includes('__connect_url__')) {
-          spinner.text = message.replace('✔ \n', '');
+          spinner.text = 'Waiting for DID Connect to generate a Blocklet DID';
+          console.log(message.replace('✔ \n', ''));
         } else {
           lastMessage = message;
         }
