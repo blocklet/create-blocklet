@@ -466,7 +466,8 @@ async function init() {
     );
     modifyBlockletYaml(
       (yamlConfig) => {
-        yamlConfig.name = mainBlocklet ? finalTemplateName : name;
+        // NOTICE: don't need set name anymore
+        // yamlConfig.name = mainBlocklet ? finalTemplateName : name;
         yamlConfig.title = mainBlocklet ? templateName : name;
       },
       templateDir,
