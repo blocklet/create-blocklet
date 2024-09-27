@@ -1,6 +1,6 @@
 {
   "name": "create-blocklet",
-  "version": "0.9.8",
+  "version": "0.9.9",
   "exports": "./index.js",
   "type": "module",
   "repository": "git@github.com:blocklet/create-blocklet.git",
@@ -38,16 +38,16 @@
     "figlet": "^1.7.0",
     "gradient-string": "^2.0.2",
     "jdenticon": "^3.3.0",
-    "ora": "^8.0.1",
+    "ora": "^8.1.0",
     "prompts": "^2.4.2",
     "semver": "^7.6.3",
     "terminal-link": "^3.0.0",
-    "zx": "^8.1.4"
+    "zx": "^8.1.8"
   },
   "devDependencies": {
     "@arcblock/eslint-config-base": "^0.3.2",
-    "eslint": "^8.57.0",
+    "eslint": "^8.57.1",
     "prettier": "^3.3.3",
-    "vitest": "^2.0.5"
+    "vitest": "^2.1.1"
   }
 }

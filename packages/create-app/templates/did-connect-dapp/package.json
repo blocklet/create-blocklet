@@ -41,7 +41,7 @@
     "@arcblock/did": "^1.18.135",
     "@arcblock/did-auth": "^1.18.135",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
-    "@blocklet/sdk": "^1.16.31",
+    "@blocklet/sdk": "^1.16.32",
     "@ocap/client": "^1.18.135",
     "@ocap/mcrypto": "^1.18.135",
     "@ocap/util": "^1.18.135",
@@ -53,10 +53,10 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@arcblock/did-connect": "^2.10.38",
+    "@arcblock/did-connect": "^2.10.39",
     "@arcblock/eslint-config": "^0.3.2",
-    "@arcblock/ux": "^2.10.38",
-    "@blocklet/ui-react": "^2.10.38",
+    "@arcblock/ux": "^2.10.39",
+    "@blocklet/ui-react": "^2.10.39",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@iconify-icons/material-symbols": "^1.2.58",
@@ -76,7 +76,7 @@
     "react-dom": "~18.2.0",
     "rimraf": "^5.0.10",
     "vite": "^5.4.8",
-    "vite-plugin-blocklet": "^0.9.8",
+    "vite-plugin-blocklet": "^0.9.9",
     "vite-plugin-svgr": "^4.2.0",
     "zx": "^8.1.8"
   },
