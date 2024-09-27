@@ -24,11 +24,11 @@
     "up:deps": "taze major -I"
   },
   "dependencies": {
-    "vue": "^3.5.9"
+    "vue": "^3.5.10"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.27.3",
-    "@blocklet/cli": "^1.16.31",
+    "@blocklet/cli": "^1.16.32",
     "@vitejs/plugin-vue": "^5.1.4",
     "bumpp": "^9.5.2",
     "eslint": "9.5.0",
