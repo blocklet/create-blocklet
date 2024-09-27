@@ -1,3 +1,8 @@
+## 0.9.9 (2024-9-28)
+
+- chore(deps): update deps
+- chore(create-blocklet): polish did-connect-dapp template
+
 ## 0.9.8 (2024-9-27)
 
 - chore(deps): update deps
