@@ -44,26 +44,34 @@ export default function RequestProfile() {
         result ? (
           <>
             <Avatar variant="circle" src={result.avatar} did={result.did} size={60} />
-            <InfoRow
-              icon={<Icon fontSize={18} icon={AccountBoxOutline} />}
-              name={t('claims.requestProfile.result.fullName')}
-              value={result.fullName}
-            />
-            <InfoRow
-              icon={<Icon fontSize={18} icon={MailOutlineRoundedIcon} />}
-              name={t('claims.requestProfile.result.email')}
-              value={result.email}
-            />
-            <InfoRow
-              icon={<Icon fontSize={18} icon={PhoneOutlineRoundedIcon} />}
-              name={t('claims.requestProfile.result.phone')}
-              value={result.phone}
-            />
-            <InfoRow
-              icon={<Icon fontSize={18} icon={CakeOutlineRoundedIcon} />}
-              name={t('claims.requestProfile.result.birthday')}
-              value={result.birthday}
-            />
+            {result.fullName && (
+              <InfoRow
+                icon={<Icon fontSize={18} icon={AccountBoxOutline} />}
+                name={t('claims.requestProfile.result.fullName')}
+                value={result.fullName}
+              />
+            )}
+            {result.email && (
+              <InfoRow
+                icon={<Icon fontSize={18} icon={MailOutlineRoundedIcon} />}
+                name={t('claims.requestProfile.result.email')}
+                value={result.email}
+              />
+            )}
+            {result.phone && (
+              <InfoRow
+                icon={<Icon fontSize={18} icon={PhoneOutlineRoundedIcon} />}
+                name={t('claims.requestProfile.result.phone')}
+                value={result.phone}
+              />
+            )}
+            {result.birthday && (
+              <InfoRow
+                icon={<Icon fontSize={18} icon={CakeOutlineRoundedIcon} />}
+                name={t('claims.requestProfile.result.birthday')}
+                value={result.birthday}
+              />
+            )}
           </>
         ) : null
       }
