@@ -11,25 +11,27 @@ const action = 'request-multiple-steps';
 
 module.exports = {
   action,
-  claims: [
-    {
-      signature: () => {
-        return {
-          type: 'mime:text/plain',
-          data: getRandomMessage(),
-          description: 'Please sign the text',
-        };
+  onConnect() {
+    return [
+      {
+        signature: () => {
+          return {
+            type: 'mime:text/plain',
+            data: getRandomMessage(),
+            description: 'Please sign the text',
+          };
+        },
       },
-    },
-    {
-      signature: () => {
-        return {
-          description: 'Please sign the digest',
-          digest: toBase58(hasher(data, 1)),
-        };
+      {
+        signature: () => {
+          return {
+            description: 'Please sign the digest',
+            digest: toBase58(hasher(data, 1)),
+          };
+        },
       },
-    },
-  ],
+    ];
+  },
 
   onAuth: ({ userDid, userPk, claims, step, req, updateSession }) => {
     logger.info(`${action}.onAuth`, { step, userPk, userDid, claims });

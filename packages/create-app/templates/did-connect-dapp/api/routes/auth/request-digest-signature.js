@@ -12,13 +12,15 @@ const action = 'request-digest-signature';
 
 module.exports = {
   action,
-  claims: {
-    signature: () => {
-      return {
-        description: 'Please sign the digest',
-        digest: toBase58(hasher(data, 1)),
-      };
-    },
+  onConnect() {
+    return {
+      signature: () => {
+        return {
+          description: 'Please sign the digest',
+          digest: toBase58(hasher(data, 1)),
+        };
+      },
+    };
   },
 
   onAuth: ({ userDid, userPk, claims, updateSession }) => {

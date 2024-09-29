@@ -12,34 +12,36 @@ const action = 'request-transaction-signature';
 
 module.exports = {
   action,
-  claims: {
-    signature: async ({ userPk, userDid }) => {
-      const value = await client.fromTokenToUnit(1);
-      const type = toTypeInfo(userDid);
+  onConnect() {
+    return {
+      signature: async ({ userPk, userDid }) => {
+        const value = await client.fromTokenToUnit(1);
+        const type = toTypeInfo(userDid);
 
-      const encoded = await client.encodeTransferV2Tx({
-        tx: {
-          itx: {
-            to: wallet.address,
-            tokens: [
-              {
-                address: env.localTokenId,
-                value: value.toString(),
-              },
-            ],
+        const encoded = await client.encodeTransferV2Tx({
+          tx: {
+            itx: {
+              to: wallet.address,
+              tokens: [
+                {
+                  address: env.localTokenId,
+                  value: value.toString(),
+                },
+              ],
+            },
           },
-        },
-        wallet: fromPublicKey(userPk, type),
-      });
+          wallet: fromPublicKey(userPk, type),
+        });
 
-      const origin = toBase58(encoded.buffer);
+        const origin = toBase58(encoded.buffer);
 
-      return {
-        description: 'Please sign the transaction',
-        type: 'fg:t:transaction',
-        data: origin,
-      };
-    },
+        return {
+          description: 'Please sign the transaction',
+          type: 'fg:t:transaction',
+          data: origin,
+        };
+      },
+    };
   },
 
   onAuth: ({ userDid, userPk, claims, updateSession }) => {

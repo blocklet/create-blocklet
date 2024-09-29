@@ -11,26 +11,28 @@ const action = 'request-multiple-claims';
 
 module.exports = {
   action,
-  claims: {
-    signText: [
-      'signature',
-      () => {
-        return {
-          type: 'mime:text/plain',
-          data: getRandomMessage(),
-          description: 'Please sign the text',
-        };
-      },
-    ],
-    signDigest: [
-      'signature',
-      () => {
-        return {
-          description: 'Please sign the digest',
-          digest: toBase58(hasher(data, 1)),
-        };
-      },
-    ],
+  onConnect() {
+    return {
+      signText: [
+        'signature',
+        () => {
+          return {
+            type: 'mime:text/plain',
+            data: getRandomMessage(),
+            description: 'Please sign the text',
+          };
+        },
+      ],
+      signDigest: [
+        'signature',
+        () => {
+          return {
+            description: 'Please sign the digest',
+            digest: toBase58(hasher(data, 1)),
+          };
+        },
+      ],
+    };
   },
 
   onAuth: ({ userDid, userPk, claims, updateSession }) => {

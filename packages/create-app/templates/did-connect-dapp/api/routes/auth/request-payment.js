@@ -10,29 +10,31 @@ const logger = require('../../libs/logger');
 const action = 'request-payment';
 module.exports = {
   action,
-  claims: {
-    signature: async ({ userDid, userPk }) => {
-      const amount = 1;
-      const token = await getTokenInfo();
+  onConnect() {
+    return {
+      signature: async ({ userDid, userPk }) => {
+        const amount = 1;
+        const token = await getTokenInfo();
 
-      return {
-        type: 'TransferV2Tx',
-        data: {
-          from: userDid,
-          pk: userPk,
-          itx: {
-            to: wallet.address,
-            tokens: [
-              {
-                address: env.localTokenId,
-                value: fromTokenToUnit(amount, token.decimal).toString(),
-              },
-            ],
+        return {
+          type: 'TransferV2Tx',
+          data: {
+            from: userDid,
+            pk: userPk,
+            itx: {
+              to: wallet.address,
+              tokens: [
+                {
+                  address: env.localTokenId,
+                  value: fromTokenToUnit(amount, token.decimal).toString(),
+                },
+              ],
+            },
           },
-        },
-        description: `Please pay ${amount} ${token.symbol} to application`,
-      };
-    },
+          description: `Please pay ${amount} ${token.symbol} to application`,
+        };
+      },
+    };
   },
   onAuth: async ({ req, claims, userDid, updateSession }) => {
     try {

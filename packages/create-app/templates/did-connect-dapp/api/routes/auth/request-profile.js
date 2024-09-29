@@ -4,11 +4,13 @@ const logger = require('../../libs/logger');
 const action = 'request-profile';
 module.exports = {
   action,
-  claims: {
-    profile: () => ({
-      description: 'Please provide your full profile',
-      fields: ['fullName', 'email', 'phone', 'signature', 'avatar', 'birthday'],
-    }),
+  onConnect() {
+    return {
+      profile: () => ({
+        description: 'Please provide your full profile',
+        fields: ['fullName', 'email', 'phone', 'signature', 'avatar', 'birthday'],
+      }),
+    };
   },
 
   onAuth: ({ userDid, userPk, claims, updateSession }) => {

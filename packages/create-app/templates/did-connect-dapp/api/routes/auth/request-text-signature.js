@@ -9,16 +9,18 @@ const { getRandomMessage } = require('../../libs/utils');
 const action = 'request-text-signature';
 module.exports = {
   action,
-  claims: {
-    signature: () => {
-      const data = getRandomMessage();
+  onConnect() {
+    return {
+      signature: () => {
+        const data = getRandomMessage();
 
-      return {
-        description: 'Please sign the text',
-        type: 'mime:text/plain',
-        data,
-      };
-    },
+        return {
+          description: 'Please sign the text',
+          type: 'mime:text/plain',
+          data,
+        };
+      },
+    };
   },
 
   onAuth: ({ userDid, userPk, claims, updateSession }) => {
