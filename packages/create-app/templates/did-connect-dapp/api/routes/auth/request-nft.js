@@ -46,21 +46,23 @@ const action = 'request-nft';
 
 module.exports = {
   action,
-  claims: {
-    assetOrVC: () => {
-      return {
-        description: 'Please provide NFT or VC to continue',
-        filters: [
-          {
-            type: ['NFTBadge', 'NFTCertificate'],
-            trustedIssuers: [
-              // wallet.address,
-              'zNKXAEjKYXEnf2hf18NjTQsa1JajA9gJ3haY',
-            ],
-          },
-        ],
-      };
-    },
+  onConnect() {
+    return {
+      assetOrVC: () => {
+        return {
+          description: 'Please provide NFT or VC to continue',
+          filters: [
+            {
+              type: ['NFTBadge', 'NFTCertificate'],
+              trustedIssuers: [
+                // wallet.address,
+                'zNKXAEjKYXEnf2hf18NjTQsa1JajA9gJ3haY',
+              ],
+            },
+          ],
+        };
+      },
+    };
   },
   onAuth: async ({ claims, challenge, updateSession }) => {
     const asset = claims.find((x) => x.type === 'asset');
