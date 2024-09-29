@@ -1,3 +1,7 @@
+## 0.9.10 (2024-9-29)
+
+- chore(create-blocklet): use onConnect in did-connect-dapp
+
 ## 0.9.9 (2024-9-28)
 
 - chore(deps): update deps
