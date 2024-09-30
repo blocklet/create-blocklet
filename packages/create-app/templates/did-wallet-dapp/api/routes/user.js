@@ -5,7 +5,7 @@ const authClient = new AuthService();
 
 module.exports = {
   init(app) {
-    // middlewares.user() is used to get the user info from the session, see more: https://www.arcblock.io/docs/blocklet-developer/blocklet-sdk#session
+    // middlewares.session() is used to get the user info from the session, see more: https://www.arcblock.io/docs/blocklet-developer/blocklet-sdk#session
     app.get('/api/user', middlewares.session(), async (req, res) => {
       if (!req.user) {
         res.json({ user: null });
