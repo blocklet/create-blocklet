@@ -1,3 +1,8 @@
+## 0.9.11 (2024-9-30)
+
+- chore(deps): update deps
+- chore(create-blocklet): use middlewares.session replace middlewares.user
+
 ## 0.9.10 (2024-9-29)
 
 - chore(create-blocklet): use onConnect in did-connect-dapp
