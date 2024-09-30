@@ -75,6 +75,7 @@
     "react": "~18.2.0",
     "react-dom": "~18.2.0",
     "rimraf": "^5.0.10",
+    "simple-git-hooks": "^2.11.1",
     "vite": "^5.4.8",
     "vite-plugin-blocklet": "^0.9.10",
     "vite-plugin-svgr": "^4.2.0",
