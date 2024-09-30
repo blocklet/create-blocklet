@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-    "bumpp": "^9.5.2",
+    "bumpp": "^9.6.1",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "prettier-plugin-svelte": "^3.2.7",
@@ -25,7 +25,7 @@
     "simple-git-hooks": "^2.11.1",
     "svelte": "^4.2.19",
     "vite": "^5.4.8",
-    "vite-plugin-blocklet": "^0.9.10",
+    "vite-plugin-blocklet": "^0.9.11",
     "zx": "^8.1.8"
   },
   "lint-staged": {

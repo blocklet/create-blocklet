@@ -41,7 +41,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "bumpp": "^9.5.2",
+    "bumpp": "^9.6.1",
     "eslint": "8.57.0",
     "eslint-config-next": "14.2.4",
     "lint-staged": "^15.2.10",

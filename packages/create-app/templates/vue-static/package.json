@@ -20,7 +20,7 @@
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@vitejs/plugin-vue": "^5.1.4",
-    "bumpp": "^9.5.2",
+    "bumpp": "^9.6.1",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
@@ -30,7 +30,7 @@
     "rimraf": "^5.0.10",
     "simple-git-hooks": "^2.11.1",
     "vite": "^5.4.8",
-    "vite-plugin-blocklet": "^0.9.10",
+    "vite-plugin-blocklet": "^0.9.11",
     "vue": "^3.5.10",
     "zx": "^8.1.8"
   },
