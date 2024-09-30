@@ -30,7 +30,7 @@
     "@antfu/eslint-config": "^2.27.3",
     "@blocklet/cli": "^1.16.32",
     "@vitejs/plugin-vue": "^5.1.4",
-    "bumpp": "^9.5.2",
+    "bumpp": "^9.6.1",
     "eslint": "9.5.0",
     "eslint-plugin-format": "^0.1.2",
     "lint-staged": "^15.2.10",

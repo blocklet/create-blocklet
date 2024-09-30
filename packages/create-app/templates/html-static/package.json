@@ -17,7 +17,7 @@
   "license": "ISC",
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-    "bumpp": "^9.5.2",
+    "bumpp": "^9.6.1",
     "prettier": "^3.3.3",
     "rimraf": "^5.0.10",
     "zx": "^8.1.8"
