@@ -41,7 +41,7 @@
     "@arcblock/did-auth": "^1.18.135",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
     "@blocklet/sdk": "^1.16.32",
-    "@did-space/client": "^0.5.47",
+    "@blocklet/did-space-js": "^0.5.58",
     "@did-space/core": "^0.5.47",
     "@ocap/client": "^1.18.135",
     "@ocap/mcrypto": "^1.18.135",
