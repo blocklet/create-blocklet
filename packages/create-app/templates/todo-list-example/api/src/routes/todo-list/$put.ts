@@ -1,4 +1,4 @@
-import { PutObjectCommand, SpaceClient } from '@did-space/client';
+import { PutObjectCommand, SpaceClient } from '@blocklet/did-space-js';
 import type { Request, Response } from 'express';
 import isArray from 'lodash/isArray';
 

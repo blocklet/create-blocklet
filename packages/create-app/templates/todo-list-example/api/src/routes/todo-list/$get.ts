@@ -1,4 +1,4 @@
-import { GetObjectCommand, SpaceClient } from '@did-space/client';
+import { GetObjectCommand, SpaceClient } from '@blocklet/did-space-js';
 import { streamToString } from '@did-space/core';
 import type { Request, Response } from 'express';
 
