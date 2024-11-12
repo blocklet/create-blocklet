@@ -33,12 +33,12 @@
   "dependencies": {
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
     "@blocklet/sdk": "^1.16.32",
-    "@ocap/client": "^1.18.135",
+    "@ocap/client": "^1.18.139",
     "dotenv-flow": "^4.1.0",
     "express": "^4.21.0"
   },
   "devDependencies": {
-    "@arcblock/eslint-config-base": "^0.3.2",
+    "@arcblock/eslint-config-base": "^0.3.3",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "bumpp": "^9.6.1",
     "eslint": "^8.57.1",

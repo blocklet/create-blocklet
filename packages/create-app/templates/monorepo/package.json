@@ -19,7 +19,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@arcblock/eslint-config": "^0.3.2",
+    "@arcblock/eslint-config": "^0.3.3",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "bumpp": "^9.6.1",
     "eslint": "^8.57.1",
