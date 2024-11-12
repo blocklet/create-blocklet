@@ -22,14 +22,14 @@ importers:
   packages/create-app:
     dependencies:
       '@arcblock/did':
-        specifier: ^1.18.135
-        version: 1.18.135
+        specifier: ^1.18.139
+        version: 1.18.139
       '@ocap/mcrypto':
-        specifier: ^1.18.135
-        version: 1.18.135
+        specifier: ^1.18.139
+        version: 1.18.139
       '@ocap/util':
-        specifier: ^1.18.135
-        version: 1.18.135
+        specifier: ^1.18.139
+        version: 1.18.139
       boxen:
         specifier: ^7.1.1
         version: 7.1.1
@@ -65,8 +65,8 @@ importers:
         version: 8.1.8
     devDependencies:
       '@arcblock/eslint-config-base':
-        specifier: ^0.3.2
-        version: 0.3.2(@typescript-eslint/eslint-plugin@7.14.1(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.3.3))(eslint@8.57.1)(typescript@5.3.3))(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.3.3))(eslint@8.57.1)(prettier@3.3.3)(typescript@5.3.3)
+        specifier: ^0.3.3
+        version: 0.3.3(@typescript-eslint/eslint-plugin@7.14.1(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.3.3))(eslint@8.57.1)(typescript@5.3.3))(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.3.3))(eslint@8.57.1)(prettier@3.3.3)(typescript@5.3.3)
       eslint:
         specifier: ^8.57.1
         version: 8.57.1
@@ -80,14 +80,14 @@ importers:
   plugins/vite-plugin-blocklet:
     dependencies:
       '@arcblock/did':
-        specifier: ^1.18.135
-        version: 1.18.135
+        specifier: ^1.18.139
+        version: 1.18.139
       '@ocap/mcrypto':
-        specifier: ^1.18.135
-        version: 1.18.135
+        specifier: ^1.18.139
+        version: 1.18.139
       '@ocap/util':
-        specifier: ^1.18.135
-        version: 1.18.135
+        specifier: ^1.18.139
+        version: 1.18.139
       get-port:
         specifier: ^5.1.1
         version: 5.1.1
@@ -144,11 +144,11 @@ packages:
     resolution: {integrity: sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==}
     engines: {node: '>=0.10.0'}
 
-  '@arcblock/did@1.18.135':
-    resolution: {integrity: sha512-lnc1eVtF3g6NQv344zy9st3KnI0iCKCM/N7ohwLn/aUYGq2SGjkEU0z6565SlX3f6w9QwIiInuVHFDTO+N7Log==}
+  '@arcblock/did@1.18.139':
+    resolution: {integrity: sha512-xoQNj6niYdfLymhzQsE4NyyllxCDqO0CllSlM0sRlIk8Uas5DcIwHfuhNGweAlPDdFtPD82iA9p0w9IRoYlw9Q==}
 
-  '@arcblock/eslint-config-base@0.3.2':
-    resolution: {integrity: sha512-Af66GNE2o+v2H7O0D8gpoCQ7usLadGGiun8zY830hPb5QqQmv2PO9x3/BHxrOJaCSeAgrTURc8Pyi9OMaItpuA==}
+  '@arcblock/eslint-config-base@0.3.3':
+    resolution: {integrity: sha512-90rIO1WL1t54UsHBRCC5211Psd9RLTFcw5SQPKFLUWtcXFV2dg4hGzRoJfqXfkzX9tHAcaj3K1X5aqojVOUFTw==}
     peerDependencies:
       eslint: ^8.57.0
       prettier: ^3.3.2
@@ -360,11 +360,11 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@ocap/mcrypto@1.18.135':
-    resolution: {integrity: sha512-qP7O5vj/xX7ElGx3Tlb8PpLdBxzO4+Ifu0qMEhyM81N+/rMYisIwswQ3URfgwsiAHTxuVJ8mIJU4LWRH4dvgsw==}
+  '@ocap/mcrypto@1.18.139':
+    resolution: {integrity: sha512-8Nw+HBGXjbn4L2N4ZTUui6T7zMHSSVF/4eaZZsfqt3/pmC61QNbJbO869/O7JUnC0bJ3WZe6fUAvZ8EjkhCH5w==}
 
-  '@ocap/util@1.18.135':
-    resolution: {integrity: sha512-y+lUvECvRL+fWsnojWO/201bWoGHpMG4T7czjD4Yew14WAjZPbCgexWiVl2msCBqES/9htI+iGAOxaLAzygO4Q==}
+  '@ocap/util@1.18.139':
+    resolution: {integrity: sha512-uf4k4iGe4cS5OyUGlV/voYIt8RIBnjyzapvEa37/+VYIrNbufjERMxnUgFTXScZ6nQU+Eq6uhPIC/ZHeMFip2g==}
 
   '@pkgr/core@0.1.1':
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
@@ -1181,6 +1181,7 @@ packages:
   eslint@8.57.1:
     resolution: {integrity: sha512-ypowyDxpVSYpkXr9WPv2PAZCtNip1Mv5KTW0SCurXv/9iOpcrH9PaqUElksqEB6pChqHGDRCFTyrZlGhnLNGiA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@10.1.0:
@@ -2574,17 +2575,17 @@ snapshots:
 
   '@aashutoshrathi/word-wrap@1.2.6': {}
 
-  '@arcblock/did@1.18.135':
+  '@arcblock/did@1.18.139':
     dependencies:
-      '@ocap/mcrypto': 1.18.135
-      '@ocap/util': 1.18.135
+      '@ocap/mcrypto': 1.18.139
+      '@ocap/util': 1.18.139
       bn.js: 5.2.1
       debug: 4.3.6
       lodash: 4.17.21
     transitivePeerDependencies:
       - supports-color
 
-  '@arcblock/eslint-config-base@0.3.2(@typescript-eslint/eslint-plugin@7.14.1(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.3.3))(eslint@8.57.1)(typescript@5.3.3))(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.3.3))(eslint@8.57.1)(prettier@3.3.3)(typescript@5.3.3)':
+  '@arcblock/eslint-config-base@0.3.3(@typescript-eslint/eslint-plugin@7.14.1(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.3.3))(eslint@8.57.1)(typescript@5.3.3))(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.3.3))(eslint@8.57.1)(prettier@3.3.3)(typescript@5.3.3)':
     dependencies:
       eslint: 8.57.1
       eslint-config-airbnb-base: 15.0.0(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.3.3))(eslint@8.57.1))(eslint@8.57.1)
@@ -2757,9 +2758,9 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
 
-  '@ocap/mcrypto@1.18.135':
+  '@ocap/mcrypto@1.18.139':
     dependencies:
-      '@ocap/util': 1.18.135
+      '@ocap/util': 1.18.139
       bn.js: 5.2.1
       crypto-js: 4.2.0
       elliptic: 6.5.4
@@ -2770,7 +2771,7 @@ snapshots:
       randombytes: 2.1.0
       tweetnacl: 1.0.3
 
-  '@ocap/util@1.18.135':
+  '@ocap/util@1.18.139':
     dependencies:
       base64-url: 2.3.3
       bn.js: 5.2.1

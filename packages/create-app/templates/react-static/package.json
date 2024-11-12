@@ -39,7 +39,7 @@
     ]
   },
   "devDependencies": {
-    "@arcblock/eslint-config": "^0.3.2",
+    "@arcblock/eslint-config": "^0.3.3",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@vitejs/plugin-react": "^4.3.2",
     "bumpp": "^9.6.1",
@@ -52,7 +52,7 @@
     "rimraf": "^5.0.10",
     "simple-git-hooks": "^2.11.1",
     "vite": "^5.4.8",
-    "vite-plugin-blocklet": "^0.9.12",
+    "vite-plugin-blocklet": "^0.9.13",
     "vite-plugin-svgr": "^4.2.0",
     "zx": "^8.1.8"
   },

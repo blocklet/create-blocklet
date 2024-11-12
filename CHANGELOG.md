@@ -1,3 +1,8 @@
+## 0.9.13 (2024-11-13)
+
+- chore(deps): update deps
+- fix(create-app): fix typo
+
 ## 0.9.12 (2024-10-31)
 
 - refactor: rename @did-space/client to @blocklet/did-space-js
