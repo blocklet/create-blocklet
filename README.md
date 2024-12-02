@@ -37,3 +37,18 @@ TBD
 pnpm install
 
 ```
+
+## Run the command
+
+```bash
+node packages/create-app/index.js test-demo
+```
+
+## Change Blocklet Server Command
+
+Change the file `packages/create-app/lib/constant.js`
+
+```
+// your command alias
+export const BLOCKLET_COMMAND = 'bn';
+```

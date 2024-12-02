@@ -11,6 +11,10 @@ export function copy(src, dest) {
   }
 }
 
+export function isValidName(name) {
+  return /^[a-zA-Z0-9][-a-zA-Z0-9_]{2,128}$/.test(name);
+}
+
 export function isValidPackageName(projectName) {
   return /^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/.test(projectName);
 }

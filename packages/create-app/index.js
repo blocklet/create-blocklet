@@ -1,29 +1,30 @@
 #!/usr/bin/env node
 
-import ejs from 'ejs';
+import { isValid, toTypeInfo, types } from '@arcblock/did';
 import boxen from 'boxen';
-import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
-import { cd, argv, fs, YAML, chalk, path } from 'zx';
+import ejs from 'ejs';
+import * as envfile from 'envfile';
 import ora from 'ora';
 import prompts from 'prompts';
-import { isValid, toTypeInfo, types } from '@arcblock/did';
-import * as envfile from 'envfile';
+import { fileURLToPath } from 'url';
+import { argv, cd, chalk, fs, path, YAML } from 'zx';
 
 import { echoBrand, echoDocument } from './lib/arcblock.js';
-import { getUser } from './lib/index.js';
-import { checkServerInstalled, checkServerRunning, checkSatisfiedVersion, getServerDirectory } from './lib/server.js';
 import { getBlockletDidList } from './lib/did.js';
 import { initGitRepo } from './lib/git.js';
+import { getUser } from './lib/index.js';
+import { checkSatisfiedVersion, checkServerInstalled, checkServerRunning, getServerDirectory } from './lib/server.js';
 import {
-  copy,
-  emptyDir,
-  isEmpty,
-  isValidPackageName,
-  toValidPackageName,
-  fuzzyQuery,
   checkLerna,
   checkYarn,
+  copy,
+  emptyDir,
+  fuzzyQuery,
+  isEmpty,
+  isValidName,
+  isValidPackageName,
+  toValidPackageName,
 } from './lib/utils.js';
 
 const { yellow, red, green, cyan, blue, bold } = chalk;
@@ -247,18 +248,21 @@ async function init() {
 
   let result = {};
   const authorInfo = await getUser();
+  const transferName = toValidPackageName(defaultProjectName);
 
   try {
     result = await prompts(
       [
         {
-          type: targetDir && !['.', './'].includes(targetDir) ? null : 'text',
+          type: isValidName(defaultProjectName) && targetDir && !['.', './'].includes(targetDir) ? null : 'text',
           name: 'projectName',
           message: 'Project name:',
-          initial: defaultProjectName,
+          initial: transferName,
           onState: (state) => {
-            projectName = state.value.trim() || defaultProjectName;
+            projectName = state.value.trim() || transferName;
           },
+          validate: (value) =>
+            isValidName(value) ? true : 'Please enter a valid project name, only a~z, A~Z, 0~9, - and _ are allowed.',
         },
         {
           type: () => (!fs.existsSync(targetDir) || isEmpty(targetDir) ? null : 'confirm'),
