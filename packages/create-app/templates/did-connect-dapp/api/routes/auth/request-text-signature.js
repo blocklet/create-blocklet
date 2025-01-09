@@ -23,7 +23,7 @@ module.exports = {
     };
   },
 
-  onAuth: ({ userDid, userPk, claims, updateSession }) => {
+  onAuth: async ({ userDid, userPk, claims, updateSession }) => {
     const type = toTypeInfo(userDid);
     const user = fromPublicKey(userPk, type);
     const claim = claims.find((x) => x.type === 'signature');
@@ -31,7 +31,7 @@ module.exports = {
     logger.info(`${action}.onAuth`, { userPk, userDid, claim });
 
     if (claim.origin) {
-      if (user.verify(claim.origin, claim.sig, claim.method !== 'none') === false) {
+      if ((await user.verify(claim.origin, claim.sig, claim.method !== 'none')) === false) {
         throw new Error('Invalid origin signature');
       }
     }

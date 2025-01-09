@@ -6,7 +6,7 @@ const { verifyAssetClaim } = require('../../libs/utils');
 const { wallet } = require('../../libs/auth');
 const logger = require('../../libs/logger');
 
-const validateAgentProof = (claim) => {
+const validateAgentProof = async (claim) => {
   const ownerDid = toAddress(claim.ownerDid);
   const ownerPk = fromBase58(claim.ownerPk);
   if (!claim.agentProof) {
@@ -30,13 +30,13 @@ const validateAgentProof = (claim) => {
   const signature = fromBase58(claim.agentProof.signature);
 
   if (claim.type === 'asset') {
-    if (!signer.verify(message, signature)) {
+    if (!(await signer.verify(message, signature))) {
       throw new Error('agent proof is invalid for asset');
     }
   }
 
   if (claim.type === 'verifiableCredential') {
-    if (!signer.verify(message, signature)) {
+    if (!(await signer.verify(message, signature))) {
       throw new Error('agent proof is invalid for vc');
     }
   }
@@ -73,7 +73,7 @@ module.exports = {
 
     logger.info(`${action}.onAuth.asset`, asset);
 
-    validateAgentProof(asset, challenge);
+    await validateAgentProof(asset, challenge);
 
     const assetState = await verifyAssetClaim({ claim: asset, challenge });
     updateSession({
