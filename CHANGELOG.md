@@ -1,3 +1,7 @@
+## 0.9.15 (2025-1-9)
+
+- chore(deps): update deps and resolve break changes
+
 ## 0.9.14 (2024-12-2)
 
 - fix(create-blocklet): validate project name compliance before creation(#372)
