@@ -41,7 +41,7 @@ const verifyAssetClaim = async ({ claim, challenge, trustedIssuers = [], trusted
   }
 
   const owner = fromPublicKey(ownerPk, toTypeInfo(ownerDid));
-  if (owner.verify(challenge, ownerProof) === false) {
+  if ((await owner.verify(challenge, ownerProof)) === false) {
     throw new Error('Invalid asset claim: owner proof invalid');
   }
 

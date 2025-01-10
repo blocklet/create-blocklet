@@ -28,12 +28,12 @@
     ]
   },
   "dependencies": {
-    "@arcblock/did-auth": "^1.18.139",
+    "@arcblock/did-auth": "^1.19.2",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
-    "@blocklet/sdk": "^1.16.32",
-    "@ocap/client": "^1.18.139",
-    "@ocap/mcrypto": "^1.18.139",
-    "@ocap/wallet": "^1.18.139",
+    "@blocklet/sdk": "^1.16.37",
+    "@ocap/client": "^1.19.2",
+    "@ocap/mcrypto": "^1.19.2",
+    "@ocap/wallet": "^1.19.2",
     "dotenv-flow": "^4.1.0",
     "express": "^4.21.0",
     "next": "14.2.4",
