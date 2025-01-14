@@ -1,3 +1,7 @@
+## 0.9.16 (2025-1-14)
+
+- refactor: limit only that the name may not contain "."
+
 ## 0.9.15 (2025-1-9)
 
 - chore(deps): update deps and resolve break changes
