@@ -12,7 +12,7 @@ export function copy(src, dest) {
 }
 
 export function isValidName(name) {
-  return /^[a-zA-Z0-9][-a-zA-Z0-9_]{2,128}$/.test(name);
+  return !name.includes('.');
 }
 
 export function isValidPackageName(projectName) {
