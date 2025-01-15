@@ -248,7 +248,7 @@ async function init() {
 
   let result = {};
   const authorInfo = await getUser();
-  const transferName = toValidPackageName(defaultProjectName);
+  const transferName = defaultProjectName.replace('.', '-');
 
   try {
     result = await prompts(
@@ -262,7 +262,7 @@ async function init() {
             projectName = state.value.trim() || transferName;
           },
           validate: (value) =>
-            isValidName(value) ? true : 'Please enter a valid project name, only a~z, A~Z, 0~9, - and _ are allowed.',
+            isValidName(value) ? true : 'Please enter a valid project name, the "." is not allowed.',
         },
         {
           type: () => (!fs.existsSync(targetDir) || isEmpty(targetDir) ? null : 'confirm'),
