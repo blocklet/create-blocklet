@@ -46,6 +46,11 @@ const templates = [
     color: yellow,
   },
   {
+    name: 'react-aigne-dapp',
+    display: '[dapp] react + express + Aigne Framework',
+    color: yellow,
+  },
+  {
     name: 'did-wallet-dapp',
     display: '[dapp: did-wallet] Full stack app (react.js + express.js) with DID Wallet integration',
     color: yellow,
