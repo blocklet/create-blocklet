@@ -1,5 +1,5 @@
 import 'express-async-errors';
-
+import 'reflect-metadata';
 import path from 'path';
 
 import cookieParser from 'cookie-parser';
@@ -27,7 +27,8 @@ app.use(express.urlencoded({ extended: true, limit: '1 mb' }));
 app.use(cors());
 
 const runtime = new Runtime();
-runtime.register([llm.definition]);
+runtime.register(llm.definition);
+
 app.use(createMiddleware(runtime));
 
 const router = express.Router();

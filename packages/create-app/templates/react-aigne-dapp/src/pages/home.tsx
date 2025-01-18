@@ -1,3 +1,5 @@
+/* eslint-disable no-await-in-loop */
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import { OrderedRecord } from '@aigne/core';
 import { Runtime } from '@aigne/runtime/client';
 import { SendRounded } from '@mui/icons-material';
@@ -25,6 +27,7 @@ import React, { memo, useState } from 'react';
 import { ChatbotResponse } from '../../api/src/agents/type';
 import MarkdownRenderer from '../components/MarkdownRenderer';
 import ScrollView from '../components/ScrollView';
+import './home.css';
 
 interface MessageItem extends ChatbotResponse {
   id: string;
@@ -51,10 +54,7 @@ export default function Home() {
     setMessages((prev) => produce(prev, (draft) => OrderedRecord.push(draft, message)));
 
     try {
-      const chatbot = new Runtime(
-        { id: '526280358526713856', name: 'Chatbot', runnables: OrderedRecord.fromArray([]) },
-        {},
-      );
+      const chatbot = new Runtime({ id: '526280358526713856' });
       const stream = await (await chatbot.resolve('chatbot')).run({ question }, { stream: true });
 
       const reader = stream.getReader();
