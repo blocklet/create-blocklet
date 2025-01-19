@@ -1,8 +1,8 @@
 {
   "name": "react-aigne-dapp",
   "desc": {
-    "en": "A Dapp Blocklet skeleton built with React and Express and Typescript and Aigne Framework",
-    "zh": "一个基于 React+Aigne Framework 构建的 Dapp Blocklet 应用骨架"
+    "en": "A Dapp Blocklet skeleton built with React and Express and Typescript and AIGNE Framework",
+    "zh": "一个基于 React+AIGNE Framework 构建的 Dapp Blocklet 应用骨架"
   },
   "blockletType": "dapp",
   "composable": true,

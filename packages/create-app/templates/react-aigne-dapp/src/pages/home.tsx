@@ -23,9 +23,7 @@ import { ChatbotResponse } from '../../api/src/agents/type';
 import MarkdownRenderer from '../components/MarkdownRenderer';
 import ScrollView from '../components/ScrollView';
 import './home.css';
-import reactLogo from '../assets/react.svg';
 import blockletLogo from '../assets/blocklet.svg';
-import viteLogo from '../assets/vite.svg';
 import { useSessionContext } from '../contexts/session';
 
 interface MessageItem extends ChatbotResponse {
@@ -95,25 +93,19 @@ export default function Home() {
     <ScrollView scroll="window">
       <Box textAlign="center">
         <Box>
-          <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-            <img src={viteLogo} className="logo" alt="Vite logo" />
-          </a>
-          <a href="https://react.dev" target="_blank" rel="noreferrer">
-            <img src={reactLogo} className="logo react" alt="React logo" />
-          </a>
           <a href="https://www.arcblock.io/docs/blocklet-developer/getting-started" target="_blank" rel="noreferrer">
             <img src={blockletLogo} className="logo blocklet" alt="Blocklet logo" />
           </a>
         </Box>
-        <h1>Vite + React + Aigne SDK</h1>
+        <h1>Vite + React + AIGNE Framework SDK</h1>
       </Box>
 
       <Container>
         <Typography variant="h4" textAlign="center" my={6}>
-          Aigne Chatbot
+          AIGNE Chatbot
         </Typography>
         <Typography textAlign="center" my={6}>
-          This is a simple demo to help you quickly use the Aigne framework SDK
+          This is a simple demo to help you quickly use the AIGNE framework SDK
         </Typography>
 
         <Stack gap={2} mb={10}>
