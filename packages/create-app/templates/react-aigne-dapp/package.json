@@ -38,9 +38,9 @@
     ]
   },
   "dependencies": {
-    "@aigne/core": "0.4.211-beta.2",
-    "@aigne/memory": "0.4.211-beta.2",
-    "@aigne/runtime": "0.4.211-beta.2",
+    "@aigne/core": "1.0.4",
+    "@aigne/memory": "1.0.4",
+    "@aigne/runtime": "1.0.4",
     "@arcblock/did-auth": "^1.19.2",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
     "@blocklet/sdk": "^1.16.37",
@@ -67,7 +67,6 @@
   "devDependencies": {
     "@arcblock/eslint-config": "^0.3.3",
     "@arcblock/eslint-config-ts": "^0.3.3",
-    "@blocklet/js-sdk": "^1.16.37",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/cookie-parser": "^1.4.7",
     "@types/cors": "^2.8.17",
@@ -99,6 +98,12 @@
     "vite-plugin-blocklet": "^0.9.16",
     "vite-plugin-svgr": "^4.2.0",
     "zx": "^8.1.8"
+  },
+  "resolutions": {
+    "@aigne/core": "1.0.4",
+    "@aigne/memory": "1.0.4",
+    "@aigne/runtime": "1.0.4",
+    "@google/generative-ai": "^0.21.0"
   },
   "importSort": {
     ".js, .jsx, .mjs": {

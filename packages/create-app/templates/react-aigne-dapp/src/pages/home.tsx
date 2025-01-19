@@ -6,17 +6,11 @@ import { SendRounded } from '@mui/icons-material';
 import {
   Alert,
   Avatar,
-  Box,
   Button,
   CircularProgress,
   Container,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
   Input,
   InputAdornment,
-  Link,
   Stack,
   Typography,
 } from '@mui/material';
@@ -56,7 +50,6 @@ export default function Home() {
     try {
       const chatbot = new Runtime({ id: '526280358526713856' });
       const stream = await (await chatbot.resolve('chatbot')).run({ question }, { stream: true });
-
       const reader = stream.getReader();
       for (;;) {
         const { done, value } = await reader.read();
@@ -121,9 +114,6 @@ export default function Home() {
 }
 
 const MessageView = memo(({ message }: { message: MessageItem }) => {
-  const [showAllMemory, setShowAllMemory] = useState(false);
-  const [showRelatedMemory, setShowRelatedMemory] = useState(false);
-
   return (
     <Stack gap={2}>
       <Stack direction="row" gap={2}>
@@ -137,52 +127,6 @@ const MessageView = memo(({ message }: { message: MessageItem }) => {
       <Stack direction="row" gap={2}>
         <Avatar>🤖</Avatar>
         <Stack flex={1} pt={1} gap={2}>
-          {message.usedMemory && (
-            <Stack direction="row">
-              <Stack
-                component="button"
-                px={1}
-                borderRadius={1}
-                direction="row"
-                gap={2}
-                alignItems="center"
-                bgcolor="grey.200"
-                sx={{ border: 'none', cursor: 'pointer' }}
-                onClick={() => setShowRelatedMemory(true)}>
-                <Typography variant="caption">🧠 Related Memories</Typography>
-              </Stack>
-
-              <Dialog fullWidth maxWidth="lg" open={showRelatedMemory} onClose={() => setShowRelatedMemory(false)}>
-                <DialogTitle>Related Memories</DialogTitle>
-                <DialogContent>
-                  <Typography whiteSpace="pre-wrap" fontSize={14}>
-                    {message.usedMemory}
-                  </Typography>
-                </DialogContent>
-                <DialogActions>
-                  <Button onClick={() => setShowRelatedMemory(false)}>Close</Button>
-                </DialogActions>
-              </Dialog>
-            </Stack>
-          )}
-
-          {message.relatedDocuments?.length && (
-            <Stack>
-              <Typography variant="subtitle1">Found the following related documents for you:</Typography>
-
-              {message.relatedDocuments.map(
-                (doc) =>
-                  doc.title && (
-                    <Box key={doc.id} gap={1} fontSize={14} sx={{ mark: { bgcolor: 'transparent', color: 'inherit' } }}>
-                      <Link href={doc.url} target="_blank">
-                        {doc.title}
-                      </Link>
-                    </Box>
-                  ),
-              )}
-            </Stack>
-          )}
-
           {message.$text && (
             <Stack gap={1}>
               <MarkdownRenderer citations={message.relatedDocuments}>{message.$text}</MarkdownRenderer>
@@ -200,35 +144,6 @@ const MessageView = memo(({ message }: { message: MessageItem }) => {
             <Alert severity="error" variant="outlined">
               {message.error.message}
             </Alert>
-          )}
-
-          {message.allMemory && (
-            <Stack direction="row">
-              <Stack
-                component="button"
-                px={1}
-                borderRadius={1}
-                direction="row"
-                gap={2}
-                alignItems="center"
-                bgcolor="grey.200"
-                sx={{ border: 'none', cursor: 'pointer' }}
-                onClick={() => setShowAllMemory(true)}>
-                <Typography variant="caption">🆕 Memory Updated</Typography>
-              </Stack>
-
-              <Dialog fullWidth maxWidth="lg" open={showAllMemory} onClose={() => setShowAllMemory(false)}>
-                <DialogTitle>All Memories</DialogTitle>
-                <DialogContent>
-                  <Typography whiteSpace="pre-wrap" fontSize={14}>
-                    {message.allMemory}
-                  </Typography>
-                </DialogContent>
-                <DialogActions>
-                  <Button onClick={() => setShowAllMemory(false)}>Close</Button>
-                </DialogActions>
-              </Dialog>
-            </Stack>
           )}
         </Stack>
       </Stack>
