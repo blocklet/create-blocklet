@@ -50,6 +50,7 @@ export default function Home() {
     try {
       const chatbot = new Runtime({ id: '526280358526713856' });
       const stream = await (await chatbot.resolve('chatbot')).run({ question }, { stream: true });
+
       const reader = stream.getReader();
       for (;;) {
         const { done, value } = await reader.read();
@@ -129,7 +130,7 @@ const MessageView = memo(({ message }: { message: MessageItem }) => {
         <Stack flex={1} pt={1} gap={2}>
           {message.$text && (
             <Stack gap={1}>
-              <MarkdownRenderer citations={message.relatedDocuments}>{message.$text}</MarkdownRenderer>
+              <MarkdownRenderer citations={[]}>{message.$text}</MarkdownRenderer>
             </Stack>
           )}
 
