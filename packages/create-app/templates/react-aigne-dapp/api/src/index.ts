@@ -9,6 +9,7 @@ import express, { ErrorRequestHandler } from 'express';
 import fallback from '@blocklet/sdk/lib/middlewares/fallback';
 import { createMiddleware } from '@aigne/runtime/middleware';
 import { AIGNERuntime } from '@aigne/runtime';
+import { OpenaiLLMModel } from '@aigne/core';
 import logger from './libs/logger';
 import { chatbot } from './agents';
 
@@ -24,7 +25,12 @@ app.use(express.json({ limit: '1 mb' }));
 app.use(express.urlencoded({ extended: true, limit: '1 mb' }));
 app.use(cors());
 
-const runtime = new AIGNERuntime({ id: '526280358526713856' });
+const runtime = new AIGNERuntime({
+  llmModel: new OpenaiLLMModel({
+    model: 'gpt-4o-mini',
+    apiKey: process.env.OPENAI_API_KEY || '',
+  }),
+});
 runtime.register(chatbot.definition);
 app.use(createMiddleware(runtime));
 

@@ -23,6 +23,8 @@ import MarkdownRenderer from '../components/MarkdownRenderer';
 import ScrollView from '../components/ScrollView';
 import './home.css';
 
+import { useSessionContext } from '../contexts/session';
+
 interface MessageItem extends ChatbotResponse {
   id: string;
   question?: string;
@@ -33,11 +35,17 @@ interface MessageItem extends ChatbotResponse {
 export default function Home() {
   const [question, setQuestion] = useState('');
   const [messages, setMessages] = useState<OrderedRecord<MessageItem>>(() => OrderedRecord.fromArray([]));
+  const { session } = useSessionContext();
 
   const run = async (e: React.FormEvent) => {
     e.preventDefault();
-    setQuestion('');
 
+    if (!session?.user?.did) {
+      session.login();
+      return;
+    }
+
+    setQuestion('');
     const message: MessageItem = {
       id: nanoid(),
       question,
@@ -48,7 +56,7 @@ export default function Home() {
     setMessages((prev) => produce(prev, (draft) => OrderedRecord.push(draft, message)));
 
     try {
-      const chatbot = new Runtime({ id: '526280358526713856' });
+      const chatbot = new Runtime();
       const stream = await (await chatbot.resolve('chatbot')).run({ question }, { stream: true });
 
       const reader = stream.getReader();

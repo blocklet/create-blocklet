@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 import Home from './pages/home';
+import { SessionProvider } from './contexts/session';
 
 function App() {
   return (
@@ -19,7 +20,9 @@ export default function WrappedApp() {
 
   return (
     <Router basename={basename}>
-      <App />
+      <SessionProvider>
+        <App />
+      </SessionProvider>
     </Router>
   );
 }
