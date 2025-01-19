@@ -122,11 +122,11 @@ export default function Home() {
           ))}
         </Stack>
 
-        <Stack component="form" onSubmit={run} position="sticky" bottom={0} py={2} bgcolor="white">
+        <Stack component="form" onSubmit={run} position="sticky" bottom={0} py={2}>
           <Input
             fullWidth
             disableUnderline
-            sx={{ border: 1, borderColor: 'divider', py: 1, pl: 2, borderRadius: 10 }}
+            sx={{ border: 1, bgcolor: 'white', borderColor: 'divider', py: 1, pl: 2, borderRadius: 10 }}
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
             endAdornment={
