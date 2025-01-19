@@ -1,9 +1,7 @@
-import { Box, Link, Stack, Tooltip, TooltipProps, Typography, styled, tooltipClasses } from '@mui/material';
-import React, { ComponentProps, ReactElement, ReactNode, Suspense } from 'react';
+import { Box, styled } from '@mui/material';
+import { ComponentProps } from 'react';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-
-const ReactSyntaxHighlighter = React.lazy(() => import('react-syntax-highlighter').then((m) => ({ default: m.Prism })));
 
 const MarkdownRenderer = styled(
   (props: ComponentProps<typeof Markdown> & { citations?: { title?: string; url: string }[] }) => (
@@ -11,7 +9,6 @@ const MarkdownRenderer = styled(
       {...props}
       remarkPlugins={[remarkGfm]}
       components={{
-        pre: MarkdownPre,
         table: ({ className, children }) => {
           return (
             <Box sx={{ overflow: 'auto', my: 1 }}>
@@ -20,36 +17,10 @@ const MarkdownRenderer = styled(
           );
         },
         a: ({ href, children }) => {
-          const index = Number(href) - 1;
-          const citation = props.citations?.[index];
-          if (!citation && !index) return <a href={href}>{children}</a>;
-          if (!citation) return null;
-
-          return (
-            <HtmlTooltip title={<LinkPreviewContent {...citation} />}>
-              <Box
-                component="a"
-                href={citation.url}
-                target="_blank"
-                rel="noreferrer"
-                sx={{
-                  bgcolor: 'grey.300',
-                  borderRadius: 10,
-                  px: 0.5,
-                  mx: 0.5,
-                  textDecoration: 'none',
-                  fontSize: 14,
-                  verticalAlign: 'top',
-                }}>
-                {index + 1}
-              </Box>
-            </HtmlTooltip>
-          );
+          return <a href={href}>{children}</a>;
         },
       }}>
-      {props.children
-        ?.replaceAll(/\[\s*citation:(\d+)\s*]/gi, '[citation]($1)')
-        .replaceAll(/【\s*citation:(\d+)\s*】/gi, '[citation]($1)')}
+      {props.children}
     </Markdown>
   ),
 )`
@@ -129,68 +100,3 @@ const MarkdownRenderer = styled(
 `;
 
 export default MarkdownRenderer;
-
-const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
-  <Tooltip {...props} classes={{ popper: className }} />
-))(({ theme }) => ({
-  [`& .${tooltipClasses.tooltip}`]: {
-    backgroundColor: '#f5f5f9',
-    color: 'rgba(0, 0, 0, 0.87)',
-    border: `1px solid ${theme.palette.divider}`,
-  },
-}));
-
-function LinkPreviewContent({ title, url, content }: { title?: string; url: string; content?: string }) {
-  return (
-    <Stack gap={1} sx={{ mark: { bgcolor: 'transparent', color: 'inherit' } }}>
-      <Link href={url} target="_blank">
-        <Typography variant="body2">{title}</Typography>
-      </Link>
-
-      <Typography
-        variant="body2"
-        sx={{
-          display: '-webkit-box',
-          WebkitBoxOrient: 'vertical',
-          WebkitLineClamp: 5,
-          overflow: 'hidden',
-        }}>
-        {content}
-      </Typography>
-    </Stack>
-  );
-}
-
-function MarkdownPre({ children, ...props }: { children?: ReactNode }) {
-  const childrenProps = (children as ReactElement)?.props;
-
-  if (!childrenProps?.children) return null;
-
-  const match = /language-(\w+)/.exec(childrenProps.className || '');
-  const language = match?.[1];
-
-  return (
-    <Box
-      component="div"
-      sx={{
-        fontSize: 14,
-        borderRadius: 1,
-        bgcolor: 'rgb(245, 242, 240)',
-        '> pre': { mt: '0 !important' },
-      }}>
-      <Stack direction="row" alignItems="center" p={0.5} pl={1.5} borderBottom={1} borderColor="grey.200">
-        <Box>{language}</Box>
-      </Stack>
-
-      <Suspense>
-        <Box
-          component={ReactSyntaxHighlighter}
-          language={match?.[1]}
-          {...props}
-          sx={{ borderRadius: 1, bgcolor: 'red' }}>
-          {String(childrenProps.children).replace(/\n$/, '')}
-        </Box>
-      </Suspense>
-    </Box>
-  );
-}
