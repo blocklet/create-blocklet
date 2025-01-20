@@ -16,6 +16,7 @@ import {
 import { produce } from 'immer';
 import { nanoid } from 'nanoid';
 import React, { memo, useState } from 'react';
+import Header from '@blocklet/ui-react/lib/Header';
 
 import { ChatbotResponse } from '../../api/src/agents/type';
 import MarkdownRenderer from '../components/MarkdownRenderer';
@@ -88,31 +89,41 @@ export default function Home() {
   };
 
   return (
-    <ScrollView scroll="window">
+    <ScrollView scroll="window" sx={{ minHeight: '100vh' }}>
+      <Box component={Header} sx={{ position: 'sticky', top: 0, '.header-container': { maxWidth: '100%' } }} />
+
       <Box textAlign="center">
-        <Box>
-          <a href="https://www.arcblock.io/docs/blocklet-developer/getting-started" target="_blank" rel="noreferrer">
-            <img src={blockletLogo} className="logo blocklet" alt="Blocklet logo" />
-          </a>
-        </Box>
+        <a href="https://www.arcblock.io/docs/blocklet-developer/getting-started" target="_blank" rel="noreferrer">
+          <img src={blockletLogo} className="logo blocklet" alt="Blocklet logo" />
+        </a>
         <h1>Vite + React + AIGNE Framework SDK</h1>
       </Box>
 
-      <Container>
+      <Box>
         <Typography variant="h4" textAlign="center" my={6}>
           AIGNE Chatbot
         </Typography>
         <Typography textAlign="center" my={6}>
           This is a simple demo to help you quickly use the AIGNE framework SDK
         </Typography>
+      </Box>
 
-        <Stack gap={2} mb={10}>
+      <Container sx={{ display: 'flex', flexDirection: 'column', py: 3 }} maxWidth="md">
+        <Stack sx={{ flex: 1, height: 0, display: 'flex', flexDirection: 'column', gap: 3, mb: 5 }}>
           {OrderedRecord.map(messages, (message) => (
             <MessageView key={message.id} message={message} />
           ))}
         </Stack>
 
-        <Stack component="form" onSubmit={run} position="sticky" bottom={0} py={2}>
+        <Box
+          component="form"
+          onSubmit={run}
+          sx={{
+            '@media (min-height: 100vh)': {
+              position: 'sticky',
+              bottom: 24,
+            },
+          }}>
           <Input
             fullWidth
             disableUnderline
@@ -127,7 +138,7 @@ export default function Home() {
               </InputAdornment>
             }
           />
-        </Stack>
+        </Box>
       </Container>
     </ScrollView>
   );

@@ -63,7 +63,8 @@
     "react-syntax-highlighter": "^15.6.1",
     "reflect-metadata": "^0.2.2",
     "remark-gfm": "^4.0.0",
-    "ufo": "^1.5.4"
+    "ufo": "^1.5.4",
+    "@blocklet/ui-react": "^2.11.29"
   },
   "devDependencies": {
     "@arcblock/eslint-config": "^0.3.3",
