@@ -1,3 +1,7 @@
+## 0.9.17 (2025-1-20)
+
+- chore: support react-aigne-dapp
+
 ## 0.9.16 (2025-1-14)
 
 - refactor: limit only that the name may not contain "."
@@ -205,7 +209,7 @@
 
 ## 0.7.6 (2024-3-29)
 
-- chore: remove website/* in workspace
+- chore: remove website/\* in workspace
 - fix: use BLOCKLET_VITE_PORT as hmr port
 
 ## 0.7.5 (2024-3-25)
