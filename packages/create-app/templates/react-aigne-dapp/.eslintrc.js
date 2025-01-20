@@ -8,5 +8,6 @@ module.exports = {
   },
   rules: {
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'no-await-in-loop': 'warn',
   },
 };

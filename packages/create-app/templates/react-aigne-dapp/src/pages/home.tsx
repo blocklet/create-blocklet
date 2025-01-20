@@ -1,5 +1,3 @@
-/* eslint-disable no-await-in-loop */
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { OrderedRecord } from '@aigne/core';
 import { Runtime } from '@aigne/runtime/client';
 import { SendRounded } from '@mui/icons-material';

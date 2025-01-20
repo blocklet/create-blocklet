@@ -1,14 +1,8 @@
-import { OpenaiLLMModel, LLMAgent, Runtime } from '@aigne/core';
+import { LLMAgent } from '@aigne/core';
+import { runtime } from './runtime';
 
-const context = new Runtime({
-  llmModel: new OpenaiLLMModel({
-    model: 'gpt-4o-mini',
-    apiKey: process.env.OPENAI_API_KEY || '',
-  }),
-});
-
-export const chatbot = LLMAgent.create({
-  context,
+export default LLMAgent.create({
+  context: runtime,
   name: 'chatbot',
   inputs: {
     question: {
@@ -21,7 +15,7 @@ export const chatbot = LLMAgent.create({
     temperature: 0.1,
   },
   messages: [
-    { role: 'system', content: 'You are a AI chat bot, use memory to answer the question' },
+    { role: 'system', content: 'You are a AI chat bot' },
     { role: 'user', content: '{{question}}' },
   ],
   outputs: {
@@ -31,5 +25,3 @@ export const chatbot = LLMAgent.create({
     },
   },
 });
-
-export default chatbot;

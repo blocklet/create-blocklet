@@ -1,8 +1,9 @@
-title: Blocklet Template React Aigne
-description: A Blocklet DAPP blocklet with Aigne Framework
+title: Blocklet Template React AIGNE Framework
+description: A Blocklet DAPP blocklet with AIGNE Framework
 keywords:
   - blocklet
   - react
+  - aigne
 group: dapp
 did: ''
 main: api/dist/index.js
@@ -41,7 +42,13 @@ requirements:
   cpu: '*'
 scripts:
   dev: npm run start
-environments: []
 capabilities: {}
 screenshots: []
 components: []
+environments:
+  - name: OPENAI_API_KEY
+    description: 'OpenAI API Key'
+    required: true
+    default: ''
+    secure: true
+    shared: false
