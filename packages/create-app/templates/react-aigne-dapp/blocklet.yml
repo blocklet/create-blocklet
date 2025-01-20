@@ -5,7 +5,8 @@ keywords:
   - react
   - aigne
 group: dapp
-did: ''
+name: react-aigne-dapp
+did: 'z8ia3pSfT7UZVjCjGq9PD78GQrdwzptd6iRDG'
 main: api/dist/index.js
 author:
   name: Blocklet

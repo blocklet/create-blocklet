@@ -1,7 +1,7 @@
 import { LLMAgent } from '@aigne/core';
 import { runtime } from './runtime';
 
-export default LLMAgent.create({
+const chatbot = LLMAgent.create({
   context: runtime,
   name: 'chatbot',
   inputs: {
@@ -25,3 +25,6 @@ export default LLMAgent.create({
     },
   },
 });
+
+// eslint-disable-next-line import/prefer-default-export
+export { chatbot };
