@@ -47,7 +47,7 @@ const templates = [
   },
   {
     name: 'react-aigne-dapp',
-    display: '[dapp] react + express + Aigne Framework',
+    display: '[dapp] react + express + AIGNE Framework',
     color: yellow,
   },
   {
