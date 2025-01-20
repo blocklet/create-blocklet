@@ -39,9 +39,9 @@
   },
   "dependencies": {
     "@arcblock/did-connect": "^2.11.23",
-    "@aigne/core": "1.0.7",
-    "@aigne/memory": "1.0.7",
-    "@aigne/runtime": "1.0.7",
+    "@aigne/core": "1.0.8",
+    "@aigne/memory": "1.0.8",
+    "@aigne/runtime": "1.0.8",
     "@arcblock/did-auth": "^1.19.2",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
     "@blocklet/sdk": "^1.16.37",
@@ -101,9 +101,9 @@
     "zx": "^8.1.8"
   },
   "resolutions": {
-    "@aigne/core": "1.0.7",
-    "@aigne/memory": "1.0.7",
-    "@aigne/runtime": "1.0.7"
+    "@aigne/core": "1.0.8",
+    "@aigne/memory": "1.0.8",
+    "@aigne/runtime": "1.0.8"
   },
   "importSort": {
     ".js, .jsx, .mjs": {
