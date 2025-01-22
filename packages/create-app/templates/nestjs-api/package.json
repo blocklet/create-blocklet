@@ -40,7 +40,7 @@
     "@nestjs/common": "^10.4.4",
     "@nestjs/core": "^10.4.4",
     "@nestjs/platform-express": "^10.4.4",
-    "@ocap/client": "^1.19.2",
+    "@ocap/client": "^1.19.6",
     "dotenv-flow": "^4.1.0",
     "express": "^4.21.0",
     "reflect-metadata": "^0.2.2",

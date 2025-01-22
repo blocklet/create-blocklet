@@ -41,12 +41,12 @@
     "zx": "^8.1.8"
   },
   "dependencies": {
-    "@arcblock/did-auth": "^1.19.2",
+    "@arcblock/did-auth": "^1.19.6",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
     "@blocklet/sdk": "^1.16.37",
-    "@ocap/client": "^1.19.2",
-    "@ocap/mcrypto": "^1.19.2",
-    "@ocap/wallet": "^1.19.2",
+    "@ocap/client": "^1.19.6",
+    "@ocap/mcrypto": "^1.19.6",
+    "@ocap/wallet": "^1.19.6",
     "axios": "^1.7.7",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
