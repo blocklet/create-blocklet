@@ -96,7 +96,7 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.6.2",
     "vite": "^5.4.8",
-    "vite-plugin-blocklet": "^0.9.17",
+    "vite-plugin-blocklet": "^0.9.18",
     "vite-plugin-svgr": "^4.2.0",
     "zx": "^8.1.8"
   },
