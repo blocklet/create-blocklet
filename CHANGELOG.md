@@ -1,3 +1,8 @@
+## 0.9.18 (2025-1-22)
+
+- chore: update deps
+- feat: remove declare on pre-start
+
 ## 0.9.17 (2025-1-20)
 
 - chore: support react-aigne-dapp
