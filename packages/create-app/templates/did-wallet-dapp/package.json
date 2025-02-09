@@ -19,10 +19,10 @@
     "bump-version": "zx --quiet scripts/bump-version.mjs"
   },
   "dependencies": {
-    "@blocklet/sdk": "^1.16.37",
-    "@ocap/mcrypto": "^1.19.2",
-    "@ocap/util": "^1.19.2",
-    "@ocap/wallet": "^1.19.2",
+    "@blocklet/sdk": "^1.16.38",
+    "@ocap/mcrypto": "^1.19.9",
+    "@ocap/util": "^1.19.9",
+    "@ocap/wallet": "^1.19.9",
     "body-parser": "^1.20.3",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
@@ -31,11 +31,11 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "@arcblock/did-connect": "^2.11.23",
+    "@arcblock/did-connect": "^2.11.31",
     "@arcblock/eslint-config": "^0.3.3",
-    "@arcblock/ux": "^2.11.23",
-    "@blocklet/js-sdk": "^1.16.37",
-    "@blocklet/ui-react": "^2.11.23",
+    "@arcblock/ux": "^2.11.31",
+    "@blocklet/js-sdk": "^1.16.38",
+    "@blocklet/ui-react": "^2.11.31",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^5.16.7",
