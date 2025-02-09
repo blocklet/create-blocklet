@@ -1,3 +1,9 @@
+## 0.9.19 (2025-2-10)
+
+- chore(deps): update deps
+- chore(vite-plugin-blocklet): keep shell logo ratio
+- chore(deps): make template repo is private
+
 ## 0.9.18 (2025-1-22)
 
 - chore: update deps
