@@ -22,14 +22,14 @@ importers:
   packages/create-app:
     dependencies:
       '@arcblock/did':
-        specifier: ^1.19.2
-        version: 1.19.2
+        specifier: ^1.19.9
+        version: 1.19.9
       '@ocap/mcrypto':
-        specifier: ^1.19.2
-        version: 1.19.2
+        specifier: ^1.19.9
+        version: 1.19.9
       '@ocap/util':
-        specifier: ^1.19.2
-        version: 1.19.2
+        specifier: ^1.19.9
+        version: 1.19.9
       boxen:
         specifier: ^7.1.1
         version: 7.1.1
@@ -80,14 +80,14 @@ importers:
   plugins/vite-plugin-blocklet:
     dependencies:
       '@arcblock/did':
-        specifier: ^1.19.2
-        version: 1.19.2
+        specifier: ^1.19.9
+        version: 1.19.9
       '@ocap/mcrypto':
-        specifier: ^1.19.2
-        version: 1.19.2
+        specifier: ^1.19.9
+        version: 1.19.9
       '@ocap/util':
-        specifier: ^1.19.2
-        version: 1.19.2
+        specifier: ^1.19.9
+        version: 1.19.9
       get-port:
         specifier: ^5.1.1
         version: 5.1.1
@@ -144,8 +144,8 @@ packages:
     resolution: {integrity: sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==}
     engines: {node: '>=0.10.0'}
 
-  '@arcblock/did@1.19.2':
-    resolution: {integrity: sha512-pGpsDCBdWpSLKCLSNdkgRLBAiCwloQs1RtoXTGw/TaMn6jIZxKX8Q+/2QXrYJNnxBinh1T0reyntpBqZTcM9Ow==}
+  '@arcblock/did@1.19.9':
+    resolution: {integrity: sha512-ubM2J/5Z0yevVrtippFzGfP4X1K0RtUIou6ztISzWCc22Krq80vT2kD7FzPPBlYMQ3dZXRAyMCugFcw/c6ad3g==}
 
   '@arcblock/eslint-config-base@0.3.3':
     resolution: {integrity: sha512-90rIO1WL1t54UsHBRCC5211Psd9RLTFcw5SQPKFLUWtcXFV2dg4hGzRoJfqXfkzX9tHAcaj3K1X5aqojVOUFTw==}
@@ -366,11 +366,11 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@ocap/mcrypto@1.19.2':
-    resolution: {integrity: sha512-7qFJlFGBBj9ZjegB1CgOG8nAOPPRdWCPt0tgwnKoJdylQLI1c0pWfWFmw1V2JGCU0ga2EXs3Fr/VJbYs0b+pFg==}
+  '@ocap/mcrypto@1.19.9':
+    resolution: {integrity: sha512-ZdLNq59d9qwPq4DAPxdRfMWsRFf1Wiv+6VrmEJp/0hgQK8J1WItfAZwi0oVfzK9lYtbdo2SY5+tMUdLB9j0aDQ==}
 
-  '@ocap/util@1.19.2':
-    resolution: {integrity: sha512-D9KP7qo7jdP8Bs2omZ7qh5ldmZnnfr8uCyvzBJ7Zh4eAM/7Llij9VNci2KxsKflWAKVWUgfsKswX9w1eVO6G0A==}
+  '@ocap/util@1.19.9':
+    resolution: {integrity: sha512-4fp9/XJ6MnxMj5nK6DG7ws03Wcn/tY1eNYcR1kZ2EhmDpeQaS5aQK4huaQZFn7wWDLc7oX8NoECZu6ZVQzTrpQ==}
 
   '@peculiar/asn1-android@2.3.15':
     resolution: {integrity: sha512-8U2TIj59cRlSXTX2d0mzUKP7whfWGFMzTeC3qPgAbccXFrPNZLaDhpNEdG5U2QZ/tBv/IHlCJ8s+KYXpJeop6w==}
@@ -433,55 +433,46 @@ packages:
     resolution: {integrity: sha512-jMYvxZwGmoHFBTbr12Xc6wOdc2xA5tF5F2q6t7Rcfab68TT0n+r7dgawD4qhPEvasDsVpQi+MgDzj2faOLsZjA==}
     cpu: [arm]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-arm-musleabihf@4.20.0':
     resolution: {integrity: sha512-1asSTl4HKuIHIB1GcdFHNNZhxAYEdqML/MW4QmPS4G0ivbEcBr1JKlFLKsIRqjSwOBkdItn3/ZDlyvZ/N6KPlw==}
     cpu: [arm]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-arm64-gnu@4.20.0':
     resolution: {integrity: sha512-COBb8Bkx56KldOYJfMf6wKeYJrtJ9vEgBRAOkfw6Ens0tnmzPqvlpjZiLgkhg6cA3DGzCmLmmd319pmHvKWWlQ==}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-arm64-musl@4.20.0':
     resolution: {integrity: sha512-+it+mBSyMslVQa8wSPvBx53fYuZK/oLTu5RJoXogjk6x7Q7sz1GNRsXWjn6SwyJm8E/oMjNVwPhmNdIjwP135Q==}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-powerpc64le-gnu@4.20.0':
     resolution: {integrity: sha512-yAMvqhPfGKsAxHN8I4+jE0CpLWD8cv4z7CK7BMmhjDuz606Q2tFKkWRY8bHR9JQXYcoLfopo5TTqzxgPUjUMfw==}
     cpu: [ppc64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-riscv64-gnu@4.20.0':
     resolution: {integrity: sha512-qmuxFpfmi/2SUkAw95TtNq/w/I7Gpjurx609OOOV7U4vhvUhBcftcmXwl3rqAek+ADBwSjIC4IVNLiszoj3dPA==}
     cpu: [riscv64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-s390x-gnu@4.20.0':
     resolution: {integrity: sha512-I0BtGXddHSHjV1mqTNkgUZLnS3WtsqebAXv11D5BZE/gfw5KoyXSAXVqyJximQXNvNzUo4GKlCK/dIwXlz+jlg==}
     cpu: [s390x]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-x64-gnu@4.20.0':
     resolution: {integrity: sha512-y+eoL2I3iphUg9tN9GB6ku1FA8kOfmF4oUEWhztDJ4KXJy1agk/9+pejOuZkNFhRwHAOxMsBPLbXPd6mJiCwew==}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-x64-musl@4.20.0':
     resolution: {integrity: sha512-hM3nhW40kBNYUkZb/r9k2FKK+/MnKglX7UYd4ZUy5DJs8/sMsIbqWK2piZtVGE3kcXVNj3B2IrUYROJMMCikNg==}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-win32-arm64-msvc@4.20.0':
     resolution: {integrity: sha512-psegMvP+Ik/Bg7QRJbv8w8PAytPA7Uo8fpFjXyCRHWm6Nt42L+JtoqH8eDQ5hRP7/XW2UiIriy1Z46jf0Oa1kA==}
@@ -2653,10 +2644,10 @@ snapshots:
 
   '@aashutoshrathi/word-wrap@1.2.6': {}
 
-  '@arcblock/did@1.19.2':
+  '@arcblock/did@1.19.9':
     dependencies:
-      '@ocap/mcrypto': 1.19.2
-      '@ocap/util': 1.19.2
+      '@ocap/mcrypto': 1.19.9
+      '@ocap/util': 1.19.9
       bn.js: 5.2.1
       debug: 4.3.7
       lodash: 4.17.21
@@ -2841,9 +2832,9 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
 
-  '@ocap/mcrypto@1.19.2':
+  '@ocap/mcrypto@1.19.9':
     dependencies:
-      '@ocap/util': 1.19.2
+      '@ocap/util': 1.19.9
       '@simplewebauthn/server': 13.0.0
       bn.js: 5.2.1
       crypto-js: 4.2.0
@@ -2857,7 +2848,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@ocap/util@1.19.2':
+  '@ocap/util@1.19.9':
     dependencies:
       base64-url: 2.3.3
       bn.js: 5.2.1
