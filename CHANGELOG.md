@@ -1,3 +1,7 @@
+## 0.9.20 (2025-2-9)
+
+- fix: blocklet dev for nestjs & node 22
+
 ## 0.9.19 (2025-2-10)
 
 - chore(deps): update deps
