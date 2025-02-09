@@ -1,7 +1,7 @@
 {
   "name": "did-connect-dapp",
   "version": "0.1.0",
-  "private": "true",
+  "private": true,
   "scripts": {
     "dev": "blocklet dev",
     "lint": "eslint src api --ext .mjs,.js,.jsx,.ts,.tsx",
