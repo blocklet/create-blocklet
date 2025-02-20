@@ -35,19 +35,19 @@
     "boxen": "^7.1.1",
     "ejs": "^3.1.10",
     "envfile": "^7.1.0",
-    "figlet": "^1.7.0",
+    "figlet": "^1.8.0",
     "gradient-string": "^2.0.2",
     "jdenticon": "^3.3.0",
-    "ora": "^8.1.0",
+    "ora": "^8.2.0",
     "prompts": "^2.4.2",
-    "semver": "^7.6.3",
+    "semver": "^7.7.1",
     "terminal-link": "^3.0.0",
-    "zx": "^8.1.8"
+    "zx": "^8.3.2"
   },
   "devDependencies": {
     "@arcblock/eslint-config-base": "^0.3.3",
     "eslint": "^8.57.1",
-    "prettier": "^3.3.3",
-    "vitest": "^2.1.1"
+    "prettier": "^3.5.1",
+    "vitest": "^2.1.9"
   }
 }

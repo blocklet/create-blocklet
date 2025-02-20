@@ -23,29 +23,29 @@
     "@ocap/client": "^1.19.9",
     "@ocap/mcrypto": "^1.19.9",
     "@ocap/wallet": "^1.19.9",
-    "axios": "^1.7.7",
-    "cookie-parser": "^1.4.6",
+    "axios": "^1.7.9",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv-flow": "^4.1.0",
-    "express": "^4.21.0",
+    "express": "^4.21.2",
     "express-async-errors": "^3.1.1"
   },
   "devDependencies": {
     "@blocklet/js-sdk": "^1.16.38",
     "@sveltejs/vite-plugin-svelte": "3.1.1",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-    "bumpp": "^9.6.1",
+    "bumpp": "^9.11.1",
     "cross-env": "^7.0.3",
-    "lint-staged": "^15.2.10",
+    "lint-staged": "^15.4.3",
     "npm-run-all": "^4.1.5",
-    "prettier": "^3.3.3",
-    "prettier-plugin-svelte": "^3.2.7",
+    "prettier": "^3.5.1",
+    "prettier-plugin-svelte": "^3.3.3",
     "rimraf": "^5.0.10",
     "simple-git-hooks": "^2.11.1",
     "svelte": "^4.2.19",
-    "vite": "^5.4.8",
+    "vite": "^5.4.14",
     "vite-plugin-blocklet": "^0.9.20",
-    "zx": "^8.1.8"
+    "zx": "^8.3.2"
   },
   "lint-staged": {
     "*.{mjs,js,svelte}": [

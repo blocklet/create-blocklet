@@ -17,8 +17,8 @@
     "publish-plugins": "zx --quiet scripts/publish-plugins.mjs"
   },
   "dependencies": {
-    "bumpp": "^9.4.1",
-    "zx": "^8.1.4"
+    "bumpp": "^9.11.1",
+    "zx": "^8.3.2"
   },
   "devDependencies": {
     "simple-git-hooks": "^2.11.1"

@@ -23,22 +23,22 @@
   "devDependencies": {
     "@blocklet/js-sdk": "^1.16.38",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-    "bumpp": "^9.6.1",
+    "bumpp": "^9.11.1",
     "cross-env": "^7.0.3",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-solid": "0.14.1",
-    "lint-staged": "^15.2.10",
-    "nodemon": "^3.1.7",
+    "lint-staged": "^15.4.3",
+    "nodemon": "^3.1.9",
     "npm-run-all": "^4.1.5",
-    "prettier": "^3.3.3",
+    "prettier": "^3.5.1",
     "rimraf": "^5.0.10",
     "simple-git-hooks": "^2.11.1",
-    "vite": "^5.4.8",
+    "vite": "^5.4.14",
     "vite-plugin-blocklet": "^0.9.20",
-    "vite-plugin-solid": "^2.10.2",
-    "zx": "^8.1.8"
+    "vite-plugin-solid": "^2.11.2",
+    "zx": "^8.3.2"
   },
   "dependencies": {
     "@arcblock/did-auth": "^1.19.9",
@@ -47,13 +47,13 @@
     "@ocap/client": "^1.19.9",
     "@ocap/mcrypto": "^1.19.9",
     "@ocap/wallet": "^1.19.9",
-    "axios": "^1.7.7",
-    "cookie-parser": "^1.4.6",
+    "axios": "^1.7.9",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv-flow": "^4.1.0",
-    "express": "^4.21.0",
+    "express": "^4.21.2",
     "express-async-errors": "^3.1.1",
-    "solid-js": "^1.9.1"
+    "solid-js": "^1.9.4"
   },
   "lint-staged": {
     "*.{mjs,js,jsx,tsx}": [
