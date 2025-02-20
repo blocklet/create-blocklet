@@ -19,20 +19,20 @@
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-    "@vitejs/plugin-vue2": "^2.3.1",
-    "bumpp": "^9.6.1",
+    "@vitejs/plugin-vue2": "^2.3.3",
+    "bumpp": "^9.11.1",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-vue": "^9.28.0",
-    "lint-staged": "^15.2.10",
-    "prettier": "^3.3.3",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-vue": "^9.32.0",
+    "lint-staged": "^15.4.3",
+    "prettier": "^3.5.1",
     "rimraf": "^5.0.10",
     "simple-git-hooks": "^2.11.1",
-    "vite": "^5.4.8",
-    "vite-plugin-blocklet": "^0.9.20",
+    "vite": "^5.4.14",
+    "vite-plugin-blocklet": "^0.9.21",
     "vue": "^2.7.16",
-    "zx": "^8.1.8"
+    "zx": "^8.3.2"
   },
   "lint-staged": {
     "*.{mjs,js,vue}": [

@@ -1,3 +1,8 @@
+## 0.9.21 (2025-2-20)
+
+- chore(vite-plugin-blocklet): set allowedHosts true
+- chore(deps): update deps
+
 ## 0.9.20 (2025-2-9)
 
 - fix: blocklet dev for nestjs & node 22

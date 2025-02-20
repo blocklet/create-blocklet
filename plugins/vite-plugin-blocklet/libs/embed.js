@@ -41,7 +41,7 @@ export default function createEmbedPlugin(options) {
     });
   }
 
-  if (inputEmbeds.length === 0) {
+  if (embedList.length === 0) {
     return [];
   }
 
