@@ -23,12 +23,14 @@ export default function createConfigPlugin() {
       if (command === 'serve') {
         const targetConfig = {};
         targetConfig.base = withTrailingSlash(joinURL('/', config.base || blockletPrefix));
-        if (!(config.server && config.server.port)) {
+        targetConfig.server = config.server || {};
+
+        if (!targetConfig.server.port) {
           const port = blockletPort || 3000;
-          targetConfig.server = {
-            port,
-          };
+          targetConfig.server.port = port;
         }
+        targetConfig.server.allowedHosts = true;
+
         return targetConfig;
       }
 
