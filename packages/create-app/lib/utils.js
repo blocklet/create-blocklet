@@ -12,7 +12,7 @@ export function copy(src, dest) {
 }
 
 export function isValidName(name) {
-  return !name.includes('.');
+  return !!name.trim();
 }
 
 export function isValidPackageName(projectName) {
