@@ -1,3 +1,7 @@
+## 0.9.22 (2025-2-21)
+
+- feat: remove project name limitation
+
 ## 0.9.21 (2025-2-20)
 
 - chore(vite-plugin-blocklet): set allowedHosts true

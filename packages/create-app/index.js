@@ -266,8 +266,6 @@ async function init() {
           onState: (state) => {
             projectName = state.value.trim() || transferName;
           },
-          validate: (value) =>
-            isValidName(value) ? true : 'Please enter a valid project name, the "." is not allowed.',
         },
         {
           type: () => (!fs.existsSync(targetDir) || isEmpty(targetDir) ? null : 'confirm'),
