@@ -22,14 +22,14 @@ importers:
   packages/create-app:
     dependencies:
       '@arcblock/did':
-        specifier: ^1.19.9
-        version: 1.19.9
+        specifier: ^1.19.15
+        version: 1.19.15
       '@ocap/mcrypto':
-        specifier: ^1.19.9
-        version: 1.19.9
+        specifier: ^1.19.15
+        version: 1.19.15
       '@ocap/util':
-        specifier: ^1.19.9
-        version: 1.19.9
+        specifier: ^1.19.15
+        version: 1.19.15
       boxen:
         specifier: ^7.1.1
         version: 7.1.1
@@ -80,14 +80,14 @@ importers:
   plugins/vite-plugin-blocklet:
     dependencies:
       '@arcblock/did':
-        specifier: ^1.19.9
-        version: 1.19.9
+        specifier: ^1.19.15
+        version: 1.19.15
       '@ocap/mcrypto':
-        specifier: ^1.19.9
-        version: 1.19.9
+        specifier: ^1.19.15
+        version: 1.19.15
       '@ocap/util':
-        specifier: ^1.19.9
-        version: 1.19.9
+        specifier: ^1.19.15
+        version: 1.19.15
       get-port:
         specifier: ^5.1.1
         version: 5.1.1
@@ -144,8 +144,8 @@ packages:
     resolution: {integrity: sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==}
     engines: {node: '>=0.10.0'}
 
-  '@arcblock/did@1.19.9':
-    resolution: {integrity: sha512-ubM2J/5Z0yevVrtippFzGfP4X1K0RtUIou6ztISzWCc22Krq80vT2kD7FzPPBlYMQ3dZXRAyMCugFcw/c6ad3g==}
+  '@arcblock/did@1.19.15':
+    resolution: {integrity: sha512-e/ORC+MR53JHd4x1bd9h3z6k5zB69CTfYGe4zOFVO0V+HwojsxKt1GDg6OmsJvKEgPvtAYfYwHk2u9mxLRziew==}
 
   '@arcblock/eslint-config-base@0.3.3':
     resolution: {integrity: sha512-90rIO1WL1t54UsHBRCC5211Psd9RLTFcw5SQPKFLUWtcXFV2dg4hGzRoJfqXfkzX9tHAcaj3K1X5aqojVOUFTw==}
@@ -359,11 +359,11 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@ocap/mcrypto@1.19.9':
-    resolution: {integrity: sha512-ZdLNq59d9qwPq4DAPxdRfMWsRFf1Wiv+6VrmEJp/0hgQK8J1WItfAZwi0oVfzK9lYtbdo2SY5+tMUdLB9j0aDQ==}
+  '@ocap/mcrypto@1.19.15':
+    resolution: {integrity: sha512-fid0F/I1F07injnsnpiyWODiohd4iSZZPFQhsZam1XQHrpbT6bdCftRzSBthFZ55xROtfw11dNyigAeWYI4UGQ==}
 
-  '@ocap/util@1.19.9':
-    resolution: {integrity: sha512-4fp9/XJ6MnxMj5nK6DG7ws03Wcn/tY1eNYcR1kZ2EhmDpeQaS5aQK4huaQZFn7wWDLc7oX8NoECZu6ZVQzTrpQ==}
+  '@ocap/util@1.19.15':
+    resolution: {integrity: sha512-fTBMEeK6id1RjvsuqZG+bTdfyKUm71zjP9J6K4t+u3/HUM733+Rnr5UA7Z7ibJLrNlt9UikXJT0jVt/s9bG/Kg==}
 
   '@peculiar/asn1-android@2.3.15':
     resolution: {integrity: sha512-8U2TIj59cRlSXTX2d0mzUKP7whfWGFMzTeC3qPgAbccXFrPNZLaDhpNEdG5U2QZ/tBv/IHlCJ8s+KYXpJeop6w==}
@@ -1069,6 +1069,9 @@ packages:
 
   elliptic@6.5.4:
     resolution: {integrity: sha512-iLhC6ULemrljPZb+QutR5TQGB+pdW6KGD5RSegS+8sorOZT+rdQFbsQFJgvN3eRqNALqJer4oQ16YvJHlU8hzQ==}
+
+  elliptic@6.6.1:
+    resolution: {integrity: sha512-RaddvvMatK2LJHqFJ+YA4WysVN5Ita9E35botqIYspQ4TkRAlCicdzKOjlyv/1Za5RyTNn7di//eEV0uTAfe3g==}
 
   emoji-regex@10.3.0:
     resolution: {integrity: sha512-QpLs9D9v9kArv4lfDEgg1X/gN5XLnf/A6l9cs8SPZLRZR3ZkY9+kwIQTxm+fsSej5UMYGE8fdoaZVIBlqG0XTw==}
@@ -2667,10 +2670,10 @@ snapshots:
 
   '@aashutoshrathi/word-wrap@1.2.6': {}
 
-  '@arcblock/did@1.19.9':
+  '@arcblock/did@1.19.15':
     dependencies:
-      '@ocap/mcrypto': 1.19.9
-      '@ocap/util': 1.19.9
+      '@ocap/mcrypto': 1.19.15
+      '@ocap/util': 1.19.15
       bn.js: 5.2.1
       debug: 4.3.7
       lodash: 4.17.21
@@ -2846,13 +2849,13 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
 
-  '@ocap/mcrypto@1.19.9':
+  '@ocap/mcrypto@1.19.15':
     dependencies:
-      '@ocap/util': 1.19.9
+      '@ocap/util': 1.19.15
       '@simplewebauthn/server': 13.0.0
       bn.js: 5.2.1
       crypto-js: 4.2.0
-      elliptic: 6.5.4
+      elliptic: 6.6.1
       eth-lib: 0.2.8
       hash.js: 1.1.7
       interface: 1.2.1
@@ -2862,7 +2865,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@ocap/util@1.19.9':
+  '@ocap/util@1.19.15':
     dependencies:
       base64-url: 2.3.3
       bn.js: 5.2.1
@@ -3670,6 +3673,16 @@ snapshots:
       minimalistic-assert: 1.0.1
       minimalistic-crypto-utils: 1.0.1
 
+  elliptic@6.6.1:
+    dependencies:
+      bn.js: 4.12.0
+      brorand: 1.1.0
+      hash.js: 1.1.7
+      hmac-drbg: 1.0.1
+      inherits: 2.0.4
+      minimalistic-assert: 1.0.1
+      minimalistic-crypto-utils: 1.0.1
+
   emoji-regex@10.3.0: {}
 
   emoji-regex@8.0.0: {}
@@ -3962,7 +3975,7 @@ snapshots:
   eth-lib@0.2.8:
     dependencies:
       bn.js: 4.12.0
-      elliptic: 6.5.4
+      elliptic: 6.6.1
       xhr-request-promise: 0.1.3
 
   eventemitter3@4.0.7: {}
