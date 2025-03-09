@@ -1,3 +1,9 @@
+## 0.9.23 (2025-3-9)
+
+- chore(vite-plugin-blocklet): polish debug entry button postion types
+- chore(deps): update deps
+- chore(vite-plugin-blocklet): use eruda as default debug script
+
 ## 0.9.22 (2025-2-21)
 
 - feat: remove project name limitation

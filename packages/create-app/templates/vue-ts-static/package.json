@@ -39,7 +39,7 @@
     "taze": "^0.16.9",
     "typescript": "^5.7.3",
     "vite": "^5.4.14",
-    "vite-plugin-blocklet": "^0.9.22",
+    "vite-plugin-blocklet": "^0.9.23",
     "vue-tsc": "^2.2.2",
     "zx": "^8.3.2"
   },
