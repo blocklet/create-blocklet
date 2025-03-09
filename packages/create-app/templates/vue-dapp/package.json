@@ -19,12 +19,12 @@
     "bump-version": "zx --quiet scripts/bump-version.mjs"
   },
   "dependencies": {
-    "@arcblock/did-auth": "^1.19.9",
+    "@arcblock/did-auth": "^1.19.15",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
-    "@blocklet/sdk": "^1.16.38",
-    "@ocap/client": "^1.19.9",
-    "@ocap/mcrypto": "^1.19.9",
-    "@ocap/wallet": "^1.19.9",
+    "@blocklet/sdk": "^1.16.39",
+    "@ocap/client": "^1.19.15",
+    "@ocap/mcrypto": "^1.19.15",
+    "@ocap/wallet": "^1.19.15",
     "axios": "^1.7.9",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
@@ -33,7 +33,7 @@
     "express-async-errors": "^3.1.1"
   },
   "devDependencies": {
-    "@blocklet/js-sdk": "^1.16.38",
+    "@blocklet/js-sdk": "^1.16.39",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@vitejs/plugin-vue": "^5.2.1",
     "bumpp": "^9.11.1",
