@@ -26,6 +26,8 @@ import setupClient from './libs/client.js';
  * @property {string} [loadingImage]
  * @property {'all'|'mobile'|'desktop'} [debugPlatform='mobile']
  * @property {string} [debugScript]
+ * @property {number} [positionX]
+ * @property {number} [positionY]
  * @param {object} [embeds={}] - The embeds to be built.
  * @param {array} [embedExternals=['react', '@arcblock/ux/lib/Locale/context', '@arcblock/did-connect/lib/Session']] - The external modules to be used in the embeds.
  * @param {array} [embedPlugins=[]] - The plugins to be used in the embeds.
