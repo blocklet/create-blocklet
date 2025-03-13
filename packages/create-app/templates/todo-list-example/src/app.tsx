@@ -1,4 +1,5 @@
 import { LocaleProvider } from '@arcblock/ux/lib/Locale/context';
+import { ThemeProvider } from '@arcblock/ux/lib/Theme';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 import Layout from './components/layout';
@@ -22,12 +23,14 @@ export default function WrappedApp() {
   const basename = window?.blocklet?.prefix || '/';
 
   return (
-    <SessionProvider>
-      <LocaleProvider translations={{}}>
-        <Router basename={basename}>
-          <App />
-        </Router>
-      </LocaleProvider>
-    </SessionProvider>
+    <ThemeProvider>
+      <SessionProvider>
+        <LocaleProvider translations={{}}>
+          <Router basename={basename}>
+            <App />
+          </Router>
+        </LocaleProvider>
+      </SessionProvider>
+    </ThemeProvider>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { LocaleProvider } from '@arcblock/ux/lib/Locale/context';
+import { ThemeProvider } from '@arcblock/ux/lib/Theme';
 
 import { SessionProvider } from './libs/session';
 import { translations } from './locales';
@@ -27,12 +28,14 @@ export default function WrappedApp() {
   const basename = window?.blocklet?.prefix || '/';
 
   return (
-    <SessionProvider>
-      <LocaleProvider translations={translations} fallbackLocale="en">
-        <Router basename={basename}>
-          <App />
-        </Router>
-      </LocaleProvider>
-    </SessionProvider>
+    <ThemeProvider>
+      <SessionProvider>
+        <LocaleProvider translations={translations} fallbackLocale="en">
+          <Router basename={basename}>
+            <App />
+          </Router>
+        </LocaleProvider>
+      </SessionProvider>
+    </ThemeProvider>
   );
 }
