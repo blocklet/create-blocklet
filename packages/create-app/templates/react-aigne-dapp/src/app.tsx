@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { ThemeProvider } from '@arcblock/ux/lib/Theme';
 
 import Home from './pages/home';
 import { SessionProvider } from './contexts/session';
@@ -20,9 +21,11 @@ export default function WrappedApp() {
 
   return (
     <Router basename={basename}>
-      <SessionProvider>
-        <App />
-      </SessionProvider>
+      <ThemeProvider>
+        <SessionProvider>
+          <App />
+        </SessionProvider>
+      </ThemeProvider>
     </Router>
   );
 }
