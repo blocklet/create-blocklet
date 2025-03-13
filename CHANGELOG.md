@@ -1,3 +1,8 @@
+## 0.9.24 (2025-3-13)
+
+- chore(deps): update deps
+- fix(create-app): make sure there is a ThemeProvider outside the SessionProvider
+
 ## 0.9.23 (2025-3-9)
 
 - chore(vite-plugin-blocklet): polish debug entry button postion types
