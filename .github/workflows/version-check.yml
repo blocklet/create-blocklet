@@ -89,7 +89,7 @@ jobs:
           echo "Only monitored changed: $ONLY_CHANGED"
           echo "Changed files: $ESCAPED_ALL_FILES"
 
-          # Set all outputs to match tj-actions/changed-files format
+          # Set all outputs to match changed-files format
           echo "all_changed_files=$ESCAPED_ALL_FILES" >> $GITHUB_OUTPUT
           echo "all_changed_files_count=${#ALL_FILES_ARRAY[@]}" >> $GITHUB_OUTPUT
           echo "only_changed=$ONLY_CHANGED" >> $GITHUB_OUTPUT
