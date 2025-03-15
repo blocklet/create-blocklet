@@ -30,7 +30,7 @@
     "rimraf": "^5.0.10",
     "simple-git-hooks": "^2.11.1",
     "vite": "^5.4.14",
-    "vite-plugin-blocklet": "^0.9.24",
+    "vite-plugin-blocklet": "^0.9.25",
     "vue": "^2.7.16",
     "zx": "^8.3.2"
   },

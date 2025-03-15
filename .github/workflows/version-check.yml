@@ -23,10 +23,77 @@ jobs:
           fetch-depth: 2
       - name: Get changed files in the docs folder
         id: changed-files-docs
-        uses: tj-actions/changed-files@v31
-        with:
-          files: |
-            website/**
+        env:
+          MONITORED_PATH: 'website'
+        run: |
+          # If pull request, compare the base and head
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            BASE_SHA=${{ github.event.pull_request.base.sha }}
+            HEAD_SHA=${{ github.event.pull_request.head.sha }}
+          else
+            # For push event, compare the before and after
+            BASE_SHA=${{ github.event.before }}
+            HEAD_SHA=${{ github.event.after }}
+            
+            # Handle the empty case (like first run or force push)
+            if [ -z "$BASE_SHA" ] || [ "$BASE_SHA" = "0000000000000000000000000000000000000000" ]; then
+              # If it's the first run, use the parent commit of the last commit
+              BASE_SHA=$(git rev-parse HEAD^)
+              HEAD_SHA=$(git rev-parse HEAD)
+            fi
+          fi
+
+          echo "Comparing $BASE_SHA...$HEAD_SHA"
+
+          # Get the changed files list - detect monitored path changes
+          MONITORED_CHANGES=$(git diff --name-status $BASE_SHA $HEAD_SHA | grep -E "^[ACDMRT]\s+${MONITORED_PATH}/" || true)
+          TOTAL_MONITORED_CHANGES=$(echo "$MONITORED_CHANGES" | grep -v "^$" | wc -l)
+
+          # Get all changed files for reference
+          ALL_CHANGES=$(git diff --name-only $BASE_SHA $HEAD_SHA)
+          TOTAL_CHANGES=$(echo "$ALL_CHANGES" | grep -v "^$" | wc -l)
+
+          # Extract the list of changed files
+          CHANGED_FILES=$(echo "$MONITORED_CHANGES" | awk '{print $2}')
+
+          # Create arrays for changed files
+          declare -a ALL_FILES_ARRAY
+          for file in $CHANGED_FILES; do
+            if [ ! -z "$file" ]; then
+              ALL_FILES_ARRAY+=("$file")
+            fi
+          done
+
+          # Convert to JSON using jq
+          ALL_FILES_JSON=$(printf "%s\n" "${ALL_FILES_ARRAY[@]}" | jq -R -s -c 'split("\n") | map(select(length > 0))')
+
+          # Escape quotes for GitHub Actions output
+          ESCAPED_ALL_FILES=$(echo "$ALL_FILES_JSON" | sed 's/"/\\"/g')
+
+          # Determine if only monitored directory changed or other files changed too
+          if [ $TOTAL_MONITORED_CHANGES -eq 0 ]; then
+            # No monitored changes
+            ONLY_CHANGED="true"
+          elif [ $TOTAL_MONITORED_CHANGES -eq $TOTAL_CHANGES ]; then
+            # Only monitored files changed
+            ONLY_CHANGED="true"
+          else
+            # Both monitored and other files changed
+            ONLY_CHANGED="false"
+          fi
+
+          # Debug output
+          echo "Monitored path: ${MONITORED_PATH}"
+          echo "Monitored changes: $TOTAL_MONITORED_CHANGES"
+          echo "Total changes: $TOTAL_CHANGES"
+          echo "Only monitored changed: $ONLY_CHANGED"
+          echo "Changed files: $ESCAPED_ALL_FILES"
+
+          # Set all outputs to match changed-files format
+          echo "all_changed_files=$ESCAPED_ALL_FILES" >> $GITHUB_OUTPUT
+          echo "all_changed_files_count=${#ALL_FILES_ARRAY[@]}" >> $GITHUB_OUTPUT
+          echo "only_changed=$ONLY_CHANGED" >> $GITHUB_OUTPUT
+          echo "any_changed=$([[ ${#ALL_FILES_ARRAY[@]} -gt 0 ]] && echo "true" || echo "false")" >> $GITHUB_OUTPUT
   main:
     if: needs.check-files.outputs.bump-version == 'true'
     needs: check-files
