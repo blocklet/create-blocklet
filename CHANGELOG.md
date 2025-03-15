@@ -1,3 +1,7 @@
+## 0.9.25 (2025-3-15)
+
+- chore(ci): polish version check
+
 ## 0.9.24 (2025-3-13)
 
 - chore(deps): update deps
