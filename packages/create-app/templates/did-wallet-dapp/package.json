@@ -53,7 +53,7 @@
     "simple-git-hooks": "^2.11.1",
     "vite": "^5.4.14",
     "vite-node": "^2.1.9",
-    "vite-plugin-blocklet": "^0.9.26",
+    "vite-plugin-blocklet": "^0.9.27",
     "vite-plugin-require": "^1.2.14",
     "vite-plugin-svgr": "^4.3.0",
     "zx": "^8.3.2"
