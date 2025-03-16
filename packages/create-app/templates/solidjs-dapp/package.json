@@ -21,7 +21,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@blocklet/js-sdk": "^1.16.39",
+    "@blocklet/js-sdk": "^1.16.40",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "bumpp": "^9.11.1",
     "cross-env": "^7.0.3",
@@ -36,14 +36,14 @@
     "rimraf": "^5.0.10",
     "simple-git-hooks": "^2.11.1",
     "vite": "^5.4.14",
-    "vite-plugin-blocklet": "^0.9.25",
+    "vite-plugin-blocklet": "^0.9.26",
     "vite-plugin-solid": "^2.11.2",
     "zx": "^8.3.2"
   },
   "dependencies": {
     "@arcblock/did-auth": "^1.19.15",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
-    "@blocklet/sdk": "^1.16.39",
+    "@blocklet/sdk": "^1.16.40",
     "@ocap/client": "^1.19.15",
     "@ocap/mcrypto": "^1.19.15",
     "@ocap/wallet": "^1.19.15",
