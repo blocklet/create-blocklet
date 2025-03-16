@@ -19,7 +19,7 @@
     "bump-version": "zx --quiet scripts/bump-version.mjs"
   },
   "dependencies": {
-    "@blocklet/sdk": "^1.16.39",
+    "@blocklet/sdk": "^1.16.40",
     "@ocap/mcrypto": "^1.19.15",
     "@ocap/util": "^1.19.15",
     "@ocap/wallet": "^1.19.15",
@@ -31,11 +31,11 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "@arcblock/did-connect": "^2.12.17",
+    "@arcblock/did-connect": "^2.12.26",
     "@arcblock/eslint-config": "^0.3.3",
-    "@arcblock/ux": "^2.12.17",
-    "@blocklet/js-sdk": "^1.16.39",
-    "@blocklet/ui-react": "^2.12.17",
+    "@arcblock/ux": "^2.12.26",
+    "@blocklet/js-sdk": "^1.16.40",
+    "@blocklet/ui-react": "^2.12.26",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^5.16.14",
@@ -53,7 +53,7 @@
     "simple-git-hooks": "^2.11.1",
     "vite": "^5.4.14",
     "vite-node": "^2.1.9",
-    "vite-plugin-blocklet": "^0.9.25",
+    "vite-plugin-blocklet": "^0.9.26",
     "vite-plugin-require": "^1.2.14",
     "vite-plugin-svgr": "^4.3.0",
     "zx": "^8.3.2"
