@@ -1,0 +1,174 @@
+{
+  "id": "NInFN2btNohqesJH",
+  "createdAt": "2025-03-19T10:58:43.099Z",
+  "updatedAt": "2025-03-19T16:07:22.440Z",
+  "name": "HelloWorld",
+  "description": "",
+  "properties": {
+    "atgdfn24wotfn2w4": {
+      "index": 0,
+      "data": {
+        "id": "atgdfn24wotfn2w4",
+        "key": "contentSummarize",
+        "type": "json",
+        "subProperties": {
+          "oqkp1f9f21hj2scw": {
+            "index": 0,
+            "data": {
+              "id": "oqkp1f9f21hj2scw",
+              "key": "summarizeData",
+              "type": "json",
+              "visible": true,
+              "locales": {
+                "zh": {
+                  "name": "",
+                  "defaultValue": {
+                    "summarizeCOntent": "",
+                    "summarizeImage": ""
+                  }
+                }
+              },
+              "subProperties": {
+                "4jhar1u3dol4aepx": {
+                  "index": 0,
+                  "data": {
+                    "id": "4jhar1u3dol4aepx",
+                    "key": "summarizeCOntent",
+                    "type": "string",
+                    "visible": true,
+                    "locales": {
+                      "zh": {
+                        "name": "",
+                        "defaultValue": ""
+                      }
+                    }
+                  }
+                },
+                "16qiu1c3h1utas08": {
+                  "index": 1,
+                  "data": {
+                    "id": "16qiu1c3h1utas08",
+                    "key": "summarizeImage",
+                    "type": "string",
+                    "visible": true,
+                    "locales": {
+                      "zh": {
+                        "name": "",
+                        "defaultValue": ""
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "g9ptbmadvloyldyh": {
+            "index": 1,
+            "data": {
+              "id": "g9ptbmadvloyldyh",
+              "key": "array",
+              "type": "array",
+              "visible": true,
+              "locales": {
+                "zh": {
+                  "name": "",
+                  "defaultValue": {
+                    "name": "",
+                    "arrayJSON": {
+                      "key": "",
+                      "value": ""
+                    }
+                  }
+                }
+              },
+              "subProperties": {
+                "mwukv6j7vzhxp6b0": {
+                  "index": 0,
+                  "data": {
+                    "id": "mwukv6j7vzhxp6b0",
+                    "key": "name",
+                    "type": "string",
+                    "visible": true,
+                    "locales": {
+                      "zh": {
+                        "name": "",
+                        "defaultValue": ""
+                      }
+                    }
+                  }
+                },
+                "vv1rdmmy0rxsi9le": {
+                  "index": 1,
+                  "data": {
+                    "id": "vv1rdmmy0rxsi9le",
+                    "key": "arrayJSON",
+                    "type": "json",
+                    "visible": true,
+                    "locales": {
+                      "zh": {
+                        "name": "",
+                        "defaultValue": {
+                          "key": "",
+                          "value": ""
+                        }
+                      }
+                    },
+                    "subProperties": {
+                      "eu5cz9akdiu6tcyd": {
+                        "index": 0,
+                        "data": {
+                          "id": "eu5cz9akdiu6tcyd",
+                          "key": "key",
+                          "type": "string",
+                          "visible": true,
+                          "locales": {
+                            "zh": {
+                              "name": "",
+                              "defaultValue": ""
+                            }
+                          }
+                        }
+                      },
+                      "8bvy5jbxi75ehnge": {
+                        "index": 1,
+                        "data": {
+                          "id": "8bvy5jbxi75ehnge",
+                          "key": "value",
+                          "type": "string",
+                          "visible": true,
+                          "locales": {
+                            "zh": {
+                              "name": "",
+                              "defaultValue": ""
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "locales": {
+          "zh": {
+            "defaultValue": {
+              "summarizeData": {
+                "summarizeCOntent": "",
+                "summarizeImage": ""
+              },
+              "array": {
+                "name": "",
+                "arrayJSON": {
+                  "key": "",
+                  "value": ""
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "name": "template-block-studio",
+  "description": "A Blocklet to help you develop blocks for Pages Kit",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "blocklet dev",
+    "lint": "tsc --noEmit && eslint src api/src --ext .mjs,.js,.jsx,.ts,.tsx",
+    "lint:fix": "npm run lint -- --fix",
+    "start": "vite-node -c vite-server.config.ts -w api/dev.ts",
+    "clean": "node scripts/build-clean.mjs",
+    "bundle": "tsc --noEmit && npm run bundle:client && npm run bundle:api",
+    "bundle:client": "vite build",
+    "bundle:api": "npm run clean && tsc -p tsconfig.api.json && blocklet bundle --compact --create-release",
+    "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
+    "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
+    "prepare": "npx simple-git-hooks",
+    "bump-version": "zx --quiet scripts/bump-version.mjs",
+    "dev-front": "vite serve .",
+    "build-lib": "node -r dotenv-flow/config -e \"require('@blocklet/pages-kit-block-studio/build-lib')\""
+  },
+  "lint-staged": {
+    "*.{mjs,js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint"
+    ],
+    "*.{css,less,scss,json,graphql}": [
+      "prettier --write"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@arcblock/did-auth": "^1.19.15",
+    "@arcblock/did-auth-storage-nedb": "^1.7.1",
+    "@arcblock/did-connect": "^2.12.36",
+    "@arcblock/ux": "^2.12.36",
+    "@blocklet/pages-kit": "^0.4.65",
+    "@blocklet/pages-kit-block-studio": "^0.4.65",
+    "@blocklet/pages-kit-inner-components": "^0.4.65",
+    "@blocklet/pages-kit-runtime": "^0.4.65",
+    "@blocklet/sdk": "^1.16.40",
+    "@blocklet/studio-ui": "^0.4.253",
+    "@blocklet/ui-react": "^2.12.36",
+    "@ocap/client": "^1.19.15",
+    "@ocap/mcrypto": "^1.19.15",
+    "@ocap/wallet": "^1.19.15",
+    "@react-three/drei": "^10.0.4",
+    "@react-three/fiber": "^9.1.0",
+    "@types/three": "^0.174.0",
+    "axios": "^1.7.9",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv-flow": "^4.1.0",
+    "express": "^4.21.2",
+    "express-async-errors": "^3.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.1",
+    "three": "^0.174.0"
+  },
+  "devDependencies": {
+    "@arcblock/eslint-config": "^0.3.3",
+    "@arcblock/eslint-config-ts": "^0.3.3",
+    "@blocklet/js-sdk": "^1.16.40",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/cookie-parser": "^1.4.8",
+    "@types/cors": "^2.8.17",
+    "@types/dotenv-flow": "^3.3.3",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.17.12",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "bumpp": "^9.9.3",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.57.1",
+    "import-sort-style-module": "^6.0.0",
+    "lint-staged": "^15.3.0",
+    "nodemon": "^3.1.9",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.4.2",
+    "prettier-plugin-import-sort": "^0.0.7",
+    "rimraf": "^5.0.10",
+    "simple-git-hooks": "^2.11.1",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11",
+    "vite-node": "^2.1.8",
+    "vite-plugin-blocklet": "^0.9.25",
+    "vite-plugin-svgr": "^4.3.0",
+    "vite-tsconfig-paths": "^4.3.2",
+    "zx": "^8.3.0"
+  },
+  "importSort": {
+    ".js, .jsx, .mjs": {
+      "parser": "babylon",
+      "style": "module"
+    },
+    ".ts, .tsx": {
+      "style": "module",
+      "parser": "typescript"
+    }
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  }
+}
