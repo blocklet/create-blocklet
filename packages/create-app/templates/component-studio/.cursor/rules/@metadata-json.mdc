@@ -1,5 +1,92 @@
 ---
-description: 
-globs: 
+description: 关于 @metadata.json 的介绍
+globs: **/@metadata.json,@metadata.json
 alwaysApply: false
 ---
+# @metadata.json 文件说明
+
+## 概述
+`@metadata.json` 是 Pages Kit Block Studio 中的组件元数据配置文件，用于定义组件的基本信息和可配置属性。
+
+## 作用
+- 定义组件的基本信息和可配置属性
+- 支持多语言（国际化）配置
+- 控制属性在编辑器中的显示顺序和可见性
+- 为属性提供默认值
+
+## 维护要点
+- 保持 `id` 唯一性
+- 确保 `properties` 中每个属性有唯一的标识符
+- 维护多语言支持（至少包含 en/zh）
+- 管理属性的显示顺序（通过 index 字段）
+- 适当设置默认值和可见性
+
+## 字段含义
+
+### 顶层字段
+| 字段 | 含义 |
+|------|------|
+| `id` | 组件唯一标识符 |
+| `createdAt` | 创建时间戳 |
+| `updatedAt` | 更新时间戳 |
+| `name` | 组件显示名称 |
+| `description` | 组件描述 |
+| `properties` | 包含所有可配置属性的对象 |
+
+### 属性定义 (properties 内)
+每个属性都有一个唯一 ID 作为键，包含以下内容：
+
+#### 基本结构
+```json
+"[属性ID]": {
+  "index": 排序号,
+  "data": {
+    "id": "属性ID",
+    "key": "属性键名",
+    "type": "属性类型（可选）",
+    "visible": true/false（可选）,
+    "locales": {
+      "zh": { /* 中文配置 */ },
+      "en": { /* 英文配置 */ }
+    }
+  }
+}
+```
+
+#### 属性字段说明
+- `index`: 显示顺序编号
+- `data`: 
+  - `id`: 属性唯一标识符
+  - `key`: 属性键名，用于代码中引用
+  - `type`: 属性数据类型 (如 "url")
+  - `visible`: 是否在编辑器中可见
+  - `locales`: 多语言配置
+    - `zh`/`en`: 不同语言的配置
+      - `name`: 属性显示名称
+      - `defaultValue`: 默认值
+
+## 示例
+```json
+{
+  "id": "KEHGy3vdflE8JGrV",
+  "name": "HelloWorld1",
+  "properties": {
+    "gs1rn5jmxfvpxptx": {
+      "index": 0,
+      "data": {
+        "id": "gs1rn5jmxfvpxptx",
+        "key": "title",
+        "locales": {
+          "zh": {
+            "name": "标题"
+          },
+          "en": {
+            "name": "Title"
+          }
+        }
+      }
+    }
+  }
+}
+```
+```

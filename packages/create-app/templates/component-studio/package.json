@@ -21,7 +21,7 @@
     "update:deps": "taze -r -n '/arcblock|ocap|abtnode|blocklet|did-connect|did-comment|nedb/' -w -f && pnpm install && pnpm run deduplicate",
     "deduplicate": "pnpm dedupe",
     "preinstall": "npx only-allow pnpm",
-    "postinstall": "node scripts/should-update-deps.mjs"
+    "postinstall": "node scripts/init-component-studio.mjs"
   },
   "lint-staged": {
     "*.{mjs,js,jsx,ts,tsx}": [

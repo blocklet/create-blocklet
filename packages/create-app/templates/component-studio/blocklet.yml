@@ -45,3 +45,8 @@ environments: []
 capabilities: {}
 screenshots: []
 components: []
+resource:
+  exportApi: /api/resources
+  types:
+    - type: page
+      description: Used by Pages Kit to import one or multiple components
