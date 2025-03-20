@@ -1,0 +1,12 @@
+{
+  "name": "component-studio",
+  "desc": {
+    "en": "A Pages Kit Component Studio Blocklet for developing visual components",
+    "zh": "一个用于开发可视化组件的Pages Kit Component Studio Blocklet"
+  },
+  "blockletType": "dapp",
+  "composable": true,
+  "languages": "Typescript",
+  "useCase": "Development",
+  "author": "ArcBlock"
+}

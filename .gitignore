@@ -11,6 +11,8 @@ dist
 .vscode/dryrun.log
 .vscode/targets.log
 .vscode
+.tmp
+
 
 *.env
 *.env.*

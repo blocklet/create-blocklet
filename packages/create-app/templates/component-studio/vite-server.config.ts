@@ -1,6 +1,4 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { initBlockStudioPlugins } from '@blocklet/pages-kit-block-studio/plugins';
-import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import vitePluginRequire from 'vite-plugin-require';
 import tsconfigPaths from 'vite-tsconfig-paths';
@@ -9,7 +7,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 // @ts-ignore
 export default defineConfig(() => {
   return {
-    plugins: [vitePluginRequire(), tsconfigPaths(), react(), ...initBlockStudioPlugins()],
+    plugins: [vitePluginRequire(), tsconfigPaths()],
     resolve: {
       alias: {
         crypto: 'node:crypto',

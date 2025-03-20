@@ -27,7 +27,7 @@ import {
   toValidPackageName,
 } from './lib/utils.js';
 
-const { yellow, red, green, cyan, blue, bold } = chalk;
+const { yellow, red, green, cyan, blue, bold, magenta } = chalk;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -142,6 +142,12 @@ const templates = [
     name: 'nestjs-api',
     display: '[api] nestjs',
     color: blue,
+  },
+  // dev
+  {
+    name: 'component-studio',
+    display: '[dev] component studio (beta): Local studio using for component development',
+    color: magenta,
   },
 ];
 

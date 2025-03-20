@@ -1,34 +1,19 @@
 import React from 'react';
 
-
-
-
-
-
-
 export interface BlockProps {
-    /** @description id: atgdfn24wotfn2w4 | type: json | visible: true */
-    contentSummarize?: {
-        /** @description id: oqkp1f9f21hj2scw | type: json | visible: true */
-        summarizeData?: {
-            /** @description id: 4jhar1u3dol4aepx | type: string | visible: true */
-            summarizeCOntent?: string;
-            /** @description id: 16qiu1c3h1utas08 | type: string | visible: true */
-            summarizeImage?: string;
-        };
-        /** @description id: g9ptbmadvloyldyh | type: array | visible: true */
-        array?: {
-            /** @description id: mwukv6j7vzhxp6b0 | type: string | visible: true */
-            name?: string;
-            /** @description id: vv1rdmmy0rxsi9le | type: json | visible: true */
-            arrayJSON?: {
-                /** @description id: eu5cz9akdiu6tcyd | type: string | visible: true */
-                key?: string;
-                /** @description id: 8bvy5jbxi75ehnge | type: string | visible: true */
-                value?: string;
-            };
-        }[];
-    };
+  /** @description id: gs1rn5jmxfvpxptx | type: string | visible: true */
+  title?: string;
+  /** @description id: 9ajrz12ik7esfk1z | type: string | visible: true */
+  description?: string;
+  /** @description id: 3ckcfvf6b7zyskk8 | type: url | visible: true */
+  logo?: {
+    url: string;
+    mediaKitUrl?: string;
+    width?: number;
+    height?: number;
+  };
+  /** @description id: x3lqht8ikble1itx | type: string | visible: false */
+  copyright?: string;
 }
 
 // default export

@@ -1,6 +1,4 @@
-# Block Studio
-
-## 功能描述
+## PROJECT_DESCRIPTION
 
 Block Studio 是一个用于开发 Pages Kit 可视化区块的开发工具。通过该工具，开发者可以：
 
@@ -9,10 +7,10 @@ Block Studio 是一个用于开发 Pages Kit 可视化区块的开发工具。�
 - 支持多种可视化组件类型开发（图表、表单、动画等）
 - 无缝集成到 ArcBlock Blocklet 生态系统中
 
-## 项目结构
+## FILE_STRUCTURE
 
 ```
-your-block-studio/
+your-component-studio/
 ├── api/              # 后端API代码
 │   ├── dev.ts        # 开发服务器入口
 │   ├── src/          # API源代码目录
@@ -25,7 +23,7 @@ your-block-studio/
 │   │   └── index.tsx   # 区块入口
 │   │   └── @metadata.json # 区块元数据
 │   │   └── @preview-images/ # 区块预览图目录
-│   └── <your-block-name>/ # 你的区块目录
+│   └── <your-component-name>/ # 你的区块目录
 │       └── index.tsx   # 区块入口
 │       └── @metadata.json # 区块元数据
 │       └── @preview-images/ # 区块预览图目录

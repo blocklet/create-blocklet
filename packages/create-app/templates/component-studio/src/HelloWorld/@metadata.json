@@ -1,0 +1,81 @@
+{
+  "id": "KEHGy3vdflE8JGrV",
+  "createdAt": "2025-03-20T16:01:56.655Z",
+  "updatedAt": "2025-03-20T16:01:56.655Z",
+  "name": "HelloWorld1",
+  "description": "",
+  "properties": {
+    "gs1rn5jmxfvpxptx": {
+      "index": 0,
+      "data": {
+        "id": "gs1rn5jmxfvpxptx",
+        "key": "title",
+        "locales": {
+          "zh": {
+            "name": "标题"
+          },
+          "en": {
+            "name": "Title"
+          }
+        }
+      }
+    },
+    "9ajrz12ik7esfk1z": {
+      "index": 1,
+      "data": {
+        "id": "9ajrz12ik7esfk1z",
+        "key": "description",
+        "locales": {
+          "zh": {
+            "name": "描述",
+            "defaultValue": "欢迎来到 Pages Kit Block Studio"
+          },
+          "en": {
+            "name": "Description",
+            "defaultValue": "Welcome to Pages Kit Block Studio"
+          }
+        }
+      }
+    },
+    "3ckcfvf6b7zyskk8": {
+      "index": 2,
+      "data": {
+        "id": "3ckcfvf6b7zyskk8",
+        "key": "logo",
+        "type": "url",
+        "locales": {
+          "zh": {
+            "defaultValue": {
+              "url": "/.well-known/service/blocklet/logo?imageFilter=convert&f=png&h=80",
+              "mediaKitUrl": "/.well-known/service/blocklet/logo?imageFilter=convert&f=png&h=80"
+            },
+            "name": "Logo"
+          },
+          "en": {
+            "defaultValue": {
+              "url": "/.well-known/service/blocklet/logo?imageFilter=convert&f=png&h=80",
+              "mediaKitUrl": "/.well-known/service/blocklet/logo?imageFilter=convert&f=png&h=80"
+            },
+            "name": "Logo"
+          }
+        }
+      }
+    },
+    "x3lqht8ikble1itx": {
+      "index": 3,
+      "data": {
+        "id": "x3lqht8ikble1itx",
+        "key": "copyright",
+        "locales": {
+          "zh": {
+            "defaultValue": "由 Pages Kit Block Studio 提供支持"
+          },
+          "en": {
+            "defaultValue": "Powered by Pages Kit Block Studio"
+          }
+        },
+        "visible": false
+      }
+    }
+  }
+}
