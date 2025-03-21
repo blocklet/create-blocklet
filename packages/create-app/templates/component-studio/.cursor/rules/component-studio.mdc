@@ -134,6 +134,6 @@ your-component-studio/
 
 ## 补充资源
 组件开发中可参考以下详细文档：
-- [`@metadata.json` 文件说明] ([@metadata-json.mdc](mdc:nft-studio/nft-studio/nft-studio/nft-studio/nft-studio/nft-studio/nft-studio/nft-studio/create-blocklet/packages/create-app/templates/component-studio/.cursor/rules/@metadata-json.mdc))
-- [`index.tsx` 文件说明] ([index-tsx.mdc](mdc:nft-studio/nft-studio/nft-studio/nft-studio/nft-studio/nft-studio/nft-studio/nft-studio/create-blocklet/packages/create-app/templates/component-studio/.cursor/rules/index-tsx.mdc))
+- [`@metadata.json` 文件说明](mdc:nft-studio/nft-studio/@metadata-json.mdc)
+- [`index.tsx` 文件说明](mdc:nft-studio/nft-studio/index-tsx.mdc)
 这两个文档提供了关于配置和实现细节的全面指南。

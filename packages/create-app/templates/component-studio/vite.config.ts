@@ -14,7 +14,7 @@ export default defineConfig((mode) => {
       }),
       createBlockletPlugin(),
       svgr(),
-      ...initBlockStudioPlugins({
+      initBlockStudioPlugins({
         formats: ['es'],
       }),
     ],

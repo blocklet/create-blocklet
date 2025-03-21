@@ -37,7 +37,14 @@ export interface BlockProps {
     bio?: string;
   }[];
   /** @description id: s0tund4p07bzizgv | type: yaml | visible: true */
-  yaml?: string;
+  yaml?:
+    | string
+    | {
+        /** @description id: 1q8tsreh4k2mhbgs | type: string | visible: true */
+        ya?: string;
+        /** @description id: 09w8sncxwrj6tldi | type: string | visible: true */
+        ml?: string;
+      };
   /** @description id: 8e7g6c61pxcy0q4w | type: component | visible: true */
   children?: any;
 }
@@ -58,6 +65,8 @@ export default function BlockComponent({
   children,
 }: BlockProps) {
   const [animateIn, setAnimateIn] = useState(false);
+
+  console.warn('yaml', yaml);
 
   useEffect(() => {
     // Trigger entrance animation after component mounts
@@ -436,7 +445,7 @@ export default function BlockComponent({
                 fontSize: '1.5rem',
                 fontWeight: 600,
               }}>
-              YAML Configuration
+              YAML to JSON Data
             </h3>
             <pre
               style={{
@@ -451,7 +460,7 @@ export default function BlockComponent({
                 lineHeight: 1.6,
                 border: '1px solid rgba(55, 65, 81, 0.5)',
               }}>
-              {yaml}
+              {JSON.stringify(yaml, null, 2)}
             </pre>
           </div>
         )}

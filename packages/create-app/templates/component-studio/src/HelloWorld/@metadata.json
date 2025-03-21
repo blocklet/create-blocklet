@@ -243,8 +243,8 @@
           "en": {
             "name": "JSON Data",
             "defaultValue": {
-              "foo": "",
-              "bar": ""
+              "foo": "foo",
+              "bar": "bar"
             }
           }
         },
@@ -263,7 +263,7 @@
                 },
                 "en": {
                   "name": "Foo",
-                  "defaultValue": ""
+                  "defaultValue": "foo"
                 }
               }
             }
@@ -282,7 +282,7 @@
                 },
                 "en": {
                   "name": "Bar",
-                  "defaultValue": ""
+                  "defaultValue": "bar"
                 }
               }
             }
@@ -373,7 +373,39 @@
           },
           "en": {
             "name": "YAML Configuration",
-            "defaultValue": "config:\n  key: value\n  nested:\n    prop: example"
+            "defaultValue": "ya: ya\nml: ml\n"
+          }
+        },
+        "subProperties": {
+          "1q8tsreh4k2mhbgs": {
+            "index": 0,
+            "data": {
+              "id": "1q8tsreh4k2mhbgs",
+              "key": "ya",
+              "type": "string",
+              "visible": true,
+              "locales": {
+                "en": {
+                  "name": "Ya",
+                  "defaultValue": "ya"
+                }
+              }
+            }
+          },
+          "09w8sncxwrj6tldi": {
+            "index": 1,
+            "data": {
+              "id": "09w8sncxwrj6tldi",
+              "key": "ml",
+              "type": "string",
+              "visible": true,
+              "locales": {
+                "en": {
+                  "name": "Ml",
+                  "defaultValue": "ml"
+                }
+              }
+            }
           }
         }
       }
