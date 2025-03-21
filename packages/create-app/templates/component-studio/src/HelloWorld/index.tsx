@@ -19,7 +19,7 @@ export interface BlockProps {
   /** @description id: bl0rimfebwbencoj | type: decimal | visible: true */
   decimal?: number;
   /** @description id: gioetxz8d13jabz6 | type: boolean | visible: true */
-  showDescription?: boolean;
+  showCopyright?: boolean;
   /** @description id: yi1oj4rq1eziup1d | type: color | visible: true */
   titleColor?: string;
   /** @description id: 4f49q5uidkcp5ak4 | type: json | visible: true */
@@ -33,7 +33,7 @@ export interface BlockProps {
   array?: {
     /** @description id: 1c5vl2p9cn9ryvgh | type: string | visible: true */
     name?: string;
-    /** @description id: c5whnccwzqqzaa0w | type: string | visible: true */
+    /** @description id: c5whnccwzqqzaa0w | type: multiline | visible: true */
     bio?: string;
   }[];
   /** @description id: s0tund4p07bzizgv | type: yaml | visible: true */
@@ -47,10 +47,10 @@ export default function BlockComponent({
   title = 'Hello World',
   logo,
   description,
-  copyright = 'Powered by Pages Kit Block Studio',
+  copyright = 'Powered by Component Studio',
   number,
   decimal,
-  showDescription = true,
+  showCopyright = true,
   titleColor = '#6366F1',
   json,
   array,
@@ -170,57 +170,65 @@ export default function BlockComponent({
         }}
       />
 
+      {/* Logo区域 */}
+      {logo && (
+        <div
+          style={{
+            textAlign: 'center',
+            margin: '1rem 0',
+            animation: animateIn ? 'fadeIn 0.9s ease forwards' : 'none',
+            opacity: animateIn ? 1 : 0,
+          }}>
+          <img
+            src={typeof logo === 'object' ? logo.url : logo}
+            alt="logo"
+            style={{
+              borderRadius: '4px',
+              maxWidth: '240px',
+              maxHeight: '120px',
+              filter: 'drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1))',
+              width: typeof logo === 'object' && logo.width ? `${logo.width}px` : 'auto',
+              height: typeof logo === 'object' && logo.height ? `${logo.height}px` : 'auto',
+              transition: 'transform 0.3s ease',
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'scale(1)';
+            }}
+          />
+        </div>
+      )}
+
       {/* Content wrapper with relative position to show above background */}
       <div style={{ position: 'relative', zIndex: 1 }}>
         {/* 标题区域 */}
         {title && (
           <h1
+            key={title}
             style={{
+              borderRadius: '12px',
               textAlign: 'center',
-              color: titleColor || '#6366F1',
               fontSize: '3.5rem',
               fontWeight: 800,
               letterSpacing: '-0.03em',
               margin: '0 0 1.5rem',
-              background: `linear-gradient(135deg, ${titleColor} 0%, #A855F7 100%)`,
+              background: `linear-gradient(135deg, ${titleColor} 0%, #3773F2 100%)`,
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              color: 'transparent',
+              // @ts-ignore
+              textFillColor: 'transparent',
               animation: animateIn ? 'fadeSlideDown 0.7s ease forwards' : 'none',
             }}>
             {title}
           </h1>
         )}
 
-        {/* Logo区域 */}
-        {logo && (
-          <div
-            style={{
-              textAlign: 'center',
-              margin: '2rem 0',
-              animation: animateIn ? 'fadeIn 0.9s ease forwards' : 'none',
-              opacity: animateIn ? 1 : 0,
-            }}>
-            <img
-              src={typeof logo === 'object' ? logo.url : logo}
-              alt="logo"
-              style={{
-                maxWidth: '240px',
-                maxHeight: '120px',
-                filter: 'drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1))',
-                width: typeof logo === 'object' && logo.width ? `${logo.width}px` : 'auto',
-                height: typeof logo === 'object' && logo.height ? `${logo.height}px` : 'auto',
-                transition: 'transform 0.3s ease',
-              }}
-              onMouseOver={(e) => {
-                e.currentTarget.style.transform = 'scale(1.05)';
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.transform = 'scale(1)';
-              }}
-            />
-          </div>
-        )}
-
         {/* 描述区域 */}
-        {description && showDescription && (
+        {description && (
           <div
             style={{
               color: '#4B5563',
@@ -305,18 +313,12 @@ export default function BlockComponent({
                 }}>
                 JSON Data
               </h3>
-              {json.name && (
+              {Object.entries(json).map(([key, value]) => (
                 <div style={{ margin: '0.8rem 0', fontSize: '1.1rem', color: '#1F2937' }}>
-                  <span style={{ fontWeight: 500, marginRight: '0.5rem', color: '#F59E0B' }}>Name:</span>
-                  <span style={{ fontSize: '1.15rem' }}>{json.name}</span>
+                  <span style={{ fontWeight: 500, marginRight: '0.5rem', color: '#F59E0B' }}>{key}:</span>
+                  <span style={{ fontSize: '1.15rem' }}>{value}</span>
                 </div>
-              )}
-              {json.array && (
-                <div style={{ margin: '0.8rem 0', fontSize: '1.1rem', color: '#1F2937' }}>
-                  <span style={{ fontWeight: 500, marginRight: '0.5rem', color: '#F59E0B' }}>Array:</span>
-                  <span style={{ fontSize: '1.15rem' }}>{json.array}</span>
-                </div>
-              )}
+              ))}
             </div>
           )}
         </div>
@@ -372,7 +374,7 @@ export default function BlockComponent({
                         fontWeight: 600,
                         fontSize: '1.1rem',
                       }}>
-                      Sex
+                      Bio
                     </th>
                   </tr>
                 </thead>
@@ -405,7 +407,7 @@ export default function BlockComponent({
                           borderBottom: '1px solid rgba(229, 231, 235, 0.7)',
                           fontSize: '1.05rem',
                         }}>
-                        {item.sex || '-'}
+                        {item.bio || '-'}
                       </td>
                     </tr>
                   ))}
@@ -487,7 +489,7 @@ export default function BlockComponent({
         )}
 
         {/* 版权信息 */}
-        {copyright && (
+        {showCopyright && copyright && (
           <div
             style={{
               textAlign: 'center',
@@ -523,7 +525,7 @@ export const EditComponent: React.FC<BlockProps & { onChange?: (value: BlockProp
           padding: '8px 0',
           borderBottom: '1px solid #eee',
         }}>
-        Component Extra Parameters
+        Extra Edit Component
       </div>
 
       {/* 版权信息输入 */}

@@ -24,16 +24,18 @@ your-component-studio/
 │   │   └── @metadata.json # 区块元数据
 │   │   └── @preview-images/ # 区块预览图目录
 │   └── <your-component-name>/ # 你的区块目录
-│       └── index.tsx   # 区块入口
-│       └── @metadata.json # 区块元数据
-│       └── @preview-images/ # 区块预览图目录
-├── _theme.tsx        # Block Studio 主题文件(请勿修改)
+│   |   └── index.tsx   # 区块入口
+│   |   └── @metadata.json # 区块元数据
+│   |   └── @preview-images/ # 区块预览图目录
+│   └── components/ # 组件目录
+│   └── utils/ # 工具函数目录
+│   └── types/ # 类型声明目录
 ├── package.json      # 项目配置和依赖
 ├── vite.config.mts   # Vite客户端配置
 └── vite-server.config.ts # Vite服务端配置
 ```
 
-## 开发流程
+## DEVELOPMENT
 
 1. 使用 `pnpm run dev` 启动开发环境，点击 `Terminal` 中的 url 访问 Block Studio 界面
 2. 通过点击 `+` 按钮，创建新的区块（当然也可以在 `src/` 目录下创建新的区块组件）

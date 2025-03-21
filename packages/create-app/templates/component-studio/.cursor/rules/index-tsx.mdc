@@ -1,5 +1,192 @@
 ---
-description: 
-globs: 
+description: 关于 index.tsx 的文件说明
+globs: index.tsx,**/index.tsx
 alwaysApply: false
 ---
+# index.tsx 文件说明
+
+## 概述
+`index.tsx` 是 Component Studio 中组件的实现文件，负责组件的渲染逻辑和交互行为。它与 `@metadata.json` 紧密配合，共同定义了一个完整的可配置组件。
+
+## 工作原理
+`index.tsx` 与 `@metadata.json` 通过属性映射相互关联：
+- `@metadata.json` 定义组件的可配置属性及其元数据
+- `index.tsx` 使用这些属性进行组件渲染和行为控制
+
+
+## 关键部分
+
+### BlockProps 接口
+```typescript
+export interface BlockProps {
+  /** @description id: gs1rn5jmxfvpxptx | type: string | visible: true */
+  title?: string;
+  /** @description id: 9ajrz12ik7esfk1z | type: string | visible: true */
+  description?: string;
+  // ...其他属性
+}
+```
+
+这个接口定义了组件的属性类型，每个属性的注释包含：
+- 对应的 `@metadata.json` 中的 id
+- 属性类型
+- 可见性
+- 需要保持 `@description` 符号，这是 jsdom 在 ts 类型处理的时候，会被解析到 zod 上 `z.xxx().describe()`
+
+#### BlockProps 最佳实践
+- 所有属性默认应设为可选（使用 `?` 标记），以避免类型错误
+- 保持注释格式的统一性，不要删除或修改 `@description` 内容
+- 为复杂类型（如嵌套对象）定义独立的接口或类型，增强代码可读性
+- 当添加新属性时，确保同步添加对应的注释，包含完整的 metadata 信息
+- 使用语义化的属性名称，与 `@metadata.json` 中的 `key` 保持一致
+
+### 组件实现
+```typescript
+export default function BlockComponent({
+  title = 'Hello World',
+  logo,
+  description,
+  // ...其他属性和默认值
+}: BlockProps) {
+  // 组件实现逻辑
+}
+```
+
+组件函数接收 `BlockProps` 定义的属性，并设置与 `@metadata.json` 中匹配的默认值。
+
+#### 组件实现最佳实践
+- 为常用属性设置默认值，确保组件在无参数时也能正常渲染
+- 默认值应与 `@metadata.json` 中的 `defaultValue` 保持一致
+- 使用解构赋值接收属性，简化代码结构
+- 对于复杂的逻辑处理，考虑使用 React hooks 拆分功能
+- 实现响应式设计，确保组件在不同尺寸下都能正常显示
+- 添加适当的类型守卫检查复杂属性，防止运行时错误
+- 考虑性能优化，避免不必要的重渲染（如使用 useMemo, useCallback）
+
+
+### EditComponent
+```typescript
+export const EditComponent: React.FC<BlockProps & { onChange?: (value: BlockProps) => void }> = ({
+  onChange,
+  ...props
+}) => {
+  // 自定义编辑界面实现
+}
+```
+
+这是组件的特殊编辑接口，提供了编辑器中的自定义控件，增强属性编辑体验。
+
+#### EditComponent 最佳实践
+- 当在 EditComponent 中为某个属性提供自定义控件时，应在 `@metadata.json` 中将该属性的 `visible` 设置为 `false`
+- 使用 onChange 回调时确保传递完整的 props 对象，避免丢失其他属性值
+- 为复杂编辑界面提供直观的 UI 分组和标签
+- 考虑添加表单验证，确保用户输入的值有效
+- 提供即时反馈，让用户知道其操作已被接收
+- 保持编辑控件的样式与 Component Studio 整体风格一致
+- 并不是所有的 Component 都需要这个自定义空间，尤其是 `type: 'url' ｜ ‘yml’` 情况下，不建议替换
+
+### 样式
+组件样式在 Component Studio 中通常通过内联样式对象实现，便于与属性值动态绑定。
+
+```typescript
+// 样式对象分离示例
+const cardStyle = {
+  padding: '1.5rem',
+  borderRadius: '12px',
+  background: 'rgba(255, 255, 255, 0.7)',
+  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)'
+};
+
+return <div style={cardStyle}>...</div>;
+```
+
+#### 样式最佳实践
+- **内联样式优先** - 使用内联样式（style对象）便于属性动态控制
+- **样式对象分离** - 对于复杂组件，将样式对象提取到组件函数外，提高可读性
+- **动态样式函数** - 创建函数生成依赖于属性的样式
+  ```typescript
+  const getTitleStyle = (color) => ({
+    color,
+    fontSize: '1.5rem',
+    fontWeight: 600
+  });
+  ```
+- **响应式设计** - 使用条件样式或媒体查询实现适配不同设备
+- **过渡动画** - 添加 transition 属性提升用户体验
+- **交互增强** - 为互动元素添加悬停状态
+- **性能优化** - 使用 useMemo 缓存样式对象，避免不必要的重新计算
+  ```typescript
+  const buttonStyle = useMemo(() => ({
+    background: isActive ? activeColor : inactiveColor
+  }), [isActive, activeColor, inactiveColor]);
+  ```
+- **避免硬编码** - 使用属性传入的样式值，避免硬编码颜色等固定值
+- **主题变量** - 考虑使用 CSS 变量实现主题定制
+- **使用语义化命名** - 如 containerStyle, headerStyle 等增强可读性
+
+## 与 @metadata.json 的关系
+
+### 属性映射
+每个在 `@metadata.json` 中定义的属性，在 `index.tsx` 中都有对应映射：
+
+| @metadata.json | index.tsx |
+|----------------|------------|
+| `properties.[id].data.key` | BlockProps 中的属性名 |
+| `properties.[id].data.type` | TypeScript 类型定义 |
+| `properties.[id].data.locales.[lang].defaultValue` | 组件中的默认值 |
+
+### 类型对应关系
+- `string` → `string`
+- `number` → `number`
+- `boolean` → `boolean`
+- `url` → 自定义对象类型
+- `json` → 自定义对象类型
+- `array` → 数组类型
+- `component` → `any` 或特定组件类型
+
+### 嵌套属性处理
+`@metadata.json` 中的 `subProperties` 在 `index.tsx` 中通过嵌套接口定义映射：
+
+```typescript
+json?: {
+  /** @description id: gpy89bsxc6ovvlsp | type: string | visible: true */
+  foo?: string;
+  /** @description id: 1j34jdhdptp2xm5e | type: string | visible: true */
+  bar?: string;
+};
+```
+
+## 通用最佳实践
+以下是适用于整个组件开发过程的通用最佳实践：
+
+1. **文件同步** - 修改 `@metadata.json` 或 `index.tsx` 时，确保两者保持同步
+2. **版本控制** - 为重要更改添加清晰的注释和版本标记
+3. **组件设计** - 遵循单一职责原则，每个组件只做一件事
+4. **性能考虑** - 针对大型组件或频繁更新的场景进行性能优化
+5. **可维护性** - 使用清晰的命名和注释，便于团队成员理解
+
+## 编辑组件示例
+对于需要特殊编辑体验的属性，可以通过 `EditComponent` 提供自定义编辑界面：
+
+```typescript
+export const EditComponent: React.FC<BlockProps & { onChange?: (value: BlockProps) => void }> = ({
+  onChange,
+  ...props
+}) => {
+  return (
+    <div>
+      <label>自定义编辑器</label>
+      <input 
+        value={props.someProperty || ''} 
+        onChange={(e) => onChange?.({...props, someProperty: e.target.value})}
+      />
+    </div>
+  );
+}
+```
+
+## 组件属性如何生效
+1. 用户在编辑器中配置属性值
+2. 值存储到 `@metadata.json` 对应属性的 `defaultValue`
+3. 运行时，这些值作为 props 传递给 `index.tsx` 中的组件
+4. 组件根据接收到的 props 和默认值渲染界面
