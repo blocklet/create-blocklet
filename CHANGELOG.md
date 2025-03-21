@@ -1,3 +1,8 @@
+## 0.9.26 (2025-3-21)
+
+- feat(create-app): support permanent did in template
+- feat(create-app): add component-studio template
+
 ## 0.9.25 (2025-3-15)
 
 - chore(ci): polish version check

@@ -1,0 +1,549 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# @metadata.json 文件说明
+
+## 概述
+`@metadata.json` 是 Component Studio 中的组件元数据配置文件，用于定义组件的基本信息和可配置属性。
+
+## 作用
+- 定义组件的基本信息和可配置属性
+- 支持多语言（国际化）配置
+- 控制属性在编辑器中的显示顺序和可见性
+- 为属性提供默认值
+- 支持多种数据类型和嵌套属性
+
+## 维护要点
+- 保持 `id` 唯一性
+- 所有 `id` 都是 16 位的 uuid，不需要语意化（非常重要!）
+- 确保 `properties` 中每个属性有唯一的标识符
+- 维护多语言支持（至少包含 en/zh）
+- 管理属性的显示顺序（通过 index 字段）
+- 适当设置默认值和可见性
+- 正确配置复杂类型的嵌套属性（subProperties）
+
+## 最佳实践
+- 属性键名 `key` 使用驼峰命名(如 `titleColor` )保持一致性
+- 为所有属性设置合适的默认值，尤其是复杂类型
+- 属性分组时保持相关属性的索引 `index` 连续
+- 多语言配置保持一致性，确保 zh/en 都有对应内容
+- 修改已使用的组件时，不要更改现有属性的 ID 和 key
+
+## 字段含义
+
+### 顶层字段
+| 字段 | 含义 |
+|------|------|
+| `id` | 组件唯一标识符 |
+| `createdAt` | 创建时间戳 |
+| `updatedAt` | 更新时间戳 |
+| `name` | 组件显示名称 |
+| `description` | 组件描述 |
+| `properties` | 包含所有可配置属性的对象 |
+
+### 属性定义 (properties 内)
+每个属性都有一个唯一 ID 作为键，包含以下内容：
+
+#### 基本结构
+```json
+"id": {
+  "index": 0,
+  "data": {
+    "id": "id",
+    "key": "key",
+    "type": "string",
+    "visible": true,
+    "locales": {
+      "zh": {},
+      "en": {}
+    }
+  }
+}
+```
+
+说明：
+- `index`: 排序号，从0开始
+- `id`: 属性唯一标识符，16 位 uuid，不需要语意化（非常重要!）
+- `key`: 属性键名，在代码中引用时使用
+- `type`: 属性类型，默认为 string
+- `visible`: 是否在编辑器中可见，默认为 true
+
+#### 属性字段说明
+- `index`: 显示顺序编号
+- `data`: 
+  - `id`: 属性唯一标识符，16 位 uuid，不需要语意化（非常重要!）
+  - `key`: 属性键名，用于代码中引用
+  - `type`: 属性数据类型，支持以下类型：
+    - `string`: 文本
+    - `multiline`: 多行文本
+    - `number`: 整数
+    - `decimal`: 小数
+    - `boolean`: 布尔值
+    - `color`: 颜色
+    - `url`: URL链接
+    - `json`: JSON对象
+    - `array`: 数组
+    - `yaml`: YAML配置
+    - `component`: 组件，支持内嵌组件
+  - `visible`: 是否在编辑器中可见
+  - `locales`: 多语言配置
+    - `zh`/`en`: 不同语言的配置
+      - `name`: 属性显示名称
+      - `defaultValue`: 默认值，可以是简单值或复杂对象
+  - `subProperties`: 嵌套属性定义，用于 yaml、json、array 等复杂类型
+
+### 嵌套属性 (subProperties)
+在 `yaml`, `json`, `array` 等复杂类型中可以定义子属性（subProperties）。子属性的结构与主属性列表结构相同，用于定义复杂数据类型的内部结构。
+
+
+## 常见问题
+
+**Q: 添加新属性后，组件中无法访问到该属性值？**
+A: 检查属性的`visible`是否为true，并确保属性的`key`在组件代码中正确引用。
+
+**Q: 如何在开发时测试不同语言环境？**
+A: 可以通过修改浏览器语言设置或使用开发工具中的语言切换功能来测试。
+
+**Q: 修改属性类型后，原有的defaultValue不生效了？**
+A: 不同类型需要匹配相应格式的默认值，修改类型时需同步更新defaultValue。
+
+## `@metadata.json` 示例
+请仔细查看它的结构，其它 `@metadata.json` 的结构与其基本一致，只是其中 `properties` 中的差别
+请注意：所有 `id` 都是 16 位的 uuid，不需要语意化（非常重要!）
+```json
+{
+  "id": "KEHGy3vdflE8JGrV",
+  "createdAt": "2025-03-20T16:01:56.655Z",
+  "updatedAt": "2025-03-21T01:24:04.008Z",
+  "name": "HelloWorld",
+  "description": "",
+  "properties": {
+    "gs1rn5jmxfvpxptx": {
+      "index": 0,
+      "data": {
+        "id": "gs1rn5jmxfvpxptx",
+        "key": "title",
+        "type": "string",
+        "visible": true,
+        "locales": {
+          "zh": {
+            "name": "标题",
+            "defaultValue": "Hello World"
+          },
+          "en": {
+            "name": "Title",
+            "defaultValue": "Hello World"
+          }
+        }
+      }
+    },
+    "9ajrz12ik7esfk1z": {
+      "index": 1,
+      "data": {
+        "id": "9ajrz12ik7esfk1z",
+        "key": "description",
+        "type": "string",
+        "visible": true,
+        "locales": {
+          "zh": {
+            "name": "描述",
+            "defaultValue": "这是你的创意实验室，在这里可以:\n- 设计和构建各类强大组件\n- 将创意转化为可复用代码\n- 打造专属于您的组件库\n释放你的开发潜能，开始创作吧！"
+          },
+          "en": {
+            "name": "Description",
+            "defaultValue": "This is your creative lab, where you can:\n- Design and build powerful components\n- Transform ideas into reusable code\n- Create your own component library\nUnleash your development potential and start creating!"
+          }
+        }
+      }
+    },
+    "3ckcfvf6b7zyskk8": {
+      "index": 2,
+      "data": {
+        "id": "3ckcfvf6b7zyskk8",
+        "key": "logo",
+        "type": "url",
+        "visible": true,
+        "locales": {
+          "zh": {
+            "defaultValue": {
+              "url": "/.well-known/service/blocklet/logo?imageFilter=convert&f=png&h=80",
+              "mediaKitUrl": "/.well-known/service/blocklet/logo?imageFilter=convert&f=png&h=80"
+            },
+            "name": "Logo"
+          },
+          "en": {
+            "defaultValue": {
+              "url": "/.well-known/service/blocklet/logo?imageFilter=convert&f=png&h=80",
+              "mediaKitUrl": "/.well-known/service/blocklet/logo?imageFilter=convert&f=png&h=80"
+            },
+            "name": "Logo"
+          }
+        },
+        "subProperties": {
+          "ML-CDw7LvtlhM_cl": {
+            "index": 0,
+            "data": {
+              "id": "ML-CDw7LvtlhM_cl",
+              "key": "url",
+              "locales": {
+                "en": {
+                  "name": "url"
+                },
+                "zh": {
+                  "name": "url"
+                }
+              }
+            }
+          },
+          "K-HYgPHtAsmO_mer": {
+            "index": 1,
+            "data": {
+              "id": "K-HYgPHtAsmO_mer",
+              "key": "mediaKitUrl",
+              "locales": {
+                "en": {
+                  "name": "mediaKitUrl"
+                },
+                "zh": {
+                  "name": "mediaKitUrl"
+                }
+              }
+            }
+          },
+          "evequmAWgWEWZLex": {
+            "index": 2,
+            "data": {
+              "id": "evequmAWgWEWZLex",
+              "key": "width",
+              "locales": {
+                "en": {
+                  "name": "width"
+                },
+                "zh": {
+                  "name": "width"
+                }
+              }
+            }
+          },
+          "poeAwflRHJeUmfLa": {
+            "index": 3,
+            "data": {
+              "id": "poeAwflRHJeUmfLa",
+              "key": "height",
+              "locales": {
+                "en": {
+                  "name": "height"
+                },
+                "zh": {
+                  "name": "height"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "x3lqht8ikble1itx": {
+      "index": 3,
+      "data": {
+        "id": "x3lqht8ikble1itx",
+        "key": "copyright",
+        "type": "string",
+        "visible": false,
+        "locales": {
+          "zh": {
+            "name": "版权信息",
+            "defaultValue": "由 Component Studio 提供支持"
+          },
+          "en": {
+            "name": "Copyright",
+            "defaultValue": "Powered by Component Studio"
+          }
+        }
+      }
+    },
+    "q0ezdj81v0m14y5m": {
+      "index": 4,
+      "data": {
+        "id": "q0ezdj81v0m14y5m",
+        "key": "number",
+        "type": "number",
+        "visible": true,
+        "locales": {
+          "zh": {
+            "name": "整数",
+            "defaultValue": 42
+          },
+          "en": {
+            "name": "Integer",
+            "defaultValue": 42
+          }
+        }
+      }
+    },
+    "bl0rimfebwbencoj": {
+      "index": 5,
+      "data": {
+        "id": "bl0rimfebwbencoj",
+        "key": "decimal",
+        "type": "decimal",
+        "visible": true,
+        "locales": {
+          "zh": {
+            "name": "小数",
+            "defaultValue": 3.14
+          },
+          "en": {
+            "name": "Decimal",
+            "defaultValue": 3.14
+          }
+        }
+      }
+    },
+    "gioetxz8d13jabz6": {
+      "index": 6,
+      "data": {
+        "id": "gioetxz8d13jabz6",
+        "key": "showCopyright",
+        "type": "boolean",
+        "visible": true,
+        "locales": {
+          "zh": {
+            "name": "是否展示 Copyright",
+            "defaultValue": true
+          },
+          "en": {
+            "name": "Show Description",
+            "defaultValue": true
+          }
+        }
+      }
+    },
+    "yi1oj4rq1eziup1d": {
+      "index": 7,
+      "data": {
+        "id": "yi1oj4rq1eziup1d",
+        "key": "titleColor",
+        "type": "color",
+        "visible": true,
+        "locales": {
+          "zh": {
+            "defaultValue": "rgb(45, 36, 45)",
+            "name": "标题颜色"
+          },
+          "en": {
+            "defaultValue": "rgb(44, 39, 44)",
+            "name": "Title Color"
+          }
+        }
+      }
+    },
+    "4f49q5uidkcp5ak4": {
+      "index": 8,
+      "data": {
+        "id": "4f49q5uidkcp5ak4",
+        "key": "json",
+        "type": "json",
+        "visible": true,
+        "locales": {
+          "zh": {
+            "name": "JSON 数据",
+            "defaultValue": {
+              "foo": "-",
+              "bar": "-"
+            }
+          },
+          "en": {
+            "name": "JSON Data",
+            "defaultValue": {
+              "foo": "foo",
+              "bar": "bar"
+            }
+          }
+        },
+        "subProperties": {
+          "gpy89bsxc6ovvlsp": {
+            "index": 0,
+            "data": {
+              "id": "gpy89bsxc6ovvlsp",
+              "key": "foo",
+              "type": "string",
+              "visible": true,
+              "locales": {
+                "zh": {
+                  "name": "名称",
+                  "defaultValue": "-"
+                },
+                "en": {
+                  "name": "Foo",
+                  "defaultValue": "foo"
+                }
+              }
+            }
+          },
+          "1j34jdhdptp2xm5e": {
+            "index": 1,
+            "data": {
+              "id": "1j34jdhdptp2xm5e",
+              "key": "bar",
+              "type": "string",
+              "visible": true,
+              "locales": {
+                "zh": {
+                  "name": "属性",
+                  "defaultValue": "-"
+                },
+                "en": {
+                  "name": "Bar",
+                  "defaultValue": "bar"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "lbclpm6mxrp10w2k": {
+      "index": 9,
+      "data": {
+        "id": "lbclpm6mxrp10w2k",
+        "key": "array",
+        "type": "array",
+        "visible": true,
+        "locales": {
+          "zh": {
+            "name": "数组数据",
+            "defaultValue": [
+              {
+                "name": "示例用户",
+                "bio": "这是一个示例用户"
+              }
+            ]
+          },
+          "en": {
+            "name": "Array Data",
+            "defaultValue": [
+              {
+                "name": "Example User",
+                "bio": "This is an example user"
+              }
+            ]
+          }
+        },
+        "subProperties": {
+          "1c5vl2p9cn9ryvgh": {
+            "index": 0,
+            "data": {
+              "id": "1c5vl2p9cn9ryvgh",
+              "key": "name",
+              "type": "string",
+              "visible": true,
+              "locales": {
+                "zh": {
+                  "name": "姓名",
+                  "defaultValue": ""
+                },
+                "en": {
+                  "name": "Name",
+                  "defaultValue": ""
+                }
+              }
+            }
+          },
+          "c5whnccwzqqzaa0w": {
+            "index": 1,
+            "data": {
+              "id": "c5whnccwzqqzaa0w",
+              "key": "bio",
+              "type": "multiline",
+              "visible": true,
+              "locales": {
+                "zh": {
+                  "name": "简介",
+                  "defaultValue": ""
+                },
+                "en": {
+                  "name": "Bio",
+                  "defaultValue": ""
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "s0tund4p07bzizgv": {
+      "index": 10,
+      "data": {
+        "id": "s0tund4p07bzizgv",
+        "key": "yaml",
+        "type": "yaml",
+        "visible": true,
+        "locales": {
+          "zh": {
+            "name": "YAML 配置",
+            "defaultValue": ""
+          },
+          "en": {
+            "name": "YAML Configuration",
+            "defaultValue": "ya: ya\nml: ml\n"
+          }
+        },
+        "subProperties": {
+          "1q8tsreh4k2mhbgs": {
+            "index": 0,
+            "data": {
+              "id": "1q8tsreh4k2mhbgs",
+              "key": "ya",
+              "type": "string",
+              "visible": true,
+              "locales": {
+                "en": {
+                  "name": "Ya",
+                  "defaultValue": "ya"
+                }
+              }
+            }
+          },
+          "09w8sncxwrj6tldi": {
+            "index": 1,
+            "data": {
+              "id": "09w8sncxwrj6tldi",
+              "key": "ml",
+              "type": "string",
+              "visible": true,
+              "locales": {
+                "en": {
+                  "name": "Ml",
+                  "defaultValue": "ml"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "8e7g6c61pxcy0q4w": {
+      "index": 11,
+      "data": {
+        "id": "8e7g6c61pxcy0q4w",
+        "key": "children",
+        "type": "component",
+        "visible": true,
+        "locales": {
+          "zh": {
+            "name": "子组件",
+            "defaultValue": {}
+          },
+          "en": {
+            "name": "Children Components",
+            "defaultValue": {}
+          }
+        }
+      }
+    }
+  }
+}
+```
