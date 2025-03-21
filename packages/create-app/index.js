@@ -9,7 +9,6 @@ import ora from 'ora';
 import prompts from 'prompts';
 import { fileURLToPath } from 'url';
 import { argv, cd, chalk, fs, path, YAML } from 'zx';
-
 import { echoBrand, echoDocument } from './lib/arcblock.js';
 import { getBlockletDidList } from './lib/did.js';
 import { initGitRepo } from './lib/git.js';
@@ -148,8 +147,15 @@ const templates = [
     name: 'component-studio',
     display: '[dev] component studio (beta): Local studio using for component development',
     color: magenta,
+    // use this permanent did as blocklet.yml did always
+    permanentDid: 'z2qa7BQdkEb3TwYyEYC1psK6uvmGnHSUHt5RM',
   },
 ];
+
+const templatesMap = {};
+templates.forEach((template) => {
+  templatesMap[template.name] = template;
+});
 
 // see: https://github.com/npm/npm/issues/3763
 const renameFiles = {
@@ -238,7 +244,9 @@ async function init() {
 
   const targetDir = argv._[0] ? String(argv._[0]) : undefined;
   const inputTemplateName = argv.template;
+
   const connectUrl = argv?.connectUrl;
+  // inputDid can be user input or command line input or getting from templates item
   const inputDid = argv.did;
   const checkRes = checkDid(inputDid);
   if (typeof checkRes === 'string') {
@@ -260,6 +268,14 @@ async function init() {
   let result = {};
   const authorInfo = await getUser();
   const transferName = defaultProjectName.replace('.', '-');
+
+  const dynamicChoices = templates.map((template) => {
+    const templateColor = template.color;
+    return {
+      title: templateColor(template.display),
+      value: template.name,
+    };
+  });
 
   try {
     result = await prompts(
@@ -304,13 +320,7 @@ async function init() {
                 type: 'autocompleteMultiselect',
                 name: 'templateNames',
                 message: 'Choose one or more blocklet templates:',
-                choices: templates.map((template) => {
-                  const templateColor = template.color;
-                  return {
-                    title: templateColor(template.display),
-                    value: template.name,
-                  };
-                }),
+                choices: dynamicChoices,
                 min: 1,
                 suggest: (input, choices) => Promise.resolve(choices.filter((i) => i.title.includes(input))),
               },
@@ -409,11 +419,38 @@ async function init() {
   }
 
   let didList = [];
-  if (inputDid && templateNames.length === 1) {
-    didList = [inputDid];
+  if (templateNames.length === 1 && (inputDid || templatesMap[templateNames[0]]?.permanentDid)) {
+    // permanentDid is higher priority than inputDid
+    didList = [templatesMap[templateNames[0]]?.permanentDid || inputDid];
   } else {
+    // initialize didList with null
+    didList = new Array(templateNames.length).fill(null);
+
+    const needDidTemplateNames = [];
+
+    templateNames.forEach((templateName, index) => {
+      const { permanentDid } = templatesMap[templateName];
+      if (permanentDid) {
+        didList[index] = permanentDid;
+      } else {
+        needDidTemplateNames.push(templateName);
+      }
+    });
+
     try {
-      didList = await getBlockletDidList(templateNames, connectUrl);
+      const tempDidList = await getBlockletDidList(needDidTemplateNames, connectUrl);
+      let tempIndex = 0;
+      // fill didList null item
+      // for example:
+      // templateNames = ['template1', 'template2（with permanentDid）', 'template3']
+      // didList = [null, did2, null]
+      // tempDidList = ['did1', 'did3']
+      // then didList = ['did1', 'did2', 'did3']
+      didList.forEach((did, index) => {
+        if (!did) {
+          didList[index] = tempDidList[tempIndex++];
+        }
+      });
     } catch (err) {
       console.error(red(err.message));
       process.exit(1);

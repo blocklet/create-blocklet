@@ -44,7 +44,13 @@ scripts:
 environments: []
 capabilities: {}
 screenshots: []
-components: []
+components:
+  - name: image-bin
+    required: true
+    mountPoint: /image-bin
+    source:
+      name: image-bin
+      version: latest
 resource:
   exportApi: /api/resources
   types:
