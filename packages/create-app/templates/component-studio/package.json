@@ -6,7 +6,8 @@
   "engines": {
     "npm": "please-use-pnpm",
     "yarn": "please-use-pnpm",
-    "pnpm": ">= 8.0.0"
+    "node": ">=18",
+    "pnpm": ">=9"
   },
   "scripts": {
     "dev": "COMPONENT_STORE_URL=https://test.store.blocklet.dev blocklet dev",
