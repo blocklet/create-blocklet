@@ -11,6 +11,7 @@ if (fs.existsSync(flagFile)) {
     // remove flag file to avoid infinite loop
     fs.unlinkSync(flagFile);
     // execute update:deps script
+    console.log('auto updating dependencies...');
     execSync('pnpm run update:deps', { stdio: 'inherit' });
   } catch (error) {
     process.exit(1);

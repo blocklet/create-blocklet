@@ -1,7 +1,7 @@
 ---
-description: 关于 @metadata.json 的文件说明
-globs: **/@metadata.json,@metadata.json
-alwaysApply: false
+description: 
+globs: 
+alwaysApply: true
 ---
 # @metadata.json 文件说明
 
@@ -16,7 +16,8 @@ alwaysApply: false
 - 支持多种数据类型和嵌套属性
 
 ## 维护要点
-- 保持 `id` 唯一性，`id` 格式一般是 nanoid(16)
+- 保持 `id` 唯一性
+- 所有 `id` 都是 16 位的 uuid，不需要语意化（非常重要）
 - 确保 `properties` 中每个属性有唯一的标识符
 - 维护多语言支持（至少包含 en/zh）
 - 管理属性的显示顺序（通过 index 字段）
@@ -47,11 +48,11 @@ alwaysApply: false
 
 #### 基本结构
 ```json
-"[属性ID]": {
+"id": {
   "index": 0,
   "data": {
-    "id": "属性ID",
-    "key": "属性键名",
+    "id": "id",
+    "key": "key",
     "type": "string",
     "visible": true,
     "locales": {
@@ -64,15 +65,15 @@ alwaysApply: false
 
 说明：
 - `index`: 排序号，从0开始
-- `id`: 属性唯一标识符，通常使用nanoid(16)生成
+- `id`: 属性唯一标识符，16 位 uuid
 - `key`: 属性键名，在代码中引用时使用
-- `type`: 属性类型，默认为string
-- `visible`: 是否在编辑器中可见，默认为true
+- `type`: 属性类型，默认为 string
+- `visible`: 是否在编辑器中可见，默认为 true
 
 #### 属性字段说明
 - `index`: 显示顺序编号
 - `data`: 
-  - `id`: 属性唯一标识符
+  - `id`: 属性唯一标识符，16 位 uuid
   - `key`: 属性键名，用于代码中引用
   - `type`: 属性数据类型，支持以下类型：
     - `string`: 文本
@@ -109,6 +110,7 @@ A: 可以通过修改浏览器语言设置或使用开发工具中的语言切�
 A: 不同类型需要匹配相应格式的默认值，修改类型时需同步更新defaultValue。
 
 ## `@metadata.json` 示例
+请仔细查看它的结构，其它 `@metadata.json` 的结构与其基本一致，只是其中 `properties` 中的差别
 ```json
 {
   "id": "KEHGy3vdflE8JGrV",
@@ -355,8 +357,8 @@ A: 不同类型需要匹配相应格式的默认值，修改类型时需同步�
           "en": {
             "name": "JSON Data",
             "defaultValue": {
-              "foo": "",
-              "bar": ""
+              "foo": "foo",
+              "bar": "bar"
             }
           }
         },
@@ -375,7 +377,7 @@ A: 不同类型需要匹配相应格式的默认值，修改类型时需同步�
                 },
                 "en": {
                   "name": "Foo",
-                  "defaultValue": ""
+                  "defaultValue": "foo"
                 }
               }
             }
@@ -394,7 +396,7 @@ A: 不同类型需要匹配相应格式的默认值，修改类型时需同步�
                 },
                 "en": {
                   "name": "Bar",
-                  "defaultValue": ""
+                  "defaultValue": "bar"
                 }
               }
             }
@@ -485,7 +487,39 @@ A: 不同类型需要匹配相应格式的默认值，修改类型时需同步�
           },
           "en": {
             "name": "YAML Configuration",
-            "defaultValue": "config:\n  key: value\n  nested:\n    prop: example"
+            "defaultValue": "ya: ya\nml: ml\n"
+          }
+        },
+        "subProperties": {
+          "1q8tsreh4k2mhbgs": {
+            "index": 0,
+            "data": {
+              "id": "1q8tsreh4k2mhbgs",
+              "key": "ya",
+              "type": "string",
+              "visible": true,
+              "locales": {
+                "en": {
+                  "name": "Ya",
+                  "defaultValue": "ya"
+                }
+              }
+            }
+          },
+          "09w8sncxwrj6tldi": {
+            "index": 1,
+            "data": {
+              "id": "09w8sncxwrj6tldi",
+              "key": "ml",
+              "type": "string",
+              "visible": true,
+              "locales": {
+                "en": {
+                  "name": "Ml",
+                  "defaultValue": "ml"
+                }
+              }
+            }
           }
         }
       }

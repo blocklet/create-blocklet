@@ -1,7 +1,7 @@
 ---
-description: 关于 index.tsx 的文件说明
-globs: index.tsx,**/index.tsx
-alwaysApply: false
+description: 
+globs: 
+alwaysApply: true
 ---
 # index.tsx 文件说明
 
@@ -28,9 +28,9 @@ export interface BlockProps {
 ```
 
 这个接口定义了组件的属性类型，每个属性的注释包含：
-- 对应的 `@metadata.json` 中的 id
-- 属性类型
-- 可见性
+- id 对应的 `@metadata.json` 中的 id
+- key 属性类型
+- visible 可见性
 - 需要保持 `@description` 符号，这是 jsdom 在 ts 类型处理的时候，会被解析到 zod 上 `z.xxx().describe()`
 
 #### BlockProps 最佳实践
