@@ -37,14 +37,12 @@ export interface BlockProps {
     bio?: string;
   }[];
   /** @description id: s0tund4p07bzizgv | type: yaml | visible: true */
-  yaml?:
-    | string
-    | {
-        /** @description id: 1q8tsreh4k2mhbgs | type: string | visible: true */
-        ya?: string;
-        /** @description id: 09w8sncxwrj6tldi | type: string | visible: true */
-        ml?: string;
-      };
+  yaml?: {
+    /** @description id: 1q8tsreh4k2mhbgs | type: string | visible: true */
+    ya?: string;
+    /** @description id: 09w8sncxwrj6tldi | type: string | visible: true */
+    ml?: string;
+  };
   /** @description id: 8e7g6c61pxcy0q4w | type: component | visible: true */
   children?: any;
 }
@@ -65,8 +63,6 @@ export default function BlockComponent({
   children,
 }: BlockProps) {
   const [animateIn, setAnimateIn] = useState(false);
-
-  console.warn('yaml', yaml);
 
   useEffect(() => {
     // Trigger entrance animation after component mounts
