@@ -269,14 +269,6 @@ async function init() {
   const authorInfo = await getUser();
   const transferName = defaultProjectName.replace('.', '-');
 
-  const dynamicChoices = templates.map((template) => {
-    const templateColor = template.color;
-    return {
-      title: templateColor(template.display),
-      value: template.name,
-    };
-  });
-
   try {
     result = await prompts(
       [
@@ -320,7 +312,13 @@ async function init() {
                 type: 'autocompleteMultiselect',
                 name: 'templateNames',
                 message: 'Choose one or more blocklet templates:',
-                choices: dynamicChoices,
+                choices: templates.map((template) => {
+                  const templateColor = template.color;
+                  return {
+                    title: templateColor(template.display),
+                    value: template.name,
+                  };
+                }),
                 min: 1,
                 suggest: (input, choices) => Promise.resolve(choices.filter((i) => i.title.includes(input))),
               },
