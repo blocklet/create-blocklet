@@ -5,8 +5,9 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "COMPONENT_STORE_URL=https://test.store.blocklet.dev blocklet dev",
-    "lint": "tsc --noEmit && eslint src api/src --ext .mjs,.js,.jsx,.ts,.tsx",
-    "lint:fix": "npm run lint -- --fix",
+    "lint": "biome check . && tsc --noEmit",
+    "lint:fix": "biome check --apply .",
+    "format": "biome format --write .",
     "start": "vite-node -c vite-server.config.ts -w api/dev.ts",
     "clean": "node scripts/build-clean.mjs",
     "bundle": "tsc --noEmit && npm run bundle:client && npm run bundle:api",
@@ -24,12 +25,9 @@
     "postinstall": "node scripts/init-component-studio.mjs"
   },
   "lint-staged": {
-    "*.{mjs,js,jsx,ts,tsx}": [
-      "prettier --write",
-      "eslint"
-    ],
-    "*.{css,less,scss,json,graphql}": [
-      "prettier --write"
+    "*.{mjs,js,jsx,ts,tsx,css,less,scss,json,graphql}": [
+      "biome format --write",
+      "biome lint --apply"
     ]
   },
   "browserslist": {
@@ -67,10 +65,8 @@
     "express-async-errors": "^3.1.1"
   },
   "devDependencies": {
-    "@arcblock/eslint-config": "^0.3.3",
-    "@arcblock/eslint-config-ts": "^0.3.3",
+    "@biomejs/biome": "1.5.3",
     "@blocklet/js-sdk": "^1.16.40",
-    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/cookie-parser": "^1.4.8",
     "@types/cors": "^2.8.17",
     "@types/dotenv-flow": "^3.3.3",
@@ -81,13 +77,10 @@
     "@vitejs/plugin-react": "^4.3.4",
     "bumpp": "^9.9.3",
     "cross-env": "^7.0.3",
-    "eslint": "^8.57.1",
     "import-sort-style-module": "^6.0.0",
     "lint-staged": "^15.3.0",
     "nodemon": "^3.1.9",
     "npm-run-all": "^4.1.5",
-    "prettier": "^3.4.2",
-    "prettier-plugin-import-sort": "^0.0.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.1",
