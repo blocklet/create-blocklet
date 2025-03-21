@@ -3,6 +3,11 @@
   "description": "A Blocklet to help you develop components for Pages Kit",
   "private": true,
   "version": "0.1.0",
+  "engines": {
+    "npm": "please-use-pnpm",
+    "yarn": "please-use-pnpm",
+    "pnpm": ">= 8.0.0"
+  },
   "scripts": {
     "dev": "COMPONENT_STORE_URL=https://test.store.blocklet.dev blocklet dev",
     "lint": "biome check . && tsc --noEmit",
