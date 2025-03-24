@@ -25,7 +25,7 @@
     "bump-version": "zx --quiet scripts/bump-version.mjs",
     "dev-front": "vite serve .",
     "build-lib": "node -r dotenv-flow/config -e \"require('@blocklet/pages-kit-block-studio/build-lib')\"",
-    "update:deps": "taze -r -n '/arcblock|ocap|abtnode|blocklet|did-connect|did-comment|nedb/' -w -f && pnpm install && pnpm run deduplicate",
+    "update:deps": "npx -y taze -r -n '/arcblock|ocap|abtnode|blocklet|did-connect|did-comment|nedb/' -w -f && pnpm install && pnpm run deduplicate",
     "deduplicate": "pnpm dedupe",
     "preinstall": "npx only-allow pnpm",
     "postinstall": "node scripts/init-component-studio.mjs"
@@ -95,7 +95,7 @@
     "typescript": "^5.7.2",
     "vite": "^5.4.11",
     "vite-node": "^2.1.8",
-    "vite-plugin-blocklet": "^0.9.25",
+    "vite-plugin-blocklet": "^0.9.27",
     "vite-plugin-require": "^1.2.14",
     "vite-plugin-svgr": "^4.3.0",
     "vite-tsconfig-paths": "^4.3.2",

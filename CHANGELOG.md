@@ -1,3 +1,7 @@
+## 0.9.27 (2025-3-23)
+
+- fix(create-app): polish component-studio template script
+
 ## 0.9.26 (2025-3-21)
 
 - feat(create-app): support permanent did in template
