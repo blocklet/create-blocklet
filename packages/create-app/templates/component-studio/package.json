@@ -71,7 +71,7 @@
     "express-async-errors": "^3.1.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.5.3",
+    "@biomejs/biome": "^1.9.4",
     "@blocklet/js-sdk": "^1.16.40",
     "@types/cookie-parser": "^1.4.8",
     "@types/cors": "^2.8.17",
@@ -83,6 +83,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "bumpp": "^9.9.3",
     "cross-env": "^7.0.3",
+    "get-port": "^5.1.1",
     "import-sort-style-module": "^6.0.0",
     "lint-staged": "^15.3.0",
     "nodemon": "^3.1.9",

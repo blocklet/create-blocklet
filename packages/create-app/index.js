@@ -609,7 +609,7 @@ async function init() {
 
     await initGitRepo(root);
 
-    let defaultAgent = 'npm';
+    let defaultAgent = 'pnpm';
     const agentList = ['npm', 'yarn', 'pnpm'];
 
     // switch (templateNames) {
@@ -686,7 +686,7 @@ async function init() {
 
     if (!hasStart) {
       // console.log(dim('\n  start it later by:\n'));
-      if (root !== cwd) console.log(blue(`  cd ${bold(related)}`));
+      if (root !== cwd) console.log(blue(`cd ${bold(related)}`));
       if (mainBlocklet) {
         console.log(blue('npm run init'));
       } else {
