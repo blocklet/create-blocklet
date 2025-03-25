@@ -607,7 +607,7 @@ async function init() {
 
   scaffoldSpinner.succeed('✨ Creating project successfully!');
 
-  console.log(`Scaffolding project in ${cyan(projectRoot)}`);
+  console.log(`✔ 🔨 Scaffolding project in ${cyan(projectRoot)}`);
 
   const projectRelativePath = path.relative(cwd, projectRoot);
 

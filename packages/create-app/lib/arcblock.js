@@ -31,7 +31,7 @@ export const echoHelpMessage = (projectRoot) => {
   console.log(chalk.bold('📚 Resources: \n'));
   const readmeLink = join(projectRoot, 'README.md');
   if (terminalLink.isSupported) {
-    console.log(`  ✅ Quick Start: ${terminalLink(readmeLink, readmeLink)}`);
+    console.log(`  ✅ Quick Start: ${terminalLink(readmeLink, join('file://', readmeLink))}`);
     console.log(`  ✅ Documentation: ${terminalLink(`🔗 ${docsUrl}`, docsUrl)} (with code examples)`);
     console.log(`  ✅ Community: ${terminalLink(`💬 ${communityUrl}`, communityUrl)} (get expert help)`);
   } else {
