@@ -276,7 +276,6 @@ async function init() {
           type: isValidName(defaultProjectName) && targetDir && !['.', './'].includes(targetDir) ? null : 'text',
           name: 'projectName',
           message: 'Project name:',
-          initial: transferName,
           onState: (state) => {
             projectName = state.value.trim() || transferName;
           },
