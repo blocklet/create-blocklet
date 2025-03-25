@@ -3,11 +3,15 @@ import semver from 'semver';
 import { BLOCKLET_COMMAND } from './constant.js';
 
 export async function getServerVersion() {
+  const defaultVersion = '0.0.0';
   try {
+    if (!(await checkServerInstalled())) {
+      return defaultVersion;
+    }
     const { stdout: output } = await $`${BLOCKLET_COMMAND} --version`;
     return output.trim();
   } catch (e) {
-    return '0.0.0';
+    return defaultVersion;
   }
 }
 

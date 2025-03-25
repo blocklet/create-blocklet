@@ -8,7 +8,7 @@ import * as envfile from 'envfile';
 import ora from 'ora';
 import prompts from 'prompts';
 import { fileURLToPath } from 'url';
-import { argv, cd, chalk, fs, path, YAML } from 'zx';
+import { $, argv, cd, chalk, fs, path, YAML } from 'zx';
 import { echoBrand, echoDocument } from './lib/arcblock.js';
 import { getBlockletDidList } from './lib/did.js';
 import { initGitRepo } from './lib/git.js';
@@ -353,6 +353,19 @@ async function init() {
           initial: authorInfo?.email || '',
           validate: (email) => (email ? true : 'Author email is required'),
         },
+        {
+          type: async () => {
+            const isInstalled = await checkServerInstalled();
+            return isInstalled ? null : 'select';
+          },
+          name: 'packageManager',
+          message: 'Select package manager to install @blocklet/cli:',
+          choices: [
+            { title: 'npm', value: 'npm' },
+            { title: 'yarn', value: 'yarn' },
+            { title: 'pnpm', value: 'pnpm' },
+          ],
+        },
       ],
       {
         onCancel: () => {
@@ -373,6 +386,7 @@ async function init() {
     packageName,
     authorName,
     authorEmail,
+    packageManager,
   } = result;
 
   await echoDocument();
@@ -383,6 +397,20 @@ async function init() {
     emptyDir(root);
   } else if (!fs.existsSync(root)) {
     fs.mkdirSync(root);
+  }
+
+  if (!(await checkServerInstalled())) {
+    const installCommand =
+      packageManager === 'yarn' ? 'yarn global add @blocklet/cli' : `${packageManager} install -g @blocklet/cli`;
+    console.log(`Use ${installCommand} to install @blocklet/cli...`);
+    try {
+      execSync(installCommand, { stdio: 'inherit' });
+      console.log(chalk.green('Successfully installed @blocklet/cli'));
+    } catch (error) {
+      console.error(red('Error installing @blocklet/cli:'), error.message);
+      console.log('\nPlease try to install manually:', '\n');
+      console.log(chalk.cyan(installCommand));
+    }
   }
 
   const checkSpinner = ora({
@@ -397,6 +425,7 @@ async function init() {
   console.log(`\nScaffolding project in ${cyan(root)}`);
 
   const scaffoldSpinner = ora('Creating project...\n').start();
+
   // name 是用户输入的项目名称
   let name = projectName || packageName || targetDir;
   if (['.', './'].includes(name)) {
