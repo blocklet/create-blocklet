@@ -9,7 +9,7 @@ import ora from 'ora';
 import prompts from 'prompts';
 import { fileURLToPath } from 'url';
 import { argv, cd, chalk, fs, path, YAML } from 'zx';
-import { echoBrand, echoHelpMessage } from './lib/arcblock.js';
+import { echoBrand, printResourceMessage } from './lib/arcblock.js';
 import { getBlockletDidList } from './lib/did.js';
 import { initGitRepo } from './lib/git.js';
 import { getUser } from './lib/index.js';
@@ -276,6 +276,7 @@ async function init() {
           type: isValidName(defaultProjectName) && targetDir && !['.', './'].includes(targetDir) ? null : 'text',
           name: 'projectName',
           message: 'Project name:',
+          initial: transferName,
           onState: (state) => {
             projectName = state.value.trim() || transferName;
           },
@@ -722,7 +723,7 @@ async function init() {
       }
 
       console.log('');
-      echoHelpMessage(projectRoot);
+      printResourceMessage(projectRoot);
     }
   } catch (cancelled) {
     console.error(cancelled.message);

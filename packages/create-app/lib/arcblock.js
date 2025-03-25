@@ -24,20 +24,20 @@ export function echoBrand({ version = '' }) {
   });
 }
 
-export const echoHelpMessage = (projectRoot) => {
+export const printResourceMessage = (projectRoot) => {
   const docsUrl = 'https://www.arcblock.io/docs/blocklet-developer';
   const communityUrl = 'https://community.arcblock.io/';
 
   console.log(chalk.bold('📚 Resources: \n'));
   const readmeLink = join(projectRoot, 'README.md');
   if (terminalLink.isSupported) {
-    console.log(`  ✅ Quick Start: ${terminalLink(readmeLink, join('file://', readmeLink))}`);
-    console.log(`  ✅ Documentation: ${terminalLink(`🔗 ${docsUrl}`, docsUrl)} (with code examples)`);
-    console.log(`  ✅ Community: ${terminalLink(`💬 ${communityUrl}`, communityUrl)} (get expert help)`);
+    console.log(`  📖 Quick Start: ${terminalLink(readmeLink, join('file://', readmeLink))}`);
+    console.log(`  🔗 Documentation: ${terminalLink(`${docsUrl}`, docsUrl)} (with code examples)`);
+    console.log(`  💬 Community: ${terminalLink(`${communityUrl}`, communityUrl)} (get expert help)`);
   } else {
-    console.log(`  ✅ Quick Start: ${readmeLink}`);
-    console.log(`  ✅ Documentation: ${docsUrl} (with code examples)`);
-    console.log(`  ✅ Community: ${communityUrl} (get expert help)`);
+    console.log(`  📖 Quick Start: ${readmeLink}`);
+    console.log(`  🔗 Documentation: ${docsUrl} (with code examples)`);
+    console.log(`  💬 Community: ${communityUrl} (get expert help)`);
   }
   console.log();
 };
