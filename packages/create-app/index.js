@@ -8,8 +8,8 @@ import * as envfile from 'envfile';
 import ora from 'ora';
 import prompts from 'prompts';
 import { fileURLToPath } from 'url';
-import { $, argv, cd, chalk, fs, path, YAML } from 'zx';
-import { echoBrand, echoDocument } from './lib/arcblock.js';
+import { argv, cd, chalk, fs, path, YAML } from 'zx';
+import { echoBrand, echoHelpMessage } from './lib/arcblock.js';
 import { getBlockletDidList } from './lib/did.js';
 import { initGitRepo } from './lib/git.js';
 import { getUser } from './lib/index.js';
@@ -310,7 +310,7 @@ async function init() {
               {
                 type: 'autocompleteMultiselect',
                 name: 'templateNames',
-                message: 'Choose one or more blocklet templates:',
+                message: 'Choose templates:',
                 choices: templates.map((template) => {
                   const templateColor = template.color;
                   return {
@@ -320,6 +320,8 @@ async function init() {
                 }),
                 min: 1,
                 suggest: (input, choices) => Promise.resolve(choices.filter((i) => i.title.includes(input))),
+                optionsPerPage: templates.length,
+                hint: '- Press the Space bar to select, and the Enter key to submit.',
               },
               {
                 type: (templateNames = []) => {
@@ -389,14 +391,12 @@ async function init() {
     packageManager,
   } = result;
 
-  await echoDocument();
-
-  const root = path.join(cwd, targetDir || projectName || packageName);
+  const projectRoot = path.join(cwd, targetDir || projectName || packageName);
 
   if (overwrite) {
-    emptyDir(root);
-  } else if (!fs.existsSync(root)) {
-    fs.mkdirSync(root);
+    emptyDir(projectRoot);
+  } else if (!fs.existsSync(projectRoot)) {
+    fs.mkdirSync(projectRoot);
   }
 
   if (!(await checkServerInstalled())) {
@@ -420,9 +420,7 @@ async function init() {
   const isServerInstalled = await checkServerInstalled();
   const isSatisfiedVersion = await checkSatisfiedVersion();
   const isServerRunning = await checkServerRunning();
-  checkSpinner.succeed('Done');
-
-  console.log(`\nScaffolding project in ${cyan(root)}`);
+  checkSpinner.succeed('🚀 Checking blocklet server runtime environment successfully!');
 
   const scaffoldSpinner = ora('Creating project...\n').start();
 
@@ -439,7 +437,7 @@ async function init() {
     const monorepoDir = path.join(__dirname, 'templates', 'monorepo');
     const monorepoFiles = fs.readdirSync(monorepoDir);
     for (const file of monorepoFiles) {
-      const targetPath = path.join(root, renameFiles[file] || file);
+      const targetPath = path.join(projectRoot, renameFiles[file] || file);
       copy(path.join(monorepoDir, file), targetPath);
     }
   }
@@ -511,8 +509,8 @@ async function init() {
         }
 
         const targetPath = renameFiles[file]
-          ? path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', renameFiles[file])
-          : path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
+          ? path.join(projectRoot, mainBlocklet ? `blocklets/${templateName}` : '', renameFiles[file])
+          : path.join(projectRoot, mainBlocklet ? `blocklets/${templateName}` : '', file);
 
         copy(path.join(commonDir, file), targetPath);
       }
@@ -526,12 +524,12 @@ async function init() {
       }
       // 如果选择了多个模板，每个子 package 中的 bump-version.mjs 文件
       if (mainBlocklet) {
-        fs.removeSync(path.join(root, `blocklets/${templateName}`, 'scripts/bump-version.mjs'));
+        fs.removeSync(path.join(projectRoot, `blocklets/${templateName}`, 'scripts/bump-version.mjs'));
       }
     })();
 
     // merge readme
-    mergeReadme(templateName, root, !!mainBlocklet);
+    mergeReadme(templateName, projectRoot, !!mainBlocklet);
 
     modifyPackage(
       (pkg) => {
@@ -607,9 +605,11 @@ async function init() {
     await patchDid();
   }
 
-  scaffoldSpinner.succeed('✨  Done. Now run:\n');
+  scaffoldSpinner.succeed('✨ Creating project successfully!');
 
-  const related = path.relative(cwd, root);
+  console.log(`Scaffolding project in ${cyan(projectRoot)}`);
+
+  const projectRelativePath = path.relative(cwd, projectRoot);
 
   // const pkgManager =
   //   // eslint-disable-next-line no-nested-ternary
@@ -635,7 +635,7 @@ async function init() {
     const yes = false;
     let hasStart = false;
 
-    await initGitRepo(root);
+    await initGitRepo(projectRoot);
 
     let defaultAgent = 'npm';
     const agentList = ['npm', 'yarn', 'pnpm'];
@@ -661,7 +661,7 @@ async function init() {
       }
       defaultAgent = agent;
 
-      await cd(root);
+      await cd(projectRoot);
       execSync(`${agent} install`, { stdio: 'inherit' });
       if (isServerInstalled && isServerRunning && isSatisfiedVersion) {
         console.log(
@@ -684,45 +684,45 @@ async function init() {
       // 未安装 blocklet server
       console.log(red('To run the blocklet, you need a running blocklet server instance on local machine.'), '\n');
       console.log(`Checkout ${green('README.md')} for more usage instructions.`);
-      console.log('Now you should run:', '\n');
-      console.log(cyan(`${defaultAgent} install -g @blocklet/cli`));
-      console.log(cyan('blocklet server start -a'));
+      console.log(`${chalk.bold('👉 Now you should run: \n')}`);
+      console.log(cyan(`  ${defaultAgent} install -g @blocklet/cli`));
+      console.log(cyan('  blocklet server start -a'));
     } else if (!isSatisfiedVersion) {
       // 已安装 blocklet server，但版本不满足
       console.log(red('Your blocklet server version is outdate, please update it to the latest version.'));
-      console.log('Now you should run:', '\n');
+      console.log(`${chalk.bold('👉 Now you should run: \n')}`);
       if (isServerRunning) {
         // blocklet server 已经启动
         const serverPath = await getServerDirectory();
-        console.log(cyan(`cd ${serverPath}`));
-        console.log(cyan('blocklet server stop'));
-        console.log(cyan(`${defaultAgent} install -g @blocklet/cli`));
-        console.log(cyan('blocklet server start'));
+        console.log(cyan(`  cd ${serverPath}`));
+        console.log(cyan('  blocklet server stop'));
+        console.log(cyan(`  ${defaultAgent} install -g @blocklet/cli`));
+        console.log(cyan('  blocklet server start'));
       } else {
         // blocklet server 未启动
         // TODO: 如何获取未启动的 blocklet server 实例目录？
-        console.log(cyan(`${defaultAgent} install -g @blocklet/cli`));
-        console.log(cyan('blocklet server start -a'));
+        console.log(cyan(`  ${defaultAgent} install -g @blocklet/cli`));
+        console.log(cyan('  blocklet server start -a'));
       }
     } else if (!isServerRunning) {
       // 已经安装 blocklet server，且版本满足，并且 blocklet server 未启动
-      console.log(red('You need to start your blocklet server before develop this blocklet.'));
-      console.log('Now you should run:', '\n');
+      console.log(`${chalk.bold('👉 Now you should run: \n')}`);
       // TODO: 如何获取未启动的 blocklet server 实例目录？
-      console.log(cyan('blocklet server start -a'));
+      console.log(cyan('  blocklet server start -a'));
     }
 
     if (!hasStart) {
       // console.log(dim('\n  start it later by:\n'));
-      if (root !== cwd) console.log(blue(`  cd ${bold(related)}`));
+      if (projectRoot !== cwd) console.log(blue(`  cd ${bold(projectRelativePath)}`));
       if (mainBlocklet) {
-        console.log(blue('npm run init'));
+        console.log(blue('  npm run init'));
       } else {
-        console.log(blue(`${defaultAgent === 'yarn' ? 'yarn' : `${defaultAgent} install`}`));
-        console.log(cyan('blocklet dev'));
+        console.log(blue(`  ${defaultAgent === 'yarn' ? 'yarn' : `${defaultAgent} install`}`));
+        console.log(cyan('  blocklet dev'));
       }
 
-      console.log('\n', `Find more usage in ${green('README.md')}`, '\n');
+      console.log('');
+      echoHelpMessage(projectRoot);
     }
   } catch (cancelled) {
     console.error(cancelled.message);
@@ -731,8 +731,8 @@ async function init() {
   // inside functions
   function write(file, content, templateDir, templateName) {
     const targetPath = renameFiles[file]
-      ? path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', renameFiles[file])
-      : path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
+      ? path.join(projectRoot, mainBlocklet ? `blocklets/${templateName}` : '', renameFiles[file])
+      : path.join(projectRoot, mainBlocklet ? `blocklets/${templateName}` : '', file);
     if (content) {
       fs.writeFileSync(targetPath, content);
     } else {
@@ -740,7 +740,7 @@ async function init() {
     }
   }
   function read(file, templateName) {
-    const targetPath = path.join(root, mainBlocklet ? `blocklets/${templateName}` : '', file);
+    const targetPath = path.join(projectRoot, mainBlocklet ? `blocklets/${templateName}` : '', file);
     if (fs.existsSync(targetPath)) {
       return fs.readFileSync(targetPath, 'utf8');
     }
