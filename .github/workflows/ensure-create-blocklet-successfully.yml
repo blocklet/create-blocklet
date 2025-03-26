@@ -1,0 +1,137 @@
+name: ensure-create-blocklet-successfully
+
+on:
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  ensure-create-blocklet-successfully:
+    name: ${{ matrix.os }} + Node ${{ matrix.node }} + ${{ matrix.package-manager }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        # os: [ubuntu-latest]
+        # node: [22]
+        # package-manager: [npm, yarn, pnpm]
+        # 以下是简化的测试配置，仅供调试使用
+        os: [ubuntu-latest]
+        node: [22]
+        package-manager: [npm, yarn, pnpm]
+
+    env:
+      PACKAGE_MANAGER: ${{ matrix.package-manager }}
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v3
+
+      - name: 设置 Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: 安装 pnpm
+        if: matrix.package-manager == 'pnpm'
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+
+      - name: 安装 yarn
+        if: matrix.package-manager == 'yarn'
+        run: |
+          npm install -g yarn
+
+      - name: Install Nginx with stream module
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y nginx-extras  # nginx-extras 包含 ngx_stream_module
+          sudo nginx -t  # 测试配置文件是否正确
+          sudo setcap 'cap_net_bind_service=+ep' $(which nginx)
+
+      - name: Install build tools
+        if: matrix.os == 'ubuntu-latest'
+        run: sudo apt-get update && sudo apt-get install -y build-essential
+
+      - name: 安装 blocklet CLI
+        run: |
+          if [ "${{ matrix.package-manager }}" == "npm" ]; then
+            npm install -g @blocklet/cli@beta
+          elif [ "${{ matrix.package-manager }}" == "yarn" ]; then
+            yarn global add @blocklet/cli@beta
+          else
+            pnpm install -g @blocklet/cli@beta
+          fi
+
+      - name: 启动 blocklet server
+        run: |
+          # 创建一个临时文件来存储输出
+          OUTPUT_FILE=$(mktemp)
+
+          # 启动server并将输出重定向到文件
+          # 使用跨平台方式处理超时，替代timeout命令
+          if [[ "${{ runner.os }}" == "macOS" ]]; then
+            # macOS方式实现超时
+            (
+              blocklet server start -a | tee $OUTPUT_FILE &
+              SERVER_PID=$!
+              # 最多等待60秒，但不杀掉进程
+              sleep 60
+              # 不再杀掉服务进程，让它继续运行
+              echo "后台服务进程ID: $SERVER_PID"
+            ) &
+          else
+            # Linux方式使用timeout
+            timeout 60s bash -c "blocklet server start -a | tee $OUTPUT_FILE" &
+          fi
+
+          # 设置最大等待时间
+          START_TIME=$(date +%s)
+          END_TIME=$((START_TIME + 60))
+          SUCCESS=false
+
+          # 循环检查输出文件是否包含成功标记
+          while [ $(date +%s) -lt $END_TIME ]; do
+            if grep -q "Secure URLs" $OUTPUT_FILE; then
+              SUCCESS=true
+              break
+            fi
+            sleep 2
+          done
+
+          # 如果成功，返回0，否则返回错误
+          if $SUCCESS; then
+            echo "✅ Blocklet Server 成功启动 - 检测到 'Secure URLs'"
+            
+            # 提取 Secure URL
+            SERVER_URL=$(grep -A 5 "Secure URLs" $OUTPUT_FILE | grep "https://" | head -n 1 | sed 's/^[ \t]*-*[ \t]*//g' | sed 's/^*//g')
+            echo "找到服务器URL: $SERVER_URL"
+            
+            # 将URL保存为GitHub Actions环境变量
+            echo "SERVER_URL=$SERVER_URL" >> $GITHUB_ENV
+            
+            # 显示日志以便调试
+            tail $OUTPUT_FILE
+            exit 0
+          else
+            echo "❌ Blocklet Server 启动失败或超时 - 未检测到 'Secure URLs'"
+            echo "最后60行日志:"
+            tail -n 60 $OUTPUT_FILE
+            exit 1
+          fi
+
+      - name: 检查服务器是否正常运行
+        if: success()
+        run: |
+          # 使用提取的URL进行HTTP验证
+          echo "正在检查URL: ${{ env.SERVER_URL }}"
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" -I ${{ env.SERVER_URL }})
+
+          if [ "$HTTP_STATUS" == "200" ]; then
+            echo "✅ Blocklet Server 成功响应HTTP请求，状态码: $HTTP_STATUS"
+          else
+            echo "⚠️ Blocklet Server 启动了，但HTTP请求返回状态码: $HTTP_STATUS"
+            exit 1
+          fi

@@ -270,112 +270,126 @@ async function init() {
   const transferName = defaultProjectName.replace('.', '-');
 
   try {
-    result = await prompts(
-      [
-        {
-          type: isValidName(defaultProjectName) && targetDir && !['.', './'].includes(targetDir) ? null : 'text',
-          name: 'projectName',
-          message: 'Project name:',
-          initial: transferName,
-          onState: (state) => {
-            projectName = state.value.trim() || transferName;
+    const enableE2E = argv.e2e;
+    if (enableE2E) {
+      result = {
+        enableE2E: argv.e2e,
+        mainBlocklet: argv.mainBlocklet || null,
+        templateNames: argv.template.split(','),
+        overwrite: argv.overwrite || false,
+        packageName: argv.packageName,
+        authorName: argv.authorName,
+        authorEmail: argv.authorEmail,
+        packageManager: argv.packageManager,
+      };
+    } else {
+      result = await prompts(
+        [
+          {
+            type: isValidName(defaultProjectName) && targetDir && !['.', './'].includes(targetDir) ? null : 'text',
+            name: 'projectName',
+            message: 'Project name:',
+            initial: transferName,
+            onState: (state) => {
+              projectName = state.value.trim() || transferName;
+            },
           },
-        },
-        {
-          type: () => (!fs.existsSync(targetDir) || isEmpty(targetDir) ? null : 'confirm'),
-          name: 'overwrite',
-          message: () =>
-            `${
-              ['.', './'].includes(targetDir) ? 'Current directory' : `Target directory "${targetDir}"`
-            } is not empty. Remove existing files and continue?`,
-        },
-        {
-          type: (_, { overwrite } = {}) => {
-            if (overwrite === false) {
-              throw new Error(`${red('✖')} Operation cancelled`);
-            }
-            return null;
+          {
+            type: () => (!fs.existsSync(targetDir) || isEmpty(targetDir) ? null : 'confirm'),
+            name: 'overwrite',
+            message: () =>
+              `${
+                ['.', './'].includes(targetDir) ? 'Current directory' : `Target directory "${targetDir}"`
+              } is not empty. Remove existing files and continue?`,
           },
-          name: 'overwriteChecker',
-        },
-        {
-          type: () => (isValidPackageName(projectName) ? null : 'text'),
-          name: 'packageName',
-          message: 'Package name:',
-          initial: () => toValidPackageName(projectName) || defaultProjectName,
-          validate: (dir) => isValidPackageName(dir) || 'Invalid package.json name',
-        },
-        ...(inputTemplateName
-          ? []
-          : [
-              {
-                type: 'autocompleteMultiselect',
-                name: 'templateNames',
-                message: 'Choose templates:',
-                choices: templates.map((template) => {
-                  const templateColor = template.color;
-                  return {
-                    title: templateColor(template.display),
-                    value: template.name,
-                  };
-                }),
-                min: 1,
-                suggest: (input, choices) => Promise.resolve(choices.filter((i) => i.title.includes(input))),
-                optionsPerPage: templates.length,
-                hint: '- Press the Space bar to select, and the Enter key to submit.',
-              },
-              {
-                type: (templateNames = []) => {
-                  return templateNames.length > 1 ? 'select' : null;
-                },
-                name: 'mainBlocklet',
-                message: 'Please choose the main blocklet',
-                //
-                choices: (templateNames = []) =>
-                  templateNames.map((templateName) => {
-                    const template = templates.find((x) => x.name === templateName);
+          {
+            type: (_, { overwrite } = {}) => {
+              if (overwrite === false) {
+                throw new Error(`${red('✖')} Operation cancelled`);
+              }
+              return null;
+            },
+            name: 'overwriteChecker',
+          },
+          {
+            type: () => (isValidPackageName(projectName) ? null : 'text'),
+            name: 'packageName',
+            message: 'Package name:',
+            initial: () => toValidPackageName(projectName) || defaultProjectName,
+            validate: (dir) => isValidPackageName(dir) || 'Invalid package.json name',
+          },
+          ...(inputTemplateName
+            ? []
+            : [
+                {
+                  type: 'autocompleteMultiselect',
+                  name: 'templateNames',
+                  message: 'Choose templates:',
+                  choices: templates.map((template) => {
+                    const templateColor = template.color;
                     return {
-                      title: template.display,
+                      title: templateColor(template.display),
                       value: template.name,
                     };
                   }),
-                initial: 1,
-              },
-            ]),
-        {
-          type: 'text',
-          name: 'authorName',
-          message: 'Author name:',
-          initial: authorInfo?.name || '',
-          validate: (name) => (name ? true : 'Author name is required'),
-        },
-        {
-          type: 'text',
-          name: 'authorEmail',
-          message: 'Author email:',
-          initial: authorInfo?.email || '',
-          validate: (email) => (email ? true : 'Author email is required'),
-        },
-        {
-          type: async () => {
-            const isInstalled = await checkServerInstalled();
-            return isInstalled ? null : 'select';
+                  min: 1,
+                  suggest: (input, choices) => Promise.resolve(choices.filter((i) => i.title.includes(input))),
+                  optionsPerPage: templates.length,
+                  hint: '- Press the Space bar to select, and the Enter key to submit.',
+                },
+                {
+                  type: (templateNames = []) => {
+                    return templateNames.length > 1 ? 'select' : null;
+                  },
+                  name: 'mainBlocklet',
+                  message: 'Please choose the main blocklet',
+                  //
+                  choices: (templateNames = []) =>
+                    templateNames.map((templateName) => {
+                      const template = templates.find((x) => x.name === templateName);
+                      return {
+                        title: template.display,
+                        value: template.name,
+                      };
+                    }),
+                  initial: 1,
+                },
+              ]),
+          {
+            type: 'text',
+            name: 'authorName',
+            message: 'Author name:',
+            initial: authorInfo?.name || '',
+            validate: (name) => (name ? true : 'Author name is required'),
           },
-          name: 'packageManager',
-          message: 'Select package manager to install @blocklet/cli:',
-          choices: [
-            { title: 'npm', value: 'npm' },
-            { title: 'yarn', value: 'yarn' },
-            { title: 'pnpm', value: 'pnpm' },
-          ],
+          {
+            type: 'text',
+            name: 'authorEmail',
+            message: 'Author email:',
+            initial: authorInfo?.email || '',
+            validate: (email) => (email ? true : 'Author email is required'),
+          },
+          {
+            type: async () => {
+              const isInstalled = await checkServerInstalled();
+              return isInstalled ? null : 'select';
+            },
+            name: 'packageManager',
+            message: 'Select package manager to install @blocklet/cli:',
+            choices: [
+              { title: 'npm', value: 'npm' },
+              { title: 'yarn', value: 'yarn' },
+              { title: 'pnpm', value: 'pnpm' },
+            ],
+          },
+        ],
+        {
+          onCancel: () => {
+            throw new Error(`${red('✖')} Operation cancelled`);
+          },
         },
-      ],
-      {
-        onCancel: () => {
-          throw new Error(`${red('✖')} Operation cancelled`);
-        },
-      },
-    );
+      );
+    }
   } catch (cancelled) {
     console.error(cancelled.message);
     return;

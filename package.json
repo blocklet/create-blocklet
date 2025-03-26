@@ -14,10 +14,12 @@
     "bump-version": "zx --quiet scripts/bump-version.mjs",
     "update:deps": "npx taze -r -n '/arcblock|ocap|abtnode|blocklet|did-connect|did-comment|nedb/' -w && pnpm i",
     "preinstall": "npx only-allow pnpm",
-    "publish-plugins": "zx --quiet scripts/publish-plugins.mjs"
+    "publish-plugins": "zx --quiet scripts/publish-plugins.mjs",
+    "e2e": "node scripts/ensure-create-blocklet.mjs"
   },
   "dependencies": {
     "bumpp": "^9.11.1",
+    "fs-extra": "^11.3.0",
     "zx": "^8.3.2"
   },
   "devDependencies": {
