@@ -1,3 +1,7 @@
+## 0.9.28 (2025-3-25)
+
+- chore: polish component studio template
+
 ## 0.9.27 (2025-3-23)
 
 - fix(create-app): polish component-studio template script

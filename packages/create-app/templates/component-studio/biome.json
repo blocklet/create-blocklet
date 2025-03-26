@@ -22,7 +22,7 @@
         "useKeyWithClickEvents": "off",
         "useValidAnchor": "off",
         "noSvgWithoutTitle": "off",
-        "useMouseEvents": "off"
+        "useKeyWithMouseEvents": "off"
       }
     },
     "ignore": ["**/node_modules/**", "*.md"]
@@ -31,23 +31,6 @@
     "enabled": true,
     "indentStyle": "space",
     "indentWidth": 2,
-    "lineWidth": 100,
-    "include": ["**/*.{js,jsx,ts,tsx,json,css,less,scss,graphql}"]
-  },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "single",
-      "trailingComma": "es5",
-      "semicolons": "always"
-    }
-  },
-  "json": {
-    "parser": {
-      "allowComments": true,
-      "allowTrailingCommas": true
-    },
-    "formatter": {
-      "enabled": true
-    }
+    "lineWidth": 100
   }
 }
