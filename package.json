@@ -23,9 +23,6 @@
   "devDependencies": {
     "simple-git-hooks": "^2.11.1"
   },
-  "resolutions": {
-    "ajv": "^8.17.1"
-  },
   "simple-git-hooks": {
     "pre-commit": "pnpm -r lint"
   }

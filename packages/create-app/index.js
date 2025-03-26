@@ -408,9 +408,8 @@ async function init() {
       execSync(installCommand, { stdio: 'inherit' });
       console.log(chalk.green('Successfully installed @blocklet/cli'));
     } catch (error) {
-      console.error(red('Error installing @blocklet/cli:'), error.message);
-      console.log('\nPlease try to install manually:', '\n');
-      console.log(chalk.cyan(installCommand));
+      console.error(red(`Error installing @blocklet/cli: ${error.message}`));
+      console.log(`Please try to install manually: ${chalk.cyan(installCommand)}`);
     }
   }
 
