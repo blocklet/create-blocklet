@@ -9,8 +9,18 @@ DID=${DID:-"z2qa7BQdkEb3TwYyEYC1psK6uvmGnHSUHt5RM"}
 PACKAGE_MANAGER=${PACKAGE_MANAGER:-"pnpm"}
 TEMPLATE=${TEMPLATE:-"react-dapp"}
 
+# 检查环境变量
+if [ "$TEMPLATE" = "react-aigne-dapp" ]; then
+  if [ -z "$OPENAI_API_KEY" ]; then
+    echo "❌ 使用 react-aigne-dapp 模板时必须设置 OPENAI_API_KEY 环境变量"
+    exit 1
+  else
+    echo "✅ OPENAI_API_KEY 环境变量已设置"
+  fi
+fi
+
 # 工作目录设置
-TMP_DIR=$(mktemp -d)
+TMP_DIR=${TMP_DIR:-$(mktemp -d)}
 CWD=$(pwd)
 
 # 输出初始配置信息
@@ -65,6 +75,9 @@ test_template() {
   cd "$app_dir" && $PACKAGE_MANAGER install
 
   echo "=== 启动开发服务器 ==="
+  if [ "$TEMPLATE" = "react-aigne-dapp" ]; then
+    echo "OPENAI_API_KEY=$OPENAI_API_KEY" >.env
+  fi
   cd "$app_dir" && npm run dev >dev.log &
   echo $! >dev.pid
 
@@ -115,6 +128,14 @@ test_template() {
 ###########################################
 
 main() {
+  if [ "$TEMPLATE" == "react-aigne-dapp" ]; then
+    if [ -z "$OPENAI_API_KEY" ]; then
+      echo "❌ 使用 react-aigne-dapp 模板时必须设置 OPENAI_API_KEY 环境变量"
+      exit 1
+    fi
+    echo "✅ OPENAI_API_KEY 环境变量已设置"
+  fi
+
   test_template "$TEMPLATE"
   local result=$?
 
