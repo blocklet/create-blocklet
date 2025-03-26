@@ -35,6 +35,7 @@ cleanup() {
     kill "$pid" 2>/dev/null || true
     rm -f "$pid_file"
   fi
+  rm -fr "$app_dir/dev.log"
 }
 
 ###########################################
@@ -62,8 +63,7 @@ test_template() {
 
   local app_dir="$test_dir/$template"
   echo "=== 安装依赖 ==="
-  cd "$app_dir"
-  $PACKAGE_MANAGER install
+  cd "$app_dir" && $PACKAGE_MANAGER install
 
   echo "=== 启动开发服务器 ==="
   cd "$app_dir" && npm run dev >dev.log &
