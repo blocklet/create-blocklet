@@ -97,6 +97,7 @@ test_template() {
     fi
   else
     echo "❌ 未找到应用URL"
+    cat dev.log
     cleanup "$app_dir"
     return 1
   fi
