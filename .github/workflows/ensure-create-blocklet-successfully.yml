@@ -160,7 +160,7 @@ jobs:
 
       - name: 安装依赖
         run: |
-          npm install
+          ${{ matrix.package-manager }} install
 
       - name: 测试创建应用
         run: |
