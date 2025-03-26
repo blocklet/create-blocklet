@@ -3,7 +3,7 @@ name: ensure-create-blocklet-successfully
 on:
   pull_request:
     branches:
-      - '*'
+      - main
 
 jobs:
   ensure-create-blocklet-successfully:
@@ -49,6 +49,19 @@ jobs:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
     steps:
+      - uses: 8BitJonny/gh-get-current-pr@1.4.0
+        id: PR
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          sha: ${{ github.event.pull_request.head.sha }}
+          filterOutClosed: true
+
+      - name: Check WIP in PR Title
+        uses: embano1/wip@v1
+        with:
+          title: '${{ steps.PR.outputs.pr_title }}'
+          regex: '^WIP'
+
       - name: 检查 OPENAI_API_KEY
         if: matrix.template == 'react-aigne-dapp'
         run: |

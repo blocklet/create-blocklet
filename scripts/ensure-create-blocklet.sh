@@ -7,7 +7,7 @@
 # 默认配置
 DID=${DID:-"z2qa7BQdkEb3TwYyEYC1psK6uvmGnHSUHt5RM"}
 PACKAGE_MANAGER=${PACKAGE_MANAGER:-"pnpm"}
-TEMPLATE=${TEMPLATE:-"react-dapp"}
+TEMPLATE=${TEMPLATE:-"react-aigne-dapp"}
 
 # 检查环境变量
 if [ "$TEMPLATE" = "react-aigne-dapp" ]; then
