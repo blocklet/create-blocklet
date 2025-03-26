@@ -18,7 +18,7 @@ jobs:
         # 以下是简化的测试配置，仅供调试使用
         os: [ubuntu-latest]
         node: [23]
-        package-manager: [pnpm]
+        package-manager: [yarn]
         template: [
             # DApp templates
             react-dapp,
