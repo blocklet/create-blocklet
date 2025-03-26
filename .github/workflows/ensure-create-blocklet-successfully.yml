@@ -19,9 +19,37 @@ jobs:
         os: [ubuntu-latest]
         node: [22]
         package-manager: [npm, yarn, pnpm]
+        template: [
+            # DApp templates
+            react-dapp,
+            # react-dapp-ts,
+            # react-aigne-dapp,
+            # did-wallet-dapp,
+            # todo-list-example,
+            # did-connect-dapp,
+            # solidjs-dapp,
+            # vue-dapp,
+            # svelte-dapp,
+
+            # # Static templates
+            # react-static,
+            # solidjs-static,
+            # vue-static,
+            # vue-ts-static,
+            # svelte-static,
+            # html-static,
+
+            # # API templates
+            # express-api,
+            # nestjs-api,
+
+            # # Dev templates
+            # component-studio,
+          ]
 
     env:
       PACKAGE_MANAGER: ${{ matrix.package-manager }}
+      TEMPLATE: ${{ matrix.template }}
 
     steps:
       - name: 检出代码
@@ -135,3 +163,11 @@ jobs:
             echo "⚠️ Blocklet Server 启动了，但HTTP请求返回状态码: $HTTP_STATUS"
             exit 1
           fi
+
+      - name: 安装依赖
+        run: |
+          npm install
+
+      - name: 测试创建应用
+        run: |
+          npm run e2e
