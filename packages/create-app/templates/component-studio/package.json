@@ -71,7 +71,7 @@
     "express-async-errors": "^3.1.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.5.3",
+    "@biomejs/biome": "^1.9.4",
     "@blocklet/js-sdk": "^1.16.40",
     "@types/cookie-parser": "^1.4.8",
     "@types/cors": "^2.8.17",
@@ -81,8 +81,10 @@
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "bumpp": "^9.9.3",
     "cross-env": "^7.0.3",
+    "get-port": "^5.1.1",
     "import-sort-style-module": "^6.0.0",
     "lint-staged": "^15.3.0",
     "nodemon": "^3.1.9",
@@ -95,7 +97,7 @@
     "typescript": "^5.7.2",
     "vite": "^5.4.11",
     "vite-node": "^2.1.8",
-    "vite-plugin-blocklet": "^0.9.27",
+    "vite-plugin-blocklet": "^0.9.28",
     "vite-plugin-require": "^1.2.14",
     "vite-plugin-svgr": "^4.3.0",
     "vite-tsconfig-paths": "^4.3.2",
