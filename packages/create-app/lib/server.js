@@ -69,7 +69,14 @@ export async function getServerDirectory() {
 }
 
 export async function getUserInfo() {
+  const defaultValue = {
+    name: '',
+    email: '',
+  };
   try {
+    if (!(await checkServerInstalled())) {
+      return defaultValue;
+    }
     const { stdout: name } = await $`${BLOCKLET_COMMAND} config get name`;
     const { stdout: email } = await $`${BLOCKLET_COMMAND} config get email`;
     return {
@@ -77,9 +84,6 @@ export async function getUserInfo() {
       email: await trimServerOutputVersion(email?.trim()),
     };
   } catch {
-    return {
-      name: '',
-      email: '',
-    };
+    return defaultValue;
   }
 }
