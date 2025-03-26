@@ -11,7 +11,6 @@ TEMPLATE=${TEMPLATE:-"react-dapp"}
 
 # 工作目录设置
 TMP_DIR=$(mktemp -d)
-TMP_DIR="/private/var/folders/t8/dd1zk5ms3rq4cl3119p_1yt40000gn/T/tmp.18j2cFSyNG"
 CWD=$(pwd)
 
 # 输出初始配置信息
