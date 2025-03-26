@@ -4,6 +4,9 @@ import { createBlockletPlugin } from 'vite-plugin-blocklet';
 
 export default defineConfig(() => {
   return {
+    server: {
+      host: true,
+    },
     plugins: [solidPlugin(), createBlockletPlugin()],
     build: {
       target: 'esnext',
