@@ -18,7 +18,7 @@ jobs:
         # 以下是简化的测试配置，仅供调试使用
         os: [ubuntu-latest]
         node: [23]
-        package-manager: [yarn]
+        package-manager: [pnpm]
         template: [
             # DApp templates
             react-dapp,
@@ -85,13 +85,7 @@ jobs:
 
       - name: 安装 blocklet CLI
         run: |
-          if [ "${{ matrix.package-manager }}" == "npm" ]; then
-            npm install -g @blocklet/cli@beta
-          elif [ "${{ matrix.package-manager }}" == "yarn" ]; then
-            yarn global add @blocklet/cli@beta
-          else
-            pnpm install -g @blocklet/cli@beta
-          fi
+          npm install -g @blocklet/cli
 
       - name: 启动 blocklet server
         run: |
