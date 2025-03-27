@@ -44,8 +44,9 @@
     "simple-git-hooks": "^2.11.1",
     "svelte": "^4.2.19",
     "vite": "^5.4.14",
-    "vite-plugin-blocklet": "^0.9.28",
-    "zx": "^8.3.2"
+    "vite-plugin-blocklet": "^0.9.29",
+    "zx": "^8.3.2",
+    "nodemon": "^3.1.9"
   },
   "lint-staged": {
     "*.{mjs,js,svelte}": [

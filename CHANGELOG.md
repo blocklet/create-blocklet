@@ -1,3 +1,9 @@
+## 0.9.29 (2025-3-27)
+
+- feat: eliminate various errors during blocklet creation
+- feat: enhance output message of blocklet creation
+- fix: certain templates fail to start
+
 ## 0.9.28 (2025-3-25)
 
 - chore: polish component studio template
