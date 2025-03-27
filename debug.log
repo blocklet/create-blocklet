@@ -1,2 +1,0 @@
-⚠ HTTPS_PROXY detected: http://127.0.0.1:7890, which may cause the command not working properly.
-⚠ If that happens, please clear the environment variable and restart the command.
