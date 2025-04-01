@@ -38,9 +38,7 @@
     ]
   },
   "dependencies": {
-    "@aigne/core": "1.0.8",
-    "@aigne/memory": "1.0.8",
-    "@aigne/runtime": "1.0.8",
+    "@aigne/core": "^1.5.0",
     "@arcblock/did-auth": "^1.19.15",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
     "@arcblock/did-connect": "^2.12.17",
@@ -63,7 +61,6 @@
     "react-markdown": "^9.1.0",
     "react-scroll-to-bottom": "^4.2.0",
     "react-syntax-highlighter": "^15.6.1",
-    "reflect-metadata": "^0.2.2",
     "remark-gfm": "^4.0.1",
     "ufo": "^1.5.4"
   },
@@ -103,11 +100,6 @@
     "vite-plugin-svgr": "^4.3.0",
     "zx": "^8.3.2"
   },
-  "resolutions": {
-    "@aigne/core": "1.0.8",
-    "@aigne/memory": "1.0.8",
-    "@aigne/runtime": "1.0.8"
-  },
   "importSort": {
     ".js, .jsx, .mjs": {
       "parser": "babylon",
@@ -120,5 +112,8 @@
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
+  },
+  "resolutions": {
+    "pkce-challenge": "^5.0.0"
   }
 }
