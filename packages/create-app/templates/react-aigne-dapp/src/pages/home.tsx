@@ -1,5 +1,5 @@
-import { OrderedRecord } from '@aigne/core';
-import { Runtime } from '@aigne/runtime/client';
+import { createFetch } from '@blocklet/js-sdk';
+import Header from '@blocklet/ui-react/lib/Header';
 import { SendRounded } from '@mui/icons-material';
 import {
   Alert,
@@ -16,16 +16,17 @@ import {
 import { produce } from 'immer';
 import { nanoid } from 'nanoid';
 import React, { memo, useState } from 'react';
-import Header from '@blocklet/ui-react/lib/Header';
 
-import { ChatbotResponse } from '../../api/src/agents/type';
+import blockletLogo from '../assets/blocklet.svg';
 import MarkdownRenderer from '../components/MarkdownRenderer';
 import ScrollView from '../components/ScrollView';
-import './home.css';
-import blockletLogo from '../assets/blocklet.svg';
 import { useSessionContext } from '../contexts/session';
+import './home.css';
 
-interface MessageItem extends ChatbotResponse {
+const fetch = createFetch();
+
+interface MessageItem {
+  $message: string;
   id: string;
   question?: string;
   loading?: boolean;
@@ -34,7 +35,7 @@ interface MessageItem extends ChatbotResponse {
 
 export default function Home() {
   const [question, setQuestion] = useState('');
-  const [messages, setMessages] = useState<OrderedRecord<MessageItem>>(() => OrderedRecord.fromArray([]));
+  const [messages, setMessages] = useState<MessageItem[]>([]);
   const { session } = useSessionContext();
 
   const run = async (e: React.FormEvent) => {
@@ -49,39 +50,42 @@ export default function Home() {
     const message: MessageItem = {
       id: nanoid(),
       question,
-      $text: '',
+      $message: '',
       loading: true,
     };
 
-    setMessages((prev) => produce(prev, (draft) => OrderedRecord.push(draft, message)));
+    setMessages((prev) =>
+      produce(prev, (draft) => {
+        draft.push(message);
+      }),
+    );
 
     try {
-      const chatbot = new Runtime();
-      const stream = await (await chatbot.resolve('chatbot')).run({ question }, { stream: true });
+      const result = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          $message: question,
+        }),
+      }).then((res) => res.json());
 
-      const reader = stream.getReader();
-      for (;;) {
-        const { done, value } = await reader.read();
-        if (done) break;
-
-        setMessages((prev) =>
-          produce(prev, (draft) => {
-            const m = draft[message.id]!;
-            Object.assign(m, value.delta);
-          }),
-        );
-      }
+      setMessages((prev) =>
+        produce(prev, (draft) => {
+          const m = draft.find((i) => i.id === message.id)!;
+          Object.assign(m, result);
+        }),
+      );
     } catch (error) {
       setMessages((prev) =>
         produce(prev, (draft) => {
-          const m = draft[message.id]!;
+          const m = draft.find((i) => i.id === message.id)!;
           m.error = error;
         }),
       );
     } finally {
       setMessages((prev) =>
         produce(prev, (draft) => {
-          const m = draft[message.id]!;
+          const m = draft.find((i) => i.id === message.id)!;
           m.loading = false;
         }),
       );
@@ -110,7 +114,7 @@ export default function Home() {
 
       <Container sx={{ display: 'flex', flexDirection: 'column', py: 3 }} maxWidth="md">
         <Stack sx={{ flex: 1, height: 0, display: 'flex', flexDirection: 'column', gap: 3, mb: 5 }}>
-          {OrderedRecord.map(messages, (message) => (
+          {messages.map((message) => (
             <MessageView key={message.id} message={message} />
           ))}
         </Stack>
@@ -158,16 +162,15 @@ const MessageView = memo(({ message }: { message: MessageItem }) => {
       <Stack direction="row" gap={2}>
         <Avatar>🤖</Avatar>
         <Stack flex={1} pt={1} gap={2}>
-          {message.$text && (
+          {message.$message && (
             <Stack gap={1}>
-              <MarkdownRenderer citations={[]}>{message.$text}</MarkdownRenderer>
+              <MarkdownRenderer citations={[]}>{message.$message}</MarkdownRenderer>
             </Stack>
           )}
 
-          {message.loading && message.status?.loading && (
+          {message.loading && (
             <Stack direction="row" gap={2} alignItems="center">
               <CircularProgress size={16} />
-              <Typography variant="caption">{message.status.message}</Typography>
             </Stack>
           )}
 

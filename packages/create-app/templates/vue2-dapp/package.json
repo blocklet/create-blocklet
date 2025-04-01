@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "blocklet dev",
-    "start": "cross-env NODE_ENV=development nodemon api/dev.js -w api",
+    "start": "cross-env NODE_ENV=development nodemon --exec tsx api/dev.js -w api",
     "clean": "node scripts/build-clean.mjs",
     "bundle": "npm run bundle:client && npm run bundle:api",
     "bundle:client": "vite build",
@@ -47,8 +47,9 @@
     "prettier": "^3.5.1",
     "rimraf": "^5.0.10",
     "simple-git-hooks": "^2.11.1",
+    "tsx": "^4.19.3",
     "vite": "^5.4.14",
-    "vite-plugin-blocklet": "^0.9.29",
+    "vite-plugin-blocklet": "^0.9.30",
     "vue": "^2.7.16",
     "zx": "^8.3.2"
   },

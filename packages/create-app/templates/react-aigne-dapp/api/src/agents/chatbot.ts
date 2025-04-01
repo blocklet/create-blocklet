@@ -1,30 +1,8 @@
-import { LLMAgent } from '@aigne/core';
-import { runtime } from './runtime';
+import { AIAgent } from '@aigne/core';
 
-const chatbot = LLMAgent.create({
-  context: runtime,
+export const chatbot = AIAgent.from({
   name: 'chatbot',
-  inputs: {
-    question: {
-      type: 'string',
-      required: true,
-    },
-  },
-  modelOptions: {
-    model: 'gpt-4o',
-    temperature: 0.1,
-  },
-  messages: [
-    { role: 'system', content: 'You are a AI chat bot' },
-    { role: 'user', content: '{{question}}' },
-  ],
-  outputs: {
-    $text: {
-      type: 'string',
-      required: true,
-    },
-  },
+  instructions:
+    'You are a helpful assistant. You can answer questions, provide information, and assist with various tasks.',
+  memory: true,
 });
-
-// eslint-disable-next-line import/prefer-default-export
-export { chatbot };

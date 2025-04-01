@@ -83,7 +83,8 @@ jobs:
         if: matrix.package-manager == 'pnpm'
         uses: pnpm/action-setup@v2
         with:
-          version: latest
+          # pnpm 10 需要 approve-builds，不支持在 CI 中使用，暂时使用 pnpm 9
+          version: 9
 
       - name: 安装 yarn
         if: matrix.package-manager == 'yarn'
@@ -145,14 +146,14 @@ jobs:
           # 如果成功，返回0，否则返回错误
           if $SUCCESS; then
             echo "✅ Blocklet Server 成功启动 - 检测到 'Secure URLs'"
-            
+
             # 提取 Secure URL
             SERVER_URL=$(grep -A 5 "Secure URLs" $OUTPUT_FILE | grep "https://" | head -n 1 | sed 's/^[ \t]*-*[ \t]*//g' | sed 's/^*//g')
             echo "找到服务器URL: $SERVER_URL"
-            
+
             # 将URL保存为GitHub Actions环境变量
             echo "SERVER_URL=$SERVER_URL" >> $GITHUB_ENV
-            
+
             # 显示日志以便调试
             tail $OUTPUT_FILE
             exit 0

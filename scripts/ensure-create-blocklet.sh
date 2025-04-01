@@ -45,6 +45,23 @@ cleanup() {
     rm -f "$pid_file"
   fi
   rm -fr "$app_dir/dev.log"
+  rm -fr $TMP_DIR
+}
+
+# 更新依赖包版本
+update_package_version() {
+  local app_dir=$1
+  local package_name=$2
+  local latest_version=$3
+
+  # 使用兼容 GNU 和 BSD sed 的方式
+  if [ "$(uname)" = "Darwin" ]; then
+    # macOS (BSD sed)
+    cd "$app_dir" && sed -i '' "s/\"$package_name\": \".*\"/\"$package_name\": \"$latest_version\"/" package.json
+  else
+    # Linux/other (GNU sed)
+    cd "$app_dir" && sed -i "s/\"$package_name\": \".*\"/\"$package_name\": \"$latest_version\"/" package.json
+  fi
 }
 
 ###########################################
@@ -72,6 +89,8 @@ test_template() {
 
   local app_dir="$test_dir/$template"
   echo "=== 安装依赖 ==="
+  LATEST_VERSION=$(npm show vite-plugin-blocklet version)
+  update_package_version "$app_dir" "vite-plugin-blocklet" "$LATEST_VERSION"
   cd "$app_dir" && $PACKAGE_MANAGER install
 
   echo "=== 启动开发服务器 ==="
