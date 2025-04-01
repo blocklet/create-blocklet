@@ -1,3 +1,7 @@
+## 0.9.30 (2025-4-1)
+
+- fix(dx): use tsx for development server execution
+
 ## 0.9.29 (2025-3-27)
 
 - feat: eliminate various errors during blocklet creation
