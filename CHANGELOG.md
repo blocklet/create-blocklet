@@ -1,3 +1,7 @@
+## 0.9.31 (2025-4-7)
+
+- chore(create-app): update component-studio template
+
 ## 0.9.30 (2025-4-1)
 
 - fix(dx): use tsx for development server execution

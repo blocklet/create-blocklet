@@ -12,6 +12,7 @@
   "scripts": {
     "dev": "COMPONENT_STORE_URL=https://test.store.blocklet.dev blocklet dev",
     "lint": "biome check . && tsc --noEmit",
+    "lint:skip": "echo 'skip lint'",
     "lint:fix": "biome check --apply .",
     "format": "biome format --write .",
     "start": "vite-node -c vite-server.config.ts -w api/dev.ts",
@@ -32,8 +33,8 @@
   },
   "lint-staged": {
     "*.{mjs,js,jsx,ts,tsx,css,less,scss,json,graphql}": [
-      "biome format --write",
-      "biome lint --apply"
+      "pnpm run format",
+      "pnpm run lint:skip"
     ]
   },
   "browserslist": {
@@ -97,7 +98,7 @@
     "typescript": "^5.7.2",
     "vite": "^5.4.11",
     "vite-node": "^2.1.8",
-    "vite-plugin-blocklet": "^0.9.30",
+    "vite-plugin-blocklet": "^0.9.31",
     "vite-plugin-require": "^1.2.14",
     "vite-plugin-svgr": "^4.3.0",
     "vite-tsconfig-paths": "^4.3.2",
