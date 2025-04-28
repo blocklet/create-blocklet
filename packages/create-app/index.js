@@ -26,7 +26,7 @@ import {
   toValidPackageName,
 } from './lib/utils.js';
 
-const { yellow, red, green, cyan, blue, bold, magenta } = chalk;
+const { yellow, red, green, cyan, blue, bold } = chalk;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -143,13 +143,14 @@ const templates = [
     color: blue,
   },
   // dev
-  {
-    name: 'component-studio',
-    display: '[dev] component studio (beta): Local studio using for component development',
-    color: magenta,
-    // use this permanent did as blocklet.yml did always
-    permanentDid: 'z2qa7BQdkEb3TwYyEYC1psK6uvmGnHSUHt5RM',
-  },
+  // component studio template has been migrated to @blocklet/component-studio-cli
+  // {
+  //   name: 'component-studio',
+  //   display: '[dev] component studio (beta): Local studio using for component development',
+  //   color: magenta,
+  //   // use this permanent did as blocklet.yml did always
+  //   permanentDid: 'z2qa7BQdkEb3TwYyEYC1psK6uvmGnHSUHt5RM',
+  // },
 ];
 
 const templatesMap = {};
