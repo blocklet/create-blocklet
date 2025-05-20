@@ -1,3 +1,7 @@
+## 0.9.33 (2025-5-20)
+
+- chore: update deps
+
 ## 0.9.32 (2025-4-28)
 
 - chore(create-app): remove component-studio template in choices
