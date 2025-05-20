@@ -40,12 +40,12 @@
     ]
   },
   "dependencies": {
-    "@arcblock/did-auth": "^1.19.15",
+    "@arcblock/did-auth": "^1.20.11",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
-    "@blocklet/sdk": "^1.16.39",
-    "@ocap/client": "^1.19.15",
-    "@ocap/mcrypto": "^1.19.15",
-    "@ocap/wallet": "^1.19.15",
+    "@blocklet/sdk": "^1.16.43",
+    "@ocap/client": "^1.20.11",
+    "@ocap/mcrypto": "^1.20.11",
+    "@ocap/wallet": "^1.20.11",
     "axios": "^1.7.9",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
@@ -55,7 +55,7 @@
   },
   "devDependencies": {
     "@arcblock/eslint-config": "^0.3.3",
-    "@blocklet/js-sdk": "^1.16.39",
+    "@blocklet/js-sdk": "^1.16.43",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@vitejs/plugin-react": "^4.3.4",
     "bumpp": "^9.11.1",
