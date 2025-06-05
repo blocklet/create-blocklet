@@ -82,7 +82,7 @@
     "tsx": "^4.19.3",
     "typescript": "^5.7.3",
     "vite": "^5.4.14",
-    "vite-plugin-blocklet": "^0.9.32",
+    "vite-plugin-blocklet": "^0.9.33",
     "vite-plugin-svgr": "^4.3.0",
     "zx": "^8.3.2"
   },

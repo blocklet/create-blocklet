@@ -1,3 +1,7 @@
+## 0.9.33 (2025-6-5)
+
+- fix(vite-plugin-blocklet): app logo on loading page supports dark mode
+
 ## 0.9.32 (2025-4-28)
 
 - chore(create-app): remove component-studio template in choices
