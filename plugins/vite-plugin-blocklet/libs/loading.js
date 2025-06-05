@@ -112,11 +112,18 @@ function generateHtml({ color, image }) {
   <script>
     (() => {
       const loadingImage = document.getElementById('loadingImage');
-      if (window?.blocklet?.appLogo) {
-        loadingImage.src = window.blocklet.appLogo;
-      } else {
-        loadingImage.src = "${image}";
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      
+      let logo = "${image}"; 
+
+      if (window?.blocklet) {
+        const { appLogo, appLogoDark } = window.blocklet;
+        if (appLogo) {
+          logo = isDark && appLogoDark ? appLogoDark : appLogo;
+        }
       }
+
+      loadingImage.src = logo;
     })();
   </script>`;
 }
