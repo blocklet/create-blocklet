@@ -26,7 +26,12 @@ export default function ScrollView({
   // Skip scroll view if we are in a scroll view
   if (ctx) {
     return (
-      <Box component={component} flexGrow={1} {...props}>
+      <Box
+        component={component}
+        {...props}
+        sx={[{
+          flexGrow: 1
+        }, ...(Array.isArray(props.sx) ? props.sx : [props.sx])]}>
         {children}
       </Box>
     );
@@ -65,11 +70,11 @@ function ScrollViewWithinWindow({
       component={component}
       {...props}
       ref={scroll === 'element' ? setTarget : undefined}
-      flexGrow={1}
-      sx={{
+      sx={[{
+        flexGrow: 1,
         ...(scroll === 'element' ? { flex: 1, height: '100%', overflow: 'auto', overscrollBehavior: 'contain' } : {}),
-        ...props.sx,
-      }}>
+        ...props.sx
+      }, ...(Array.isArray(props.sx) ? props.sx : [props.sx])]}>
       {children}
     </Box>
   );

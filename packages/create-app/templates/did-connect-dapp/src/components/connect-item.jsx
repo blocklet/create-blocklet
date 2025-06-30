@@ -12,7 +12,9 @@ export default function ConnectItem({ title, description = null, result = null, 
         {title}
       </Typography>
       {description ? (
-        <Typography variant="body1" color="text.secondary" gutterBottom>
+        <Typography variant="body1" gutterBottom sx={{
+          color: "text.secondary"
+        }}>
           {description}
         </Typography>
       ) : null}
@@ -20,7 +22,12 @@ export default function ConnectItem({ title, description = null, result = null, 
       {result ? (
         <Card sx={{ mt: 2 }} variant="outlined">
           <CardContent>
-            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+            <Typography
+              gutterBottom
+              sx={{
+                color: "text.secondary",
+                fontSize: 14
+              }}>
               {t('result')}
             </Typography>
             {result}

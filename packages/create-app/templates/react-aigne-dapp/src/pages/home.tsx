@@ -95,23 +95,31 @@ export default function Home() {
   return (
     <ScrollView scroll="window" sx={{ minHeight: '100vh' }}>
       <Box component={Header} sx={{ position: 'sticky', top: 0, '.header-container': { maxWidth: '100%' } }} />
-
-      <Box textAlign="center">
+      <Box sx={{
+        textAlign: "center"
+      }}>
         <a href="https://www.arcblock.io/docs/blocklet-developer/getting-started" target="_blank" rel="noreferrer">
           <img src={blockletLogo} className="logo blocklet" alt="Blocklet logo" />
         </a>
         <h1>Vite + React + AIGNE Framework SDK</h1>
       </Box>
-
       <Box>
-        <Typography variant="h4" textAlign="center" my={6}>
+        <Typography
+          variant="h4"
+          sx={{
+            textAlign: "center",
+            my: 6
+          }}>
           AIGNE Chatbot
         </Typography>
-        <Typography textAlign="center" my={6}>
+        <Typography
+          sx={{
+            textAlign: "center",
+            my: 6
+          }}>
           This is a simple demo to help you quickly use the AIGNE framework SDK
         </Typography>
       </Box>
-
       <Container sx={{ display: 'flex', flexDirection: 'column', py: 3 }} maxWidth="md">
         <Stack sx={{ flex: 1, height: 0, display: 'flex', flexDirection: 'column', gap: 3, mb: 5 }}>
           {messages.map((message) => (
@@ -150,26 +158,48 @@ export default function Home() {
 
 const MessageView = memo(({ message }: { message: MessageItem }) => {
   return (
-    <Stack gap={2}>
-      <Stack direction="row" gap={2}>
+    <Stack sx={{
+      gap: 2
+    }}>
+      <Stack direction="row" sx={{
+        gap: 2
+      }}>
         <Avatar>🧑</Avatar>
 
-        <Stack flex={1} pt={1} gap={1}>
+        <Stack
+          sx={{
+            flex: 1,
+            pt: 1,
+            gap: 1
+          }}>
           <Typography>{message.question}</Typography>
         </Stack>
       </Stack>
-
-      <Stack direction="row" gap={2}>
+      <Stack direction="row" sx={{
+        gap: 2
+      }}>
         <Avatar>🤖</Avatar>
-        <Stack flex={1} pt={1} gap={2}>
+        <Stack
+          sx={{
+            flex: 1,
+            pt: 1,
+            gap: 2
+          }}>
           {message.$message && (
-            <Stack gap={1}>
+            <Stack sx={{
+              gap: 1
+            }}>
               <MarkdownRenderer citations={[]}>{message.$message}</MarkdownRenderer>
             </Stack>
           )}
 
           {message.loading && (
-            <Stack direction="row" gap={2} alignItems="center">
+            <Stack
+              direction="row"
+              sx={{
+                gap: 2,
+                alignItems: "center"
+              }}>
               <CircularProgress size={16} />
             </Stack>
           )}

@@ -4,7 +4,14 @@ import PropTypes from 'prop-types';
 
 export default function InfoRow({ icon = null, name, value }) {
   return (
-    <Typography variant="body1" color="text.primary" gutterBottom sx={{ display: 'flex', alignItems: 'center' }}>
+    <Typography
+      variant="body1"
+      gutterBottom
+      sx={{
+        color: "text.primary",
+        display: 'flex',
+        alignItems: 'center'
+      }}>
       <Box
         sx={{
           display: 'inline-flex',
@@ -22,9 +29,9 @@ export default function InfoRow({ icon = null, name, value }) {
       </Box>
       <Typography
         component="span"
-        color="text.secondary"
         sx={{
-          wordBreak: 'break-word',
+          color: "text.secondary",
+          wordBreak: 'break-word'
         }}>
         {value}
       </Typography>
