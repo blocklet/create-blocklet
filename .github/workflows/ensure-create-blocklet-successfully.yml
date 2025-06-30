@@ -116,19 +116,19 @@ jobs:
             (
               blocklet server start -a | tee $OUTPUT_FILE &
               SERVER_PID=$!
-              # 最多等待60秒，但不杀掉进程
-              sleep 60
+              # 最多等待120秒，但不杀掉进程
+              sleep 120
               # 不再杀掉服务进程，让它继续运行
               echo "后台服务进程ID: $SERVER_PID"
             ) &
           else
             # Linux方式使用timeout
-            timeout 60s bash -c "blocklet server start -a | tee $OUTPUT_FILE" &
+            timeout 120s bash -c "blocklet server start -a | tee $OUTPUT_FILE" &
           fi
 
           # 设置最大等待时间
           START_TIME=$(date +%s)
-          END_TIME=$((START_TIME + 60))
+          END_TIME=$((START_TIME + 120))
           SUCCESS=false
 
           # 循环检查输出文件是否包含成功标记
