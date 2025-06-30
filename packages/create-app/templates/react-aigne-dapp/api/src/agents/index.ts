@@ -1,5 +1,5 @@
-import { ExecutionEngine } from '@aigne/core';
-import { OpenAIChatModel } from '@aigne/core/models/openai-chat-model';
+import { AIGNE } from '@aigne/core';
+import { OpenAIChatModel } from '@aigne/openai';
 import config from '@blocklet/sdk/lib/config';
 import { Router } from 'express';
 
@@ -10,15 +10,13 @@ const model = new OpenAIChatModel({
   apiKey: config.env.OPENAI_API_KEY || '',
 });
 
-const engine = new ExecutionEngine({
+const aigne = new AIGNE({
   model,
-  agents: [chatbot],
 });
 
 export const router = Router();
 
 router.post('/chat', async (req, res) => {
-  const result = await engine.call(chatbot, req.body);
-
+  const result = await aigne.invoke(chatbot, { message: req.body });
   res.json(result);
 });

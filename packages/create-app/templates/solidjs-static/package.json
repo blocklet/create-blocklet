@@ -31,9 +31,9 @@
     "rimraf": "^5.0.10",
     "simple-git-hooks": "^2.11.1",
     "solid-js": "^1.9.4",
-    "vite": "^5.4.14",
-    "vite-plugin-blocklet": "^0.9.33",
-    "vite-plugin-solid": "^2.11.2",
+    "vite": "^7.0.0",
+    "vite-plugin-blocklet": "^0.10.0",
+    "vite-plugin-solid": "^2.11.7",
     "zx": "^8.3.2"
   },
   "lint-staged": {

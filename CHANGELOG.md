@@ -1,3 +1,9 @@
+## 0.10.0 (2025-6-30)
+
+- chore: update mui@7
+- chore: update react@19
+- chore: update vite@7
+
 ## 0.9.33 (2025-6-5)
 
 - fix(vite-plugin-blocklet): app logo on loading page supports dark mode

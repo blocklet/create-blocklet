@@ -42,7 +42,12 @@ export default function Main() {
 
   const rows = !!user
     ? [
-        { name: t('name'), value: <Box display="flex" alignItems="center" gap={2}><Avatar src={user.avatar}/>{user.fullName}</Box> },
+        { name: t('name'), value: <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: 2
+          }}><Avatar src={user.avatar}/>{user.fullName}</Box> },
         preferences.displayAvatar ? { name: t('avatar'), value: <Avatar alt="" src={user.avatar}></Avatar> } : null,
         { name: t('did'), value: <DID did={user.did} showQrcode locale="zh" /> },
         { name: t('email'), value: user.email },
@@ -92,45 +97,47 @@ export default function Main() {
             </Button>
           </Box>
         )}
-        {!!user && (
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 2,
-              '&>div': {
-                mb: 0,
-              },
-              '.info-row__name': {
-                fontWeight: 'bold',
-                color: 'grey.800',
-              },
-            }}>
-            <Typography variant="h3" mb={3}>
-              {t('profile')}
-            </Typography>
-            {rows.map((row) => {
-              if (row.name === t('did')) {
-                return (
-                  <InfoRow
-                    valueComponent="div"
-                    key={row.name}
-                    nameWidth={120}
-                    name={row.name}
-                    nameFormatter={() => t('did')}>
-                    {row.value}
-                  </InfoRow>
-                );
-              }
-
+      {!!user && (
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 2,
+            '&>div': {
+              mb: 0,
+            },
+            '.info-row__name': {
+              fontWeight: 'bold',
+              color: 'grey.800',
+            },
+          }}>
+          <Typography variant="h3" sx={{
+            mb: 3
+          }}>
+            {t('profile')}
+          </Typography>
+          {rows.map((row) => {
+            if (row.name === t('did')) {
               return (
-                <InfoRow valueComponent="div" key={row.name} nameWidth={120} name={row.name}>
+                <InfoRow
+                  valueComponent="div"
+                  key={row.name}
+                  nameWidth={120}
+                  name={row.name}
+                  nameFormatter={() => t('did')}>
                   {row.value}
                 </InfoRow>
               );
-            })}
-          </Box>
-        )}
+            }
+
+            return (
+              <InfoRow valueComponent="div" key={row.name} nameWidth={120} name={row.name}>
+                {row.value}
+              </InfoRow>
+            );
+          })}
+        </Box>
+      )}
     </Stack>
   );
 }

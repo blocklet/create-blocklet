@@ -28,8 +28,21 @@ function RequiredLogin({ onLogin = () => {}, nextUrl = undefined, ...rest }: Rea
   }, [session.user, navigate, nextUrl]);
 
   return (
-    <Grid container justifyContent="center" {...rest}>
-      <Grid item justifyContent="center" textAlign="center" xl={12} lg={12}>
+    <Grid
+      container
+      {...rest}
+      sx={[{
+        justifyContent: "center"
+      }, ...(Array.isArray(rest.sx) ? rest.sx : [rest.sx])]}>
+      <Grid
+        size={{
+          xl: 12,
+          lg: 12
+        }}
+        sx={{
+          justifyContent: "center",
+          textAlign: "center"
+        }}>
         <Alert severity="warning">Connect to the DID Wallet login to access the website</Alert>
         <Button
           onClick={() => session.login(onLogin)}

@@ -24,7 +24,9 @@ function Main() {
     <Layout>
       <Typography component="h3" variant="h4" color="textPrimary" gutterBottom>
         {t('step1.title')}{' '}
-        <Typography component="small" color="text.secondary">
+        <Typography component="small" sx={{
+          color: "text.secondary"
+        }}>
           {t('step1.prepareDIDWallet')}
         </Typography>
       </Typography>
@@ -64,14 +66,21 @@ function Main() {
           }}
         />
       </Box>
-
-      <Typography component="h3" variant="h4" color="text.primary" gutterBottom sx={{ mt: 2 }}>
+      <Typography
+        component="h3"
+        variant="h4"
+        gutterBottom
+        sx={{
+          color: "text.primary",
+          mt: 2
+        }}>
         {t('step2.title')}{' '}
-        <Typography component="small" color="text.secondary">
+        <Typography component="small" sx={{
+          color: "text.secondary"
+        }}>
           {t('step2.enjoyPlayground')}
         </Typography>
       </Typography>
-
       <Box
         sx={{
           display: 'flex',

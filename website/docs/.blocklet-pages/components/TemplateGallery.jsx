@@ -129,9 +129,6 @@ function TemplateGallery(props) {
 TemplateGallery.propTypes = {
 }
 
-TemplateGallery.defaultProps = {
-}
-
 const Root = styled('div')`
   ul {
     display: grid;
