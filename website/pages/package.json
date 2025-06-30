@@ -14,7 +14,7 @@
     "@xmark/cli": "^2.5.6",
     "@xmark/client": "^2.5.6",
     "@xmark/theme-arcblock": "^2.5.6",
-    "react": "~18.2.0"
+    "react": "~19.1.0"
   },
   "version": "0.4.31"
 }

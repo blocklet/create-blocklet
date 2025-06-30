@@ -89,9 +89,6 @@ TemplateInfo.propTypes = {
   templateName: PropTypes.string.isRequired
 }
 
-TemplateInfo.defaultProps = {
-}
-
 const Root = styled('div')`
   display: flex;
   align-items: start;
