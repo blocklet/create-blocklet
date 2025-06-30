@@ -37,10 +37,7 @@ jobs:
 
             # API templates
             express-api,
-            nestjs-api,
-
-            # Dev templates
-            component-studio,
+            nestjs-api
           ]
 
     env:
