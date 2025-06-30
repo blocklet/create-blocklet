@@ -36,9 +36,9 @@
     "rimraf": "^5.0.10",
     "simple-git-hooks": "^2.11.1",
     "tsx": "^4.19.3",
-    "vite": "^5.4.14",
+    "vite": "^7.0.0",
     "vite-plugin-blocklet": "^0.9.33",
-    "vite-plugin-solid": "^2.11.2",
+    "vite-plugin-solid": "^2.11.7",
     "zx": "^8.3.2"
   },
   "dependencies": {

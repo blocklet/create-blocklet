@@ -40,8 +40,9 @@
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^5.16.14",
     "@mui/material": "^5.16.14",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react": "^4.6.0",
     "bumpp": "^9.11.1",
+    "cross-env": "^7.0.3",
     "dayjs": "^1.11.13",
     "dotenv-flow": "^4.1.0",
     "flat": "^6.0.1",
@@ -51,13 +52,12 @@
     "react-router-dom": "^6.29.0",
     "rimraf": "^5.0.10",
     "simple-git-hooks": "^2.11.1",
-    "vite": "^5.4.14",
-    "vite-node": "^2.1.9",
+    "vite": "^7.0.0",
+    "vite-node": "^3.2.4",
     "vite-plugin-blocklet": "^0.9.33",
     "vite-plugin-require": "^1.2.14",
     "vite-plugin-svgr": "^4.3.0",
-    "zx": "^8.3.2",
-    "cross-env": "^7.0.3"
+    "zx": "^8.3.2"
   },
   "lint-staged": {
     "*.{mjs,js,jsx,ts,tsx}": [

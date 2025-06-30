@@ -76,7 +76,7 @@
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@types/react-toastify": "^4.1.0",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react": "^4.6.0",
     "bumpp": "^9.11.1",
     "cross-env": "^7.0.3",
     "eslint": "^8.57.1",
@@ -96,7 +96,7 @@
     "ts-node": "^10.9.2",
     "tsx": "^4.19.3",
     "typescript": "^5.7.3",
-    "vite": "^5.4.14",
+    "vite": "^7.0.0",
     "vite-plugin-blocklet": "^0.9.33",
     "vite-plugin-svgr": "^4.3.0",
     "zx": "^8.3.2"

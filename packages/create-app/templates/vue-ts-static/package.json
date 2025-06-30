@@ -29,7 +29,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^2.27.3",
     "@blocklet/cli": "^1.16.39",
-    "@vitejs/plugin-vue": "^5.2.1",
+    "@vitejs/plugin-vue": "^6.0.0",
     "bumpp": "^9.11.1",
     "eslint": "9.5.0",
     "eslint-plugin-format": "^0.1.3",
@@ -38,7 +38,7 @@
     "simple-git-hooks": "^2.11.1",
     "taze": "^0.16.9",
     "typescript": "^5.7.3",
-    "vite": "^5.4.14",
+    "vite": "^7.0.0",
     "vite-plugin-blocklet": "^0.9.33",
     "vue-tsc": "^2.2.2",
     "zx": "^8.3.2"
