@@ -39,6 +39,8 @@
   },
   "dependencies": {
     "@aigne/core": "^1.25.0",
+    "@aigne/openai": "^0.4.2",
+    "@aigne/agent-library": "^1.17.2",
     "@arcblock/did-auth": "^1.20.15",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
     "@arcblock/did-connect": "^3.0.8",
