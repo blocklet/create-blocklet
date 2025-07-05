@@ -1,3 +1,7 @@
+## 0.10.1 (2025-7-5)
+
+- chore: update readme
+
 ## 0.10.0 (2025-6-30)
 
 - chore: update mui@7
