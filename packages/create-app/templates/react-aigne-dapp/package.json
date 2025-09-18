@@ -38,9 +38,9 @@
     ]
   },
   "dependencies": {
-    "@aigne/core": "^1.25.0",
+    "@aigne/core": "^1.60.3",
     "@aigne/default-memory": "^1.2.8",
-    "@aigne/openai": "^0.4.2",
+    "@aigne/openai": "^0.4.3",
     "@arcblock/did-connect-react": "^3.1.41",
     "@arcblock/did-connect-storage-nedb": "^1.8.0",
     "@arcblock/ux": "^3.1.41",
