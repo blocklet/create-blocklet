@@ -1,3 +1,7 @@
+## 0.11.0 (2025-9-18)
+
+- feat: update deps
+
 ## 0.10.1 (2025-7-5)
 
 - chore: update readme

@@ -1,7 +1,7 @@
 {
   "name": "create-blocklet",
   "private": true,
-  "version": "0.10.1",
+  "version": "0.11.0",
   "description": "",
   "keywords": [],
   "author": "",
@@ -12,7 +12,7 @@
     "debug": "node packages/create-app/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "bump-version": "zx --quiet scripts/bump-version.mjs",
-    "update:deps": "npx taze -r -n '/arcblock|ocap|abtnode|blocklet|did-connect|did-comment|nedb/' -w && pnpm i",
+    "update:deps": "npx taze -r -n '/arcblock|ocap|abtnode|blocklet|did-connect|did-comment|nedb|aigne/' -w && pnpm i",
     "preinstall": "npx only-allow pnpm",
     "publish-plugins": "zx --quiet scripts/publish-plugins.mjs",
     "e2e": "sh scripts/ensure-create-blocklet.sh"

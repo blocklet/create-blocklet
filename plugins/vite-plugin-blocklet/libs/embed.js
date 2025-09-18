@@ -13,13 +13,13 @@ const defaultExternals = [
   // default externals
   'react',
   '@arcblock/ux/lib/Locale/context',
-  '@arcblock/did-connect/lib/Session',
+  '@arcblock/did-connect-react/lib/Session',
 ];
 
 /**
  * @param {object} options - The options for the plugin.
  * @param {object} [options.embeds={}] - The embeds to be built.
- * @param {array} [options.embedExternals=['react', '@arcblock/ux/lib/Locale/context', '@arcblock/did-connect/lib/Session']] - The external modules to be used in the embeds.
+ * @param {array} [options.embedExternals=['react', '@arcblock/ux/lib/Locale/context', '@arcblock/did-connect-react/lib/Session']] - The external modules to be used in the embeds.
  * @param {array} [options.embedPlugins=[]] - The plugins to be used in the embeds.
  * @param {number} [options.embedBuildConcurrency=0] - The plugins to be used in the embeds.
  * @return {array} The Vite config plugin.
