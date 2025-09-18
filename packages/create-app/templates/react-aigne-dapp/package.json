@@ -38,8 +38,8 @@
     ]
   },
   "dependencies": {
-    "@aigne/agent-library": "^1.17.2",
     "@aigne/core": "^1.25.0",
+    "@aigne/default-memory": "^1.2.8",
     "@aigne/openai": "^0.4.2",
     "@arcblock/did-connect-react": "^3.1.41",
     "@arcblock/did-connect-storage-nedb": "^1.8.0",

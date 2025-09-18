@@ -1,5 +1,5 @@
 import { AIAgent } from '@aigne/core';
-import { DefaultMemory } from '@aigne/agent-library/default-memory/index.js';
+import { DefaultMemory } from '@aigne/default-memory';
 
 export const chatbot = AIAgent.from({
   name: 'chatbot',
