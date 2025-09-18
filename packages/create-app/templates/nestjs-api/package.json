@@ -35,12 +35,12 @@
     "tmp": "^0.2.3"
   },
   "dependencies": {
-    "@arcblock/did-auth-storage-nedb": "^1.7.1",
-    "@blocklet/sdk": "^1.16.44",
+    "@arcblock/did-connect-storage-nedb": "^1.8.0",
+    "@blocklet/sdk": "^1.16.51",
     "@nestjs/common": "^11.0.10",
     "@nestjs/core": "^11.0.10",
     "@nestjs/platform-express": "^11.0.10",
-    "@ocap/client": "^1.20.15",
+    "@ocap/client": "^1.25.1",
     "dotenv-flow": "^4.1.0",
     "express": "^4.21.2",
     "reflect-metadata": "^0.2.2",

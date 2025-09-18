@@ -1,5 +1,5 @@
 /* eslint-disable react/require-default-props */
-import ConnectButton from '@arcblock/did-connect/lib/Button';
+import ConnectButton from '@arcblock/did-connect-react/lib/Button';
 import { useLocaleContext } from '@arcblock/ux/lib/Locale/context';
 import { Box, Card, CardContent, Typography } from '@mui/material';
 import PropTypes from 'prop-types';

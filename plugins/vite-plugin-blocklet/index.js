@@ -29,7 +29,7 @@ import setupClient from './libs/client.js';
  * @property {number} [positionX]
  * @property {number} [positionY]
  * @param {object} [embeds={}] - The embeds to be built.
- * @param {array} [embedExternals=['react', '@arcblock/ux/lib/Locale/context', '@arcblock/did-connect/lib/Session']] - The external modules to be used in the embeds.
+ * @param {array} [embedExternals=['react', '@arcblock/ux/lib/Locale/context', '@arcblock/did-connect-react/lib/Session']] - The external modules to be used in the embeds.
  * @param {array} [embedPlugins=[]] - The plugins to be used in the embeds.
  * @param {number} [embedBuildConcurrency=0] - The plugins to be used in the embeds.
  * @property {'middleware'|'client'|'server'|'wsUpgrade'} [hmrMode='middleware'] - 当未传入任何 option 参数时，会自动变为 middleware 模式
