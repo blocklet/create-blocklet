@@ -1,4 +1,5 @@
-import { Footer, Header } from '@blocklet/ui-react';
+import Footer from '@blocklet/ui-react/lib/Footer';
+import Header from '@blocklet/ui-react/lib/Header';
 import { Box, Container } from '@mui/material';
 import PropTypes from 'prop-types';
 

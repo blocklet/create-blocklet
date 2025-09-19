@@ -1,3 +1,7 @@
+## 0.11.1 (2025-9-19)
+
+- fix(create-app): fix react-aigne-dapp d.ts
+
 ## 0.11.0 (2025-9-18)
 
 - feat: update deps
