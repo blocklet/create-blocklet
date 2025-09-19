@@ -1,4 +1,4 @@
-import { Header } from '@blocklet/ui-react';
+import Header from '@blocklet/ui-react/lib/Header';
 import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useSessionContext } from '../libs/session';
