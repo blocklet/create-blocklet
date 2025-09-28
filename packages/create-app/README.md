@@ -40,7 +40,7 @@ yarn create blocklet my-blocklet
 ```
 
 > **Compatibility Note:**
-> Blocklet templates require [Node.js](https://nodejs.org/) version >=16.0.0.
+> Blocklet templates require [Node.js](https://nodejs.org/) version >=20.0.0.
 
 ## 📋 Available Templates
 

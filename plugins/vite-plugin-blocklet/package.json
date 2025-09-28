@@ -20,6 +20,9 @@
     "build": "rollup -c rollup.config.js",
     "prepublishOnly": "npm run build"
   },
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

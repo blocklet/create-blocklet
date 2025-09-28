@@ -87,7 +87,7 @@ Purpose-built templates for specific use cases.
 ## 🛠️ Development
 
 ### Prerequisites
-- Node.js 16+
+- Node.js 20+
 - pnpm (recommended)
 
 ### Setup
