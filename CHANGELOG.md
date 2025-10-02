@@ -1,3 +1,7 @@
+## 0.11.2 (2025-10-2)
+
+- feat(vite-plugin-blocklet): add dynamic asset host plugin
+
 ## 0.11.1 (2025-9-19)
 
 - fix(create-app): fix react-aigne-dapp d.ts
