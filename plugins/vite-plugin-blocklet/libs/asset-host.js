@@ -8,7 +8,7 @@ export default function createAssetHostPlugin() {
         const { did } = await getBlockletYAML();
         const dynamicBaseAssetsCode = `globalThis.__toCdnUrl = filePath => {
           const blockletBase = '/.blocklet/proxy/${did}/';
-          return window.blocklet.ASSET_HOST ? '//' + window.blocklet.ASSET_HOST + blockletBase + filePath : blockletBase + filePath;
+          return window.blocklet.ASSET_CDN_HOST ? '//' + window.blocklet.ASSET_CDN_HOST + blockletBase + filePath : blockletBase + filePath;
         }`;
         return [
           {
