@@ -6,6 +6,7 @@ import createLoadingPlugin from './libs/loading.js';
 import createDebugPlugin from './libs/debug.js';
 import createExpressPlugin from './libs/express.js';
 import createEmbedPlugin from './libs/embed.js';
+import createAssetHostPlugin from './libs/asset-host.js';
 import setupClient from './libs/client.js';
 
 /**
@@ -52,6 +53,7 @@ export function createBlockletPlugin(options = {}) {
     disableLoading = false,
     disableDebug = false,
     disableEmbed = false,
+    disableDynamicAssetHost = true,
     nodePolyfillsOptions,
     ...restOptions
   } = options;
@@ -79,6 +81,9 @@ export function createBlockletPlugin(options = {}) {
   }
   if (!disableEmbed) {
     plugins.push(createEmbedPlugin(restOptions));
+  }
+  if (!disableDynamicAssetHost) {
+    plugins.push(createAssetHostPlugin(restOptions));
   }
 
   return plugins;
