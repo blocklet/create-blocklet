@@ -25,14 +25,14 @@ importers:
   packages/create-app:
     dependencies:
       '@arcblock/did':
-        specifier: ^1.25.1
-        version: 1.25.1
+        specifier: ^1.26.2
+        version: 1.26.2
       '@ocap/mcrypto':
-        specifier: ^1.25.1
-        version: 1.25.1
+        specifier: ^1.26.2
+        version: 1.26.2
       '@ocap/util':
-        specifier: ^1.25.1
-        version: 1.25.1
+        specifier: ^1.26.2
+        version: 1.26.2
       boxen:
         specifier: ^7.1.1
         version: 7.1.1
@@ -83,14 +83,14 @@ importers:
   plugins/vite-plugin-blocklet:
     dependencies:
       '@arcblock/did':
-        specifier: ^1.25.1
-        version: 1.25.1
+        specifier: ^1.26.2
+        version: 1.26.2
       '@ocap/mcrypto':
-        specifier: ^1.25.1
-        version: 1.25.1
+        specifier: ^1.26.2
+        version: 1.26.2
       '@ocap/util':
-        specifier: ^1.25.1
-        version: 1.25.1
+        specifier: ^1.26.2
+        version: 1.26.2
       get-port:
         specifier: ^5.1.1
         version: 5.1.1
@@ -147,8 +147,8 @@ packages:
     resolution: {integrity: sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==}
     engines: {node: '>=0.10.0'}
 
-  '@arcblock/did@1.25.1':
-    resolution: {integrity: sha512-VXFxU3+LEOeAZuH7a+IGx6jhWkAKfdujDweweeGA2DtUT1+vwr1ucXZuZnaWdzIQr+O8kb8Xm8CqB26ApjI93Q==}
+  '@arcblock/did@1.26.2':
+    resolution: {integrity: sha512-xsWlpIe/n0nma82sCYgXJEOVvwi5FXnYbAQIGWUCn8lfxixPHO/D2PuwzG9Oi6b2O2T7RSMaeDUNxIXUQBBpLw==}
 
   '@arcblock/eslint-config-base@0.3.3':
     resolution: {integrity: sha512-90rIO1WL1t54UsHBRCC5211Psd9RLTFcw5SQPKFLUWtcXFV2dg4hGzRoJfqXfkzX9tHAcaj3K1X5aqojVOUFTw==}
@@ -374,14 +374,14 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@ocap/mcrypto@1.25.1':
-    resolution: {integrity: sha512-qNkVRWlQMvFMSfgkXzGc7D7tbCbkJ7gxz9LOm/lR9WJ3v67MkcqUSx9GWqQYfDA/2vSSWb/yvRPIzAaHGyRA/w==}
+  '@ocap/mcrypto@1.26.2':
+    resolution: {integrity: sha512-+OStU8tkc2EfSQjmdYc5wdHYs6QjVdFg3iDpGHQ1jiCswqTw5m/CI4W+ane2vHPl+lN2mXzudWZlEQTyx6l9jQ==}
 
-  '@ocap/types@1.25.1':
-    resolution: {integrity: sha512-of1mu2nXzWOPaojWqV+CyWiUAE3Rz1z4e8d1T9tSjINhZoD1Jyq3U2Ef5nPhszYles3CSnQrGycVkhgNi3uD8w==}
+  '@ocap/types@1.26.2':
+    resolution: {integrity: sha512-I0Fnx4DwoWCtcLv+UW0z1H0asFziPrhb1ti0HFOT1PJebteLOxOqHtxeR1/tDZnUcn85RCRbKJSryfpBZfrk+Q==}
 
-  '@ocap/util@1.25.1':
-    resolution: {integrity: sha512-7hSocQWa4UF5yJWlf4cQ9VG/zERK/oboL4OMX1BQ8n4pRc6kr2RO67Yhn/bggYBynAMs1Glre9Hy+IeihZbnMg==}
+  '@ocap/util@1.26.2':
+    resolution: {integrity: sha512-cEERkISkw3cabNswvPwr+4XM4t/oJLw/3zx0NdDCYmSMoXekmgiZoj6n94dlZdOXZQ8ULIInjtI00Ll5Yqefaw==}
 
   '@peculiar/asn1-android@2.3.15':
     resolution: {integrity: sha512-8U2TIj59cRlSXTX2d0mzUKP7whfWGFMzTeC3qPgAbccXFrPNZLaDhpNEdG5U2QZ/tBv/IHlCJ8s+KYXpJeop6w==}
@@ -778,9 +778,6 @@ packages:
 
   bn.js@4.12.0:
     resolution: {integrity: sha512-c98Bf3tPniI+scsdk237ku1Dc3ujXQTSgyiPUDEOe7tRkhrqridvh8klBv0HCEso1OLOYcHuCv/cS6DNxKH+ZA==}
-
-  bn.js@5.2.1:
-    resolution: {integrity: sha512-eXRvHzWyYPBuB4NBy0cmYQjGitUrtqwbvlzP3G6VFnNRbsZQIxQ10PbKKHt8gZ/HW/D/747aDl+QkDqg3KQLMQ==}
 
   bn.js@5.2.2:
     resolution: {integrity: sha512-v2YAxEmKaBLahNwE1mjp4WON6huMNeuDvagFZW+ASCuA/ku0bXR9hSMw0XpiqMoA3+rmnyck/tPRSFQkoC9Cuw==}
@@ -1557,6 +1554,10 @@ packages:
   internal-slot@1.0.5:
     resolution: {integrity: sha512-Y+R5hJrzs52QCG2laLn4udYVnxsfny9CpOhNhUvk/SSSVyF6T27FzRbF0sroPidSu3X8oEAkOn2K804mjpt6UQ==}
     engines: {node: '>= 0.4'}
+
+  ipaddr.js@2.2.0:
+    resolution: {integrity: sha512-Ag3wB2o37wslZS19hZqorUnrnzSkpOVy+IiiDEiTqNubEYpYuHWIf6K4psgN2ZWKExS4xhVCrRVfb/wfW8fWJA==}
+    engines: {node: '>= 10'}
 
   is-arguments@1.1.1:
     resolution: {integrity: sha512-8Q7EARjzEnKpt/PCD7e1cgUS0a6X8u5tdSiMqXhojOdoV9TsMsiO+9VLC5vAmO8N7/GmXn7yjR8qnA6bVAEzfA==}
@@ -2671,11 +2672,11 @@ snapshots:
 
   '@aashutoshrathi/word-wrap@1.2.6': {}
 
-  '@arcblock/did@1.25.1':
+  '@arcblock/did@1.26.2':
     dependencies:
-      '@ocap/mcrypto': 1.25.1
-      '@ocap/util': 1.25.1
-      bn.js: 5.2.1
+      '@ocap/mcrypto': 1.26.2
+      '@ocap/util': 1.26.2
+      bn.js: 5.2.2
       debug: 4.4.1
       lodash: 4.17.21
     transitivePeerDependencies:
@@ -2799,7 +2800,7 @@ snapshots:
   '@eslint/eslintrc@2.1.4':
     dependencies:
       ajv: 6.12.6
-      debug: 4.3.7
+      debug: 4.4.1
       espree: 9.6.1
       globals: 13.20.0
       ignore: 5.3.1
@@ -2831,7 +2832,7 @@ snapshots:
   '@humanwhocodes/config-array@0.13.0':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
-      debug: 4.3.7
+      debug: 4.4.1
       minimatch: 3.1.2
     transitivePeerDependencies:
       - supports-color
@@ -2856,9 +2857,9 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
 
-  '@ocap/mcrypto@1.25.1':
+  '@ocap/mcrypto@1.26.2':
     dependencies:
-      '@ocap/util': 1.25.1
+      '@ocap/util': 1.26.2
       '@simplewebauthn/server': 13.0.0
       bn.js: 5.2.2
       crypto-js: 4.2.0
@@ -2872,17 +2873,18 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@ocap/types@1.25.1':
+  '@ocap/types@1.26.2':
     dependencies:
       google-protobuf: 3.21.0
 
-  '@ocap/util@1.25.1':
+  '@ocap/util@1.26.2':
     dependencies:
-      '@ocap/types': 1.25.1
+      '@ocap/types': 1.26.2
       '@types/bn.js': 5.2.0
       base64-url: 2.3.3
       bn.js: 5.2.2
       bs58: 5.0.0
+      ipaddr.js: 2.2.0
       lodash: 4.17.21
       utf8: 3.0.0
 
@@ -3331,8 +3333,6 @@ snapshots:
 
   bn.js@4.12.0: {}
 
-  bn.js@5.2.1: {}
-
   bn.js@5.2.2: {}
 
   boxen@7.1.1:
@@ -3389,12 +3389,12 @@ snapshots:
 
   browserify-rsa@4.1.0:
     dependencies:
-      bn.js: 5.2.1
+      bn.js: 5.2.2
       randombytes: 2.1.0
 
   browserify-sign@4.2.1:
     dependencies:
-      bn.js: 5.2.1
+      bn.js: 5.2.2
       browserify-rsa: 4.1.0
       create-hash: 1.2.0
       create-hmac: 1.1.7
@@ -4274,6 +4274,8 @@ snapshots:
       get-intrinsic: 1.2.2
       has: 1.0.3
       side-channel: 1.0.4
+
+  ipaddr.js@2.2.0: {}
 
   is-arguments@1.1.1:
     dependencies:

@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const fallback = require('@blocklet/sdk/lib/middlewares/fallback');
+const { fallback } = require('@blocklet/sdk/lib/middlewares/fallback');
 
 const userRoutes = require('../routes/user');
 

@@ -3,7 +3,7 @@ require('express-async-errors');
 const path = require('path');
 const express = require('express');
 const cookieParser = require('cookie-parser');
-const fallback = require('@blocklet/sdk/lib/middlewares/fallback');
+const { fallback } = require('@blocklet/sdk/lib/middlewares/fallback');
 
 const authRoutes = require('./routes/auth');
 const { name, version } = require('../package.json');

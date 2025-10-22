@@ -1,7 +1,7 @@
-const middlewares = require('@blocklet/sdk/lib/middlewares');
+const { sessionMiddleware } = require('@blocklet/sdk/lib/middlewares/session');
 const router = require('express').Router();
 
-router.use('/user', middlewares.session(), (req, res) => res.json(req.user || {}));
+router.use('/user', sessionMiddleware(), (req, res) => res.json(req.user || {}));
 
 router.use('/data', (req, res) =>
   res.json({

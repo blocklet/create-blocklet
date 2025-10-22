@@ -1,12 +1,12 @@
-const AuthService = require('@blocklet/sdk/service/auth');
-const middlewares = require('@blocklet/sdk/lib/middlewares');
+const { BlockletService } = require('@blocklet/sdk/service/auth');
+const { sessionMiddleware } = require('@blocklet/sdk/lib/middlewares/session');
 
-const authClient = new AuthService();
+const authClient = new BlockletService();
 
 module.exports = {
   init(app) {
-    // middlewares.session() is used to get the user info from the session, see more: https://www.arcblock.io/docs/blocklet-developer/blocklet-sdk#session
-    app.get('/api/user', middlewares.session(), async (req, res) => {
+    // sessionMiddleware() is used to get the user info from the session, see more: https://www.arcblock.io/docs/blocklet-developer/blocklet-sdk#session
+    app.get('/api/user', sessionMiddleware(), async (req, res) => {
       if (!req.user) {
         res.json({ user: null });
         return;

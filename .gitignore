@@ -20,3 +20,6 @@ dist
 packages/create-app/templates/*/yarn.lock
 packages/create-app/templates/*/pnpm-lock.yaml
 node-compile-cache
+
+# Breaking change tracking (internal use only)
+BREAKING_CHANGE.md

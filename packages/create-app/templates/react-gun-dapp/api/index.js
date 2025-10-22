@@ -5,7 +5,7 @@ const cors = require('cors');
 const Gun = require('gun');
 const express = require('express');
 const cookieParser = require('cookie-parser');
-const fallback = require('@blocklet/sdk/lib/middlewares/fallback');
+const { fallback } = require('@blocklet/sdk/lib/middlewares/fallback');
 
 const { name, version } = require('../package.json');
 const logger = require('./libs/logger');
