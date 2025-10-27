@@ -38,13 +38,13 @@
     ]
   },
   "dependencies": {
-    "@arcblock/did": "^1.26.2",
+    "@arcblock/did": "^1.26.3",
     "@arcblock/did-connect-storage-nedb": "^1.8.0",
     "@blocklet/sdk": "^1.16.54-beta-20251021-070951-25e3083c",
-    "@ocap/client": "^1.26.2",
-    "@ocap/mcrypto": "^1.26.2",
-    "@ocap/util": "^1.26.2",
-    "@ocap/wallet": "^1.26.2",
+    "@ocap/client": "^1.26.3",
+    "@ocap/mcrypto": "^1.26.3",
+    "@ocap/util": "^1.26.3",
+    "@ocap/wallet": "^1.26.3",
     "cookie-parser": "^1.4.7",
     "dotenv-flow": "^4.1.0",
     "express": "^4.21.2",
@@ -77,7 +77,7 @@
     "simple-git-hooks": "^2.11.1",
     "tsx": "^4.19.3",
     "vite": "^7.0.0",
-    "vite-plugin-blocklet": "^0.11.2",
+    "vite-plugin-blocklet": "^0.11.3",
     "vite-plugin-svgr": "^4.3.0",
     "zx": "^8.3.2"
   },

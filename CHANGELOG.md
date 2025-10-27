@@ -1,3 +1,7 @@
+## 0.11.3 (2025-10-27)
+
+- feat: use a more secure signature mechanism
+
 ## 0.11.2 (2025-10-2)
 
 - feat(vite-plugin-blocklet): add dynamic asset host plugin
