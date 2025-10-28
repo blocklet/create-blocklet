@@ -1,4 +1,4 @@
-## 0.11.3 (2025-10-27)
+## 0.12.0 (2025-10-28)
 
 - feat: use a more secure signature mechanism
 
