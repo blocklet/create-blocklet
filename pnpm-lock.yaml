@@ -83,14 +83,14 @@ importers:
   plugins/vite-plugin-blocklet:
     dependencies:
       '@arcblock/did':
-        specifier: ^1.26.2
-        version: 1.26.2
+        specifier: ^1.26.3
+        version: 1.26.3
       '@ocap/mcrypto':
-        specifier: ^1.26.2
-        version: 1.26.2
+        specifier: ^1.26.3
+        version: 1.26.3
       '@ocap/util':
-        specifier: ^1.26.2
-        version: 1.26.2
+        specifier: ^1.26.3
+        version: 1.26.3
       get-port:
         specifier: ^5.1.1
         version: 5.1.1
@@ -146,9 +146,6 @@ packages:
   '@aashutoshrathi/word-wrap@1.2.6':
     resolution: {integrity: sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==}
     engines: {node: '>=0.10.0'}
-
-  '@arcblock/did@1.26.2':
-    resolution: {integrity: sha512-xsWlpIe/n0nma82sCYgXJEOVvwi5FXnYbAQIGWUCn8lfxixPHO/D2PuwzG9Oi6b2O2T7RSMaeDUNxIXUQBBpLw==}
 
   '@arcblock/did@1.26.3':
     resolution: {integrity: sha512-I23JdT38IzmR0LMb7NgdcdyxMZ+b7lR5jIbAj9ZZCE4v1vuilhiKcUHzbmjR7OwhD1adoD9CD29GTtdzzLFfUw==}
@@ -377,20 +374,11 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@ocap/mcrypto@1.26.2':
-    resolution: {integrity: sha512-+OStU8tkc2EfSQjmdYc5wdHYs6QjVdFg3iDpGHQ1jiCswqTw5m/CI4W+ane2vHPl+lN2mXzudWZlEQTyx6l9jQ==}
-
   '@ocap/mcrypto@1.26.3':
     resolution: {integrity: sha512-qNWNVInz9izi1IGHbyuZ4u/WfuBfuxif4xqW9DjL7K32X2GsxHvmHXD4b8+oeciUBp4TBpeGS+lXIT6nohbwjw==}
 
-  '@ocap/types@1.26.2':
-    resolution: {integrity: sha512-I0Fnx4DwoWCtcLv+UW0z1H0asFziPrhb1ti0HFOT1PJebteLOxOqHtxeR1/tDZnUcn85RCRbKJSryfpBZfrk+Q==}
-
   '@ocap/types@1.26.3':
     resolution: {integrity: sha512-f4pzmQjBP53wgDap7Ve7yPXlrZkcLRP6Y0juDzR1t/3Fp2xJo5Lqlg1lDY2yzf79/1Gp6guAuymsQaKH0Ce2IA==}
-
-  '@ocap/util@1.26.2':
-    resolution: {integrity: sha512-cEERkISkw3cabNswvPwr+4XM4t/oJLw/3zx0NdDCYmSMoXekmgiZoj6n94dlZdOXZQ8ULIInjtI00Ll5Yqefaw==}
 
   '@ocap/util@1.26.3':
     resolution: {integrity: sha512-kvcrc1m+OGBrib10T0BErqoJhDyteoAmkivGYXX/ZXPK5VmG8bsmnvEbBTtarLkvQvbc3ewKdy5cLBzKl2czww==}
@@ -1016,15 +1004,6 @@ packages:
       supports-color:
         optional: true
 
-  debug@4.3.7:
-    resolution: {integrity: sha512-Er2nc/H7RrMXZBFCEim6TCmMk02Z8vLC2Rbi1KEBggpo0fS6l0S1nnapwmIi3yW/+GOJap1Krg4w0Hg80oCqgQ==}
-    engines: {node: '>=6.0'}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-
   debug@4.4.1:
     resolution: {integrity: sha512-KcKCqiftBJcZr++7ykoDIEwSa3XWowTfNPo92BYxjXiyYEVrUQh2aLyhxBCwww+heortUFxEJYcRzosstTEBYQ==}
     engines: {node: '>=6.0'}
@@ -1324,14 +1303,6 @@ packages:
 
   fastq@1.13.0:
     resolution: {integrity: sha512-YpkpUnK8od0o1hmeSc7UUs/eB/vIPWJYjKck2QKIzAf71Vm1AAQ3EbuZB3g2JIy+pg+ERD0vqI79KyZiB2e2Nw==}
-
-  fdir@6.4.3:
-    resolution: {integrity: sha512-PMXmW2y1hDDfTSRc9gaXIuCCRpuoz3Kaz8cUelp3smouvfT632ozg2vrT6lJsHKKOF59YLbOGfAWGUcKEfRMQw==}
-    peerDependencies:
-      picomatch: ^3 || ^4
-    peerDependenciesMeta:
-      picomatch:
-        optional: true
 
   fdir@6.4.6:
     resolution: {integrity: sha512-hiFoqpyZcfNm1yc4u8oWCf9A2c4D3QjCrks3zmoVKVxpQRzmPNar1hUJcBG2RQHvEVGDN+Jm81ZheVLAQMK6+w==}
@@ -1779,9 +1750,6 @@ packages:
   log-symbols@6.0.0:
     resolution: {integrity: sha512-i24m8rpwhmPIS4zscNzK6MSEhk0DUWa/8iYQWxhffV8jkI4Phvs3F+quL5xvS0gdQR0FyTCMMH33Y78dDTzzIw==}
     engines: {node: '>=18'}
-
-  loupe@3.1.3:
-    resolution: {integrity: sha512-kkIp7XSkP78ZxJEsSxW3712C6teJVoeHHwgo9zJ380de7IYyJ2ISlxojcH2pC5OFLewESmnRi/+XCDIEEVyoug==}
 
   loupe@3.1.4:
     resolution: {integrity: sha512-wJzkKwJrheKtknCOKNEtDK4iqg/MxmZheEMtSTYvnzRdEYaZzmgH976nenp8WdJRdx5Vc1X/9MO0Oszl6ezeXg==}
@@ -2403,10 +2371,6 @@ packages:
   tinyexec@0.3.2:
     resolution: {integrity: sha512-KQQR9yN7R5+OSwaK0XQoj22pwHoTlgYqmUscPYoknOoWCWfj/5/ABTMRi69FrKU5ffPVh5QcFikpWJI/P1ocHA==}
 
-  tinyglobby@0.2.12:
-    resolution: {integrity: sha512-qkf4trmKSIiMTs/E63cxH+ojC2unam7rJ0WrauAzpT3ECNTxGRMlaXxVbfxMUC/w0LaYk6jQ4y/nGR9uBO3tww==}
-    engines: {node: '>=12.0.0'}
-
   tinyglobby@0.2.14:
     resolution: {integrity: sha512-tX5e7OM1HnYr2+a2C/4V0htOcSQcoSTH9KgJnVvNm5zm/cyEWKJ7j7YutsH9CxMdtOkkLFy2AHrMci9IM8IPZQ==}
     engines: {node: '>=12.0.0'}
@@ -2684,17 +2648,6 @@ snapshots:
 
   '@aashutoshrathi/word-wrap@1.2.6': {}
 
-  '@arcblock/did@1.26.2':
-    dependencies:
-      '@ocap/mcrypto': 1.26.2
-      '@ocap/util': 1.26.2
-      bn.js: 5.2.2
-      debug: 4.4.1
-      lodash: 4.17.21
-    transitivePeerDependencies:
-      - encoding
-      - supports-color
-
   '@arcblock/did@1.26.3':
     dependencies:
       '@ocap/mcrypto': 1.26.3
@@ -2880,22 +2833,6 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
 
-  '@ocap/mcrypto@1.26.2':
-    dependencies:
-      '@ocap/util': 1.26.2
-      '@simplewebauthn/server': 13.0.0
-      bn.js: 5.2.2
-      crypto-js: 4.2.0
-      elliptic: 6.6.1
-      eth-lib: 0.2.8
-      hash.js: 1.1.7
-      interface: 1.2.1
-      js-sha3: 0.8.0
-      randombytes: 2.1.0
-      tweetnacl: 1.0.3
-    transitivePeerDependencies:
-      - encoding
-
   '@ocap/mcrypto@1.26.3':
     dependencies:
       '@ocap/util': 1.26.3
@@ -2912,24 +2849,9 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@ocap/types@1.26.2':
-    dependencies:
-      google-protobuf: 3.21.0
-
   '@ocap/types@1.26.3':
     dependencies:
       google-protobuf: 3.21.0
-
-  '@ocap/util@1.26.2':
-    dependencies:
-      '@ocap/types': 1.26.2
-      '@types/bn.js': 5.2.0
-      base64-url: 2.3.3
-      bn.js: 5.2.2
-      bs58: 5.0.0
-      ipaddr.js: 2.2.0
-      lodash: 4.17.21
-      utf8: 3.0.0
 
   '@ocap/util@1.26.3':
     dependencies:
@@ -3498,7 +3420,7 @@ snapshots:
       semver: 7.7.1
       tiny-conventional-commits-parser: 0.0.1
       tinyexec: 0.3.2
-      tinyglobby: 0.2.12
+      tinyglobby: 0.2.14
     transitivePeerDependencies:
       - magicast
 
@@ -3540,7 +3462,7 @@ snapshots:
       assertion-error: 2.0.1
       check-error: 2.1.1
       deep-eql: 5.0.2
-      loupe: 3.1.3
+      loupe: 3.1.4
       pathval: 2.0.0
 
   chalk@2.4.2:
@@ -3670,10 +3592,6 @@ snapshots:
   crypto-js@4.2.0: {}
 
   debug@3.2.7:
-    dependencies:
-      ms: 2.1.3
-
-  debug@4.3.7:
     dependencies:
       ms: 2.1.3
 
@@ -3982,7 +3900,7 @@ snapshots:
       ajv: 6.12.6
       chalk: 4.1.2
       cross-spawn: 7.0.3
-      debug: 4.3.7
+      debug: 4.4.1
       doctrine: 3.0.0
       escape-string-regexp: 4.0.0
       eslint-scope: 7.2.2
@@ -4079,10 +3997,6 @@ snapshots:
     dependencies:
       reusify: 1.0.4
 
-  fdir@6.4.3(picomatch@4.0.2):
-    optionalDependencies:
-      picomatch: 4.0.2
-
   fdir@6.4.6(picomatch@4.0.2):
     optionalDependencies:
       picomatch: 4.0.2
@@ -4118,9 +4032,9 @@ snapshots:
 
   flatted@3.2.7: {}
 
-  follow-redirects@1.15.6(debug@4.3.7):
+  follow-redirects@1.15.6(debug@4.4.1):
     optionalDependencies:
-      debug: 4.3.7
+      debug: 4.4.1
 
   for-each@0.3.3:
     dependencies:
@@ -4283,18 +4197,18 @@ snapshots:
   http-proxy-middleware@3.0.3:
     dependencies:
       '@types/http-proxy': 1.17.16
-      debug: 4.3.7
-      http-proxy: 1.18.1(debug@4.3.7)
+      debug: 4.4.1
+      http-proxy: 1.18.1(debug@4.4.1)
       is-glob: 4.0.3
       is-plain-object: 5.0.0
       micromatch: 4.0.8
     transitivePeerDependencies:
       - supports-color
 
-  http-proxy@1.18.1(debug@4.3.7):
+  http-proxy@1.18.1(debug@4.4.1):
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.15.6(debug@4.3.7)
+      follow-redirects: 1.15.6(debug@4.4.1)
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -4511,8 +4425,6 @@ snapshots:
     dependencies:
       chalk: 5.3.0
       is-unicode-supported: 1.3.0
-
-  loupe@3.1.3: {}
 
   loupe@3.1.4: {}
 
@@ -5198,11 +5110,6 @@ snapshots:
   tinycolor2@1.4.2: {}
 
   tinyexec@0.3.2: {}
-
-  tinyglobby@0.2.12:
-    dependencies:
-      fdir: 6.4.3(picomatch@4.0.2)
-      picomatch: 4.0.2
 
   tinyglobby@0.2.14:
     dependencies:

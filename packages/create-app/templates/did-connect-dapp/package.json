@@ -40,7 +40,7 @@
   "dependencies": {
     "@arcblock/did": "^1.26.3",
     "@arcblock/did-connect-storage-nedb": "^1.8.0",
-    "@blocklet/sdk": "^1.16.54-beta-20251021-070951-25e3083c",
+    "@blocklet/sdk": "^1.16.54-beta-20251028-092308-569763e6",
     "@ocap/client": "^1.26.3",
     "@ocap/mcrypto": "^1.26.3",
     "@ocap/util": "^1.26.3",
@@ -52,10 +52,10 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@arcblock/did-connect-react": "^3.1.51",
+    "@arcblock/did-connect-react": "^3.1.52",
     "@arcblock/eslint-config": "^0.3.3",
-    "@arcblock/ux": "^3.1.51",
-    "@blocklet/ui-react": "^3.1.51",
+    "@arcblock/ux": "^3.1.52",
+    "@blocklet/ui-react": "^3.1.52",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@iconify-icons/material-symbols": "^1.2.58",
