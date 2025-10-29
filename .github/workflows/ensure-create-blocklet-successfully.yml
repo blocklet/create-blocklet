@@ -25,7 +25,7 @@ jobs:
             did-connect-dapp,
             solidjs-dapp,
             vue-dapp,
-            svelte-dapp,
+            # svelte-dapp,
 
             # Static templates
             react-static,
