@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@arcblock/did-connect-storage-nedb": "^1.8.0",
-    "@blocklet/sdk": "^1.16.54-beta-20251028-092308-569763e6",
+    "@blocklet/sdk": "^1.16.54-beta-20251029-055649-a9143beb",
     "@nestjs/common": "^11.0.10",
     "@nestjs/core": "^11.0.10",
     "@nestjs/platform-express": "^11.0.10",

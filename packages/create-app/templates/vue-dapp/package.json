@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@arcblock/did-connect-storage-nedb": "^1.8.0",
-    "@blocklet/sdk": "^1.16.54-beta-20251028-092308-569763e6",
+    "@blocklet/sdk": "^1.16.54-beta-20251029-055649-a9143beb",
     "@ocap/client": "^1.26.3",
     "@ocap/mcrypto": "^1.26.3",
     "@ocap/wallet": "^1.26.3",
@@ -32,7 +32,7 @@
     "express-async-errors": "^3.1.1"
   },
   "devDependencies": {
-    "@blocklet/js-sdk": "^1.16.54-beta-20251028-092308-569763e6",
+    "@blocklet/js-sdk": "^1.16.54-beta-20251029-055649-a9143beb",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@vitejs/plugin-vue": "^6.0.0",
     "bumpp": "^9.11.1",
