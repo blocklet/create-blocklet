@@ -1,4 +1,4 @@
-const env = require('@blocklet/sdk/lib/env');
+const { env } = require('@blocklet/sdk/lib/env');
 
 module.exports = {
   ...env,

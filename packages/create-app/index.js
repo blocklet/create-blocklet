@@ -79,11 +79,12 @@ const templates = [
   //   display: '[dapp] vue2 + express.js',
   //   color: green,
   // },
-  {
-    name: 'svelte-dapp',
-    display: '[dapp] svelte + express.js',
-    color: yellow,
-  },
+  // TODO: @LiuShuang svelte@5.x 不兼容旧版本，导致无法启动项目
+  // {
+  //   name: 'svelte-dapp',
+  //   display: '[dapp] svelte + express.js',
+  //   color: yellow,
+  // },
   // FIXME: @zhanghan add this template in the future
   // {
   //   name: 'nextjs-dapp',

@@ -5,7 +5,7 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import dotenv from 'dotenv-flow';
 import express, { ErrorRequestHandler } from 'express';
-import fallback from '@blocklet/sdk/lib/middlewares/fallback';
+import { fallback } from '@blocklet/sdk/lib/middlewares/fallback';
 import logger from './libs/logger';
 import { router } from './agents';
 
