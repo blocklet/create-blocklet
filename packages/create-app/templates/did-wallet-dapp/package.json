@@ -20,9 +20,9 @@
   },
   "dependencies": {
     "@blocklet/sdk": "^1.16.54-beta-20251029-055649-a9143beb",
-    "@ocap/mcrypto": "^1.26.3",
+    "@ocap/mcrypto": "^1.27.2",
     "@ocap/util": "^1.26.3",
-    "@ocap/wallet": "^1.26.3",
+    "@ocap/wallet": "^1.27.2",
     "body-parser": "^1.20.3",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
@@ -33,9 +33,9 @@
   "devDependencies": {
     "@arcblock/did-connect-react": "^3.1.53",
     "@arcblock/eslint-config": "^0.3.3",
-    "@arcblock/ux": "^3.1.53",
-    "@blocklet/js-sdk": "^1.16.54-beta-20251029-055649-a9143beb",
-    "@blocklet/ui-react": "^3.1.53",
+    "@arcblock/ux": "^3.1.54",
+    "@blocklet/js-sdk": "^1.17.0-beta-20251104-112713-e947b159",
+    "@blocklet/ui-react": "^3.1.54",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.1.2",
@@ -54,7 +54,7 @@
     "simple-git-hooks": "^2.11.1",
     "vite": "^7.0.0",
     "vite-node": "^3.2.4",
-    "vite-plugin-blocklet": "^0.12.0",
+    "vite-plugin-blocklet": "^0.12.1",
     "vite-plugin-require": "^1.2.14",
     "vite-plugin-svgr": "^4.3.0",
     "zx": "^8.3.2"
