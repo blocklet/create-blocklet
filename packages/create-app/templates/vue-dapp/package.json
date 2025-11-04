@@ -22,8 +22,8 @@
     "@arcblock/did-connect-storage-nedb": "^1.8.0",
     "@blocklet/sdk": "^1.16.54-beta-20251029-055649-a9143beb",
     "@ocap/client": "^1.26.3",
-    "@ocap/mcrypto": "^1.26.3",
-    "@ocap/wallet": "^1.26.3",
+    "@ocap/mcrypto": "^1.27.2",
+    "@ocap/wallet": "^1.27.2",
     "axios": "^1.7.9",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
@@ -32,7 +32,7 @@
     "express-async-errors": "^3.1.1"
   },
   "devDependencies": {
-    "@blocklet/js-sdk": "^1.16.54-beta-20251029-055649-a9143beb",
+    "@blocklet/js-sdk": "^1.17.0-beta-20251104-112713-e947b159",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@vitejs/plugin-vue": "^6.0.0",
     "bumpp": "^9.11.1",
