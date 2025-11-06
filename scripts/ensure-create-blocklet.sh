@@ -102,7 +102,7 @@ test_template() {
 
   # 等待服务启动
   echo "等待服务启动中..."
-  for i in {1..90}; do
+  for i in {1..30}; do
     if grep -q "You can access with the following URL" dev.log; then
       break
     fi
@@ -112,7 +112,7 @@ test_template() {
   echo ""
 
   echo "等待服务稳定(30秒)..."
-  sleep 60
+  sleep 30
 
   # 检查应用状态
   local app_url=$(grep -aiE 'https?://.*\.did\.abtnet\.io' dev.log | sed 's/^- //')
