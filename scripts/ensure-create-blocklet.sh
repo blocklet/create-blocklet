@@ -112,7 +112,7 @@ test_template() {
   echo ""
 
   echo "等待服务稳定(30秒)..."
-  sleep 30
+  sleep 60
 
   # 检查应用状态
   local app_url=$(grep -aiE 'https?://.*\.did\.abtnet\.io' dev.log | sed 's/^- //')
