@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@arcblock/did-connect-storage-nedb": "^1.8.0",
-    "@blocklet/sdk": "^1.17.0-beta-20251104-112713-e947b159",
+    "@blocklet/sdk": "^1.17.0",
     "@ocap/client": "^1.27.2",
     "@ocap/mcrypto": "^1.27.2",
     "@ocap/wallet": "^1.27.2",

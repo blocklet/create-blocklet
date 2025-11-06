@@ -25,13 +25,13 @@ importers:
   packages/create-app:
     dependencies:
       '@arcblock/did':
-        specifier: ^1.26.3
+        specifier: ^1.27.2
         version: 1.27.2
       '@ocap/mcrypto':
-        specifier: ^1.26.3
+        specifier: ^1.27.2
         version: 1.27.2
       '@ocap/util':
-        specifier: ^1.26.3
+        specifier: ^1.27.2
         version: 1.27.2
       boxen:
         specifier: ^7.1.1
