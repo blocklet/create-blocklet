@@ -52,10 +52,10 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@arcblock/did-connect-react": "^3.1.60",
+    "@arcblock/did-connect-react": "^3.2.0",
     "@arcblock/eslint-config": "^0.3.3",
-    "@arcblock/ux": "^3.1.60",
-    "@blocklet/ui-react": "^3.1.60",
+    "@arcblock/ux": "^3.2.0",
+    "@blocklet/ui-react": "^3.2.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@iconify-icons/material-symbols": "^1.2.58",
