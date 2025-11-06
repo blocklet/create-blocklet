@@ -102,7 +102,7 @@ test_template() {
 
   # 等待服务启动
   echo "等待服务启动中..."
-  for i in {1..30}; do
+  for i in {1..60}; do
     if grep -q "You can access with the following URL" dev.log; then
       break
     fi
