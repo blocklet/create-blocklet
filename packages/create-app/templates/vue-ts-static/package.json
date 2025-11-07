@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.27.3",
-    "@blocklet/cli": "^1.17.0",
+    "@blocklet/cli": "^1.17.1",
     "@vitejs/plugin-vue": "^6.0.0",
     "bumpp": "^9.11.1",
     "eslint": "9.5.0",
