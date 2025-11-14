@@ -18,10 +18,10 @@
   },
   "dependencies": {
     "@arcblock/did-connect-storage-nedb": "^1.8.0",
-    "@blocklet/sdk": "^1.17.1",
-    "@ocap/client": "^1.27.3",
-    "@ocap/mcrypto": "^1.27.3",
-    "@ocap/wallet": "^1.27.3",
+    "@blocklet/sdk": "^1.17.2",
+    "@ocap/client": "^1.27.6",
+    "@ocap/mcrypto": "^1.27.6",
+    "@ocap/wallet": "^1.27.6",
     "axios": "^1.7.9",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
@@ -30,7 +30,7 @@
     "express-async-errors": "^3.1.1"
   },
   "devDependencies": {
-    "@blocklet/js-sdk": "^1.17.1",
+    "@blocklet/js-sdk": "^1.17.2",
     "@sveltejs/vite-plugin-svelte": "5.1.0",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "bumpp": "^9.11.1",
@@ -45,7 +45,7 @@
     "svelte": "^4.2.19",
     "tsx": "^4.19.3",
     "vite": "^7.0.0",
-    "vite-plugin-blocklet": "^0.12.2",
+    "vite-plugin-blocklet": "^0.12.3",
     "zx": "^8.3.2"
   },
   "lint-staged": {
