@@ -38,13 +38,13 @@
     ]
   },
   "dependencies": {
-    "@arcblock/did": "^1.27.6",
+    "@arcblock/did": "^1.27.12",
     "@arcblock/did-connect-storage-nedb": "^1.8.0",
-    "@blocklet/sdk": "^1.17.2",
-    "@ocap/client": "^1.27.6",
-    "@ocap/mcrypto": "^1.27.6",
-    "@ocap/util": "^1.27.6",
-    "@ocap/wallet": "^1.27.6",
+    "@blocklet/sdk": "^1.17.3",
+    "@ocap/client": "^1.27.12",
+    "@ocap/mcrypto": "^1.27.12",
+    "@ocap/util": "^1.27.12",
+    "@ocap/wallet": "^1.27.12",
     "cookie-parser": "^1.4.7",
     "dotenv-flow": "^4.1.0",
     "express": "^4.21.2",
@@ -52,10 +52,10 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@arcblock/did-connect-react": "^3.2.6",
+    "@arcblock/did-connect-react": "^3.2.11",
     "@arcblock/eslint-config": "^0.3.3",
-    "@arcblock/ux": "^3.2.6",
-    "@blocklet/ui-react": "^3.2.6",
+    "@arcblock/ux": "^3.2.11",
+    "@blocklet/ui-react": "^3.2.11",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@iconify-icons/material-symbols": "^1.2.58",

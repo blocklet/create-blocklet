@@ -21,7 +21,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@blocklet/js-sdk": "^1.17.2",
+    "@blocklet/js-sdk": "^1.17.3",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "bumpp": "^9.11.1",
     "cross-env": "^7.0.3",
@@ -43,10 +43,10 @@
   },
   "dependencies": {
     "@arcblock/did-connect-storage-nedb": "^1.8.0",
-    "@blocklet/sdk": "^1.17.2",
-    "@ocap/client": "^1.27.6",
-    "@ocap/mcrypto": "^1.27.6",
-    "@ocap/wallet": "^1.27.6",
+    "@blocklet/sdk": "^1.17.3",
+    "@ocap/client": "^1.27.12",
+    "@ocap/mcrypto": "^1.27.12",
+    "@ocap/wallet": "^1.27.12",
     "axios": "^1.7.9",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
