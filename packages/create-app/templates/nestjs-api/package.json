@@ -36,11 +36,11 @@
   },
   "dependencies": {
     "@arcblock/did-connect-storage-nedb": "^1.8.0",
-    "@blocklet/sdk": "^1.17.3",
+    "@blocklet/sdk": "^1.17.5",
     "@nestjs/common": "^11.0.10",
     "@nestjs/core": "^11.0.10",
     "@nestjs/platform-express": "^11.0.10",
-    "@ocap/client": "^1.27.12",
+    "@ocap/client": "^1.27.15",
     "dotenv-flow": "^4.1.0",
     "express": "^4.21.2",
     "reflect-metadata": "^0.2.2",
