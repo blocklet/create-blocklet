@@ -20,10 +20,10 @@
   },
   "dependencies": {
     "@arcblock/did-connect-storage-nedb": "^1.8.0",
-    "@blocklet/sdk": "^1.17.3",
-    "@ocap/client": "^1.27.12",
-    "@ocap/mcrypto": "^1.27.12",
-    "@ocap/wallet": "^1.27.12",
+    "@blocklet/sdk": "^1.17.5",
+    "@ocap/client": "^1.27.15",
+    "@ocap/mcrypto": "^1.27.15",
+    "@ocap/wallet": "^1.27.15",
     "axios": "^1.7.9",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
@@ -48,7 +48,7 @@
     "simple-git-hooks": "^2.11.1",
     "tsx": "^4.19.3",
     "vite": "^7.0.0",
-    "vite-plugin-blocklet": "^0.12.4",
+    "vite-plugin-blocklet": "^0.12.5",
     "vue": "^2.7.16",
     "zx": "^8.3.2"
   },

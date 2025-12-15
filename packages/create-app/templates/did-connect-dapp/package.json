@@ -38,13 +38,13 @@
     ]
   },
   "dependencies": {
-    "@arcblock/did": "^1.27.12",
+    "@arcblock/did": "^1.27.15",
     "@arcblock/did-connect-storage-nedb": "^1.8.0",
-    "@blocklet/sdk": "^1.17.3",
-    "@ocap/client": "^1.27.12",
-    "@ocap/mcrypto": "^1.27.12",
-    "@ocap/util": "^1.27.12",
-    "@ocap/wallet": "^1.27.12",
+    "@blocklet/sdk": "^1.17.5",
+    "@ocap/client": "^1.27.15",
+    "@ocap/mcrypto": "^1.27.15",
+    "@ocap/util": "^1.27.15",
+    "@ocap/wallet": "^1.27.15",
     "cookie-parser": "^1.4.7",
     "dotenv-flow": "^4.1.0",
     "express": "^4.21.2",
@@ -52,10 +52,10 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@arcblock/did-connect-react": "^3.2.11",
+    "@arcblock/did-connect-react": "^3.2.14",
     "@arcblock/eslint-config": "^0.3.3",
-    "@arcblock/ux": "^3.2.11",
-    "@blocklet/ui-react": "^3.2.11",
+    "@arcblock/ux": "^3.2.14",
+    "@blocklet/ui-react": "^3.2.14",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@iconify-icons/material-symbols": "^1.2.58",
@@ -77,7 +77,7 @@
     "simple-git-hooks": "^2.11.1",
     "tsx": "^4.19.3",
     "vite": "^7.0.0",
-    "vite-plugin-blocklet": "^0.12.4",
+    "vite-plugin-blocklet": "^0.12.5",
     "vite-plugin-svgr": "^4.3.0",
     "zx": "^8.3.2"
   },
