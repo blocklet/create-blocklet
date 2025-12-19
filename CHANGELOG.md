@@ -1,3 +1,7 @@
+## 0.13.0 (2025-12-19)
+
+- feat(vite-plugin-blocklet): support show poweredby in html loading
+
 ## 0.12.5 (2025-12-15)
 
 - chore: update deps to the latest version

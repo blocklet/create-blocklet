@@ -45,7 +45,7 @@
     "svelte": "^4.2.19",
     "tsx": "^4.19.3",
     "vite": "^7.0.0",
-    "vite-plugin-blocklet": "^0.12.5",
+    "vite-plugin-blocklet": "^0.13.0",
     "zx": "^8.3.2"
   },
   "lint-staged": {
