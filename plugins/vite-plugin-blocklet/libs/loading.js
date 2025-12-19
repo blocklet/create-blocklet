@@ -6,25 +6,19 @@ import { withQuery } from 'ufo';
  * @param {Object} options - The options for generating the HTML.
  * @param {string} options.color - The color of the spinner. Defaults to "#333".
  * @param {string} options.image - The URL of the image to display alongside the spinner.
+ * @param {boolean} [options.showDots=true] - Whether to show the loading dots animation.
+ * @param {boolean} options.showPoweredBy - Whether to show the "Powered by" text.
+ * @param {string} [options.poweredByText='Powered by ArcBlock'] - The text to display for "Powered by".
  * @return {string} The generated HTML string.
  */
-function generateHtml({ color, image }) {
+function generateHtml({ color, image, showDots = true, showPoweredBy, poweredByText = 'Powered by ArcBlock' }) {
   return `<style>
-  body,
-  html,
-  #app {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-  }
-
-  .spinner-wrapper {
-    width: 70px;
+  #loadingSpinnerWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     opacity: 0;
     animation-name: fadeIn;
     animation-duration: 500ms;
@@ -38,14 +32,18 @@ function generateHtml({ color, image }) {
     align-items: center;
   }
 
-  .spinner {
+  #loadingSpinnerWrapper .spinner {
     width: 70px;
     text-align: center;
+    margin-top: 16px;
   }
 
-  .spinner > div {
+  #loadingSpinnerWrapper .spinner>.bounce1,
+  #loadingSpinnerWrapper .spinner>.bounce2,
+  #loadingSpinnerWrapper .spinner>.bounce3 {
     width: 18px;
     height: 18px;
+
     background-color: ${color};
 
     border-radius: 100%;
@@ -54,26 +52,57 @@ function generateHtml({ color, image }) {
     animation: sk-bouncedelay 1.4s infinite ease-in-out both;
   }
 
-  .spinner .bounce1 {
+  #loadingSpinnerWrapper .spinner .bounce1 {
     -webkit-animation-delay: -0.32s;
     animation-delay: -0.32s;
   }
 
-  .spinner .bounce2 {
+  #loadingSpinnerWrapper .spinner .bounce2 {
     -webkit-animation-delay: -0.16s;
     animation-delay: -0.16s;
   }
+
+  #loadingImageWrapper {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #loadingImageWrapper.loading-image {
+    border-radius: 4px;
+    background-color: oklch(87.2% 0.01 258.338);
+    animation: 2s ease-in-out 0.5s infinite none running skeleton;
+  }
+
   #loadingImage {
-    margin-bottom: 16px;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
+  }
+
+
+  @-webkit-keyframes skeleton {
+    0% { opacity: 0.6; }
+    50% { opacity: 0.4; }
+    100% { opacity: 0.6; }
+  }
+  @keyframes skeleton {
+    0% { opacity: 0.6; }
+    50% { opacity: 0.4; }
+    100% { opacity: 0.6; }
   }
 
   @-webkit-keyframes fadeIn {
     0% { opacity: 0; }
+    50% { opacity: 0.4; }
     100% { opacity: 1; }
   }
   @keyframes fadeIn {
     0% { opacity: 0; }
+    50% { opacity: 0.4; }
     100% { opacity: 1; }
   }
 
@@ -100,21 +129,36 @@ function generateHtml({ color, image }) {
       transform: scale(1);
     }
   }
+
+  #loadingPoweredBy {
+    position: fixed;
+    color: oklch(70.7% 0.022 261.325);
+    bottom: 16px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    opacity: ${showPoweredBy ? 1 : 0.01};
+  }
+
   </style>
-  <div class="spinner-wrapper">
-    <img id="loadingImage" width="70" height="70" style="object-fit: contain;" />
-    <div class="spinner">
+  <div id="loadingSpinnerWrapper">
+    <div id="loadingImageWrapper" class="loading-image"></div>
+    ${
+      showDots
+        ? `<div class="spinner">
       <div class="bounce1"></div>
       <div class="bounce2"></div>
       <div class="bounce3"></div>
-    </div>
+    </div>`
+        : ''
+    }
   </div>
+  <div id="loadingPoweredBy">${poweredByText}</div>
   <script>
     (() => {
-      const loadingImage = document.getElementById('loadingImage');
       const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      
-      let logo = "${image}"; 
+
+      let logo = "${image}";
 
       if (window?.blocklet) {
         const { appLogo, appLogoDark } = window.blocklet;
@@ -122,8 +166,14 @@ function generateHtml({ color, image }) {
           logo = isDark && appLogoDark ? appLogoDark : appLogo;
         }
       }
-
-      loadingImage.src = logo;
+      const img = document.createElement('img');
+      img.id = 'loadingImage';
+      img.src = logo;
+      img.onload = () => {
+        const loadingImageWrapper = document.getElementById('loadingImageWrapper');
+        loadingImageWrapper.appendChild(img);
+        loadingImageWrapper.classList.remove('loading-image');
+      };
     })();
   </script>`;
 }
@@ -135,9 +185,19 @@ function generateHtml({ color, image }) {
  * @param {string} [options.loadingElementId='app'] - The ID of the loading element.
  * @param {string} [options.loadingColor='#8abaf0'] - The color of the loading animation.
  * @param {string} [options.loadingImage='/.well-known/service/blocklet/logo?imageFilter=convert&f=png&w=80'] - The URL of the loading image.
+ * @param {boolean} [options.loadingShowDots=true] - Whether to show the loading dots animation.
+ * @param {boolean} [options.loadingShowPoweredBy=true] - Whether to show the "Powered by" text.
+ * @param {string} [options.loadingPoweredByText='Powered by ArcBlock'] - The text to display for "Powered by".
  * @return {Object} - The Vite plugin object.
  */
-export default function createLoadingPlugin({ loadingElementId = 'app', loadingColor = '#8abaf0', loadingImage } = {}) {
+export default function createLoadingPlugin({
+  loadingElementId = 'app',
+  loadingColor = '#8abaf0',
+  loadingImage,
+  loadingShowDots = true,
+  loadingShowPoweredBy = true,
+  loadingPoweredByText = 'Powered by ArcBlock',
+} = {}) {
   if (!loadingImage) {
     loadingImage = withQuery('/.well-known/service/blocklet/logo', {
       imageFilter: 'convert',
@@ -148,6 +208,9 @@ export default function createLoadingPlugin({ loadingElementId = 'app', loadingC
   const injectHtml = generateHtml({
     color: loadingColor,
     image: loadingImage,
+    showDots: loadingShowDots,
+    showPoweredBy: loadingShowPoweredBy,
+    poweredByText: loadingPoweredByText,
   });
 
   return {

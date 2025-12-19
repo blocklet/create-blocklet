@@ -20,19 +20,26 @@ import setupClient from './libs/client.js';
  * @property {boolean} [disableLoading=false] - Disable loading plugin.
  * @property {boolean} [disableDebug=false] - Disable debug plugin.
  * @property {boolean} [disableEmbed=false] - Disable embed plugin.
+ *
  * @property {import('vite-plugin-node-polyfills').PolyfillOptions} [nodePolyfillsOptions]
  *
- * @property {string} [loadingElementId]
- * @property {string} [loadingColor]
- * @property {string} [loadingImage]
- * @property {'all'|'mobile'|'desktop'} [debugPlatform='mobile']
- * @property {string} [debugScript]
- * @property {number} [positionX]
- * @property {number} [positionY]
- * @param {object} [embeds={}] - The embeds to be built.
- * @param {array} [embedExternals=['react', '@arcblock/ux/lib/Locale/context', '@arcblock/did-connect-react/lib/Session']] - The external modules to be used in the embeds.
- * @param {array} [embedPlugins=[]] - The plugins to be used in the embeds.
- * @param {number} [embedBuildConcurrency=0] - The plugins to be used in the embeds.
+ * @property {string} [loadingElementId='app'] - The ID of the loading element.
+ * @property {string} [loadingColor='#8abaf0'] - The color of the loading animation.
+ * @property {string} [loadingImage='/.well-known/service/blocklet/logo?imageFilter=convert&f=png&w=80'] - The URL of the loading image.
+ * @property {boolean} [loadingShowDots=true] - Whether to show the loading dots animation.
+ * @property {boolean} [loadingShowPoweredBy=true] - Whether to show the "Powered by" text.
+ * @property {string} [loadingPoweredByText='Powered by ArcBlock'] - The text to display for "Powered by".
+ *
+ * @property {'all'|'mobile'|'desktop'} [debugPlatform='mobile'] - The platforms to enable debug mode for.
+ * @property {string} [debugScript] - The initialization code for the debug script.
+ * @property {number} [positionX=0] - The initialization positionX for entry button.
+ * @property {number} [positionY=0] - The initialization positionY for entry button.
+ *
+ * @property {object} [embeds={}] - The embeds to be built.
+ * @property {array} [embedExternals=['react', '@arcblock/ux/lib/Locale/context', '@arcblock/did-connect-react/lib/Session']] - The external modules to be used in the embeds.
+ * @property {array} [embedPlugins=[]] - The plugins to be used in the embeds.
+ * @property {number} [embedBuildConcurrency=0] - The plugins to be used in the embeds.
+ *
  * @property {'middleware'|'client'|'server'|'wsUpgrade'} [hmrMode='middleware'] - 当未传入任何 option 参数时，会自动变为 middleware 模式
  */
 
