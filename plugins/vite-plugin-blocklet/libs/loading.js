@@ -133,10 +133,11 @@ function generateHtml({ color, image, showDots = true, showPoweredBy, poweredByT
   #loadingPoweredBy {
     position: fixed;
     color: oklch(70.7% 0.022 261.325);
-    bottom: 16px;
+    bottom: 8px;
     left: 0;
     right: 0;
     text-align: center;
+    font-size: 12px;
     opacity: ${showPoweredBy ? 1 : 0.01};
   }
 
