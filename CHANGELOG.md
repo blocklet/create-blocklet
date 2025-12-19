@@ -1,3 +1,8 @@
+## 0.13.1 (2025-12-20)
+
+- chore(vite-plugin-blocklet): small poweredby text font-size
+- chore(deps): update deps
+
 ## 0.13.0 (2025-12-19)
 
 - feat(vite-plugin-blocklet): support show poweredby in html loading
