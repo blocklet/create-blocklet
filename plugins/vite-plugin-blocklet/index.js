@@ -23,16 +23,17 @@ import setupClient from './libs/client.js';
  *
  * @property {import('vite-plugin-node-polyfills').PolyfillOptions} [nodePolyfillsOptions]
  *
- * @property {string} [loadingElementId='app']
- * @property {string} [loadingColor='#8abaf0']
- * @property {string} [loadingImage='/.well-known/service/blocklet/logo?imageFilter=convert&f=png&w=80']
- * @property {boolean} [loadingShowPoweredBy=true]
- * @property {string} [loadingPoweredByText='Powered by ArcBlock']
+ * @property {string} [loadingElementId='app'] - The ID of the loading element.
+ * @property {string} [loadingColor='#8abaf0'] - The color of the loading animation.
+ * @property {string} [loadingImage='/.well-known/service/blocklet/logo?imageFilter=convert&f=png&w=80'] - The URL of the loading image.
+ * @property {boolean} [loadingShowDots=true] - Whether to show the loading dots animation.
+ * @property {boolean} [loadingShowPoweredBy=true] - Whether to show the "Powered by" text.
+ * @property {string} [loadingPoweredByText='Powered by ArcBlock'] - The text to display for "Powered by".
  *
- * @property {'all'|'mobile'|'desktop'} [debugPlatform='mobile']
- * @property {string} [debugScript]
- * @property {number} [positionX=0]
- * @property {number} [positionY=0]
+ * @property {'all'|'mobile'|'desktop'} [debugPlatform='mobile'] - The platforms to enable debug mode for.
+ * @property {string} [debugScript] - The initialization code for the debug script.
+ * @property {number} [positionX=0] - The initialization positionX for entry button.
+ * @property {number} [positionY=0] - The initialization positionY for entry button.
  *
  * @property {object} [embeds={}] - The embeds to be built.
  * @property {array} [embedExternals=['react', '@arcblock/ux/lib/Locale/context', '@arcblock/did-connect-react/lib/Session']] - The external modules to be used in the embeds.

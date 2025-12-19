@@ -6,11 +6,12 @@ import { withQuery } from 'ufo';
  * @param {Object} options - The options for generating the HTML.
  * @param {string} options.color - The color of the spinner. Defaults to "#333".
  * @param {string} options.image - The URL of the image to display alongside the spinner.
+ * @param {boolean} [options.showDots=true] - Whether to show the loading dots animation.
  * @param {boolean} options.showPoweredBy - Whether to show the "Powered by" text.
  * @param {string} [options.poweredByText='Powered by ArcBlock'] - The text to display for "Powered by".
  * @return {string} The generated HTML string.
  */
-function generateHtml({ color, image, showPoweredBy, poweredByText = 'Powered by ArcBlock' }) {
+function generateHtml({ color, image, showDots = true, showPoweredBy, poweredByText = 'Powered by ArcBlock' }) {
   return `<style>
   #loadingSpinnerWrapper {
     position: fixed;
@@ -34,6 +35,7 @@ function generateHtml({ color, image, showPoweredBy, poweredByText = 'Powered by
   #loadingSpinnerWrapper .spinner {
     width: 70px;
     text-align: center;
+    margin-top: 16px;
   }
 
   #loadingSpinnerWrapper .spinner>.bounce1,
@@ -66,7 +68,6 @@ function generateHtml({ color, image, showPoweredBy, poweredByText = 'Powered by
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 16px;
   }
 
   #loadingImageWrapper.loading-image {
@@ -142,11 +143,15 @@ function generateHtml({ color, image, showPoweredBy, poweredByText = 'Powered by
   </style>
   <div id="loadingSpinnerWrapper">
     <div id="loadingImageWrapper" class="loading-image"></div>
-    <div class="spinner">
+    ${
+      showDots
+        ? `<div class="spinner">
       <div class="bounce1"></div>
       <div class="bounce2"></div>
       <div class="bounce3"></div>
-    </div>
+    </div>`
+        : ''
+    }
   </div>
   <div id="loadingPoweredBy">${poweredByText}</div>
   <script>
@@ -180,6 +185,7 @@ function generateHtml({ color, image, showPoweredBy, poweredByText = 'Powered by
  * @param {string} [options.loadingElementId='app'] - The ID of the loading element.
  * @param {string} [options.loadingColor='#8abaf0'] - The color of the loading animation.
  * @param {string} [options.loadingImage='/.well-known/service/blocklet/logo?imageFilter=convert&f=png&w=80'] - The URL of the loading image.
+ * @param {boolean} [options.loadingShowDots=true] - Whether to show the loading dots animation.
  * @param {boolean} [options.loadingShowPoweredBy=true] - Whether to show the "Powered by" text.
  * @param {string} [options.loadingPoweredByText='Powered by ArcBlock'] - The text to display for "Powered by".
  * @return {Object} - The Vite plugin object.
@@ -188,6 +194,7 @@ export default function createLoadingPlugin({
   loadingElementId = 'app',
   loadingColor = '#8abaf0',
   loadingImage,
+  loadingShowDots = true,
   loadingShowPoweredBy = true,
   loadingPoweredByText = 'Powered by ArcBlock',
 } = {}) {
@@ -201,6 +208,7 @@ export default function createLoadingPlugin({
   const injectHtml = generateHtml({
     color: loadingColor,
     image: loadingImage,
+    showDots: loadingShowDots,
     showPoweredBy: loadingShowPoweredBy,
     poweredByText: loadingPoweredByText,
   });
