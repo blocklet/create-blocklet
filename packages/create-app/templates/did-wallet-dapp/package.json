@@ -31,11 +31,11 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "@arcblock/did-connect-react": "^3.2.14",
+    "@arcblock/did-connect-react": "^3.2.19",
     "@arcblock/eslint-config": "^0.3.3",
-    "@arcblock/ux": "^3.2.14",
+    "@arcblock/ux": "^3.2.19",
     "@blocklet/js-sdk": "^1.17.5",
-    "@blocklet/ui-react": "^3.2.14",
+    "@blocklet/ui-react": "^3.2.19",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.1.2",
