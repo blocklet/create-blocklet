@@ -20,19 +20,25 @@ import setupClient from './libs/client.js';
  * @property {boolean} [disableLoading=false] - Disable loading plugin.
  * @property {boolean} [disableDebug=false] - Disable debug plugin.
  * @property {boolean} [disableEmbed=false] - Disable embed plugin.
+ *
  * @property {import('vite-plugin-node-polyfills').PolyfillOptions} [nodePolyfillsOptions]
  *
- * @property {string} [loadingElementId]
- * @property {string} [loadingColor]
- * @property {string} [loadingImage]
+ * @property {string} [loadingElementId='app']
+ * @property {string} [loadingColor='#8abaf0']
+ * @property {string} [loadingImage='/.well-known/service/blocklet/logo?imageFilter=convert&f=png&w=80']
+ * @property {boolean} [loadingShowPoweredBy=true]
+ * @property {string} [loadingPoweredByText='Powered by ArcBlock']
+ *
  * @property {'all'|'mobile'|'desktop'} [debugPlatform='mobile']
  * @property {string} [debugScript]
- * @property {number} [positionX]
- * @property {number} [positionY]
- * @param {object} [embeds={}] - The embeds to be built.
- * @param {array} [embedExternals=['react', '@arcblock/ux/lib/Locale/context', '@arcblock/did-connect-react/lib/Session']] - The external modules to be used in the embeds.
- * @param {array} [embedPlugins=[]] - The plugins to be used in the embeds.
- * @param {number} [embedBuildConcurrency=0] - The plugins to be used in the embeds.
+ * @property {number} [positionX=0]
+ * @property {number} [positionY=0]
+ *
+ * @property {object} [embeds={}] - The embeds to be built.
+ * @property {array} [embedExternals=['react', '@arcblock/ux/lib/Locale/context', '@arcblock/did-connect-react/lib/Session']] - The external modules to be used in the embeds.
+ * @property {array} [embedPlugins=[]] - The plugins to be used in the embeds.
+ * @property {number} [embedBuildConcurrency=0] - The plugins to be used in the embeds.
+ *
  * @property {'middleware'|'client'|'server'|'wsUpgrade'} [hmrMode='middleware'] - 当未传入任何 option 参数时，会自动变为 middleware 模式
  */
 
