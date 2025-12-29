@@ -1,3 +1,7 @@
+## 0.13.2 (2025-12-29)
+
+- fix(vite-plugin-blocklet): truely hide powered by
+
 ## 0.13.1 (2025-12-20)
 
 - chore(vite-plugin-blocklet): small poweredby text font-size
