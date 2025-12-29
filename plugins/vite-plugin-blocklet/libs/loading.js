@@ -154,7 +154,7 @@ function generateHtml({ color, image, showDots = true, showPoweredBy, poweredByT
         : ''
     }
   </div>
-  <div id="loadingPoweredBy">${poweredByText}</div>
+  ${showPoweredBy ? `<div id="loadingPoweredBy">${poweredByText}</div>` : ''}
   <script>
     (() => {
       const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
