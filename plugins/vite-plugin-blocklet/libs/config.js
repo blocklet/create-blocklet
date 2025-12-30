@@ -3,7 +3,15 @@ import path from 'path';
 import { isEqual, joinURL, withTrailingSlash } from 'ufo';
 import { toBlockletDid, isInBlocklet, blockletPort, blockletPrefix, getBlockletYAML } from './utils.js';
 
-export default function createConfigPlugin({ chunkSizeLimit = 2048 }) {
+const SIZE = 1000;
+const MAX_CHUNK_SIZE = 2000;
+
+/**
+ * @param {object} options
+ * @param {number} [options.chunkSizeLimit=2048] - The chunk size limit in KB.
+ * @return {import('vite').Plugin} The Vite config plugin.
+ */
+export default function createConfigPlugin({ chunkSizeLimit = MAX_CHUNK_SIZE }) {
   let resolvedConfig;
 
   return {
@@ -95,7 +103,7 @@ export default function createConfigPlugin({ chunkSizeLimit = 2048 }) {
         // 只检查 JS 和 CSS
         if (filePath.endsWith('.js') || filePath.endsWith('.css')) {
           const stats = fs.statSync(filePath);
-          const sizeKB = Number((stats.size / 1024).toFixed(2));
+          const sizeKB = Number((stats.size / SIZE).toFixed(2));
 
           if (sizeKB > limitInKB) {
             overSizedFiles.push({
