@@ -41,6 +41,7 @@ import setupClient from './libs/client.js';
  * @property {number} [embedBuildConcurrency=0] - The plugins to be used in the embeds.
  *
  * @property {'middleware'|'client'|'server'|'wsUpgrade'} [hmrMode='middleware'] - 当未传入任何 option 参数时，会自动变为 middleware 模式
+ * @property {number} [chunkSizeLimit=2000] - The chunk size limit in KB.
  */
 
 /**

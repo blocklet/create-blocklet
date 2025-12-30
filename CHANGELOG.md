@@ -1,3 +1,7 @@
+## 0.14.0 (2025-12-30)
+
+- feat(plugin-blocklet): support custom chunkSizeLimit
+
 ## 0.13.2 (2025-12-29)
 
 - fix(vite-plugin-blocklet): truely hide powered by
