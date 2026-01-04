@@ -1,4 +1,6 @@
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
+import { createDefu } from 'defu';
+
 import createHmrPlugin from './libs/hmr.js';
 import createConfigPlugin from './libs/config.js';
 import createMetaPlugin from './libs/meta.js';
@@ -44,6 +46,14 @@ import setupClient from './libs/client.js';
  * @property {number} [chunkSizeLimit=2000] - The chunk size limit in KB.
  */
 
+const defuReplaceArray = createDefu((obj, key, value) => {
+  // 如果当前值或默认值是数组，直接使用新值（实现替换）
+  if (Array.isArray(obj[key]) || Array.isArray(value)) {
+    obj[key] = value
+    return true // 返回 true 表示我们已经处理了这个 key，defu 不需要再做默认处理
+  }
+})
+
 /**
  * Create blocklet plugins.
  *
@@ -79,7 +89,15 @@ export function createBlockletPlugin(options = {}) {
     plugins.push(createHmrPlugin(restOptions));
   }
   if (!disableNodePolyfills) {
-    plugins.push(nodePolyfills(nodePolyfillsOptions));
+    const mergedOptions = defuReplaceArray(nodePolyfillsOptions, {
+      include: ['buffer'],
+      globals: {
+        buffer: true,
+        global: false,
+        process: false,
+      }
+    });
+    plugins.push(nodePolyfills(mergedOptions));
   }
   if (!disableLoading) {
     plugins.push(createLoadingPlugin(restOptions));
