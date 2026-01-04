@@ -48,7 +48,7 @@
     "simple-git-hooks": "^2.11.1",
     "tsx": "^4.19.3",
     "vite": "^7.0.0",
-    "vite-plugin-blocklet": "^0.14.1",
+    "vite-plugin-blocklet": "^0.14.2",
     "vue": "^2.7.16",
     "zx": "^8.3.2"
   },
