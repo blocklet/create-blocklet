@@ -33,6 +33,7 @@
     "@arcblock/did": "^1.28.0",
     "@ocap/mcrypto": "^1.28.0",
     "@ocap/util": "^1.28.0",
+    "defu": "^6.1.4",
     "get-port": "^5.1.1",
     "http-proxy-middleware": "^3.0.3",
     "ismobilejs": "^1.1.1",

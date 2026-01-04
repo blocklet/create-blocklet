@@ -91,6 +91,9 @@ importers:
       '@ocap/util':
         specifier: ^1.28.0
         version: 1.28.0
+      defu:
+        specifier: ^6.1.4
+        version: 6.1.4
       get-port:
         specifier: ^5.1.1
         version: 5.1.1
