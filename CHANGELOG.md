@@ -1,3 +1,8 @@
+## 0.14.1 (2026-1-4)
+
+- fix(plugin-blocklet): fix import @ocap/mcrypto
+- chore(deps): update deps
+
 ## 0.14.0 (2025-12-30)
 
 - feat(plugin-blocklet): support custom chunkSizeLimit

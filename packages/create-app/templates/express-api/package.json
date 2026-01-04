@@ -32,8 +32,8 @@
   "license": "ISC",
   "dependencies": {
     "@arcblock/did-connect-storage-nedb": "^1.8.0",
-    "@blocklet/sdk": "^1.17.5",
-    "@ocap/client": "^1.27.15",
+    "@blocklet/sdk": "^1.17.7",
+    "@ocap/client": "^1.28.0",
     "dotenv-flow": "^4.1.0",
     "express": "^4.21.2"
   },
