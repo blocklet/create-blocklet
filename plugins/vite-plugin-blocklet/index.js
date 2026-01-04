@@ -93,8 +93,8 @@ export function createBlockletPlugin(options = {}) {
       include: ['buffer'],
       globals: {
         buffer: true,
-        global: false,
-        process: false,
+        global: true,
+        process: true,
       }
     });
     plugins.push(nodePolyfills(mergedOptions));
