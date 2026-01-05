@@ -30,9 +30,9 @@
   "dependencies": {
     "@arcblock/did-connect-storage-nedb": "^1.8.0",
     "@blocklet/sdk": "^1.17.7",
-    "@ocap/client": "^1.28.0",
-    "@ocap/mcrypto": "^1.28.0",
-    "@ocap/wallet": "^1.28.0",
+    "@ocap/client": "^1.28.1",
+    "@ocap/mcrypto": "^1.28.1",
+    "@ocap/wallet": "^1.28.1",
     "dotenv-flow": "^4.1.0",
     "express": "^4.21.2",
     "next": "14.2.4",

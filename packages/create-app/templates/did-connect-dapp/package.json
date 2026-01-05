@@ -38,13 +38,13 @@
     ]
   },
   "dependencies": {
-    "@arcblock/did": "^1.28.0",
+    "@arcblock/did": "^1.28.1",
     "@arcblock/did-connect-storage-nedb": "^1.8.0",
     "@blocklet/sdk": "^1.17.7",
-    "@ocap/client": "^1.28.0",
-    "@ocap/mcrypto": "^1.28.0",
-    "@ocap/util": "^1.28.0",
-    "@ocap/wallet": "^1.28.0",
+    "@ocap/client": "^1.28.1",
+    "@ocap/mcrypto": "^1.28.1",
+    "@ocap/util": "^1.28.1",
+    "@ocap/wallet": "^1.28.1",
     "cookie-parser": "^1.4.7",
     "dotenv-flow": "^4.1.0",
     "express": "^4.21.2",
