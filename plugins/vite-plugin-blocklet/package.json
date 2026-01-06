@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-blocklet",
   "type": "module",
-  "version": "0.14.4",
+  "version": "0.14.5",
   "description": "",
   "main": "index.js",
   "files": [
@@ -30,9 +30,9 @@
     "rollup": "^4.34.8"
   },
   "dependencies": {
-    "@arcblock/did": "^1.28.0",
-    "@ocap/mcrypto": "^1.28.0",
-    "@ocap/util": "^1.28.0",
+    "@arcblock/did": "^1.28.3",
+    "@ocap/mcrypto": "^1.28.3",
+    "@ocap/util": "^1.28.3",
     "defu": "^6.1.4",
     "get-port": "^5.1.1",
     "http-proxy-middleware": "^3.0.3",

@@ -19,9 +19,9 @@
   "dependencies": {
     "@arcblock/did-connect-storage-nedb": "^1.8.0",
     "@blocklet/sdk": "^1.17.7",
-    "@ocap/client": "^1.28.0",
-    "@ocap/mcrypto": "^1.28.0",
-    "@ocap/wallet": "^1.28.0",
+    "@ocap/client": "^1.28.3",
+    "@ocap/mcrypto": "^1.28.3",
+    "@ocap/wallet": "^1.28.3",
     "axios": "^1.7.9",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
@@ -45,7 +45,7 @@
     "svelte": "^4.2.19",
     "tsx": "^4.19.3",
     "vite": "^7.0.0",
-    "vite-plugin-blocklet": "^0.14.4",
+    "vite-plugin-blocklet": "^0.14.5",
     "zx": "^8.3.2"
   },
   "lint-staged": {
