@@ -1,12 +1,10 @@
 import ora from 'ora';
-import Mcrypto from '@ocap/mcrypto';
+import { types } from '@ocap/mcrypto';
 import * as jdenticon from 'jdenticon';
 import { toHex } from '@ocap/util';
 import { fromPublicKey } from '@arcblock/did';
 import { spawn } from 'child_process';
 import { BLOCKLET_COMMAND } from './constant.js';
-
-const { types } = Mcrypto;
 
 export function toBlockletDid(name) {
   const pk = toHex(Buffer.from(typeof name === 'string' ? name.trim() : name));
