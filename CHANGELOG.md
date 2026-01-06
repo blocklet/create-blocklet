@@ -1,3 +1,7 @@
+## 0.14.4 (2026-1-6)
+
+- fix(plugin-blocklet): fix @ocap/mcrypto import
+
 ## 0.14.3 (2026-1-4)
 
 - fix(plugin-blocklet): fix node-polyfills default options
