@@ -1,3 +1,7 @@
+## 0.14.6 (2026-1-7)
+
+- chore: update deps
+
 ## 0.14.5 (2026-1-7)
 
 - chore(deps): update deps

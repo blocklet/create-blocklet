@@ -41,6 +41,6 @@ await fs.writeFile('CHANGELOG.md', changelog);
 
 console.log(`\nNow you can make adjustments to ${chalk.cyan('CHANGELOG.md')}. Then press enter to continue.`);
 
-process.stdin.setRawMode(true);
-process.stdin.resume();
-process.stdin.on('data', process.exit.bind(process, 0));
+process?.stdin?.setRawMode(true);
+process?.stdin?.resume();
+process?.stdin?.on('data', process.exit.bind(process, 0));
