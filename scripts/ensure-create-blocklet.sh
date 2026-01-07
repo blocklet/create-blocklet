@@ -111,11 +111,25 @@ test_template() {
   done
   echo ""
 
-  echo "等待服务稳定(45秒)..."
-  sleep 45
-
+  # 在90秒内不断提取 app_url，直到不为空
+  echo "等待服务稳定并提取应用URL(最多90秒)..."
+  local app_url=""
+  local timeout=90
+  local elapsed=0
+  local interval=2
+  
+  while [ $elapsed -lt $timeout ]; do
+    app_url=$(grep -oE 'https://[a-zA-Z0-9]+\.did\.abtnet\.io' dev.log | uniq)
+    if [ -n "$app_url" ]; then
+      break
+    fi
+    sleep $interval
+    elapsed=$((elapsed + interval))
+    echo -n "."
+  done
+  echo ""
+  
   # 检查应用状态
-  local app_url=$(grep -oE 'https://[a-zA-Z0-9]+\.did\.abtnet\.io' dev.log | uniq)
   if [ -n "$app_url" ]; then
     echo "应用URL: $app_url"
     echo "检查应用状态..."
