@@ -115,7 +115,7 @@ test_template() {
   sleep 30
 
   # 检查应用状态
-  local app_url=$(grep -aiE 'https?://.*\.did\.abtnet\.io' dev.log | sed 's/^- //')
+  local app_url=$(grep -oE 'https://[a-zA-Z0-9]+\.did\.abtnet\.io' dev.log | uniq)
   if [ -n "$app_url" ]; then
     echo "应用URL: $app_url"
     echo "检查应用状态..."
