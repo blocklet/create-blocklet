@@ -1,6 +1,10 @@
-## 0.14.4 (2026-1-5)
+## 0.14.5 (2026-1-7)
 
-- chore: update deps
+- chore(deps): update deps
+
+## 0.14.4 (2026-1-6)
+
+- fix(plugin-blocklet): fix @ocap/mcrypto import
 
 ## 0.14.3 (2026-1-4)
 
