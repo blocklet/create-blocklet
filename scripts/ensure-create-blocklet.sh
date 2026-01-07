@@ -111,8 +111,8 @@ test_template() {
   done
   echo ""
 
-  echo "等待服务稳定(30秒)..."
-  sleep 30
+  echo "等待服务稳定(45秒)..."
+  sleep 45
 
   # 检查应用状态
   local app_url=$(grep -oE 'https://[a-zA-Z0-9]+\.did\.abtnet\.io' dev.log | uniq)
